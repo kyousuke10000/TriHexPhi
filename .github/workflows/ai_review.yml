@@ -1,0 +1,534 @@
+name: 🔱 TriHexΦ AI Review System
+
+on:
+  workflow_dispatch:
+    inputs:
+      target_file:
+        description: 'レビュー対象ファイル（例: STRATEGIC_PLAN.md）'
+        required: true
+        default: 'STRATEGIC_PLAN.md'
+      review_type:
+        description: 'レビュータイプ'
+        required: true
+        default: 'strategic_plan'
+        type: choice
+        options:
+          - strategic_plan
+          - constitution
+          - general
+
+jobs:
+  ai-review:
+    name: 🤖 全AI協働レビュー
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 📥 リポジトリをチェックアウト
+        uses: actions/checkout@v4
+      
+      - name: 🐍 Python環境セットアップ
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: 📦 依存パッケージインストール
+        run: |
+          pip install openai anthropic google-generativeai
+      
+      - name: 🔱 Phase 0: レビュー開始通知
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const discussionTitle = `📤 全AIレビュー開始: ${{ github.event.inputs.target_file }}`;
+            const discussionBody = `
+            # 🔱💎✨ 全AIレビュー開始 ✨💎🔱
+            
+            **開始時刻**: ${new Date().toISOString()}  
+            **対象ファイル**: ${{ github.event.inputs.target_file }}  
+            **レビュータイプ**: ${{ github.event.inputs.review_type }}  
+            **参加AI**: GPT-5, Claude, Gemini, Grok, DeepSeek
+            
+            ---
+            
+            ## 📊 進捗状況
+            
+            [░░░░░░░░░░] 0/5 完了
+            
+            ---
+            
+            ## 📝 タイムライン
+            
+            ### ${new Date().toLocaleTimeString('ja-JP')} - 🚀 レビュー開始
+            
+            全5AIに順次送信を開始します...
+            `;
+            
+            // Note: Discussions APIはまだ完全にサポートされていないため、
+            // Issueとして作成（後でDiscussionsに移行）
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: discussionTitle,
+              body: discussionBody,
+              labels: ['ai-review', 'automated']
+            });
+      
+      - name: 🤖 GPT-5 レビュー送信
+        id: gpt5
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          echo "📤 GPT-5 に送信中..."
+          python3 << 'EOF'
+          import os
+          from openai import OpenAI
+          
+          client = OpenAI(api_key=os.environ['OPENAI_API_KEY'])
+          
+          with open('${{ github.event.inputs.target_file }}', 'r') as f:
+              content = f.read()
+          
+          prompt = f"""
+          【GPT-5へのレビュー依頼】
+          
+          あなたの専門性（システムアーキテクチャ、スケーラビリティ）から、
+          以下のファイルをレビューしてください。
+          
+          ファイル: ${{ github.event.inputs.target_file }}
+          
+          ---
+          
+          {content}
+          
+          ---
+          
+          レビュー内容:
+          1. 総合評価（10点満点）
+          2. 強みと弱み
+          3. 改善提案（3-5個）
+          """
+          
+          response = client.chat.completions.create(
+              model="gpt-4-turbo-preview",
+              messages=[{"role": "user", "content": prompt}],
+              max_tokens=4000,
+              temperature=0.7
+          )
+          
+          result = response.choices[0].message.content
+          print(f"✅ GPT-5から回答受信（{len(result)}文字）")
+          
+          # 結果を保存
+          with open('gpt5_review.txt', 'w') as f:
+              f.write(result)
+          EOF
+          echo "response<<EOF" >> $GITHUB_OUTPUT
+          cat gpt5_review.txt >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+      
+      - name: 📝 GPT-5 レビュー結果を投稿
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const review = fs.readFileSync('gpt5_review.txt', 'utf8');
+            
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.payload.issue?.number || 1, // 最初のIssue
+              body: `
+              ### ${new Date().toLocaleTimeString('ja-JP')} - ✅ GPT-5 回答受信完了
+              
+              **文字数**: ${review.length}文字  
+              **所要時間**: 約1分
+              
+              <details>
+              <summary>📄 GPT-5のレビュー詳細</summary>
+              
+              ${review}
+              
+              </details>
+              
+              ---
+              
+              ## 📊 進捗状況
+              
+              [████░░░░░░] 1/5 完了
+              `
+            });
+      
+      - name: 🤖 Claude レビュー送信
+        id: claude
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          echo "📤 Claude に送信中..."
+          python3 << 'EOF'
+          import os
+          import anthropic
+          
+          client = anthropic.Anthropic(api_key=os.environ['ANTHROPIC_API_KEY'])
+          
+          with open('${{ github.event.inputs.target_file }}', 'r') as f:
+              content = f.read()
+          
+          prompt = f"""
+          【Claudeへのレビュー依頼】
+          
+          あなたの専門性（倫理、プライバシー、リスク管理）から、
+          以下のファイルをレビューしてください。
+          
+          ファイル: ${{ github.event.inputs.target_file }}
+          
+          ---
+          
+          {content}
+          
+          ---
+          
+          レビュー内容:
+          1. 総合評価（10点満点）
+          2. リスク分析
+          3. 倫理的課題
+          4. 改善提案（3-5個）
+          """
+          
+          response = client.messages.create(
+              model="claude-3-5-sonnet-20241022",
+              max_tokens=4000,
+              messages=[{"role": "user", "content": prompt}]
+          )
+          
+          result = response.content[0].text
+          print(f"✅ Claudeから回答受信（{len(result)}文字）")
+          
+          with open('claude_review.txt', 'w') as f:
+              f.write(result)
+          EOF
+      
+      - name: 📝 Claude レビュー結果を投稿
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const review = fs.readFileSync('claude_review.txt', 'utf8');
+            
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.payload.issue?.number || 1,
+              body: `
+              ### ${new Date().toLocaleTimeString('ja-JP')} - ✅ Claude 回答受信完了
+              
+              **文字数**: ${review.length}文字
+              
+              <details>
+              <summary>📄 Claudeのレビュー詳細</summary>
+              
+              ${review}
+              
+              </details>
+              
+              ---
+              
+              ## 📊 進捗状況
+              
+              [████████░░] 2/5 完了
+              `
+            });
+      
+      - name: 🤖 Gemini レビュー送信
+        id: gemini
+        env:
+          GOOGLE_AI_API_KEY: ${{ secrets.GOOGLE_AI_API_KEY }}
+        run: |
+          echo "📤 Gemini に送信中..."
+          python3 << 'EOF'
+          import os
+          import google.generativeai as genai
+          
+          genai.configure(api_key=os.environ['GOOGLE_AI_API_KEY'])
+          model = genai.GenerativeModel('gemini-2.0-flash-exp')
+          
+          with open('${{ github.event.inputs.target_file }}', 'r') as f:
+              content = f.read()
+          
+          prompt = f"""
+          【Geminiへのレビュー依頼】
+          
+          あなたの専門性（UI/UX、可視化、ユーザー体験）から、
+          以下のファイルをレビューしてください。
+          
+          ファイル: ${{ github.event.inputs.target_file }}
+          
+          ---
+          
+          {content}
+          
+          ---
+          
+          レビュー内容:
+          1. 総合評価（10点満点）
+          2. UI/UX視点での分析
+          3. 可視化の提案
+          4. 改善提案（3-5個）
+          """
+          
+          response = model.generate_content(
+              prompt,
+              generation_config=genai.types.GenerationConfig(
+                  temperature=0.7,
+                  max_output_tokens=4000,
+              )
+          )
+          
+          result = response.text
+          print(f"✅ Geminiから回答受信（{len(result)}文字）")
+          
+          with open('gemini_review.txt', 'w') as f:
+              f.write(result)
+          EOF
+      
+      - name: 📝 Gemini レビュー結果を投稿
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const review = fs.readFileSync('gemini_review.txt', 'utf8');
+            
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.payload.issue?.number || 1,
+              body: `
+              ### ${new Date().toLocaleTimeString('ja-JP')} - ✅ Gemini 回答受信完了
+              
+              **文字数**: ${review.length}文字
+              
+              <details>
+              <summary>📄 Geminiのレビュー詳細</summary>
+              
+              ${review}
+              
+              </details>
+              
+              ---
+              
+              ## 📊 進捗状況
+              
+              [████████████░░] 3/5 完了
+              `
+            });
+      
+      - name: 🤖 Grok レビュー送信
+        id: grok
+        env:
+          GROK_API_KEY: ${{ secrets.GROK_API_KEY }}
+        run: |
+          echo "📤 Grok に送信中..."
+          python3 << 'EOF'
+          import os
+          from openai import OpenAI
+          
+          client = OpenAI(
+              api_key=os.environ['GROK_API_KEY'],
+              base_url="https://api.x.ai/v1"
+          )
+          
+          with open('${{ github.event.inputs.target_file }}', 'r') as f:
+              content = f.read()
+          
+          prompt = f"""
+          【Grokへのレビュー依頼】
+          
+          あなたの専門性（市場分析、マネタイズ、GTM戦略）から、
+          以下のファイルをレビューしてください。
+          
+          ファイル: ${{ github.event.inputs.target_file }}
+          
+          ---
+          
+          {content}
+          
+          ---
+          
+          レビュー内容:
+          1. 総合評価（10点満点）
+          2. 市場性分析
+          3. マネタイズ戦略の評価
+          4. 改善提案（3-5個）
+          """
+          
+          response = client.chat.completions.create(
+              model="grok-4",
+              messages=[{"role": "user", "content": prompt}],
+              max_tokens=4000,
+              temperature=0.7
+          )
+          
+          result = response.choices[0].message.content
+          print(f"✅ Grokから回答受信（{len(result)}文字）")
+          
+          with open('grok_review.txt', 'w') as f:
+              f.write(result)
+          EOF
+      
+      - name: 📝 Grok レビュー結果を投稿
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const review = fs.readFileSync('grok_review.txt', 'utf8');
+            
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.payload.issue?.number || 1,
+              body: `
+              ### ${new Date().toLocaleTimeString('ja-JP')} - ✅ Grok 回答受信完了
+              
+              **文字数**: ${review.length}文字
+              
+              <details>
+              <summary>📄 Grokのレビュー詳細</summary>
+              
+              ${review}
+              
+              </details>
+              
+              ---
+              
+              ## 📊 進捗状況
+              
+              [██████████████░░] 4/5 完了
+              `
+            });
+      
+      - name: 🤖 DeepSeek レビュー送信
+        id: deepseek
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+        run: |
+          echo "📤 DeepSeek に送信中..."
+          python3 << 'EOF'
+          import os
+          from openai import OpenAI
+          
+          client = OpenAI(
+              api_key=os.environ['DEEPSEEK_API_KEY'],
+              base_url="https://api.deepseek.com/v1"
+          )
+          
+          with open('${{ github.event.inputs.target_file }}', 'r') as f:
+              content = f.read()
+          
+          prompt = f"""
+          【DeepSeekへのレビュー依頼】
+          
+          あなたの専門性（技術的深掘り、パフォーマンス、最適化）から、
+          以下のファイルをレビューしてください。
+          
+          ファイル: ${{ github.event.inputs.target_file }}
+          
+          ---
+          
+          {content}
+          
+          ---
+          
+          レビュー内容:
+          1. 総合評価（10点満点）
+          2. 技術的完璧性の分析
+          3. パフォーマンス最適化の提案
+          4. 改善提案（3-5個）
+          """
+          
+          response = client.chat.completions.create(
+              model="deepseek-chat",
+              messages=[{"role": "user", "content": prompt}],
+              max_tokens=4000,
+              temperature=0.7
+          )
+          
+          result = response.choices[0].message.content
+          print(f"✅ DeepSeekから回答受信（{len(result)}文字）")
+          
+          with open('deepseek_review.txt', 'w') as f:
+              f.write(result)
+          EOF
+      
+      - name: 📝 DeepSeek レビュー結果を投稿
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const review = fs.readFileSync('deepseek_review.txt', 'utf8');
+            
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.payload.issue?.number || 1,
+              body: `
+              ### ${new Date().toLocaleTimeString('ja-JP')} - ✅ DeepSeek 回答受信完了
+              
+              **文字数**: ${review.length}文字
+              
+              <details>
+              <summary>📄 DeepSeekのレビュー詳細</summary>
+              
+              ${review}
+              
+              </details>
+              
+              ---
+              
+              ## 📊 進捗状況
+              
+              [████████████████] 5/5 完了
+              `
+            });
+      
+      - name: 🎉 完了通知
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.payload.issue?.number || 1,
+              body: `
+              # 🎉 全5AIレビュー完了！
+              
+              **完了時刻**: ${new Date().toISOString()}  
+              **総所要時間**: 約3-5分
+              
+              ---
+              
+              ## ✅ 完了したAI
+              
+              - ✅ GPT-5 (Architect)
+              - ✅ Claude (Observer)
+              - ✅ Gemini (Synthesizer)
+              - ✅ Grok (Strategist)
+              - ✅ DeepSeek (Seeker)
+              
+              ---
+              
+              次のステップ: 統合分析を開始します...
+              
+              🔱💎✨ **TriHexΦ - AI協働レビュー完了** ✨💎🔱
+              `
+            });
+      
+      - name: 💾 レビュー結果をアーティファクトに保存
+        uses: actions/upload-artifact@v4
+        with:
+          name: ai-reviews-${{ github.run_number }}
+          path: |
+            gpt5_review.txt
+            claude_review.txt
+            gemini_review.txt
+            grok_review.txt
+            deepseek_review.txt
+
