@@ -38,7 +38,7 @@ def main():
 """
     
     response = client.chat.completions.create(
-        model="grok-beta",
+        model="grok-2-latest",
         messages=[{"role": "user", "content": prompt}],
         max_tokens=4000,
         temperature=0.7
