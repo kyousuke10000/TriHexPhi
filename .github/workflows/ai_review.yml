@@ -1,4 +1,4 @@
-name: 🔱 TriHexΦ AI Review System
+name: 🔱 TriHexΦ AI Review System v1.1
 
 on:
   workflow_dispatch:
