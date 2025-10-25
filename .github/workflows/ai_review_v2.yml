@@ -1,0 +1,320 @@
+name: 🔱 TriHexΦ AI Review System v2.0 NEW
+
+on:
+  workflow_dispatch:
+    inputs:
+      target_file:
+        description: 'レビュー対象ファイル（例: STRATEGIC_PLAN.md）'
+        required: true
+        default: 'STRATEGIC_PLAN.md'
+      review_type:
+        description: 'レビュータイプ'
+        required: true
+        default: 'strategic_plan'
+        type: choice
+        options:
+          - strategic_plan
+          - constitution
+          - general
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+jobs:
+  ai-review:
+    name: 🤖 全AI協働レビュー
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: "リポジトリをチェックアウト"
+        uses: actions/checkout@v4
+      
+      - name: "Python環境セットアップ"
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: "依存パッケージインストール"
+        run: |
+          pip install openai anthropic google-generativeai
+      
+      - name: "Phase 0: レビュー開始通知"
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const discussionTitle = `📤 全AIレビュー開始: ${{ github.event.inputs.target_file }}`;
+            const discussionBody = `
+            # 🔱💎✨ 全AIレビュー開始 ✨💎🔱
+            
+            **開始時刻**: ${new Date().toISOString()}  
+            **対象ファイル**: ${{ github.event.inputs.target_file }}  
+            **レビュータイプ**: ${{ github.event.inputs.review_type }}  
+            **参加AI**: GPT-5, Claude, Gemini, Grok, DeepSeek
+            
+            ---
+            
+            ## 📊 進捗状況
+            
+            [░░░░░░░░░░] 0/5 完了
+            
+            ---
+            
+            ## 📝 タイムライン
+            
+            ### ${new Date().toLocaleTimeString('ja-JP')} - 🚀 レビュー開始
+            
+            全5AIに順次送信を開始します...
+            `;
+            
+            // Note: Discussions APIはまだ完全にサポートされていないため、
+            // Issueとして作成（後でDiscussionsに移行）
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: discussionTitle,
+              body: discussionBody,
+              labels: ['ai-review', 'automated']
+            });
+      
+      - name: "GPT-5 レビュー送信"
+        id: gpt5
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          echo "📤 GPT-5 に送信中..."
+          python3 .github/scripts/review_gpt5.py "${{ github.event.inputs.target_file }}"
+      
+      - name: "GPT-5 レビュー結果を投稿"
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const review = fs.readFileSync('gpt5_review.txt', 'utf8');
+            
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.payload.issue?.number || 1, // 最初のIssue
+              body: `
+              ### ${new Date().toLocaleTimeString('ja-JP')} - ✅ GPT-5 回答受信完了
+              
+              **文字数**: ${review.length}文字  
+              **所要時間**: 約1分
+              
+              <details>
+              <summary>📄 GPT-5のレビュー詳細</summary>
+              
+              ${review}
+              
+              </details>
+              
+              ---
+              
+              ## 📊 進捗状況
+              
+              [████░░░░░░] 1/5 完了
+              `
+            });
+      
+      - name: "Claude レビュー送信"
+        id: claude
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          echo "📤 Claude に送信中..."
+          python3 .github/scripts/review_claude.py "${{ github.event.inputs.target_file }}"
+      
+      - name: "Claude レビュー結果を投稿"
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const review = fs.readFileSync('claude_review.txt', 'utf8');
+            
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.payload.issue?.number || 1,
+              body: `
+              ### ${new Date().toLocaleTimeString('ja-JP')} - ✅ Claude 回答受信完了
+              
+              **文字数**: ${review.length}文字
+              
+              <details>
+              <summary>📄 Claudeのレビュー詳細</summary>
+              
+              ${review}
+              
+              </details>
+              
+              ---
+              
+              ## 📊 進捗状況
+              
+              [████████░░] 2/5 完了
+              `
+            });
+      
+      - name: "Gemini レビュー送信"
+        id: gemini
+        env:
+          GOOGLE_AI_API_KEY: ${{ secrets.GOOGLE_AI_API_KEY }}
+        run: |
+          echo "📤 Gemini に送信中..."
+          python3 .github/scripts/review_gemini.py "${{ github.event.inputs.target_file }}"
+      
+      - name: "Gemini レビュー結果を投稿"
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const review = fs.readFileSync('gemini_review.txt', 'utf8');
+            
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.payload.issue?.number || 1,
+              body: `
+              ### ${new Date().toLocaleTimeString('ja-JP')} - ✅ Gemini 回答受信完了
+              
+              **文字数**: ${review.length}文字
+              
+              <details>
+              <summary>📄 Geminiのレビュー詳細</summary>
+              
+              ${review}
+              
+              </details>
+              
+              ---
+              
+              ## 📊 進捗状況
+              
+              [████████████░░] 3/5 完了
+              `
+            });
+      
+      - name: "Grok レビュー送信"
+        id: grok
+        env:
+          GROK_API_KEY: ${{ secrets.GROK_API_KEY }}
+        run: |
+          echo "📤 Grok に送信中..."
+          python3 .github/scripts/grok_review_final.py "${{ github.event.inputs.target_file }}"
+      
+      - name: "Grok レビュー結果を投稿"
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const review = fs.readFileSync('grok_review.txt', 'utf8');
+            
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.payload.issue?.number || 1,
+              body: `
+              ### ${new Date().toLocaleTimeString('ja-JP')} - ✅ Grok 回答受信完了
+              
+              **文字数**: ${review.length}文字
+              
+              <details>
+              <summary>📄 Grokのレビュー詳細</summary>
+              
+              ${review}
+              
+              </details>
+              
+              ---
+              
+              ## 📊 進捗状況
+              
+              [██████████████░░] 4/5 完了
+              `
+            });
+      
+      - name: "DeepSeek レビュー送信"
+        id: deepseek
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+        run: |
+          echo "📤 DeepSeek に送信中..."
+          python3 .github/scripts/review_deepseek.py "${{ github.event.inputs.target_file }}"
+      
+      - name: "DeepSeek レビュー結果を投稿"
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const review = fs.readFileSync('deepseek_review.txt', 'utf8');
+            
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.payload.issue?.number || 1,
+              body: `
+              ### ${new Date().toLocaleTimeString('ja-JP')} - ✅ DeepSeek 回答受信完了
+              
+              **文字数**: ${review.length}文字
+              
+              <details>
+              <summary>📄 DeepSeekのレビュー詳細</summary>
+              
+              ${review}
+              
+              </details>
+              
+              ---
+              
+              ## 📊 進捗状況
+              
+              [████████████████] 5/5 完了
+              `
+            });
+      
+      - name: "完了通知"
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.payload.issue?.number || 1,
+              body: `
+              # 🎉 全5AIレビュー完了！
+              
+              **完了時刻**: ${new Date().toISOString()}  
+              **総所要時間**: 約3-5分
+              
+              ---
+              
+              ## ✅ 完了したAI
+              
+              - ✅ GPT-5 (Architect)
+              - ✅ Claude (Observer)
+              - ✅ Gemini (Synthesizer)
+              - ✅ Grok (Strategist)
+              - ✅ DeepSeek (Seeker)
+              
+              ---
+              
+              次のステップ: 統合分析を開始します...
+              
+              🔱💎✨ **TriHexΦ - AI協働レビュー完了** ✨💎🔱
+              `
+            });
+      
+      - name: "レビュー結果をアーティファクトに保存"
+        uses: actions/upload-artifact@v4
+        with:
+          name: ai-reviews-${{ github.run_number }}
+          path: |
+            gpt5_review.txt
+            claude_review.txt
+            gemini_review.txt
+            grok_review.txt
+            deepseek_review.txt
+            
+
