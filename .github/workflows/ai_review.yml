@@ -17,6 +17,11 @@ on:
           - constitution
           - general
 
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
 jobs:
   ai-review:
     name: 🤖 全AI協働レビュー
