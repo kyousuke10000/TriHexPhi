@@ -487,4 +487,5 @@ ${discussion.body}
             execSync('git add .');
             execSync(`git commit -m "feat: GitHub Discussion #${discussion.number} を Obsidian に同期" || echo "No changes to commit"`);
             execSync('git push');
+        
 
