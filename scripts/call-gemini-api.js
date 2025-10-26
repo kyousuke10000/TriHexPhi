@@ -32,7 +32,7 @@ function parseArgs() {
     context: null,
     prFile: null,
     prompt: null,
-    model: 'gemini-1.5-pro-latest',
+    model: 'gemini-1.5-pro',
     maxTokens: 4096,
     temperature: 0.7,
   };
