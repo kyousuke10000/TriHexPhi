@@ -32,7 +32,7 @@ function parseArgs() {
     context: null,
     prFile: null,
     prompt: null,
-    model: 'gemini-1.5-flash-latest',  // ✅ 安定版モデルに変更（Gemini推奨）
+    model: 'gemini-pro',  // ✅ v1 API対応モデル（Gemini推奨）
     maxTokens: 4096,
     temperature: 0.7,
   };
@@ -78,7 +78,7 @@ function printHelp() {
   --context <text>        コンテキストテキスト（直接指定）
   --pr-file <path>        PRデータJSONファイルのパス
   --prompt <text>         プロンプトテキスト
-  --model <model>         使用モデル（デフォルト: gemini-1.5-flash-latest）
+  --model <model>         使用モデル（デフォルト: gemini-pro）
   --max-tokens <number>   最大トークン数（デフォルト: 4096）
   --temperature <float>   温度パラメータ（デフォルト: 0.7）
   --help                  このヘルプを表示
