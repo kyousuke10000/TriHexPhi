@@ -1,0 +1,26 @@
+{
+  "name": "trihexphi-scripts",
+  "version": "1.0.0",
+  "description": "TriHexΦ AI統合スクリプト",
+  "type": "module",
+  "scripts": {
+    "test": "node test-claude-api.js",
+    "review": "node call-claude-api.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.30.0",
+    "@google/generative-ai": "^0.1.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0"
+  },
+  "keywords": [
+    "trihexphi",
+    "ai",
+    "claude",
+    "anthropic",
+    "automation"
+  ],
+  "author": "Shiryu",
+  "license": "MIT"
+}
