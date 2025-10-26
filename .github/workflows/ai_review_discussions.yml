@@ -444,35 +444,28 @@ jobs:
             }
             
             // Markdown生成
-            let obsidianContent = `---
-type: github_discussion
-discussion_number: ${discussion.number}
-created: ${discussion.createdAt}
-discussion_url: ${discussion.url}
-tags: [#GitHub, #Discussions, #完璧軍議, #Round3]
----
-
-# ${discussion.title}
-
-**Discussion URL**: [GitHub Discussion #${discussion.number}](${discussion.url})
-
----
-
-## 📝 内容
-
-${discussion.body}
-
----
-
-`;
+            let obsidianContent = '';
+            obsidianContent += '---\n';
+            obsidianContent += 'type: github_discussion\n';
+            obsidianContent += `discussion_number: ${discussion.number}\n`;
+            obsidianContent += `created: ${discussion.createdAt}\n`;
+            obsidianContent += `discussion_url: ${discussion.url}\n`;
+            obsidianContent += 'tags: [#GitHub, #Discussions, #完璧軍議, #Round3]\n';
+            obsidianContent += '---\n\n';
+            obsidianContent += `# ${discussion.title}\n\n`;
+            obsidianContent += `**Discussion URL**: [GitHub Discussion #${discussion.number}](${discussion.url})\n\n`;
+            obsidianContent += '---\n\n';
+            obsidianContent += '## 📝 内容\n\n';
+            obsidianContent += `${discussion.body}\n\n`;
+            obsidianContent += '---\n\n';
 
             // コメント追加
             if (discussion.comments.nodes.length > 0) {
-              obsidianContent += `## 💬 AIレビュー\n\n`;
+              obsidianContent += '## 💬 AIレビュー\n\n';
               discussion.comments.nodes.forEach((comment, index) => {
                 obsidianContent += `### ${comment.author.login} - Review ${index + 1}\n\n`;
                 obsidianContent += `${comment.body}\n\n`;
-                obsidianContent += `---\n\n`;
+                obsidianContent += '---\n\n';
               });
             }
             
