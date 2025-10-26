@@ -4,9 +4,9 @@ on:
   workflow_dispatch:
     inputs:
       target_file:
-        description: 'レビュー対象ファイル（例: STRATEGIC_PLAN.md）'
+        description: 'レビュー対象ファイル（例: Strategic_Plan_v1.0_2025-10-26.md）'
         required: true
-        default: 'STRATEGIC_PLAN.md'
+        default: '📤Round3_全AI送付用/Strategic_Plan_v1.0_2025-10-26.md'
       review_type:
         description: 'レビュータイプ'
         required: true

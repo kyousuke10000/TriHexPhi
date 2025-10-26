@@ -6,7 +6,7 @@ on:
       target_file:
         description: 'レビュー対象ファイル'
         required: true
-        default: 'STRATEGIC_PLAN.md'
+        default: '📤Round3_全AI送付用/Strategic_Plan_v1.0_2025-10-26.md'
 
 permissions:
   contents: write
