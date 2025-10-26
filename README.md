@@ -229,3 +229,5 @@ AI自動レビューシステム（Claude & Gemini）のテストv2
 v3ワークフロー（Gemini APIキー修正）で再テスト
 
 モデル名修正後の最終テスト
+
+APIキー再設定後の最終テスト（Claude + Gemini）
