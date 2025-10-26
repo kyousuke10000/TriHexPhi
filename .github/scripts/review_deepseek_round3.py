@@ -140,7 +140,7 @@ Strategic Plan v1.0 - TriHexΦ Business Edition
     response = client.chat.completions.create(
         model="deepseek-chat",
         messages=[{"role": "user", "content": prompt}],
-        max_tokens=8000,
+        max_tokens=4000,
         temperature=0.7
     )
     
