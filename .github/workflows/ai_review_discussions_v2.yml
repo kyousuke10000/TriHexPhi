@@ -222,6 +222,7 @@ jobs:
         id: gemini
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GOOGLE_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
           echo "📤 Gemini に送信中..."
           python3 .github/scripts/review_gemini_round3.py "${{ github.event.inputs.target_file }}"
