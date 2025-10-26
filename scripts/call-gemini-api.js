@@ -1,26 +1,31 @@
 #!/usr/bin/env node
 /**
- * 🔱 TriHexΦ - Gemini API呼び出しスクリプト
+ * 🔱 TriHexΦ - Gemini API呼び出しスクリプト（新SDK版）
  * 
  * @description GitHub ActionsやローカルからGemini APIを呼び出す
  * @usage node call-gemini-api.js --context-file context.txt --prompt "レビューしてください"
- * @version 1.0.0
+ * @version 2.0.0
  * @date 2025-10-26
+ * @sdk @google/genai v1.27.0（新SDK・公式推奨）
+ * @migration 旧SDK @google/generative-ai から完全移行
  */
 
-import { GoogleGenerativeAI } from '@google/generative-ai';
+import { GoogleGenAI } from '@google/genai';
 import fs from 'fs/promises';
 
 // 環境変数チェック
-const GOOGLE_API_KEY = process.env.GOOGLE_API_KEY || process.env.GEMINI_API_KEY;
-if (!GOOGLE_API_KEY) {
+const GEMINI_API_KEY = process.env.GOOGLE_API_KEY || process.env.GEMINI_API_KEY;
+if (!GEMINI_API_KEY) {
   console.error('❌ エラー: GOOGLE_API_KEY または GEMINI_API_KEY 環境変数が設定されていません');
-  console.error('設定方法: export GOOGLE_API_KEY="AIzaSy..."');
+  console.error('設定方法: export GEMINI_API_KEY="AIzaSy..."');
   process.exit(1);
 }
 
-// Gemini クライアント初期化
-const genAI = new GoogleGenerativeAI(GOOGLE_API_KEY);
+// Gemini クライアント初期化（新SDK）
+const ai = new GoogleGenAI({
+  apiKey: GEMINI_API_KEY,
+  apiVersion: 'v1beta'  // v1beta APIを明示的に指定（実験的モデルに対応）
+});
 
 /**
  * コマンドライン引数をパース
@@ -32,7 +37,7 @@ function parseArgs() {
     context: null,
     prFile: null,
     prompt: null,
-    model: 'gemini-2.0-flash-exp',
+    model: 'gemini-2.5-flash',  // ✅ 本番環境推奨（Claude完全リサーチに基づく）
     maxTokens: 4096,
     temperature: 0.7,
   };
@@ -68,7 +73,7 @@ function parseArgs() {
  */
 function printHelp() {
   console.log(`
-🔱 TriHexΦ - Gemini API Caller
+🔱 TriHexΦ - Gemini API Caller (新SDK版)
 
 使用方法:
   node call-gemini-api.js [options]
@@ -78,25 +83,40 @@ function printHelp() {
   --context <text>        コンテキストテキスト（直接指定）
   --pr-file <path>        PRデータJSONファイルのパス
   --prompt <text>         プロンプトテキスト
-  --model <model>         使用モデル（デフォルト: gemini-1.5-pro-latest）
+  --model <model>         使用モデル（デフォルト: gemini-2.5-flash）
   --max-tokens <number>   最大トークン数（デフォルト: 4096）
   --temperature <float>   温度パラメータ（デフォルト: 0.7）
   --help                  このヘルプを表示
 
+利用可能なモデル:
+  【本番環境推奨】
+  - gemini-2.5-flash      最新安定版、最高の価格性能比
+  - gemini-2.5-pro        最強の推論能力
+  - gemini-2.0-flash-001  長期サポート保証
+  
+  【実験的モデル】
+  - gemini-2.0-flash-exp  実験版（テスト専用）
+  - gemini-2.0-pro-exp    Pro実験版
+
 例:
-  # コンテキストファイルから読み込み
+  # 本番環境推奨モデルで実行
   node call-gemini-api.js \\
     --context-file context-bootstrap.txt \\
     --prompt "PRをレビューしてください"
 
-  # PRファイルも指定
+  # 実験的モデルでテスト
   node call-gemini-api.js \\
+    --model gemini-2.0-flash-exp \\
     --context-file context-bootstrap.txt \\
-    --pr-file pr-content.json \\
     --prompt "PRをレビューしてください"
 
 環境変数:
   GOOGLE_API_KEY または GEMINI_API_KEY   GoogleのAPIキー（必須）
+
+SDK情報:
+  パッケージ: @google/genai v1.27.0（最新）
+  API Version: v1beta（自動）
+  非推奨SDK: @google/generative-ai（廃止）
 `);
 }
 
@@ -137,41 +157,47 @@ ${data.files ? data.files.map(f => `- ${f.path || f}`).join('\n') : 'No files in
 }
 
 /**
- * Gemini APIを呼び出す
+ * Gemini APIを呼び出す（新SDK）
  */
 async function callGeminiAPI(context, prompt, model, maxTokens, temperature) {
-  console.error('💎 Gemini APIを呼び出しています...');
+  console.error('💎 Gemini API (新SDK v1.27.0) を呼び出しています...');
   console.error(`Model: ${model}`);
   console.error(`Max Tokens: ${maxTokens}`);
   console.error(`Temperature: ${temperature}`);
+  console.error(`API Version: v1beta（自動）`);
   console.error('');
 
   try {
-    const geminiModel = genAI.getGenerativeModel({ 
+    // 新SDK方式でコンテンツ生成
+    const response = await ai.models.generateContent({
       model: model,
-      generationConfig: {
+      contents: `${context}\n\n${prompt}`,
+      config: {
         maxOutputTokens: maxTokens,
         temperature: temperature,
-      },
+      }
     });
 
-    const fullPrompt = `${context}\n\n${prompt}`;
+    // 新SDKではresponse.textはプロパティ（メソッドではない）
+    const text = response.text;
     
-    const result = await geminiModel.generateContent(fullPrompt);
-    const response = await result.response;
-    const text = response.text();
-
+    console.error('✅ Gemini API 応答取得成功（新SDK）');
+    
     return text;
   } catch (error) {
     console.error('❌ Gemini API呼び出しエラー:');
     console.error(error.message);
     
-    if (error.message.includes('API_KEY')) {
+    const errorStr = error.message.toLowerCase();
+    if (errorStr.includes('api_key') || errorStr.includes('api key')) {
       console.error('認証エラー: APIキーを確認してください');
-    } else if (error.message.includes('quota')) {
+    } else if (errorStr.includes('quota')) {
       console.error('クォータエラー: 使用量制限に達しました');
-    } else if (error.message.includes('rate limit')) {
+    } else if (errorStr.includes('rate limit')) {
       console.error('レート制限エラー: しばらく待ってから再試行してください');
+    } else if (errorStr.includes('404') || errorStr.includes('not found')) {
+      console.error('モデル未検出: モデル名を確認してください');
+      console.error('推奨モデル: gemini-2.5-flash, gemini-2.5-pro');
     }
     
     process.exit(1);
@@ -248,4 +274,3 @@ main().catch(error => {
   console.error(error);
   process.exit(1);
 });
-
