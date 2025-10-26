@@ -1,0 +1,397 @@
+name: 🔱 TriHexΦ AI Review v2 (Discussions)
+
+on:
+  workflow_dispatch:
+    inputs:
+      target_file:
+        description: 'レビュー対象ファイル'
+        required: true
+        default: '📤Round3_全AI送付用/Strategic_Plan_v1.0_2025-10-26.md'
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+  discussions: write
+
+jobs:
+  ai-review:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: "リポジトリをチェックアウト"
+        uses: actions/checkout@v4
+      
+      - name: "Python環境セットアップ"
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: "依存関係インストール"
+        run: |
+          pip install openai anthropic google-generativeai requests
+      
+      - name: "Phase 0: Discussion作成"
+        id: create_discussion
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const timestamp = new Date().toISOString();
+            const discussionBody = `# 🔱💎✨ TriHexΦ AI Review System v2 ✨💎🔱
+            
+            **開始時刻:** ${timestamp}
+            **レビュー対象:** ${{ github.event.inputs.target_file }}
+            **システムバージョン:** v2.0 (新しいワークフロー)
+            
+            ---
+            
+            ## 📋 レビュー進行状況
+            
+            このDiscussionでは、6AI軍師団による協働レビューが進行します。
+            各AIの専門性を活かした多角的な分析により、総合的な評価を提供します。
+            
+            ### 🤖 AI軍師団メンバー
+            
+            - **GPT-5 (大軍師)**: 全体戦略・統括
+            - **Claude (倫理参謀)**: リスク管理・倫理
+            - **Gemini (美的軍師)**: UI/UX・可視化
+            - **Grok (市場参謀)**: 市場分析・マネタイズ
+            - **DeepSeek (技術軍師)**: 技術最適化
+            - **Cursor (実行部隊長)**: 実装支援
+            
+            ---
+            
+            ## ⏳ 進捗
+            
+            レビュー実行中... 各AIからの回答をお待ちください。
+            `;
+            
+            // GraphQL mutation でDiscussion作成
+            const mutation = `
+              mutation($repositoryId: ID!, $categoryId: ID!, $title: String!, $body: String!) {
+                createDiscussion(input: {
+                  repositoryId: $repositoryId,
+                  categoryId: $categoryId,
+                  title: $title,
+                  body: $body
+                }) {
+                  discussion {
+                    id
+                    number
+                    url
+                  }
+                }
+              }
+            `;
+            
+            // リポジトリIDを取得
+            const repoQuery = `
+              query($owner: String!, $name: String!) {
+                repository(owner: $owner, name: $name) {
+                  id
+                  discussionCategories(first: 10) {
+                    nodes {
+                      id
+                      name
+                    }
+                  }
+                }
+              }
+            `;
+            
+            const repoData = await github.graphql(repoQuery, {
+              owner: context.repo.owner,
+              name: context.repo.repo
+            });
+            
+            const repositoryId = repoData.repository.id;
+            
+            // カテゴリIDを取得（"AI Review"カテゴリ）
+            let categoryId = repoData.repository.discussionCategories.nodes
+              .find(cat => cat.name === "AI Review")?.id;
+            
+            // カテゴリがない場合はGeneralを使用
+            if (!categoryId) {
+              categoryId = repoData.repository.discussionCategories.nodes[0]?.id;
+            }
+            
+            const title = `📤 AIレビュー v2: ${{ github.event.inputs.target_file }} (${new Date().toLocaleString('ja-JP')})`;
+            
+            const result = await github.graphql(mutation, {
+              repositoryId: repositoryId,
+              categoryId: categoryId,
+              title: title,
+              body: discussionBody
+            });
+            
+            const discussionNumber = result.createDiscussion.discussion.number;
+            const discussionUrl = result.createDiscussion.discussion.url;
+            
+            console.log(`✅ Discussion #${discussionNumber} 作成完了: ${discussionUrl}`);
+            
+            core.setOutput('discussion_number', discussionNumber);
+            core.setOutput('discussion_id', result.createDiscussion.discussion.id);
+            core.setOutput('discussion_url', discussionUrl);
+      
+      - name: "Phase 1: GPT-5 レビュー"
+        id: gpt5
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          echo "📤 GPT-5 に送信中..."
+          python3 .github/scripts/review_gpt5_round3.py "${{ github.event.inputs.target_file }}"
+      
+      - name: "GPT-5結果をDiscussionに投稿"
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const fs = require('fs');
+            const gpt5Review = fs.readFileSync('gpt5_review.txt', 'utf8');
+            
+            const mutation = `
+              mutation($discussionId: ID!, $body: String!) {
+                addDiscussionComment(input: {
+                  discussionId: $discussionId,
+                  body: $body
+                }) {
+                  comment {
+                    id
+                  }
+                }
+              }
+            `;
+            
+            const body = `## 🤖 GPT-5 レビュー
+            
+            ${gpt5Review}
+            
+            ---
+            
+            📊 進捗: 1/5 完了`;
+            
+            await github.graphql(mutation, {
+              discussionId: '${{ steps.create_discussion.outputs.discussion_id }}',
+              body: body
+            });
+      
+      - name: "Phase 2: Claude レビュー"
+        id: claude
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          echo "📤 Claude に送信中..."
+          python3 .github/scripts/review_strategic_plan_round3.py "${{ github.event.inputs.target_file }}"
+      
+      - name: "Claude結果をDiscussionに投稿"
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const fs = require('fs');
+            const claudeReview = fs.readFileSync('claude_review.txt', 'utf8');
+            
+            const mutation = `
+              mutation($discussionId: ID!, $body: String!) {
+                addDiscussionComment(input: {
+                  discussionId: $discussionId,
+                  body: $body
+                }) {
+                  comment {
+                    id
+                  }
+                }
+              }
+            `;
+            
+            const body = `## 🤖 Claude レビュー
+            
+            ${claudeReview}
+            
+            ---
+            
+            📊 進捗: 2/5 完了`;
+            
+            await github.graphql(mutation, {
+              discussionId: '${{ steps.create_discussion.outputs.discussion_id }}',
+              body: body
+            });
+      
+      - name: "Phase 3: Gemini レビュー"
+        id: gemini
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          echo "📤 Gemini に送信中..."
+          python3 .github/scripts/review_gemini_round3.py "${{ github.event.inputs.target_file }}"
+      
+      - name: "Gemini結果をDiscussionに投稿"
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const fs = require('fs');
+            const geminiReview = fs.readFileSync('gemini_review.txt', 'utf8');
+            
+            const mutation = `
+              mutation($discussionId: ID!, $body: String!) {
+                addDiscussionComment(input: {
+                  discussionId: $discussionId,
+                  body: $body
+                }) {
+                  comment {
+                    id
+                  }
+                }
+              }
+            `;
+            
+            const body = `## 🤖 Gemini レビュー
+            
+            ${geminiReview}
+            
+            ---
+            
+            📊 進捗: 3/5 完了`;
+            
+            await github.graphql(mutation, {
+              discussionId: '${{ steps.create_discussion.outputs.discussion_id }}',
+              body: body
+            });
+      
+      - name: "Phase 4: Grok レビュー"
+        id: grok
+        env:
+          GROK_API_KEY: ${{ secrets.GROK_API_KEY }}
+        run: |
+          echo "📤 Grok に送信中..."
+          python3 .github/scripts/review_grok_round3.py "${{ github.event.inputs.target_file }}"
+      
+      - name: "Grok結果をDiscussionに投稿"
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const fs = require('fs');
+            const grokReview = fs.readFileSync('grok_review.txt', 'utf8');
+            
+            const mutation = `
+              mutation($discussionId: ID!, $body: String!) {
+                addDiscussionComment(input: {
+                  discussionId: $discussionId,
+                  body: $body
+                }) {
+                  comment {
+                    id
+                  }
+                }
+              }
+            `;
+            
+            const body = `## 🤖 Grok レビュー
+            
+            ${grokReview}
+            
+            ---
+            
+            📊 進捗: 4/5 完了`;
+            
+            await github.graphql(mutation, {
+              discussionId: '${{ steps.create_discussion.outputs.discussion_id }}',
+              body: body
+            });
+      
+      - name: "Phase 5: DeepSeek レビュー"
+        id: deepseek
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+        run: |
+          echo "📤 DeepSeek に送信中..."
+          python3 .github/scripts/review_deepseek_round3.py "${{ github.event.inputs.target_file }}"
+      
+      - name: "DeepSeek結果をDiscussionに投稿"
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const fs = require('fs');
+            const deepseekReview = fs.readFileSync('deepseek_review.txt', 'utf8');
+            
+            const mutation = `
+              mutation($discussionId: ID!, $body: String!) {
+                addDiscussionComment(input: {
+                  discussionId: $discussionId,
+                  body: $body
+                }) {
+                  comment {
+                    id
+                  }
+                }
+              }
+            `;
+            
+            const body = `## 🤖 DeepSeek レビュー
+            
+            ${deepseekReview}
+            
+            ---
+            
+            📊 進捗: 5/5 完了`;
+            
+            await github.graphql(mutation, {
+              discussionId: '${{ steps.create_discussion.outputs.discussion_id }}',
+              body: body
+            });
+      
+      - name: "Phase 6: 完了通知"
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const mutation = `
+              mutation($discussionId: ID!, $body: String!) {
+                addDiscussionComment(input: {
+                  discussionId: $discussionId,
+                  body: $body
+                }) {
+                  comment {
+                    id
+                  }
+                }
+              }
+            `;
+            
+            const timestamp = new Date().toISOString();
+            
+            const body = `# 🎉 全5AIレビュー完了！
+            
+            **完了時刻:** ${timestamp}
+            **総処理時間:** 約3-5分
+            
+            ---
+            
+            ## ✅ 完了したAI
+            
+            - ✅ GPT-5 (大軍師)
+            - ✅ Claude (倫理参謀)
+            - ✅ Gemini (美的軍師)
+            - ✅ Grok (市場参謀)
+            - ✅ DeepSeek (技術軍師)
+            
+            ---
+            
+            ## 📊 次のステップ
+            
+            各AIのレビューを統合して、総合分析レポートを作成できます。
+            
+            🔱💎✨ TriHexΦ - AI協働レビュー完了 ✨💎🔱`;
+            
+            await github.graphql(mutation, {
+              discussionId: '${{ steps.create_discussion.outputs.discussion_id }}',
+              body: body
+            });
+            
+            console.log("✅ レビュー完了通知を投稿しました");
+            console.log("Discussion URL: ${{ steps.create_discussion.outputs.discussion_url }}");
+
