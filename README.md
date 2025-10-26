@@ -233,3 +233,5 @@ v3ワークフロー（Gemini APIキー修正）で再テスト
 APIキー再設定後の最終テスト（Claude + Gemini）
 
 v3ワークフローのみで最終テスト
+
+正しいモデル名（gemini-2.0-flash-exp）で最終テスト
