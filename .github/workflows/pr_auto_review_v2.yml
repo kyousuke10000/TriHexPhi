@@ -1,0 +1,161 @@
+name: 🔱 TriHexΦ PR Auto Review v2
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+
+jobs:
+  claude-review:
+    name: 🌙 Claude Review
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      
+      - name: Install dependencies
+        working-directory: ./scripts
+        run: npm install
+      
+      - name: Generate context
+        run: |
+          cat TRIHEXPHI.md > context-bootstrap.txt
+          echo "" >> context-bootstrap.txt
+          echo "---" >> context-bootstrap.txt
+          echo "" >> context-bootstrap.txt
+          cat 10_CAPTURE_MIZUKAGAMI/続きから始める.md >> context-bootstrap.txt
+      
+      - name: Get PR info
+        id: pr_info
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const pr = context.payload.pull_request;
+            const diff = await github.rest.pulls.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: pr.number,
+              mediaType: {
+                format: 'diff'
+              }
+            });
+            
+            const fs = require('fs');
+            fs.writeFileSync('pr-diff.txt', diff.data);
+            
+            core.setOutput('pr_number', pr.number);
+            core.setOutput('pr_title', pr.title);
+            core.setOutput('pr_url', pr.html_url);
+      
+      - name: Call Claude API
+        working-directory: ./scripts
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          PR_NUMBER="${{ steps.pr_info.outputs.pr_number }}"
+          PR_TITLE="${{ steps.pr_info.outputs.pr_title }}"
+          PR_URL="${{ steps.pr_info.outputs.pr_url }}"
+          
+          node call-claude-api.js \
+            --context-file ../context-bootstrap.txt \
+            --prompt "以下のPull Requestをレビューしてください。PR #${PR_NUMBER}: ${PR_TITLE}。URL: ${PR_URL}。TRIHEXPHI.mdの原則に基づいて評価し、改善提案があれば具体的に指摘してください。" \
+            > ../claude-review.md
+      
+      - name: Post Claude review
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const review = fs.readFileSync('claude-review.md', 'utf8');
+            
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.payload.pull_request.number,
+              body: `## 🌙 Claude Review\n\n${review}\n\n---\n\n*Reviewed by Claude Sonnet 4 via TriHexΦ Auto Review System v2*\n*Context: TRIHEXPHI.md + 続きから始める.md*`
+            });
+
+  gemini-review:
+    name: 💎 Gemini Review
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      
+      - name: Install dependencies
+        working-directory: ./scripts
+        run: npm install
+      
+      - name: Generate context
+        run: |
+          cat TRIHEXPHI.md > context-bootstrap.txt
+          echo "" >> context-bootstrap.txt
+          echo "---" >> context-bootstrap.txt
+          echo "" >> context-bootstrap.txt
+          cat 10_CAPTURE_MIZUKAGAMI/続きから始める.md >> context-bootstrap.txt
+      
+      - name: Get PR info
+        id: pr_info
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const pr = context.payload.pull_request;
+            const diff = await github.rest.pulls.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: pr.number,
+              mediaType: {
+                format: 'diff'
+              }
+            });
+            
+            const fs = require('fs');
+            fs.writeFileSync('pr-diff.txt', diff.data);
+            
+            core.setOutput('pr_number', pr.number);
+            core.setOutput('pr_title', pr.title);
+            core.setOutput('pr_url', pr.html_url);
+      
+      - name: Call Gemini API
+        working-directory: ./scripts
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+        run: |
+          PR_NUMBER="${{ steps.pr_info.outputs.pr_number }}"
+          PR_TITLE="${{ steps.pr_info.outputs.pr_title }}"
+          PR_URL="${{ steps.pr_info.outputs.pr_url }}"
+          
+          node call-gemini-api.js \
+            --context-file ../context-bootstrap.txt \
+            --prompt "以下のPull Requestをレビューしてください。PR #${PR_NUMBER}: ${PR_TITLE}。URL: ${PR_URL}。あなたは美的軍師(Gemini)です。技術的実現性、統合の美しさ、UI/UXの観点から評価してください。" \
+            > ../gemini-review.md
+      
+      - name: Post Gemini review
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const review = fs.readFileSync('gemini-review.md', 'utf8');
+            
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.payload.pull_request.number,
+              body: `## 💎 Gemini Review\n\n${review}\n\n---\n\n*Reviewed by Gemini 1.5 Pro via TriHexΦ Auto Review System v2*\n*Context: TRIHEXPHI.md + 続きから始める.md*`
+            });
