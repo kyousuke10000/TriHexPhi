@@ -1,0 +1,111 @@
+# TriHexΦ Cursor Notifier
+#
+# Cursorのアクションが必要なIssueが作成されたら、
+# しりゅうに通知を送ります。
+#
+# 作成: 2025-10-27
+# 承認: GPT-5（統治将軍）
+
+name: Cursor Notifier
+
+on:
+  issues:
+    types: [opened, labeled]
+
+permissions:
+  issues: write
+
+jobs:
+  notify-cursor-action:
+    if: contains(github.event.issue.labels.*.name, 'cursor-action-required')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Add notification comment
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issue = context.payload.issue;
+            
+            const comment = `## 🔔 Cursorアクション通知
+            
+@shiryu: このタスクはCursorのアクションが必要です。
+            
+**Issue**: #${issue.number}
+**タイトル**: ${issue.title}
+            
+Cursorに以下を指示してください：
+            
+1. このIssueの内容を確認
+2. 必要なアクションを実行
+3. 完了後、このIssueにコメント
+4. Issueをクローズ
+            
+---
+            
+**通知日時**: ${new Date().toISOString()}`;
+            
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issue.number,
+              body: comment
+            });
+            
+            console.log(`✅ Added notification comment to issue #${issue.number}`);
+      
+      - name: Send webhook notification (optional)
+        if: env.DISCORD_WEBHOOK_URL != ''
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: |
+          curl -X POST "$DISCORD_WEBHOOK_URL" \
+            -H "Content-Type: application/json" \
+            -d "{
+              \"content\": \"🔔 Cursorアクション必要: Issue #${{ github.event.issue.number }}\\n${{ github.event.issue.html_url }}\"
+            }"
+
+  notify-review-needed:
+    if: |
+      contains(github.event.issue.labels.*.name, 'needs-claude') ||
+      contains(github.event.issue.labels.*.name, 'needs-gemini') ||
+      contains(github.event.issue.labels.*.name, 'needs-grok') ||
+      contains(github.event.issue.labels.*.name, 'needs-deepseek') ||
+      contains(github.event.issue.labels.*.name, 'needs-gpt5')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Add review notification comment
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issue = context.payload.issue;
+            const labels = issue.labels.map(l => l.name);
+            
+            const reviewers = [];
+            if (labels.includes('needs-claude')) reviewers.push('Claude');
+            if (labels.includes('needs-gemini')) reviewers.push('Gemini');
+            if (labels.includes('needs-grok')) reviewers.push('Grok');
+            if (labels.includes('needs-deepseek')) reviewers.push('DeepSeek');
+            if (labels.includes('needs-gpt5')) reviewers.push('GPT-5');
+            
+            const comment = `## 📋 レビュー通知
+            
+@shiryu: このタスクは以下のAIのレビューが必要です：
+            
+${reviewers.map(r => `- **${r}**`).join('\n')}
+            
+Issueの本文に、各AIへの送付用テキストが用意されています。
+コピーして送付してください。
+            
+---
+            
+**通知日時**: ${new Date().toISOString()}`;
+            
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issue.number,
+              body: comment
+            });
+            
+            console.log(`✅ Added review notification to issue #${issue.number}`);
+

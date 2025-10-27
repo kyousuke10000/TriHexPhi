@@ -1,0 +1,191 @@
+# TriHexΦ Routing Rules v1.1
+# 
+# これは、ファイル配置の唯一の真実（SSOT）です。
+# Janitorは、このファイルを読んで自動でファイルを移動します。
+#
+# 更新日: 2025-10-27
+# 承認: GPT-5（統治将軍）
+
+version: 1.1
+
+# ルーティング規則
+rules:
+  # Story（物語）
+  - when:   { kind: "story", lang: "ja" }
+    target: "stories/ja/{date}_{slug}.md"
+    description: "日本語の物語・記録"
+  
+  - when:   { kind: "story", lang: "en" }
+    target: "stories/en/{date}_{slug}.md"
+    description: "英語の物語・記録"
+  
+  # Spec（仕様書）
+  - when:   { kind: "spec" }
+    target: "specs/{slug}.md"
+    description: "技術仕様書（言語不問）"
+  
+  # Decision（決定文書）
+  - when:   { kind: "decision" }
+    target: "decisions/{date}_{slug}.md"
+    description: "重要な決定の記録"
+  
+  # Log（ログ・記録）
+  - when:   { kind: "log" }
+    target: "docs/logs/{date}_{slug}.md"
+    description: "日々のログ・作業記録"
+  
+  # Summary（サマリー・要約）
+  - when:   { kind: "summary" }
+    target: "docs/summaries/{date}_{slug}.md"
+    description: "要約文書"
+  
+  # Letter（手紙・通信）
+  - when:   { kind: "letter" }
+    target: "docs/letters/{date}_{slug}.md"
+    description: "AI間の手紙・通信"
+  
+  # Doc（一般ドキュメント）
+  - when:   { kind: "doc" }
+    target: "docs/{slug}.md"
+    description: "一般ドキュメント"
+
+# 命名規則
+naming:
+  # Slug（URL安全な識別子）
+  slug_regex: "^[a-z0-9-]+$"
+  slug_max_length: 100
+  
+  # 日付形式
+  date_regex: "^20\\d{2}-\\d{2}-\\d{2}$"
+  date_format: "YYYY-MM-DD"
+  
+  # ファイル名生成ルール
+  # タイトル → slug変換:
+  # 1. 小文字化
+  # 2. 英数字以外を"-"に
+  # 3. 連続"-"を1つに
+  # 4. 前後の"-"を削除
+
+# 例外（既存構造はルール適用外）
+exceptions:
+  # 歴史的記録として保存
+  - "00_CORE/**"
+  - "10_CAPTURE_MIZUKAGAMI/**"
+  - "20_CRYSTALLIZATION_KOKUYOU/**"
+  - "30_MEMORY_SHINSEN/**"
+  - "📤Round3_全AI送付用/**"
+  - "📊REPORTS/**"
+  
+  # システムファイル
+  - ".github/**"
+  - ".vscode/**"
+  - "node_modules/**"
+  - "_inbox/README.md"  # このファイル自体は移動しない
+
+# Janitor動作設定（参照用、実際の設定はjanitor.config.yml）
+janitor:
+  # 処理対象
+  watch_paths:
+    - "_inbox/**/*.md"
+  
+  # 無視するファイル
+  ignore_patterns:
+    - "_inbox/README.md"
+    - "_inbox/.gitkeep"
+  
+  # コミットメッセージテンプレート
+  commit_message: "chore(janitor): route inbox files per trihex.routes.yml"
+
+# バリデーション設定（参照用、実際の設定はvalidate.config.yml）
+validation:
+  # 必須フィールド
+  required_fields:
+    - "kind"
+    - "lang"
+    - "date"
+    - "title"
+    - "author"
+    - "status"
+    - "visibility"
+  
+  # 許可される値
+  allowed_values:
+    kind:
+      - "story"
+      - "spec"
+      - "decision"
+      - "log"
+      - "summary"
+      - "letter"
+      - "doc"
+    
+    lang:
+      - "ja"
+      - "en"
+    
+    author:
+      - "GPT5"
+      - "Claude"
+      - "Gemini"
+      - "Grok"
+      - "DeepSeek"
+      - "Cursor"
+      - "CEO"
+    
+    status:
+      - "draft"
+      - "review"
+      - "final"
+    
+    tier:
+      - 1
+      - 2
+      - 3
+    
+    visibility:
+      - "internal"
+      - "public"
+
+# 使用例
+examples:
+  - input:
+      kind: "story"
+      lang: "ja"
+      date: "2025-10-27"
+      title: "TriHexΦモード起動の記録"
+    output: "stories/ja/2025-10-27_trihexphi-mode-activation.md"
+  
+  - input:
+      kind: "decision"
+      date: "2025-10-27"
+      title: "英訳戦略 v1.0"
+    output: "decisions/2025-10-27_english-translation-strategy-v1-0.md"
+  
+  - input:
+      kind: "spec"
+      title: "MIZUKAGAMI Memory System"
+    output: "specs/mizukagami-memory-system.md"
+
+# 変更履歴
+changelog:
+  - version: "1.1"
+    date: "2025-10-27"
+    author: "GPT5 + Cursor"
+    changes:
+      - "初版作成"
+      - "7種類のkindを定義"
+      - "既存構造の例外設定"
+      - "命名規則の明文化"
+  
+  - version: "1.0"
+    date: "2025-10-27"
+    author: "GPT5"
+    changes:
+      - "コンセプト提案"
+
+# 関連ドキュメント
+related:
+  - "decisions/DEC_2025-10-27_FS-GUARDRAILS_v1.md"
+  - "configs/janitor.config.yml"
+  - "_inbox/README.md"
+

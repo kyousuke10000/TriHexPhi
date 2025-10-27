@@ -1,0 +1,62 @@
+{
+  "TriHexΦ Frontmatter": {
+    "prefix": "trihex",
+    "body": [
+      "---",
+      "trihex:",
+      "  kind: ${1|story,spec,decision,log,summary,letter,doc|}",
+      "  lang: ${2|ja,en|}",
+      "  date: ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}",
+      "  title: \"${3:タイトル}\"",
+      "  author: ${4|GPT5,Claude,Gemini,Grok,DeepSeek,Cursor,CEO|}",
+      "  status: ${5|draft,review,final|}",
+      "  tier: ${6|1,2,3|}",
+      "  relates_to: []",
+      "  visibility: ${7|internal,public|}",
+      "  redactions: []",
+      "---",
+      "",
+      "$0"
+    ],
+    "description": "TriHexΦ frontmatter template v1.1"
+  },
+  
+  "TriHexΦ Decision": {
+    "prefix": "trihex-decision",
+    "body": [
+      "---",
+      "trihex:",
+      "  kind: decision",
+      "  lang: ${1|ja,en|}",
+      "  date: ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}",
+      "  title: \"${2:決定タイトル}\"",
+      "  author: ${3|GPT5,Claude,Gemini,Grok,DeepSeek,Cursor,CEO|}",
+      "  status: ${4|draft,review,final|}",
+      "  tier: ${5|1,2,3|}",
+      "  relates_to: []",
+      "  visibility: internal",
+      "  redactions: []",
+      "---",
+      "",
+      "# 決定文書: ${2:決定タイトル}",
+      "",
+      "$0"
+    ],
+    "description": "TriHexΦ decision template"
+  },
+  
+  "Truth-Header": {
+    "prefix": "truth-header",
+    "body": [
+      "## 🔴 Truth-Header",
+      "",
+      "```yaml",
+      "Honesty(self): ${1:85}%",
+      "Confidence: ${2|🔴 Red,🟡 Orange,🟢 Green|}",
+      "```",
+      "",
+      "$0"
+    ],
+    "description": "Truth Constitution header"
+  }
+}
