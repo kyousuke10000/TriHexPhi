@@ -4,6 +4,36 @@
 
 ---
 
+## 🎯 現在地（復帰用）
+
+**Phase**: V（拡張化・Publication準備中）  
+**最終更新**: 2025-10-28  
+**状態**: Phase IV完了、Knowledge Relay稼働準備完了
+
+### ✅ 完了事項
+
+- ✅ Phase I: 哲学構築（六螺旋・憲法・概念整合）
+- ✅ Phase II: 結晶化（TriHex構造・分類・216体系）
+- ✅ Phase III: 再構成（AI役割・ガードレール設計）
+- ✅ Phase IV: 現実化（Knowledge Relay実装）
+  - ✅ Aブロック基盤（_inbox/, routes.yml, janitor.yml）
+  - ✅ Bブロック真因AI MVP（spiral_scan.py, cause_profile.py）
+  - ✅ Knowledge Relay フロー（capture→structure→insight→memory）
+
+### 📋 次のアクション
+
+1. **初回captureログ作成**（Knowledge Relay初回実行）
+2. **Phase V公開準備**（README.md最終版、GitHub Discussions）
+3. **Tier 1英訳完了確認**（TRIHEXPHI_EN.md等）
+
+### 📚 詳細情報
+
+- [10_CAPTURE_MIZUKAGAMI/続きから始める.md](../10_CAPTURE_MIZUKAGAMI/続きから始める.md) - 詳細ダッシュボード
+- [decisions/](../decisions/) - 重要決定文書
+- [TRIHEXPHI.md](../TRIHEXPHI.md) - 憲法
+
+---
+
 ## 🎯 使い方
 
 ### 1. 新規ログの作成
