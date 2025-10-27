@@ -157,7 +157,7 @@ jobs:
       - name: Call Gemini API
         working-directory: ./scripts
         env:
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
           PR_NUMBER="${{ steps.pr_info.outputs.pr_number }}"
           PR_TITLE="${{ steps.pr_info.outputs.pr_title }}"
