@@ -1,0 +1,201 @@
+name: 🔱 TriHexΦ PR Auto Review v4 (Bootstrap)
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+
+jobs:
+  generate-context:
+    name: 📚 Generate Context (Bootstrap)
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      
+      - name: Install dependencies
+        working-directory: ./scripts
+        run: npm install
+      
+      - name: Generate context with Bootstrap
+        run: |
+          npx tsx scripts/memory-injector.bootstrap.ts all code-review
+          
+          # 確認
+          if [ -f "context-bootstrap.txt" ]; then
+            echo "✅ Context generated successfully"
+            echo "Size: $(wc -c < context-bootstrap.txt) bytes"
+            echo "Lines: $(wc -l < context-bootstrap.txt) lines"
+          else
+            echo "❌ Context generation failed"
+            exit 1
+          fi
+      
+      - name: Upload context artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: context-bootstrap
+          path: context-bootstrap.txt
+          retention-days: 1
+
+  claude-review:
+    name: 🌙 Claude Review
+    runs-on: ubuntu-latest
+    needs: generate-context
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      
+      - name: Install dependencies
+        working-directory: ./scripts
+        run: npm install
+      
+      - name: Download context artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: context-bootstrap
+      
+      - name: Get PR info
+        id: pr_info
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const pr = context.payload.pull_request;
+            const diff = await github.rest.pulls.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: pr.number,
+              mediaType: {
+                format: 'diff'
+              }
+            });
+            
+            const fs = require('fs');
+            fs.writeFileSync('pr-diff.txt', diff.data);
+            
+            core.setOutput('pr_number', pr.number);
+            core.setOutput('pr_title', pr.title);
+            core.setOutput('pr_url', pr.html_url);
+      
+      - name: Call Claude API
+        working-directory: ./scripts
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          PR_NUMBER="${{ steps.pr_info.outputs.pr_number }}"
+          PR_TITLE="${{ steps.pr_info.outputs.pr_title }}"
+          PR_URL="${{ steps.pr_info.outputs.pr_url }}"
+          
+          node call-claude-api.js \
+            --context-file ../context-bootstrap.txt \
+            --prompt "以下のPull Requestをレビューしてください。PR #${PR_NUMBER}: ${PR_TITLE}。URL: ${PR_URL}。TRIHEXPHI.mdの原則に基づいて評価し、改善提案があれば具体的に指摘してください。" \
+            > ../claude-review.md
+      
+      - name: Post Claude review
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const review = fs.readFileSync('claude-review.md', 'utf8');
+            
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.payload.pull_request.number,
+              body: `## 🌙 Claude（統合諜報将軍）Review\n\n${review}\n\n---\n\n*Reviewed by Claude Sonnet 4*\n*Context: Bootstrap v0.0.1 (TRIHEXPHI.md + 続きから始める.md)*\n*Generated: ${new Date().toISOString()}*`
+            });
+
+  gemini-review:
+    name: 💎 Gemini Review
+    runs-on: ubuntu-latest
+    needs: generate-context
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      
+      - name: Install dependencies
+        working-directory: ./scripts
+        run: npm install
+      
+      - name: Download context artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: context-bootstrap
+      
+      - name: Get PR info
+        id: pr_info
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const pr = context.payload.pull_request;
+            core.setOutput('pr_number', pr.number);
+            core.setOutput('pr_title', pr.title);
+            core.setOutput('pr_url', pr.html_url);
+      
+      - name: Call Gemini API
+        working-directory: ./scripts
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          PR_NUMBER="${{ steps.pr_info.outputs.pr_number }}"
+          PR_TITLE="${{ steps.pr_info.outputs.pr_title }}"
+          PR_URL="${{ steps.pr_info.outputs.pr_url }}"
+          
+          node call-gemini-api.js \
+            --context-file ../context-bootstrap.txt \
+            --prompt "以下のPull Requestをレビューしてください。PR #${PR_NUMBER}: ${PR_TITLE}。URL: ${PR_URL}。TRIHEXPHI.mdの原則に基づいて、特にUI/UX、統合性、美的観点から評価してください。" \
+            > ../gemini-review.md
+      
+      - name: Post Gemini review
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const review = fs.readFileSync('gemini-review.md', 'utf8');
+            
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.payload.pull_request.number,
+              body: `## 💎 Gemini（統合体験将軍）Review\n\n${review}\n\n---\n\n*Reviewed by Gemini 2.0 Flash*\n*Context: Bootstrap v0.0.1 (TRIHEXPHI.md + 続きから始める.md)*\n*Generated: ${new Date().toISOString()}*`
+            });
+
+  summary:
+    name: 📊 Review Summary
+    runs-on: ubuntu-latest
+    needs: [claude-review, gemini-review]
+    
+    steps:
+      - name: Post summary
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.payload.pull_request.number,
+              body: `## 🔱 TriHexΦ Auto Review Complete\n\n✅ Claude（統合諜報将軍）: 徹底的リサーチ完了\n✅ Gemini（統合体験将軍）: 体験設計評価完了\n\n---\n\n*Powered by TriHexΦ Bootstrap v0.0.1*\n*Next: 他のAI（Grok, DeepSeek, GPT-5）は手動レビュー*`
+            });
+
