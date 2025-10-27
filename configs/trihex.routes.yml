@@ -1,12 +1,11 @@
-# TriHexΦ Routing Rules v1.1
+# TriHexΦ Routing Rules v1.2
 # 
-# これは、ファイル配置の唯一の真実（SSOT）です。
-# Janitorは、このファイルを読んで自動でファイルを移動します。
-#
-# 更新日: 2025-10-27
+# Knowledge Relay × A/B基盤統合版
+# 
+# 更新日: 2025-10-28
 # 承認: GPT-5（統治将軍）
 
-version: 1.1
+version: 1.2
 
 # ルーティング規則
 rules:
@@ -29,10 +28,10 @@ rules:
     target: "decisions/{date}_{slug}.md"
     description: "重要な決定の記録"
   
-  # Log（ログ・記録）
+  # Log（ログ・一次記録） - NEW
   - when:   { kind: "log" }
-    target: "docs/logs/{date}_{slug}.md"
-    description: "日々のログ・作業記録"
+    target: "capture/{date}_{slug}.md"
+    description: "Cursor一次ログ（GPT構造化の入力）"
   
   # Summary（サマリー・要約）
   - when:   { kind: "summary" }
@@ -49,6 +48,51 @@ rules:
     target: "docs/{slug}.md"
     description: "一般ドキュメント"
 
+# Knowledge Relay フロー（自動移送ルール）
+knowledge_relay:
+  # Step 1: Capture（Cursor一次記録）
+  capture:
+    source: "capture/"
+    trigger: "GPT-5 review"
+    action: "structure化依頼Issue生成"
+  
+  # Step 2: Structure（GPT構造化）
+  structure:
+    source: "structure/"
+    trigger: "構造化完了"
+    action: "各AI専門家に振り分け"
+    targets:
+      - "insight/ethics/"    # Claude
+      - "insight/beauty/"    # Gemini
+      - "insight/strategy/"  # Grok
+      - "insight/tech/"      # DeepSeek
+  
+  # Step 3: Insight（専門家深化）
+  insight:
+    sources:
+      - "insight/ethics/"
+      - "insight/beauty/"
+      - "insight/strategy/"
+      - "insight/tech/"
+    trigger: "status: final"
+    action: "memory/へ永続化"
+  
+  # Step 4: Memory（MIZUKAGAMI永続化）
+  memory:
+    source: "memory/"
+    sync_to: "MIZUKAGAMI/Supabase"
+    retention: "永続"
+
+# Bブロック統合（六螺旋スキャン）
+spiral_scan:
+  input: "capture/"
+  tool: "tools/spiral_scan.py"
+  output: "structure/"
+  metadata:
+    - "spiral_scores"    # 六螺旋スコア
+    - "cause_profile"    # 真因プロファイル
+    - "phase_position"   # 位相
+
 # 命名規則
 naming:
   # Slug（URL安全な識別子）
@@ -58,13 +102,6 @@ naming:
   # 日付形式
   date_regex: "^20\\d{2}-\\d{2}-\\d{2}$"
   date_format: "YYYY-MM-DD"
-  
-  # ファイル名生成ルール
-  # タイトル → slug変換:
-  # 1. 小文字化
-  # 2. 英数字以外を"-"に
-  # 3. 連続"-"を1つに
-  # 4. 前後の"-"を削除
 
 # 例外（既存構造はルール適用外）
 exceptions:
@@ -80,7 +117,7 @@ exceptions:
   - ".github/**"
   - ".vscode/**"
   - "node_modules/**"
-  - "_inbox/README.md"  # このファイル自体は移動しない
+  - "_inbox/README.md"
 
 # Janitor動作設定（参照用、実際の設定はjanitor.config.yml）
 janitor:
@@ -92,11 +129,9 @@ janitor:
   ignore_patterns:
     - "_inbox/README.md"
     - "_inbox/.gitkeep"
-  
-  # コミットメッセージテンプレート
-  commit_message: "chore(janitor): route inbox files per trihex.routes.yml"
+    - "_inbox/.DS_Store"
 
-# バリデーション設定（参照用、実際の設定はvalidate.config.yml）
+# バリデーション設定
 validation:
   # 必須フィールド
   required_fields:
@@ -106,7 +141,6 @@ validation:
     - "title"
     - "author"
     - "status"
-    - "visibility"
   
   # 許可される値
   allowed_values:
@@ -114,7 +148,7 @@ validation:
       - "story"
       - "spec"
       - "decision"
-      - "log"
+      - "log"        # NEW
       - "summary"
       - "letter"
       - "doc"
@@ -136,56 +170,58 @@ validation:
       - "draft"
       - "review"
       - "final"
-    
-    tier:
-      - 1
-      - 2
-      - 3
-    
-    visibility:
-      - "internal"
-      - "public"
 
-# 使用例
+# 運用戒律（抜粋）
+operations:
+  rules:
+    - "新規は全部 _inbox/（迷ったら置く、考えず置く）"
+    - "frontmatter必須（Route可能性＝哲学のタグ化）"
+    - "Janitor警告は味方（怒らない・直す・進む）"
+    - "status=final のみ memory へ（可逆性を担保）"
+
+# 使用例（拡張版）
 examples:
   - input:
-      kind: "story"
+      kind: "log"
       lang: "ja"
-      date: "2025-10-27"
-      title: "TriHexΦモード起動の記録"
-    output: "stories/ja/2025-10-27_trihexphi-mode-activation.md"
+      date: "2025-10-28"
+      title: "Phase 1-B実装記録"
+    output: "capture/2025-10-28_phase-1-b-implementation.md"
+    next_step: "GPT-5構造化 → structure/"
   
   - input:
       kind: "decision"
-      date: "2025-10-27"
-      title: "英訳戦略 v1.0"
-    output: "decisions/2025-10-27_english-translation-strategy-v1-0.md"
+      date: "2025-10-28"
+      title: "Knowledge Relay v1.0"
+    output: "decisions/2025-10-28_knowledge-relay-v1-0.md"
   
   - input:
       kind: "spec"
-      title: "MIZUKAGAMI Memory System"
-    output: "specs/mizukagami-memory-system.md"
+      title: "Spiral Scan Tool Specification"
+    output: "specs/spiral-scan-tool-specification.md"
 
 # 変更履歴
 changelog:
+  - version: "1.2"
+    date: "2025-10-28"
+    author: "GPT5 + Cursor"
+    changes:
+      - "Knowledge Relay統合"
+      - "Bブロック（六螺旋スキャン）追加"
+      - "capture/structure/insight/memory/ フロー定義"
+      - "kind: log 追加"
+      - "運用戒律の明文化"
+  
   - version: "1.1"
     date: "2025-10-27"
     author: "GPT5 + Cursor"
     changes:
       - "初版作成"
       - "7種類のkindを定義"
-      - "既存構造の例外設定"
-      - "命名規則の明文化"
-  
-  - version: "1.0"
-    date: "2025-10-27"
-    author: "GPT5"
-    changes:
-      - "コンセプト提案"
 
 # 関連ドキュメント
 related:
   - "decisions/DEC_2025-10-27_FS-GUARDRAILS_v1.md"
   - "configs/janitor.config.yml"
   - "_inbox/README.md"
-
+  - "tools/README.md"  # NEW
