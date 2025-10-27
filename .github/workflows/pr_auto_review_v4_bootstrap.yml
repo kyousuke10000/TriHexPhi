@@ -24,12 +24,12 @@ jobs:
           node-version: '18'
       
       - name: Install dependencies
-        working-directory: ./Scripts
+        working-directory: ./scripts
         run: npm install
       
       - name: Generate context with Bootstrap
         run: |
-          npx tsx Scripts/memory-injector.bootstrap.ts all code-review
+          npx tsx scripts/memory-injector.bootstrap.ts all code-review
           
           # 確認
           if [ -f "context-bootstrap.txt" ]; then
@@ -63,7 +63,7 @@ jobs:
           node-version: '18'
       
       - name: Install dependencies
-        working-directory: ./Scripts
+        working-directory: ./scripts
         run: npm install
       
       - name: Download context artifact
@@ -94,7 +94,7 @@ jobs:
             core.setOutput('pr_url', pr.html_url);
       
       - name: Call Claude API
-        working-directory: ./Scripts
+        working-directory: ./scripts
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
@@ -136,7 +136,7 @@ jobs:
           node-version: '18'
       
       - name: Install dependencies
-        working-directory: ./Scripts
+        working-directory: ./scripts
         run: npm install
       
       - name: Download context artifact
@@ -155,7 +155,7 @@ jobs:
             core.setOutput('pr_url', pr.html_url);
       
       - name: Call Gemini API
-        working-directory: ./Scripts
+        working-directory: ./scripts
         env:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
         run: |
