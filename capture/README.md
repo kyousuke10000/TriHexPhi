@@ -28,6 +28,7 @@
 
 ### 📚 詳細情報
 
+- [📋 TriHexΦ全体像まとめ](./2025-10-28_TriHexΦ全体像まとめ.md) - **まずこれを読む！全てが統合されている**
 - [10_CAPTURE_MIZUKAGAMI/続きから始める.md](../10_CAPTURE_MIZUKAGAMI/続きから始める.md) - 詳細ダッシュボード
 - [decisions/](../decisions/) - 重要決定文書
 - [TRIHEXPHI.md](../TRIHEXPHI.md) - 憲法
