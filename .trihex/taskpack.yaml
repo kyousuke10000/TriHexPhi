@@ -1,0 +1,60 @@
+# TriHexΦ タスクパケット
+# 統一フォーマット v1.0
+
+task_id: TRX-2025-10-27-001
+objective: >
+  Track-B SENSE AIの診断コア（質問→タイプ推定）MVP設計
+
+constraints:
+  - 憲法v0.9準拠（Truth-Header必須）
+  - 7日以内にユーザーテスト可能
+  - 既存Supabase最小スキーマを流用
+
+inputs:
+  - TRIHEXPHI.md: focus on clauses 0-3, 7
+  - 続きから始める.md: latest state
+  - 診断ツール_ディープリサーチ_GPT5_2025-10-27.md
+
+deliverables:
+  - SPEC_SENSE_AI_v0.2.md（構成・質問群・推定ロジック）
+  - prompts/sense/diagnosis.prompt.md（プロンプト）
+  - ui/wireframes/png（3枚）
+
+reviewers:
+  - GPT-5 (final integration)
+  - Claude (ethics & evidence)
+  - Gemini (UX)
+
+truth_header_required: true
+deadline: 2025-10-30T23:59:59+09:00
+
+---
+
+# 次のタスク候補（Phase 2）
+
+task_id: TRX-2025-10-28-001
+objective: >
+  Track-A 真の原因AI コア推論エンジンv0.1設計
+
+constraints:
+  - 憲法v0.9準拠
+  - SENSE AIと技術基盤を共有
+  - 10日以内にプロトタイプ
+
+inputs:
+  - TRIHEXPHI.md: focus on 真の原因AI設計
+  - 第8ラウンド_完全統合レポート_GPT5版
+
+deliverables:
+  - SPEC_TRUE_CAUSE_CORE_v0.1.md
+  - 質問ツリー設計
+  - 根因グラフ（因果Graph）骨格
+
+reviewers:
+  - GPT-5 (統合)
+  - DeepSeek (最適化)
+  - Claude (倫理)
+
+truth_header_required: true
+deadline: 2025-11-07T23:59:59+09:00
+
