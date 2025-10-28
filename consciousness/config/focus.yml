@@ -1,0 +1,68 @@
+# Focus Configuration
+#
+# 現在のフォーカス設定（しりゅうが設定）
+#
+# @author しりゅう & Cursor
+# @date 2025-10-29
+
+# 現在のフォーカス
+current_focus:
+  primary: "CHL実装"
+  secondary:
+    - "第4ラウンド（役職再定義）"
+    - "ΦDRIVE MVP実装準備"
+  
+  mode: "focused"  # 'diffusion' | 'focused'（Gemini提案）
+  
+  updated_at: "2025-10-29T12:10:00Z"
+  updated_by: "しりゅう"
+
+# フォーカス履歴
+focus_history:
+  - date: "2025-10-29T10:00:00Z"
+    primary: "第3ラウンド完了"
+    mode: "focused"
+    result: "全員10.0/10点達成"
+    
+  - date: "2025-10-29T12:00:00Z"
+    primary: "第4ラウンド準備"
+    mode: "diffusion"
+    result: "質問文完成、送信完了"
+    
+  - date: "2025-10-29T12:10:00Z"
+    primary: "CHL実装"
+    mode: "focused"
+    result: "基盤構築中"
+
+# モード設定
+mode_settings:
+  diffusion:
+    description: "🌀 拡散モード（アイデア出し）"
+    ai_parameters:
+      temperature: 0.8
+      context_window: "wide"
+      response_length: "detailed"
+      creativity: "high"
+    
+  focused:
+    description: "🎯 集中モード（実装）"
+    ai_parameters:
+      temperature: 0.3
+      context_window: "narrow"
+      response_length: "concise"
+      creativity: "low"
+      focus_relevance: "strict"
+
+# 週次目標（Claude提案: 方向性の調律）
+weekly_goals:
+  week: "2025-W44"
+  goals:
+    - "CHL実装完了"
+    - "第4ラウンド完了（役職再定義）"
+    - "ΦDRIVE MVP基盤構築"
+  
+  priorities:
+    1: "CHL実装（最優先）"
+    2: "第4ラウンド分析"
+    3: "Windows並列環境準備"
+
