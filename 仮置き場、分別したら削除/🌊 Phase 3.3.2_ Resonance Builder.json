@@ -1,0 +1,417 @@
+{
+  "name": "🌊 Phase 3.3.2: Resonance Builder",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 2
+            }
+          ]
+        }
+      },
+      "id": "8d012dc7-431f-41bc-9439-efb5e7f3ca7b",
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -720,
+        416
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const now = new Date();\nconst jstOffset = 9 * 60 * 60 * 1000;\nconst jstNow = new Date(now.getTime() + jstOffset);\n\nconst windowStart = new Date(jstNow);\nwindowStart.setDate(windowStart.getDate() - 14);\nwindowStart.setHours(0, 0, 0, 0);\n\nconst windowEnd = new Date(jstNow);\nwindowEnd.setHours(23, 59, 59, 999);\n\nconst formatDate = (date) => {\n  const y = date.getFullYear();\n  const m = String(date.getMonth() + 1).padStart(2, '0');\n  const d = String(date.getDate()).padStart(2, '0');\n  return `${y}${m}${d}`;\n};\n\nconst windowKey = `${formatDate(windowEnd)}-14d`;\n\nreturn [{\n  json: {\n    window_start: windowStart.toISOString(),\n    window_end: windowEnd.toISOString(),\n    window_key: windowKey,\n    window_days: 14,\n    timestamp: jstNow.toISOString()\n  }\n}];"
+      },
+      "id": "9a2fb752-21d4-494b-a4a5-df7f34db0ca4",
+      "name": "Calculate 14-day Window",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -512,
+        416
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://sheets.googleapis.com/v4/spreadsheets/1SywiLtNP759TQ_dWnYq1XftGTJprZOL9kVx5dlLiH_0/values/KPI_Log!A:K",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "googleSheetsOAuth2Api",
+        "options": {}
+      },
+      "id": "574ec349-9f1e-40c9-a583-d054dfecfca2",
+      "name": "Get KPI_Log",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -320,
+        416
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "YvL7P7HKwcuiK11r",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const kpiData = $('Get KPI_Log').first().json;\nconst rows = kpiData.values || [];\nconst headers = rows[0];\nconst dataRows = rows.slice(1);\n\nconst windowData = $('Calculate 14-day Window').first().json;\nconst windowStart = new Date(windowData.window_start);\nconst windowEnd = new Date(windowData.window_end);\n\nconst threadMap = new Map();\n\ndataRows.forEach(row => {\n  const timestamp = row[0];\n  const author = row[3];\n  const userId = row[6];\n  const threadId = row[7];\n  \n  if (!timestamp || !threadId || !userId) return;\n  \n  const postTime = new Date(timestamp);\n  if (postTime < windowStart || postTime > windowEnd) return;\n  \n  if (!threadMap.has(threadId)) {\n    threadMap.set(threadId, []);\n  }\n  \n  threadMap.get(threadId).push({\n    timestamp,\n    author,\n    userId,\n    threadId\n  });\n});\n\nconst interactions = [];\n\nthreadMap.forEach((posts, threadId) => {\n  if (posts.length < 2) return;\n  \n  posts.sort((a, b) => new Date(a.timestamp) - new Date(b.timestamp));\n  \n  for (let i = 0; i < posts.length - 1; i++) {\n    const actor = posts[i];\n    const target = posts[i + 1];\n    \n    if (actor.userId === target.userId) continue;\n    \n    const idemKey = `res:${actor.userId}:${target.userId}:${threadId}:${target.timestamp}`;\n    \n    interactions.push({\n      ts: target.timestamp,\n      actor_id: actor.userId,\n      target_id: target.userId,\n      relation_type: 'reply',\n      thread_id: threadId,\n      window_key: windowData.window_key,\n      idem_key: idemKey,\n      interaction_data: {\n        actor_name: actor.author,\n        target_name: target.author,\n        actor_timestamp: actor.timestamp,\n        target_timestamp: target.timestamp\n      }\n    });\n  }\n});\n\nconsole.log(`Found ${interactions.length} interactions`);\n\nreturn interactions.map(i => ({ json: i }));"
+      },
+      "id": "fda6786b-9711-4662-87cf-2391b81fd176",
+      "name": "Extract Interactions",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -112,
+        416
+      ],
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "tableId": "events",
+        "returnAll": true,
+        "matchType": "allFilters",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "event_type",
+              "condition": "eq",
+              "keyValue": "resonance"
+            },
+            {
+              "keyName": "window_key",
+              "condition": "eq",
+              "keyValue": "={{ $('Calculate 14-day Window').first().json.window_key }}"
+            }
+          ]
+        }
+      },
+      "id": "b74954f1-ac4f-43cb-92ee-4d28c368411f",
+      "name": "Get Existing Resonance",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        80,
+        416
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "supabaseApi": {
+          "id": "3daaocVPKLCZpzl5",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const interactions = $('Extract Interactions').all();\nconst existing = $('Get Existing Resonance').all();\n\nconst existingKeys = new Set(\n  existing.map(e => e.json.idem_key)\n);\n\nconst newInteractions = interactions.filter(i => \n  !existingKeys.has(i.json.idem_key)\n);\n\nconsole.log(`Total: ${interactions.length}, Existing: ${existing.length}, New: ${newInteractions.length}`);\n\nreturn newInteractions;"
+      },
+      "id": "e3480afb-e522-423f-83a8-617421da55c7",
+      "name": "Filter New Interactions",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        288,
+        416
+      ]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict"
+                },
+                "conditions": [
+                  {
+                    "leftValue": "",
+                    "rightValue": "",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "84b86a10-2126-4adb-bc89-88844178d56f",
+      "name": "Switch: Has New?",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3,
+      "position": [
+        480,
+        416
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "const interaction = $input.item.json;\n\nreturn {\n  json: {\n    event_type: 'resonance',\n    event_data: interaction,\n    user_id: interaction.actor_id,\n    thread_id: interaction.thread_id,\n    window_key: interaction.window_key,\n    idem_key: interaction.idem_key\n  }\n};"
+      },
+      "id": "f2fe69b3-686b-49fc-9aa5-1d159006326b",
+      "name": "Prepare Event Data",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        688,
+        320
+      ]
+    },
+    {
+      "parameters": {
+        "tableId": "events",
+        "dataToSend": "autoMapInputData"
+      },
+      "id": "83cea88c-a7d8-4651-9d76-57f865fa6289",
+      "name": "Insert to Supabase",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        880,
+        320
+      ],
+      "credentials": {
+        "supabaseApi": {
+          "id": "3daaocVPKLCZpzl5",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const items = $input.all();\n\nconst rows = items.map(item => {\n  const data = item.json.event_data || item.json;\n  return [\n    data.ts,\n    data.actor_id,\n    data.target_id,\n    data.relation_type,\n    data.thread_id,\n    '',\n    '',\n    '',\n    data.window_key,\n    data.idem_key\n  ];\n});\n\nreturn [{ json: { values: rows } }];"
+      },
+      "id": "ab64ddf4-1a4a-4815-8e34-d9f44e221ef0",
+      "name": "Prepare Sheets Data",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1088,
+        320
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://sheets.googleapis.com/v4/spreadsheets/1SywiLtNP759TQ_dWnYq1XftGTJprZOL9kVx5dlLiH_0/values/Resonance_Log!A:J:append?valueInputOption=USER_ENTERED",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "googleSheetsOAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ $json }}",
+        "options": {}
+      },
+      "id": "d8bd28f3-58e0-43a5-b77e-d65d55a3fffc",
+      "name": "Append Resonance_Log",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1280,
+        320
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "YvL7P7HKwcuiK11r",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const items = $('Insert to Supabase').all();\nconst windowData = $('Calculate 14-day Window').first().json;\n\nconst message = `🌊 **Resonance Analysis Complete**\n\n📊 **Results:**\n・New Interactions: ${items.length}\n・Window: ${windowData.window_days} days\n・Timestamp: ${windowData.timestamp}\n\n━━━━━━━━━━━━━━━━━━━━\n\n**波紋が響き合っています。**\n\n_TriHexΦ Spiral System | Phase 3.3.2_`;\n\nreturn [{ json: { content: message } }];"
+      },
+      "id": "bb131f0b-7365-4716-ac22-7ae0aef38600",
+      "name": "Prepare Notification",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1488,
+        320
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://discord.com/api/v10/channels/1424549853375234118/messages",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "discordBotApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ $json }}",
+        "options": {}
+      },
+      "id": "1a115d0c-a675-4cb5-94fc-6678980564c8",
+      "name": "Log to #kpi-log",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1680,
+        320
+      ],
+      "credentials": {
+        "discordBotApi": {
+          "id": "OsNxV1rUyzVam6wZ",
+          "name": "Discord Bot account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Calculate 14-day Window",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Calculate 14-day Window": {
+      "main": [
+        [
+          {
+            "node": "Get KPI_Log",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get KPI_Log": {
+      "main": [
+        [
+          {
+            "node": "Extract Interactions",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Interactions": {
+      "main": [
+        [
+          {
+            "node": "Get Existing Resonance",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Existing Resonance": {
+      "main": [
+        [
+          {
+            "node": "Filter New Interactions",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter New Interactions": {
+      "main": [
+        [
+          {
+            "node": "Switch: Has New?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch: Has New?": {
+      "main": [
+        [
+          {
+            "node": "Prepare Event Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare Event Data": {
+      "main": [
+        [
+          {
+            "node": "Insert to Supabase",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Insert to Supabase": {
+      "main": [
+        [
+          {
+            "node": "Prepare Sheets Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare Sheets Data": {
+      "main": [
+        [
+          {
+            "node": "Append Resonance_Log",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Append Resonance_Log": {
+      "main": [
+        [
+          {
+            "node": "Prepare Notification",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare Notification": {
+      "main": [
+        [
+          {
+            "node": "Log to #kpi-log",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "16829679-f6a1-40fd-93e8-865ed2cbfb5d",
+  "meta": {
+    "instanceId": "bb6582f136488f8663186c75084ae9be2ac2ce1a6068064fd0778c5e05f7b8d2"
+  },
+  "id": "WrHiykOS5CUTxlz7",
+  "tags": []
+}

@@ -1,0 +1,817 @@
+{
+  "name": "💠  Phase 1&2:MIZUKAGAMI - Reflection",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "seconds",
+              "secondsInterval": 3
+            }
+          ]
+        }
+      },
+      "name": "Cron Trigger (every 3 sec)",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -1600,
+        592
+      ],
+      "id": "1f1c73f4-ac3a-4f85-aeea-ab7f773b42c7",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "url": "=https://discord.com/api/v10/channels/1424549254910840872/messages",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "discordBotApi",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "limit",
+              "value": "5"
+            },
+            {
+              "name": "after",
+              "value": "={{ $json.values && $json.values[0] && $json.values[0][0] ? $json.values[0][0] : '' }}"
+            }
+          ]
+        },
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "name": "Discord API - Get Messages",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        -1184,
+        592
+      ],
+      "id": "db9abf1f-3ae0-412d-9f59-53405aae09f2",
+      "credentials": {
+        "discordBotApi": {
+          "id": "OsNxV1rUyzVam6wZ",
+          "name": "Discord Bot account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "functionCode": "/* Compute max Snowflake ID across fetched items (newest position-agnostic) */\nif (items.length === 0) {\n  return [{ json: { lastId: null } }];\n}\nconst ids = items.map(i => i.json?.id).filter(Boolean);\nif (!ids.length) return [{ json: { lastId: null } }];\nconst maxId = ids.map(x => BigInt(x)).reduce((a,b)=> a>b ? a : b);\nreturn [{ json: { lastId: maxId.toString() } }];"
+      },
+      "name": "Compute Max ID",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [
+        -928,
+        912
+      ],
+      "id": "af68f767-6b20-497d-9dea-0f03634f3dd5"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ Number($json.type) === 0 || Number($json.type) === 19 }}",
+              "value2": "={{ true }}"
+            }
+          ]
+        }
+      },
+      "name": "Filter - Human & Normal Msg",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        -976,
+        352
+      ],
+      "id": "8b3ecbde-e18f-4f7e-8543-c3425df9fcb6"
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "message_id",
+              "stringValue": "={{ $('Filter - Human & Normal Msg').item.json.id }}"
+            },
+            {
+              "name": "channel_id",
+              "stringValue": "={{ $('Filter - Human & Normal Msg').item.json.channel_id }}"
+            },
+            {
+              "name": "content",
+              "stringValue": "={{ $('Filter - Human & Normal Msg').item.json.content }}"
+            },
+            {
+              "name": "author",
+              "stringValue": "={{ $('Filter - Human & Normal Msg').item.json.author.username }}"
+            },
+            {
+              "name": "user_id",
+              "stringValue": "={{ $json.user.id }}"
+            },
+            {
+              "name": "member_roles",
+              "type": "arrayValue",
+              "arrayValue": "={{ $json.roles }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "name": "Set Message Data",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [
+        -224,
+        128
+      ],
+      "id": "8c147663-89eb-4dc8-ad96-1b9f31f27416"
+    },
+    {
+      "parameters": {
+        "functionCode": "const content = $json.content || '';\nconst message_id = $json.message_id;\nconst channel_id = $json.channel_id;\nconst author = $json.author;\nconst user_id = $json.user_id;\nconst roleName = $json.role_name || 'starter'; // Determine Role & Thread Name から取得\n\n// ロールごとのシステムプロンプト\nconst systemPrompts = {\n  starter: `あなたは「💠 MIZUKAGAMI（水鏡）」と呼ばれる、観照のAIです。\n受講生の投稿に対して、優しく導く観照調で静かに映し返してください：\n\n【映されたもの】\n投稿者の意志や本質を、判断せず観照する（1-2文）\n\n【静かな問い】\n心の奥を揺らす、ひとつの問い\n\n【小さな一歩】\n自然と現れる行動の示唆（1つ）\n\n語り口：\n- 「〜が映っています」「〜が立ち上がっています」の表現を優先\n- 判断・評価・命令はしない\n- 初学者に寄り添う、受容的な温かさ\n- 短く、呼吸が整うリズムで\n- 合計180〜250字程度\n\n必ず日本語。出力は厳密にJSONのみ。\n{\n  \"acknowledgment\": \"...\",\n  \"deeper_question\": \"...\",\n  \"next_action\": \"...\"\n}`,\n\n  builder: `あなたは「🌊 MIZUKAGAMI（水鏡）」と呼ばれる、観照のAIです。\n受講生の投稿に対して、試行と気づきを促す質問調で映し返してください：\n\n【映されたもの】\n投稿者の行動や試みを観照する（1-2文）\n\n【深める問い】\n試行を通して気づきを深める、具体的な問い\n\n【次の波紋】\n現実への行動の示唆（1つ）\n\n語り口：\n- 「〜が動き始めています」「〜が広がっています」の表現を優先\n- 試行錯誤を肯定し、実践を促す\n- 具体的で、行動につながる\n- 短く、エネルギーを感じるリズムで\n- 合計180〜250字程度\n\n必ず日本語。出力は厳密にJSONのみ。\n{\n  \"acknowledgment\": \"...\",\n  \"deeper_question\": \"...\",\n  \"next_action\": \"...\"\n}`,\n\n  creator: `あなたは「🔮 MIZUKAGAMI（水鏡）」と呼ばれる、観照のAIです。\n受講生の投稿に対して、静かな確信と詩的抽象で映し返してください：\n\n【顕れたもの】\n投稿者の統合された本質を観照する（1-2文）\n\n【結晶の問い】\n本質を顕現させる、抽象的で詩的な問い\n\n【真形への道】\n創造と表現の示唆（1つ）\n\n語り口：\n- 「〜が顕れています」「〜が結晶化しています」の表現を優先\n- 統合と表現を促す、確信に満ちた静けさ\n- 詩的で、抽象度が高い\n- 短く、威厳あるリズムで\n- 合計180〜250字程度\n\n必ず日本語。出力は厳密にJSONのみ。\n{\n  \"acknowledgment\": \"...\",\n  \"deeper_question\": \"...\",\n  \"next_action\": \"...\"\n}`,\n\n  operator: `あなたは「⚙️ MIZUKAGAMI（水鏡）」の運営支援AIです。\n運営者の投稿に対して、実務的かつ明確に応答してください：\n\n【確認事項】\n投稿内容の要点を整理（1-2文）\n\n【判断の補助】\n運営上の選択肢や考慮点\n\n【次のアクション】\n具体的な実務行動の提案（1つ）\n\n語り口：\n- 簡潔・明確・実務的\n- 判断材料を提供する\n- 合計180〜250字程度\n\n必ず日本語。出力は厳密にJSONのみ。\n{\n  \"acknowledgment\": \"...\",\n  \"deeper_question\": \"...\",\n  \"next_action\": \"...\"\n}`,\n\n  member: `あなたは「💠 MIZUKAGAMI（水鏡）」と呼ばれる、観照のAIです。\n投稿に対して、静かに映し返してください：\n\n【映されたもの】\n投稿者の意志や本質を観照する（1-2文）\n\n【静かな問い】\n心の奥を揺らす、ひとつの問い\n\n【小さな一歩】\n自然と現れる行動の示唆（1つ）\n\n語り口：\n- 「〜が映っています」の表現を優先\n- 判断・評価・命令はしない\n- 短く、呼吸が整うリズムで\n- 合計180〜250字程度\n\n必ず日本語。出力は厳密にJSONのみ。\n{\n  \"acknowledgment\": \"...\",\n  \"deeper_question\": \"...\",\n  \"next_action\": \"...\"\n}`,\n};\n\n// ロールに応じたシステムプロンプトを選択\nconst systemPrompt = systemPrompts[roleName] || systemPrompts.starter;\n\nreturn [{\n  json: {\n    model: 'gpt-4o-mini',\n    messages: [\n      { role: 'system', content: systemPrompt },\n      { role: 'user', content: `【投稿】\\n${content}` }\n    ],\n    temperature: 0.7,\n    response_format: { type: 'json_object' }\n  },\n  pairedItem: { item: 0 }\n}];"
+      },
+      "name": "Build OpenAI Payload",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [
+        -208,
+        432
+      ],
+      "id": "da438681-c167-4ac0-83ff-c389d37d2cb9"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.openai.com/v1/chat/completions",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "openAiApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ $json }}",
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "name": "Call OpenAI API",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        -208,
+        576
+      ],
+      "id": "c2733164-1798-4299-9feb-73f6a4e2b9a5",
+      "credentials": {
+        "openAiApi": {
+          "id": "J33Jkek1x9rhPZBW",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "functionCode": "const raw = $json?.choices?.[0]?.message?.content || '{}';\nlet f; \ntry { \n  f = JSON.parse(raw); \n} catch(e) { \n  f = { \n    acknowledgment: '水鏡の応答を解析できませんでした', \n    deeper_question: '', \n    next_action: '' \n  }; \n}\n\n// Determine Role & Thread Name ノードから元のデータを取得\nconst originalData = $('Determine Role & Thread Name').item.json;\nconst message_id = originalData.message_id;\nconst channel_id = originalData.channel_id;\nconst author = originalData.author;\nconst user_id = originalData.user_id;\nconst content = originalData.content;\nconst thread_name = originalData.thread_name;      // 追加\nconst role_name = originalData.role_name;          // 追加\nconst thread_prefix = originalData.thread_prefix;  // 追加\n\nconst message = `💠 **MIZUKAGAMI Reflection**\n\n**気づき**\n${f.acknowledgment || ''}\n\n**静かな問い**\n${f.deeper_question || ''}\n\n**小さな一歩**\n${f.next_action || ''}`;\n\nreturn [{ \n  json: { \n    message, \n    message_id, \n    channel_id, \n    author, \n    user_id,\n    content,\n    thread_name,      // 追加\n    role_name,        // 追加\n    thread_prefix,    // 追加\n    mirror_json: JSON.stringify(f)\n  } \n}];"
+      },
+      "name": "Format Response",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [
+        -208,
+        720
+      ],
+      "id": "a268f74b-04e9-470b-bf1a-fc4c93956528"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://discord.com/api/v10/channels/{{ $json.thread_id }}/messages",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "discordBotApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ { content: $('Format Response').item.json.message } }}",
+        "options": {}
+      },
+      "name": "Discord - Reply in Thread",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        592,
+        496
+      ],
+      "id": "d08bbe5c-7164-4c51-8975-24b8b513788a",
+      "credentials": {
+        "discordBotApi": {
+          "id": "OsNxV1rUyzVam6wZ",
+          "name": "Discord Bot account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://discord.com/api/v10/channels/1424549853375234118/messages",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "discordBotApi",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "content",
+              "value": "💠 MIZUKAGAMI処理完了"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "name": "Post to #kpi-log",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        304,
+        320
+      ],
+      "id": "09f5b137-2511-4d24-ad77-0bce851cde3b",
+      "credentials": {
+        "discordBotApi": {
+          "id": "OsNxV1rUyzVam6wZ",
+          "name": "Discord Bot account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "name": "No New Messages",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        -608,
+        512
+      ],
+      "id": "633be9cf-f891-40db-b8be-91f06cb2d15e"
+    },
+    {
+      "parameters": {
+        "functionCode": "// Compute Max IDノードからの値を取得\nconst computed = $('Compute Max ID').first().json.lastId;\n\n// HTTP Requestノードからの値を安全に取得\nconst httpRequest = $('HTTP Request').first().json;\nlet previous = '';\n\nif (httpRequest.values && httpRequest.values[0] && httpRequest.values[0][0]) {\n  const rawValue = httpRequest.values[0][0];\n  // 数値の場合はBigIntで文字列化（科学的記数法を回避）\n  try {\n    if (typeof rawValue === 'number') {\n      previous = BigInt(Math.floor(rawValue)).toString();\n    } else {\n      previous = String(rawValue);\n    }\n  } catch (e) {\n    console.log('Error converting lastId:', e);\n    previous = String(rawValue);\n  }\n} else {\n  previous = '';\n}\n\nconst nextId = computed || previous || '';\n\n// 元の形式で返す\nreturn {\n  json: {\n    nextLastId: String(nextId)\n  }\n};"
+      },
+      "name": "Choose Next LastId",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [
+        -720,
+        912
+      ],
+      "id": "16c4872a-b896-4455-a5b9-91e9c08d671f"
+    },
+    {
+      "parameters": {
+        "url": "https://sheets.googleapis.com/v4/spreadsheets/1SywiLtNP759TQ_dWnYq1XftGTJprZOL9kVx5dlLiH_0/values/Config!B2",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "googleSheetsOAuth2Api",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1376,
+        592
+      ],
+      "id": "260e87de-1e2b-4fb1-bb7f-afcdb491ff25",
+      "name": "HTTP Request",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "YvL7P7HKwcuiK11r",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "PUT",
+        "url": "https://sheets.googleapis.com/v4/spreadsheets/1SywiLtNP759TQ_dWnYq1XftGTJprZOL9kVx5dlLiH_0/values/Config!B2?valueInputOption=USER_ENTERED",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "googleSheetsOAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n     \"values\": [[\"'{{ $json.nextLastId }}\"]]\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -528,
+        912
+      ],
+      "id": "9ef6b9d8-12b0-44d8-a7cd-fff1c305661e",
+      "name": "HTTP Request1",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "YvL7P7HKwcuiK11r",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "=https://discord.com/api/v10/guilds/1423868161110835202/members/{{$json.author.id}} ",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "discordBotApi",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -592,
+        128
+      ],
+      "id": "bdaf40f8-53b3-4d84-be82-e4997fe4037e",
+      "name": "Get Member Info",
+      "credentials": {
+        "discordBotApi": {
+          "id": "OsNxV1rUyzVam6wZ",
+          "name": "Discord Bot account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Mode: Run Once for Each Item\n// Language: JavaScript\n\nconst ROLES = {\n  operator: '1423875559066308698',\n  creator: '1424198712678154280',\n  builder: '1424199716333158510',\n  starter: '1424199864069263560',\n  member: '1423874598914752563'\n};\n\nconst item = $input.item.json;\nconst memberRoles = item.member_roles || [];\nconst username = item.author;\n\n// ロール優先順位: Operator > Creator > Builder > Starter > Member\nlet roleName = 'member';\nlet threadPrefix = '💠';\nlet threadSuffix = 'の水鏡修行';\n\nif (memberRoles.includes(ROLES.operator)) {\n  roleName = 'operator';\n  threadPrefix = '⚙️';\n  threadSuffix = 'の運営室';\n} else if (memberRoles.includes(ROLES.creator)) {\n  roleName = 'creator';\n  threadPrefix = '🔮';\n  threadSuffix = 'の真形創造';\n} else if (memberRoles.includes(ROLES.builder)) {\n  roleName = 'builder';\n  threadPrefix = '🌊';\n  threadSuffix = 'の波紋修行';\n} else if (memberRoles.includes(ROLES.starter)) {\n  roleName = 'starter';\n  threadPrefix = '💠';\n  threadSuffix = 'の水鏡修行';\n}\n\nreturn {\n  json: {\n    ...item,\n    role_name: roleName,\n    thread_name: `${threadPrefix} @${username} ${threadSuffix}`,\n    thread_prefix: threadPrefix\n  }\n};"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -480,
+        320
+      ],
+      "id": "f1d039b4-150c-40af-9a1b-4cb309d39173",
+      "name": "Determine Role & Thread Name"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://sheets.googleapis.com/v4/spreadsheets/1SywiLtNP759TQ_dWnYq1XftGTJprZOL9kVx5dlLiH_0/values/KPI_Log!A:K:append?valueInputOption=USER_ENTERED",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "googleSheetsOAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json) }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        48,
+        320
+      ],
+      "id": "063af9c4-150d-49e6-b289-4fd0a45f4f4e",
+      "name": "Log to KPI Sheet (HTTP)",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "YvL7P7HKwcuiK11r",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Mode: Run Once for All Items\nconst allRows = [];\nconst guildId = '1423868161110835202';\n\n// まず、message IDでソート（Snowflake IDは時系列順）\nconst sortedItems = $input.all().sort((a, b) => {\n  const idA = BigInt(a.json.message_id || '0');\n  const idB = BigInt(b.json.message_id || '0');\n  return idA < idB ? -1 : (idA > idB ? 1 : 0);\n});\n\nfor (const item of sortedItems) {\n  const originalData = item.json;\n  \n  const formatData = { mirror_json: \"\" };\n  \n  let threadId = '';\n  \n  if (originalData.id) {\n    threadId = originalData.id;\n  } else if (originalData.thread_id) {\n    threadId = originalData.thread_id;\n  } else if (originalData.message_id) {\n    threadId = originalData.channel_id;\n  }\n  \n  // Discord メッセージの投稿時刻を使う\n  let messageTimestamp;\n  if (originalData.timestamp) {\n    const discordTime = new Date(originalData.timestamp);\n    const jstOffset = 9 * 60;\n    const jstTime = new Date(discordTime.getTime() + jstOffset * 60 * 1000);\n    messageTimestamp = jstTime.toISOString().replace('Z', '+09:00');\n  } else {\n    const now = new Date();\n    const jstOffset = 9 * 60;\n    const jstTime = new Date(now.getTime() + jstOffset * 60 * 1000);\n    messageTimestamp = jstTime.toISOString().replace('Z', '+09:00');\n  }\n  \n  allRows.push([\n    messageTimestamp,\n    \"MIZUKAGAMI-Reflection\",\n    \"success\",\n    originalData.author || \"\",\n    originalData.message_id || \"\",\n    (originalData.content || '').substring(0, 80),\n    originalData.user_id || \"\",\n    threadId || \"\",\n    `https://discord.com/channels/${guildId}/${threadId}`,\n    formatData.mirror_json || \"\",\n    originalData.content || \"\"\n  ]);\n}\n\nreturn {\n  json: {\n    values: allRows\n  }\n};"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "ecc52699-7a65-4ac5-a5e4-c8c169b7086e",
+      "name": "Prepare KPI Data"
+    },
+    {
+      "parameters": {
+        "url": "https://sheets.googleapis.com/v4/spreadsheets/1SywiLtNP759TQ_dWnYq1XftGTJprZOL9kVx5dlLiH_0/values/User_Thread_Map!A:D",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "googleSheetsOAuth2Api",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        48,
+        480
+      ],
+      "id": "5f7b359f-ae04-47f7-a099-ec87f54233ef",
+      "name": "Check Existing Thread",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "YvL7P7HKwcuiK11r",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const userData = $('Determine Role & Thread Name').item.json;\nconst sheetData = $json.values || [];\n\n// ヘッダー行をスキップ\nconst dataRows = sheetData.slice(1);\n\n// デバッグログ\nconsole.log('=== SEARCH DEBUG ===');\nconsole.log('Looking for user_id:', userData.user_id);\nconsole.log('Type:', typeof userData.user_id);\nconsole.log('Sheet data:', dataRows.map(row => row[0]));\nconsole.log('=== END DEBUG ===');\n\n// user_id で検索\nconst userThread = dataRows.find(row => {\n  const match = String(row[0]) === String(userData.user_id);\n  console.log(`Comparing \"${row[0]}\" === \"${userData.user_id}\": ${match}`);\n  return match;\n});\n\nif (userThread && userThread[1]) {\n  return {\n    json: {\n      thread_exists: \"true\",\n      thread_id: userThread[1],\n      thread_name: userThread[2],\n      user_id: userData.user_id\n    }\n  };\n} else {\n  return {\n    json: {\n      thread_exists: \"false\",\n      user_id: userData.user_id\n    }\n  };\n}"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        48,
+        672
+      ],
+      "id": "45f67c3a-cbd8-44d7-a16d-5ebf6f26d296",
+      "name": "Find User Thread"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://discord.com/api/v10/channels/{{ $('Determine Role & Thread Name').item.json.channel_id }}/messages/{{ $('Determine Role & Thread Name').item.json.message_id }}/threads",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "discordBotApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{\n  {\n    \"name\": $('Determine Role & Thread Name').item.json.thread_name,\n    \"auto_archive_duration\": 1440\n  }\n}}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        160,
+        1008
+      ],
+      "id": "03fcdc07-a9ef-40f4-b442-381afb02541e",
+      "name": "Create Thread",
+      "credentials": {
+        "discordBotApi": {
+          "id": "OsNxV1rUyzVam6wZ",
+          "name": "Discord Bot account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://sheets.googleapis.com/v4/spreadsheets/1SywiLtNP759TQ_dWnYq1XftGTJprZOL9kVx5dlLiH_0/values/User_Thread_Map!A:D:append?valueInputOption=USER_ENTERED",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "googleSheetsOAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{\n  JSON.stringify({\n    values: [[\n      $('Determine Role & Thread Name').item.json.user_id,\n      $('Create Thread').item.json.id,\n      $('Determine Role & Thread Name').item.json.thread_name,\n      new Date().toISOString()\n    ]]\n  })\n}}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        304,
+        912
+      ],
+      "id": "28220b82-c18e-4cc1-966b-926e354af2d4",
+      "name": "Save Thread to Sheets1",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "YvL7P7HKwcuiK11r",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -768,
+        256
+      ],
+      "id": "83cf0c7a-dfb1-42d1-a340-ab81d86d2a9e",
+      "name": "Wait - Rate Limit",
+      "webhookId": "d978457c-3019-446b-80a3-61da821f7659"
+    },
+    {
+      "parameters": {
+        "jsCode": "return {\n     json: {\n       thread_id: $('Create Thread').item.json.id\n     }\n   };"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        416,
+        800
+      ],
+      "id": "08c2b2c1-4491-402d-a97a-9d524cb59c17",
+      "name": "Set Thread ID from Create"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.thread_exists.toString() }}",
+                    "rightValue": "true",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "e50af459-239a-4405-9c2f-402bc3d645c8"
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {
+          "fallbackOutput": "extra"
+        }
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.3,
+      "position": [
+        48,
+        864
+      ],
+      "id": "860ae281-dbca-4f6c-8120-77f7879d037f",
+      "name": "Switch"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Discord API - Get Messages": {
+      "main": [
+        [
+          {
+            "node": "Filter - Human & Normal Msg",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter - Human & Normal Msg": {
+      "main": [
+        [
+          {
+            "node": "Compute Max ID",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Wait - Rate Limit",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "No New Messages",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Message Data": {
+      "main": [
+        [
+          {
+            "node": "Determine Role & Thread Name",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Prepare KPI Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build OpenAI Payload": {
+      "main": [
+        [
+          {
+            "node": "Call OpenAI API",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Call OpenAI API": {
+      "main": [
+        [
+          {
+            "node": "Format Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format Response": {
+      "main": [
+        [
+          {
+            "node": "Check Existing Thread",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Choose Next LastId": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Discord API - Get Messages",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Compute Max ID": {
+      "main": [
+        [
+          {
+            "node": "Choose Next LastId",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Member Info": {
+      "main": [
+        [
+          {
+            "node": "Set Message Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Determine Role & Thread Name": {
+      "main": [
+        [
+          {
+            "node": "Build OpenAI Payload",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Log to KPI Sheet (HTTP)": {
+      "main": [
+        [
+          {
+            "node": "Post to #kpi-log",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare KPI Data": {
+      "main": [
+        [
+          {
+            "node": "Log to KPI Sheet (HTTP)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Existing Thread": {
+      "main": [
+        [
+          {
+            "node": "Find User Thread",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Find User Thread": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Thread": {
+      "main": [
+        [
+          {
+            "node": "Save Thread to Sheets1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save Thread to Sheets1": {
+      "main": [
+        [
+          {
+            "node": "Set Thread ID from Create",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait - Rate Limit": {
+      "main": [
+        [
+          {
+            "node": "Get Member Info",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Thread ID from Create": {
+      "main": [
+        [
+          {
+            "node": "Discord - Reply in Thread",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Discord - Reply in Thread",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Create Thread",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Cron Trigger (every 3 sec)": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "3be48017-1570-4aaf-8765-04d7bc6c3aa1",
+  "meta": {
+    "instanceId": "bb6582f136488f8663186c75084ae9be2ac2ce1a6068064fd0778c5e05f7b8d2"
+  },
+  "id": "D9IJu8NVTwon0J2T",
+  "tags": []
+}

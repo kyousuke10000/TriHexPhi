@@ -1,0 +1,135 @@
+{
+  "name": "🧠 FAQ Embeddings Upsert (Phase 3.6-2)",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 4 * * *"
+            }
+          ]
+        }
+      },
+      "id": "1260b49e-c8c1-4a75-9d51-9d30ca267b30",
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "position": [
+        432,
+        -48
+      ],
+      "typeVersion": 1.2
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1SywiLtNP759TQ_dWnYq1XftGTJprZOL9kVx5dlLiH_0",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "FAQ_Candidates",
+          "mode": "name"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "status",
+              "lookupValue": "completed"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "32278b81-e8de-4bdd-b2da-d31d371bc939",
+      "name": "Get Completed FAQs",
+      "type": "n8n-nodes-base.googleSheets",
+      "position": [
+        640,
+        -48
+      ],
+      "typeVersion": 4.7,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "YvL7P7HKwcuiK11r",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "986fcf76-47ba-4a8a-87a4-b03a133f1a1b",
+      "name": "Split In Batches",
+      "type": "n8n-nodes-base.splitInBatches",
+      "position": [
+        832,
+        -48
+      ],
+      "typeVersion": 3
+    },
+    {
+      "parameters": {
+        "jsCode": "const item = $input.item.json;\n\n// titleとquestionを結合してembedding用テキストを作成\nconst embeddingText = `${item.title}\\n${item.question}`;\n\nreturn {\n  json: {\n    faq_id: item.chatwork_message_id,\n    title: item.title,\n    question: item.question,\n    answer: item.answer,\n    category: item.category || '',\n    embedding_text: embeddingText\n  }\n};"
+      },
+      "id": "1b90f01d-962c-45f4-acb1-b8d8cc3b8d21",
+      "name": "Prepare Embedding Text",
+      "type": "n8n-nodes-base.code",
+      "position": [
+        1040,
+        -48
+      ],
+      "typeVersion": 2
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Get Completed FAQs",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Completed FAQs": {
+      "main": [
+        [
+          {
+            "node": "Split In Batches",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split In Batches": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Prepare Embedding Text",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "d9ed9c3e-6a59-4cb9-a285-a960df5b4b3a",
+  "meta": {
+    "instanceId": "bb6582f136488f8663186c75084ae9be2ac2ce1a6068064fd0778c5e05f7b8d2"
+  },
+  "id": "Cor8iJAcg1ZrjQ0g",
+  "tags": []
+}
