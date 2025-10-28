@@ -1,0 +1,66 @@
+{
+  "profiles": {
+    "defaults": {
+      "fontSize": 10,
+      "fontFace": "Cascadia Code",
+      "colorScheme": "One Half Dark"
+    },
+    "list": [
+      {
+        "name": "1️⃣ Cursor",
+        "commandline": "cmd.exe",
+        "tabTitle": "🔱 Cursor"
+      },
+      {
+        "name": "2️⃣ Cursor #2",
+        "commandline": "cmd.exe",
+        "tabTitle": "🔱 Cursor #2"
+      },
+      {
+        "name": "3️⃣ Claude",
+        "commandline": "cmd.exe",
+        "tabTitle": "🛡️ Claude"
+      },
+      {
+        "name": "4️⃣ DeepSeek",
+        "commandline": "cmd.exe",
+        "tabTitle": "⚡ DeepSeek"
+      },
+      {
+        "name": "5️⃣ Gemini",
+        "commandline": "cmd.exe",
+        "tabTitle": "🎨 Gemini"
+      },
+      {
+        "name": "6️⃣ Grok",
+        "commandline": "cmd.exe",
+        "tabTitle": "📊 Grok"
+      },
+      {
+        "name": "7️⃣ GPT-4o",
+        "commandline": "cmd.exe",
+        "tabTitle": "🤖 GPT-4o"
+      },
+      {
+        "name": "8️⃣ n8n",
+        "commandline": "cmd.exe",
+        "tabTitle": "🔄 n8n"
+      },
+      {
+        "name": "9️⃣ Monitor",
+        "commandline": "cmd.exe",
+        "tabTitle": "📊 Monitor"
+      }
+    ]
+  },
+  "actions": [
+    {
+      "command": {"action": "splitPane", "split": "horizontal"},
+      "keys": "alt+shift+minus"
+    },
+    {
+      "command": {"action": "splitPane", "split": "vertical"},
+      "keys": "alt+shift+plus"
+    }
+  ]
+}
