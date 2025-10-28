@@ -130,8 +130,18 @@ cat >> "$OUTPUT_FILE" << 'EOF'
 
 EOF
 
-# 議題ファイルが存在すればそれを、なければ第1ラウンド開始ファイルを使用
-if [ -f "_inbox/2025-10-29_TRIHEXPHI_v4.0決定_第1ラウンド開始.md" ]; then
+# 第2ラウンド開始パッケージ（最新）
+if [ -f "_inbox/2025-10-29_TRIHEXPHI_v4.0_第2ラウンド開始パッケージ.md" ]; then
+    cat "_inbox/2025-10-29_TRIHEXPHI_v4.0_第2ラウンド開始パッケージ.md" >> "$OUTPUT_FILE"
+    echo "" >> "$OUTPUT_FILE"
+    echo "---" >> "$OUTPUT_FILE"
+    echo "" >> "$OUTPUT_FILE"
+    echo "## 📄 Part 6: TRIHEXPHI.md v4.0草案（添付）" >> "$OUTPUT_FILE"
+    echo "" >> "$OUTPUT_FILE"
+    if [ -f "_inbox/TRIHEXPHI_v4.0_草案_5AI統合版.md" ]; then
+        cat "_inbox/TRIHEXPHI_v4.0_草案_5AI統合版.md" >> "$OUTPUT_FILE"
+    fi
+elif [ -f "_inbox/2025-10-29_TRIHEXPHI_v4.0決定_第1ラウンド開始.md" ]; then
     cat "_inbox/2025-10-29_TRIHEXPHI_v4.0決定_第1ラウンド開始.md" >> "$OUTPUT_FILE"
 elif [ -f "_inbox/2025-10-28_6AI議題_ΦDRIVE実装方針とシステム統合.md" ]; then
     cat "_inbox/2025-10-28_6AI議題_ΦDRIVE実装方針とシステム統合.md" >> "$OUTPUT_FILE"
