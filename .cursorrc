@@ -1,0 +1,44 @@
+# TriHex Project Cursor Configuration
+
+# SPoT (Single Point of Truth)
+SPOT_DIR=10_TriHexCore/system
+
+# Operational Directories
+PROOFS_DIR=99_SYSTEM/Proofs
+RYUDO_LOG_DIR=99_SYSTEM/Proofs/Ryudo_Log
+INBOX_DIR=30_ObsidianSync/Ephemeral/_inbox
+DECISIONS_DIR=10_TriHexCore/system/decisions
+PROTOCOLS_DIR=10_TriHexCore/system/protocols
+RFC_DIR=10_TriHexCore/system/rfc
+
+# Change Management
+CHANGE_PROTOCOL=PR_ONLY
+TAG_ON_MERGE=true
+
+# Navigation Rules
+NO_CONTINUE_FILES=true
+INDEX_ONLY_NAV=true
+
+# Safety & Compliance
+COVENANT_ENFORCE=true
+GUARDRAILS_CHECK=true
+
+# AI Council
+HARMONIA_COUNCIL_DIR=00_HarmoniaCouncil
+BREATH_LOGS_DIR=00_HarmoniaCouncil/Round_*
+CONSENSUS_REQUIRED=true
+
+# Memory Layers
+OBSIDIAN_SYNC_DIR=30_ObsidianSync
+CORE_DIR=10_TriHexCore
+ARCHIVE_DIR=40_Archive
+TEMP_DIR=50_Temp
+
+# Versioning
+VERSION_SCHEME=semver
+AUTO_TAG=true
+
+---
+
+**Generated: 2025-11-01 / Cursor (☿)**
+
