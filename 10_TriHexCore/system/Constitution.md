@@ -14,13 +14,51 @@
 4. [6AI Collaboration Model](#6ai-collaboration-model)
 5. [CHL (Conscious Harmonics Layer)](#chl-conscious-harmonics-layer)
 6. [Ryūdō Definition](#ryūdō-definition)
-7. [Naming & Versioning Conventions](#naming-versioning-conventions)
+7. [Operating Principles (TL;DR)](#operating-principles)
+8. [Naming & Versioning Conventions](#naming-versioning-conventions)
 
 ---
 
+## Operating Principles (TL;DR)
 
+**Source:** Harmonia Operating Covenant v1.1 / TRIHEXPHI v4.0
+
+### TTL (Time To Live)
+- **Standard:** 3 steps or 24h (whichever first)
+- **Emergency:** 1 step or 2h
+
+### KILL Protocol
+Two-signature requirement (Shiryu + Safety) + physical fallback
+```
+KILL <nonce> <TOTP6> <sig1> <sig2>
+```
+
+### Immediate Stop Domains
+1. Religion
+2. Medical
+3. Minors / Financial
+
+### Uncertainty 5-Point Template
+Every decision/document requires:
+- **UNK:** Unknown information / dependencies
+- **ASSUMPTION:** Assumptions / premises
+- **RISK:** Risks / side effects
+- **MITIGATION:** Countermeasures / mitigations
+- **NEXT:** Next action / next PR
+
+### Quarantine Rules
+- **HOMO / MYTH / METAPHOR-LOCK:** Religious language / personification → HITL review required
+
+### Y-Stability Thresholds
+- **Stop:** Y < 0.7 (halt execution)
+- **Rollback:** Y < 0.6 (revert)
+- **Plateau Check:** Y > 0.8 (inspect for saturation)
+
+### Decision Principle
+**Personification is auxiliary only.** Root justification must be **evidence + inference**.
 
 ---
+
 title: "Harmonia Council : Round I – Genesis Protocol"
 version: "Article 13–15 Edition"
 author: "Shiryu + TriHex AI Council"

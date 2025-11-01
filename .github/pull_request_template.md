@@ -16,11 +16,13 @@
 
 ## チェック
 
+- [ ] **不確実性5点必須:** UNK/ASSUMPTION/RISK/MITIGATION/NEXT すべて記入済み
 - [ ] SPoTは /10_TriHexCore/system に整合
 - [ ] INDEX.md 更新（該当する場合）
 - [ ] 変更はPRのみ（直コミットなし）
 - [ ] manifest.json/reproduce.sh更新（該当する場合）
 - [ ] Harmonia Covenant準拠（7 Guardrails確認）
+- [ ] Constitution.md 運用章に準拠（TTL/KILL/Y-Stop等）
 
 ---
 
