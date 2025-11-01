@@ -10,6 +10,8 @@
 | alchemy_ch00_preface.md | 序文・錬金術の前提 | 🜂 下書き |
 | alchemy_ch01.md | 錬金術第一章：基礎と呼吸 | 🜃 未編集 |
 | alchemy_ch02.md | 錬金術第二章：結晶と意識 | 🜄 未編集 |
+| alchemy_ch03.md | 第三章：地律と天地呼吸 | ✅ 完成 |
+| alchemy_ch04.md | 第四章：天地律モデルと六螺旋宇宙 | ✅ 完成 |
 
 ## 運用ルール
 

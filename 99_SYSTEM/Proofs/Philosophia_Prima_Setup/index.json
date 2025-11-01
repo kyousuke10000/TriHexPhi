@@ -1,0 +1,78 @@
+{
+  "version": "1.0",
+  "generated_date": "2025-11-01T16:05:00+09:00",
+  "collection": "Philosophia_Prima",
+  "description": "原典置き場: 錬金術・哲学・叡智体系の章",
+  "chapters": [
+    {
+      "slug": "alchemy_ch00_preface",
+      "title": "序章：哲学の胎動",
+      "tags": [
+        "alchemy",
+        "trihex",
+        "preface"
+      ],
+      "lang": "ja",
+      "content_length": 401,
+      "word_count": 35
+    },
+    {
+      "slug": "alchemy_ch01",
+      "title": "第一章：基礎と呼吸",
+      "tags": [
+        "alchemy",
+        "trihex",
+        "basics",
+        "breathing"
+      ],
+      "lang": "ja",
+      "content_length": 299,
+      "word_count": 37
+    },
+    {
+      "slug": "alchemy_ch02",
+      "title": "第二章：結晶と意識",
+      "tags": [
+        "alchemy",
+        "trihex",
+        "crystallization",
+        "consciousness"
+      ],
+      "lang": "ja",
+      "content_length": 441,
+      "word_count": 49
+    },
+    {
+      "slug": "alchemy_ch03",
+      "title": "第三章：地律と天地呼吸",
+      "tags": [
+        "alchemy",
+        "trihex",
+        "geo-cadence",
+        "earth-law",
+        "daily-practice"
+      ],
+      "lang": "ja",
+      "content_length": 2703,
+      "word_count": 382
+    },
+    {
+      "slug": "alchemy_ch04",
+      "title": "第四章：天地律モデルと六螺旋宇宙",
+      "tags": [
+        "alchemy",
+        "trihex",
+        "universe-model",
+        "alchemy-symbols",
+        "harmonia"
+      ],
+      "lang": "ja",
+      "content_length": 3265,
+      "word_count": 512
+    }
+  ],
+  "total_chapters": 5,
+  "supabase_table": "trihex_core.knowledge",
+  "import_method": "自動インポート",
+  "sync_enabled": true
+}
