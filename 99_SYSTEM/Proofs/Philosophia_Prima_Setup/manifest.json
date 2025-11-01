@@ -1,0 +1,49 @@
+{
+  "setup_date": "2025-11-01T15:25:00+09:00",
+  "component": "Philosophia_Prima",
+  "purpose": "原典置き場生成（Rubedo Ops Phase 2）",
+  "location": "20_TriHex-Obsidian/Philosophia_Prima/",
+  "files_created": 5,
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "8cdf37d106e122d413494a2e23fc82438f874a41d56d6ff1ef514ce382ee4721",
+      "purpose": "構造・連携手順説明"
+    },
+    {
+      "path": "index.md",
+      "sha256": "fade17198c92a28673c915dbb3f407c55fa119719b15ceae6e237c1c2b07f017",
+      "purpose": "目次・運用ルール"
+    },
+    {
+      "path": "alchemy_ch00_preface.md",
+      "sha256": "380b900470a48c6f6fc1a3777107eaf0c345bfcf478ac587fe8dae1f4a8f7dd0",
+      "purpose": "序章：哲学の胎動",
+      "status": "🜂 下書き"
+    },
+    {
+      "path": "alchemy_ch01.md",
+      "sha256": "50b95a17e297fad99eb3c2043c7db27d62c97e65114fadba74cda6bca0bdaa92",
+      "purpose": "第一章：基礎と呼吸",
+      "status": "🜃 未編集"
+    },
+    {
+      "path": "alchemy_ch02.md",
+      "sha256": "54407008c7c1431bb70f972fa43859fa42e89fb93eeb90445f6c804236f614a2",
+      "purpose": "第二章：結晶と意識",
+      "status": "🜄 未編集"
+    }
+  ],
+  "supabase_integration": {
+    "target_table": "trihex_core.knowledge",
+    "import_method": "自動インポート",
+    "frontmatter_fields": ["title", "tags", "lang"],
+    "slug_generation": "ファイル名ベース"
+  },
+  "status": "✅ 完了",
+  "next_steps": [
+    "Obsidianから編集",
+    "Supabase自動インポート設定",
+    "/knowledge/ ページに反映"
+  ]
+}

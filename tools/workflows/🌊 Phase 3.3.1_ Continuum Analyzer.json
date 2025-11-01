@@ -1,0 +1,407 @@
+{
+  "name": "🌊 Phase 3.3.1: Continuum Analyzer",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 2,
+              "triggerAtMinute": 10
+            }
+          ]
+        }
+      },
+      "id": "6f0b22ca-6154-461f-a757-9d69c3fcf21d",
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -1744,
+        384
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const now = new Date();\nconst jstOffset = 9 * 60 * 60 * 1000;\nconst jstNow = new Date(now.getTime() + jstOffset);\n\nconst windowStart = new Date(jstNow);\nwindowStart.setDate(windowStart.getDate() - 14);\nwindowStart.setHours(0, 0, 0, 0);\n\nconst windowEnd = new Date(jstNow);\nwindowEnd.setHours(23, 59, 59, 999);\n\nconst formatDate = (date) => {\n  const y = date.getFullYear();\n  const m = String(date.getMonth() + 1).padStart(2, '0');\n  const d = String(date.getDate()).padStart(2, '0');\n  return `${y}-${m}-${d}`;\n};\n\nconst windowKey = `${formatDate(windowEnd)}-14d`;\n\nreturn [{\n  json: {\n    window_start: formatDate(windowStart),\n    window_end: formatDate(windowEnd),\n    window_key: windowKey,\n    window_days: 14,\n    timestamp: jstNow.toISOString()\n  }\n}];"
+      },
+      "id": "3bb7181c-6fc7-47a4-9f8f-8ea1f7250892",
+      "name": "Calculate 14-day Window",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -1536,
+        384
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://sheets.googleapis.com/v4/spreadsheets/1SywiLtNP759TQ_dWnYq1XftGTJprZOL9kVx5dlLiH_0/values/KPI_Log!A:K",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "googleSheetsOAuth2Api",
+        "options": {}
+      },
+      "id": "11c96680-4006-470e-970c-8f0ebd6534f8",
+      "name": "Get KPI_Log",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1344,
+        384
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "YvL7P7HKwcuiK11r",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const kpiData = $('Get KPI_Log').first().json;\nconst rows = kpiData.values || [];\nconst headers = rows[0];\nconst dataRows = rows.slice(1);\n\nconst windowData = $('Calculate 14-day Window').first().json;\nconst windowStart = new Date(windowData.window_start);\nconst windowEnd = new Date(windowData.window_end);\n\nconst userPosts = new Map();\n\ndataRows.forEach(row => {\n  const timestamp = row[0];\n  const author = row[3];\n  const userId = row[6];\n  \n  if (!timestamp || !userId) return;\n  \n  const postTime = new Date(timestamp);\n  if (postTime < windowStart || postTime > windowEnd) return;\n  \n  if (!userPosts.has(userId)) {\n    userPosts.set(userId, {\n      userId,\n      username: author,\n      posts: []\n    });\n  }\n  \n  userPosts.get(userId).posts.push({\n    timestamp: postTime,\n    content: row[10] || ''\n  });\n});\n\nconst continuumResults = [];\n\nuserPosts.forEach((userData, userId) => {\n  const posts = userData.posts.sort((a, b) => a.timestamp - b.timestamp);\n  \n  if (posts.length < 2) return;\n  \n  const intervals = [];\n  for (let i = 1; i < posts.length; i++) {\n    const hours = (posts[i].timestamp - posts[i-1].timestamp) / (1000 * 60 * 60);\n    intervals.push(hours);\n  }\n  \n  const mean = intervals.reduce((a, b) => a + b, 0) / intervals.length;\n  const variance = intervals.map(x => Math.pow(x - mean, 2)).reduce((a, b) => a + b, 0) / intervals.length;\n  const std = Math.sqrt(variance);\n  const interval_cv = mean > 0 ? (std / mean) : 0;\n  \n  let pattern_symbol;\n  if (interval_cv < 0.3) pattern_symbol = \"律動○\";\n  else if (interval_cv < 0.8) pattern_symbol = \"波≈\";\n  else if (interval_cv < 1.5) pattern_symbol = \"自由〜\";\n  else pattern_symbol = \"滞□\";\n  \n  const last7days = new Date(windowEnd);\n  last7days.setDate(last7days.getDate() - 7);\n  const recentPosts = posts.filter(p => p.timestamp >= last7days).length;\n  \n  let tide_state;\n  if (recentPosts >= 5) tide_state = \"active\";\n  else if (recentPosts >= 2) tide_state = \"ebb\";\n  else tide_state = \"flow\";\n  \n  const hourCounts = new Array(24).fill(0);\n  const dayCounts = new Array(7).fill(0);\n  \n  posts.forEach(p => {\n    hourCounts[p.timestamp.getHours()]++;\n    dayCounts[p.timestamp.getDay()]++;\n  });\n  \n  const maxHourCount = Math.max(...hourCounts);\n  const maxDayCount = Math.max(...dayCounts);\n  \n  const rhythm_peak = (\n    maxHourCount > posts.length * 0.3 ||\n    maxDayCount > posts.length * 0.3\n  );\n  \n  const peakHour = hourCounts.indexOf(maxHourCount);\n  const dayNames = [\"Sun\", \"Mon\", \"Tue\", \"Wed\", \"Thu\", \"Fri\", \"Sat\"];\n  const peakDay = dayNames[dayCounts.indexOf(maxDayCount)];\n  \n  const rhythm_period_hint = rhythm_peak ? `${peakDay}-${peakHour}h` : null;\n  \n  const idemKey = `continuum:${userId}:${windowData.window_key}`;\n  \n  continuumResults.push({\n    user_id: userId,\n    username: userData.username,\n    window_start: windowData.window_start,\n    window_end: windowData.window_end,\n    post_count: posts.length,\n    interval_cv: parseFloat(interval_cv.toFixed(3)),\n    tide_state,\n    pattern_symbol,\n    rhythm_peak,\n    rhythm_period_hint,\n    markov_transitions: null,\n    updated_at: windowData.timestamp,\n    notes: '',\n    idem_key: idemKey\n  });\n});\n\nconsole.log(`Analyzed ${continuumResults.length} users`);\n\nreturn continuumResults.map(r => ({ json: r }));"
+      },
+      "id": "4d96dd9b-640f-4438-93a4-3a25d97da0f3",
+      "name": "Analyze Continuum",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -1136,
+        384
+      ],
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "url": "https://sheets.googleapis.com/v4/spreadsheets/1SywiLtNP759TQ_dWnYq1XftGTJprZOL9kVx5dlLiH_0/values/Continuum_Analysis!A:N",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "googleSheetsOAuth2Api",
+        "options": {}
+      },
+      "id": "03f56af9-0860-4383-8bfb-797f92012916",
+      "name": "Get Existing Continuum",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -944,
+        384
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "YvL7P7HKwcuiK11r",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const analyzed = $('Analyze Continuum').all();\nconst existingData = $('Get Existing Continuum').first().json;\nconst existingRows = existingData.values || [];\n\nconst existingKeys = new Set(\n  existingRows.slice(1).map(row => row[13]).filter(Boolean)\n);\n\nconst newRecords = analyzed.filter(item => \n  !existingKeys.has(item.json.idem_key)\n);\n\nconsole.log(`Total: ${analyzed.length}, Existing: ${existingKeys.size}, New: ${newRecords.length}`);\n\nreturn newRecords;"
+      },
+      "id": "78cd4b74-4819-43af-a8da-82a3e09bc4ac",
+      "name": "Filter New Records",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -736,
+        384
+      ]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 1
+                },
+                "conditions": [
+                  {
+                    "operator": {
+                      "type": "number",
+                      "operation": "gt"
+                    },
+                    "leftValue": "={{ $input.all().length }}",
+                    "rightValue": 0,
+                    "id": "2cebed2c-030b-49b7-803b-2a5c70e1d8af"
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "3ea74ced-26e3-414e-9f73-ac6c42c14ee4",
+      "name": "Switch: Has New?",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3,
+      "position": [
+        -544,
+        384
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "const continuum = $input.item.json;\n\nreturn {\n  json: {\n    event_type: 'continuum',\n    event_data: continuum,\n    user_id: continuum.user_id,\n    window_key: continuum.idem_key.split(':')[2],\n    idem_key: continuum.idem_key\n  }\n};"
+      },
+      "id": "9e50a5da-907a-4a4e-b43a-fc975a805cdf",
+      "name": "Prepare Event Data",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -336,
+        288
+      ]
+    },
+    {
+      "parameters": {
+        "tableId": "events",
+        "dataToSend": "autoMapInputData"
+      },
+      "id": "b22a92ba-a103-44da-bf81-066eaee8e8f7",
+      "name": "Insert to Supabase",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        -144,
+        288
+      ],
+      "credentials": {
+        "supabaseApi": {
+          "id": "3daaocVPKLCZpzl5",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const items = $input.all();\n\nconst rows = items.map(item => {\n  const data = item.json.event_data || item.json;\n  return [\n    data.user_id,\n    data.username,\n    data.window_start,\n    data.window_end,\n    data.post_count,\n    data.interval_cv,\n    data.tide_state,\n    data.pattern_symbol,\n    data.updated_at,\n    data.notes || '',\n    data.rhythm_peak || false,\n    data.rhythm_period_hint || '',\n    data.markov_transitions ? JSON.stringify(data.markov_transitions) : '',\n    data.idem_key\n  ];\n});\n\nreturn [{ json: { values: rows } }];"
+      },
+      "id": "2510b191-fdd1-43d6-8117-4272f0e02899",
+      "name": "Prepare Sheets Data",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        64,
+        288
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://sheets.googleapis.com/v4/spreadsheets/1SywiLtNP759TQ_dWnYq1XftGTJprZOL9kVx5dlLiH_0/values/Continuum_Analysis!A:N:append?valueInputOption=USER_ENTERED",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "googleSheetsOAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ $json }}",
+        "options": {}
+      },
+      "id": "c64e347b-0211-4f23-aa2e-554ae247c249",
+      "name": "Append Continuum_Analysis",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        256,
+        288
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "YvL7P7HKwcuiK11r",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const items = $('Insert to Supabase').all();\nconst windowData = $('Calculate 14-day Window').first().json;\n\nconst patterns = {};\nitems.forEach(item => {\n  const symbol = item.json.event_data.pattern_symbol;\n  patterns[symbol] = (patterns[symbol] || 0) + 1;\n});\n\nconst patternSummary = Object.entries(patterns)\n  .map(([symbol, count]) => `${symbol} ${count}名`)\n  .join(' / ');\n\nconst message = `🌊 **Continuum Analysis Complete**\\n\\n📊 **Results:**\\n・Analyzed Users: ${items.length}\\n・Window: ${windowData.window_days} days\\n・Patterns: ${patternSummary}\\n・Timestamp: ${windowData.timestamp}\\n\\n━━━━━━━━━━━━━━━━━━━━\\n\\n**時間の呼吸が映し出されました。**\\n\\n_TriHexΦ Spiral System | Phase 3.3.1_`;\n\nreturn [{ json: { content: message } }];"
+      },
+      "id": "45e7e68c-78dc-45cf-adda-d997bd8c8724",
+      "name": "Prepare Notification",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        464,
+        288
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://discord.com/api/v10/channels/1424549853375234118/messages",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "discordBotApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ $json }}",
+        "options": {}
+      },
+      "id": "efdf1d8d-a02f-4b7e-b32a-4acbf2d2e829",
+      "name": "Log to #kpi-log",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        656,
+        288
+      ],
+      "credentials": {
+        "discordBotApi": {
+          "id": "OsNxV1rUyzVam6wZ",
+          "name": "Discord Bot account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Calculate 14-day Window",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Calculate 14-day Window": {
+      "main": [
+        [
+          {
+            "node": "Get KPI_Log",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get KPI_Log": {
+      "main": [
+        [
+          {
+            "node": "Analyze Continuum",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Analyze Continuum": {
+      "main": [
+        [
+          {
+            "node": "Get Existing Continuum",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Existing Continuum": {
+      "main": [
+        [
+          {
+            "node": "Filter New Records",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter New Records": {
+      "main": [
+        [
+          {
+            "node": "Switch: Has New?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch: Has New?": {
+      "main": [
+        [
+          {
+            "node": "Prepare Event Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare Event Data": {
+      "main": [
+        [
+          {
+            "node": "Insert to Supabase",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Insert to Supabase": {
+      "main": [
+        [
+          {
+            "node": "Prepare Sheets Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare Sheets Data": {
+      "main": [
+        [
+          {
+            "node": "Append Continuum_Analysis",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Append Continuum_Analysis": {
+      "main": [
+        [
+          {
+            "node": "Prepare Notification",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare Notification": {
+      "main": [
+        [
+          {
+            "node": "Log to #kpi-log",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "5630bba1-852c-48e8-809c-710bf98ee360",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "bb6582f136488f8663186c75084ae9be2ac2ce1a6068064fd0778c5e05f7b8d2"
+  },
+  "id": "rpE4AvHoe0G9jrs3",
+  "tags": []
+}

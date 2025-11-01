@@ -1,0 +1,32 @@
+# TriHex CODEOWNERS
+# https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# SPoT (Single Point of Truth) - Requires Shiryu + Safety approval
+/10_TriHexCore/system/ @shiryu-kyousuke10000
+/10_TriHexCore/system/Constitution.md @shiryu-kyousuke10000
+/10_TriHexCore/system/INDEX.md @shiryu-kyousuke10000
+/10_TriHexCore/system/CHANGELOG.md @shiryu-kyousuke10000
+
+# Harmonia Council - Requires AI consensus
+/00_HarmoniaCouncil/ @shiryu-kyousuke10000
+
+# Proofs & Audit - Requires owner + audit team
+/99_SYSTEM/Proofs/ @shiryu-kyousuke10000
+/99_SYSTEM/Sync_Log.md @shiryu-kyousuke10000
+
+# Governance files
+/.cursorrc @shiryu-kyousuke10000
+/.github/pull_request_template.md @shiryu-kyousuke10000
+/.github/CODEOWNERS @shiryu-kyousuke10000
+
+# Documentation
+/docs/ @shiryu-kyousuke10000
+
+# Security-sensitive
+/.secrets/ @shiryu-kyousuke10000
+**/env @shiryu-kyousuke10000
+**/.env* @shiryu-kyousuke10000
+
+# Everything else - general review
+* @shiryu-kyousuke10000
+

@@ -1,0 +1,42 @@
+name: 🔱 TriHexΦ Knowledge Sync
+
+on:
+  schedule:
+    - cron: "0 0 * * *"  # 毎日JST朝9時（UTC 0時）
+  workflow_dispatch:  # 手動実行も可能
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Build context-bootstrap
+        run: |
+          bash .trihex/scripts/generate-context-bootstrap.sh
+      
+      - name: Verify context-bootstrap
+        run: |
+          if [ -f ".trihex/context-bootstrap.txt" ]; then
+            echo "✅ Context Bootstrap 生成成功"
+            wc -l .trihex/context-bootstrap.txt
+          else
+            echo "❌ Context Bootstrap 生成失敗"
+            exit 1
+          fi
+      
+      - name: Archive context-bootstrap
+        uses: actions/upload-artifact@v3
+        with:
+          name: context-bootstrap
+          path: .trihex/context-bootstrap.txt
+      
+      - name: Commit if changed
+        run: |
+          git config user.name "TriHexΦ Actions"
+          git config user.email "actions@trihexphi.local"
+          git add .trihex/context-bootstrap.txt || true
+          git diff --cached --quiet || git commit -m "🔄 Context Bootstrap 自動更新 $(date '+%Y-%m-%d')"
+

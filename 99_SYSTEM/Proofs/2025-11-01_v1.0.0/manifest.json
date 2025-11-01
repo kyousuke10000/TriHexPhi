@@ -1,0 +1,11 @@
+{
+  "version": "1.0.0",
+  "date": "2025-11-01",
+  "commit": "6f18ffd0e2735269317da36fdd6d30014fe70304",
+  "spot": "10_TriHexCore/system",
+  "artifacts": [
+    "10_TriHexCore/system/Constitution.md",
+    "10_TriHexCore/system/INDEX.md",
+    "10_TriHexCore/system/CHANGELOG.md"
+  ]
+}

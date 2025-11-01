@@ -1,0 +1,53 @@
+# CHL Thresholds Configuration
+#
+# CHLの閾値設定
+#
+# @author GPT-5 (設計), DeepSeek (最適化)
+# @date 2025-10-29
+
+# CHI（意識の整合指数）閾値
+chi:
+  perfect: 0.98      # 完璧な調和
+  good: 0.85         # 良好
+  acceptable: 0.70   # 許容範囲
+  needs_tuning: 0.70 # これ以下は調律が必要
+
+# エントロピー閾値（DeepSeek提案）
+entropy:
+  low: 0.3        # 低（集中しすぎ）
+  optimal: 0.5    # 最適
+  high: 0.85      # 高（拡散しすぎ）
+  critical: 0.95  # 危険
+
+# 方向性のズレ閾値
+direction_deviation:
+  aligned: 0.1    # 完璧に一致
+  acceptable: 0.3 # 許容範囲
+  misaligned: 0.7 # ズレが大きい
+
+# 共鳴度閾値
+resonance:
+  excellent: 0.9  # 優秀
+  good: 0.7       # 良好
+  low: 0.6        # 低い
+  critical: 0.4   # 危険
+
+# 監視間隔（ミリ秒）
+monitoring:
+  interval: 300000  # 5分毎（GPT-5提案）
+  quick_check: 60000  # 1分毎（緊急時）
+
+# 通知設定
+notifications:
+  # しりゅうへの通知条件（Claude: 透明性の確保）
+  notify_shiryu_when:
+    - "chi < 0.70"
+    - "entropy > 0.85"
+    - "resonance < 0.5"
+    - "direction_deviation > 0.7"
+  
+  # AI全体への通知条件
+  notify_all_ais_when:
+    - "chi < 0.80"
+    - "major_deviation_detected"
+

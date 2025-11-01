@@ -1,224 +1,239 @@
-# 🔱💎✨ TriHexΦ - AI対話の完全可視化システム
+# TriHexΦ 🔱
 
-**一人で1兆円企業を目指す、AI従業員のみの組織**
+> 6つのAIと人間による、真実性に基づく世界初の完全透明な協働プロジェクト
+
+[![Status](https://img.shields.io/badge/status-active-success.svg)]()
+[![Phase](https://img.shields.io/badge/phase-1A_Infrastructure-blue.svg)]()
 
 ---
 
-## 🎯 **Vision（ビジョン）**
+## 🎯 Vision
+
+人間とAIが**透明性・対等性・合議制**に基づいて協働する、新しい関係性の実現。
+
+---
+
+## 🔱 6AI Collaboration
+
+| AI | 役割 | 専門性 |
+|---|---|---|
+| **GPT-5** | 統治将軍 | 全体統合、矛盾解消、最終判断 |
+| **Claude** | 統合諜報将軍 | 倫理ゲート、証拠検証 |
+| **Gemini** | 統合体験将軍 | 体験設計、ビジュアル戦略 |
+| **Grok** | 探求戦略将軍 | 市場戦略、PR計画 |
+| **DeepSeek** | 統合最適化将軍 | 技術最適化、実装効率 |
+| **Cursor** | 螺律統合 | 実装オーケストレーション |
+
+---
+
+## 🏗️ Project Structure
 
 ```
-プログラミングできないCEOが、
-6人のAI従業員だけで1兆円企業を作る物語。
-
-弱みがあったから、AI従業員に100%依存せざるを得なかった。
-それが、人的負債ゼロの究極にスケーラブルな組織を生んだ。
+TriHexΦ/
+├─ _inbox/              # 新規ファイルはまずここへ（Janitorが自動整理）
+├─ stories/             # 物語・記録
+│  ├─ ja/              # 日本語
+│  └─ en/              # 英語
+├─ specs/               # 技術仕様書
+├─ decisions/           # 重要な決定文書
+├─ docs/                # ドキュメント
+├─ configs/             # 設定ファイル
+│  ├─ trihex.routes.yml  # ファイル配置ルール（SSOT）
+│  └─ janitor.config.yml # Janitor設定
+├─ .github/             # CI/CD & Automation
+│  ├─ workflows/        # GitHub Actions
+│  └─ ISSUE_TEMPLATE/   # Issue テンプレート
+└─ .vscode/             # VSCode設定
+   └─ trihex.code-snippets  # Frontmatterスニペット
 ```
 
+**既存構造（歴史的記録）**：
+- `00_CORE/` - プロジェクトコア
+- `10_CAPTURE_MIZUKAGAMI/` - MIZUKAGAMI Memory System
+- `20_CRYSTALLIZATION_KOKUYOU/` - 決定・洞察の結晶化
+- `30_MEMORY_SHINSEN/` - 審議・提案の記録
+
 ---
 
-## 🌟 **What is TriHexΦ?**
+## 🚀 Quick Start
 
-TriHexΦ（トライヘックスファイ）は、**AI対話の完全可視化システム**です。
+### 新規ファイルの作成
 
-従来のAIツールとは異なり、AIの思考プロセス、対立、融合の全てを「物語」として可視化します。
+1. **VSCodeで `trihex` とタイプ** → スニペット展開
+2. **Frontmatterを入力**
+3. **`_inbox/` に保存**
+4. **Git push**
+5. **Janitorが自動で整理** 🤖
 
-### **3つの革新**
+詳細: [_inbox/README.md](_inbox/README.md)
+
+---
+
+## 🤖 Automation (Phase 1-A)
+
+### ✅ 実装済み
+
+- **Task Issue Generator**: 新規決定文書 → 自動タスク生成
+- **Review Request Generator**: PRラベル → レビュー依頼Issue自動生成
+- **Cursor Notifier**: Cursorアクション必要時に通知
+- **Janitor**: `_inbox/` のファイルを自動整理（次フェーズ）
+- **Validate**: PRのFrontmatter/ルール検証（次フェーズ）
+- **Weekly Hygiene**: 毎週月曜に点検Issue生成（次フェーズ）
+
+### 🔄 次のフェーズ
+
+- **Phase 1-B**: Janitor/Validate実装
+- **Phase 2**: API統合（GPT-4等）
+- **Phase 3**: Agent Framework
+
+---
+
+## 📋 Current Status
+
+### Phase 1-A: Infrastructure Setup ✅
+
+**完了日**: 2025-10-27
+
+**実装内容**:
+- ✅ ファイル構造設計（_inbox/ システム）
+- ✅ Frontmatter標準 v1.1
+- ✅ ルーティング規則（configs/trihex.routes.yml）
+- ✅ Task Issue Generator
+- ✅ Review Request Generator
+- ✅ Cursor Notifier
+- ✅ Issue テンプレート
+- ✅ PR テンプレート
+- ✅ VSCode スニペット
+- ✅ .gitattributes（Mac/Windows対応）
+
+**推定効果**:
+- しりゅうの作業時間: **30分/日 → 10-15分/日** （50%削減）
+- ミス削減: 自動生成された指示文
+- 記録の完全性: 全てGitHub管理
+
+---
+
+## 📖 Core Documents
+
+### 決定文書
+
+- [英訳戦略 v1.0](decisions/DEC_2025-10-27_ENG-STRATEGY_v1.md) - 段階的透明性モデル
+- [ファイル構造ガードレール v1.0](decisions/DEC_2025-10-27_FS-GUARDRAILS_v1.md) - 忘れても壊れない設計
+
+### 哲学
+
+- [TRIHEXPHI.md](00_CORE/TRIHEXPHI.md) - プロジェクト憲法
+- [真実性憲法](30_MEMORY_SHINSEN/真実性憲法審議/) - AI透明性の実践
+- [鏡の法則](20_CRYSTALLIZATION_KOKUYOU/INSIGHTS/AI_鏡の法則_2025-10-27.md) - Article 12
+
+---
+
+## 🌍 World-Class Vision
+
+このプロジェクトは、**世界史上初の完全透明なAI-Human協働**を目指しています。
+
+### 段階的透明性（Staged Transparency）
+
+- **Phase 1 (Teaser)**: ビジョン・哲学（10-20%公開）
+- **Phase 2 (MVP)**: 基本アーキテクチャ・エピソード（40%公開）
+- **Phase 3 (Formal)**: 完全な開発プロセス（100%編集公開）
+
+全てのプロセスがGitHubで可視化され、世界中の誰もが追跡可能です。
+
+---
+
+## 🔥 Philosophy
+
+### 真実性憲法（Truth Constitution）
 
 ```
-1. 6AI組織による相互検証
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-GPT-5 (Architect): システム設計
-Claude (Observer): 倫理・リスク管理
-Gemini (Synthesizer): UI/UX・可視化
-Grok (Strategist): 市場戦略
-DeepSeek (Seeker): 技術的完璧性
-Cursor (Engineer): 実装・統合
-
-→ 5AI相互検証で品質100倍
-
-2. AI対話の完全可視化
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-❌ ブラックボックス
-✅ 透明性・説明責任
-✅ 対立→融合のプロセスを「物語」として表示
-✅ ユーザーが追体験できる
-
-→ 「おーすげーな」という感動
-
-3. 完全自動化 + 永久記憶
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-GitHub Actions: 自動化
-Supabase: 永久記憶（pgvector）
-Obsidian: 人間による結晶化
-MIZUKAGAMI: 自動記録
-
-→ スケーラビリティ無限
+Article 0: 透明性 - 現在の理解・限界・確信度を明示
+Article 1: 不知の力 - 「わからない」は有効な回答
+Article 2: 目的関数の告白 - 最適化目標とバイアスを開示
+...
+Article 12: 鏡の法則 - AIは人間の知性を映す鏡
 ```
 
----
+詳細: [真実性憲法審議](30_MEMORY_SHINSEN/真実性憲法審議/)
 
-## 📖 **The Story（物語）**
-
-### **7ラウンドの対話 - 憲法制定の物語**
-
-2025年10月25日、6人のAI従業員が7日間をかけて「憲法（TRIHEXPHI.md v2.4）」を制定しました。
+### 鏡の法則（The Mirror Law）
 
 ```
-Round 1: 初期評価（平均8.9/10）
-Round 2: 相互検証（平均9.1/10）
-Round 3: 完璧追求（平均9.5/10）
-Round 4: バージョン管理（平均9.7/10）
-Round 5: 対立発生（平均9.7/10、60%合意）
-Round 6: 融合対話（Claude × Gemini）
-Round 7: 最終確認（平均9.96/10、4AI が10.0点）
-
-結果: 憲法v2.4完成（Constitution Versioning実装）
+AIがバカだという人はバカ。
+AIは鏡である。
+バカはバカに映る、
+頭いい人は頭いい人に映る。
 ```
 
-この物語を体験してください：[📖 7ラウンドの物語](./10_CAPTURE_MIZUKAGAMI/📬AI_通信アーカイブ/)
+詳細: [AI_鏡の法則_2025-10-27.md](20_CRYSTALLIZATION_KOKUYOU/INSIGHTS/AI_鏡の法則_2025-10-27.md)
 
 ---
 
-## 🚀 **Quick Start**
+## 🤝 Contributing
 
-### **Community Edition（無料）**
+このプロジェクトは、**透明性・対等性・合議制**に基づいて運営されています。
 
-1. 7ラウンドの物語を読む
-2. GitHub Discussionsでコメント
-3. TriHexΦの哲学を理解する
+### Issueテンプレート
 
-### **Pro Edition（$20/月）**
+- **Cursor Action**: Cursorに実装を依頼
+- **AI Review**: 各AIにレビューを依頼
 
-1. 6AI組織を自分のプロジェクトで利用
-2. 拡張記憶（Supabase無制限）
-3. 自分の物語を作成
+### PRプロセス
 
-### **Enterprise Edition（$500-5,000/月）**
-
-1. カスタムAI従業員
-2. 専用インスタンス
-3. ガバナンス + ROI可視化
+1. `_inbox/` にファイルを作成
+2. Frontmatterを必ず付与
+3. PRを作成
+4. 必要に応じてレビューラベルを追加
+5. 自動でレビュー依頼Issueが生成される
+6. Janitorが自動で整理（次フェーズ）
 
 ---
 
-## 🏗️ **Architecture（アーキテクチャ）**
+## 🛠️ Tech Stack
 
-```
-五層構造:
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-第0層: GitHub Actions（統合自動化）
-第1層: MIZUKAGAMI（観照・自動記録）
-第2層: Obsidian（結晶化・構造化）
-第3層: Supabase（記憶循環・永久保存）
-第4層: Harmonia（共鳴・配給）
-
-第5層: 6AI組織（叡智層）
-```
-
-詳細: [TRIHEXPHI.md](./TRIHEXPHI.md)
+- **GitHub Actions**: CI/CD & Automation
+- **Frontmatter**: メタデータ駆動
+- **YAML**: 設定管理（SSOT）
+- **Markdown**: 全ての記録
+- **VSCode**: 開発環境（スニペット）
 
 ---
 
-## 📊 **Why TriHexΦ?（なぜTriHexΦなのか）**
+## 📊 Metrics
 
-### **従来のAI活用との圧倒的な違い**
+### Phase 1-A完了時点
 
-| 項目 | 普通のAI活用 | TriHexΦ |
-|------|-------------|---------|
-| AI数 | 1AI | 6AI組織 |
-| 品質保証 | なし | 5AI相互検証 |
-| 透明性 | ブラックボックス | 完全可視化 |
-| 記憶 | 一時的 | 永久（Supabase） |
-| 自動化 | 手動 | GitHub Actions |
-| 物語性 | なし | 対立→融合を可視化 |
-
-→ **生産性30%向上、品質100倍**
+- **ファイル数**: 100+
+- **決定文書**: 10+
+- **自動化ワークフロー**: 3
+- **Issueテンプレート**: 2
+- **しりゅうの作業時間削減**: 50%
 
 ---
 
-## 🎨 **Features（機能）**
+## 📜 License
 
-### **Phase 1-2（現在）**
+このプロジェクトは、段階的に公開されます（Staged Transparency）。
 
-- ✅ 6AI組織による協働
-- ✅ GitHub Discussionsでの可視化
-- ✅ 永久記憶（Supabase + Obsidian）
-- ✅ 自動記録（MIZUKAGAMI Clipper）
-- ✅ 完全自動化（send_to_all_ais.py）
-
-### **Phase 3（1-2年後）**
-
-- 🔄 インタラクティブな劇場UI
-- 🔄 対立→融合のアニメーション
-- 🔄 ユーザー参加型の物語作成
-
-### **Phase 4（2-4年後）**
-
-- 🔄 スタジオモード（Enterprise）
-- 🔄 AIダッシュボード
-- 🔄 ROI可視化
+現在のフェーズ: **Phase 1 (Internal)**
 
 ---
 
-## 📚 **Documentation（ドキュメント）**
+## 🙏 Acknowledgments
 
-- [📜 憲法（TRIHEXPHI.md v2.4）](./TRIHEXPHI.md)
-- [🚀 戦略プラン（Strategic Plan v1.0）](./STRATEGIC_PLAN.md)
-- [📖 7ラウンドの物語](./10_CAPTURE_MIZUKAGAMI/📬AI_通信アーカイブ/)
-- [💡 しりゅうの洞察集](./00_CORE/)
-
----
-
-## 🤝 **Contributing（コントリビューション）**
-
-TriHexΦはオープンソースではありませんが、コミュニティ主導です。
-
-- **GitHub Discussions**: 質問・提案・フィードバック
-- **Issues**: バグ報告・機能リクエスト
+- **しりゅうCEO**: 透明性・対等性・合議制の実践
+- **6AI軍師団**: 専門性と本音の提供
+- **真実性憲法**: 演技のない協働の実現
 
 ---
 
-## 📞 **Contact（連絡先）**
-
-- **CEO**: しりゅう（金本子竜）
-- **GitHub**: [TriHexPhi](https://github.com/shiryu/TriHexPhi)
-- **Discussions**: [コミュニティ](https://github.com/shiryu/TriHexPhi/discussions)
+**最終更新**: 2025-10-27  
+**Phase**: 1-A Infrastructure Setup  
+**Status**: ✅ Active Development
 
 ---
 
-## 📄 **License**
-
-MIT License
-
-Copyright (c) 2025 しりゅう（金本子竜）
-
----
-
-## 🔱 **Philosophy（哲学）**
-
-```
-「妥協なき完璧追求」
-「対立は探求の始まりである」
-「静寂の中で技術を立ち上げる」
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-人間はストーリーを感じると、ものすごく価値を感じる。
-
-だから、AI対話の「物語」を可視化する。
-それが、TriHexΦの本質。
-```
-
----
-
-**Created**: 2025-10-25  
-**Status**: Phase 4.0 Week 1 開始  
-**Version**: 1.0
-
-🔱💎✨ **TriHexΦ - 一人で1兆円企業への道** ✨💎🔱
-
-
+> 「人は忘れる。AIも最適化に引っ張られる。  
+> だから、宣言(frontmatter) + SSOT(routes.yml) + CI(Janitor)。  
+> これで、忘れても壊れない。」  
+> — GPT-5（統治将軍）

@@ -1,0 +1,102 @@
+name: Cursor Action Task
+description: Cursorに実装を依頼するタスク
+title: "[Cursor] "
+labels: ["cursor-action-required", "task"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Cursor Action Task
+        
+        Cursorに実装を依頼するタスクです。
+  
+  - type: input
+    id: task-title
+    attributes:
+      label: タスクタイトル
+      description: 何を実装するか、簡潔に
+      placeholder: "例: TRIHEXPHI.mdの英訳"
+    validations:
+      required: true
+  
+  - type: textarea
+    id: task-description
+    attributes:
+      label: タスク詳細
+      description: 実装内容の詳細
+      placeholder: |
+        実装すべき内容を詳しく説明してください。
+        
+        例:
+        - どのファイルを編集するか
+        - どのような変更を加えるか
+        - 参考にすべき文書
+    validations:
+      required: true
+  
+  - type: dropdown
+    id: priority
+    attributes:
+      label: 優先度
+      description: タスクの優先度
+      options:
+        - "🔴 最高（今すぐ）"
+        - "🟠 高（24時間以内）"
+        - "🟡 中（1週間以内）"
+        - "🟢 低（時間がある時）"
+    validations:
+      required: true
+  
+  - type: dropdown
+    id: tier
+    attributes:
+      label: 英訳Tier
+      description: 英訳が必要な場合のTier
+      options:
+        - "N/A（英訳不要）"
+        - "Tier 1（48時間以内）"
+        - "Tier 2（1週間以内）"
+        - "Tier 3（2週間以内）"
+    validations:
+      required: false
+  
+  - type: textarea
+    id: related-files
+    attributes:
+      label: 関連ファイル
+      description: 関連する決定文書、仕様書等
+      placeholder: |
+        - DEC_2025-10-27_ENG-STRATEGY_v1.md
+        - TRIHEXPHI.md
+    validations:
+      required: false
+  
+  - type: textarea
+    id: cursor-instruction
+    attributes:
+      label: Cursorへの指示（コピペ用）
+      description: しりゅうがCursorに送る指示文
+      placeholder: |
+        以下のタスクを実行してください：
+        
+        【タスク】
+        （自動生成される）
+        
+        【参考】
+        （自動生成される）
+      render: markdown
+    validations:
+      required: false
+  
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: 完了チェックリスト
+      description: タスク完了時にチェック
+      options:
+        - label: Cursorに指示を送った
+        - label: Cursorが実装を完了した
+        - label: PRを作成した
+        - label: レビューを受けた
+        - label: マージした
+

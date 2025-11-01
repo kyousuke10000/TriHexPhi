@@ -1,0 +1,262 @@
+# TriHexΦ Knowledge Auto-Sync Extended
+#
+# Knowledge Relay の自動同期
+# capture → structure → insight → memory
+#
+# 作成: 2025-10-28
+# 承認: GPT-5（統治将軍）
+
+name: Knowledge Auto-Sync
+
+on:
+  schedule:
+    - cron: "0 0 * * *"  # 毎日 09:00 JST (00:00 UTC)
+  
+  workflow_dispatch:  # 手動実行
+  
+  push:
+    branches:
+      - main
+    paths:
+      - 'capture/**'
+      - 'structure/**'
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+jobs:
+  sync-capture-to-structure:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Install dependencies
+        run: |
+          pip install pyyaml
+          npm install --no-save js-yaml gray-matter
+      
+      - name: Find new capture files
+        id: find_new
+        run: |
+          NEW_FILES=$(find capture -name "*.md" -newer .last_sync 2>/dev/null || find capture -name "*.md")
+          echo "new_files<<EOF" >> $GITHUB_OUTPUT
+          echo "$NEW_FILES" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+          
+          COUNT=$(echo "$NEW_FILES" | grep -c "." || echo "0")
+          echo "count=$COUNT" >> $GITHUB_OUTPUT
+      
+      - name: Run spiral_scan on new files
+        if: steps.find_new.outputs.count > 0
+        run: |
+          mkdir -p structure
+          
+          echo "${{ steps.find_new.outputs.new_files }}" | while read file; do
+            if [ -f "$file" ]; then
+              base=$(basename "$file" .md)
+              output="structure/${base}_scan.json"
+              
+              echo "Processing: $file → $output"
+              python tools/spiral_scan.py "$file" --output "$output" || true
+            fi
+          done
+      
+      - name: Generate cause profiles
+        if: steps.find_new.outputs.count > 0
+        run: |
+          for scan_file in structure/*_scan.json; do
+            if [ -f "$scan_file" ]; then
+              base=$(basename "$scan_file" _scan.json)
+              profile_file="structure/${base}_profile.json"
+              
+              echo "Generating profile: $scan_file → $profile_file"
+              python tools/cause_profile.py "$scan_file" > "$profile_file" || true
+            fi
+          done
+      
+      - name: Create GPT-5 review issues
+        if: steps.find_new.outputs.count > 0
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+            
+            // structure/ のプロファイルファイルを読み込み
+            const profileFiles = fs.readdirSync('structure')
+              .filter(f => f.endsWith('_profile.json'));
+            
+            for (const profileFile of profileFiles) {
+              const profilePath = path.join('structure', profileFile);
+              const profile = JSON.parse(fs.readFileSync(profilePath, 'utf8'));
+              
+              const basename = profileFile.replace('_profile.json', '');
+              const captureFile = `capture/${basename}.md`;
+              
+              if (!fs.existsSync(captureFile)) continue;
+              
+              // GPT-5レビュー依頼Issueを作成
+              const title = `📋 [GPT-5] ${basename} - 構造化依頼`;
+              
+              const reviewers = profile.profile?.recommended_reviewers || [];
+              
+              const body = `## 📝 構造化依頼
+            
+**Captureファイル**: \`${captureFile}\`
+**Scanファイル**: \`structure/${basename}_scan.json\`
+**Profileファイル**: \`structure/${basename}_profile.json\`
+            
+## 📊 六螺旋スコア
+            
+\`\`\`json
+${JSON.stringify(profile.profile?.scores || {}, null, 2)}
+\`\`\`
+            
+## 🎯 真因プロファイル
+            
+- **Primary Spiral**: ${profile.profile?.primary_spiral || 'N/A'}
+- **Phase**: ${profile.profile?.phase || 'N/A'}
+- **Intensity**: ${profile.profile?.intensity || 'N/A'}
+            
+## 👥 推奨レビュアー
+            
+${reviewers.map(r => `- ${r}`).join('\n') || '- (なし)'}
+            
+## 📋 次のアクション
+            
+@shiryu: 以下をGPT-5に送付してください：
+            
+---
+            
+### 【GPT-5への送付用テキスト】
+            
+\`\`\`
+以下のCaptureログを構造化してください。
+            
+【ファイル】: ${captureFile}
+            
+【六螺旋スコア】
+${JSON.stringify(profile.profile?.scores || {}, null, 2)}
+            
+【真因プロファイル】
+- Primary: ${profile.profile?.primary_spiral || 'N/A'}
+- Phase: ${profile.profile?.phase || 'N/A'}
+- Intensity: ${profile.profile?.intensity || 'N/A'}
+            
+【タスク】
+1. このログを読んで、構造化してください
+2. 見出しを整理し、分類してください
+3. 次にレビューすべきAIを推奨してください
+            
+推奨レビュアー: ${reviewers.join(', ') || 'なし'}
+            
+構造化結果を structure/ に保存してください。
+\`\`\`
+            
+---
+            
+**自動生成**: Knowledge Auto-Sync
+**生成日時**: ${new Date().toISOString()}`;
+              
+              const issue = await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title,
+                body,
+                labels: ['knowledge-sync', 'gpt5-review', 'structure-request']
+              });
+              
+              console.log(`✅ Created issue: ${issue.data.html_url}`);
+            }
+      
+      - name: Commit processed files
+        if: steps.find_new.outputs.count > 0
+        run: |
+          git config user.name "trihex-sync[bot]"
+          git config user.email "actions@users.noreply.github.com"
+          
+          git add structure/
+          
+          if [ -n "$(git status --porcelain)" ]; then
+            git commit -m "🔄 Knowledge Sync: capture → structure
+            
+Processed ${{ steps.find_new.outputs.count }} file(s)
+            
+- Spiral scan completed
+- Cause profiles generated
+- GPT-5 review issues created
+            
+Automated by Knowledge Auto-Sync"
+            git push
+          fi
+      
+      - name: Update sync timestamp
+        run: |
+          touch .last_sync
+          git add .last_sync
+          git commit -m "chore: update sync timestamp" || true
+          git push || true
+  
+  weekly-knowledge-map:
+    runs-on: ubuntu-latest
+    if: github.event.schedule == '0 0 * * 1'  # 月曜のみ
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Generate weekly knowledge map
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const title = `📊 週次知識マップ — ${new Date().toISOString().slice(0,10)}`;
+            
+            const body = `## 📚 今週の知識同期状況
+            
+### 📝 Capture
+- 新規ログ: (TODO: カウント)
+            
+### 🏗️ Structure
+- 構造化済み: (TODO: カウント)
+- 待機中: (TODO: カウント)
+            
+### 💡 Insight
+- Ethics: (TODO: カウント)
+- Beauty: (TODO: カウント)
+- Strategy: (TODO: カウント)
+- Tech: (TODO: カウント)
+            
+### 🗄️ Memory
+- 永続化済み: (TODO: カウント)
+            
+---
+            
+## 📋 次週のアクション
+            
+- [ ] 構造化待ちのログを処理
+- [ ] Insight待ちの文書をレビュー
+- [ ] Memory化の承認
+            
+**自動生成**: Knowledge Auto-Sync (Weekly)
+**生成日時**: ${new Date().toISOString()}`;
+            
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title,
+              body,
+              labels: ['knowledge-sync', 'weekly', 'knowledge-map']
+            });
+

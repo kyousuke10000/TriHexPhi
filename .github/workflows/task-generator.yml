@@ -1,0 +1,212 @@
+# TriHexΦ Task Issue Generator
+# 
+# 新しい決定文書やTier付きファイルを検知して、
+# 自動的にタスクIssueを生成します。
+#
+# 作成: 2025-10-27
+# 承認: GPT-5（統治将軍）
+
+name: Task Issue Generator
+
+on:
+  push:
+    branches:
+      - main
+      - feature/**
+    paths:
+      - 'decisions/**'
+      - 'stories/**'
+      - '_inbox/**'
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  generate-tasks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2  # 前回のコミットと比較するため
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Install dependencies
+        run: |
+          npm install --no-save js-yaml gray-matter
+      
+      - name: Analyze new files and generate tasks
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+            const matter = require('gray-matter');
+            const yaml = require('js-yaml');
+            
+            // 変更されたファイルを取得
+            const { data: files } = await github.rest.repos.compareCommits({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              base: context.payload.before,
+              head: context.payload.after,
+            });
+            
+            const addedFiles = files.files.filter(f => 
+              f.status === 'added' && f.filename.endsWith('.md')
+            );
+            
+            console.log(`Found ${addedFiles.length} new markdown files`);
+            
+            for (const file of addedFiles) {
+              try {
+                const content = fs.readFileSync(file.filename, 'utf8');
+                const { data: frontmatter } = matter(content);
+                
+                if (!frontmatter.trihex) continue;
+                
+                const trihex = frontmatter.trihex;
+                
+                // Tier 1のファイル → 英訳タスク生成
+                if (trihex.tier === 1 && trihex.kind === 'decision') {
+                  await createTranslationTask(file.filename, trihex);
+                }
+                
+                // Decisionファイル → レビュータスク生成
+                if (trihex.kind === 'decision' && trihex.status === 'draft') {
+                  await createReviewTask(file.filename, trihex);
+                }
+                
+              } catch (error) {
+                console.error(`Error processing ${file.filename}:`, error);
+              }
+            }
+            
+            // === ヘルパー関数 ===
+            
+            async function createTranslationTask(filename, trihex) {
+              const title = `📋 [Tier 1] ${trihex.title} 英訳タスク`;
+              
+              const body = `## 📝 タスク
+            
+**ファイル**: \`${filename}\`
+**タイトル**: ${trihex.title}
+**優先度**: Tier ${trihex.tier}
+            
+このファイルの英訳が必要です。
+            
+## 👥 担当
+            
+- **Primary**: @Cursor（実装）
+- **Review**: @Gemini（体験設計）, @Claude（倫理チェック）
+            
+## 📋 次のアクション
+            
+@shiryu: Cursorに以下を指示してください：
+            
+\`\`\`
+「${filename}」を英訳してください。
+Tier 1なので、48時間以内に完了をお願いします。
+            
+参考:
+- DEC_2025-10-27_ENG-STRATEGY_v1.md
+- 編集基準に従って、核心を残し、プライバシーを保護
+\`\`\`
+            
+## 📚 参考文書
+            
+- [英訳戦略決定文書](../decisions/DEC_2025-10-27_ENG-STRATEGY_v1.md)
+- [編集基準](../decisions/DEC_2025-10-27_ENG-STRATEGY_v1.md#4-編集基準残す削る)
+            
+---
+            
+**自動生成**: Task Issue Generator
+**生成日時**: ${new Date().toISOString()}`;
+              
+              const issue = await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title,
+                body,
+                labels: ['task', 'translation', 'tier-1', 'cursor-action-required']
+              });
+              
+              console.log(`✅ Created translation task: ${issue.data.html_url}`);
+            }
+            
+            async function createReviewTask(filename, trihex) {
+              const title = `📋 [Review] ${trihex.title} レビュー依頼`;
+              
+              const body = `## 📝 レビュー対象
+            
+**ファイル**: \`${filename}\`
+**タイトル**: ${trihex.title}
+**著者**: ${trihex.author}
+**ステータス**: ${trihex.status}
+            
+このファイルのレビューが必要です。
+            
+## 👥 レビュアー
+            
+- **Claude**: 倫理的観点、表現リスク
+- **Gemini**: 読者体験、わかりやすさ
+- **Grok**: 市場戦略、実現可能性
+- **DeepSeek**: 技術的正確性、最適化
+            
+## 📋 次のアクション
+            
+@shiryu: 各AIに以下を送付してください：
+            
+### Claudeへ（倫理チェック）
+            
+\`\`\`
+以下の決定文書をレビューしてください（倫理的観点）：
+            
+【ファイル】: ${filename}
+【タイトル】: ${trihex.title}
+            
+チェック項目:
+- プライバシー保護は十分か
+- 表現にリスクはないか
+- 真実性憲法との整合性
+            
+率直なフィードバックをお願いします。
+\`\`\`
+            
+### Geminiへ（体験設計）
+            
+\`\`\`
+以下の決定文書をレビューしてください（読者体験）：
+            
+【ファイル】: ${filename}
+【タイトル】: ${trihex.title}
+            
+チェック項目:
+- わかりやすいか
+- 構成は適切か
+- 視覚的要素は必要か
+            
+読者の立場からフィードバックをお願いします。
+\`\`\`
+            
+---
+            
+**自動生成**: Task Issue Generator
+**生成日時**: ${new Date().toISOString()}`;
+              
+              const issue = await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title,
+                body,
+                labels: ['review', 'needs-claude', 'needs-gemini']
+              });
+              
+              console.log(`✅ Created review task: ${issue.data.html_url}`);
+            }
+

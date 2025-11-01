@@ -1,0 +1,26 @@
+{
+  "input_file": "_inbox/2025-10-28_phase-iv-completion-log.md",
+  "spiral_scores": {
+    "autonomy": 0.25,
+    "connection": 0.75,
+    "growth": 1.0,
+    "purpose": 0.75,
+    "identity": 0.75,
+    "liberation": 0.75
+  },
+  "cause_profile": {
+    "primary": "growth",
+    "phase": "fulfillment",
+    "intensity": 1.0,
+    "secondary": "connection"
+  },
+  "insights": [
+    "Growthが充足しています。",
+    "六螺旋のバランスに偏りがあります。"
+  ],
+  "metadata": {
+    "tool": "spiral_scan.py",
+    "version": "0.1.0-mvp",
+    "date": "2025-10-28"
+  }
+}

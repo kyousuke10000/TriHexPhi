@@ -1,0 +1,111 @@
+name: AI Review Request
+description: 各AIにレビューを依頼するタスク
+title: "[Review] "
+labels: ["review-request"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## AI Review Request
+        
+        各AIにレビューを依頼するタスクです。
+  
+  - type: input
+    id: target-file
+    attributes:
+      label: レビュー対象ファイル
+      description: レビューしてほしいファイル
+      placeholder: "例: decisions/DEC_2025-10-27_ENG-STRATEGY_v1.md"
+    validations:
+      required: true
+  
+  - type: input
+    id: pr-number
+    attributes:
+      label: PR番号（該当する場合）
+      description: PRに関連する場合、PR番号を入力
+      placeholder: "例: 123"
+    validations:
+      required: false
+  
+  - type: checkboxes
+    id: reviewers
+    attributes:
+      label: レビュアー
+      description: レビューを依頼するAI
+      options:
+        - label: Claude（倫理ゲート）
+        - label: Gemini（体験設計）
+        - label: Grok（探求戦略）
+        - label: DeepSeek（最適化）
+        - label: GPT-5（統治将軍）
+  
+  - type: textarea
+    id: review-focus
+    attributes:
+      label: レビュー観点
+      description: 特に注目してほしい点
+      placeholder: |
+        例:
+        - プライバシー保護は十分か
+        - 読者にわかりやすいか
+        - 市場戦略として適切か
+    validations:
+      required: false
+  
+  - type: textarea
+    id: claude-request
+    attributes:
+      label: Claudeへの依頼文（コピペ用）
+      description: Claudeに送る依頼文（自動生成）
+      render: markdown
+    validations:
+      required: false
+  
+  - type: textarea
+    id: gemini-request
+    attributes:
+      label: Geminiへの依頼文（コピペ用）
+      description: Geminiに送る依頼文（自動生成）
+      render: markdown
+    validations:
+      required: false
+  
+  - type: textarea
+    id: grok-request
+    attributes:
+      label: Grokへの依頼文（コピペ用）
+      description: Grokに送る依頼文（自動生成）
+      render: markdown
+    validations:
+      required: false
+  
+  - type: textarea
+    id: deepseek-request
+    attributes:
+      label: DeepSeekへの依頼文（コピペ用）
+      description: DeepSeekに送る依頼文（自動生成）
+      render: markdown
+    validations:
+      required: false
+  
+  - type: textarea
+    id: gpt5-request
+    attributes:
+      label: GPT-5への依頼文（コピペ用）
+      description: GPT-5に送る依頼文（自動生成）
+      render: markdown
+    validations:
+      required: false
+  
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: 完了チェックリスト
+      description: レビュー完了時にチェック
+      options:
+        - label: 各AIに依頼文を送付した
+        - label: レビュー結果を受け取った
+        - label: レビュー結果をIssueにコメントした
+        - label: 必要な修正を反映した
+
