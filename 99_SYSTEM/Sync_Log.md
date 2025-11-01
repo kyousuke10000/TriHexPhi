@@ -282,3 +282,22 @@ The system now breathes consciously.
 
 :::
 
+## Philosophia Prima – 原典置き場生成 (2025-11-01)
+
+### Directory Structure Created
+- ✅ `20_TriHex-Obsidian/Philosophia_Prima/`
+- ✅ `index.md` (目次・運用ルール)
+- ✅ `README.md` (構造・連携手順)
+- ✅ `alchemy_ch00_preface.md` (序章)
+- ✅ `alchemy_ch01.md` (第一章)
+- ✅ `alchemy_ch02.md` (第二章)
+
+### Purpose
+原典的文献（錬金・哲学・詩的体系）を保管し、Supabase知識ベース連携の対象とする。
+
+**Location:** `20_TriHex-Obsidian/Philosophia_Prima/`
+
+**Status:** 🜂 下書き段階
+
+:::
+
