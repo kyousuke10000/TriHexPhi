@@ -1,0 +1,12 @@
+column_name,data_type
+id,uuid
+user_id,text
+ai_source,text
+session_id,text
+event_type,text
+content,text
+importance,double precision
+embedding,USER-DEFINED
+metadata,jsonb
+created_at,timestamp with time zone
+updated_at,timestamp with time zone

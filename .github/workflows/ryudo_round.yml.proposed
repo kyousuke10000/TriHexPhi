@@ -1,0 +1,425 @@
+name: 🔱 Ryūdō Round Review System
+
+on:
+  discussion:
+    types: [created]
+  discussion_comment:
+    types: [created]
+  workflow_dispatch:
+    inputs:
+      discussion_number:
+        description: 'Discussion number to process'
+        required: true
+        type: string
+      round_number:
+        description: 'Round number (1-7)'
+        required: false
+        type: string
+        default: '1'
+
+permissions:
+  contents: read
+  issues: write
+  discussions: write
+  pull-requests: write
+
+jobs:
+  parse-context:
+    name: 📋 Parse Discussion Context
+    runs-on: ubuntu-latest
+    outputs:
+      topic: ${{ steps.parse.outputs.topic }}
+      objective: ${{ steps.parse.outputs.objective }}
+      target_score: ${{ steps.parse.outputs.target_score }}
+      round_no: ${{ steps.parse.outputs.round_no }}
+      discussion_id: ${{ steps.parse.outputs.discussion_id }}
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Get Discussion Content
+        id: parse
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const discussionNumber = ${{ github.event_name == 'discussion' && github.event.discussion.number || github.event.inputs.discussion_number }};
+            
+            const query = `
+              query($number: Int!) {
+                repository(owner: "${{ github.repository_owner }}", name: "${{ github.event.repository.name }}") {
+                  discussion(number: $number) {
+                    id
+                    title
+                    body
+                    labels(first: 10) {
+                      nodes {
+                        name
+                      }
+                    }
+                  }
+                }
+              }
+            `;
+            
+            const data = await github.graphql(query, { number: discussionNumber });
+            const discussion = data.repository.discussion;
+            
+            // Extract topic from title (remove [Ryūdō] prefix)
+            const titleMatch = discussion.title.match(/^\[Ryūdō\]\s*(.+)$/);
+            const topic = titleMatch ? titleMatch[1] : discussion.title;
+            
+            // Extract objective from body
+            const objectiveMatch = discussion.body.match(/\*\*目的\*\*:\s*(.+)/);
+            const objective = objectiveMatch ? objectiveMatch[1].trim() : 'General review';
+            
+            // Extract target score (default 9.9)
+            const targetScoreMatch = discussion.body.match(/\*\*目標スコア\*\*:\s*([\d.]+)/);
+            const targetScore = targetScoreMatch ? parseFloat(targetScoreMatch[1]) : 9.9;
+            
+            // Determine round number from labels or input
+            let roundNo = 1;
+            const roundLabel = discussion.labels.nodes.find(l => l.name.startsWith('Round:'));
+            if (roundLabel) {
+              roundNo = parseInt(roundLabel.name.split(':')[1]);
+            } else if ('${{ github.event.inputs.round_number }}') {
+              roundNo = parseInt('${{ github.event.inputs.round_number }}');
+            }
+            
+            core.setOutput('topic', topic);
+            core.setOutput('objective', objective);
+            core.setOutput('target_score', targetScore);
+            core.setOutput('round_no', roundNo);
+            core.setOutput('discussion_id', discussion.id);
+            
+            console.log(`✅ Parsed: Topic="${topic}", Round=${roundNo}, Target=${targetScore}`);
+
+  ping-hai:
+    name: 🤖 Send Prompts to 6HAI
+    needs: parse-context
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        ai:
+          - name: GPT-5
+            api_key: OPENAI_API_KEY
+            symbol: 🜁
+            endpoint: https://api.openai.com/v1/chat/completions
+          - name: Claude
+            api_key: ANTHROPIC_API_KEY
+            symbol: 🜄
+            endpoint: https://api.anthropic.com/v1/messages
+          - name: Gemini
+            api_key: GEMINI_API_KEY
+            symbol: 🜀
+            endpoint: https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent
+          - name: Grok
+            api_key: GROK_API_KEY
+            symbol: 🜃
+            endpoint: https://api.x.ai/v1/chat/completions
+          - name: DeepSeek
+            api_key: DEEPSEEK_API_KEY
+            symbol: 🜂
+            endpoint: https://api.deepseek.com/v1/chat/completions
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Build Prompt
+        id: build-prompt
+        run: |
+          cat > prompt.json << EOF
+          {
+            "topic": "${{ needs.parse-context.outputs.topic }}",
+            "context": "${{ needs.parse-context.outputs.objective }}",
+            "constraints": [
+              "TriHex哲学を遵守",
+              "5軸評価軸に基づく",
+              "具体的根拠を提示"
+            ],
+            "rubric": {
+              "consistency": "10点: 整合性",
+              "depth": "10点: 深度",
+              "specificity": "10点: 具体性",
+              "feasibility": "10点: 実装可能性",
+              "philosophy_alignment": "10点: TriHex哲学準拠"
+            },
+            "round_no": ${{ needs.parse-context.outputs.round_no }},
+            "seed_links": [
+              "Genesis_Protocol_v3.1.md",
+              "Ryudo_Definition.md"
+            ]
+          }
+          EOF
+      
+      - name: Send ${{ matrix.ai.name }} Prompt
+        id: send-prompt
+        env:
+          API_KEY: ${{ secrets[matrix.ai.api_key] }}
+        run: |
+          echo "📤 Sending prompt to ${{ matrix.ai.name }}..."
+          
+          # NOTE: API calls are placeholders
+          # Replace with actual API implementation or use n8n webhook
+          echo "response_received=true" >> $GITHUB_OUTPUT || echo "response_received=false" >> $GITHUB_OUTPUT
+          
+          # TODO: Replace with actual API call or n8n webhook
+          # curl -X POST "${{ matrix.ai.endpoint }}" \
+          #   -H "Authorization: Bearer $API_KEY" \
+          #   -H "Content-Type: application/json" \
+          #   -d @prompt.json | jq . > "${matrix.ai.name}_response.json"
+      
+      - name: Upload Response
+        if: steps.send-prompt.outputs.response_received == 'true'
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ matrix.ai.name }}_response_round${{ needs.parse-context.outputs.round_no }}
+          path: |
+            ${matrix.ai.name}_response.json
+            prompt.json
+
+  collect:
+    name: 📦 Collect & Aggregate Responses
+    needs: [parse-context, ping-hai]
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Download All Responses
+        uses: actions/download-artifact@v3
+        with:
+          path: responses/
+      
+      - name: Aggregate Responses
+        id: aggregate
+        run: |
+          echo "📊 Aggregating 6HAI responses..."
+          
+          # Combine all responses into single markdown
+          echo "# 6HAI Responses - Round ${{ needs.parse-context.outputs.round_no }}" > aggregated_responses.md
+          echo "" >> aggregated_responses.md
+          echo "**Timestamp:** $(date -u +'%Y-%m-%dT%H:%M:%SZ')" >> aggregated_responses.md
+          echo "**Target Score:** ${{ needs.parse-context.outputs.target_score }}" >> aggregated_responses.md
+          echo "" >> aggregated_responses.md
+          
+          for ai_dir in responses/*/; do
+            ai_name=$(basename "$ai_dir")
+            echo "## ${ai_name}" >> aggregated_responses.md
+            echo "" >> aggregated_responses.md
+            
+            # TODO: Parse actual response JSON
+            echo "_Response placeholder_" >> aggregated_responses.md
+            echo "" >> aggregated_responses.md
+          done
+      
+      - name: Post Aggregated Responses
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const fs = require('fs');
+            const aggregated = fs.readFileSync('aggregated_responses.md', 'utf8');
+            
+            const mutation = `
+              mutation($discussionId: ID!, $body: String!) {
+                addDiscussionComment(input: {
+                  discussionId: $discussionId,
+                  body: $body
+                }) {
+                  comment { id }
+                }
+              }
+            `;
+            
+            await github.graphql(mutation, {
+              discussionId: '${{ needs.parse-context.outputs.discussion_id }}',
+              body: aggregated
+            });
+      
+      - name: Upload Aggregation
+        uses: actions/upload-artifact@v3
+        with:
+          name: aggregated_responses_round${{ needs.parse-context.outputs.round_no }}
+          path: aggregated_responses.md
+
+  score:
+    name: 📊 Score & Analyze
+    needs: [parse-context, collect]
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Download Aggregated Responses
+        uses: actions/download-artifact@v3
+        with:
+          path: responses/
+      
+      - name: Score Responses
+        id: score
+        run: |
+          echo "📊 Scoring 6HAI responses..."
+          
+          # TODO: Implement actual scoring using rubric
+          # For now, mock scores
+          echo "avg_score=9.5" >> $GITHUB_OUTPUT
+          echo "min_score=9.2" >> $GITHUB_OUTPUT
+          echo "max_score=9.8" >> $GITHUB_OUTPUT
+          echo "variance=0.2" >> $GITHUB_OUTPUT
+      
+      - name: Generate Score Report
+        run: |
+          cat > score_report.md << EOF
+          # Score Report - Round ${{ needs.parse-context.outputs.round_no }}
+          
+          **Timestamp:** $(date -u +'%Y-%m-%dT%H:%M:%SZ')
+          **Target:** ${{ needs.parse-context.outputs.target_score }}
+          
+          ## Results
+          
+          - **Average:** ${{ steps.score.outputs.avg_score }}
+          - **Min:** ${{ steps.score.outputs.min_score }}
+          - **Max:** ${{ steps.score.outputs.max_score }}
+          - **Variance:** ${{ steps.score.outputs.variance }}
+          
+          ## Individual Scores
+          
+          TODO: Add per-AI scores
+          
+          ## Weaknesses
+          
+          TODO: Identify common weaknesses
+          
+          ## Next Steps
+          
+          EOF
+      
+      - name: Post Score Report
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const fs = require('fs');
+            const report = fs.readFileSync('score_report.md', 'utf8');
+            
+            const mutation = `
+              mutation($discussionId: ID!, $body: String!) {
+                addDiscussionComment(input: {
+                  discussionId: $discussionId,
+                  body: $body
+                }) {
+                  comment { id }
+                }
+              }
+            `;
+            
+            await github.graphql(mutation, {
+              discussionId: '${{ needs.parse-context.outputs.discussion_id }}',
+              body: report
+            });
+      
+      - name: Upload Score Report
+        uses: actions/upload-artifact@v3
+        with:
+          name: score_report_round${{ needs.parse-context.outputs.round_no }}
+          path: score_report.md
+
+  loop-or-finish:
+    name: 🔄 Next Round or Finish
+    needs: [parse-context, score]
+    runs-on: ubuntu-latest
+    outputs:
+      should_continue: ${{ steps.decide.outputs.should_continue }}
+      next_round: ${{ steps.decide.outputs.next_round }}
+    
+    steps:
+      - name: Decision Check
+        id: decide
+        run: |
+          AVG=${{ needs.score.outputs.avg_score }}
+          TARGET=${{ needs.parse-context.outputs.target_score }}
+          ROUND=${{ needs.parse-context.outputs.round_no }}
+          
+          # Check if target met
+          if (( $(echo "$AVG >= $TARGET" | bc -l) )); then
+            echo "should_continue=false" >> $GITHUB_OUTPUT
+            echo "result=🎉 Target achieved!" >> $GITHUB_OUTPUT
+          elif [ $ROUND -ge 7 ]; then
+            echo "should_continue=false" >> $GITHUB_OUTPUT
+            echo "result=⏱️ Max rounds reached" >> $GITHUB_OUTPUT
+          else
+            echo "should_continue=true" >> $GITHUB_OUTPUT
+            echo "next_round=$((ROUND + 1))" >> $GITHUB_OUTPUT
+            echo "result=📋 Continue to Round $((ROUND + 1))" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Post Decision
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const fs = require('fs');
+            const result = '${{ steps.decide.outputs.result }}';
+            const shouldContinue = '${{ steps.decide.outputs.should_continue }}' === 'true';
+            const nextRound = '${{ steps.decide.outputs.next_round }}';
+            
+            let body;
+            if (shouldContinue) {
+              body = `# 📋 Decision: Continue to Round ${nextRound}
+              
+              **Result:** ${result}
+              
+              ## Next Steps
+              
+              Launching Round ${nextRound} with focus on identified weaknesses.
+              
+              ---
+              
+              *This will automatically trigger a new round.*`;
+            } else {
+              body = `# 🎉 Decision: Complete
+              
+              **Result:** ${result}
+              
+              ## Summary
+              
+              Ryudo Round Review has completed successfully.
+              
+              ---
+              
+              *Marked as complete.*`;
+            }
+            
+            const mutation = `
+              mutation($discussionId: ID!, $body: String!) {
+                addDiscussionComment(input: {
+                  discussionId: $discussionId,
+                  body: $body
+                }) {
+                  comment { id }
+                }
+              }
+            `;
+            
+            await github.graphql(mutation, {
+              discussionId: '${{ needs.parse-context.outputs.discussion_id }}',
+              body: body
+            });
+            
+            // Update labels
+            if (!shouldContinue) {
+              await github.rest.issues.addLabels({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.payload.discussion.number,
+                labels: ['Ryudo:Complete', 'Score:>=9.9']
+              });
+            }
+
+

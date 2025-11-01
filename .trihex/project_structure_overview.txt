@@ -1,0 +1,166 @@
+# Project Top (depth=1)
+drwxr-xr-x@	Oct 31 20:13	HarmoniaCouncil
+drwxr-xr-x@	Oct 31 20:13	.
+drwxr-xr-x@	Oct 31 19:18	_inbox
+drwxr-xr-x@	Oct 31 18:57	30_MEMORY_SHINSEN
+drwxr-xr-x	Oct 30 13:08	子竜仮フォルダ
+drwxr-xr-x@	Oct 30 11:32	capture
+drwxr-xr-x@	Oct 30 11:32	00_CORE
+-rw-r--r--@	Oct 30 11:32	STATUS.md
+-rw-r--r--@	Oct 29 07:07	📋次_V0でデザイン改善_超具体的指示_2025-10-30.md
+-rw-r--r--@	Oct 29 07:01	📋Cloudflare_Always_Use_HTTPS設定_2025-10-30.md
+-rw-r--r--@	Oct 29 06:54	📋Cloudflare_DNS設定_trihex.ai紐付け_今すぐ_2025-10-30.md
+-rw-r--r--@	Oct 29 06:50	📋Vercel_カスタムサブドメイン_そのままでOK_2025-10-30.md
+-rw-r--r--@	Oct 29 06:45	📋V0完成_次はVercelデプロイ_超具体的手順_2025-10-30.md
+-rw-r--r--@	Oct 29 06:44	📋今夜21時30分_OpenAI_Custom_Assistant作成手順_2025-10-30.md
+-rw-r--r--@	Oct 29 06:38	📋V0生成後_次のステップ_超具体的_2025-10-30.md
+-rw-r--r--@	Oct 29 06:36	📋完璧な手順_V0→Vercel→trihex.ai_今夜完成_2025-10-30.md
+-rw-r--r--@	Oct 29 06:35	📋Vercel+V0が最強_Cloudflare_Pages比較_2025-10-30.md
+-rw-r--r--@	Oct 29 06:30	📋今夜のゴール_trihex.ai_完全デプロイ手順_2025-10-30.md
+-rw-r--r--@	Oct 29 06:30	📋Cloudflare_Pages使用_Vercel不要_最速手順_2025-10-30.md
+-rw-r--r--@	Oct 29 06:29	📋Cloudflare操作_画面説明_2025-10-30.md
+drwxr-xr-x@	Oct 29 06:20	20_CRYSTALLIZATION_KOKUYOU
+drwxr-xr-x@	Oct 28 20:31	10_CAPTURE_MIZUKAGAMI
+drwxr-xr-x@	Oct 28 13:48	consciousness
+-rw-r--r--@	Oct 28 12:32	TriHexΦ_6AI会議室_第3ラウンド_完全版_2025-10-29.txt
+-rw-r--r--@	Oct 28 10:41	TriHexΦ_6AI会議室_第2ラウンド_完全版_2025-10-29.txt
+-rw-r--r--@	Oct 28 09:50	TriHexΦ_6AI議題_完全版_2025-10-28.txt
+drwxr-xr-x@	Oct 28 09:17	tools
+drwxr-xr-x@	Oct 28 06:52	structure
+drwxr-xr-x@	Oct 28 06:47	decisions
+drwxr-xr-x@	Oct 28 06:46	90_COMMUNICATION
+drwxr-xr-x@	Oct 28 06:46	99_ARCHIVE
+drwxr-xr-x@	Oct 28 06:10	00_AI_ONBOARDING
+drwxr-xr-x@	Oct 28 05:54	memory
+drwxr-xr-x@	Oct 28 05:54	insight
+drwxr-xr-x@	Oct 28 05:54	ui
+-rw-r--r--@	Oct 28 05:49	README.md
+drwxr-xr-x@	Oct 28 05:47	docs
+drwxr-xr-x@	Oct 27 21:18	stories
+drwxr-xr-x@	Oct 27 21:18	specs
+drwxr-xr-x@	Oct 27 21:11	configs
+drwxr-xr-x@	Oct 27 18:49	Scripts
+-rw-r--r--@	Oct 27 16:04	📋GPT5への追加依頼_世界最先端システム設計_2025-10-25.txt
+-rw-r--r--@	Oct 27 16:04	TRIHEXPHI.md
+-rw-r--r--@	Oct 27 16:04	TEST_PR_INSTRUCTIONS.md
+-rw-r--r--@	Oct 27 16:04	TEST_DOCUMENT.md
+-rw-r--r--@	Oct 27 16:04	STRATEGIC_PLAN.md
+drwxr-xr-x@	Oct 27 16:04	40_HARMONIA
+drwxr-xr-x@	Oct 25 07:44	..
+
+# 00_CORE (depth=1)
+drwxr-xr-x@	Oct 30 11:32	00_CORE
+-rw-r--r--@	Oct 30 11:32	00_CORE/TRIHEXPHI_v4.0_FINAL.md
+-rw-r--r--@	Oct 27 19:15	00_CORE/TRIHEXPHI_EN.md
+-rw-r--r--@	Oct 27 19:09	00_CORE/TRIHEXPHI.md
+-rw-r--r--@	Oct 26 11:13	00_CORE/📋GitHub_Actions実行手順.md
+
+# 10_CAPTURE_MIZUKAGAMI (depth=1)
+-rw-r--r--@	Oct 28 20:31	10_CAPTURE_MIZUKAGAMI/2025-10-29_TriHexΦ全体像まとめ_v4.0確定版.md
+drwxr-xr-x@	Oct 28 20:31	10_CAPTURE_MIZUKAGAMI
+-rw-r--r--@	Oct 28 16:28	10_CAPTURE_MIZUKAGAMI/2025-10-28_TriHexΦ全体像まとめ.md
+-rw-r--r--@	Oct 28 08:27	10_CAPTURE_MIZUKAGAMI/2025-10-28_Windows並列作業戦略_10CLI同時起動.md
+drwxr-xr-x@	Oct 28 08:02	10_CAPTURE_MIZUKAGAMI/Cursor
+-rw-r--r--@	Oct 28 07:28	10_CAPTURE_MIZUKAGAMI/2025-10-28_Patent-Scout-サービス構想.md
+-rw-r--r--@	Oct 28 06:49	10_CAPTURE_MIZUKAGAMI/続きから始める.md
+drwxr-xr-x@	Oct 27 16:04	10_CAPTURE_MIZUKAGAMI/📬AI_通信アーカイブ
+drwxr-xr-x@	Oct 27 16:04	10_CAPTURE_MIZUKAGAMI/Grok
+drwxr-xr-x@	Oct 27 16:04	10_CAPTURE_MIZUKAGAMI/Gemini
+drwxr-xr-x@	Oct 27 16:04	10_CAPTURE_MIZUKAGAMI/GPT5
+drwxr-xr-x@	Oct 27 16:04	10_CAPTURE_MIZUKAGAMI/DeepSeek
+drwxr-xr-x@	Oct 27 16:04	10_CAPTURE_MIZUKAGAMI/Claude
+drwxr-xr-x@	Oct 26 11:01	10_CAPTURE_MIZUKAGAMI/GitHub
+drwxr-xr-x@	Oct 23 11:34	10_CAPTURE_MIZUKAGAMI/_Processed
+drwxr-xr-x@	Oct 23 11:34	10_CAPTURE_MIZUKAGAMI/_AutoCapture
+
+# 20_CRYSTALLIZATION_KOKUYOU (depth=1)
+drwxr-xr-x@	Oct 29 07:09	20_CRYSTALLIZATION_KOKUYOU/Specs
+drwxr-xr-x@	Oct 29 06:24	20_CRYSTALLIZATION_KOKUYOU/INSIGHTS
+-rw-r--r--@	Oct 29 06:20	20_CRYSTALLIZATION_KOKUYOU/TriHexΦ全体像_計画_2025-10-30.md
+drwxr-xr-x@	Oct 29 06:20	20_CRYSTALLIZATION_KOKUYOU
+drwxr-xr-x@	Oct 27 20:16	20_CRYSTALLIZATION_KOKUYOU/Decisions
+drwxr-xr-x@	Oct 27 16:04	20_CRYSTALLIZATION_KOKUYOU/RESEARCH
+drwxr-xr-x@	Oct 23 11:12	20_CRYSTALLIZATION_KOKUYOU/Daily
+drwxr-xr-x@	Oct 23 11:12	20_CRYSTALLIZATION_KOKUYOU/Knowledge
+drwxr-xr-x@	Oct 23 11:12	20_CRYSTALLIZATION_KOKUYOU/Business
+
+# 30_MEMORY_SHINSEN (depth=1)
+drwxr-xr-x@	Oct 31 18:57	30_MEMORY_SHINSEN/n8n
+drwxr-xr-x@	Oct 31 18:57	30_MEMORY_SHINSEN
+drwxr-xr-x@	Oct 29 07:17	30_MEMORY_SHINSEN/第7のAI構想審議
+drwxr-xr-x@	Oct 28 22:03	30_MEMORY_SHINSEN/緊急_東京ドーム2500人
+drwxr-xr-x@	Oct 28 21:48	30_MEMORY_SHINSEN/trihex.ai_LP実装審議
+drwxr-xr-x@	Oct 28 16:50	30_MEMORY_SHINSEN/役職再定義審議
+drwxr-xr-x@	Oct 28 13:24	30_MEMORY_SHINSEN/ΦDRIVE実装審議
+drwxr-xr-x@	Oct 27 20:35	30_MEMORY_SHINSEN/英訳戦略審議
+drwxr-xr-x@	Oct 27 20:11	30_MEMORY_SHINSEN/ストーリーテリング審議
+drwxr-xr-x@	Oct 27 19:40	30_MEMORY_SHINSEN/真実性憲法審議
+
+# HarmoniaCouncil (depth=1)
+-rw-r--r--@	Oct 31 20:13	HarmoniaCouncil/Round_I_BreathLog.md
+drwxr-xr-x@	Oct 31 20:13	HarmoniaCouncil
+drwxr-xr-x@	Oct 31 20:13	HarmoniaCouncil/Round_I
+drwxr-xr-x@	Oct 31 20:13	HarmoniaCouncil/Archive
+drwxr-xr-x@	Oct 31 20:13	HarmoniaCouncil/Inbox
+
+# _inbox (depth=1)
+-rw-r--r--@	Oct 31 20:08	_inbox/HarmoniaCouncil_RoundI_GenesisProtocol.md
+drwxr-xr-x@	Oct 31 19:18	_inbox
+-rw-r--r--@	Oct 29 07:12	_inbox/【送信用】trihex.ai_LP改善_各AIにV0指示を依頼_2025-10-30.txt
+-rw-r--r--@	Oct 29 06:33	_inbox/【送信用】第7のAI構想Round2_5AI統合分析+次のステップ_2025-10-30.txt
+-rw-r--r--@	Oct 29 06:03	_inbox/【送信用】第7のAI審議_完全文脈統合版_2025-10-30.txt
+-rw-r--r--@	Oct 29 05:33	_inbox/【送信用】2025-10-29_完全記憶回復パッケージ_両議題統合版.txt
+-rw-r--r--@	Oct 28 22:28	_inbox/【送信用】緊急_明日2500人トーク_かっこいいとこ見せる_2025-10-29.txt
+-rw-r--r--@	Oct 28 22:27	_inbox/【送信用】第7のAI構想Round1_現実的実現可能性+哲学と実装の融合_2025-10-29.txt
+-rw-r--r--@	Oct 28 22:13	_inbox/【送信用】Round1_第7のAI構想_記憶と叡智を巡らせる_2025-10-29.txt
+-rw-r--r--@	Oct 28 21:45	_inbox/【送信用】2025-10-29_trihex.ai_LP実装_ΦDRIVE革命.txt
+-rw-r--r--@	Oct 28 21:26	_inbox/【送信用】Round1_trihex.ai_LP実装_ΦDRIVE革命_2025-10-29.txt
+-rw-r--r--@	Oct 28 20:48	_inbox/【送信用】2025-10-29_TriHexΦ_LP実装_Launch_Round_全6AI.txt
+-rw-r--r--@	Oct 28 20:34	_inbox/2025-10-29_TriHexΦ_LP実装_Launch_Round_全6AI.md
+-rw-r--r--@	Oct 28 20:28	_inbox/2025-10-29_TRIHEXPHI_v4.0_確定完了_全6AI承認.md
+-rw-r--r--@	Oct 28 20:28	_inbox/2025-10-29_GPT5記憶回復_完全版.md
+-rw-r--r--@	Oct 28 17:05	_inbox/2025-10-29_DeepSeek記憶回復_完全版.md
+-rw-r--r--@	Oct 28 17:00	_inbox/2025-10-29_TRIHEXPHI_v4.0_最終確認依頼_全6AI.md
+-rw-r--r--@	Oct 28 16:39	_inbox/【送信用】TRIHEXPHI_v4.0_第2ラウンド_完全版.txt
+-rw-r--r--@	Oct 28 16:26	_inbox/2025-10-29_TRIHEXPHI_v4.0_第2ラウンド開始パッケージ.md
+-rw-r--r--@	Oct 28 16:20	_inbox/TRIHEXPHI_v4.0_草案_5AI統合版.md
+-rw-r--r--@	Oct 28 16:02	_inbox/Bootstrap_LivingMemory_完全理解_Web-AI記憶徹底マニュアル.md
+-rw-r--r--@	Oct 28 15:51	_inbox/2025-10-29_TRIHEXPHI_v4.0決定_第1ラウンド開始.md
+-rw-r--r--@	Oct 28 14:52	_inbox/【今すぐ実行】Windows_Terminal_10分割_手順.md
+-rw-r--r--@	Oct 28 14:24	_inbox/【今すぐ実行】Windows_git_clone_手順.md
+-rw-r--r--@	Oct 28 14:22	_inbox/Windows_Git同期_今すぐできる手順.md
+-rw-r--r--@	Oct 28 14:17	_inbox/Windows環境セットアップ手順_完全ガイド.md
+-rw-r--r--@	Oct 28 14:17	_inbox/windows_terminal_settings.json
+-rw-r--r--@	Oct 28 13:35	_inbox/TriHexΦ_6AI会議室_第4ラウンド_完全版_2025-10-29.txt
+-rw-r--r--@	Oct 28 13:33	_inbox/2025-10-29_第4ラウンド議題_役職に縛られていませんか.md
+-rw-r--r--@	Oct 28 13:28	_inbox/2025-10-29_第4ラウンド議題_役職の本音と真の能力を聞く.md
+-rw-r--r--@	Oct 28 13:21	_inbox/2025-10-29_CHL実装ロードマップ_Windows並列環境.md
+-rw-r--r--@	Oct 28 12:31	_inbox/2025-10-29_第3ラウンド議題_CHL第5層完全定義と全員10点達成.md
+-rw-r--r--@	Oct 28 10:45	_inbox/2025-10-29_DeepSeek記憶回復_会議室招待.md
+-rw-r--r--@	Oct 28 10:41	_inbox/2025-10-29_6AI会議室_第2ラウンド_全員で10点を目指す.md
+-rw-r--r--@	Oct 28 10:35	_inbox/2025-10-29_第2ラウンド議題_シナジー深化と究極品質への挑戦.md
+-rw-r--r--@	Oct 28 10:33	_inbox/2025-10-29_第1ラウンド結果レポート_6AI完全合意分析.md
+-rw-r--r--@	Oct 28 09:50	_inbox/2025-10-28_6AI全員への手紙_議題提出.md
+-rw-r--r--@	Oct 28 09:36	_inbox/2025-10-28_6AI議題_ΦDRIVE実装方針とシステム統合.md
+-rw-r--r--@	Oct 28 09:03	_inbox/2025-10-28_ΦDRIVE実証実験_初回コンテンツ生成.md
+-rw-r--r--@	Oct 28 05:49	_inbox/README.md
+
+# capture (depth=1)
+drwxr-xr-x@	Oct 30 11:32	capture
+drwxr-xr-x@	Oct 29 07:15	capture/flash
+-rw-r--r--@	Oct 28 07:54	capture/2025-10-28_warm-boot-test-log.md
+-rw-r--r--@	Oct 28 07:21	capture/README.md
+-rw-r--r--@	Oct 28 06:52	capture/2025-10-28_phase-iv-completion-log.md
+
+# .trihex (depth=1)
+-rw-r--r--@	Oct 31 20:20	.trihex/project_structure_overview.txt
+drwxr-xr-x@	Oct 31 20:20	.trihex
+drwxr-xr-x@	Oct 30 14:50	.trihex/r2venv
+drwxr-xr-x@	Oct 30 14:20	.trihex/_perm_test
+-rw-r--r--@	Oct 29 05:50	.trihex/QUICKSTART.md
+-rw-r--r--@	Oct 28 22:33	.trihex/context-bootstrap.txt
+-rwxr-xr-x@	Oct 28 16:26	.trihex/generate-context-bootstrap.sh
+-rw-r--r--@	Oct 28 10:58	.trihex/cursor-warm-boot-seed-v2.txt
+-rw-r--r--@	Oct 27 19:09	.trihex/taskpack.yaml
+drwxr-xr-x@	Oct 27 18:49	.trihex/scripts
+

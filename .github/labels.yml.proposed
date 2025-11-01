@@ -1,0 +1,142 @@
+# TriHexΦ Labels Configuration
+# Generated: 2025-11-01
+# Purpose: Labels for Ryudo Round Reviews and Harmonia Council
+
+- name: HAI:Prompt
+  color: "1D76DB"
+  description: "HAIにプロンプト送信済み"
+  
+- name: HAI:Round
+  color: "0E8A16"
+  description: "Ryudo Round進行中"
+  
+- name: HAI:Summary
+  color: "B60205"
+  description: "Cursor集約・採点完了"
+  
+- name: HAI:Decision
+  color: "FBCA04"
+  description: "次ラウンド or 完了判定"
+  
+- name: Score:WIP
+  color: "F9D0C4"
+  description: "採点中（平均 < 9.9）"
+  
+- name: Score:>=9.9
+  color: "0E8A16"
+  description: "目標達成（平均 ≥ 9.9）"
+  
+- name: Score:Exceeded
+  color: "4C1"
+  description: "平均 ≥ 9.95（完璧）"
+  
+- name: Ryudo:Complete
+  color: "5319E7"
+  description: "Ryudo Round完了"
+  
+- name: Round:1
+  color: "D93F0B"
+  description: "Round 1 実行中"
+  
+- name: Round:2
+  color: "E99695"
+  description: "Round 2 実行中"
+  
+- name: Round:3
+  color: "FBBDCC"
+  description: "Round 3 実行中"
+  
+- name: Round:4
+  color: "F9D0C4"
+  description: "Round 4 実行中"
+  
+- name: Round:5
+  color: "FFFFFF"
+  description: "Round 5 実行中"
+  
+- name: Round:6
+  color: "FFFFFF"
+  description: "Round 6 実行中"
+  
+- name: Round:7
+  color: "FFFFFF"
+  description: "Round 7 実行中"
+
+# AI Review Labels (existing, for compatibility)
+- name: needs-review-claude
+  color: "0E8A16"
+  description: "Claudeレビュー必要"
+  
+- name: needs-review-gemini
+  color: "B60205"
+  description: "Geminiレビュー必要"
+  
+- name: needs-review-grok
+  color: "FBCA04"
+  description: "Grokレビュー必要"
+  
+- name: needs-review-deepseek
+  color: "1D76DB"
+  description: "DeepSeekレビュー必要"
+  
+- name: needs-review-gpt5
+  color: "5319E7"
+  description: "GPT-5レビュー必要"
+
+# Automation Labels
+- name: automated
+  color: "7057FF"
+  description: "自動生成"
+
+# Priority Labels
+- name: priority:P0
+  color: "B60205"
+  description: "最優先"
+  
+- name: priority:P1
+  color: "FBCA04"
+  description: "高優先度"
+  
+- name: priority:P2
+  color: "0E8A16"
+  description: "中優先度"
+  
+- name: priority:P3
+  color: "1D76DB"
+  description: "低優先度"
+
+# Category Labels
+- name: category:Codex
+  color: "D4C5F9"
+  description: "Codex文書"
+  
+- name: category:Decision
+  color: "BFD4F2"
+  description: "決定文書"
+  
+- name: category:System
+  color: "C2E0C6"
+  description: "システム設計"
+  
+- name: category:AI
+  color: "FBD8C2"
+  description: "AI関連"
+
+# Status Labels
+- name: status:Draft
+  color: "FBCA04"
+  description: "草稿"
+  
+- name: status:Review
+  color: "1D76DB"
+  description: "レビュー中"
+  
+- name: status:Approved
+  color: "0E8A16"
+  description: "承認済"
+  
+- name: status:Obsolete
+  color: "D4C5F9"
+  description: "廃止"
+
+

@@ -39,3 +39,5 @@ Philosophia_Prima/
 - 🜁 火: 完成
 - 🔮 精: Supabase同期済み
 
+
+

@@ -1,4 +1,4 @@
-# Vercel trihex.ai プロジェクト発見マニュアル
+　# Vercel trihex.ai プロジェクト発見マニュアル
 
 **Date:** 2025-11-01  
 **Purpose:** Vercel プロジェクト特定・接続リポジトリ確認・環境変数エクスポート

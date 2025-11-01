@@ -262,3 +262,5 @@ Deployment: Vercel
 
 *Generated: 2025-11-01 / Cursor (☿)*
 
+
+https://chatgpt.com/s/t_690677bae8948191813b1294a1149c0c

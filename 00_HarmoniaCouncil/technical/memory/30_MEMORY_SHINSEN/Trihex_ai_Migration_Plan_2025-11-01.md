@@ -571,3 +571,5 @@ EOF
 
 *Generated: 2025-11-01 / Cursor (☿)*
 
+
+

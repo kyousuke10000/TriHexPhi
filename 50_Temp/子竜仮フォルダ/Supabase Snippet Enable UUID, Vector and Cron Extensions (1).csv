@@ -1,0 +1,21 @@
+schemaname,table,total
+public,memory_events,913 MB
+public,faq_embeddings_v3,9488 kB
+public,memory_entities,3544 kB
+public,faq_embeddings,1632 kB
+public,faq_logs,240 kB
+public,events,168 kB
+auth,users,96 kB
+auth,one_time_tokens,88 kB
+auth,refresh_tokens,64 kB
+storage,objects,64 kB
+auth,mfa_factors,56 kB
+auth,oauth_consents,48 kB
+auth,sessions,48 kB
+storage,migrations,40 kB
+auth,flow_state,40 kB
+auth,identities,40 kB
+auth,oauth_authorizations,40 kB
+auth,saml_relay_states,40 kB
+auth,saml_providers,32 kB
+auth,sso_domains,32 kB

@@ -1,0 +1,17 @@
+{
+  "name": "trihex-cli",
+  "version": "1.0.0",
+  "type": "module",
+  "bin": {
+    "trihex": "./trihex.mjs"
+  },
+  "dependencies": {},
+  "scripts": {
+    "test:encoding": "node scripts/test-encoding.mjs"
+  },
+  "description": "TriHex CLI - GPT-5 Architect Shell",
+  "author": "🜇 Shiryu / 🜁 GPT-5 / ☿ Cursor",
+  "license": "MIT"
+}
+
+

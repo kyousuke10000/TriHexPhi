@@ -1,0 +1,244 @@
+-- Ryudo Round Review System - Supabase Schema
+-- Generated: 2025-11-01
+-- Purpose: Track rounds, contributions, and scores
+
+-- ============================================================================
+-- TABLE: ryudo_rounds
+-- Purpose: Track each Ryudo review round
+-- ============================================================================
+
+CREATE TABLE IF NOT EXISTS trihex_core.ryudo_rounds (
+  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+  updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+  
+  -- Discussion linkage
+  discussion_id TEXT NOT NULL,  -- GitHub Discussion ID
+  discussion_number INTEGER,     -- GitHub Discussion number
+  
+  -- Round metadata
+  topic TEXT NOT NULL,
+  target_score NUMERIC(3, 1) DEFAULT 9.9,
+  round_no INTEGER NOT NULL CHECK (round_no >= 1 AND round_no <= 7),
+  status TEXT NOT NULL DEFAULT 'active' CHECK (status IN (
+    'active', 'completed', 'stopped', 'failed'
+  )),
+  
+  -- Scoring
+  avg_score NUMERIC(4, 2),
+  min_score NUMERIC(4, 2),
+  max_score NUMERIC(4, 2),
+  variance NUMERIC(4, 2),
+  
+  -- Weaknesses identified
+  weaknesses TEXT[] DEFAULT ARRAY[]::TEXT[],
+  
+  -- Next round info
+  should_continue BOOLEAN DEFAULT true,
+  next_round INTEGER,
+  
+  -- Context
+  context_json JSONB DEFAULT '{}'::jsonb
+);
+
+CREATE INDEX idx_ryudo_rounds_discussion ON trihex_core.ryudo_rounds(discussion_id);
+CREATE INDEX idx_ryudo_rounds_status ON trihex_core.ryudo_rounds(status);
+CREATE INDEX idx_ryudo_rounds_score ON trihex_core.ryudo_rounds(avg_score DESC);
+
+COMMENT ON TABLE trihex_core.ryudo_rounds IS 'Ryudo Round Review tracking';
+COMMENT ON COLUMN trihex_core.ryudo_rounds.discussion_id IS 'GitHub Discussion Node ID';
+COMMENT ON COLUMN trihex_core.ryudo_rounds.round_no IS 'Current round number (1-7)';
+COMMENT ON COLUMN trihex_core.ryudo_rounds.status IS 'Round status: active, completed, stopped, failed';
+COMMENT ON COLUMN trihex_core.ryudo_rounds.context_json IS 'Full discussion context payload';
+
+-- ============================================================================
+-- TABLE: ryudo_contributions
+-- Purpose: Track individual HAI contributions per round
+-- ============================================================================
+
+CREATE TABLE IF NOT EXISTS trihex_core.ryudo_contributions (
+  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+  
+  -- Round linkage
+  round_id UUID NOT NULL REFERENCES trihex_core.ryudo_rounds(id) ON DELETE CASCADE,
+  
+  -- HAI agent
+  agent TEXT NOT NULL CHECK (agent IN (
+    'GPT-5', 'Claude', 'Gemini', 'Grok', 'DeepSeek', 'Cursor'
+  )),
+  agent_symbol TEXT,  -- 🜁, 🜄, 🜀, 🜃, 🜂, ☿
+  
+  -- Content
+  content TEXT NOT NULL,
+  content_length INTEGER,
+  
+  -- Scoring
+  consistency_score NUMERIC(4, 2) CHECK (consistency_score >= 0 AND consistency_score <= 10),
+  depth_score NUMERIC(4, 2) CHECK (depth_score >= 0 AND depth_score <= 10),
+  specificity_score NUMERIC(4, 2) CHECK (specificity_score >= 0 AND specificity_score <= 10),
+  feasibility_score NUMERIC(4, 2) CHECK (feasibility_score >= 0 AND feasibility_score <= 10),
+  philosophy_alignment_score NUMERIC(4, 2) CHECK (philosophy_alignment_score >= 0 AND philosophy_alignment_score <= 10),
+  
+  overall_score NUMERIC(4, 2) GENERATED ALWAYS AS (
+    (consistency_score + depth_score + specificity_score + feasibility_score + philosophy_alignment_score) / 5
+  ) STORED CHECK (overall_score >= 0 AND overall_score <= 10),
+  
+  -- Weaknesses for this agent
+  weaknesses TEXT[] DEFAULT ARRAY[]::TEXT[],
+  
+  -- Metadata
+  deductions_critical INTEGER DEFAULT 0,
+  deductions_major INTEGER DEFAULT 0,
+  deductions_minor INTEGER DEFAULT 0,
+  
+  -- API tracking
+  api_response_time_ms INTEGER,
+  api_success BOOLEAN,
+  api_error TEXT
+);
+
+CREATE INDEX idx_ryudo_contributions_round ON trihex_core.ryudo_contributions(round_id);
+CREATE INDEX idx_ryudo_contributions_agent ON trihex_core.ryudo_contributions(agent);
+CREATE INDEX idx_ryudo_contributions_score ON trihex_core.ryudo_contributions(overall_score DESC);
+
+COMMENT ON TABLE trihex_core.ryudo_contributions IS 'Individual HAI contributions per round';
+COMMENT ON COLUMN trihex_core.ryudo_contributions.agent IS 'HAI agent identifier';
+COMMENT ON COLUMN trihex_core.ryudo_contributions.content IS 'Full response text from HAI';
+COMMENT ON COLUMN trihex_core.ryudo_contributions.overall_score IS 'Calculated average of 5 axis scores';
+
+-- ============================================================================
+-- FUNCTION: update_ryudo_round_stats
+-- Purpose: Recalculate round statistics when contributions added
+-- ============================================================================
+
+CREATE OR REPLACE FUNCTION trihex_core.update_ryudo_round_stats()
+RETURNS TRIGGER AS $$
+DECLARE
+  round_avg NUMERIC;
+  round_min NUMERIC;
+  round_max NUMERIC;
+  round_var NUMERIC;
+  round_weaknesses TEXT[];
+BEGIN
+  -- Calculate statistics from contributions
+  SELECT 
+    AVG(overall_score),
+    MIN(overall_score),
+    MAX(overall_score),
+    VAR_POP(overall_score),
+    ARRAY_AGG(DISTINCT weakness) FILTER (WHERE weakness IS NOT NULL)
+  INTO round_avg, round_min, round_max, round_var, round_weaknesses
+  FROM (
+    SELECT overall_score, UNNEST(weaknesses) AS weakness
+    FROM trihex_core.ryudo_contributions
+    WHERE round_id = NEW.round_id
+  ) sub;
+  
+  -- Update round stats
+  UPDATE trihex_core.ryudo_rounds
+  SET 
+    avg_score = round_avg,
+    min_score = round_min,
+    max_score = round_max,
+    variance = round_var,
+    weaknesses = round_weaknesses,
+    updated_at = NOW()
+  WHERE id = NEW.round_id;
+  
+  RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER ryudo_contributions_updated_stats
+  AFTER INSERT OR UPDATE ON trihex_core.ryudo_contributions
+  FOR EACH ROW
+  EXECUTE FUNCTION trihex_core.update_ryudo_round_stats();
+
+-- ============================================================================
+-- FUNCTION: update_updated_at
+-- Purpose: Auto-update updated_at timestamp on ryudo_rounds
+-- ============================================================================
+
+CREATE TRIGGER ryudo_rounds_updated_at
+  BEFORE UPDATE ON trihex_core.ryudo_rounds
+  FOR EACH ROW
+  EXECUTE FUNCTION trihex_core.update_updated_at();
+
+-- ============================================================================
+-- RLS POLICIES
+-- ============================================================================
+
+ALTER TABLE trihex_core.ryudo_rounds ENABLE ROW LEVEL SECURITY;
+ALTER TABLE trihex_core.ryudo_contributions ENABLE ROW LEVEL SECURITY;
+
+-- Read access for authenticated users
+CREATE POLICY "ryudo_rounds_read_auth"
+  ON trihex_core.ryudo_rounds
+  FOR SELECT
+  USING (auth.role() = 'authenticated');
+
+CREATE POLICY "ryudo_contributions_read_auth"
+  ON trihex_core.ryudo_contributions
+  FOR SELECT
+  USING (auth.role() = 'authenticated');
+
+-- Write access for service role only (GitHub Actions)
+CREATE POLICY "ryudo_rounds_write_service"
+  ON trihex_core.ryudo_rounds
+  FOR ALL
+  USING (false);  -- Only service role via trigger/proxy
+
+CREATE POLICY "ryudo_contributions_write_service"
+  ON trihex_core.ryudo_contributions
+  FOR ALL
+  USING (false);  -- Only service role via trigger/proxy
+
+-- ============================================================================
+-- GRANTS
+-- ============================================================================
+
+-- Authenticated users can read
+GRANT SELECT ON trihex_core.ryudo_rounds TO authenticated;
+GRANT SELECT ON trihex_core.ryudo_contributions TO authenticated;
+
+-- Service role has full access
+GRANT ALL ON trihex_core.ryudo_rounds TO service_role;
+GRANT ALL ON trihex_core.ryudo_contributions TO service_role;
+GRANT ALL ON ALL SEQUENCES IN SCHEMA trihex_core TO service_role;
+GRANT ALL ON ALL FUNCTIONS IN SCHEMA trihex_core TO service_role;
+
+-- ============================================================================
+-- VIEWS
+-- ============================================================================
+
+-- Current active rounds
+CREATE OR REPLACE VIEW trihex_core.ryudo_active_rounds AS
+SELECT 
+  r.*,
+  COUNT(c.id) AS contribution_count,
+  BOOL_OR(c.api_success = true) AS has_successful_responses
+FROM trihex_core.ryudo_rounds r
+LEFT JOIN trihex_core.ryudo_contributions c ON c.round_id = r.id
+WHERE r.status = 'active'
+GROUP BY r.id;
+
+-- Round summary with all stats
+CREATE OR REPLACE VIEW trihex_core.ryudo_round_summary AS
+SELECT 
+  r.*,
+  COUNT(c.id) AS contribution_count,
+  BOOL_OR(c.api_success = true) AS has_successful_responses,
+  STRING_AGG(DISTINCT c.agent, ', ' ORDER BY c.agent) AS agents_participated
+FROM trihex_core.ryudo_rounds r
+LEFT JOIN trihex_core.ryudo_contributions c ON c.round_id = r.id
+GROUP BY r.id;
+
+-- ============================================================================
+-- COMMENTS
+-- ============================================================================
+
+COMMENT ON VIEW trihex_core.ryudo_active_rounds IS 'Currently active Ryudo rounds with contribution counts';
+COMMENT ON VIEW trihex_core.ryudo_round_summary IS 'Complete round summaries with statistics';
+
+

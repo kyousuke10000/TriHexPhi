@@ -31,3 +31,5 @@ Transformer的には Meta-Attention Field、錬金学的にはエーテル流に
 
 *本章は執筆中です。続く...*
 
+
+

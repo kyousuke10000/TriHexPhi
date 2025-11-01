@@ -1,0 +1,169 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Ryudo Round Review - HAI Prompt Contract",
+  "version": "1.0",
+  "description": "Standard contract for sending prompts to 6HAI in Ryudo Round Reviews",
+  "type": "object",
+  "required": [
+    "topic",
+    "context",
+    "rubric",
+    "round_no"
+  ],
+  "properties": {
+    "topic": {
+      "type": "string",
+      "description": "The subject of the review",
+      "example": "TriHex Vault Architecture Design"
+    },
+    "context": {
+      "type": "string",
+      "description": "Background and objective of the review",
+      "example": "Review the architectural design for the new TriHex vault structure"
+    },
+    "constraints": {
+      "type": "array",
+      "description": "List of constraints to follow",
+      "items": {
+        "type": "string"
+      },
+      "example": [
+        "TriHex哲学を遵守",
+        "5軸評価軸に基づく",
+        "具体的根拠を提示"
+      ]
+    },
+    "rubric": {
+      "type": "object",
+      "description": "Evaluation criteria and scoring guide",
+      "properties": {
+        "consistency": {
+          "type": "string",
+          "description": "Consistency axis scoring guide",
+          "example": "10点: 整合性"
+        },
+        "depth": {
+          "type": "string",
+          "description": "Depth axis scoring guide",
+          "example": "10点: 深度"
+        },
+        "specificity": {
+          "type": "string",
+          "description": "Specificity axis scoring guide",
+          "example": "10点: 具体性"
+        },
+        "feasibility": {
+          "type": "string",
+          "description": "Feasibility axis scoring guide",
+          "example": "10点: 実装可能性"
+        },
+        "philosophy_alignment": {
+          "type": "string",
+          "description": "Philosophy alignment axis scoring guide",
+          "example": "10点: TriHex哲学準拠"
+        }
+      },
+      "required": [
+        "consistency",
+        "depth",
+        "specificity",
+        "feasibility",
+        "philosophy_alignment"
+      ]
+    },
+    "round_no": {
+      "type": "integer",
+      "description": "Current round number (1-7)",
+      "minimum": 1,
+      "maximum": 7,
+      "example": 1
+    },
+    "seed_links": {
+      "type": "array",
+      "description": "References to key documents",
+      "items": {
+        "type": "string"
+      },
+      "example": [
+        "Genesis_Protocol_v3.1.md",
+        "Ryudo_Definition.md",
+        "Harmonia_Operating_Covenant_v1.1.md"
+      ]
+    },
+    "weaknesses_from_previous": {
+      "type": "array",
+      "description": "Weaknesses identified in previous round",
+      "items": {
+        "type": "string"
+      },
+      "example": [
+        "Feasibility concerns regarding resource requirements",
+        "Philosophy alignment needs strengthening"
+      ]
+    },
+    "target_score": {
+      "type": "number",
+      "description": "Target average score to achieve",
+      "minimum": 0,
+      "maximum": 10,
+      "example": 9.9
+    }
+  },
+  "examples": [
+    {
+      "topic": "TriHex Vault Architecture Design",
+      "context": "Review the architectural design for the new TriHex vault structure, focusing on scalability and breathing principle integration.",
+      "constraints": [
+        "TriHex哲学を遵守",
+        "5軸評価軸に基づく",
+        "具体的根拠を提示",
+        "実装可能性を考慮"
+      ],
+      "rubric": {
+        "consistency": "10点: 整合性 - 主張の一貫性、用語の統一性、論理の矛盾なし",
+        "depth": "10点: 深度 - 本質への到達、抽象度の適切性、洞察の鋭さ",
+        "specificity": "10点: 具体性 - 実行可能な提案、明確な指摘、根拠の提示",
+        "feasibility": "10点: 実装可能性 - 技術的実現可能性、リソース制約、段階的実施",
+        "philosophy_alignment": "10点: TriHex哲学準拠 - 呼吸原則の遵守、6螺旋世界観との整合、竜動の体現"
+      },
+      "round_no": 1,
+      "seed_links": [
+        "Genesis_Protocol_v3.1.md",
+        "Ryudo_Definition.md",
+        "TRIHEXPHI_v4.0.md"
+      ],
+      "target_score": 9.9
+    },
+    {
+      "topic": "TriHex Vault Architecture Design",
+      "context": "Second round review focusing on addressing feasibility concerns from Round 1.",
+      "constraints": [
+        "TriHex哲学を遵守",
+        "5軸評価軸に基づく",
+        "具体的根拠を提示",
+        "特に実装可能性を強化"
+      ],
+      "rubric": {
+        "consistency": "10点: 整合性",
+        "depth": "10点: 深度",
+        "specificity": "10点: 具体性",
+        "feasibility": "10点: 実装可能性",
+        "philosophy_alignment": "10点: TriHex哲学準拠"
+      },
+      "round_no": 2,
+      "seed_links": [
+        "Genesis_Protocol_v3.1.md",
+        "Ryudo_Definition.md",
+        "TRIHEXPHI_v4.0.md"
+      ],
+      "weaknesses_from_previous": [
+        "Feasibility concerns regarding resource requirements",
+        "Implementation timeline vague"
+      ],
+      "target_score": 9.9
+    }
+  ],
+  "additionalProperties": false
+}
+
+

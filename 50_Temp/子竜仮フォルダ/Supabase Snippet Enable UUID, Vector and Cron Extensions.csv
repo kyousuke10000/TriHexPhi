@@ -1,0 +1,12 @@
+column_name
+id
+user_id
+ai_source
+session_id
+event_type
+content
+importance
+embedding
+metadata
+created_at
+updated_at

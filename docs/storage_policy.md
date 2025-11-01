@@ -101,3 +101,5 @@ Supabase can be dropped and recreated without data loss.
 
 *Generated: 2025-11-01 / Cursor (☿)*
 
+
+

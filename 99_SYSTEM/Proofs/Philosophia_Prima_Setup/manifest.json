@@ -1,9 +1,10 @@
 {
   "setup_date": "2025-11-01T15:25:00+09:00",
+  "last_updated": "2025-11-01T20:30:00+09:00",
   "component": "Philosophia_Prima",
   "purpose": "原典置き場生成（Rubedo Ops Phase 2）",
   "location": "20_TriHex-Obsidian/Philosophia_Prima/",
-  "files_created": 5,
+  "files_created": 9,
   "files": [
     {
       "path": "README.md",
@@ -12,7 +13,7 @@
     },
     {
       "path": "index.md",
-      "sha256": "fade17198c92a28673c915dbb3f407c55fa119719b15ceae6e237c1c2b07f017",
+      "sha256": "241bc4ba8cf2c548d566f9414893483472b4bae5a9201e85e14cf5dd8d1e54ee",
       "purpose": "目次・運用ルール"
     },
     {
@@ -32,18 +33,60 @@
       "sha256": "54407008c7c1431bb70f972fa43859fa42e89fb93eeb90445f6c804236f614a2",
       "purpose": "第二章：結晶と意識",
       "status": "🜄 未編集"
+    },
+    {
+      "path": "alchemy_ch03.md",
+      "sha256": "...",
+      "purpose": "第三章：地律と天地呼吸",
+      "status": "✅ 完成"
+    },
+    {
+      "path": "alchemy_ch04.md",
+      "sha256": "...",
+      "purpose": "第四章：天地律モデルと六螺旋宇宙",
+      "status": "✅ 完成"
+    },
+    {
+      "path": "appendix_gum_model.md",
+      "sha256": "c3367e2054d862c2cbdbb30c0a9517e5971ffa18cffc1cbd0e26bb8347f6d8c3",
+      "purpose": "歯茎モデル対応表（Body-Earth Resonance Map）",
+      "status": "✅ 完成"
+    },
+    {
+      "path": "appendix_alchemy_18_19.md",
+      "sha256": "9157653648d85a6cd522fe4353be08ed762b5ca1fcebd7793ac6bc15324525a8",
+      "purpose": "18–19世紀錬金術談話（Alchemy in Modern Era）",
+      "status": "✅ 完成"
     }
   ],
   "supabase_integration": {
     "target_table": "trihex_core.knowledge",
     "import_method": "自動インポート",
-    "frontmatter_fields": ["title", "tags", "lang"],
+    "frontmatter_fields": [
+      "title",
+      "tags",
+      "lang",
+      "version"
+    ],
     "slug_generation": "ファイル名ベース"
   },
-  "status": "✅ 完了",
+  "related_files": [
+    {
+      "path": "10_TriHexCore/system/Open_Topics.md",
+      "sha256": "21a6259e23312487ca2a2001a0a0e467db125d918adfa993f5261d4b0ba07fde",
+      "purpose": "議題チケット（Breath Capture 原典化 v1）"
+    },
+    {
+      "path": "10_TriHexCore/system/INDEX.md",
+      "sha256": "91e27bd40ab638f26f8c8c9cb9198b6a3225e2f17c5ac4194957d69e0977d58c",
+      "purpose": "システムINDEX更新"
+    }
+  ],
+  "status": "🜂 進行中（Permanent Source）",
   "next_steps": [
-    "Obsidianから編集",
+    "超長文ファイルから本文抽出・章分割",
     "Supabase自動インポート設定",
-    "/knowledge/ ページに反映"
+    "/knowledge/ ページに反映",
+    "Recovery_Report生成"
   ]
 }

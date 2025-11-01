@@ -12,6 +12,8 @@
 | alchemy_ch02.md | 錬金術第二章：結晶と意識 | 🜄 未編集 |
 | alchemy_ch03.md | 第三章：地律と天地呼吸 | ✅ 完成 |
 | alchemy_ch04.md | 第四章：天地律モデルと六螺旋宇宙 | ✅ 完成 |
+| appendix_gum_model.md | 歯茎モデル対応表 | ✅ 完成 |
+| appendix_alchemy_18_19.md | 18–19世紀錬金術談話 | ✅ 完成 |
 
 ## 運用ルール
 

@@ -1,0 +1,158 @@
+# TriHex Supabase Sync Workflow
+# Generated: 2025-11-01
+# Purpose: Sync mirror_index.json to Supabase knowledge table
+
+name: 💧 TriHex Supabase Sync
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry-run mode (no actual writes)'
+        required: false
+        default: 'false'
+        type: boolean
+  
+  schedule:
+    - cron: "15 * * * *"  # Every hour at :15
+
+permissions:
+  contents: read
+
+jobs:
+  sync-db:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Node setup
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      
+      - name: Install dependencies
+        run: npm install --no-save @supabase/supabase-js yaml gray-matter
+      
+      - name: Check Supabase Secrets
+        id: check_secrets
+        run: |
+          if [ -z "${{ secrets.SUPABASE_URL }}" ]; then
+            echo "⚠️ SUPABASE_URL not set in GitHub Secrets"
+            echo "secrets_configured=false" >> $GITHUB_OUTPUT
+          elif [ -z "${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}" ]; then
+            echo "⚠️ SUPABASE_SERVICE_ROLE_KEY not set in GitHub Secrets"
+            echo "secrets_configured=false" >> $GITHUB_OUTPUT
+          else
+            echo "✅ Supabase secrets configured"
+            echo "secrets_configured=true" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Build Mirror Index (if missing)
+        if: steps.check_secrets.outputs.secrets_configured == 'true'
+        run: |
+          if [ ! -f "99_SYSTEM/MemorySeeds/index.json" ]; then
+            echo "⚠️ Memory Seeds index not found. Skip sync."
+            echo "sync_skipped=true" >> $GITHUB_OUTPUT
+          else
+            echo "✅ Mirror index found"
+            cat "99_SYSTEM/MemorySeeds/index.json"
+          fi
+      
+      - name: Dry-run flag
+        if: github.event_name == 'workflow_dispatch' && github.event.inputs.dry_run == 'true'
+        run: echo "🟡 DRY-RUN MODE: No Supabase writes will occur"
+      
+      - name: Supabase Upsert
+        if: steps.check_secrets.outputs.secrets_configured == 'true' && (github.event_name != 'workflow_dispatch' || github.event.inputs.dry_run != 'true')
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: |
+          echo "🔄 Syncing mirror index to Supabase..."
+          
+          # Create temporary sync script
+          cat > .tmp_sync.js << 'EOFSCRIPT'
+          const { createClient } = require('@supabase/supabase-js');
+          const fs = require('fs');
+          
+          const supabaseUrl = process.env.SUPABASE_URL;
+          const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+          
+          if (!supabaseUrl || !supabaseKey) {
+            console.error('❌ Supabase credentials not set');
+            process.exit(1);
+          }
+          
+          const supabase = createClient(supabaseUrl, supabaseKey);
+          
+          try {
+            const seedsData = JSON.parse(
+              fs.readFileSync('99_SYSTEM/MemorySeeds/index.json', 'utf8')
+            );
+            
+            console.log(`📊 Found ${seedsData.seeds.length} seeds`);
+            
+            for (const seed of seedsData.seeds) {
+              const { data, error } = await supabase
+                .from('content')
+                .upsert({
+                  slug: seed.seed_id,
+                  title: seed.title,
+                  kind: 'codex',
+                  body_md: JSON.stringify(seed, null, 2),
+                  tags: [seed.purpose.substring(0, 100)],
+                  author: 'system',
+                  version: '1.0.0'
+                }, {
+                  onConflict: 'slug'
+                });
+              
+              if (error) {
+                console.error(`❌ Error upserting ${seed.seed_id}:`, error.message);
+              } else {
+                console.log(`✅ Synced: ${seed.seed_id}`);
+              }
+            }
+            
+            console.log('🎉 Supabase sync complete');
+          } catch (err) {
+            console.error('❌ Sync failed:', err.message);
+            process.exit(1);
+          }
+          EOFSCRIPT
+          
+          node .tmp_sync.js
+          rm .tmp_sync.js
+      
+      - name: Generate Sync Report
+        if: always()
+        run: |
+          echo "# TriHex Supabase Sync Report" > supabase-sync-report.md
+          echo "" >> supabase-sync-report.md
+          echo "**Date:** $(date -u +'%Y-%m-%d %H:%M:%S UTC')" >> supabase-sync-report.md
+          echo "**Phase:** Phase IV Rubedo" >> supabase-sync-report.md
+          echo "**Mode:** ${{ github.event.inputs.dry_run == 'true' && 'DRY-RUN' || 'LIVE' }}" >> supabase-sync-report.md
+          echo "" >> supabase-sync-report.md
+          echo "## Results" >> supabase-sync-report.md
+          echo "" >> supabase-sync-report.md
+          
+          if [ "${{ steps.check_secrets.outputs.secrets_configured }}" = "true" ]; then
+            echo "✅ Supabase credentials configured" >> supabase-sync-report.md
+          else
+            echo "❌ Supabase credentials **NOT CONFIGURED**" >> supabase-sync-report.md
+            echo "" >> supabase-sync-report.md
+            echo "**Required Secrets:**" >> supabase-sync-report.md
+            echo "- SUPABASE_URL" >> supabase-sync-report.md
+            echo "- SUPABASE_SERVICE_ROLE_KEY" >> supabase-sync-report.md
+          fi
+      
+      - name: Upload Sync Report
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: supabase-sync-report-$(date '+%Y%m%d-%H%M%S')
+          path: supabase-sync-report.md
+
+

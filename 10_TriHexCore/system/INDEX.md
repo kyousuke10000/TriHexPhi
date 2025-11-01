@@ -41,6 +41,12 @@
 
 ---
 
+## Open Topics (進行中議題)
+
+- **Breath Capture 原典化 v1:** [./Open_Topics.md](Open_Topics.md) (進行中)
+
+---
+
 ## Navigation
 
 **Always start here.** No "continued" links or partial navigation.

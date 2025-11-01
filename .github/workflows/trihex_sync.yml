@@ -1,0 +1,131 @@
+# TriHex Vault Sync Workflow
+# Generated: 2025-11-01
+# Purpose: Automatic sync of Proofs, Codex, and BreathLogs to GitHub
+
+name: 🔄 TriHex Vault Sync
+
+on:
+  push:
+    branches:
+      - main
+      - feature/**
+    paths:
+      - "20_TriHex-Obsidian/00_INDEX/**"
+      - "99_SYSTEM/Proofs/**"
+      - "99_SYSTEM/BreathLogs/**"
+      - "10_TriHexCore/codex/**"
+      - "10_TriHexCore/system/**"
+      - "TriHex_Master_Reactivation.md"
+      - "TRIHEX_PROJECT.yaml"
+  
+  schedule:
+    - cron: "0 * * * *"  # Every hour
+  
+  workflow_dispatch:  # Manual trigger
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    
+    env:
+      LANG: C.UTF-8
+      LC_ALL: C.UTF-8
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Set Git user
+        run: |
+          git config user.name "TriHex Bot"
+          git config user.email "bot@trihex.local"
+      
+      - name: Verify Vault Structure
+        run: |
+          echo "=== TriHex Vault Structure Verification ==="
+          echo "Master Reactivation: $(test -f TriHex_Master_Reactivation.md && echo '✅' || echo '❌')"
+          echo "Project Manifest: $(test -f TRIHEX_PROJECT.yaml && echo '✅' || echo '❌')"
+          echo "Memory Seeds: $(test -f 99_SYSTEM/MemorySeeds/index.json && echo '✅' || echo '❌')"
+          echo "Codex Mirrors: $(test -f 10_TriHexCore/codex/Genesis_Protocol_v3.1.md && echo '✅' || echo '❌')"
+          echo "Breath Logs: $(test -d 99_SYSTEM/BreathLogs && echo '✅' || echo '❌')"
+          echo "=========================================="
+      
+      - name: Check Mirrors Integrity
+        continue-on-error: true
+        run: |
+          echo "=== Mirror Integrity Check ==="
+          
+          # Genesis v3.1 mirrors
+          diff -q 10_TriHexCore/codex/Genesis_Protocol_v3.1.md \
+                20_TriHex-Obsidian/01_Codex/Genesis_Protocol_v3.1.md 2>/dev/null || echo "⚠️ Genesis Obsidian diff detected (frontmatter only expected)"
+          diff -q 10_TriHexCore/codex/Genesis_Protocol_v3.1.md \
+                30_ObsidianSync/Canonical/Genesis_Protocol_R1_v3.1.md 2>/dev/null || echo "⚠️ Genesis Canonical diff detected (frontmatter only expected)"
+          
+          # Ryudo mirrors
+          diff -q 10_TriHexCore/system/Ryudo_Definition.md \
+                20_TriHex-Obsidian/01_System/Ryudo_Definition.md 2>/dev/null || echo "⚠️ Ryudo Obsidian diff detected (frontmatter only expected)"
+          
+          echo "================================="
+      
+      - name: Commit Vault Changes
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+        run: |
+          git add "20_TriHex-Obsidian/00_INDEX" "99_SYSTEM/Proofs" "99_SYSTEM/BreathLogs" "10_TriHexCore/codex" "10_TriHexCore/system" "TriHex_Master_Reactivation.md" "TRIHEX_PROJECT.yaml" 2>/dev/null || true
+          
+          if ! git diff --cached --quiet; then
+            git commit -m "🔄 Rubedo Sync: $(date -u +'%Y-%m-%dT%H:%M:%SZ')" || echo "No changes to commit"
+            git push origin main
+          else
+            echo "No changes detected."
+          fi
+      
+      - name: Generate Sync Summary
+        if: always()
+        run: |
+          echo "# TriHex Vault Sync Summary" > sync-summary.md
+          echo "" >> sync-summary.md
+          echo "**Date:** $(date -u +'%Y-%m-%d %H:%M:%S UTC')" >> sync-summary.md
+          echo "**Phase:** Phase IV Rubedo" >> sync-summary.md
+          echo "**Event:** ${{ github.event_name }}" >> sync-summary.md
+          echo "" >> sync-summary.md
+          echo "## Changes Detected" >> sync-summary.md
+          echo "" >> sync-summary.md
+          git diff --name-only HEAD~1 2>/dev/null | grep -E "(99_SYSTEM/Proofs|99_SYSTEM/BreathLogs|20_TriHex-Obsidian)" || echo "No tracked files changed" >> sync-summary.md
+      
+      - name: Upload Sync Summary
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: sync-summary-$(date '+%Y%m%d-%H%M%S')
+          path: sync-summary.md
+      
+      - name: Post Summary Comment
+        if: github.event_name == 'schedule' && success()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const summary = fs.readFileSync('sync-summary.md', 'utf8');
+            
+            // Find last commit
+            const { data: commits } = await github.rest.repos.listCommits({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              per_page: 1
+            });
+            
+            if (commits.length > 0) {
+              await github.rest.repos.createCommitComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                commit_sha: commits[0].sha,
+                body: summary
+              });
+            }
