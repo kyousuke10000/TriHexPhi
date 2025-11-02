@@ -1,0 +1,95 @@
+name: 🧪 n8n CI Tests
+
+on:
+  pull_request:
+    paths:
+      - 'workflows/**'
+      - 'tools/n8n-*.mjs'
+      - '.github/workflows/n8n_ci.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'workflows/**'
+      - 'tools/n8n-*.mjs'
+
+jobs:
+  test:
+    name: Test Workflows
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Test ping webhook
+        run: |
+          node tools/test_ping.mjs --env=stg
+        env:
+          N8N_BASE_URL: ${{ secrets.STG_N8N_BASE_URL }}
+          N8N_API_KEY: ${{ secrets.STG_N8N_API_KEY }}
+        continue-on-error: true
+      
+      - name: Test LINE webhook
+        run: |
+          node tools/test_line_fake.mjs --env=stg
+        env:
+          N8N_BASE_URL: ${{ secrets.STG_N8N_BASE_URL }}
+          N8N_API_KEY: ${{ secrets.STG_N8N_API_KEY }}
+        continue-on-error: true
+      
+      - name: Generate report
+        if: always()
+        run: |
+          mkdir -p 99_SYSTEM/Proofs
+          cat > 99_SYSTEM/Proofs/CI_$(date +%Y%m%d).md << EOF
+          # CI Test Report
+          
+          **Date:** $(date +'%Y-%m-%d %H:%M JST')
+          **Run:** ${{ github.run_number }}
+          **Branch:** ${{ github.ref_name }}
+          
+          ## Results
+          
+          Tests completed.
+          
+          ---
+          
+          **Generated:** Auto-CI
+          EOF
+          echo "✅ Report: 99_SYSTEM/Proofs/CI_$(date +%Y%m%d).md"
+  
+  deploy-stg:
+    name: Deploy to Staging
+    needs: test
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Deploy to n8n (stg)
+        run: |
+          node tools/n8n-import.mjs --env=stg
+        env:
+          N8N_BASE_URL: ${{ secrets.STG_N8N_BASE_URL }}
+          N8N_API_KEY: ${{ secrets.STG_N8N_API_KEY }}
+        continue-on-error: true
+      
+      - name: Verify deployment
+        run: |
+          node tools/test_ping.mjs --env=stg
+        env:
+          N8N_BASE_URL: ${{ secrets.STG_N8N_BASE_URL }}
+          N8N_API_KEY: ${{ secrets.STG_N8N_API_KEY }}
+

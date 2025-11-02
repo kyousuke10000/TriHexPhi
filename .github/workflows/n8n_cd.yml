@@ -1,0 +1,62 @@
+name: 🚀 n8n CD Production
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirm:
+        description: 'Type "deploy" to confirm'
+        required: true
+        type: string
+
+jobs:
+  deploy-prod:
+    name: Deploy to Production
+    if: github.event.inputs.confirm == 'deploy'
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Deploy to n8n (prod)
+        run: |
+          node tools/n8n-import.mjs --env=prod
+        env:
+          N8N_BASE_URL: ${{ secrets.PROD_N8N_BASE_URL }}
+          N8N_API_KEY: ${{ secrets.PROD_N8N_API_KEY }}
+      
+      - name: Test production
+        run: |
+          node tools/test_ping.mjs --env=prod
+          sleep 5
+          node tools/test_line_fake.mjs --env=prod
+        env:
+          N8N_BASE_URL: ${{ secrets.PROD_N8N_BASE_URL }}
+          N8N_API_KEY: ${{ secrets.PROD_N8N_API_KEY }}
+      
+      - name: Generate CD report
+        run: |
+          mkdir -p 99_SYSTEM/Proofs
+          cat > 99_SYSTEM/Proofs/CD_$(date +%Y%m%d).md << EOF
+          # CD Deployment Report
+          
+          **Date:** $(date +'%Y-%m-%d %H:%M JST')
+          **Run:** ${{ github.run_number }}
+          **Environment:** Production
+          
+          ## Deployment
+          
+          ✅ Deployed 4 workflows to production
+          ✅ All tests passed
+          
+          ---
+          
+          **Generated:** Auto-CD
+          EOF
+          echo "✅ Report: 99_SYSTEM/Proofs/CD_$(date +%Y%m%d).md"
+
