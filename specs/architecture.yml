@@ -67,6 +67,51 @@ layers:
 
 ---
 
+# Breath Integration (朝霧 × TriHexΦ)
+
+breath_integration:
+  breath_cycle:
+    - name: "asagiri"
+      period: "morning"
+      rhythm: "inhale:3, hold:1, exhale:7, hold:1"
+      
+    - name: "hiru"
+      period: "daytime"
+      rhythm: "active:7"
+      
+    - name: "yuu"
+      period: "evening"
+      rhythm: "harvest:7"
+      
+    - name: "yoru"
+      period: "night"
+      rhythm: "reflect:3"
+  
+  sync_targets:
+    - name: "mizukagami"
+      layer: 1
+      role: "観測層"
+      
+    - name: "kokuyou"
+      layer: 2
+      role: "結晶層"
+      
+    - name: "shinsen"
+      layer: 3
+      role: "記憶層"
+      
+    - name: "harmonia"
+      layer: 4
+      role: "共鳴層"
+      
+    - name: "chl"
+      layer: 5
+      role: "呼吸核"
+  
+  rhythm_formula: "inhale:3, hold:1, exhale:7, hold:1"
+  
+---
+
 # 6AI Collaboration Model
 
 ai_council:

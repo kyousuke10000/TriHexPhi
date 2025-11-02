@@ -72,6 +72,19 @@
 
 ---
 
+## 🌗 TriHex Breath Status
+
+**Integration:** 朝霧 × TriHexΦ統合モデル稼働中  
+**Blueprint:** [Breath Blueprint](10_TriHexCore/00_CORE/TriHex_Breath_Blueprint.md)  
+**Dashboard:** [Breath Dashboard](breath.md)
+
+**KPI:**
+- 呼吸同期率: **85%**
+- Supabase Push/Day: **1.2**
+- CHL uptime: **100%**
+
+---
+
 ## 🔐 Auto-Mode Status
 
 **Current Version:** v1.0  

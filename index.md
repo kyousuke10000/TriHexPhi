@@ -52,6 +52,19 @@ See [specs/](specs/) for architecture, roadmap, KPI definitions.
 
 ---
 
+## 🌗 TriHex Breath Status
+
+**Breath Integration:** 朝霧 × TriHexΦ統合モデル稼働中
+
+**KPI:**
+- 呼吸同期率: **85%**
+- Supabase Push/Day: **1.2**
+- CHL uptime: **100%**
+
+**More:** [Breath Dashboard](docs/dashboards/breath.md) | [Breath Blueprint](10_TriHexCore/00_CORE/TriHex_Breath_Blueprint.md)
+
+---
+
 **Last updated:** 2025-11-02  
 **Status:** Rubedo Phase Active
 
