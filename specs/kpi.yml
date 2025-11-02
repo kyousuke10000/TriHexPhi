@@ -1,0 +1,94 @@
+# TriHex KPI Specification
+# Generated: 2025-11-02
+# Purpose: Design = Code (KPI as YAML)
+
+version: "1.0"
+last_updated: "2025-11-02"
+canonical: true
+trihex_layer: "10_TriHexCore"
+
+---
+
+# KPI Targets
+
+targets:
+  - metric: "Zero Friction Events"
+    target: 10
+    unit: "events/month"
+    current: 0
+    status: "Not Started"
+    measurement: "Proofs counting KYOEN events"
+    
+  - metric: "Workflow Deployment Time"
+    target: 15
+    unit: "minutes"
+    current: null
+    status: "Target Set"
+    measurement: "n8n deploy from PR merge"
+    
+  - metric: "Proof Coverage"
+    target: 100
+    unit: "percent"
+    current: 95
+    status: "Near Target"
+    measurement: "Actions with proofs generated"
+    
+  - metric: "CI Pass Rate"
+    target: 98
+    unit: "percent"
+    current: null
+    status: "Baseline"
+    measurement: "Harmonia CI green runs"
+    
+  - metric: "Auto-Sync Success"
+    target: 99
+    unit: "percent"
+    current: null
+    status: "Target Set"
+    measurement: "Proofs sync without errors"
+
+---
+
+# Measurement Sources
+
+measurement:
+  proofs:
+    path: "99_SYSTEM/Proofs/"
+    pattern: "**/*.md"
+    metrics:
+      - KYOEN_event_count
+      - auto_sync_executions
+      - ci_runs
+      
+  breathlogs:
+    path: "99_SYSTEM/BreathLogs/"
+    pattern: "YYYY-MM-DD.md"
+    metrics:
+      - daily_activities
+      - decisions_logged
+      
+  github_actions:
+    source: "GitHub API"
+    metrics:
+      - workflow_success_rate
+      - deployment_time
+      - test_coverage
+
+---
+
+# Baseline (Current)
+
+baseline:
+  date: "2025-11-02"
+  measurements:
+    total_files: 44687
+    proof_files: 159
+    vault_layers: 8
+    ci_workflows: 12
+    n8n_workflows: 16
+
+---
+
+**Generated:** 2025-11-02 / Cursor (☿)  
+**Canonical:** True
+

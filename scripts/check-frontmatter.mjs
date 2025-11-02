@@ -8,7 +8,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 
-const REQUIRED_KEYS = ['title', 'version', 'phase'];
+const REQUIRED_KEYS = ['title', 'version', 'phase', 'trihex_layer'];
 
 async function checkFrontmatter(filepath) {
   try {

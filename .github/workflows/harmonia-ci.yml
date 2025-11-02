@@ -6,6 +6,8 @@ on:
       - '10_TriHexCore/**'
       - '20_TriHex-Obsidian/**'
       - '99_SYSTEM/**'
+      - 'specs/**'
+      - 'adr/**'
       - '.github/workflows/harmonia-ci.yml'
   workflow_dispatch:
 
@@ -54,6 +56,15 @@ jobs:
       
       - name: Frontmatter Check
         run: node scripts/check-frontmatter.mjs || echo "Frontmatter check skipped"
+      
+      - name: Spec Gate
+        run: |
+          CHANGED_FILES=$(git diff --name-only origin/main...HEAD | grep -E '\.md$|\.yml$' || true)
+          if [ -n "$CHANGED_FILES" ]; then
+            echo "$CHANGED_FILES" | xargs node scripts/spec-gate.mjs
+          else
+            echo "No spec files changed"
+          fi
       
       - name: Mirror Codex
         run: node scripts/mirror-codex.mjs || echo "Mirror sync skipped"

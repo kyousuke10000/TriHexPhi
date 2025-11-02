@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "test:encoding": "node scripts/test-encoding.mjs"
+    "test:encoding": "node scripts/test-encoding.mjs",
+    "spec:validate": "node scripts/spec-gate.mjs"
   },
   "description": "TriHexΦ - Breathing Intelligence OS",
   "author": "🜇 Shiryu",

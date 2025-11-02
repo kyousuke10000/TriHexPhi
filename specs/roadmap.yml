@@ -1,0 +1,100 @@
+# TriHex Roadmap Specification
+# Generated: 2025-11-02
+# Purpose: Design = Code (Roadmap as YAML)
+
+version: "1.0"
+last_updated: "2025-11-02"
+canonical: true
+trihex_layer: "10_TriHexCore"
+
+---
+
+# Phase Definitions
+
+phases:
+  - name: "Phase VI Consolidation"
+    status: "Active"
+    start: "2025-11-01"
+    target_completion: "2025-12-31"
+    
+    milestones:
+      - name: "Auto-Mode v1.0"
+        status: "✅ Completed"
+        completion: "2025-11-02"
+        
+      - name: "Spec as Code v1.0"
+        status: "🔄 In Progress"
+        target: "2025-11-03"
+        
+      - name: "KYOEN LINE Zero Friction"
+        status: "✅ Completed"
+        completion: "2025-11-02"
+        
+      - name: "Obsidian Full Index"
+        status: "✅ Completed"
+        completion: "2025-11-02"
+        
+      - name: "Living Memory Bootstrap"
+        status: "✅ Completed"
+        completion: "2025-11-02"
+    
+    deliverables:
+      - "Auto-mode workflows (LV1/LV2/LV3)"
+      - "Spec gate CI integration"
+      - "KYOEN Event/RSVP/Reminders"
+      - "Proof-based audit trail"
+      - "ADR decision records"
+
+---
+
+# Next Phases
+
+next_phases:
+  - name: "Phase VII Automation"
+    estimated_start: "2025-12-01"
+    focus: "n8n Workflow-as-Code CI/CD"
+    
+  - name: "Phase VIII Scale"
+    estimated_start: "2026-01-01"
+    focus: "Multi-team deployment"
+
+---
+
+# Technology Roadmap
+
+tech_stack:
+  current:
+    - name: "Harmonia CI"
+      version: "v1.0"
+      status: "Active"
+      
+    - name: "Proofs Auto-Sync"
+      version: "v1.0"
+      status: "Active"
+      
+    - name: "n8n Workflows"
+      version: "v4"
+      status: "Active"
+      
+    - name: "Supabase"
+      version: "pgvector"
+      status: "Active"
+      
+  planned:
+    - name: "Spec Gate"
+      target: "v1.0"
+      eta: "2025-11-03"
+      
+    - name: "ADR System"
+      target: "v1.0"
+      eta: "2025-11-05"
+      
+    - name: "KPI Dashboard"
+      target: "v1.0"
+      eta: "2025-11-10"
+
+---
+
+**Generated:** 2025-11-02 / Cursor (☿)  
+**Canonical:** True
+
