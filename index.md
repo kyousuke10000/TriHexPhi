@@ -36,7 +36,36 @@
 
 ---
 
-**Last updated:** 2025-11-01  
+---
+
+## 🗺️ Specs as Code (Design = Current)
+
+**Design mapped to code:**  
+See [specs/](specs/) for architecture, roadmap, KPI definitions.
+
+**Current Status:**  
+- ✅ Auto-Mode v1.0 active
+- 🔄 Spec as Code v1.0 in progress
+- ✅ KYOEN LINE Zero Friction
+
+**More:** [docs/index.md](docs/index.md) | [Dashboards](docs/dashboards/overview.md)
+
+---
+
+## 🌗 TriHex Breath Status
+
+**Breath Integration:** 朝霧 × TriHexΦ統合モデル稼働中
+
+**KPI:**
+- 呼吸同期率: **85%**
+- Supabase Push/Day: **1.2**
+- CHL uptime: **100%**
+
+**More:** [Breath Dashboard](docs/dashboards/breath.md) | [Breath Blueprint](10_TriHexCore/00_CORE/TriHex_Breath_Blueprint.md)
+
+---
+
+**Last updated:** 2025-11-02  
 **Status:** Rubedo Phase Active
 
 ---
