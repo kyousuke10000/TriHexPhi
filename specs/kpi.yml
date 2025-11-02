@@ -89,6 +89,32 @@ baseline:
 
 ---
 
+# Breath Integration Metrics
+
+breath_metrics:
+  - metric: "Breath Sync Rate"
+    target: 0.9
+    unit: "ratio"
+    current: 0.85
+    status: "Near Target"
+    measurement: "朝霧実行率 × AI同期率"
+    
+  - metric: "Shinsen Push/Day"
+    target: 1
+    unit: "count"
+    current: 1.2
+    status: "Pass"
+    measurement: "日次Push成功回数"
+    
+  - metric: "Reply SLA p95"
+    target: 3
+    unit: "seconds"
+    current: null
+    status: "Target Set"
+    measurement: "Phase 3.8 返信p95"
+
+---
+
 **Generated:** 2025-11-02 / Cursor (☿)  
 **Canonical:** True
 

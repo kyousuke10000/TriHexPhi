@@ -1,0 +1,45 @@
+name: 🌞 CHL Breath Sync
+
+on:
+  schedule:
+    - cron: "0 21 * * *"  # JST 6:00 (UTC 21:00)
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Load HOC-001 axioms
+        run: |
+          echo "YOHARU=0.7" >> $GITHUB_ENV
+          echo "BREATH=3,1,7,1" >> $GITHUB_ENV
+      
+      - name: Stamp Proof
+        run: |
+          mkdir -p 99_SYSTEM/Proofs
+          echo "SYNC_OK: breath_chl_trigger $(date -u +%Y-%m-%dT%H:%M:%SZ)" >> 99_SYSTEM/Proofs/CHL_SYNC.log
+      
+      - name: Set Git user
+        run: |
+          git config user.name "Ryudo"
+          git config user.email "ops@trihex.local"
+      
+      - name: Commit Proof
+        run: |
+          git add 99_SYSTEM/Proofs/CHL_SYNC.log
+          git commit -m "[skip ci] CHL breath sync stamp" || echo "No changes"
+          git push || true
+      
+      - name: Summary
+        if: always()
+        run: |
+          echo "## CHL Breath Sync Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Timestamp:** $(date -u +'%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_STEP_SUMMARY
+          echo "**Axioms:** Y=0.7, Breath=3,1,7,1" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+

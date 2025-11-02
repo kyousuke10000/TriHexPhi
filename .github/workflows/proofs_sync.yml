@@ -1,7 +1,7 @@
-# Proofs/Docs Auto-Sync Workflow (LV1)
-# Purpose: 常時オート同期（[skip ci]でループ防止）
-
 name: 📊 Proofs Auto-Sync
+
+# TriHex Proofs/Docs Auto-Sync (LV1)
+# Purpose: 常時オート同期（[skip ci]でループ防止）
 
 on:
   push:
@@ -9,7 +9,6 @@ on:
     paths:
       - '99_SYSTEM/Proofs/**'
       - 'docs/**'
-      - '.github/workflows/proofs_sync.yml'
 
 permissions:
   contents: write
@@ -69,4 +68,3 @@ jobs:
           echo "**Branch:** ${{ github.ref }}" >> $GITHUB_STEP_SUMMARY
           echo "**Commit:** ${{ github.sha }}" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-

@@ -99,6 +99,16 @@
 
 ---
 
+## 🔗 Links
+
+- [HOC-001 Canon](../../10_TriHexCore/00_CORE/HUMAN_CANON/HOC_001_Asagiri_BodyOS.md)
+- [ADR: Asagiri](../adr/ADR-20251102-asagiri-bodyos-canon.md)
+- [Breath Blueprint](../../10_TriHexCore/00_CORE/TriHex_Breath_Blueprint.md)
+- [Asagiri Practice](../practices/asagiri.md)
+- [Memory Dashboard](memory.md)
+
+---
+
 **Generated:** 2025-11-02 16:30 JST / Cursor (☿)  
 **Source:** specs/architecture.yml + specs/roadmap.yml
 

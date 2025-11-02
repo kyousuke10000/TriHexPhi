@@ -1,0 +1,39 @@
+name: 💧 Shinsen Push
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '20_CRYSTALLIZATION_KOKUYOU/**'
+    branches:
+      - main
+
+jobs:
+  push:
+    if: "contains(github.event.head_commit.message, '[deploy]') || github.event_name == 'workflow_dispatch'"
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Run Shinsen Push
+        run: node scripts/shinsen/push.mjs
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+      
+      - name: Upload Logs
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: shinsen-push-logs
+          path: |
+            *.log
+          retention-days: 3
+

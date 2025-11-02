@@ -81,6 +81,18 @@ living_intelligence_economy:
       - "月拍同期オペレーション"
       - "Living Intelligence metrics"
 
+breathsync_economy:
+  phases:
+    - key: day_cycle
+      ops: ["朝霧60-90s → 3本柱 → Auto-Mode起動"]
+    - key: halfmoon_sprint
+      ops: ["新月=設計/上弦=外化/満月=収穫/下弦=整頓"]
+  
+  kpi:
+    - breath_sync_rate >= 0.9
+    - shinsen_push_per_day >= 1
+    - reply_sla_p95_seconds <= 3
+
 ---
 
 # Technology Roadmap

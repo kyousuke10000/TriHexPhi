@@ -112,6 +112,25 @@ breath_integration:
   
 ---
 
+# HOC-001 Somatic Mapping
+
+breath_layer:
+  id: chl
+  cycle: { inhale: 3, hold1: 1, exhale: 7, hold2: 1 }
+  
+  somatic_map:
+    gum_ground: "地面=歯茎｜やさしく載せる"
+    pdl_yohaku: "歯根膜=余白O｜1-2mm微揺れ"
+    upper_dome: "上顎=基準（星図）"
+    lower_dome: "下顎=応答（星空）"
+  
+  max_effort: 0.7
+  
+  axioms:
+    - "林が先。Iは支柱、Vは受け皿。IVはしない。Yは7割。"
+
+---
+
 # 6AI Collaboration Model
 
 ai_council:
@@ -175,6 +194,12 @@ integrations:
       - trihex_core.events
       - trihex_core.publish_queue
       - trihex_core.points_history
+      - public.memory_events
+      - public.memory_crystals
+      - public.breath_log
+    views:
+      - public.v_memory_by_ai
+      - public.v_memory_unified
     status: "Active"
     
   - name: "n8n"
@@ -216,6 +241,8 @@ guardrails:
     - "scripts/**"
     - "specs/**"
     - "adr/**"
+    - "10_CAPTURE_MIZUKAGAMI/**"
+    - "20_CRYSTALLIZATION_KOKUYOU/**"
     
   required_frontmatter:
     - title

@@ -8,6 +8,8 @@ on:
       - '99_SYSTEM/**'
       - 'specs/**'
       - 'adr/**'
+      - '10_CAPTURE_MIZUKAGAMI/**'
+      - '20_CRYSTALLIZATION_KOKUYOU/**'
       - '.github/workflows/harmonia-ci.yml'
   workflow_dispatch:
 
