@@ -113,6 +113,27 @@ TriHexΦ/
 
 ---
 
+## 🔐 Auto-Mode & Infinite Loop Prevention
+
+**Commit Message Conventions:**
+
+| Pattern | Effect |
+|---------|--------|
+| `[skip ci]` | Skip all CI/CD |
+| `📊 Auto-sync:` | Bot commit (loop prevention) |
+| `[deploy]` | Trigger LV2 deployment |
+| `[deploy:stg]` | Deploy to staging |
+| `[deploy:prod]` | Deploy to production (requires approval) |
+
+**Auto-Mode Levels:**
+- **LV1:** Proofs/Docs - 常時オート同期（`[skip ci]`でループ防止）
+- **LV2:** CI/DB - `[deploy]` markersで自動配備
+- **LV3:** n8n/LINE - paths限定＋Environment承認
+
+詳細: [Auto-Mode Guide](../docs/auto-mode-guide.md)
+
+---
+
 ## 📖 Core Documents
 
 ### 決定文書
