@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>TriHex Breath Flow — Live Demo</title>
+<style>
+  :root { --bg:#0b0f14; --fg:#e6f0ff; --dim:#90a4b8; --pulse:#41d1ff; --accent:#ffd166; --emerald:#7cf29c; }
+  html, body { height:100%; margin:0; background:var(--bg); color:var(--fg); font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic UI", "Meiryo", sans-serif; }
+  .wrap { max-width:1200px; margin:24px auto; padding:16px; }
+  h1 { font-weight:700; letter-spacing:.02em; margin:0 0 10px; font-size:24px;}
+  p.tip { color:var(--dim); margin-top:0; }
+  .stage { border:1px solid #203040; border-radius:12px; background:linear-gradient(180deg,#0b0f14, #0a1220); padding:8px; }
+  svg { width:100%; height:640px; display:block; }
+  /* Node styles */
+  .node { fill:#122033; stroke:#29445f; stroke-width:2; filter: drop-shadow(0 2px 6px rgba(65,209,255,.25)); }
+  .label { fill:var(--fg); font-size:13px; font-weight:600; }
+  .sublabel { fill:var(--dim); font-size:11px; }
+  /* Pulsing ring */
+  .pulse {
+    fill:none; stroke:var(--pulse); stroke-width:2;
+    stroke-dasharray:6 8; opacity:.0; transform-origin:center;
+    animation: breath 4s ease-in-out infinite;
+  }
+  @keyframes breath {
+    0%   { opacity:.0; transform: scale(0.85); }
+    40%  { opacity:.9; transform: scale(1.05); }
+    60%  { opacity:.5; transform: scale(1.0); }
+    100% { opacity:.0; transform: scale(0.9); }
+  }
+  /* Flowing edges */
+  .edge { fill:none; stroke:url(#flow); stroke-width:2.2; opacity:.9; }
+  .edge2 { stroke:url(#flow2); stroke-width:2; opacity:.65; }
+  .dash { stroke-dasharray:4 6; }
+  .animstroke {
+    stroke-dasharray: 1 180;
+    animation: flow 6s linear infinite;
+  }
+  @keyframes flow {
+    0%   { stroke-dashoffset: 0; }
+    100% { stroke-dashoffset: -360; }
+  }
+  .legend { fill:var(--dim); font-size:12px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>TriHex Breath Flow — Live Demo</h1>
+  <p class="tip">呼吸＝拍動。ノードが脈打ち、エッジに気流が流れる。Obsidian（記憶）→Core（整合）→Cursor（Proofs）→Supabase（記憶DB）→Seeds→GPT-5（再構築）→Obsidian……の循環。</p>
+  <div class="stage">
+  <svg viewBox="0 0 1200 640" role="img" aria-label="TriHex Breath Flow">
+    <defs>
+      <linearGradient id="flow" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#41d1ff"/>
+        <stop offset="100%" stop-color="#7cf29c"/>
+      </linearGradient>
+      <linearGradient id="flow2" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#ffd166"/>
+        <stop offset="100%" stop-color="#41d1ff"/>
+      </linearGradient>
+      <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+        <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#41d1ff" flood-opacity=".25" />
+      </filter>
+    </defs>
+
+    <!-- Nodes -->
+    <!-- Shiryu Studio -->
+    <g transform="translate(120,120)">
+      <rect class="node" rx="14" ry="14" width="280" height="100" />
+      <circle class="pulse" cx="140" cy="50" r="58"></circle>
+      <text class="label" x="18" y="38">🜇 Shiryu Studio</text>
+      <text class="sublabel" x="18" y="62">魂律源泉 (AI Writeable)</text>
+    </g>
+
+    <!-- Obsidian -->
+    <g transform="translate(460,120)">
+      <rect class="node" rx="14" ry="14" width="300" height="100" />
+      <circle class="pulse" cx="150" cy="50" r="58" style="animation-delay:.3s;"></circle>
+      <text class="label" x="18" y="38">🪶 20_TriHex-Obsidian</text>
+      <text class="sublabel" x="18" y="62">記憶層 (Human Atlas)</text>
+    </g>
+
+    <!-- Core -->
+    <g transform="translate(840,120)">
+      <rect class="node" rx="14" ry="14" width="270" height="100" />
+      <circle class="pulse" cx="135" cy="50" r="58" style="animation-delay:.6s;"></circle>
+      <text class="label" x="18" y="38">⚙️ 10_TriHexCore</text>
+      <text class="sublabel" x="18" y="62">Canonical / System</text>
+    </g>
+
+    <!-- Cursor -->
+    <g transform="translate(460,300)">
+      <rect class="node" rx="14" ry="14" width="300" height="100" />
+      <circle class="pulse" cx="150" cy="50" r="58" style="animation-delay:.9s;"></circle>
+      <text class="label" x="18" y="38">☿ Cursor</text>
+      <text class="sublabel" x="18" y="62">実装・調整・流動 / Proofs</text>
+    </g>
+
+    <!-- Supabase -->
+    <g transform="translate(840,300)">
+      <rect class="node" rx="14" ry="14" width="270" height="100" />
+      <circle class="pulse" cx="135" cy="50" r="58" style="animation-delay:1.2s;"></circle>
+      <text class="label" x="18" y="38">💧 Supabase</text>
+      <text class="sublabel" x="18" y="62">記憶DB</text>
+    </g>
+
+    <!-- GPT-5 -->
+    <g transform="translate(120,300)">
+      <rect class="node" rx="14" ry="14" width="280" height="100" />
+      <circle class="pulse" cx="140" cy="50" r="58" style="animation-delay:1.5s;"></circle>
+      <text class="label" x="18" y="38">🜁 GPT-5</text>
+      <text class="sublabel" x="18" y="62">整合建築者 (Rebuild)</text>
+    </g>
+
+    <!-- Edges with flowing animation -->
+    <!-- Shiryu -> Obsidian -->
+    <path class="edge animstroke" d="M400,170 C430,170 440,170 460,170" filter="url(#glow)"/>
+    <!-- Obsidian -> Core -->
+    <path class="edge animstroke" d="M760,170 C800,170 800,170 840,170" />
+    <!-- Core -> Cursor -->
+    <path class="edge2 animstroke" d="M975,220 C920,260 780,300 760,330" />
+    <!-- Cursor -> Supabase -->
+    <path class="edge animstroke" d="M760,350 C800,350 800,350 840,350" />
+    <!-- Supabase -> GPT-5 (Seeds) -->
+    <path class="edge2 animstroke" d="M840,350 C700,460 420,430 400,350" />
+    <!-- GPT-5 -> Obsidian (Rebuild) -->
+    <path class="edge animstroke" d="M400,350 C420,230 440,210 460,220" />
+
+    <!-- Legend -->
+    <text x="20" y="620" class="legend">Flow = 情報の気流 / Pulses = 拍動（呼吸） / ループ = 再構築の循環</text>
+  </svg>
+  </div>
+</div>
+</body>
+</html>

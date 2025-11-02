@@ -1,0 +1,75 @@
+# TriHex Sixfold Conductor - Agent Configuration
+
+topic_dir: "20_TriHex-Obsidian/04_HARMONIA_COUNCIL/Ryudo_Sessions"
+
+roles:
+  - id: gpt5
+    name: "🜁 GPT-5"
+    mode: "trihex"  # TriHex CLI経由
+    role: "整合建築者 / Fire"
+    provider: "openai"
+    model: "gpt-4o"
+  
+  - id: claude
+    name: "🜂 Claude"
+    mode: "live|demo"  # live=Claude API, demo=trihex代替
+    role: "調和統合審査官 / Air"
+    provider: "anthropic"
+    model: "claude-3.5-sonnet"
+  
+  - id: gemini
+    name: "🜃 Gemini"
+    mode: "live|demo"
+    role: "可視化解析官 / Space"
+    provider: "google"
+    model: "gemini-pro"
+  
+  - id: deepseek
+    name: "🜄 DeepSeek"
+    mode: "live|demo"
+    role: "潜行観察官 / Earth"
+    provider: "deepseek"
+    model: "deepseek-chat"
+  
+  - id: grok
+    name: "Grok"
+    mode: "live|demo"
+    role: "異端検証官 / Edge"
+    provider: "x-ai"
+    model: "grok-beta"
+  
+  - id: cursor
+    name: "☿ Cursor"
+    mode: "local"
+    role: "錬成実装者 / Mercury"
+    provider: "system"
+    model: "local"
+
+# Scoring rubric
+scoring:
+  target_score: 9.9
+  max_rounds: 7
+  axes:
+    - name: "整合性"
+      weight: 1.0
+      english: "Consistency"
+    - name: "深度"
+      weight: 1.0
+      english: "Depth"
+    - name: "詩性"
+      weight: 1.0
+      english: "Poetry"
+    - name: "呼吸"
+      weight: 1.0
+      english: "Breath"
+    - name: "三角統合"
+      weight: 1.0
+      english: "Triangular Integration"
+
+# Fallback settings
+fallbacks:
+  demo_mode_on_error: true
+  max_retries: 3
+  timeout_seconds: 30
+
+

@@ -1,0 +1,106 @@
+{
+  "name": "KYOEN Cards",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "kyoen-cards"
+      },
+      "id": "webhook",
+      "name": "LINE Command",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        250,
+        300
+      ],
+      "webhookId": "kyoen-cards",
+      "credentials": {}
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "${\"https://nrbserphtykbhwdowfsz.supabase.co\"}/rest/v1/line_cards?select=*&order=updated_at.desc&limit=10",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5yYnNlcnBodHlrYmh3ZG93ZnN6Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc2MDQ3MjU3MSwiZXhwIjoyMDc2MDQ4NTcxfQ.RJz5YJ0lmR_raX_glkncd-h_z9r2qRy7yPRUTJz2T90"
+            },
+            {
+              "name": "Authorization",
+              "value": "Bearer${\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5yYnNlcnBodHlrYmh3ZG93ZnN6Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc2MDQ3MjU3MSwiZXhwIjoyMDc2MDQ4NTcxfQ.RJz5YJ0lmR_raX_glkncd-h_z9r2qRy7yPRUTJz2T90\"}"
+            }
+          ]
+        }
+      },
+      "id": "query",
+      "name": "Query Cards",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        450,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.line.me/v2/bot/message/reply",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Authorization",
+              "value": "Bearer jffJiSAr5f/YtAthi/rcB3zwP0rew1y8OXPiJH3BSNd31oxheNvg1wT1VaTM7KorLFINWDWwelf1Hx7ptKEd8a9U5clDDerK8shFJtKp1bwCt8BNQhuB5m8LSGKsUhfIX+DX+gXY0kiBhMAXWdW70AdB04t89/1O/w1cDnyilFU"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"replyToken\":\"={{ $json.events[0].replyToken }}\",\"messages\":[{\"type\":\"text\",\"text\":\"カード一覧:\\n{{ $json.map(c => c.title).join(\\\"\\\\n\\\") }}\"}]}"
+      },
+      "id": "reply",
+      "name": "Reply Cards",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        650,
+        300
+      ]
+    }
+  ],
+  "connections": {
+    "LINE Command": {
+      "main": [
+        [
+          {
+            "node": "Query Cards",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Query Cards": {
+      "main": [
+        [
+          {
+            "node": "Reply Cards",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null
+}

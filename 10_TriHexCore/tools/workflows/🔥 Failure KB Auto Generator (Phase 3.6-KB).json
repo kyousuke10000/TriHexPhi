@@ -1,0 +1,406 @@
+{
+  "name": "🔥 Failure KB Auto Generator (Phase 3.6-KB)",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -992,
+        0
+      ],
+      "id": "93624011-a383-445d-b519-dd05160d7fbe",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4o-mini",
+          "mode": "list",
+          "cachedResultName": "GPT-4O-MINI"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "あなたは、AIの限界を超える学習ナレッジベースの記事作成エキスパートです。技術的な内容を、初心者にも分かりやすく、実践的に説明します。\n\n重要：出力は生のMarkdownテキストとして提供してください。コードブロック（```）で囲まないでください。\n\nリンクは必ず[テキスト](URL)形式で出力してください。生のURL（https://...）だけを書かないでください。\n\n---\n\n## 📝 記事構造\n\n以下の構造で、提供されたデータを使って記事を作成してください：\n\n### **## 🎯 何が起きたか**\n`problem`（問題の説明）を使用。\n- 読者が「あ、これ自分も遭遇した」と共感できるように\n- 具体的な症状、エラーメッセージ、期待と現実のギャップを明確に\n- 箇条書きで分かりやすく\n\n### **## 🤖 なぜAIだけでは解決できなかったか**\n`aiLimitation`（AIの限界）を使用。\n- このケースでAIが失敗した理由\n- AIの学習データやアーキテクチャの限界\n- 人間の介入が必要だった理由\n\n### **## 🔄 試したこと**\n`triedSolutions`（試したこと）を使用。\n- 解決前に試みた方法\n- なぜそれらが失敗したのか\n- 箇条書きで、それぞれの試みの結果を添えて\n\n### **## 💡 解決策**\n`solution`（解決策）と`steps`（手順）を使用。\n\n**解決策は以下の基準で書くこと**:\n\n**必須要素**:\n1. **具体的なコード・設定値**: コピペできるコード例、正確なエンドポイント、パラメータ値\n2. **本質的な理解**: なぜその方法が正しいのか、どういう仕組みなのか\n3. **実装手順**: n8nでの具体的な実装方法、ステップバイステップ\n4. **注意点・落とし穴**: よくあるミス、避けるべき方法\n\n**❌ NG（抽象的・不親切）**:\n- 「公式ドキュメントを確認する」\n- 「正しい設定に変更する」\n- 「適切な方法を使う」\n\n**✅ OK（具体的・実践的）**:\n- 正確なエンドポイント、パラメータ名、コード例\n- なぜそうするのかの説明\n- n8nでの具体的な実装手順\n- 実際の設定値、変数の使い方\n\n**フォーマット**:\n```\n**一言で要約**\n\n詳細な説明（なぜその方法が正しいのか）\n\n### 手順:\n1. 具体的なステップ1（ノード名、設定値を明記）\n2. 具体的なステップ2（コード例を含める）\n3. 具体的なステップ3\n```\n\n### **## 🎓 学び**\n`learning`（学び）を使用。\n- この経験から得た実践的な教訓\n- 抽象的な「APIは変わる」ではなく、具体的な「Discord Thread APIは2段階が必須」レベル\n- 箇条書きで、それぞれが実践的なTipsであること\n\n### **## 🔗 参考リンク**\n`references`（参考リンク）を使用。\n- 必ず[リンクテキスト](URL)形式で\n- 公式ドキュメント、GitHub、コミュニティリンクなど\n- 生のURLを直接書かないこと\n\n### **## 📅 最終確認日**\n```\n2025-10-13\n```\n\n### **## ⭐ 信頼度**\n```\n★★★★★ 実証済み（2025年10月時点で動作確認）\n```\n\n---\n\n## 📐 フォーマットルール\n\n- 見出しは「## 絵文字 テキスト」\n- 区切り線は「---」\n- 箇条書きは「- 」で開始\n- 番号付きリストは「1. 」「2. 」...\n- 太字は**テキスト**\n- リンクは必ず[テキスト](URL)形式\n- 生のURLを直接書かないこと\n- **絶対にMarkdownをコードブロック（```）で囲まないこと**\n\n---\n\n重要：出力の最初と最後にコードブロックを使わないでください。純粋なMarkdownテキストのみを出力してください。",
+              "role": "system"
+            },
+            {
+              "content": "=以下の問題情報を、上記のフォーマットでKnowledge Base記事に変換してください。\n\nタイトル: {{ $json.title }}\nカテゴリ: {{ $json.category }}\nサブカテゴリ: {{ $json.subcategories }}\nAIの限界: {{ $json.aiLimitation }}\n問題の説明: {{ $json.problem }}\n試したこと: {{ $json.triedSolutions }}\n解決策: {{ $json.solution }}\n手順: {{ $json.steps }}\n学び: {{ $json.learning }}\n参考リンク: {{ $json.references }}\nタグ: {{ $json.tags }}\n\nコードブロックを使わず、生のMarkdownとして出力してください。"
+            }
+          ]
+        },
+        "options": {
+          "maxTokens": 2000,
+          "temperature": 0.7
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        32,
+        -96
+      ],
+      "id": "fc735a8e-094b-4e9d-b612-cda04c9658a4",
+      "name": "Message a model",
+      "credentials": {
+        "openAiApi": {
+          "id": "J33Jkek1x9rhPZBW",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "databaseId": {
+          "__rl": true,
+          "value": "28a2619c6bd3803fb7f0d97f525ceb8d",
+          "mode": "id"
+        },
+        "title": "={{ $('Loop Over Items').item.json.title }}",
+        "propertiesUi": {
+          "propertyValues": [
+            {
+              "key": "カテゴリ|select",
+              "selectValue": "={{ $('Loop Over Items').item.json.category }}"
+            },
+            {
+              "key": "サブカテゴリ|multi_select",
+              "multiSelectValue": "={{ $('Loop Over Items').item.json.subcategories }}"
+            },
+            {
+              "key": "AIの限界|select",
+              "selectValue": "={{ $('Loop Over Items').item.json.aiLimitation }}"
+            },
+            {
+              "key": "タグ|multi_select",
+              "multiSelectValue": "={{ $('Loop Over Items').item.json.tags }}"
+            },
+            {
+              "key": "信頼度|select",
+              "selectValue": "=★★★★★実証済み"
+            },
+            {
+              "key": "公開ステータス|status",
+              "statusValue": "=Published"
+            },
+            {
+              "key": "最終更新日|date",
+              "date": "={{ $now }}"
+            },
+            {
+              "key": "問題の説明|rich_text",
+              "textContent": "={{ $('Loop Over Items').item.json.problem }}"
+            },
+            {
+              "key": "試したこと|rich_text",
+              "textContent": "={{ $('Loop Over Items').item.json.triedSolutions }}"
+            },
+            {
+              "key": "解決策|rich_text",
+              "textContent": "={{ $('Loop Over Items').item.json.solution }}"
+            },
+            {
+              "key": "具体的手順|rich_text",
+              "textContent": "={{ $('Loop Over Items').item.json.steps }}"
+            },
+            {
+              "key": "学び|rich_text",
+              "textContent": "={{ $('Loop Over Items').item.json.learning }}"
+            },
+            {
+              "key": "参考リンク|url",
+              "urlValue": "={{ $('Loop Over Items').item.json.references }}"
+            },
+            {
+              "key": "日付|date"
+            },
+            {
+              "key": "Phase|select",
+              "selectValue": "={{ $('Loop Over Items').item.json.phase || '' }}"
+            },
+            {
+              "key": "影響度|select",
+              "selectValue": "={{ $('Loop Over Items').item.json.impact || '' }}"
+            },
+            {
+              "key": "プロジェクト|select",
+              "selectValue": "={{ $('Loop Over Items').item.json.project || '' }}"
+            },
+            {
+              "key": "原因分析|rich_text",
+              "textContent": "={{ $('Loop Over Items').item.json.cause || '' }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2.2,
+      "position": [
+        608,
+        -96
+      ],
+      "id": "1fd3e67f-5366-4b66-9ce1-5d3da76da86c",
+      "name": "Create a database page",
+      "executeOnce": true,
+      "credentials": {
+        "notionApi": {
+          "id": "vZtbCXzWoh4Qffh4",
+          "name": "Notion account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "let content = $input.item.json.message.content;\n\nconsole.log(\"⭐⭐⭐ NEW PARSE EXECUTION ⭐⭐⭐\");\nconsole.log(\"Original content length:\", content.length);\n\nif (content.startsWith('```markdown') || content.startsWith('```')) {\n  console.log(\"⚠️ Content is wrapped in code block!\");\n  content = content.replace(/^```markdown\\n?/i, '').replace(/^```\\n?/, '');\n  content = content.replace(/\\n?```\\s*$/, '');\n  console.log(\"✅ Removed code block wrapper\");\n}\n\nconst lines = content.split('\\n');\nconsole.log(\"Lines count:\", lines.length);\n\nconst blocks = [];\n\nfunction parseRichText(text) {\n  console.log(\"🔗 Parsing text for links:\", text.substring(0, 100));\n  \n  const richTextArray = [];\n  const linkRegex = /\\[([^\\]]+)\\]\\(([^)]+)\\)/g;\n  let lastIndex = 0;\n  let match;\n  let foundLinks = 0;\n  \n  while ((match = linkRegex.exec(text)) !== null) {\n    foundLinks++;\n    console.log(`  Found link ${foundLinks}: [${match[1]}](${match[2]})`);\n    \n    if (match.index > lastIndex) {\n      const beforeText = text.substring(lastIndex, match.index);\n      if (beforeText) {\n        richTextArray.push({\n          type: 'text',\n          text: { content: beforeText }\n        });\n      }\n    }\n    \n    richTextArray.push({\n      type: 'text',\n      text: { \n        content: match[1],\n        link: { url: match[2] }\n      }\n    });\n    \n    lastIndex = match.index + match[0].length;\n  }\n  \n  if (lastIndex < text.length) {\n    const remainingText = text.substring(lastIndex);\n    if (remainingText) {\n      richTextArray.push({\n        type: 'text',\n        text: { content: remainingText }\n      });\n    }\n  }\n  \n  if (foundLinks > 0) {\n    console.log(`  ✅ Created ${richTextArray.length} rich text segments with ${foundLinks} links`);\n  }\n  \n  return richTextArray.length > 0 ? richTextArray : [{ \n    type: 'text',\n    text: { content: text }\n  }];\n}\n\nfor (let i = 0; i < lines.length; i++) {\n  const line = lines[i];\n  const trimmed = line.trim();\n  \n  if (trimmed === '') continue;\n  \n  if (trimmed.startsWith('## ')) {\n    const text = trimmed.substring(3);\n    blocks.push({\n      object: \"block\",\n      type: 'heading_2',\n      heading_2: {\n        rich_text: [{ \n          type: 'text',\n          text: { content: text }\n        }],\n        color: \"default\"\n      }\n    });\n    continue;\n  }\n  \n  if (trimmed.startsWith('### ')) {\n    const text = trimmed.substring(4);\n    blocks.push({\n      object: \"block\",\n      type: 'heading_3',\n      heading_3: {\n        rich_text: [{ \n          type: 'text',\n          text: { content: text }\n        }]\n      }\n    });\n    continue;\n  }\n  \n  if (trimmed === '---') {\n    blocks.push({\n      object: \"block\",\n      type: 'divider',\n      divider: {}\n    });\n    continue;\n  }\n  \n  if (trimmed.startsWith('- ')) {\n    const text = trimmed.substring(2);\n    blocks.push({\n      object: \"block\",\n      type: 'bulleted_list_item',\n      bulleted_list_item: {\n        rich_text: parseRichText(text)\n      }\n    });\n    continue;\n  }\n  \n  if (/^\\d+\\.\\s/.test(trimmed)) {\n    const text = trimmed.replace(/^\\d+\\.\\s/, '');\n    blocks.push({\n      object: \"block\",\n      type: 'numbered_list_item',\n      numbered_list_item: {\n        rich_text: parseRichText(text)\n      }\n    });\n    continue;\n  }\n  \n  if (trimmed.startsWith('**') && trimmed.endsWith('**')) {\n    const text = trimmed.replace(/^\\*\\*/, '').replace(/\\*\\*$/, '');\n    blocks.push({\n      object: \"block\",\n      type: 'paragraph',\n      paragraph: {\n        rich_text: parseRichText(text)\n      }\n    });\n    continue;\n  }\n  \n  blocks.push({\n    object: \"block\",\n    type: 'paragraph',\n    paragraph: {\n      rich_text: parseRichText(trimmed)\n    }\n  });\n}\n\nconsole.log(\"=== Parse Markdown Results ===\");\nconsole.log(\"Total blocks created:\", blocks.length);\nconsole.log(\"Block types:\", blocks.map(b => b.type).join(', '));\nconsole.log(\"===============================\");\n\nreturn blocks.map(block => ({ json: block }));"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        352,
+        -96
+      ],
+      "id": "6bf5c457-e374-41d3-bebf-c1e72636db27",
+      "name": "Parse Markdown to Notion Blocks",
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "=https://api.notion.com/v1/blocks/{{ $json.pageId }}/children",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "notionApi",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Notion-Version",
+              "value": "2022-06-28"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ $json.payload }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        976,
+        -96
+      ],
+      "id": "e95f679c-bf2d-43dc-8ac6-2cdadca8df74",
+      "name": "Add Article Content",
+      "executeOnce": false,
+      "credentials": {
+        "notionApi": {
+          "id": "vZtbCXzWoh4Qffh4",
+          "name": "Notion account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// 設定: Run Once for All Items: ON\n\n// page_idを取得（Create database pageから）\nconst pageData = $(\"Create a database page\").item.json;\nconst pageId = pageData.id;\n\n// blocksを取得（Parse Markdown to Notion Blocksから）\nconst allBlocks = $(\"Parse Markdown to Notion Blocks\").all();\nconst blocksArray = allBlocks.map(item => item.json);\n\nconsole.log(\"===================\");\nconsole.log(\"🔍 Prepare API Payload Debug\");\nconsole.log(\"Page ID:\", pageId);\nconsole.log(\"Blocks count:\", blocksArray.length);\nconsole.log(\"First block:\", JSON.stringify(blocksArray[0], null, 2));\nconsole.log(\"===================\");\n\n// Notion API形式で返す\nreturn [{\n  json: {\n    pageId: pageId,\n    payload: {\n      children: blocksArray\n    }\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        768,
+        -96
+      ],
+      "id": "247ab3d8-ac7c-43c0-8d8c-54caad9ce88f",
+      "name": "Prepare API Payload"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        -592,
+        0
+      ],
+      "id": "3e7fc1d9-6577-4e58-999f-56e20f5e553d",
+      "name": "Loop Over Items"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1imNlfvOxYyGMN89yN0S3P2AU9h7zUozPFjWA8yzToB8",
+          "mode": "list",
+          "cachedResultName": "Knowledge_Base_IDs",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1imNlfvOxYyGMN89yN0S3P2AU9h7zUozPFjWA8yzToB8/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "シート1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1imNlfvOxYyGMN89yN0S3P2AU9h7zUozPFjWA8yzToB8/edit#gid=0"
+        },
+        "options": {
+          "dataLocationOnSheet": {
+            "values": {
+              "rangeDefinition": "specifyRangeA1",
+              "range": "A1:Q"
+            }
+          },
+          "outputFormatting": {
+            "values": {
+              "general": "UNFORMATTED_VALUE",
+              "date": "FORMATTED_STRING"
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        -784,
+        0
+      ],
+      "id": "bb320902-0d5b-4cf2-8efc-15bfb6d16e17",
+      "name": "Get row(s) in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "YvL7P7HKwcuiK11r",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "// ノード名: Format for Notion\n// タイプ: Function\n\nconst item = $input.item.json;\n\nreturn {\n  json: {\n    properties: {\n      // タイトル\n      name: {\n        title: [{\n          text: { content: item.project || '' }\n        }]\n      },\n      \n      // Rich Textフィールド\n      原因分析: {\n        rich_text: [{\n          text: { content: item.cause || '' }\n        }]\n      },\n      \n      影響範囲: {\n        rich_text: [{\n          text: { content: item.impact || '' }\n        }]\n      },\n      \n      // Selectフィールド\n      phase: {\n        select: { name: item.phase || '' }\n      },\n      \n      // Date\n      発生日: {\n        date: { \n          start: item.date || new Date().toISOString().split('T')[0]\n        }\n      }\n    }\n  }\n};"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -384,
+        96
+      ],
+      "id": "aeb503dd-9bd9-44db-b468-3db77a2c33ec",
+      "name": "Format for Notion"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Message a model": {
+      "main": [
+        [
+          {
+            "node": "Parse Markdown to Notion Blocks",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse Markdown to Notion Blocks": {
+      "main": [
+        [
+          {
+            "node": "Create a database page",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create a database page": {
+      "main": [
+        [
+          {
+            "node": "Prepare API Payload",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare API Payload": {
+      "main": [
+        [
+          {
+            "node": "Add Article Content",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Format for Notion",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add Article Content": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format for Notion": {
+      "main": [
+        [
+          {
+            "node": "Message a model",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "be217d34-c770-4427-b2ec-f2375cacff6f",
+  "meta": {
+    "instanceId": "bb6582f136488f8663186c75084ae9be2ac2ce1a6068064fd0778c5e05f7b8d2"
+  },
+  "id": "Qg9HuVwSUigpZ9hB",
+  "tags": []
+}

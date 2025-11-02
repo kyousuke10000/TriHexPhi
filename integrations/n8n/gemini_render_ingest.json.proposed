@@ -1,0 +1,165 @@
+{
+  "name": "🎨 Gemini Render Ingest",
+  "nodes": [
+    {
+      "id": "webhook",
+      "name": "Render Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [250, 300],
+      "parameters": {
+        "path": "gemini-render",
+        "httpMethod": "POST",
+        "options": {}
+      },
+      "webhookId": "gemini-render-webhook"
+    },
+    {
+      "id": "parse",
+      "name": "Parse Request",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [450, 300],
+      "parameters": {
+        "jsCode": "// Parse webhook request\nconst prompt = $input.item.json.prompt || $input.item.json.body.prompt;\nconst format = $input.item.json.format || $input.item.json.body.format || 'svg';\nconst width = $input.item.json.width || $input.item.json.body.width || '1200';\nconst height = $input.item.json.height || $input.item.json.body.height || '800';\n\nif (!prompt) {\n  throw new Error('Missing prompt parameter');\n}\n\nreturn {\n  json: {\n    prompt: prompt.trim(),\n    format: format.toLowerCase(),\n    width: parseInt(width),\n    height: parseInt(height)\n  }\n};"
+      }
+    },
+    {
+      "id": "gemini",
+      "name": "Call Gemini",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [650, 300],
+      "parameters": {
+        "method": "POST",
+        "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-vision:generateContent",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "key",
+              "value": "={{ $env.GEMINI_API_KEY }}"
+            }
+          ]
+        },
+        "jsonParameters": true,
+        "specifyBody": "json",
+        "body": {
+          "contents": [
+            {
+              "parts": [
+                {
+                  "text": "=Generate a {{ $json.format.toUpperCase() }} image:\n\n{{ $json.prompt }}\n\nTechnical requirements:\n- Format: {{ $json.format.toUpperCase() }}\n- Dimensions: {{ $json.width }}x{{ $json.height }} pixels\n- Style: Clean, minimalist, technical diagram\n- Colors: Follow TriHex palette (breathing layers, six-spiral ontology)\n\nReturn only the {{ $json.format.toUpperCase() }} code/data, no explanation."
+                }
+              ]
+            }
+          ],
+          "generationConfig": {
+            "temperature": 0.4,
+            "topK": 40,
+            "topP": 0.95,
+            "maxOutputTokens": 8192
+          }
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "process",
+      "name": "Process Response",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [850, 300],
+      "parameters": {
+        "jsCode": "// Process Gemini response\nconst response = $input.item.json;\n\ntry {\n  const candidate = response.data?.candidates?.[0];\n  if (!candidate) {\n    throw new Error('No candidates in response');\n  }\n  \n  const content = candidate.content?.parts?.[0]?.text;\n  if (!content) {\n    throw new Error('No content in candidate');\n  }\n  \n  // Base64 encode\n  const imageData = Buffer.from(content).toString('base64');\n  \n  const format = $('Parse Request').item.json.format;\n  const width = $('Parse Request').item.json.width;\n  const height = $('Parse Request').item.json.height;\n  \n  return {\n    json: {\n      success: true,\n      image_data: imageData,\n      image_type: format,\n      width: width,\n      height: height,\n      size: imageData.length\n    }\n  };\n} catch (error) {\n  return {\n    json: {\n      success: false,\n      error: error.message,\n      raw_response: response\n    }\n  };\n}"
+      }
+    },
+    {
+      "id": "respond",
+      "name": "Return Response",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [1050, 300],
+      "parameters": {
+        "options": {
+          "responseCode": "={{ $json.success ? 200 : 500 }}"
+        }
+      }
+    },
+    {
+      "id": "error_handler",
+      "name": "Error Handler",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1050, 500],
+      "parameters": {
+        "jsCode": "// Error handling\nconst error = $input.item.json.error || $input.item.json.message || 'Unknown error';\n\nreturn {\n  json: {\n    success: false,\n    error: error,\n    timestamp: new Date().toISOString()\n  }\n};"
+      }
+    }
+  ],
+  "connections": {
+    "webhook": {
+      "main": [
+        [
+          {
+            "node": "parse",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "parse": {
+      "main": [
+        [
+          {
+            "node": "gemini",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "gemini": {
+      "main": [
+        [
+          {
+            "node": "process",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "process": {
+      "main": [
+        [
+          {
+            "node": "respond",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-11-01T00:00:00.000Z",
+  "versionId": "1"
+}
+
+

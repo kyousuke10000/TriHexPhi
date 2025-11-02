@@ -1,0 +1,22 @@
+{
+  "snapshot_date": "2025-11-01T15:19:44.237953",
+  "url": "https://www.trihex.ai",
+  "metadata": {
+    "generator": "v0.app",
+    "title": "TriHexΦ — The Floating Spiral of Wisdom",
+    "lang": "ja"
+  },
+  "headers": {
+    "server": "cloudflare",
+    "x-vercel-id": "hnd1::8k8fr-1761977970295-73faa53ac0d9",
+    "x-vercel-cache": "HIT",
+    "cf-ray": "997947ea3d51f601-NRT",
+    "cache-control": "public, max-age=0, must-revalidate",
+    "age": "285428",
+    "cf-cache-status": "DYNAMIC"
+  },
+  "migration_plan": {
+    "status": "DRY-RUN",
+    "rollback_window_days": 7
+  }
+}

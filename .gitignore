@@ -1,0 +1,48 @@
+# Obsidian workspace (personal settings)
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+
+# macOS
+.DS_Store
+
+# Node modules
+node_modules/
+Scripts/node_modules/
+scripts/node_modules/
+
+# Secrets and API Keys
+🔐_API_KEYS_TEMPLATE.md
+00_CORE/🔐認証情報マスター.md
+**/🔐*.md
+.env
+**/.env*
+/.secrets/
+/secrets/
+*.key
+*.pem
+.token*
+**/*token*
+
+# Old MIZUKAGAMI logs with secrets (before 2025-10-26)
+10_CAPTURE_MIZUKAGAMI/Cursor/202510[0-2]*.md
+10_CAPTURE_MIZUKAGAMI/Cursor/202410*.md
+
+# Logs
+30_MEMORY_SHINSEN/sync_logs/
+*.log
+
+# Temporary files
+*.tmp
+*.swp
+.trihex/context-bootstrap.txt
+
+# Railway
+.railway/
+.railway.json
+
+# IDE
+.cursor/
+
+# MCP private
+tools/mcp_spec/private/
+

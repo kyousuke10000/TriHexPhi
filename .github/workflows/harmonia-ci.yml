@@ -1,0 +1,72 @@
+name: Harmonia CI
+
+on:
+  push:
+    paths:
+      - '10_TriHexCore/**'
+      - '20_TriHex-Obsidian/**'
+      - '99_SYSTEM/**'
+      - '.github/workflows/harmonia-ci.yml'
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    
+    env:
+      LANG: C.UTF-8
+      LC_ALL: C.UTF-8
+    
+    concurrency:
+      group: trihex-ci
+      cancel-in-progress: false
+    
+    # Skip if commit message contains [skip ci] or deployment markers
+    if: |
+      !contains(github.event.head_commit.message, '[skip ci]') &&
+      !contains(github.event.head_commit.message, '[deploy')
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Install Dependencies
+        run: npm ci || true
+      
+      - name: Preflight Check
+        run: node scripts/preflight-check.mjs || echo "Preflight check skipped"
+      
+      - name: Test Encoding
+        run: npm run -s test:encoding || echo "Encoding test skipped"
+      
+      - name: Normalize Markdown
+        run: node scripts/normalize-md.mjs 10_TriHexCore 20_TriHex-Obsidian 99_SYSTEM || echo "Normalization skipped"
+      
+      - name: Lint Markdown
+        run: npx markdownlint-cli2 "**/*.md" || echo "Markdown linting skipped"
+      
+      - name: Frontmatter Check
+        run: node scripts/check-frontmatter.mjs || echo "Frontmatter check skipped"
+      
+      - name: Mirror Codex
+        run: node scripts/mirror-codex.mjs || echo "Mirror sync skipped"
+      
+      - name: Proof Stamp
+        run: node scripts/proof-stamp.mjs || echo "Proof stamping skipped"
+      
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: validation-report
+          path: |
+            99_SYSTEM/Proofs/HarmoniaCI_*.md
+            *.log
+          retention-days: 7

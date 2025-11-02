@@ -1,0 +1,136 @@
+{
+  "name": "KYOEN Reminders",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "* * * * *"
+            }
+          ]
+        }
+      },
+      "id": "cron",
+      "name": "Cron",
+      "type": "n8n-nodes-base.cron",
+      "typeVersion": 1,
+      "position": [
+        250,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "${\"https://nrbserphtykbhwdowfsz.supabase.co\"}/rest/v1/tokunoshima_events?select=*,tokunoshima_rsvp!inner(user_id)&tokunoshima_rsvp.status=eq.going",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5yYnNlcnBodHlrYmh3ZG93ZnN6Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc2MDQ3MjU3MSwiZXhwIjoyMDc2MDQ4NTcxfQ.RJz5YJ0lmR_raX_glkncd-h_z9r2qRy7yPRUTJz2T90"
+            },
+            {
+              "name": "Authorization",
+              "value": "Bearer${\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5yYnNlcnBodHlrYmh3ZG93ZnN6Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc2MDQ3MjU3MSwiZXhwIjoyMDc2MDQ4NTcxfQ.RJz5YJ0lmR_raX_glkncd-h_z9r2qRy7yPRUTJz2T90\"}"
+            }
+          ]
+        }
+      },
+      "id": "query",
+      "name": "Query Events",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        450,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "executeOnceForEachItem",
+        "jsCode": "const items = $input.all();\nconst now = new Date();\nconst messages = [];\n\nfor (const item of items) {\n  const startAt = new Date(item.json.start_at);\n  const diffMin = (startAt - now) / (1000 * 60);\n  \n  let interval = null;\n  if (diffMin >= 1440 - 1 && diffMin <= 1440 + 1) interval = '24時間';\n  else if (diffMin >= 60 - 1 && diffMin <= 60 + 1) interval = '1時間';\n  else if (diffMin >= 10 - 1 && diffMin <= 10 + 1) interval = '10分';\n  \n  if (interval) {\n    messages.push({\n      userId: item.json.tokunoshima_rsvp.user_id,\n      title: item.json.title,\n      zoomUrl: item.json.zoom_url,\n      interval\n    });\n  }\n}\n\nreturn messages;"
+      },
+      "id": "filter",
+      "name": "Filter Timing",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        650,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "executeOnceForEachItem",
+        "method": "POST",
+        "url": "https://api.line.me/v2/bot/message/push",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Authorization",
+              "value": "Bearer jffJiSAr5f/YtAthi/rcB3zwP0rew1y8OXPiJH3BSNd31oxheNvg1wT1VaTM7KorLFINWDWwelf1Hx7ptKEd8a9U5clDDerK8shFJtKp1bwCt8BNQhuB5m8LSGKsUhfIX+DX+gXY0kiBhMAXWdW70AdB04t89/1O/w1cDnyilFU"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"to\":\"={{ $json.userId }}\",\"messages\":[{\"type\":\"text\",\"text\":\"={{ $json.title }}が{{ $json.interval }}で開始です。\\n{{ $json.zoomUrl }}\"}]}"
+      },
+      "id": "dm",
+      "name": "Send DM",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        850,
+        300
+      ]
+    }
+  ],
+  "connections": {
+    "Cron": {
+      "main": [
+        [
+          {
+            "node": "Query Events",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Query Events": {
+      "main": [
+        [
+          {
+            "node": "Filter Timing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter Timing": {
+      "main": [
+        [
+          {
+            "node": "Send DM",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null
+}

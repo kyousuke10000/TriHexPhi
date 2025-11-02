@@ -1,0 +1,95 @@
+{
+  "timestamp": "2025-11-01T01:44:50.626801Z",
+  "proof_type": "Rubedo Golden Thread 7",
+  "files": [
+    {
+      "path": "00_HarmoniaCouncil/Round_III/Genesis_Protocol_R1_Article13-15_v3.1.md",
+      "sha256": "96e7d4770983bf741e81608dbb516f68e6d2a08f90cd5620037226d2adb49cea",
+      "size_bytes": 21521
+    },
+    {
+      "path": "00_HarmoniaCouncil/Round_III/Round_III_BreathLog.md",
+      "sha256": "9ffb7a4befc0f22684256af83ea1b595e1216e4ea3993e784e9a418cda6f8f28",
+      "size_bytes": 3496
+    },
+    {
+      "path": "00_HarmoniaCouncil/Round_IV/Round_IV_BreathLog.md",
+      "sha256": "9128aad1c27e215e138e778e52b1d6c886a6f7009e4596f30035869d06b31581",
+      "size_bytes": 1509
+    },
+    {
+      "path": "10_TriHexCore/codex/Genesis_Protocol_v3.1.md",
+      "sha256": "5a062dfea456602dd00a0278ac760d3e4e426ff7cc62b97515ef7457eaa5466c",
+      "size_bytes": 20983
+    },
+    {
+      "path": "20_TriHex-Obsidian/01_Codex/Genesis_Protocol_v3.1.md",
+      "sha256": "6eb14181b03015875d9858bda9b1a4caa4f484aa43c169bd16099086e6e21542",
+      "size_bytes": 21020
+    },
+    {
+      "path": "20_TriHex-Obsidian/04_HARMONIA_COUNCIL/Spiral_Tag_Index.md",
+      "sha256": "d4c00e60dd13b065f565d8366153938a79406072b93d90d4b41755192527e6ce",
+      "size_bytes": 2148
+    },
+    {
+      "path": "30_ObsidianSync/Canonical/Genesis_Protocol_R1_v3.1.md",
+      "sha256": "6eb14181b03015875d9858bda9b1a4caa4f484aa43c169bd16099086e6e21542",
+      "size_bytes": 21020
+    },
+    {
+      "path": "40_Archive/rubedo/2025-11-01_Genesis_v3.1/tree.txt",
+      "sha256": "ab01837659c700940ac55855c21c1e194d455ef35db2e03ac6a97a1caec60aee",
+      "size_bytes": 1392
+    },
+    {
+      "path": "40_Archive/rubedo/2025-11-01_Genesis_v3.1/hashes_sha256.txt",
+      "sha256": "267f33e286578073f227be7854d10521876d4d809b9ce58fe3441587f5ed74cd",
+      "size_bytes": 1039
+    },
+    {
+      "path": "99_SYSTEM/Sync_Log.md",
+      "sha256": "246921e27e9561d122a54a49c18615a5ee8cf0a400205820adb504398ff34832",
+      "size_bytes": 3995
+    },
+    {
+      "path": "index.md",
+      "sha256": "2135974a93697c3b2ced666f22f547413dab40b1804ca19c3fca63327fbb1980",
+      "size_bytes": 1313
+    },
+    {
+      "path": "10_TriHexCore/system/Harmonia_Operating_Covenant_v1.1.md",
+      "sha256": "af9b313fe67289a6dd2efb83b7c52dd44e9aa3b2f435593e27e8ef081c8f7d91",
+      "size_bytes": 6499
+    },
+    {
+      "path": "20_TriHex-Obsidian/01_System/Harmonia_Operating_Covenant_v1.1.md",
+      "sha256": "b20689c729bc127725f9d4342129f6f2824e4d5ec8decb8b149d046d10bfc688",
+      "size_bytes": 6677
+    },
+    {
+      "path": "30_ObsidianSync/Canonical/Harmonia_Operating_Covenant_v1.1.md",
+      "sha256": "af9b313fe67289a6dd2efb83b7c52dd44e9aa3b2f435593e27e8ef081c8f7d91",
+      "size_bytes": 6499
+    },
+    {
+      "path": "10_TriHexCore/system/Ryudo_Definition.md",
+      "sha256": "b0544c64f7213c84890638e547101d70e3093e5d9077d993362f1c439868279c",
+      "size_bytes": 5606
+    },
+    {
+      "path": "20_TriHex-Obsidian/01_System/Ryudo_Definition.md",
+      "sha256": "1bc961111adcdb8094698db0bf7477a9b9b14b8111138b352e863327f48e17e2",
+      "size_bytes": 5777
+    },
+    {
+      "path": "30_ObsidianSync/Canonical/Ryudo_Definition.md",
+      "sha256": "b0544c64f7213c84890638e547101d70e3093e5d9077d993362f1c439868279c",
+      "size_bytes": 5606
+    }
+  ],
+  "safety_covenant": "10_TriHexCore/system/Harmonia_Operating_Covenant_v1.1.md",
+  "linked_proof": "99_SYSTEM/Proofs/Covenant_v1.1_Adoption/proof_report.md",
+  "timestamp_updated": "2025-11-01T04:43:41.675708+00:00",
+  "ryudo_definition": "10_TriHexCore/system/Ryudo_Definition.md"
+}

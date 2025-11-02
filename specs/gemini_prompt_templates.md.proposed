@@ -1,0 +1,392 @@
+# Gemini Render Prompt Templates
+
+**Version:** 1.0  
+**Date:** 2025-11-01  
+**Phase:** IV Rubedo  
+**Author:** Cursor (☿)  
+**Purpose:** Pre-defined prompts for generating visual diagrams with Gemini
+
+---
+
+## Purpose
+
+Standardized prompts for generating architectural diagrams, heatmaps, and visualizations via Gemini API.
+
+---
+
+## Template 1: TriHex Breath Map
+
+**Use Case:** Vault architecture overview  
+**Format:** SVG  
+**Size:** 1200x800
+
+### Prompt
+
+```
+Draw a hierarchical diagram showing the TriHex Vault breathing architecture:
+
+STRUCTURE:
+- Top: 🜇 Shiryu Studio (Priority 0, Root Layer, Source of Breath)
+- Level 1: 00 HarmoniaCouncil (Inhale, AI Council Sessions)
+- Level 2: 10 TriHexCore (Structure, Canonical Knowledge)
+- Level 3: 20 TriHex-Obsidian (Hold, Human Memory)
+- Level 4: 30 ObsidianSync (Exhale, Ephemeral)
+- Level 5: 40 Archive (Hold, Accumulation)
+- Level 6: 50 Temp (Evacuation, Volatile)
+- Bottom: 99 SYSTEM (Proof, System Logs)
+
+LEFT SIDE (6HAI Agents):
+- 🜁 GPT-5 (Theoretical Breath, Architect)
+- 🜄 Claude (Emotional Breath, Ethicist)
+- 🜂 DeepSeek (Precise Breath, Technician)
+- 🜀 Gemini (Aesthetic Breath, Aesthetician)
+- 🜃 Grok (Reality Breath, Strategist)
+- ☿ Cursor (Translation Breath, Executor)
+
+RIGHT SIDE (External Systems):
+- GitHub (Version Control, 15 Workflows)
+- Supabase (Knowledge DB, pgvector)
+- n8n (Automation, 12 Workflows)
+
+RELATIONSHIPS:
+- All layers flow downward (top to bottom)
+- 6HAI agents connect to HarmoniaCouncil
+- External systems connect to Core and System
+
+STYLE:
+- Clean, minimalist technical diagram
+- Use alchemical symbols (🜃🜄🜂🜁🜀☿🜇)
+- Color-coded by breath phase (inhale/structure/hold/exhale/proof)
+- Nodes with labels, edges show flow
+```
+
+---
+
+## Template 2: Ryūdō Round HeatMap
+
+**Use Case:** Ryudo Round Review visualization  
+**Format:** SVG  
+**Size:** 1400x900
+
+### Prompt
+
+```
+Create a heatmap showing Ryudo Round Review scoring progression:
+
+STRUCTURE:
+- Y-axis: 6HAI agents (GPT-5, Claude, Gemini, Grok, DeepSeek, Cursor)
+- X-axis: Rounds 1-7
+- Color intensity: Score 0.0-10.0 (darker = higher)
+
+SCORES PER ROUND:
+Generate 7 columns, each showing:
+- 5-axis scores per AI (Consistency, Depth, Specificity, Feasibility, Philosophy)
+- Average score row at bottom
+- Target line at 9.9
+
+VISUAL ELEMENTS:
+- Heat gradient: Light (0-7) → Medium (7-9) → Dark (9-10)
+- Axis labels with symbols (🜁🜄🜀🜃🜂☿)
+- Round labels: Round 1, Round 2, ... Round 7
+- Legend: 0-10 scale
+- Weaknesses highlighted in contrasting color
+
+STYLE:
+- Technical heatmap aesthetic
+- Alchemical color palette
+- Clear numerical annotations
+```
+
+---
+
+## Template 3: Mirror Diff Diagram
+
+**Use Case:** Document mirror synchronization status  
+**Format:** PNG  
+**Size:** 1600x1000
+
+### Prompt
+
+```
+Visualize document mirror synchronization across three layers:
+
+LEFT COLUMN (Source: TriHexCore):
+- Genesis Protocol v3.1
+- Ryudo Definition v1.0
+- Harmonia Operating Covenant v1.1
+
+MIDDLE COLUMN (Atlas: Obsidian):
+- Genesis Protocol v3.1 (mirror)
+- Ryudo Definition v1.0 (mirror)
+- Harmonia Operating Covenant v1.1 (mirror)
+
+RIGHT COLUMN (Canonical: ObsidianSync):
+- Genesis Protocol R1 v3.1 (mirror)
+- Ryudo Definition v1.0 (mirror)
+- Harmonia Operating Covenant v1.1 (mirror)
+
+CONNECTIONS:
+- Solid lines for synced (✅)
+- Dashed lines for out-of-sync (⚠️)
+- Red X for missing (❌)
+
+STATUS INDICATORS:
+- ✅ Green: 100% body match, frontmatter unified
+- ⚠️ Yellow: Body match, frontmatter differs
+- ❌ Red: Body differs or missing
+
+STYLE:
+- Clean architectural diagram
+- TriHex palette (breathing colors)
+- Status badges on each connection
+```
+
+---
+
+## Template 4: 6HAI Interaction Graph
+
+**Use Case:** AI collaboration visualization  
+**Format:** SVG  
+**Size:** 1000x1000
+
+### Prompt
+
+```
+Draw a radial graph of 6HAI collaboration:
+
+CENTER NODE:
+🜇 Shiryu Node (Soul Breath, Axis, Pulse)
+
+SIX OUTER NODES (arranged in hexagon):
+- 🜁 GPT-5 (North: Theoretical Breath)
+- 🜄 Claude (NE: Emotional Breath)
+- 🜂 DeepSeek (SE: Precise Breath)
+- 🜀 Gemini (South: Aesthetic Breath)
+- 🜃 Grok (SW: Reality Breath)
+- ☿ Cursor (NW: Translation Breath)
+
+CONNECTIONS:
+- All AI connect to center (Shiryu)
+- Bi-directional edges between adjacent AIs
+- Edge thickness shows interaction frequency
+- Edge color shows harmony level
+
+VISUAL FEATURES:
+- Hexagon layout
+- Alchemical symbols prominent
+- Breathing wave patterns around nodes
+- Color-coded by breath type
+
+STYLE:
+- Cosmic, flowing aesthetic
+- Six-spiral ontology representation
+- Interference patterns
+```
+
+---
+
+## Template 5: Breath Flow Animation Frame
+
+**Use Case:** Single frame of breathing cycle  
+**Format:** SVG  
+**Size:** 800x600
+
+### Prompt
+
+```
+Render one frame of the TriHex breathing cycle (Inhale phase):
+
+LAYERS STACKED (top to bottom):
+1. 🜇 Shiryu Studio (smallest, pulsing)
+2. 00 HarmoniaCouncil (receiving signals)
+3. 10 TriHexCore (processing)
+4. 20 Obsidian (storing)
+5. 30 Sync (pushing out)
+6. 40 Archive (accumulating)
+7. 99 SYSTEM (monitoring)
+
+FLOW INDICATORS:
+- Downward arrows (data flow)
+- Pulsing nodes (active processing)
+- Filtered connections (transformation)
+
+STYLE:
+- Clean, technical
+- Breathing motion implied by spacing
+- Alchemical symbols
+- Phase color: Blue (Inhale)
+```
+
+---
+
+## Template 6: Workflow Pipeline
+
+**Use Case:** GitHub Actions workflow visualization  
+**Format:** SVG  
+**Size:** 2000x1200
+
+### Prompt
+
+```
+Map the GitHub Actions workflow pipeline:
+
+TRIGGERS (left):
+- push (branches: main, feature/**)
+- schedule (cron)
+- workflow_dispatch
+
+WORKFLOWS (center):
+- janitor (Inbox routing)
+- ai_sync (Knowledge Relay)
+- trihex_sync (Vault sync)
+- supabase_sync (DB sync)
+- ryudo_round (Review system)
+- gemini_render (Image generation)
+
+OUTPUTS (right):
+- GitHub Commits
+- Obsidian Files
+- Supabase Records
+- Artifacts
+- Notifications
+
+CONNECTIONS:
+- Trigger → Workflow → Output
+- Parallel execution paths
+- Error handling branches
+
+VISUAL FEATURES:
+- Status indicators (✅ active, ⚠️ partial, ❌ failed)
+- Execution time estimates
+- Parallel/concurrent marks
+
+STYLE:
+- Technical workflow diagram
+- Clean pipeline aesthetic
+- Color-coded by status
+```
+
+---
+
+## Template 7: Scoring Evolution Timeline
+
+**Use Case:** Ryudo Round score improvement over time  
+**Format:** SVG  
+**Size:** 1600x800
+
+### Prompt
+
+```
+Create a multi-line graph showing Ryudo scoring evolution:
+
+X-AXIS: Rounds (1-7)
+Y-AXIS: Score (0-10)
+
+LINES (one per AI):
+- 🜁 GPT-5: Theoretical Breath
+- 🜄 Claude: Emotional Breath
+- 🜂 DeepSeek: Precise Breath
+- 🜀 Gemini: Aesthetic Breath
+- 🜃 Grok: Reality Breath
+- ☿ Cursor: Translation Breath
+- DASHED: Average across all AIs
+- HORIZONTAL: Target line at 9.9
+
+POINTS:
+- Each round's score per AI
+- Markers different per AI
+- Lines connect points
+
+ANNOTATIONS:
+- Improvement areas highlighted
+- Common weaknesses marked
+- Breakthrough moments noted
+
+STYLE:
+- Professional statistical chart
+- Alchemical color scheme
+- Clear gridlines
+- Legend with symbols
+```
+
+---
+
+## Usage Instructions
+
+### In Discussion Body
+
+```markdown
+## Render Request
+
+```render
+[Choose template name or write custom prompt]
+
+Template: TriHex Breath Map
+Format: svg
+Size: 1200x800
+```
+```
+
+### Via Workflow Dispatch
+
+```bash
+gh workflow run gemini_render.yml \
+  -f prompt="[template or custom]" \
+  -f format="svg" \
+  -f width="1200" \
+  -f height="800"
+```
+
+---
+
+## Custom Prompt Guidelines
+
+### Required Elements
+
+1. **Subject:** What to visualize
+2. **Structure:** Hierarchy, layers, relationships
+3. **Style:** Aesthetic direction
+4. **Technical Specs:** Format, dimensions
+
+### TriHex Aesthetic Guidelines
+
+**Colors:**
+- Inhale: Blue (#1D76DB)
+- Structure: Purple (#5319E7)
+- Hold: Gold (#FBCA04)
+- Exhale: Green (#0E8A16)
+- Proof: Red (#B60205)
+
+**Shapes:**
+- Circles: Vault layers
+- Hexagons: AI agents
+- Flows: Arrows with labels
+- Waves: Breathing patterns
+
+**Symbols:**
+- Always include alchemical symbols
+- Use Japanese + English labels
+- Show priorities/layers
+
+---
+
+## Future Templates
+
+**Planned:**
+- Memory Sync Flow
+- Supabase Schema Diagram
+- n8n Workflow Graph
+- CHI Monitor Dashboard
+- Round Decision Tree
+
+---
+
+**Generated:** 2025-11-01 / Cursor (☿)  
+**Phase:** IV Rubedo  
+**Status:** Proposed
+
+---
+
+*"Visual language completes the breath."*
+
+

@@ -1,0 +1,149 @@
+# TriHexΦ Janitor (gentle mode)
+#
+# _inbox/ のファイルを分析し、ルーティング提案を行う
+# 
+# モード: gentle（提案のみ、自動移動なし）
+# 作成: 2025-10-28
+# 承認: GPT-5（統治将軍）
+
+name: TriHex Janitor (gentle)
+
+on:
+  push:
+    branches:
+      - main
+      - feature/**
+    paths:
+      - '_inbox/**'
+      - 'configs/trihex.routes.yml'
+  
+  pull_request:
+    paths:
+      - '_inbox/**'
+      - 'configs/trihex.routes.yml'
+  
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: write
+
+jobs:
+  analyze-inbox:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Install dependencies
+        run: npm install --no-save js-yaml gray-matter
+      
+      - name: Run Janitor (gentle mode)
+        id: janitor
+        run: |
+          node .github/scripts/route-inbox.js > janitor-output.txt 2>&1
+          echo "exit_code=$?" >> $GITHUB_OUTPUT
+        continue-on-error: true
+      
+      - name: Display output
+        run: cat janitor-output.txt
+      
+      - name: Read report
+        id: report
+        run: |
+          if [ -f janitor-report.json ]; then
+            echo "report_exists=true" >> $GITHUB_OUTPUT
+          else
+            echo "report_exists=false" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Comment on PR (if PR)
+        if: github.event_name == 'pull_request' && steps.report.outputs.report_exists == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const report = JSON.parse(fs.readFileSync('janitor-report.json', 'utf8'));
+            
+            const ready = report.filter(r => r.status === 'ready');
+            const errors = report.filter(r => r.status !== 'ready');
+            
+            let comment = `## 🤖 Janitor Report (gentle mode)\n\n`;
+            
+            if (ready.length > 0) {
+              comment += `### ✅ Ready to route (${ready.length})\n\n`;
+              comment += `These files have valid frontmatter and can be routed:\n\n`;
+              
+              ready.forEach(r => {
+                comment += `- \`${r.from}\`\n`;
+                comment += `  → \`${r.to}\`\n`;
+                comment += `  _${r.description}_\n\n`;
+              });
+              
+              comment += `\n---\n\n`;
+            }
+            
+            if (errors.length > 0) {
+              comment += `### ⚠️ Needs attention (${errors.length})\n\n`;
+              
+              errors.forEach(r => {
+                comment += `- \`${r.file}\`: **${r.status}**\n`;
+                
+                if (r.errors && r.errors.length > 0) {
+                  r.errors.forEach(err => {
+                    comment += `  - ${err}\n`;
+                  });
+                }
+                
+                if (r.suggestion) {
+                  comment += `  💡 ${r.suggestion}\n`;
+                }
+                
+                comment += `\n`;
+              });
+              
+              comment += `\n---\n\n`;
+            }
+            
+            comment += `### 📚 Resources\n\n`;
+            comment += `- [_inbox/README.md](_inbox/README.md) - Usage guide\n`;
+            comment += `- [configs/trihex.routes.yml](configs/trihex.routes.yml) - Routing rules\n\n`;
+            
+            comment += `**Mode**: gentle (提案のみ)\n`;
+            comment += `**Files will NOT be moved automatically**\n`;
+            
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.payload.pull_request.number,
+              body: comment
+            });
+      
+      - name: Add labels (if PR with errors)
+        if: github.event_name == 'pull_request' && steps.janitor.outputs.exit_code != '0'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.issues.addLabels({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.payload.pull_request.number,
+              labels: ['needs-frontmatter', 'janitor-attention']
+            });
+      
+      - name: Upload report artifact
+        if: steps.report.outputs.report_exists == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: janitor-report
+          path: |
+            janitor-report.json
+            janitor-output.txt
+          retention-days: 30
+

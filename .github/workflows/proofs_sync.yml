@@ -1,0 +1,72 @@
+# Proofs/Docs Auto-Sync Workflow (LV1)
+# Purpose: 常時オート同期（[skip ci]でループ防止）
+
+name: 📊 Proofs Auto-Sync
+
+on:
+  push:
+    branches: [main, feature/**]
+    paths:
+      - '99_SYSTEM/Proofs/**'
+      - 'docs/**'
+      - '.github/workflows/proofs_sync.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  auto-sync:
+    runs-on: ubuntu-latest
+    
+    concurrency:
+      group: proofs-auto-sync
+      cancel-in-progress: false
+    
+    # Skip if commit message contains [skip ci] or is from itself
+    if: |
+      !contains(github.event.head_commit.message, '[skip ci]') &&
+      !startsWith(github.event.head_commit.message, '📊 Auto-sync:')
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Set Git user
+        run: |
+          git config user.name "TriHex Bot"
+          git config user.email "bot@trihex.local"
+      
+      - name: Normalize and Validate
+        run: |
+          echo "=== Normalizing Proofs/Docs ==="
+          
+          # Run normalization tools if they exist
+          node scripts/normalize-md.mjs 99_SYSTEM/Proofs docs 2>/dev/null || echo "Normalizer skipped"
+          
+          echo "✅ Validation complete"
+      
+      - name: Commit if changes
+        run: |
+          git add 99_SYSTEM/Proofs docs 2>/dev/null || true
+          
+          if ! git diff --cached --quiet; then
+            git commit -m "📊 Auto-sync: Proofs/Docs normalization [skip ci]"
+            git push
+            echo "✅ Auto-synced"
+          else
+            echo "ℹ️ No changes to sync"
+          fi
+      
+      - name: Summary
+        if: always()
+        run: |
+          echo "## Proofs Auto-Sync Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Date:** $(date -u +'%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_STEP_SUMMARY
+          echo "**Branch:** ${{ github.ref }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Commit:** ${{ github.sha }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+

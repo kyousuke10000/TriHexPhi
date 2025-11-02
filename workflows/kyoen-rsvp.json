@@ -1,0 +1,141 @@
+{
+  "name": "KYOEN RSVP",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "kyoen-rsvp"
+      },
+      "id": "webhook",
+      "name": "LINE Postback",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        250,
+        300
+      ],
+      "webhookId": "kyoen-rsvp",
+      "credentials": {}
+    },
+    {
+      "parameters": {
+        "jsCode": "const events = $input.item.json.events;\nconst event = events[0];\nconst data = event.postback.data;\nconst [status, event_id] = data.split(':');\nconst user_id = event.source.userId;\n\nreturn {\n  status, event_id, user_id, data, replyToken: event.replyToken\n};"
+      },
+      "id": "parse",
+      "name": "Parse Postback",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        450,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "${\"https://nrbserphtykbhwdowfsz.supabase.co\"}/rest/v1/tokunoshima_rsvp",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5yYnNlcnBodHlrYmh3ZG93ZnN6Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc2MDQ3MjU3MSwiZXhwIjoyMDc2MDQ4NTcxfQ.RJz5YJ0lmR_raX_glkncd-h_z9r2qRy7yPRUTJz2T90"
+            },
+            {
+              "name": "Authorization",
+              "value": "Bearer${\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5yYnNlcnBodHlrYmh3ZG93ZnN6Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc2MDQ3MjU3MSwiZXhwIjoyMDc2MDQ4NTcxfQ.RJz5YJ0lmR_raX_glkncd-h_z9r2qRy7yPRUTJz2T90\"}"
+            },
+            {
+              "name": "Prefer",
+              "value": "return=minimal,resolution=merge-duplicates"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"event_id\":\"={{ $json.event_id }}\",\"user_id\":\"={{ $json.user_id }}\",\"status\":\"={{ $json.status }}\"}"
+      },
+      "id": "upsert",
+      "name": "Upsert RSVP",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        650,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.line.me/v2/bot/message/reply",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Authorization",
+              "value": "Bearer jffJiSAr5f/YtAthi/rcB3zwP0rew1y8OXPiJH3BSNd31oxheNvg1wT1VaTM7KorLFINWDWwelf1Hx7ptKEd8a9U5clDDerK8shFJtKp1bwCt8BNQhuB5m8LSGKsUhfIX+DX+gXY0kiBhMAXWdW70AdB04t89/1O/w1cDnyilFU"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"replyToken\":\"={{ $json.replyToken }}\",\"messages\":[{\"type\":\"text\",\"text\":\"記録しました\"}]}"
+      },
+      "id": "reply",
+      "name": "Reply Snack",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        850,
+        300
+      ]
+    }
+  ],
+  "connections": {
+    "LINE Postback": {
+      "main": [
+        [
+          {
+            "node": "Parse Postback",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse Postback": {
+      "main": [
+        [
+          {
+            "node": "Upsert RSVP",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upsert RSVP": {
+      "main": [
+        [
+          {
+            "node": "Reply Snack",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null
+}

@@ -1,0 +1,132 @@
+name: 🎼 Ryudo Router (Conductor Integration)
+
+on:
+  discussion:
+    types: [created, edited]
+  workflow_dispatch:
+    inputs:
+      topic:
+        description: 'Topic to review'
+        required: true
+        type: string
+      mode:
+        description: 'Execution mode'
+        required: false
+        default: 'demo'
+        type: choice
+        options:
+          - demo
+          - live
+
+permissions:
+  contents: write
+
+jobs:
+  route:
+    name: Route to Conductor
+    runs-on: ubuntu-latest
+    
+    concurrency:
+      group: trihex-ryudo
+      cancel-in-progress: false
+    
+    env:
+      LANG: C.UTF-8
+      LC_ALL: C.UTF-8
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Parse Discussion Topic
+        if: github.event_name == 'discussion'
+        id: parse
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const discussionNumber = github.event.discussion.number;
+            
+            const query = `
+              query($number: Int!) {
+                repository(owner: "${github.repository_owner}", name: "${github.event.repository.name}") {
+                  discussion(number: $number) {
+                    title
+                    body
+                  }
+                }
+              }
+            `;
+            
+            const data = await github.graphql(query, { number: discussionNumber });
+            const discussion = data.repository.discussion;
+            
+            core.setOutput('topic', discussion.title);
+      
+      - name: Run Conductor
+        id: conductor
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          TOPIC="${{ github.event_name == 'discussion' && steps.parse.outputs.topic || github.event.inputs.topic }}"
+          MODE="${{ github.event.inputs.mode || 'demo' }}"
+          
+          echo "🎼 Running Conductor..."
+          echo "Topic: ${TOPIC}"
+          echo "Mode: ${MODE}"
+          
+          node tools/conductor/run.mjs --topic "${TOPIC}" --mode=${MODE} > conductor_output.txt 2>&1 || true
+          
+          echo "conductor_output=conductor_output.txt" >> $GITHUB_OUTPUT
+      
+      - name: Commit Results
+        run: |
+          git config user.name "TriHex Bot"
+          git config user.email "bot@trihex.local"
+          
+          git add -A
+          
+          if ! git diff --cached --quiet; then
+            git commit -m "Ryudo: Conductor execution $(date +'%Y%m%d_%H%M%S')"
+            git push origin main
+            echo "✅ Committed results"
+          else
+            echo "⚠️ No changes to commit"
+          fi
+      
+      - name: Generate Report
+        run: |
+          cat > conductor_report.md << EOF
+          # Ryudo Router Report
+          
+          **Date:** $(date -u +'%Y-%m-%d %H:%M:%S UTC')
+          **Phase:** V Aurum
+          **Event:** ${{ github.event_name }}
+          
+          ## Results
+          
+          **Mode:** ${{ github.event.inputs.mode || 'demo' }}
+          
+          EOF
+          
+          if [ -f conductor_output.txt ]; then
+            echo "" >> conductor_report.md
+            echo "## Output" >> conductor_report.md
+            echo "" >> conductor_report.md
+            cat conductor_output.txt >> conductor_report.md
+          fi
+      
+      - name: Upload Report
+        uses: actions/upload-artifact@v3
+        with:
+          name: conductor-report-${{ github.run_number }}
+          path: conductor_report.md
+
+

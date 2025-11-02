@@ -1,0 +1,288 @@
+name: 🎨 Gemini Render Router
+
+on:
+  discussion:
+    types: [created]
+  discussion_comment:
+    types: [created]
+  workflow_dispatch:
+    inputs:
+      discussion_number:
+        description: 'Discussion number to process'
+        required: false
+        type: string
+      prompt:
+        description: 'Render prompt'
+        required: true
+        type: string
+      format:
+        description: 'Output format'
+        required: false
+        default: 'svg'
+        type: choice
+        options:
+          - svg
+          - png
+      width:
+        description: 'Image width'
+        required: false
+        default: '1200'
+        type: string
+      height:
+        description: 'Image height'
+        required: false
+        default: '800'
+        type: string
+
+permissions:
+  contents: read
+  discussions: write
+
+jobs:
+  render:
+    name: 🎨 Generate Image with Gemini
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Parse Discussion Context
+        id: parse
+        if: github.event_name == 'discussion' || github.event_name == 'discussion_comment'
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const discussionNumber = ${{ github.event_name == 'discussion' && github.event.discussion.number || github.event.discussion.number }};
+            
+            const query = `
+              query($number: Int!) {
+                repository(owner: "${{ github.repository_owner }}", name: "${{ github.event.repository.name }}") {
+                  discussion(number: $number) {
+                    id
+                    title
+                    body
+                  }
+                }
+              }
+            `;
+            
+            const data = await github.graphql(query, { number: discussionNumber });
+            const discussion = data.repository.discussion;
+            
+            // Extract render request from discussion body
+            const renderMatch = discussion.body.match(/```render\n([\s\S]*?)\n```/);
+            const renderPrompt = renderMatch ? renderMatch[1].trim() : null;
+            
+            core.setOutput('discussion_id', discussion.id);
+            core.setOutput('discussion_number', discussion.number);
+            core.setOutput('render_prompt', renderPrompt);
+            core.setOutput('has_render_request', renderPrompt ? 'true' : 'false');
+            
+            console.log(`✅ Parsed discussion #${discussion.number}: has_render=${renderPrompt ? 'yes' : 'no'}`);
+      
+      - name: Build Render Prompt
+        id: build_prompt
+        run: |
+          # Determine prompt source
+          if [ "${{ steps.parse.outputs.has_render_request }}" = "true" ]; then
+            PROMPT="${{ steps.parse.outputs.render_prompt }}"
+          elif [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            PROMPT="${{ github.event.inputs.prompt }}"
+          else
+            echo "⚠️ No render request found"
+            exit 1
+          fi
+          
+          # Format
+          FORMAT="${{ github.event.inputs.format || 'svg' }}"
+          WIDTH="${{ github.event.inputs.width || '1200' }}"
+          HEIGHT="${{ github.event.inputs.height || '800' }}"
+          
+          # Build full prompt
+          FULL_PROMPT="Render an SVG diagram: ${PROMPT}. Format: ${FORMAT}, Size: ${WIDTH}x${HEIGHT}. Follow TriHex aesthetics (breathing layers, six-spiral ontology)."
+          
+          echo "full_prompt=${FULL_PROMPT}" >> $GITHUB_OUTPUT
+          echo "format=${FORMAT}" >> $GITHUB_OUTPUT
+          echo "width=${WIDTH}" >> $GITHUB_OUTPUT
+          echo "height=${HEIGHT}" >> $GITHUB_OUTPUT
+          
+          echo "🎨 Render request:"
+          echo "  Format: ${FORMAT}"
+          echo "  Size: ${WIDTH}x${HEIGHT}"
+          echo "  Prompt: ${PROMPT:0:100}..."
+      
+      - name: Call Gemini Render Script
+        id: gemini_render
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd scripts
+          
+          # Call render script
+          node gemini_render.mjs \
+            --prompt "${{ steps.build_prompt.outputs.full_prompt }}" \
+            --format "${{ steps.build_prompt.outputs.format }}" \
+            --width "${{ steps.build_prompt.outputs.width }}" \
+            --height "${{ steps.build_prompt.outputs.height }}" \
+            > ../render_output.json 2>&1 || true
+          
+          # Parse output
+          if [ -f ../render_output.json ]; then
+            OUTPUT=$(cat ../render_output.json)
+            
+            # Check if successful
+            if echo "$OUTPUT" | grep -q '"success":true'; then
+              echo "image_data=$(echo "$OUTPUT" | jq -r '.image_data' | base64)" >> $GITHUB_OUTPUT
+              echo "image_type=$(echo "$OUTPUT" | jq -r '.image_type')" >> $GITHUB_OUTPUT
+              echo "render_success=true" >> $GITHUB_OUTPUT
+              echo "✅ Gemini render successful"
+            else
+              ERROR=$(echo "$OUTPUT" | jq -r '.error' || echo "$OUTPUT")
+              echo "render_success=false" >> $GITHUB_OUTPUT
+              echo "render_error=${ERROR}" >> $GITHUB_OUTPUT
+              echo "❌ Gemini render failed: ${ERROR}"
+            fi
+          else
+            echo "render_success=false" >> $GITHUB_OUTPUT
+            echo "render_error=No output file generated" >> $GITHUB_OUTPUT
+            echo "❌ No output file generated"
+          fi
+      
+      - name: Save Image Artifact
+        if: steps.gemini_render.outputs.render_success == 'true'
+        run: |
+          # Decode base64 and save
+          echo "${{ steps.gemini_render.outputs.image_data }}" | base64 -d > rendered_image.${{ steps.build_prompt.outputs.format }}
+          
+          echo "✅ Image saved: rendered_image.${{ steps.build_prompt.outputs.format }}"
+      
+      - name: Upload Artifact
+        if: steps.gemini_render.outputs.render_success == 'true'
+        uses: actions/upload-artifact@v3
+        with:
+          name: gemini-render-${{ github.run_number }}
+          path: rendered_image.*
+      
+      - name: Post Image to Discussion
+        if: steps.gemini_render.outputs.render_success == 'true' && (github.event_name == 'discussion' || github.event_name == 'discussion_comment')
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+            
+            // Find rendered image
+            const files = fs.readdirSync('.');
+            const imageFile = files.find(f => f.startsWith('rendered_image.'));
+            
+            if (!imageFile) {
+              console.log('⚠️ No image file found');
+              return;
+            }
+            
+            // Read image data
+            const imageData = fs.readFileSync(imageFile);
+            const base64Image = imageData.toString('base64');
+            const imageType = path.extname(imageFile).substring(1);
+            
+            // Post as comment with image
+            const body = `# 🎨 Rendering Complete
+            
+**Format:** ${imageType.toUpperCase()}
+**Size:** ${{ steps.build_prompt.outputs.width }}x${{ steps.build_prompt.outputs.height }}
+
+![Generated Image](data:image/${imageType};base64,${base64Image})
+
+---
+            
+*Rendered by Gemini 🜀 at ${new Date().toISOString()}*`;
+            
+            const mutation = `
+              mutation($discussionId: ID!, $body: String!) {
+                addDiscussionComment(input: {
+                  discussionId: $discussionId,
+                  body: $body
+                }) {
+                  comment { id }
+                }
+              }
+            `;
+            
+            await github.graphql(mutation, {
+              discussionId: '${{ steps.parse.outputs.discussion_id }}',
+              body: body
+            });
+            
+            console.log('✅ Image posted to discussion');
+      
+      - name: Post Error to Discussion
+        if: steps.gemini_render.outputs.render_success == 'false' && (github.event_name == 'discussion' || github.event_name == 'discussion_comment')
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const body = `# ⚠️ Rendering Failed
+            
+**Error:** ${{ steps.gemini_render.outputs.render_error }}
+            
+---
+            
+*Attempted at ${new Date().toISOString()}*`;
+            
+            const mutation = `
+              mutation($discussionId: ID!, $body: String!) {
+                addDiscussionComment(input: {
+                  discussionId: $discussionId,
+                  body: $body
+                }) {
+                  comment { id }
+                }
+              }
+            `;
+            
+            await github.graphql(mutation, {
+              discussionId: '${{ steps.parse.outputs.discussion_id }}',
+              body: body
+            });
+      
+      - name: Generate Report
+        if: always()
+        run: |
+          cat > render_report.md << EOF
+          # Gemini Render Report
+          
+          **Date:** $(date -u +'%Y-%m-%d %H:%M:%S UTC')
+          **Phase:** IV Rubedo
+          **Event:** ${{ github.event_name }}
+          
+          ## Results
+          
+          **Status:** ${{ steps.gemini_render.outputs.render_success == 'true' && '✅ Success' || '❌ Failed' }}
+          
+          **Format:** ${{ steps.build_prompt.outputs.format }}
+          **Size:** ${{ steps.build_prompt.outputs.width }}x${{ steps.build_prompt.outputs.height }}
+          
+          EOF
+          
+          if [ "${{ steps.gemini_render.outputs.render_success }}" = "false" ]; then
+            echo "" >> render_report.md
+            echo "## Error" >> render_report.md
+            echo "" >> render_report.md
+            echo "${{ steps.gemini_render.outputs.render_error }}" >> render_report.md
+          fi
+      
+      - name: Upload Report
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: render-report-${{ github.run_number }}
+          path: render_report.md
+

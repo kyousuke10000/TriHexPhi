@@ -1,0 +1,139 @@
+# TriHexΦ Auto-Approve Configuration
+# Generated: 2025-11-01
+# Purpose: Enable fully automatic execution without manual RUN/ACCEPT clicks
+
+auto_accept: true
+auto_run: true
+auto_approve_workflows: true
+max_concurrent_tasks: 5
+
+# Safety exclusions (operations that still require manual approval)
+manual_approval_required:
+  - file_deletion
+  - git_force_push
+  - external_api_writes
+  - production_deployments
+  - destructive_schema_changes
+
+# Logging settings
+logging:
+  enabled: true
+  path: "99_SYSTEM/Logs/auto_approve_trace.log"
+  level: "info"
+  
+# Workflow settings
+workflows:
+  codex_mirror_sync: true
+  memory_seed_registration: true
+  breath_log_creation: true
+  proof_report_generation: true
+  
+# Phase-based settings
+current_phase: "V Aurum"
+phase_permissions:
+  read_only_observation: true
+  mirror_synchronization: true
+  seed_registration: true
+  report_generation: true
+  external_manifestation: true
+  public_documentation: true
+
+# Integration Auto-Restart Settings
+# Generated: 2025-11-01
+integrations:
+  - name: claude
+    enabled: true
+    auto_context: true
+    auto_restart: true
+    backoff: [3, 10, 30]
+  
+  - name: gemini
+    enabled: true
+    auto_context: true
+    auto_restart: true
+    backoff: [3, 10, 30]
+  
+  - name: n8n
+    enabled: true
+    auto_restart: true
+    backoff: [5, 15, 45]
+    health_check_url: "https://primary-production-14b0.up.railway.app/healthz"
+  
+  - name: trihex_gpt
+    enabled: true
+    provider: openai
+    model: gpt-4o
+    entrypoint: cli
+    exec:
+      command: node
+      args:
+        - "tools/trihex/trihex.mjs"
+        - "--exec"
+        - "{prompt}"
+    auto_restart: true
+    backoff: [3, 10, 30]
+    role: architect
+
+# CLI defaults
+defaults:
+  architect_command: trihex_gpt
+
+# Logging for integration restarts
+integration_logs:
+  enabled: true
+  path: "99_SYSTEM/Logs/integration_restarts.log"
+  level: "info"
+  retention_days: 30
+
+# FailSafe System Settings
+# Generated: 2025-11-01
+safety:
+  enable_watchdog: true
+  ai_heartbeat_interval: 3
+  max_context_mb:
+    gpt5: 800
+    cursor: 512
+    claude: 512
+    gemini: 384
+    deepseek: 256
+    grok: 256
+  emergency_downgrade_command: "node tools/trihex/watchdog.mjs :emergency-downgrade"
+  
+# Watchdog log files
+watchdog_logs:
+  heartbeat: "99_SYSTEM/Logs/ai_heartbeat.log"
+  errors: "99_SYSTEM/Logs/ai_errors.log"
+  retention_days: 30
+
+# Throttling & Queue Settings
+# Generated: 2025-11-01
+throttling:
+  max_parallel_ai: 2
+  min_flush_interval_ms: 200
+  burst_limit_roundtrip: 4/10s
+  jitter_range_ms: [250, 400]
+
+# GitHub Integration Settings
+# Generated: 2025-11-01
+auto_commit: true
+commit_message_template: "Rubedo Sync: {timestamp}"
+commit_branches:
+  - main
+
+include_paths:
+  - "TriHex_Master_Reactivation.md"
+  - "TRIHEX_PROJECT.yaml"
+  - "20_TriHex-Obsidian/00_INDEX/"
+  - "20_TriHex-Obsidian/01_Codex/"
+  - "20_TriHex-Obsidian/01_System/"
+  - "99_SYSTEM/Proofs/"
+  - "99_SYSTEM/BreathLogs/"
+  - "99_SYSTEM/MemorySeeds/"
+  - "10_TriHexCore/codex/"
+  - "10_TriHexCore/system/"
+
+exclude_paths:
+  - "50_Temp/"
+  - "node_modules/"
+  - ".git/"
+  - "99_SYSTEM/Logs/"

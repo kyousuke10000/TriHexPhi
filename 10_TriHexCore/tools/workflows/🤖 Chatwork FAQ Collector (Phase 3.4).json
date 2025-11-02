@@ -1,0 +1,1465 @@
+{
+  "name": "🤖 Chatwork FAQ Collector (Phase 3.4)",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "6f119d41-2648-4d0f-98d5-a225cf7c77e7",
+      "name": "Manual Trigger",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -1696,
+        752
+      ]
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "1SywiLtNP759TQ_dWnYq1XftGTJprZOL9kVx5dlLiH_0"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1277927532,
+          "mode": "list",
+          "cachedResultName": "Ritual_Log"
+        },
+        "options": {}
+      },
+      "id": "6a356606-8c9a-4cf9-af6c-7226271ff26f",
+      "name": "Get Ritual_Log",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4,
+      "position": [
+        -1488,
+        752
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "YvL7P7HKwcuiK11r",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "dateTime": [
+            {
+              "value1": "={{ $json.timestamp }}",
+              "operation": "afterDate",
+              "value2": "={{ $now.minus(30, 'days').toISO() }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "3183450a-fff9-4984-8a33-b27d4d8618ba",
+      "name": "Filter Last 30 Days",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2,
+      "position": [
+        -1296,
+        752
+      ]
+    },
+    {
+      "parameters": {
+        "sortFieldsUi": {
+          "sortField": [
+            {
+              "fieldName": "timestamp",
+              "order": "descending"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "2d9eb9ce-0a72-4a22-8ea0-605707b6a558",
+      "name": "Sort by Timestamp DESC",
+      "type": "n8n-nodes-base.sort",
+      "typeVersion": 1,
+      "position": [
+        -1088,
+        752
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "b8803e32-e591-4419-bc89-ebb594102980",
+      "name": "Get Latest Entry",
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        -896,
+        752
+      ]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 1
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ Object.keys($json).length }}",
+                    "rightValue": 0,
+                    "operator": {
+                      "type": "number",
+                      "operation": "gt"
+                    },
+                    "id": "82989eec-4788-41e0-8881-bd235b53fe1d"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Has Data"
+            }
+          ]
+        },
+        "options": {
+          "fallbackOutput": "extra"
+        }
+      },
+      "id": "e91d53dd-5ba4-476e-bada-aa6e9044c9f3",
+      "name": "Has Recent Promotion?",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3,
+      "position": [
+        -688,
+        752
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "a009334f-300d-4f48-a78c-059da6f61f75",
+      "name": "No Recent Promotion",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        -288,
+        848
+      ]
+    },
+    {
+      "parameters": {
+        "method": "DELETE",
+        "url": "=https://discord.com/api/v10/guilds/1423868161110835202/members/{{ $json.user_id }}/roles/{{ $json.to_role_id }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "discordBotApi",
+        "options": {}
+      },
+      "id": "0ea87f2f-be01-4eb3-b06b-02c96a0a158b",
+      "name": "Remove Discord Role",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -288,
+        656
+      ],
+      "credentials": {
+        "discordBotApi": {
+          "id": "OsNxV1rUyzVam6wZ",
+          "name": "Discord Bot account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "1SywiLtNP759TQ_dWnYq1XftGTJprZOL9kVx5dlLiH_0"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1256375429,
+          "mode": "list",
+          "cachedResultName": "User_Progress"
+        },
+        "options": {}
+      },
+      "id": "b1ce67ef-05ac-42a8-95a4-573f858db383",
+      "name": "Get User_Progress",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4,
+      "position": [
+        544,
+        656
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "YvL7P7HKwcuiK11r",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "1SywiLtNP759TQ_dWnYq1XftGTJprZOL9kVx5dlLiH_0"
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "list",
+          "value": 1256375429,
+          "cachedResultName": "User_Progress"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "user_id": "={{ $('Get Latest Entry').first().json.user_id }}",
+            "current_role": "={{ $('Get Latest Entry').first().json.from_role }}",
+            "promotion_needed": "FALSE"
+          },
+          "matchingColumns": [
+            "user_id"
+          ],
+          "schema": [
+            {
+              "id": "user_id",
+              "displayName": "user_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "username",
+              "displayName": "username",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "current_role",
+              "displayName": "current_role",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "spiral_score",
+              "displayName": "spiral_score",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "window_start",
+              "displayName": "window_start",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "window_end",
+              "displayName": "window_end",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "cadence",
+              "displayName": "cadence",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "depth_mid_pct",
+              "displayName": "depth_mid_pct",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "depth_deep_pct",
+              "displayName": "depth_deep_pct",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "momentum_count",
+              "displayName": "momentum_count",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "creation_count",
+              "displayName": "creation_count",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "ebb_state",
+              "displayName": "ebb_state",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "last_active",
+              "displayName": "last_active",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "updated_at",
+              "displayName": "updated_at",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "promotion_needed",
+              "displayName": "promotion_needed",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "next_role",
+              "displayName": "next_role",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "resonance_score",
+              "displayName": "resonance_score",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "resonance_partners",
+              "displayName": "resonance_partners",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "coherence_score",
+              "displayName": "coherence_score",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "guided_users",
+              "displayName": "guided_users",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "id": "e3f80846-4408-4a7e-9db5-1a65f3c1ac5b",
+      "name": "Update User_Progress",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4,
+      "position": [
+        752,
+        656
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "YvL7P7HKwcuiK11r",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "delete",
+        "documentId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "1SywiLtNP759TQ_dWnYq1XftGTJprZOL9kVx5dlLiH_0"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1277927532,
+          "mode": "list",
+          "cachedResultName": "Ritual_Log",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1SywiLtNP759TQ_dWnYq1XftGTJprZOL9kVx5dlLiH_0/edit#gid=1277927532"
+        },
+        "startIndex": "={{ $('Get Latest Entry').first().json.row_number }}"
+      },
+      "id": "a96b78fc-3b70-4a89-8701-6b9a11f86025",
+      "name": "Delete Ritual_Log Row",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4,
+      "position": [
+        944,
+        656
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "YvL7P7HKwcuiK11r",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "message",
+        "guildId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "1423868161110835202"
+        },
+        "channelId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "1424549853375234118"
+        },
+        "content": "=🔄 [ROLLBACK] 昇格を取り消しました\n\nUser: {{ $('Get Latest Entry').first().json.username }}\nFrom: {{ $('Get Latest Entry').first().json.to_role }} → {{ $('Get Latest Entry').first().json.from_role }}\nTimestamp: {{ $now.toFormat('yyyy-MM-dd HH:mm:ss') }}",
+        "options": {}
+      },
+      "id": "a8cdcc47-50c5-4d93-8980-e337e4143085",
+      "name": "Post Rollback Notice",
+      "type": "n8n-nodes-base.discord",
+      "typeVersion": 2,
+      "position": [
+        1136,
+        656
+      ],
+      "webhookId": "ee686f71-7557-42a1-9fdf-c8dc52a39b8b",
+      "credentials": {
+        "discordBotApi": {
+          "id": "OsNxV1rUyzVam6wZ",
+          "name": "Discord Bot account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "const ROLES = {\n  'creator': '1424198712678154280',\n  'builder': '1424199716333158510',\n  'starter': '1424199864069263560'\n};\n\nconst toRole = $json.to_role;\nconst toRoleId = ROLES[toRole];\n\nreturn {\n  json: {\n    ...$json,\n    to_role_id: toRoleId\n  }\n};"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -480,
+        656
+      ],
+      "id": "126b1fff-7efc-4c33-befd-81593773fb5c",
+      "name": "Convert Role to ID"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Get Latest Entry からデータを取得\nconst latestEntry = $('Get Latest Entry').first().json;\n\nconst THREAD_TEMPLATES = {\n  'starter': '💠 @{username} の水鏡修行',\n  'builder': '🌊 @{username} の波紋修行',\n  'creator': '🔮 @{username} の真形創造'\n};\n\nconst fromRole = latestEntry.from_role;\nconst username = latestEntry.username;\n\n// デフォルト値を設定\nconst template = THREAD_TEMPLATES[fromRole] || '💠 @{username} の水鏡修行';\nconst newThreadName = template.replace('{username}', username);\n\nreturn {\n  json: {\n    ...latestEntry,  // 全データを引き継ぐ\n    new_thread_name: newThreadName\n  }\n};"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -80,
+        656
+      ],
+      "id": "315d6133-56e5-462c-b9a6-57df282b3a6d",
+      "name": "Build Thread Name"
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "=https://discord.com/api/v10/channels/{{ $json.thread_id }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "discordBotApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"name\": \"={{ $json.new_thread_name }}\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        128,
+        656
+      ],
+      "id": "be5ab7f9-8fcd-4d64-85fe-76c71a56a368",
+      "name": "Rename Thread",
+      "credentials": {
+        "discordBotApi": {
+          "id": "OsNxV1rUyzVam6wZ",
+          "name": "Discord Bot account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 2 * * *"
+            }
+          ]
+        }
+      },
+      "id": "5cd55f5b-d55d-4152-9944-8d58b7d8a1ab",
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -1856,
+        1424
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://api.chatwork.com/v2/rooms/382546940/messages",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "force",
+              "value": "1"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "0d4bbc89-7fdd-4b70-82c5-3a211ae7f280",
+      "name": "Chatwork Get Messages",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1648,
+        1424
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "LnQfObJY55JQWAHf",
+          "name": "ChatWork"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Chatwork APIから返ってきたメッセージを取得\nconst allItems = $input.all();\n\n// データがない場合は空配列を返す\nif (!allItems || allItems.length === 0) {\n  return [];\n}\n\n// 各アイテムのjsonプロパティからメッセージを抽出\nconst messages = allItems.map(item => item.json);\n\n// 新しい順にソート\nconst sortedMessages = messages.sort((a, b) => b.send_time - a.send_time);\n\n// 最新30件のみ取得（100から変更）\nconst recentMessages = sortedMessages\n  .slice(0, 30)\n  .map(msg => ({\n    message_id: msg.message_id,\n    account_name: msg.account?.name || 'Unknown',\n    body: msg.body || '',\n    send_time: msg.send_time\n  }));\n\n// n8n形式で返す\nreturn recentMessages.map(msg => ({ json: msg }));"
+      },
+      "id": "5ac6d3c9-bf94-4bc7-9efe-5a97e1152bfd",
+      "name": "Filter Recent 100",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -1456,
+        1424
+      ]
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4o-mini",
+          "mode": "list",
+          "cachedResultName": "GPT-4O-MINI"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "あなたはチャットワークのメッセージから「質問」を検出する専門家です。\n\n# 質問パターン\n1. 「？」で終わる\n2. 疑問詞を含む（どこ、何、どう、いつ、誰、なぜ）\n3. 「教えて」「わからない」「困っている」「できない」などの表現\n4. 明確な疑問・質問の意図があるもの\n\n# 除外パターン\n- 挨拶のみ\n- 雑談\n- 単なる報告\n\n# 出力\n質問と思われるメッセージのmessage_idを配列で返してください。\n質問でないものは含めないでください。\n\n出力形式（必ずこの形式で）：\n{\"question_ids\": [\"123456\", \"234567\"]}",
+              "role": "system"
+            },
+            {
+              "content": "=メッセージリスト:\n{{ JSON.stringify($input.all().map(item => ({ id: item.json.message_id, text: item.json.body }))) }}"
+            }
+          ]
+        },
+        "options": {
+          "temperature": 0.3
+        }
+      },
+      "id": "bd91099c-3603-457e-8eef-341ac93cb359",
+      "name": "OpenAI Detect Questions",
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.3,
+      "position": [
+        -1248,
+        1424
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "J33Jkek1x9rhPZBW",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// 全てのOpenAI結果を取得（20件）\nconst allAiResults = $input.all();\n\n// 全ての質問IDを抽出して統合\nconst allQuestionIds = new Set();\n\nallAiResults.forEach(item => {\n  try {\n    const content = item.json.message.content;\n    const parsed = JSON.parse(content);\n    const questionIds = parsed.question_ids || [];\n    \n    // SetにIDを追加（重複自動排除）\n    questionIds.forEach(id => allQuestionIds.add(String(id)));\n  } catch (error) {\n    console.error('Failed to parse AI result:', error);\n  }\n});\n\n// Setを配列に変換\nconst questionIdsArray = Array.from(allQuestionIds);\n\nconsole.log('Detected question IDs:', questionIdsArray);\n\n// 質問が0件の場合\nif (questionIdsArray.length === 0) {\n  console.log('No questions detected');\n  return [];\n}\n\n// Filter Recent 100から元のメッセージを取得\nconst allMessages = $('Filter Recent 100').all();\n\n// 質問のみを抽出\nconst questions = allMessages.filter(msg => {\n  const msgId = String(msg.json.message_id);\n  const isQuestion = questionIdsArray.includes(msgId);\n  \n  if (isQuestion) {\n    console.log('Found question:', msgId);\n  }\n  \n  return isQuestion;\n});\n\nconsole.log('Total questions found:', questions.length);\nreturn questions;"
+      },
+      "id": "2725af84-88d0-43e0-a516-fb2ef1ba5ec7",
+      "name": "Parse Questions",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -976,
+        1312
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "6d4d461d-631b-4bfc-8961-6b69a490e132",
+      "name": "Split In Batches",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        -848,
+        1424
+      ]
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4o-mini",
+          "mode": "list",
+          "cachedResultName": "GPT-4O-MINI"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "# 役割\nチャットワークの質問メッセージをFAQ形式に構造化する。\n\n# 重要：回答は具体的に\n- 実際の解決策を推測して書く\n- 「〜してください」という具体的な指示を含める\n- リンク、手順、期限など、具体的な情報を推測\n- 抽象的な問いかけ（「何が見えますか？」等）は使わない\n\n# 出力形式（必ずJSON）\n{\n  \"title\": \"簡潔な質問タイトル（20文字以内）\",\n  \"question\": \"質問の詳細（元の質問を整理）\",\n  \"answer\": \"具体的な解決策（推測で構わない、150-300文字）\",\n  \"category\": \"Week関連 | Sphere操作 | コース選択 | システム | コミュニティ | その他\",\n  \"priority\": \"高 | 中 | 低\"\n}\n\n# 回答の例\n良い例：\n「Week1の課題は、TriHexΦ Discordの#mirror-chatに投稿してください。\n提出期限は各Weekの最終日23:59です。」\n\n悪い例：\n「どのように感じますか？何が見えていますか？」\n```\n\n---\n\n### Phase 2（次のステップ）：実際の回答を取得\n\n**もっと良い方法：実際の回答をチャットワークから取得**\n\n#### 新しいワークフロー設計：\n```\n1. 質問を検出（現在のワークフロー）\n   ↓\n2. その後の返信を監視\n   ↓\n3. 運営スタッフの回答を検出\n   ↓\n4. 質問と回答をペアにしてFAQを更新",
+              "role": "system"
+            },
+            {
+              "content": "=質問者: {{ $json.account_name }}\n\n質問内容:\n{{ $json.body }}"
+            }
+          ]
+        },
+        "options": {
+          "temperature": 0.7
+        }
+      },
+      "id": "5e3b95e3-cf59-4c67-8725-4785f6c0e660",
+      "name": "OpenAI Structure FAQ",
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.3,
+      "position": [
+        -656,
+        1168
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "J33Jkek1x9rhPZBW",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// OpenAI Structure FAQの出力を取得\nconst aiResponse = $input.first().json;\nconst originalMessage = $('Split In Batches').first().json;\n\nlet faqData = {};\ntry {\n  const content = aiResponse.message.content;\n  faqData = JSON.parse(content);\n} catch (error) {\n  console.error('Failed to parse FAQ data:', error);\n  return [];\n}\n\n// メタデータを追加（frequencyは後で設定）\nconst now = new Date();\nconst jstTime = new Date(now.getTime() + (9 * 60 * 60 * 1000));\n\nreturn [{\n  json: {\n    timestamp: jstTime.toISOString(),\n    title: faqData.title || '',\n    question: faqData.question || '',\n    answer: faqData.answer || '',\n    category: faqData.category || '',\n    priority: faqData.priority || '',\n    chatwork_message_id: String(originalMessage.message_id || ''), // ← 修正！\n    status: 'pending'\n  }\n}];\n"
+      },
+      "id": "58895b23-ff54-49d0-a7bd-ba783c6711c6",
+      "name": "Add Metadata",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -592,
+        1600
+      ]
+    },
+    {
+      "parameters": {
+        "aggregate": "aggregateAllItemData",
+        "options": {}
+      },
+      "id": "ee5a3b43-3f9c-46ad-9048-dd9f3337cc0d",
+      "name": "Aggregate Results",
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        464,
+        1424
+      ]
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1SywiLtNP759TQ_dWnYq1XftGTJprZOL9kVx5dlLiH_0",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "FAQ_Candidates",
+          "mode": "name"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "title",
+              "lookupValue": "={{ $json.title }}"
+            }
+          ]
+        },
+        "options": {
+          "returnFirstMatch": "={{ true }}"
+        }
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        -432,
+        1424
+      ],
+      "id": "adf2258e-7f66-4f80-9908-ea773579e9ae",
+      "name": "Lookup Existing FAQ",
+      "alwaysOutputData": true,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "YvL7P7HKwcuiK11r",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "852ed1e3-a26e-4e23-a4dc-809d5daf0e29",
+              "leftValue": "={{ $('Lookup Existing FAQ').item }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -224,
+        1424
+      ],
+      "id": "12d80b7f-b670-4388-b27a-364c32ba7da4",
+      "name": "Duplicate Found?"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Lookupで見つかった既存データ\nconst existingRow = $('Lookup Existing FAQ').first().json;\n\n// Add Metadataからの新しいデータ\nconst newData = $('Add Metadata').first().json;\n\n// 既存のfrequencyを取得（数値変換）\nconst currentFrequency = parseInt(existingRow.frequency) || 1;\nconst newFrequency = currentFrequency + 1;\n\n// 既存のchatwork_message_idを取得（カンマ区切りで追加）\nconst existingMessageIds = existingRow.chatwork_message_id || '';\nconst newMessageId = newData.chatwork_message_id;\nconst allMessageIds = existingMessageIds \n  ? `${existingMessageIds},${newMessageId}` \n  : newMessageId;\n\nconsole.log(`=== Duplicate Found ===`);\nconsole.log(`Title: ${newData.title}`);\nconsole.log(`Frequency: ${currentFrequency} → ${newFrequency}`);\n\n// 更新用データを返す\nreturn [{\n  json: {\n    // Lookup結果から行番号を取得（重要！）\n    rowNumber: existingRow.row_number,\n    \n    // 更新するデータ\n    timestamp: newData.timestamp,\n    title: newData.title,\n    question: newData.question,\n    answer: newData.answer,\n    category: newData.category,\n    priority: newData.priority,\n    frequency: newFrequency, // +1\n    chatwork_message_id: allMessageIds, // カンマ区切りで追加\n    status: newData.status\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -16,
+        1328
+      ],
+      "id": "b00dddd7-25ff-4dad-9636-32063f71ad25",
+      "name": "Calculate Frequency"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Add Metadataからのデータ\nconst newData = $('Add Metadata').first().json;\n\nconsole.log(`=== New FAQ ===`);\nconsole.log(`Title: ${newData.title}`);\nconsole.log(`Category: ${newData.category}`);\n\n// 新規追加用データを返す（frequency = 1）\nreturn [{\n  json: {\n    timestamp: newData.timestamp,\n    title: newData.title,\n    question: newData.question,\n    answer: newData.answer,\n    category: newData.category,\n    priority: newData.priority,\n    frequency: 1, // 初期値\n    chatwork_message_id: newData.chatwork_message_id,\n    status: newData.status\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -16,
+        1520
+      ],
+      "id": "a86a7521-c9a5-4961-9d24-1758130f2ae6",
+      "name": "Set Initial Frequency"
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1SywiLtNP759TQ_dWnYq1XftGTJprZOL9kVx5dlLiH_0",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "FAQ_Candidates",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [
+            "title"
+          ],
+          "schema": [
+            {
+              "id": "timestamp",
+              "displayName": "timestamp",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "title",
+              "displayName": "title",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "question",
+              "displayName": "question",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "answer",
+              "displayName": "answer",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "category",
+              "displayName": "category",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "priority",
+              "displayName": "priority",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "frequency",
+              "displayName": "frequency",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "chatwork_message_id",
+              "displayName": "chatwork_message_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "status",
+              "displayName": "status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "rowNumber",
+              "displayName": "rowNumber",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        208,
+        1328
+      ],
+      "id": "a6216f03-1ba3-4ffa-a555-7c2704f8f423",
+      "name": "Update FAQ Row",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "YvL7P7HKwcuiK11r",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1SywiLtNP759TQ_dWnYq1XftGTJprZOL9kVx5dlLiH_0",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "FAQ_Candidates",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "timestamp",
+              "displayName": "timestamp",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "title",
+              "displayName": "title",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "question",
+              "displayName": "question",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "answer",
+              "displayName": "answer",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "category",
+              "displayName": "category",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "priority",
+              "displayName": "priority",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "frequency",
+              "displayName": "frequency",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "chatwork_message_id",
+              "displayName": "chatwork_message_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "status",
+              "displayName": "status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "rowNumber",
+              "displayName": "rowNumber",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        208,
+        1520
+      ],
+      "id": "3775ea1f-f84a-40c1-a79a-5c69de6e5a96",
+      "name": "Append New FAQ",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "YvL7P7HKwcuiK11r",
+          "name": "Google Sheets account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Manual Trigger": {
+      "main": [
+        [
+          {
+            "node": "Get Ritual_Log",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Ritual_Log": {
+      "main": [
+        [
+          {
+            "node": "Filter Last 30 Days",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter Last 30 Days": {
+      "main": [
+        [
+          {
+            "node": "Sort by Timestamp DESC",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sort by Timestamp DESC": {
+      "main": [
+        [
+          {
+            "node": "Get Latest Entry",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Latest Entry": {
+      "main": [
+        [
+          {
+            "node": "Has Recent Promotion?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Has Recent Promotion?": {
+      "main": [
+        [
+          {
+            "node": "Convert Role to ID",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "No Recent Promotion",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Remove Discord Role": {
+      "main": [
+        [
+          {
+            "node": "Build Thread Name",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get User_Progress": {
+      "main": [
+        [
+          {
+            "node": "Update User_Progress",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update User_Progress": {
+      "main": [
+        [
+          {
+            "node": "Delete Ritual_Log Row",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Delete Ritual_Log Row": {
+      "main": [
+        [
+          {
+            "node": "Post Rollback Notice",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert Role to ID": {
+      "main": [
+        [
+          {
+            "node": "Remove Discord Role",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build Thread Name": {
+      "main": [
+        [
+          {
+            "node": "Rename Thread",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Rename Thread": {
+      "main": [
+        [
+          {
+            "node": "Get User_Progress",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Chatwork Get Messages",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Chatwork Get Messages": {
+      "main": [
+        [
+          {
+            "node": "Filter Recent 100",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter Recent 100": {
+      "main": [
+        [
+          {
+            "node": "OpenAI Detect Questions",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Detect Questions": {
+      "main": [
+        [
+          {
+            "node": "Parse Questions",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse Questions": {
+      "main": [
+        [
+          {
+            "node": "Split In Batches",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split In Batches": {
+      "main": [
+        [],
+        [
+          {
+            "node": "OpenAI Structure FAQ",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Structure FAQ": {
+      "main": [
+        [
+          {
+            "node": "Add Metadata",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add Metadata": {
+      "main": [
+        [
+          {
+            "node": "Lookup Existing FAQ",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Lookup Existing FAQ": {
+      "main": [
+        [
+          {
+            "node": "Duplicate Found?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Duplicate Found?": {
+      "main": [
+        [
+          {
+            "node": "Calculate Frequency",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Set Initial Frequency",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Calculate Frequency": {
+      "main": [
+        [
+          {
+            "node": "Update FAQ Row",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Initial Frequency": {
+      "main": [
+        [
+          {
+            "node": "Append New FAQ",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update FAQ Row": {
+      "main": [
+        [
+          {
+            "node": "Aggregate Results",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Append New FAQ": {
+      "main": [
+        [
+          {
+            "node": "Aggregate Results",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "7704225d-9a80-40eb-9db4-5b42d6043705",
+  "meta": {
+    "instanceId": "bb6582f136488f8663186c75084ae9be2ac2ce1a6068064fd0778c5e05f7b8d2"
+  },
+  "id": "hbVaLNdjJXjSvECh",
+  "tags": []
+}

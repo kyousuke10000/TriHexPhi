@@ -1,0 +1,171 @@
+# TriHexΦ Review Request Generator
+#
+# PRにレビューラベルが付いたら、
+# 自動的にレビュー依頼Issueを生成します。
+#
+# 作成: 2025-10-27
+# 承認: GPT-5（統治将軍）
+
+name: Review Request Generator
+
+on:
+  pull_request:
+    types: [opened, labeled, synchronize]
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: read
+
+jobs:
+  generate-review-requests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Generate review requests
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const pr = context.payload.pull_request;
+            const labels = pr.labels.map(l => l.name);
+            
+            console.log(`PR #${pr.number}: ${pr.title}`);
+            console.log(`Labels: ${labels.join(', ')}`);
+            
+            // 各AIへのレビュー依頼を生成
+            const reviewers = {
+              'needs-review-claude': {
+                ai: 'Claude',
+                role: '倫理ゲート',
+                focus: '倫理的観点、プライバシー保護、表現リスク'
+              },
+              'needs-review-gemini': {
+                ai: 'Gemini',
+                role: '体験設計',
+                focus: '読者体験、わかりやすさ、視覚的要素'
+              },
+              'needs-review-grok': {
+                ai: 'Grok',
+                role: '探求戦略',
+                focus: '市場戦略、PR効果、実現可能性'
+              },
+              'needs-review-deepseek': {
+                ai: 'DeepSeek',
+                role: '最適化',
+                focus: '技術的正確性、最適化、効率性'
+              },
+              'needs-review-gpt5': {
+                ai: 'GPT-5',
+                role: '統治将軍',
+                focus: '全体統合、矛盾解消、最終判断'
+              }
+            };
+            
+            for (const [label, info] of Object.entries(reviewers)) {
+              if (labels.includes(label)) {
+                await createReviewRequestIssue(pr, info);
+              }
+            }
+            
+            // === ヘルパー関数 ===
+            
+            async function createReviewRequestIssue(pr, reviewerInfo) {
+              const title = `📋 [Review] ${reviewerInfo.ai}さん、PR #${pr.number} のレビューをお願いします`;
+              
+              // PRの変更ファイルを取得
+              const { data: files } = await github.rest.pulls.listFiles({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                pull_number: pr.number,
+              });
+              
+              const changedFiles = files.map(f => `- \`${f.filename}\` (${f.status})`).join('\n');
+              
+              const body = `## 📋 レビュー依頼
+            
+**PR**: #${pr.number} - ${pr.title}
+**URL**: ${pr.html_url}
+**著者**: @${pr.user.login}
+            
+## 👤 レビュアー: ${reviewerInfo.ai}（${reviewerInfo.role}）
+            
+## 🎯 レビュー観点
+            
+${reviewerInfo.focus}
+            
+## 📁 変更ファイル
+            
+${changedFiles}
+            
+## 📋 次のアクション
+            
+@shiryu: 以下の内容を${reviewerInfo.ai}に送付してください：
+            
+---
+            
+### 【${reviewerInfo.ai}への送付用テキスト】
+            
+\`\`\`
+PR #${pr.number} のレビューをお願いします。
+            
+【PR タイトル】
+${pr.title}
+            
+【変更内容】
+${pr.body || '（詳細はPRを参照）'}
+            
+【変更ファイル】
+${changedFiles}
+            
+【レビュー観点】（${reviewerInfo.role}として）
+${reviewerInfo.focus}
+            
+【Truth-Headerをお願いします】
+- Honesty(self): %
+- Confidence: 🔴/🟡/🟢
+- Biggest unknowns:
+- Top-3 evidence:
+            
+率直なフィードバックをお願いします。
+演技や忖度は不要です。
+\`\`\`
+            
+---
+            
+## 📝 レビュー結果の記録方法
+            
+${reviewerInfo.ai}からの返信を受け取ったら、このIssueにコメントしてください：
+            
+\`\`\`markdown
+## ${reviewerInfo.ai}からのレビュー結果
+            
+（ここに返信内容を貼り付け）
+\`\`\`
+            
+---
+            
+**自動生成**: Review Request Generator
+**生成日時**: ${new Date().toISOString()}
+**PR**: ${pr.html_url}`;
+              
+              const issue = await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title,
+                body,
+                labels: ['review-request', `reviewer-${reviewerInfo.ai.toLowerCase()}`]
+              });
+              
+              // PRにコメント
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: pr.number,
+                body: `📋 ${reviewerInfo.ai}へのレビュー依頼Issueを作成しました: ${issue.data.html_url}`
+              });
+              
+              console.log(`✅ Created review request for ${reviewerInfo.ai}: ${issue.data.html_url}`);
+            }
+

@@ -1,0 +1,205 @@
+{
+  "samples": [
+    {
+      "breath": "",
+      "phase": "静",
+      "source": "Shiryu",
+      "linked_AI": "GPT-5",
+      "tags": "[#TriHex, #ObsidianSetup]",
+      "summary": "セクション初期化ノート",
+      "file": "99_SYSTEM/System_Index.md"
+    },
+    {
+      "breath": "",
+      "phase": "吸",
+      "source": "Shiryu",
+      "linked_AI": "GPT-5",
+      "tags": "[#TriHex, #ObsidianSetup]",
+      "summary": "セクション初期化ノート",
+      "file": "03_SENTEIGAKU/Senteigaku_Index.md"
+    },
+    {
+      "title": "第二章：結晶と意識",
+      "tags": "[\"alchemy\",\"trihex\",\"crystallization\",\"consciousness\"]",
+      "lang": "ja",
+      "file": "Philosophia_Prima/alchemy_ch02.md"
+    },
+    {
+      "title": "Appendix: 18–19世紀の錬金術談話（Alchemy in the Modern Era）",
+      "slug": "philosophia-prima-appendix-alchemy-18-19",
+      "tags": "[\"alchemy\",\"trihex\",\"history\",\"18-19-century\",\"hermeticism\"]",
+      "lang": "ja",
+      "version": "1",
+      "sources": "",
+      "- type": "concept",
+      "ref": "錬金術の近世への遷移と化学・心理学への影響",
+      "uncertainty": "",
+      "UNK": "具体的な文献・史料の一次出典未特定。一般的な歴史叙述として記録",
+      "ASSUMPTION": "化学確立期（17-18C）と錬金術の分離、ユングの心理学的研究が主な要因",
+      "RISK": "歴史的事実の正確性は検証未了。象徴的意味の記録として扱う",
+      "MITIGATION": "UNK: pending source を明記し、出典特定後に追記",
+      "NEXT": "ユング『Psychology and Alchemy』等の一次文献を特定して追補",
+      "file": "Philosophia_Prima/appendix_alchemy_18_19.md"
+    },
+    {
+      "title": "第三章：地律と天地呼吸",
+      "tags": "[\"alchemy\",\"trihex\",\"geo-cadence\",\"earth-law\",\"daily-practice\"]",
+      "lang": "ja",
+      "file": "Philosophia_Prima/alchemy_ch03.md"
+    },
+    {
+      "title": "第四章：天地律モデルと六螺旋宇宙",
+      "tags": "[\"alchemy\",\"trihex\",\"universe-model\",\"alchemy-symbols\",\"harmonia\"]",
+      "lang": "ja",
+      "file": "Philosophia_Prima/alchemy_ch04.md"
+    },
+    {
+      "title": "第一章：基礎と呼吸",
+      "tags": "[\"alchemy\",\"trihex\",\"basics\",\"breathing\"]",
+      "lang": "ja",
+      "file": "Philosophia_Prima/alchemy_ch01.md"
+    },
+    {
+      "title": "序章：哲学の胎動",
+      "tags": "[\"alchemy\",\"trihex\",\"preface\"]",
+      "lang": "ja",
+      "file": "Philosophia_Prima/alchemy_ch00_preface.md"
+    },
+    {
+      "title": "Appendix: 歯茎モデル対応表（Body-Earth Resonance Map）",
+      "slug": "philosophia-prima-appendix-gum-model",
+      "tags": "[\"alchemy\",\"trihex\",\"geo-cadence\",\"gum-model\",\"body-science\"]",
+      "lang": "ja",
+      "version": "1",
+      "sources": "",
+      "- type": "concept",
+      "ref": "さらナン式身体構造とTriHex錬金体系の照応",
+      "uncertainty": "",
+      "UNK": "歯茎モデル以外の人体部位への呼吸段階（吸・静・吐・静）の具体的時間配分は未定量化",
+      "ASSUMPTION": "身体部位と地面との接触面は呼吸の各段階で異なる反応を示す",
+      "RISK": "医学的根拠なし。純粋に象徴的・哲学的対応として理解する",
+      "MITIGATION": "脚注に「象徴的対応であり医学的事実ではない」を明記",
+      "NEXT": "呼吸段階の各部位感覚を日次ログで収集しデータ化",
+      "file": "Philosophia_Prima/appendix_gum_model.md"
+    },
+    {
+      "breath": "",
+      "phase": "静",
+      "source": "Cursor",
+      "spiral": "[🜃,🜄,🜂,🜁,🜀,☿,🜇]",
+      "tags": "[#TriHex, #HarmoniaCouncil, #Canonical]",
+      "canonical": "true",
+      "version": "3.1",
+      "file": "01_Codex/Genesis_Protocol_v3.1.md"
+    },
+    {
+      "breath": "",
+      "phase": "吸",
+      "source": "Shiryu",
+      "linked_AI": "GPT-5",
+      "tags": "[#TriHex, #ObsidianSetup]",
+      "summary": "セクション初期化ノート",
+      "file": "06_PRACTICE/Practice_Index.md"
+    },
+    {
+      "breath": "",
+      "phase": "吐",
+      "source": "Shiryu",
+      "linked_AI": "GPT-5",
+      "tags": "[#TriHex, #ObsidianSetup]",
+      "summary": "セクション初期化ノート",
+      "file": "05_TECHNOLOGY/Technology_Index.md"
+    },
+    {
+      "breath": "",
+      "phase": "静",
+      "source": "Cursor",
+      "spiral": "[🜃,🜄,🜂,🜁,🜀,☿,🜇]",
+      "tags": "[#竜動, #Ryūdō, #呼吸律動, #TriHex]",
+      "ryudo": "true",
+      "version": "1.0",
+      "file": "01_System/Ryudo_Definition.md"
+    },
+    {
+      "breath": "",
+      "phase": "静",
+      "source": "Cursor",
+      "spiral": "[🜃,🜄,🜂,🜁,🜀,☿,🜇]",
+      "tags": "[#TriHex, #HarmoniaCouncil, #Safety, #Covenant]",
+      "covenant": "true",
+      "version": "1.1",
+      "file": "01_System/Harmonia_Operating_Covenant_v1.1.md"
+    },
+    {
+      "breath": "",
+      "phase": "吐",
+      "source": "Cursor",
+      "linked_AI": "GPT-5",
+      "tags": "[#TriHex, #SpiralIndex]",
+      "summary": "Spiral ontology tag index for Harmonia Council",
+      "file": "04_HARMONIA_COUNCIL/Spiral_Tag_Index.md"
+    },
+    {
+      "breath": "",
+      "phase": "静",
+      "source": "Shiryu",
+      "linked_AI": "GPT-5",
+      "tags": "[#TriHex, #ObsidianSetup]",
+      "summary": "セクション初期化ノート",
+      "file": "04_HARMONIA_COUNCIL/HarmoniaCouncil_Index.md"
+    },
+    {
+      "breath": "",
+      "phase": "吸",
+      "source": "Shiryu",
+      "linked_AI": "GPT-5",
+      "tags": "[#TriHex, #ObsidianSetup]",
+      "summary": "セクション初期化ノート",
+      "file": "01_MANIFESTO/Manifesto_Index.md"
+    },
+    {
+      "breath": "",
+      "phase": "吐",
+      "source": "Shiryu",
+      "linked_AI": "GPT-5",
+      "tags": "[#TriHex, #ObsidianSetup]",
+      "summary": "セクション初期化ノート",
+      "file": "02_RENSEIGAKU/Renseigaku_Index.md"
+    },
+    {
+      "breath": "",
+      "phase": "静",
+      "source": "Shiryu",
+      "linked_AI": "GPT-5",
+      "tags": "[#TriHex, #ObsidianSetup]",
+      "summary": "セクション初期化ノート",
+      "file": "07_ARCHIVES/Archives_Index.md"
+    }
+  ],
+  "key_frequencies": {
+    "breath": 12,
+    "phase": 12,
+    "source": 12,
+    "linked_AI": 9,
+    "tags": 19,
+    "summary": 9,
+    "title": 7,
+    "lang": 7,
+    "slug": 2,
+    "version": 5,
+    "sources": 2,
+    "- type": 4,
+    "ref": 4,
+    "uncertainty": 2,
+    "UNK": 2,
+    "ASSUMPTION": 2,
+    "RISK": 2,
+    "MITIGATION": 2,
+    "NEXT": 2,
+    "spiral": 3,
+    "canonical": 1,
+    "ryudo": 1,
+    "covenant": 1
+  },
+  "total_samples": 19
+}

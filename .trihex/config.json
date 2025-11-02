@@ -1,0 +1,17 @@
+{
+  "layers": [
+    { "name": "Ephemeral", "priority": 5, "path": "ObsidianSync" },
+    { "name": "Session",   "priority": 3, "path": "HarmoniaCouncil" },
+    { "name": "Project",   "priority": 2, "path": "TriHexCore" },
+    { "name": "Canonical", "priority": 1, "path": "TriHexCore/codex" },
+    { "name": "Audit",     "priority": 4, "path": "HarmoniaCouncil" }
+  ],
+  "priority_order": ["Canonical","Project","Session","Audit","Ephemeral"],
+  "archive_path": "Archive",
+  "temp_path": "Temp",
+  "logs": {
+    "breath_log_glob": "HarmoniaCouncil/Round_*_BreathLog.md",
+    "heartbeat": "TriHexCore/system/heartbeat.log",
+    "diff_weekly": "TriHexCore/system/diff-weekly.md"
+  }
+}

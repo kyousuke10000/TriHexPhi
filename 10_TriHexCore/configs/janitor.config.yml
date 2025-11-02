@@ -1,0 +1,290 @@
+# TriHexΦ Janitor Configuration v1.0
+#
+# Janitor（管理人）は、_inbox/のファイルを自動で整理します。
+#
+# 更新日: 2025-10-27
+# 承認: GPT-5（統治将軍）
+
+version: 1.0
+
+# 動作モード
+mode: auto  # gentle | auto | strict
+
+# モード定義
+modes:
+  # Gentleモード（優しく誘導）
+  gentle:
+    description: "警告のみ（自動移動しない）"
+    enabled: true
+    actions:
+      - type: "warn_pr_comment"
+        message: |
+          ⚠️  このファイルは _inbox/ にありますが、まだ移動されていません。
+          
+          Frontmatterを確認してください：
+          - kind, lang, date, title が必須です
+          
+          参考: _inbox/README.md
+      
+      - type: "add_label"
+        label: "needs-routing"
+    
+    auto_move: false
+    block_pr: false
+  
+  # Autoモード（自動整形）- デフォルト
+  auto:
+    description: "自動移動＋コミット報告"
+    enabled: true
+    actions:
+      - type: "auto_move"
+        on_success:
+          - type: "commit_with_message"
+            message: "chore(janitor): route inbox files per trihex.routes.yml"
+          
+          - type: "pr_comment"
+            message: |
+              ✅ Janitorが自動でファイルを移動しました：
+              
+              {{moved_files}}
+              
+              参考: configs/trihex.routes.yml
+      
+      - type: "add_label"
+        label: "janitor-processed"
+    
+    auto_move: true
+    block_pr: false
+  
+  # Strictモード（厳格）
+  strict:
+    description: "ルール違反でPRブロック"
+    enabled: true
+    actions:
+      - type: "auto_move"
+      
+      - type: "validate_rules"
+        on_violation:
+          - type: "block_pr"
+            message: |
+              🚫 ファイル構造ルール違反が検出されました。
+              
+              {{violations}}
+              
+              修正してから再度プッシュしてください。
+          
+          - type: "add_label"
+            label: "rule-violation"
+    
+    auto_move: true
+    block_pr: true
+
+# 監視設定
+watch:
+  # 監視対象パス
+  paths:
+    - "_inbox/**/*.md"
+  
+  # 無視するファイル
+  ignore:
+    - "_inbox/README.md"
+    - "_inbox/.gitkeep"
+    - "_inbox/.DS_Store"
+  
+  # 処理トリガー
+  triggers:
+    - event: "push"
+      branches:
+        - "main"
+        - "feature/**"
+    
+    - event: "pull_request"
+      actions:
+        - "opened"
+        - "synchronize"
+
+# ルーティング設定
+routing:
+  # ルールファイル
+  rules_file: "configs/trihex.routes.yml"
+  
+  # Slug生成ルール
+  slug_generation:
+    # タイトル → slug変換
+    transforms:
+      - type: "lowercase"
+      - type: "replace_non_alphanumeric"
+        replace_with: "-"
+      - type: "collapse_consecutive"
+        character: "-"
+      - type: "trim"
+        characters: "-"
+    
+    # 最大長
+    max_length: 100
+    
+    # 衝突時の対応
+    on_conflict: "append_counter"  # または "error"
+  
+  # ファイル名生成
+  filename_template: "{date}_{slug}.md"
+
+# Git設定
+git:
+  # コミッター情報
+  committer:
+    name: "trihex-janitor[bot]"
+    email: "actions@users.noreply.github.com"
+  
+  # コミットメッセージ
+  commit_message:
+    template: "chore(janitor): route inbox files per trihex.routes.yml"
+    
+    # 詳細情報を追加
+    include_details: true
+    details_format: |
+      
+      Moved files:
+      {{#each moved_files}}
+      - {{this.from}} → {{this.to}}
+      {{/each}}
+  
+  # ブランチ設定
+  branch:
+    # 直接pushするか、PRを作るか
+    strategy: "direct_push"  # または "create_pr"
+    
+    # PR作成時の設定（strategy: "create_pr"の場合）
+    pr:
+      branch_prefix: "janitor/"
+      title: "🤖 Janitor: Route inbox files"
+      body: |
+        Janitorが _inbox/ のファイルを自動で移動しました。
+        
+        ## 移動されたファイル
+        {{moved_files}}
+        
+        ## 確認事項
+        - [ ] 移動先が正しいか
+        - [ ] Frontmatterが正しいか
+        
+        参考: configs/trihex.routes.yml
+      
+      labels:
+        - "janitor"
+        - "automated"
+
+# バリデーション設定
+validation:
+  # Frontmatterバリデーション
+  frontmatter:
+    # 必須フィールド
+    required:
+      - "kind"
+      - "lang"
+      - "date"
+      - "title"
+      - "author"
+      - "status"
+      - "visibility"
+    
+    # 型チェック
+    types:
+      kind: "string"
+      lang: "string"
+      date: "string"
+      title: "string"
+      author: "string"
+      status: "string"
+      tier: "integer"
+      relates_to: "array"
+      visibility: "string"
+      redactions: "array"
+    
+    # 値の検証（routes.ymlのallowed_valuesを参照）
+    validate_values: true
+  
+  # 日付フォーマット検証
+  date_format: "YYYY-MM-DD"
+  
+  # エラー時の動作
+  on_error:
+    mode: "warn"  # または "fail"
+    create_issue: false
+
+# 通知設定
+notifications:
+  # PR コメント
+  pr_comment:
+    enabled: true
+    on_success: true
+    on_failure: true
+  
+  # ラベル
+  labels:
+    enabled: true
+    on_success: "janitor-processed"
+    on_failure: "needs-frontmatter"
+  
+  # Issue作成（エラー時）
+  create_issue:
+    enabled: false
+    title: "Janitorエラー: {{date}}"
+    labels:
+      - "janitor"
+      - "error"
+
+# パフォーマンス設定
+performance:
+  # 一度に処理する最大ファイル数
+  max_files_per_run: 50
+  
+  # タイムアウト（秒）
+  timeout: 300
+  
+  # リトライ設定
+  retry:
+    max_attempts: 3
+    delay: 1000  # ミリ秒
+
+# ログ設定
+logging:
+  # ログレベル
+  level: "info"  # debug | info | warn | error
+  
+  # ログ出力先
+  output: "console"  # または "file"
+  
+  # 詳細ログ
+  verbose: false
+
+# モード移行計画（参考用）
+migration_plan:
+  week_1:
+    mode: "gentle"
+    description: "優しく誘導、慣れる期間"
+  
+  week_2_3:
+    mode: "auto"
+    description: "自動整形、デフォルト運用"
+  
+  week_4_onwards:
+    mode: "strict"
+    description: "厳格運用、完全な秩序維持"
+
+# 関連ドキュメント
+related:
+  - "configs/trihex.routes.yml"
+  - "decisions/DEC_2025-10-27_FS-GUARDRAILS_v1.md"
+  - "_inbox/README.md"
+
+# 変更履歴
+changelog:
+  - version: "1.0"
+    date: "2025-10-27"
+    author: "Cursor"
+    changes:
+      - "初版作成"
+      - "3モード（gentle/auto/strict）定義"
+      - "Git設定、バリデーション、通知設定"
+

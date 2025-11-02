@@ -1,0 +1,66 @@
+{
+  "layer": "root",
+  "symbol": "🜇",
+  "title": "Shiryu Studio",
+  "tags": [
+    "魂律",
+    "origin",
+    "root"
+  ],
+  "created": "2025-11-01T21:00:00+09:00",
+  "author": "Shiryu Kanemoto",
+  "description": "TriHex全体の魂律層（Root Layer）。金本子竜の語り・哲学・詩・思想を自動生成する源泉。",
+  "permissions": {
+    "AI_write": false,
+    "AI_read": true,
+    "User_write": true
+  },
+  "subdirectories": [
+    {
+      "name": "00_Preface",
+      "breath_phase": "吸",
+      "purpose": "開始の詩・哲学の序章"
+    },
+    {
+      "name": "01_Alchemy_Works",
+      "breath_phase": "構造化",
+      "purpose": "錬金術・AI・叡智の交差"
+    },
+    {
+      "name": "02_Senteigaku",
+      "breath_phase": "吐",
+      "purpose": "九つの自己発揮力（先帝学）"
+    },
+    {
+      "name": "03_Renseigaku",
+      "breath_phase": "吸＋静",
+      "purpose": "錬成学・十環体系"
+    },
+    {
+      "name": "04_Field_Notes",
+      "breath_phase": "静",
+      "purpose": "日々の哲学記録・試作"
+    },
+    {
+      "name": "05_Poetics",
+      "breath_phase": "呼気の余白",
+      "purpose": "詩的記述・語り"
+    },
+    {
+      "name": "99_Manifest",
+      "breath_phase": "証明",
+      "purpose": "変遷記録・ハッシュ・署名"
+    }
+  ],
+  "principles": [
+    "生成優先（完成ではなく呼吸の記録）",
+    "魂律優先（構造より感応、数より息）",
+    "参照専用（AIは読むのみ、書き換え不可）",
+    "錬金調和（錬金記号を併記）"
+  ],
+  "related_systems": {
+    "Philosophia_Prima": "20_TriHex-Obsidian/Philosophia_Prima/",
+    "TriHexCore": "10_TriHexCore/system/",
+    "Proofs": "99_SYSTEM/Proofs/"
+  }
+}
