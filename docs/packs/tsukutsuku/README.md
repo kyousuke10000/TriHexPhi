@@ -10,6 +10,7 @@
 
 - **本README:** ワークフロー・アーキテクチャ概要
 - [技術評価レポート](tsukutsuku_technical_evaluation.md): ツクツクサイトの技術分析
+- [AI-SaaS戦略提案書](tsukutsuku_saas_strategy.md): ツクツク向けSaaS戦略
 - [n8n手動セットアップ](n8n_manual_setup.md): ワークフロー設定手順
 - [n8nデプロイメント](n8n_deployment.md): CI/CD自動化
 - [ワークフロー概要](workflows_overview.md): 各ワークフロー詳細
