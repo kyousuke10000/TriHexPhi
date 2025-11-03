@@ -12,6 +12,10 @@
 - [技術評価レポート](tsukutsuku_technical_evaluation.md): ツクツクサイトの技術分析
 - [AI-SaaS戦略提案書](tsukutsuku_saas_strategy.md): ツクツク向けSaaS戦略
 - [協力依頼の手紙](letter_to_gpt.md): Claude → GPT 戦略統合依頼
+- [KYOEN詳細分析](kyoen_analysis.md): KYOENインテグレーション詳細
+- [KYOEN改善ガイド](kyoen_improvement_guide.md): 改良提案
+- [KYOEN Supabaseスキーマ](kyoen_supabase_schema.sql): データベース定義
+- [KYOEN Event Detect v2](KYOEN_Event_Detect_v2.json): n8nワークフローJSON
 - [n8n手動セットアップ](n8n_manual_setup.md): ワークフロー設定手順
 - [n8nデプロイメント](n8n_deployment.md): CI/CD自動化
 - [ワークフロー概要](workflows_overview.md): 各ワークフロー詳細
