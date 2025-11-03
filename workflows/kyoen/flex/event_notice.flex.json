@@ -1,0 +1,96 @@
+{
+  "type": "flex",
+  "altText": "{{ title }} - {{ starts_at }}",
+  "contents": {
+    "type": "bubble",
+    "header": {
+      "type": "box",
+      "layout": "vertical",
+      "contents": [
+        {
+          "type": "text",
+          "text": "{{ title }}",
+          "weight": "bold",
+          "size": "xl",
+          "wrap": true
+        },
+        {
+          "type": "text",
+          "text": "{{ starts_at }}",
+          "size": "sm",
+          "color": "#666666",
+          "margin": "md"
+        },
+        {
+          "type": "text",
+          "text": "{{ location }}",
+          "size": "sm",
+          "color": "#666666",
+          "margin": "sm"
+        }
+      ]
+    },
+    "body": {
+      "type": "box",
+      "layout": "vertical",
+      "contents": [
+        {
+          "type": "text",
+          "text": "参加希望の方は下記ボタンより登録をお願いします。",
+          "size": "sm",
+          "wrap": true,
+          "margin": "md"
+        }
+      ]
+    },
+    "footer": {
+      "type": "box",
+      "layout": "horizontal",
+      "spacing": "sm",
+      "contents": [
+        {
+          "type": "button",
+          "style": "primary",
+          "height": "sm",
+          "action": {
+            "type": "postback",
+            "label": "参加する",
+            "data": "rsvp:going:{{ event_id }}"
+          },
+          "color": "#00C300"
+        },
+        {
+          "type": "button",
+          "style": "secondary",
+          "height": "sm",
+          "action": {
+            "type": "postback",
+            "label": "検討中",
+            "data": "rsvp:maybe:{{ event_id }}"
+          }
+        },
+        {
+          "type": "button",
+          "style": "secondary",
+          "height": "sm",
+          "action": {
+            "type": "postback",
+            "label": "聞かせて",
+            "data": "rsvp:mute:{{ event_id }}"
+          }
+        }
+      ]
+    }
+  }
+}
+
+/*
+Variable Mapping Example:
+{
+  "title": "オンライン勉強会",
+  "starts_at": "2025-11-15 10:00",
+  "location": "Zoom",
+  "event_id": "uuid-string",
+  "to": "user-id-or-group-id"
+}
+*/
