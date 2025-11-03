@@ -65,9 +65,12 @@ See [specs/](specs/) for architecture, roadmap, KPI definitions.
 
 ---
 
+## 🧭 Quick Navigation
+
+**Lost Context?** → [TriHex Master Reactivation Protocol](TriHex_Master_Reactivation.md)  
+**Structures:** [🜇_Shiryu_Studio](🜇_Shiryu_Studio/) | [00_HarmoniaCouncil](00_HarmoniaCouncil/) | [10_TriHexCore](10_TriHexCore/) | [20_TriHex-Obsidian](20_TriHex-Obsidian/)
+
 **Last updated:** 2025-11-02  
 **Status:** Rubedo Phase Active
 
 ---
-
-Navigate to: [🜇_Shiryu_Studio](🜇_Shiryu_Studio/) | [00_HarmoniaCouncil](00_HarmoniaCouncil/) | [10_TriHexCore](10_TriHexCore/) | [20_TriHex-Obsidian](20_TriHex-Obsidian/)

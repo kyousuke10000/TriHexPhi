@@ -16,21 +16,6 @@ priority: 0
 
 ---
 
-## ⚠️ Non-Operational Notice
-
-**本稿は「文脈復元」のエントリーポータルです。**  
-運用規定・実行は Sync Protocol（CI）に委譲します。参加は常に任意（Opt-in）で、境界は膜として尊重されます。Harmoniaは"場"のメタファであり、権威ではありません。
-
-### Reactivation（文脈復元）の役割
-
-- 迷った時にここへ来る（最短の復元導線）
-- Quick Start / Memory Anchors / 参照リンク集約
-- 実行は Sync Protocol へ移譲
-
-**詳細比較:** `docs/ops/reactivation_vs_sync.md`
-
----
-
 ## 🎯 Purpose
 
 This is the **ONE FILE** GPT-5 needs to read to restore complete TriHex context.  
@@ -220,6 +205,7 @@ Mirror index: 99_SYSTEM/Proofs/mirror_dryrun/mirror_index.json
 - **Breath Log:** `99_SYSTEM/BreathLogs/2025-11-CoreIntegrationLog.md`
 - **Recovery Playbook:** `99_SYSTEM/Proofs/2025-11-Recovery_Playbook.md`
 - **Status Dashboard:** `docs/dashboards/trihex_status.md`
+- **KYOEN AI:** `99_SYSTEM/Brands/KyoenAI/KYOEN_AI_SEED.md`
 
 ---
 
@@ -234,7 +220,8 @@ Mirror index: 99_SYSTEM/Proofs/mirror_dryrun/mirror_index.json
 **Conductor:** Operational (tools/conductor/run.mjs)  
 **Watchdog:** Operational (tools/trihex/watchdog.mjs)  
 **Recovery System:** Operational (emergency-downgrade.sh, recover-and-resume.sh)  
-**Phase:** V Aurum (Production-ready)
+**Phase:** VI Consolidation  
+**KYOEN AI:** Operational (Tokunoshima Node)
 
 ---
 
@@ -250,6 +237,30 @@ This file is the **single restart switch** for the entire TriHex system.
 **Generated:** 2025-11-01 / Cursor (☿) / Phase VI Consolidation  
 **Status:** Operational - UTF-8 Enforced, Mojibake Zero, Consolidated & Safe  
 **Priority:** 0 (Read this first)
+
+---
+
+## 📎 File Locations
+
+**Primary:** `TriHex_Master_Reactivation.md` (workspace root)  
+**Backup:** `99_SYSTEM/Reactivate/TriHex_Master_Reactivation.md`  
+**Config:** `TRIHEX_PROJECT.yaml`  
+**Seeds:** `99_SYSTEM/MemorySeeds/index.json`
+
+---
+
+## 🚀 Quick Start
+
+**For Web-based GPT (ChatGPT/GPT-4):**
+
+Send this message to upload the file:
+> 「TriHex_Master_Reactivation.md」ファイルをアップロードして全体を読んで、TriHexプロジェクトの全コンテキストを理解してください。
+
+**For Cursor (Local IDE):**
+
+> Memory Reactivation Protocol を読んで TriHex の文脈を再起動して
+
+**That's it. Everything flows from here.**
 
 ---
 
