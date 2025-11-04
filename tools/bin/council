@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+set -euo pipefail
+CMD="${1:-}"; shift || true
+case "$CMD" in
+  "new")
+    slug="${1:-topic}"
+    date=$(date +%Y-%m-%d)
+    id="DEC_$(date +%Y%m%d)_${slug}"
+    file="00_RYUDO/Council/Decisions/${id}.md"
+    [ -f "$file" ] && { echo "$file"; exit 0; }
+    sed "s/DEC_YYYYMMDD_slug/$id/g; s/YYYY-MM-DD/$date/g; s/<件名>/$slug/g" 00_RYUDO/Council/Decisions/DEC_TEMPLATE.md > "$file"
+    echo "$file"
+    ;;
+  "footer")
+    file="${1:-}"; disc="${2:-}"
+    echo "## 合議フッター / Council Footer"
+    [ -n "$file" ] && echo "Council-Decision-File: \`$file\`"
+    [ -n "$disc" ] && echo "Council-Discussion-URL: $disc"
+    ;;
+  *) echo "Usage: council {new <slug>|footer [decfile] [discussion_url]}"; exit 1;;
+esac

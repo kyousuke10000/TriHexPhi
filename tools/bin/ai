@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+set -euo pipefail
+CMD="${1:-}"; shift || true
+case "$CMD" in
+  "where") git worktree list ;;
+  "switch") WT="${1:-impl}"; TARGET=$(git worktree list | awk -v b="$WT" '$0 ~ " "b"$" {print $1}'); [ -n "${TARGET:-}" ] || { echo "No such worktree: $WT"; exit 1; }; echo "$TARGET" ;;
+  "plan") cat <<'PLAN'
+# Sample plan
+MKDIR 00_RYUDO/Council/Records
+WRITE 00_RYUDO/Council/Records/REC_demo.md --- 議題: AI-OS起動\n決定: 可決
+RUN git add .
+RUN git commit -m "chore(council): add REC_demo"
+PLAN
+  ;;
+  "apply") WT="${1:-impl}"; PLAN_PATH="${2:-/dev/stdin}"; TARGET=$(git worktree list | awk -v b="$WT" '$0 ~ " "b"$" {print $1}'); [ -z "${TARGET:-}" ] && { echo "No such worktree: $WT"; exit 1; }; WORKTREE="$TARGET" node tools/trihex-bridge.mjs "$PLAN_PATH" ;;
+  *) echo "Usage: ai {where|switch <name>|plan|apply <name> [planfile]}"; exit 1;;
+esac

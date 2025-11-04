@@ -1,0 +1,44 @@
+name: Council Gate
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize, reopened, ready_for_review]
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Parse footer
+        id: parse
+        run: |
+          body=$(jq -r '.pull_request.body' "$GITHUB_EVENT_PATH")
+          disc=$(echo "$body" | sed -n 's/.*Council-Discussion-URL:[[:space:]]*//p' | head -n1 | awk '{print $1}')
+          file=$(grep -RIl --include="DEC_*.md" "^decision:" 00_RYUDO/Council/Decisions || true)
+          echo "discussion=$disc" >> "$GITHUB_OUTPUT"
+          echo "decfile=$file" >> "$GITHUB_OUTPUT"
+      - name: Try Discussions check
+        id: discuss
+        if: steps.parse.outputs.discussion != ''
+        env: { GH_TOKEN: ${{ secrets.GITHUB_TOKEN }} }
+        run: |
+          if command -v gh >/dev/null 2>&1; then
+            url="${{ steps.parse.outputs.discussion }}"
+            body=$(gh api -H "Accept: application/vnd.github+json" "$url" | jq -r '.body // ""')
+            echo "$body" | grep -qi "decision: approved" && echo "ok=1" >> $GITHUB_OUTPUT || echo "ok=0" >> $GITHUB_OUTPUT
+          else
+            echo "ok=0" >> $GITHUB_OUTPUT
+      - name: File decision fallback
+        id: filegate
+        if: steps.discuss.outputs.ok != '1'
+        run: |
+          f="${{ steps.parse.outputs.decfile }}"
+          if [ -z "$f" ]; then
+            echo "No decision file found, and Discussions check failed."
+            exit 1
+          fi
+          val=$(grep -E "^decision:" "$f" | awk '{print $2}')
+          echo "decision=$val" >> $GITHUB_OUTPUT
+          [ "$val" = "approved" ] || (echo "Decision=$val (not approved)"; exit 1)
+      - name: Gate passed
+        run: echo "✅ Council gate approved."

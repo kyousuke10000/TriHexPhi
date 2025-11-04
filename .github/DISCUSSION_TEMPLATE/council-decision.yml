@@ -1,0 +1,19 @@
+title: "Council Decision: <短い件名>"
+labels: ["council","decision"]
+body:
+  - type: markdown
+    attributes:
+      value: "# Council Decision\n合議スレッド。賛否・修正案・保留を表明してください。"
+  - type: textarea
+    id: context
+    attributes: { label: 背景 / Context }
+  - type: textarea
+    id: proposal
+    attributes: { label: 提案 / Proposal }
+  - type: dropdown
+    id: decision
+    attributes: { label: 決定 / Decision, options: [approved, changes_requested, rejected, pending] }
+    validations: { required: true }
+  - type: input
+    id: pr
+    attributes: { label: 関連PR（任意）, placeholder: "https://github.com/<org>/<repo>/pull/123" }
