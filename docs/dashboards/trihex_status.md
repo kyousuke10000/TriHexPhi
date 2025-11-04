@@ -63,7 +63,7 @@ ls -lht 99_SYSTEM/Proofs/*.md | head -10 | awk '{print $6, $7, $8, $9}'
 ```
 
 **Key Files:**
-- [Master Reactivation](../../../TriHex_Master_Reactivation.md)
+- [Master Reactivation](../../../50_CHL/system/reactivation/50_CHL/system/reactivation/TriHex_Master_Reactivation.md)
 - [Recovery Playbook](../Proofs/2025-11-Recovery_Playbook.md)
 - [FailSafe Validation](../Proofs/2025-11-FailSafe_Validation.md)
 - [Conductor Report](../Proofs/2025-11-Conductor_Run.md)
@@ -208,7 +208,7 @@ ls -lht 20_TriHex-Obsidian/04_HARMONIA_COUNCIL/Ryudo_Sessions/*.md | head -1 | x
 
 ### System Files
 - [TRIHEX_PROJECT.yaml](../../../TRIHEX_PROJECT.yaml)
-- [Master Reactivation](../../../TriHex_Master_Reactivation.md)
+- [Master Reactivation](../../../50_CHL/system/reactivation/50_CHL/system/reactivation/TriHex_Master_Reactivation.md)
 - [Memory Seeds](../../../99_SYSTEM/MemorySeeds/index.json)
 
 ### Scripts

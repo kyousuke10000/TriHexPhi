@@ -96,3 +96,4 @@ node scripts/spec-gate.mjs || echo "Skipped"
 **Generated:** 2025-11-02 / Cursor (☿)  
 **Status:** Manual execution required
 
+

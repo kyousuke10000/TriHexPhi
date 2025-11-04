@@ -5,7 +5,7 @@ title: "Genesis Protocol v3.1"
 date: "2025-11-01"
 status: "Citrinitas Cleared / Rubedo Active"
 mirror:
-  - "10_TriHexCore/codex/Genesis_Protocol_v3.1.md"
+  - "20_CRYSTALLIZATION_KOKUYOU/codex/Genesis_Protocol_v3.1.md"
   - "20_TriHex-Obsidian/01_Codex/Genesis_Protocol_v3.1.md"
   - "30_ObsidianSync/Canonical/Genesis_Protocol_R1_v3.1.md"
 source_layer: "TriHexCore"

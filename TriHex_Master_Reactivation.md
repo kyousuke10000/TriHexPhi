@@ -223,6 +223,28 @@ Mirror index: 99_SYSTEM/Proofs/mirror_dryrun/mirror_index.json
 
 ---
 
+## Ⅸ-A. KYOEN AI Integration
+
+### Event Detect v2 ✅ Complete
+
+**Report:** `99_SYSTEM/Proofs/KYOEN_EVENT_DETECT_v2_REPORT_2025-11-03.md`
+
+**Achievement:** KYOEN OS foundation established
+- Event detection from natural language
+- Flex card generation with RSVP
+- Intent classification (30 test cases)
+- Signature verification
+- Queue retry mechanism
+
+**Next:** Phase 2 (RSVP Collector, Reminders, Slack Sync)
+
+**Docs:**
+- `docs/kyoen/README.md`: Setup guide
+- `workflows/kyoen/`: Common components + 4 workflows
+- `docs/packs/tsukutsuku/`: Full documentation pack
+
+---
+
 ## Ⅹ. System State
 
 **GitHub Actions:** 15 workflows active (Sync, Supabase, Ryūdō Router, Gemini Render, etc.)  

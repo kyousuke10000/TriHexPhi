@@ -210,7 +210,7 @@ TriHexΦ/
 │   ├── ryudo_scoring_rubric.md.proposed
 │   └── ryudo_payload_contract.json.proposed
 │
-├── TriHex_Master_Reactivation.md    [Priority 0]
+├── 50_CHL/system/reactivation/50_CHL/system/reactivation/TriHex_Master_Reactivation.md    [Priority 0]
 ├── TRIHEX_PROJECT.yaml              Project manifest
 └── 📄 99_SYSTEM　MemoryReactivation.md.md   Context recall
 ```
@@ -366,7 +366,7 @@ graph LR
 - [Ryudo Definition](../01_System/Ryudo_Definition.md)
 - [Harmonia Operating Covenant v1.1](../01_System/Harmonia_Operating_Covenant_v1.1.md)
 - [TRIHEX_PROJECT.yaml](../../../TRIHEX_PROJECT.yaml)
-- [Master Reactivation](../../../TriHex_Master_Reactivation.md)
+- [Master Reactivation](../../../50_CHL/system/reactivation/50_CHL/system/reactivation/TriHex_Master_Reactivation.md)
 
 ---
 

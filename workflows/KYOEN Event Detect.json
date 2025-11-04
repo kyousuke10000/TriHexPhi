@@ -1,0 +1,428 @@
+{
+  "name": "KYOEN Event Detect",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "kyoen-line-in",
+        "options": {}
+      },
+      "id": "webhook",
+      "name": "LINE Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        -464,
+        48
+      ],
+      "webhookId": "kyoen-line-in"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Extract: user_message, user_id, reply_token\nconst body = $input.item.json.body;\nconst events = body.events;\nif (!events || events.length === 0) {\n  throw new Error('No events found in webhook body');\n}\n\nconst event = events[0];\n\n// Handle different event types\nif (event.type === 'message' && event.message && event.message.text) {\n  const message = event.message.text;\n  const userId = event.source.userId;\n  const replyToken = event.replyToken;\n\n  return [{\n    json: {\n      user_message: message,\n      user_id: userId,\n      reply_token: replyToken\n    }\n  }];\n} else {\n  throw new Error('Unsupported event type: ' + event.type);\n}"
+      },
+      "id": "extract",
+      "name": "Extract Data",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -80,
+        304
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {},
+          "conditions": [
+            {
+              "id": "ping-check",
+              "leftValue": "={{ $json.user_message }}",
+              "rightValue": "/ping",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "if",
+      "name": "If /ping?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        192,
+        336
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Extract: date/time/title/ZoomURL\nconst message = $('Extract Data').item.json.user_message;\n\n// Date patterns\nconst dateMatch1 = message.match(/(\\d{4})-(\\d{2})-(\\d{2})/);\nconst dateMatch2 = message.match(/(\\d{1,2})\\/(\\d{1,2})/);\nconst timeMatch = message.match(/(\\d{1,2}):(\\d{2})(?:\\s*-\\s*(\\d{1,2}):(\\d{2}))?/);\nconst zoomMatch = message.match(/(https?:\\/\\/(?:[^\\s]+)?zoom\\.us\\/[^\\s?]+\\?pwd=[^\\s]+)/);\n\nlet dateStr = null;\nif (dateMatch1) {\n  dateStr = `${dateMatch1[1]}-${dateMatch1[2]}-${dateMatch1[3]}`;\n} else if (dateMatch2) {\n  const year = new Date().getFullYear();\n  dateStr = `${year}-${dateMatch2[1].padStart(2, '0')}-${dateMatch2[2].padStart(2, '0')}`;\n}\n\nlet timeStr = '00:00';\nif (timeMatch) {\n  timeStr = timeMatch[0];\n}\n\nconst title = message.split('\\n')[0].trim();\nconst zoomUrl = zoomMatch ? zoomMatch[0] : null;\n\nconst startAt = dateStr ? `${dateStr}T${timeStr}:00+09:00` : null;\n\nreturn [{\n  json: {\n    title,\n    startAt,\n    zoomUrl,\n    message,\n    replyToken: $('Extract Data').item.json.reply_token\n  }\n}];"
+      },
+      "id": "parse",
+      "name": "Parse Event",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        464,
+        352
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://nrbserphtykbhwdowfsz.supabase.co/rest/v1/tokunoshima_events",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5yYnNlcnBodHlrYmh3ZG93ZnN6Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc2MDQ3MjU3MSwiZXhwIjoyMDc2MDQ4NTcxfQ.RJz5YJ0lmR_raX_glkncd-h_z9r2qRy7yPRUTJz2T90"
+            },
+            {
+              "name": "Authorization",
+              "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5yYnNlcnBodHlrYmh3ZG93ZnN6Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc2MDQ3MjU3MSwiZXhwIjoyMDc2MDQ4NTcxfQ.RJz5YJ0lmR_raX_glkncd-h_z9r2qRy7yPRUTJz2T90"
+            },
+            {
+              "name": "Prefer",
+              "value": "return=representation,resolution=merge-duplicates"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ {title: $json.title, start_at: $json.startAt, zoom_url: $json.zoomUrl, created_by: 'tokunoshima'} }}",
+        "options": {}
+      },
+      "id": "upsert",
+      "name": "Upsert Event",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        656,
+        128
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.line.me/v2/bot/message/reply",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Authorization",
+              "value": "Bearer jffJiSAr5f/YtAthi/rcB3zwP0rew1y8OXPiJH3BSNd31oxheNvg1wT1VaTM7KorLFINWDWwelf1Hx7ptKEd8a9U5clDDerK8shFJtKp1bwCt8BNQhuB5m8LSGKsUhfIX+DX+gXY0kiBhMAXWdW70AdB04t89/1O/w1cDnyilFU"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({\n  replyToken: $('Parse Event').item.json.replyToken,\n  messages: [\n    {\n      type: 'flex',\n      altText: $('Parse Event').item.json.title || 'イベント情報',\n      contents: {\n        type: 'bubble',\n        body: {\n          type: 'box',\n          layout: 'vertical',\n          contents: [\n            {\n              type: 'text',\n              text: $('Parse Event').item.json.title || '無題',\n              weight: 'bold'\n            },\n            {\n              type: 'text',\n              text: $('Parse Event').item.json.startAt || '日時未定'\n            }\n          ]\n        },\n        footer: {\n          type: 'box',\n          layout: 'horizontal',\n          contents: [\n            {\n              type: 'button',\n              action: {\n                type: 'postback',\n                data: 'going:=' + ($json[0]?.id || 'unknown'),\n                label: '参加する'\n              }\n            },\n            {\n              type: 'button',\n              action: {\n                type: 'postback',\n                data: 'maybe:=' + ($json[0]?.id || 'unknown'),\n                label: '検討中'\n              }\n            },\n            {\n              type: 'button',\n              action: {\n                type: 'postback',\n                data: 'mute:=' + ($json[0]?.id || 'unknown'),\n                label: '聞かせて'\n              }\n            }\n          ]\n        }\n      }\n    }\n  ]\n}) }}",
+        "options": {}
+      },
+      "id": "reply",
+      "name": "Reply Flex",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        848,
+        96
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "manual-trigger-test",
+      "name": "🧪 Test Trigger",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -400,
+        400
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "user_message",
+              "name": "user_message",
+              "type": "string",
+              "value": "/ping"
+            },
+            {
+              "id": "user_id",
+              "name": "user_id",
+              "type": "string",
+              "value": "Uc2b00feb2c5b441219a10a5f2bfcfe17"
+            },
+            {
+              "id": "reply_token",
+              "name": "reply_token",
+              "type": "string",
+              "value": "a3e9eae935ae4df7a888069149a6c2cc"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "test-data-node",
+      "name": "Test Data (/ping)",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -80,
+        464
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.message }}",
+        "options": {
+          "systemMessage": "あなたはLINEチャンネルの管理者です。USERからのメッセージに適切に答えてください"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        -80,
+        48
+      ],
+      "id": "d5109c8e-3f32-4900-bc0d-fd882a3394d8",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4.1-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        -80,
+        160
+      ],
+      "id": "adc1bf74-5648-40a3-8919-637edd341ef3",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "aUn4Ie0YXl6SXecB",
+          "name": "KYOEN AI"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const items = $input.all();\n\nreturn items.map(item => {\n  const webhookData = item.json.body?.events?.[0];\n  \n  return {\n    json: {\n      // AI Agentが使用\n      message: webhookData?.message?.text || '',\n      \n      // 後続ノードで使用\n      replyToken: webhookData?.replyToken,\n      groupId: webhookData?.source?.groupId,\n      userId: webhookData?.source?.userId,\n      messageType: webhookData?.message?.type,\n      timestamp: webhookData?.timestamp\n    }\n  };\n});"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -256,
+        48
+      ],
+      "id": "e9a4b91a-8c5b-46d9-858d-cf2d5827e53e",
+      "name": "Extract Webhook Data"
+    },
+    {
+      "parameters": {
+        "jsCode": "const items = $input.all();\n\n// Extract Webhook Dataノードから直接データを取得\nconst webhookDataItems = $('Extract Webhook Data').all();\n\nreturn items.map((item, index) => {\n  // AI Agentの応答\n  const aiResponse = item.json.output || item.json.text || 'メッセージがありません';\n  \n  // Extract Webhook DataからreplyTokenを取得\n  const replyToken = webhookDataItems[index].json.replyToken;\n  \n  if (!replyToken) {\n    throw new Error('replyToken not found. Check Extract Webhook Data node.');\n  }\n  \n  return {\n    json: {\n      replyToken: replyToken,\n      messages: [{\n        type: 'text',\n        text: aiResponse\n      }]\n    }\n  };\n});"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        176,
+        48
+      ],
+      "id": "bb1f317d-7c34-4f76-98b4-3c99e9eaa461",
+      "name": "Build LINE Reply"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.line.me/v2/bot/message/reply",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBearerAuth",
+        "sendBody": true,
+        "contentType": "=json",
+        "specifyBody": "json",
+        "bodyParameters": {
+          "parameters": [
+            {}
+          ]
+        },
+        "jsonBody": "={{ JSON.stringify($json) }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        320,
+        48
+      ],
+      "id": "69eaf9b2-9f8f-4749-bc38-5690e831ba93",
+      "name": "Send to LINE",
+      "credentials": {
+        "httpBearerAuth": {
+          "id": "QRKJXPGqYDBafpzN",
+          "name": "LINE"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "LINE Webhook": {
+      "main": [
+        [
+          {
+            "node": "Extract Webhook Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Data": {
+      "main": [
+        [
+          {
+            "node": "If /ping?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If /ping?": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Parse Event",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse Event": {
+      "main": [
+        [
+          {
+            "node": "Upsert Event",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upsert Event": {
+      "main": [
+        [
+          {
+            "node": "Reply Flex",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "🧪 Test Trigger": {
+      "main": [
+        [
+          {
+            "node": "Test Data (/ping)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Test Data (/ping)": {
+      "main": [
+        [
+          {
+            "node": "If /ping?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Build LINE Reply",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Webhook Data": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build LINE Reply": {
+      "main": [
+        [
+          {
+            "node": "Send to LINE",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "saveManualExecutions": true,
+    "saveDataErrorExecution": "all",
+    "saveDataSuccessExecution": "all",
+    "executionOrder": "v1"
+  },
+  "versionId": "a73387de-5d51-4199-829b-653e4af4fb31",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "bb6582f136488f8663186c75084ae9be2ac2ce1a6068064fd0778c5e05f7b8d2"
+  },
+  "id": "z80YkaQJp2MYnfxS",
+  "tags": []
+}

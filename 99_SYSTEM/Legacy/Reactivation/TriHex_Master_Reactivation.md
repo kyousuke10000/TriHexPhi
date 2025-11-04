@@ -69,17 +69,17 @@ Everything else flows from here.
 - **Auto-Load:** ✅ Enabled
 
 ### Priority 2: TRIHEXPHI Constitution
-- **Path:** `10_TriHexCore/00_CORE/TRIHEXPHI_v4.0_FINAL.md`
+- **Path:** `50_CHL/00_CORE/TRIHEXPHI_v4.0_FINAL.md`
 - **Purpose:** Ultimate constitution (10.0/10 points), Truth Articles 0-10, 6AI Model
 - **Auto-Load:** ✅ Enabled
 
 ### Priority 3: Project Overview
-- **Path:** `10_TriHexCore/00_CORE/README.md`
+- **Path:** `50_CHL/00_CORE/README.md`
 - **Purpose:** Main README, vision, 6AI collaboration, quick start
 - **Auto-Load:** ✅ Enabled
 
 ### Priority 4: Genesis Protocol
-- **Path:** `10_TriHexCore/codex/Genesis_Protocol_v3.1.md`
+- **Path:** `20_CRYSTALLIZATION_KOKUYOU/codex/Genesis_Protocol_v3.1.md`
 - **Purpose:** Grand Harmonia Manifesto, six-spiral ontology, breathing cosmos
 - **Auto-Load:** ✅ Enabled
 
@@ -90,17 +90,17 @@ Everything else flows from here.
 ## Ⅲ. Mirrored Documents (Sync Status)
 
 ### Genesis Protocol v3.1
-- ✅ Core: `10_TriHexCore/codex/Genesis_Protocol_v3.1.md` (Source)
+- ✅ Core: `20_CRYSTALLIZATION_KOKUYOU/codex/Genesis_Protocol_v3.1.md` (Source)
 - ✅ Obsidian: `20_TriHex-Obsidian/01_Codex/Genesis_Protocol_v3.1.md` (Atlas)
 - ✅ Canonical: `30_ObsidianSync/Canonical/Genesis_Protocol_R1_v3.1.md`
 
 ### Ryudo Definition v1.0
-- ✅ Core: `10_TriHexCore/system/Ryudo_Definition.md` (Source)
+- ✅ Core: `50_CHL/system/Ryudo_Definition.md` (Source)
 - ✅ Obsidian: `20_TriHex-Obsidian/01_System/Ryudo_Definition.md` (Atlas)
 - ✅ Canonical: `30_ObsidianSync/Canonical/Ryudo_Definition.md`
 
 ### Harmonia Operating Covenant v1.1
-- ✅ Core: `10_TriHexCore/system/Harmonia_Operating_Covenant_v1.1.md` (Source)
+- ✅ Core: `50_CHL/system/Harmonia_Operating_Covenant_v1.1.md` (Source)
 - ✅ Obsidian: `20_TriHex-Obsidian/01_System/Harmonia_Operating_Covenant_v1.1.md` (Atlas)
 - ✅ Canonical: `30_ObsidianSync/Canonical/Harmonia_Operating_Covenant_v1.1.md`
 
@@ -242,8 +242,8 @@ This file is the **single restart switch** for the entire TriHex system.
 
 ## 📎 File Locations
 
-**Primary:** `TriHex_Master_Reactivation.md` (workspace root)  
-**Backup:** `99_SYSTEM/Reactivate/TriHex_Master_Reactivation.md`  
+**Primary:** `50_CHL/system/reactivation/50_CHL/system/reactivation/TriHex_Master_Reactivation.md` (workspace root)  
+**Backup:** `99_SYSTEM/Reactivate/50_CHL/system/reactivation/50_CHL/system/reactivation/TriHex_Master_Reactivation.md`  
 **Config:** `TRIHEX_PROJECT.yaml`  
 **Seeds:** `99_SYSTEM/MemorySeeds/index.json`
 
@@ -254,7 +254,7 @@ This file is the **single restart switch** for the entire TriHex system.
 **For Web-based GPT (ChatGPT/GPT-4):**
 
 Send this message to upload the file:
-> 「TriHex_Master_Reactivation.md」ファイルをアップロードして全体を読んで、TriHexプロジェクトの全コンテキストを理解してください。
+> 「50_CHL/system/reactivation/50_CHL/system/reactivation/TriHex_Master_Reactivation.md」ファイルをアップロードして全体を読んで、TriHexプロジェクトの全コンテキストを理解してください。
 
 **For Cursor (Local IDE):**
 

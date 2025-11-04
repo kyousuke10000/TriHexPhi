@@ -9,7 +9,7 @@ core_vault: "20_TriHex-Obsidian"
 canonical_source: "10_TriHexCore"
 knowledge_db: "Supabase (trihex_core.knowledge)"
 harmonia_council_phase: "Round VI"
-reactivation_entry: "TriHex_Master_Reactivation.md"
+reactivation_entry: "50_CHL/system/reactivation/50_CHL/system/reactivation/TriHex_Master_Reactivation.md"
 
 description: |
   呼吸する叡智のOS「TriHexΦ」。
@@ -23,7 +23,7 @@ tags:
   - "#Canonical"
 
 auto_load:
-  - "TriHex_Master_Reactivation.md"
+  - "50_CHL/system/reactivation/50_CHL/system/reactivation/TriHex_Master_Reactivation.md"
   - "99_SYSTEM/MemorySeeds/index.json"
 
 created: "2025-11-01"

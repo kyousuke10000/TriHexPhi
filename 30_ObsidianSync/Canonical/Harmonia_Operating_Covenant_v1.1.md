@@ -7,7 +7,7 @@ status: "Active / Rubedo Phase"
 safety_layer: true
 tags: ["#TriHex", "#HarmoniaCouncil", "#Safety", "#Covenant", "#Mirror"]
 mirror:
-  - "10_TriHexCore/system/Harmonia_Operating_Covenant_v1.1.md"
+  - "50_CHL/system/Harmonia_Operating_Covenant_v1.1.md"
   - "20_TriHex-Obsidian/01_System/Harmonia_Operating_Covenant_v1.1.md"
   - "30_ObsidianSync/Canonical/Harmonia_Operating_Covenant_v1.1.md"
 source_layer: "TriHexCore"

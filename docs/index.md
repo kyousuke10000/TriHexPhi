@@ -84,9 +84,9 @@
 ## 🔗 External Links
 
 - [KYOEN AI Brand](99_SYSTEM/Brands/KyoenAI/manifest.md)
-- [TRIHEXPHI Constitution](10_TriHexCore/00_CORE/TRIHEXPHI.md)
-- [Genesis Protocol](10_TriHexCore/codex/Genesis_Protocol_v3.1.md)
-- [Memory Contract](10_TriHexCore/codex/Memory_Contract_v1.md)
+- [TRIHEXPHI Constitution](50_CHL/00_CORE/TRIHEXPHI.md)
+- [Genesis Protocol](20_CRYSTALLIZATION_KOKUYOU/codex/Genesis_Protocol_v3.1.md)
+- [Memory Contract](20_CRYSTALLIZATION_KOKUYOU/codex/Memory_Contract_v1.md)
 
 ---
 

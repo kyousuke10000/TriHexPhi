@@ -1,0 +1,100 @@
+./.cursorignore:75:!.github/workflows/*.yml
+./99_SYSTEM/Reactivate/TriHex_Master_Reactivation.md:128:- ⏳ Automated mirror workflows
+./99_SYSTEM/Reactivate/TriHex_Master_Reactivation.md:176:TriHexΦ 全体系（哲学・技術・6AI・n8n・trihex.ai）を同期。
+./99_SYSTEM/Reactivate/TriHex_Master_Reactivation.md:214:**GitHub Actions:** 15 workflows active (Sync, Supabase, Ryūdō Router, Gemini Render, etc.)  
+./99_SYSTEM/Reactivate/TriHex_Master_Reactivation.md:215:**n8n Workflows:** 12 workflows registered  
+./99_SYSTEM/Reactivate/TriHex_Master_Reactivation.md:224:**KYOEN AI:** Operational (Tokunoshima Node)
+./99_SYSTEM/BreathLogs/2025-11-CoreIntegrationLog.md:65:- ✅ `02_Senteigaku/nine_sovereign_disciplines.md` → `ai_write: true`
+./99_SYSTEM/BreathLogs/2025-11-CoreIntegrationLog.md:76:| **Body Text Diff** | 0 lines | 0 lines | 0 lines |
+./99_SYSTEM/BreathLogs/2025-11-CoreIntegrationLog.md:103:- ⏳ Automated sync workflow
+./99_SYSTEM/BreathLogs/2025-11-TokunoshimaSync.md:1:# Tokunoshima Sync Breath Log
+./99_SYSTEM/BreathLogs/2025-11-TokunoshimaSync.md:5:**Node:** Tokunoshima (KYOEN AI)
+./99_SYSTEM/Brands/KyoenAI/KYOEN_AI_SEED.md:26:├── LINE_Intro_Day1.md       # Day1導入テンプレ
+./99_SYSTEM/Brands/KyoenAI/KYOEN_AI_SEED.md:27:├── LINE_Intro_Day2.md       # Day2自己紹介
+./99_SYSTEM/Brands/KyoenAI/KYOEN_AI_SEED.md:28:└── LINE_Intro_Day3.md       # Day3感謝文
+./99_SYSTEM/Brands/KyoenAI/KYOEN_AI_SEED.md:31:└── Kyoen_Tokunoshima_Node.md # 徳之島ノード定義
+./99_SYSTEM/Brands/KyoenAI/talk_scripts/tsuji_pitch.md:5:**対象:** 徳之島島民 / ツクツクユーザー
+./99_SYSTEM/Brands/KyoenAI/phrasebank/tsuji_wave.md:18:### Amazon vs ツクツク
+./99_SYSTEM/Brands/KyoenAI/phrasebank/tsuji_wave.md:20:- 「Amazonは一人。ツクツクは皆で分け合える。」
+./99_SYSTEM/Brands/KyoenAI/phrasebank/tsuji_wave.md:21:- 「ツクツク = アカウントの分配」
+./99_SYSTEM/Brands/KyoenAI/phrasebank/tsuji_wave.md:43:3. **「Amazonは一人、ツクツクは皆。AIも同じ、みんなで使う。」**
+./99_SYSTEM/Brands/KyoenAI/manifest.md:101:- Channel調整: line/tsukutsuku/stageで語気/長さを変える
+./99_SYSTEM/Brands/KyoenAI/manifest.md:107:node tools/kyoenAI/generator.mjs --preset tsuji --channel line --topic "ツクツク=分け合い"
+./99_SYSTEM/Brands/KyoenAI/manifest.md:110:node tools/kyoenAI/generator.mjs --preset chieri --channel line --topic "AI怖い→安心"
+./99_SYSTEM/Brands/KyoenAI/manifest.md:125:- **LINE導入:** Day1-3テンプレ使用
+./99_SYSTEM/Brands/KyoenAI/manifest.md:146:- ツクツク内地域一位
+./99_SYSTEM/Brands/KyoenAI/talk_guides/tsuji_conversation_waves.md:10:**辻:** 「そう、Amazonは一人。ツクツクは皆で分け合える。」  
+./99_SYSTEM/Brands/KyoenAI/talk_guides/tsuji_conversation_waves.md:34:## シーン4: LINE投稿前（短文化）
+./99_SYSTEM/Brands/KyoenAI/talk_guides/tsuji_conversation_waves.md:37:**辻:** 「お願い。ツクツク=分け合い、AI=想いの分配器、ね」  
+./99_SYSTEM/Brands/KyoenAI/talk_guides/tsuji_conversation_waves.md:43:## シーン5: ツクツク投稿前（販促寄り）
+./99_SYSTEM/Brands/KyoenAI/talk_guides/tsuji_conversation_waves.md:47:**辻:** 「Amazonは一人、ツクツクは皆、って入れて」  
+./99_SYSTEM/Proofs/2025-11-PhaseShift_Aurum_Initiation.md:48:├── GitHub Discussions → n8n → External AI
+./99_SYSTEM/Proofs/2025-11-PhaseShift_Aurum_Initiation.md:58:- **Processing:** n8n workflows, External AI (Web APIs)
+./99_SYSTEM/Proofs/2025-11-PhaseShift_Aurum_Initiation.md:88:- `.github/workflows/trihex_discussion_bridge.yml` (proposed)
+./99_SYSTEM/Proofs/2025-11-PhaseShift_Aurum_Initiation.md:106:- `.github/workflows/gemini_render.yml` (proposed)
+./99_SYSTEM/Proofs/2025-11-PhaseShift_Aurum_Initiation.md:112:### 3. n8n Integration Bus
+./99_SYSTEM/Proofs/2025-11-PhaseShift_Aurum_Initiation.md:114:**Purpose:** Orchestrate external AI workflows  
+./99_SYSTEM/Proofs/2025-11-PhaseShift_Aurum_Initiation.md:115:**Status:** 12 workflows cataloged  
+./99_SYSTEM/Proofs/2025-11-PhaseShift_Aurum_Initiation.md:118:**Workflows:**
+./99_SYSTEM/Proofs/2025-11-PhaseShift_Aurum_Initiation.md:134:- [ ] Configure n8n Aurum triggers
+./99_SYSTEM/Proofs/2025-11-PhaseShift_Aurum_Initiation.md:135:- [ ] Enable breath logging pipeline
+./99_SYSTEM/Proofs/2025-11-PhaseShift_Aurum_Initiation.md:153:- [ ] Multi-modal render pipeline
+./99_SYSTEM/Proofs/2025-11-PhaseShift_Aurum_Initiation.md:161:- [ ] Contrib guidelines
+./99_SYSTEM/Proofs/2025-11-PhaseShift_Aurum_Initiation.md:169:- [ ] Community workflows
+./99_SYSTEM/Proofs/2025-11-PhaseShift_Aurum_Initiation.md:191:TriHex CLI / Gemini Render / n8n Webhook
+./99_SYSTEM/Proofs/2025-11-PhaseShift_Aurum_Initiation.md:203:- n8n (workflow automation)
+./99_SYSTEM/Proofs/2025-11-PhaseShift_Aurum_Initiation.md:239:- ✅ Auto-approve workflows
+./99_SYSTEM/Proofs/2025-11-TriHexCLI_Setup.md:197:trihex_gpt --exec "Design a new workflow"
+./99_SYSTEM/Proofs/2025-11-Session_FinalComplete.md:32:- **Workflows Created:** 4
+./99_SYSTEM/Proofs/2025-11-Session_FinalComplete.md:56:- ✅ CI/CD Pipelines
+./99_SYSTEM/Proofs/2025-11-Session_FinalComplete.md:76:✅ Workflows: All valid
+./99_SYSTEM/Proofs/2025-11-Session_FinalComplete.md:101:- Workflow Specs
+./99_SYSTEM/Proofs/2025-11-Session_FinalComplete.md:207:gh workflow run harmonia-ci.yml   # Main CI
+./99_SYSTEM/Proofs/2025-11-Session_FinalComplete.md:208:gh workflow run ryudo_router.yml  # Review router
+./99_SYSTEM/Proofs/2025-11-Session_FinalComplete.md:215:**Timeline:**
+./99_SYSTEM/Proofs/2025-11-02_Decisions_Needed.md:16:- `scripts/sql/0002_tsukutsuku_line_messages.sql` (LINE)
+./99_SYSTEM/Proofs/2025-11-02_Decisions_Needed.md:41:### Q3: LINE Token?
+./99_SYSTEM/Proofs/2025-11-02_Decisions_Needed.md:49:- Build workflows without credentials
+./99_SYSTEM/Proofs/2025-11-02_Decisions_Needed.md:53:- [ ] Yes, I have LINE token
+./99_SYSTEM/Proofs/2025-11-02_Decisions_Needed.md:62:- ✅ All workflows designed
+./99_SYSTEM/Proofs/2025-11-02_Decisions_Needed.md:76:2. **Q2: Skip** - Build Discord workflows later when ready.
+./99_SYSTEM/Proofs/2025-11-02_Decisions_Needed.md:77:3. **Q3: Skip** - Build LINE skeleton, add credentials later.
+./99_SYSTEM/Proofs/2025-11-FailSafe_Validation.md:261:- Workflows monitored
+./99_SYSTEM/Proofs/2025-11-FailSafe_Validation.md:265:**n8n:**
+./99_SYSTEM/Proofs/2025-11-02_FINAL_ISSUE.md:1:# Final Issue: Webhook Events Not Enabled
+./99_SYSTEM/Proofs/2025-11-02_FINAL_ISSUE.md:11:**Cause:** Webhook events not enabled in LINE settings  
+./99_SYSTEM/Proofs/2025-11-02_FINAL_ISSUE.md:12:**Impact:** n8n workflow never receives messages
+./99_SYSTEM/Proofs/2025-11-02_FINAL_ISSUE.md:20:- Overrides webhook responses
+./99_SYSTEM/Proofs/2025-11-02_FINAL_ISSUE.md:21:- We need webhook to handle responses instead
+./99_SYSTEM/Proofs/2025-11-02_FINAL_ISSUE.md:23:**Missing:** Webhook events configuration  
+./99_SYSTEM/Proofs/2025-11-02_FINAL_ISSUE.md:24:**Location:** LINE Developers Console (not visible in screenshots)
+./99_SYSTEM/Proofs/2025-11-02_FINAL_ISSUE.md:31:- Turn OFF "応答メッセージ" in LINE Official Account Manager
+./99_SYSTEM/Proofs/2025-11-02_FINAL_ISSUE.md:32:- Let webhook handle all responses
+./99_SYSTEM/Proofs/2025-11-02_FINAL_ISSUE.md:33:- Requires webhook events to be enabled
+./99_SYSTEM/Proofs/2025-11-02_FINAL_ISSUE.md:35:### Option 2: Find Webhook Events Settings
+./99_SYSTEM/Proofs/2025-11-02_FINAL_ISSUE.md:36:- Search LINE Developers Console for "Webhook Events" or "イベント"
+./99_SYSTEM/Proofs/2025-11-02_FINAL_ISSUE.md:38:- Then webhook will receive events
+./99_SYSTEM/Proofs/2025-11-02_FINAL_ISSUE.md:42:- Enable webhook events
+./99_SYSTEM/Proofs/2025-11-02_FINAL_ISSUE.md:43:- Webhook sends responses when triggered
+./99_SYSTEM/Proofs/2025-11-02_FINAL_ISSUE.md:44:- Template only if webhook fails/timeout
+./99_SYSTEM/Proofs/2025-11-02_FINAL_ISSUE.md:48:## Where to Find Webhook Events
+./99_SYSTEM/Proofs/2025-11-02_FINAL_ISSUE.md:50:**LINE Developers Console:**
+./99_SYSTEM/Proofs/2025-11-02_FINAL_ISSUE.md:51:1. Login: https://developers.line.biz/console/
+./99_SYSTEM/Proofs/2025-11-02_FINAL_ISSUE.md:55:5. Look for: "Webhook Events", "イベント", "送信イベント"
+./99_SYSTEM/Proofs/2025-11-02_FINAL_ISSUE.md:60:- May be automatically enabled when webhook is ON
+./99_SYSTEM/Proofs/2025-11-02_FINAL_ISSUE.md:67:1. LINE Official Account Manager → 応答設定
+./99_SYSTEM/Proofs/2025-11-02_FINAL_ISSUE.md:70:4. If bot doesn't respond at all → webhook not receiving
+./99_SYSTEM/Proofs/2025-11-02_FINAL_ISSUE.md:71:5. If bot responds from webhook → success!
+./99_SYSTEM/Proofs/2025-11-02_FINAL_ISSUE.md:80:- Webhook might be disabled outside hours
+./99_SYSTEM/Proofs/2025-11-02_FINAL_ISSUE.md:82:**Fix:** Set response hours to 24/7 or allow webhook outside hours
+./99_SYSTEM/Proofs/2025-11-02_FINAL_ISSUE.md:86:**Next:** Find webhook events setting or temporarily disable 応答メッセージ to test
+./99_SYSTEM/Proofs/2025-11-02_Incident_Report.md:1:# Incident Report: Accidental Workflow Deletion
+./99_SYSTEM/Proofs/2025-11-02_Incident_Report.md:11:Accidentally deleted **all 23 n8n workflows** instead of just 4 KYOEN workflows during debugging.
+./99_SYSTEM/Proofs/2025-11-02_Incident_Report.md:15:## Timeline
+./99_SYSTEM/Proofs/2025-11-02_Incident_Report.md:17:1. User reported 500 error from LINE Bot
+./99_SYSTEM/Proofs/2025-11-02_Incident_Report.md:19:3. I misunderstood and executed `DELETE /workflows` on all workflows
+./99_SYSTEM/Proofs/2025-11-02_Incident_Report.md:20:4. **23 workflows lost**
+./99_SYSTEM/Proofs/2025-11-02_Incident_Report.md:33:- Spiral workflows (4x)
+./99_SYSTEM/Proofs/2025-11-02_Incident_Report.md:34:- Other custom workflows (11+ total)
+./99_SYSTEM/Proofs/2025-11-02_Incident_Report.md:46:### Option 1: n8n UI Backups
+./99_SYSTEM/Proofs/2025-11-02_Incident_Report.md:47:- Check n8n execution history

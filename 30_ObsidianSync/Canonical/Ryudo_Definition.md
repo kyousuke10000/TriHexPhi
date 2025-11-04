@@ -10,7 +10,7 @@ related_documents:
   - "Obsidian_Relation_Verify.md"
   - "Genesis_Protocol_v3.1.md"
 mirror:
-  - "10_TriHexCore/system/Ryudo_Definition.md"
+  - "50_CHL/system/Ryudo_Definition.md"
   - "20_TriHex-Obsidian/01_System/Ryudo_Definition.md"
   - "30_ObsidianSync/Canonical/Ryudo_Definition.md"
 source_layer: "TriHexCore"

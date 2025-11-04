@@ -56,7 +56,7 @@ Cross-references use tags for searchability.
 
 ## Repository Locations
 
-- **Canonical:** [[10_TriHexCore/codex/Genesis_Protocol_v3.1|10_TriHexCore/codex/]]
+- **Canonical:** [[20_CRYSTALLIZATION_KOKUYOU/codex/Genesis_Protocol_v3.1|20_CRYSTALLIZATION_KOKUYOU/codex/]]
 - **Obsidian Mirror:** [[01_Codex/Genesis_Protocol_v3.1|01_Codex/]]
 - **Council Source:** `00_HarmoniaCouncil/Round_III/`
 

@@ -11,11 +11,11 @@
 
 | Document | Path | Version |
 |----------|------|---------|
-| **TRIHEXPHI憲法** | `10_TriHexCore/00_CORE/TRIHEXPHI_v4.0_FINAL.md` | v4.0 |
-| **Genesis Protocol** | `10_TriHexCore/codex/Genesis_Protocol_v3.1.md` | v3.1 |
-| **Memory Contract** | `10_TriHexCore/codex/Memory_Contract_v1.md` | v1.0 |
-| **Ryudo Definition** | `10_TriHexCore/system/Ryudo_Definition.md` | v1.0 |
-| **Master Reactivation** | `TriHex_Master_Reactivation.md` | v3.0 |
+| **TRIHEXPHI憲法** | `50_CHL/00_CORE/TRIHEXPHI_v4.0_FINAL.md` | v4.0 |
+| **Genesis Protocol** | `20_CRYSTALLIZATION_KOKUYOU/codex/Genesis_Protocol_v3.1.md` | v3.1 |
+| **Memory Contract** | `20_CRYSTALLIZATION_KOKUYOU/codex/Memory_Contract_v1.md` | v1.0 |
+| **Ryudo Definition** | `50_CHL/system/Ryudo_Definition.md` | v1.0 |
+| **Master Reactivation** | `50_CHL/system/reactivation/50_CHL/system/reactivation/TriHex_Master_Reactivation.md` | v3.0 |
 | **Breath Map** | `20_TriHex-Obsidian/00_INDEX/Design_Maps/TriHex_Breath_Map.md` | v1.0 |
 
 ### 索引
@@ -24,7 +24,7 @@
 |-------|------|-------|
 | **Obsidian Atlas** | `20_TriHex-Obsidian/00_INDEX/Atlas_Index.md` | - |
 | **Manifesto** | `20_TriHex-Obsidian/01_MANIFESTO/Manifesto_Index.md` | - |
-| **System** | `10_TriHexCore/system/INDEX.md` | - |
+| **System** | `50_CHL/system/INDEX.md` | - |
 
 ### 運用ドキュメント
 
@@ -75,7 +75,7 @@
 ## 🌗 TriHex Breath Status
 
 **Integration:** 朝霧 × TriHexΦ統合モデル稼働中  
-**Blueprint:** [Breath Blueprint](10_TriHexCore/00_CORE/TriHex_Breath_Blueprint.md)  
+**Blueprint:** [Breath Blueprint](50_CHL/00_CORE/TriHex_Breath_Blueprint.md)  
 **Dashboard:** [Breath Dashboard](breath.md)
 
 **KPI:**

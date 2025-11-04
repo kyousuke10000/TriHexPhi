@@ -147,7 +147,29 @@ create index if not exists idx_kyoen_links_group on kyoen_links(line_group_id);
 comment on table kyoen_links is 'LINEで共有されたリンクを保存';
 
 -- ========================================
--- 7. タスク管理テーブル（オプション）
+-- 7. Push Queue（配信キュー）テーブル
+-- ========================================
+
+create table if not exists kyoen_push_queue (
+  id uuid primary key default gen_random_uuid(),
+  to_user_id text not null,
+  payload jsonb not null,
+  status text check (status in ('pending', 'sent', 'error')) default 'pending',
+  sent_at timestamptz,
+  error text,
+  created_at timestamptz default now(),
+  retry_count int default 0,
+  meta jsonb
+);
+
+-- インデックス
+create index if not exists idx_kyoen_push_queue_status on kyoen_push_queue(status);
+create index if not exists idx_kyoen_push_queue_created on kyoen_push_queue(created_at desc);
+
+comment on table kyoen_push_queue is 'LINE Push APIの配信キュー';
+
+-- ========================================
+-- 8. タスク管理テーブル（オプション）
 -- ========================================
 
 create table if not exists kyoen_tasks (
@@ -172,7 +194,7 @@ create index if not exists idx_kyoen_tasks_due on kyoen_tasks(due_date);
 comment on table kyoen_tasks is 'タスク管理';
 
 -- ========================================
--- 8. RLS (Row Level Security) 設定
+-- 9. RLS (Row Level Security) 設定
 -- ========================================
 
 -- 一旦全てのテーブルでRLSを無効化（開発中）
@@ -184,10 +206,11 @@ alter table kyoen_rsvp disable row level security;
 alter table kyoen_meetings disable row level security;
 alter table kyoen_cards disable row level security;
 alter table kyoen_links disable row level security;
+alter table kyoen_push_queue disable row level security;
 alter table kyoen_tasks disable row level security;
 
 -- ========================================
--- 9. 便利なビュー
+-- 10. 便利なビュー
 -- ========================================
 
 -- イベント参加状況サマリ
@@ -224,7 +247,7 @@ limit 100;
 comment on view kyoen_recent_messages is '最近100件のメッセージ';
 
 -- ========================================
--- 10. 初期データ（テスト用）
+-- 11. 初期データ（テスト用）
 -- ========================================
 
 -- テストイベント
@@ -234,7 +257,7 @@ values
 on conflict do nothing;
 
 -- ========================================
--- 11. 関数: 古いデータの削除（オプション）
+-- 12. 関数: 古いデータの削除（オプション）
 -- ========================================
 
 create or replace function cleanup_old_messages()
@@ -249,7 +272,7 @@ $$ language plpgsql;
 comment on function cleanup_old_messages is '3ヶ月以上前のメッセージを削除（定期実行推奨）';
 
 -- ========================================
--- 12. トリガー: updated_at自動更新
+-- 13. トリガー: updated_at自動更新
 -- ========================================
 
 create or replace function update_updated_at()
@@ -281,7 +304,7 @@ create trigger kyoen_tasks_updated_at
   execute function update_updated_at();
 
 -- ========================================
--- 完了！
+-- 14. 完了！
 -- ========================================
 
 -- 確認: テーブル一覧

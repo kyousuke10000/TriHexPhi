@@ -1,0 +1,1655 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>ツクツク!!! | モノ・コト・ゴチソウ・オメカシ・チョクバイの「おすそわけマーケットプレイス」</title>
+	<meta name="description" content="ツクツク!!!はモノ（物販）、コト（体験）、ゴチソウ（グルメ）、オメカシ（美容）、チョクバイ（産地直送）のショッピングと予約サイト。みんなでシェアし合うおすそわけポイント機能を搭載した総合マーケットプレイスです。お友達と誘って一緒にお互いにポイントのおすそわけをし合いましょう！">
+	<meta name="keywords" content="ツクツク,つくつく,通販,ショッピング,グルメ,クーポン,チケット,マーケットプレイス,ポイント,おすそわけ,ウェブチケット,モノ,コト,ゴチソウ,オメカシ,チョクバイ,阿比留章雄">
+	<meta property="og:url" content="https://home.tsuku2.jp/" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="ツクツク!!! | モノ・コト・ゴチソウ・オメカシ・チョクバイの「おすそわけマーケットプレイス」" />
+	<meta property="og:description" content="ツクツク!!!はモノ（物販）、コト（体験）、ゴチソウ（グルメ）、オメカシ（美容）、チョクバイ（産地直送）のショッピングと予約サイト。みんなでシェアし合うおすそわけポイント機能を搭載した総合マーケットプレイスです。お友達と誘って一緒にお互いにポイントのおすそわけをし合いましょう！" />
+	<meta name="google-site-verification" content="FdEBuBNGQaoHbB4YfQhtwNmGuDGfTNleD-vJiyYFxEo" />
+	<!-- Twitter Card -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="ツクツク!!! | モノ・コト・ゴチソウ・オメカシ・チョクバイの「おすそわけマーケットプレイス」">
+	<meta name="twitter:description" content="ツクツク!!!はモノ（物販）、コト（体験）、ゴチソウ（グルメ）、オメカシ（美容）、チョクバイ（産地直送）のショッピングと予約サイト。みんなでシェアし合うおすそわけポイント機能を搭載した総合マーケットプレイスです。お友達と誘って一緒にお互いにポイントのおすそわけをし合いましょう！">
+	<meta name="twitter:image" content="https://home.tsuku2.jp/img/spring_top_2021.jpg?1762036680">
+	<link rel="apple-touch-icon" sizes="180x180" href="https://home.tsuku2.jp/apple-touch-icon.png" />
+	<link rel="icon" href="https://home.tsuku2.jp/favicon.ico" />
+	<link rel="manifest" href="https://home.tsuku2.jp/manifest.json" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+	<link href="https://fonts.googleapis.com/css2? Noto+Sans+JP:wght@100&family=Noto+Sans+JP:wght@100&display=swap" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&amp;family=Roboto+Condensed:wght@300;400;700&amp;display=swap" rel="stylesheet" />
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" />
+	<link rel="stylesheet" href="https://use.typekit.net/xag3nlm.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css" />
+	<link rel="stylesheet" href="assets/css/top/style.css?20251016161816" />
+	<link rel="stylesheet" href="assets/css/header_footer/style.css?20251016161816" />
+	<link rel="stylesheet" href="assets/css/top/home.css?20251016161816" />
+	<link rel="stylesheet" href="assets/css/top/top.css?20251016161816" />
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q8HCF284FH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-Q8HCF284FH');
+  </script>
+</head>
+
+<body>
+	<script src="./assets/js/plugins/underscore.js"></script>
+
+
+<header class="l-header">
+	<div style="box-shadow: 0 0 1.4rem rgba(0, 0, 0, 0.08)">
+		<div class="hidden md-block" style="background-color: #eee">
+			<ul class="flex-center container-1320 text-12">
+				<li class="header-top-item">
+					<a href="https://home.tsuku2.jp" class="flex-center header-top-anchor header-top-anchor-home hover-ease"> ホーム </a>
+				</li>
+				<li class="header-top-item">
+					<a href="https://ec.tsuku2.jp" class="flex-center header-top-anchor header-top-anchor-ec hover-ease" target="_blank"> 通販 </a>
+				</li>
+				<li class="header-top-item">
+					<a href="https://ticket.tsuku2.jp" class="flex-center header-top-anchor header-top-anchor-webticket hover-ease" target="_blank"> ウェブチケット </a>
+				</li>
+				<li class="header-top-item">
+					<a href="https://event.tsuku2.jp" class="flex-center header-top-anchor header-top-anchor-event hover-ease" target="_blank"> イベチケ </a>
+				</li>
+				<li class="header-top-item">
+					<a href="https://gourmet.tsuku2.jp" class="flex-center header-top-anchor header-top-anchor-gourmet hover-ease" target="_blank"> グルメ </a>
+				</li>
+				<li class="header-top-item">
+					<a href="https://beauty.tsuku2.jp" class="flex-center header-top-anchor header-top-anchor-beauty hover-ease" target="_blank"> ビューティー </a>
+				</li>
+				<li class="header-top-item">
+					<a href="https://farm.tsuku2.jp" class="flex-center header-top-anchor header-top-anchor-farm hover-ease" target="_blank"> ファーム </a>
+				</li>
+			</ul>
+		</div>
+		<div class="header-middle container-1320 flex justify-between relative">
+			<div class="flex">
+				<div class="logo">
+					<a class="logo-anchor hover-opacity" href="/">
+						<img src="assets/img/logo.svg" alt="ツクツク" />
+					</a>
+				</div>
+				<div class="header-middle-search hidden md-block">
+					<div class="header-middle-search-wrapper">
+						<!-- 検索ボックス(PC) ここから -->
+						<form class="searchbox" name="search" action="javascript:searchSubmitPC();">
+							<div class="searchbox-input-area">
+								<input type="text" name="search-word" id="search-word-pc" placeholder="商品・お店を検索" data-suggest="#suggest-header">
+							</div>
+							<div class="searchbox-submit-area">
+								<button type="button" onclick="searchSubmitPC();">
+									<svg class="header-middle-search-btn-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19">
+										<text data-name="" transform="translate(1 17)" fill="#333" font-size="18" font-family="simple-line-icons">
+											<tspan x="0" y="0"></tspan>
+										</text>
+									</svg>
+								</button>
+							</div>
+						</form>
+						<!-- 検索ボックス(PC) ここまで -->
+						<div class="search-suggest" id="suggest-header" style="height:0px;">
+							<div class="suggest-wrap">
+								<ul class="suggest-items">
+									<li class="suggest-keyword">
+										<p class="keyword keywordSearch"></p>
+										<p class="type">キーワード検索</p>
+									</li>
+									<script type="text/html" id="global-tag-list">
+										<li class="suggest-item">
+											<p class="keyword" data-tag-cd="<%= no %>"><%= tag_name %></p>
+											<p class="type" data-contents="<%= type %>"><%= contents %>タグ検索：<%= category_list %></p>
+										</li>
+									</script>
+								</ul>    
+							</div>
+						</div>
+					</div>
+
+					<div class="header-middle-search-user md-mt-10 text-13">
+													<a href="https://home.tsuku2.jp/signup.php" class="text-red-1 font-bold">新規登録</a> / <a href="https://home.tsuku2.jp/signin.php?redirect_url=https://home.tsuku2.jp/mypage/" class="text-red-1 font-bold">ログイン</a> してお買い物するとポイントがたまる！
+											</div>
+				</div>
+			</div>
+			<div class="header-middle-menu mt-auto">
+				<div class="hidden md-flex">
+					<a href="https://home.tsuku2.jp/mypage/wishList.php" class="flex-center flex-col ml-25 hover-opacity">
+						<svg xmlns="http://www.w3.org/2000/svg" width="18.573" height="23.5" viewBox="0 0 18.573 23.5">
+							<path d="M20.936-26.25a2.269,2.269,0,0,1,1.69.745,2.407,2.407,0,0,1,.716,1.719V-4.25L14.806-7.917,6.27-4.25V-23.786a2.407,2.407,0,0,1,.716-1.719,2.269,2.269,0,0,1,1.69-.745Z" transform="translate(-5.52 27)" fill="none" stroke="#666" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" />
+						</svg>
+						<span class="block mt-10">お気に入り</span>
+					</a>
+					<a href="https://home.tsuku2.jp/mypage/odrList.php" class="flex-center flex-col ml-25 hover-opacity">
+						<svg xmlns="http://www.w3.org/2000/svg" width="23.719" height="23.484" viewBox="0 0 23.719 23.484">
+							<path d="M21.141-.258H1.641v-15H7.664l1.523-1.453-.047-.047h-7.5a1.43,1.43,0,0,0-1.066.445,1.461,1.461,0,0,0-.434,1.055v15A1.478,1.478,0,0,0,.34.5a1.486,1.486,0,0,0,.539.539,1.478,1.478,0,0,0,.762.2h19.5A1.461,1.461,0,0,0,22.2.809a1.43,1.43,0,0,0,.445-1.066V-11.977l-1.5,1.43Zm-14.812-6H7.852A12.463,12.463,0,0,1,10.137-11.6a12.7,12.7,0,0,1,4.453-3.773,12.382,12.382,0,0,1,5.754-1.383q.211,0,.773.023l-2.742,2.742a.721.721,0,0,0-.117.152.69.69,0,0,0-.07.176.819.819,0,0,0-.023.2.684.684,0,0,0,.023.188,1.029,1.029,0,0,0,.07.176.626.626,0,0,0,.117.164.5.5,0,0,0,.234.164.958.958,0,0,0,.3.047.771.771,0,0,0,.188-.023.69.69,0,0,0,.176-.07.721.721,0,0,0,.152-.117l4.43-4.547-4.43-4.547a.715.715,0,0,0-.527-.211.715.715,0,0,0-.527.211.785.785,0,0,0-.2.34.653.653,0,0,0,0,.387.792.792,0,0,0,.2.328l2.719,2.719h-.7a13.915,13.915,0,0,0-6.527,1.582,14.186,14.186,0,0,0-5.016,4.324A14.089,14.089,0,0,0,6.328-6.258Z" transform="translate(-0.141 22.242)" fill="#666" />
+						</svg>
+						<span class="block mt-10">注文履歴</span>
+					</a>
+					<a href="https://home.tsuku2.jp/mypage/msgReceiveBox.php" class="flex-center flex-col ml-25 hover-opacity relative">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="21" viewBox="0 0 24 21">
+							<path d="M6.727-18.492A13.665,13.665,0,0,1,12-19.5a13.578,13.578,0,0,1,5.262,1.008,9.56,9.56,0,0,1,3.832,2.73A5.822,5.822,0,0,1,22.5-12a5.822,5.822,0,0,1-1.406,3.762,9.56,9.56,0,0,1-3.832,2.73A13.578,13.578,0,0,1,12-4.5h-.633q-.328,0-.562-.012a5.353,5.353,0,0,1-.539-.059l-.82-.117-.539.656q-.117.117-.387.34t-.645.5q-.375.281-.891.6a10.858,10.858,0,0,1-1.008.551,8.146,8.146,0,0,0,.375-1.2,5.21,5.21,0,0,0,.141-1.172l.023-.047V-5.508L5.7-5.93A8.113,8.113,0,0,1,2.6-8.531,5.976,5.976,0,0,1,1.5-12a5.822,5.822,0,0,1,1.406-3.762A9.572,9.572,0,0,1,6.727-18.492ZM12-21a14.894,14.894,0,0,0-6.023,1.207,10.9,10.9,0,0,0-4.371,3.281A7.218,7.218,0,0,0,0-12,7.414,7.414,0,0,0,1.313-7.746a9.655,9.655,0,0,0,3.7,3.152A.048.048,0,0,1,5-4.559a.048.048,0,0,0-.012.035A7.436,7.436,0,0,1,3.8-.937.688.688,0,0,0,3.75-.68a.655.655,0,0,0,.2.48.655.655,0,0,0,.48.2h.188a7.944,7.944,0,0,0,2.32-.844A14.041,14.041,0,0,0,8.965-2.109a7.077,7.077,0,0,0,1.09-.984A8.644,8.644,0,0,0,11.367-3H12a14.894,14.894,0,0,0,6.023-1.207,10.9,10.9,0,0,0,4.371-3.281A7.218,7.218,0,0,0,24-12a7.613,7.613,0,0,0-2.859-5.836,13.1,13.1,0,0,0-7.477-3.07A15.061,15.061,0,0,0,12-21Z" transform="translate(0 21)" fill="#666" />
+						</svg>
+						<span class="block mt-10">お知らせ</span>
+					</a>
+					<a href="https://home.tsuku2.jp/mypage/" class="flex-center flex-col ml-25 hover-opacity">
+						<svg xmlns="http://www.w3.org/2000/svg" width="23.977" height="23.977" viewBox="0 0 23.977 23.977">
+							<path d="M12-21a5.378,5.378,0,0,1,1.887.363,6.636,6.636,0,0,1,1.7.914,5.5,5.5,0,0,1,1.2,1.219,2.218,2.218,0,0,1,.469,1.254v3.75a9.269,9.269,0,0,1-.562,2.977,5.109,5.109,0,0,1-1.664,2.484,1.755,1.755,0,0,0-.328.387,1.542,1.542,0,0,0-.2.469,1.554,1.554,0,0,0-.035.5,1.461,1.461,0,0,0,.867,1.2l6.539,3.094.047.012a.458.458,0,0,1,.094.035,1.147,1.147,0,0,1,.117.07.843.843,0,0,1,.129.105.86.86,0,0,1,.117.152.637.637,0,0,1,.082.234,1.856,1.856,0,0,1,.023.3V-.023L1.5,0V-1.523a.918.918,0,0,1,.633-.867L8.719-5.508a1.427,1.427,0,0,0,.855-1.184,1.388,1.388,0,0,0-.551-1.348,5.566,5.566,0,0,1-1.676-2.52,8.785,8.785,0,0,1-.6-2.941v-3.75A2.588,2.588,0,0,1,7.523-18.9a6.388,6.388,0,0,1,2.016-1.488A5.553,5.553,0,0,1,12-21Zm0-1.5a7.131,7.131,0,0,0-3.2.785A7.485,7.485,0,0,0,6.234-19.7,3.928,3.928,0,0,0,5.25-17.25v3.75A10.5,10.5,0,0,0,5.965-10,7,7,0,0,0,8.086-6.867L1.5-3.75a1.286,1.286,0,0,0-.164.07q-.094.047-.352.211a4.628,4.628,0,0,0-.457.328,1.868,1.868,0,0,0-.363.41A.838.838,0,0,0,0-2.273V0A1.422,1.422,0,0,0,.434,1.043,1.449,1.449,0,0,0,1.5,1.477h21a1.422,1.422,0,0,0,1.043-.434A1.422,1.422,0,0,0,23.977,0V-2.273a.912.912,0,0,0-.152-.48,1.617,1.617,0,0,0-.375-.422q-.223-.176-.434-.316a2.4,2.4,0,0,0-.375-.211L22.5-3.75,15.961-6.867a6.535,6.535,0,0,0,2.1-3.047A10.776,10.776,0,0,0,18.75-13.5v-3.75a3.489,3.489,0,0,0-.6-1.863,6.844,6.844,0,0,0-1.535-1.7,7.955,7.955,0,0,0-2.18-1.219A6.875,6.875,0,0,0,12-22.5Z" transform="translate(0 22.5)" fill="#666" />
+						</svg>
+						<span class="block mt-10">マイページ</span>
+					</a>
+				</div>
+				<div class="md-hidden flex">
+					<button class="ml-20 js-show-modalClass js-show-modal-overlay" data-target-class="searchbox" id="button-open-search" data-target-modal="modal-search">
+						<svg style="width: 4rem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.056 19">
+							<path d="M18.852.167,13.081-5.641a7.18,7.18,0,0,0,1.726-4.75,7.288,7.288,0,0,0-.993-3.729,7.32,7.32,0,0,0-2.709-2.7,7.32,7.32,0,0,0-3.729-.993,7.271,7.271,0,0,0-3.72.993,7.341,7.341,0,0,0-2.7,2.7,7.288,7.288,0,0,0-.993,3.729A7.288,7.288,0,0,0,.956-6.661a7.341,7.341,0,0,0,2.7,2.7,7.288,7.288,0,0,0,3.729.993,7.2,7.2,0,0,0,4.861-1.818L18,1a.587.587,0,0,0,.427.186.571.571,0,0,0,.417-.176.581.581,0,0,0,.176-.427A.566.566,0,0,0,18.852.167ZM7.385-4.138A6.1,6.1,0,0,1,4.24-4.982,6.236,6.236,0,0,1,1.967-7.264a6.118,6.118,0,0,1-.835-3.126,6.118,6.118,0,0,1,.835-3.126A6.236,6.236,0,0,1,4.24-15.8a6.083,6.083,0,0,1,3.136-.844,6.083,6.083,0,0,1,3.136.844,6.236,6.236,0,0,1,2.273,2.282,6.118,6.118,0,0,1,.835,3.126,6.178,6.178,0,0,1-.167,1.429,6.054,6.054,0,0,1-.473,1.317,6.9,6.9,0,0,1-.733,1.16,5.753,5.753,0,0,1-.965.974,6.588,6.588,0,0,1-1.15.733A6.054,6.054,0,0,1,8.813-4.3,6.178,6.178,0,0,1,7.385-4.138Z" transform="translate(0.037 17.813)" fill="#333" />
+						</svg>
+					</button>
+					<button class="ml-20 js-show-modalClass js-show-modal-overlay" data-target-class="groupList">
+						<div class="svg-wrapper-black-mark">
+							<img src="assets/img/tsukutsuku_sitelogo_black_mark.svg" alt="" />
+						</div>
+					</button>
+					<button class="ml-20 js-show-drawerMenu">
+						<svg style="width: 5rem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 10">
+							<path d="M3.32-5H16.68a.852.852,0,0,0,.82-.82.86.86,0,0,0-.82-.859H3.32a.86.86,0,0,0-.82.859A.852.852,0,0,0,3.32-5Zm0-4.18H16.68A.825.825,0,0,0,17.5-10a.825.825,0,0,0-.82-.82H3.32A.825.825,0,0,0,2.5-10,.825.825,0,0,0,3.32-9.18Zm-.82-5a.86.86,0,0,0,.82.859H16.68a.86.86,0,0,0,.82-.859.852.852,0,0,0-.82-.82H3.32A.852.852,0,0,0,2.5-14.18Z" transform="translate(-2.5 15)" fill="#333" />
+						</svg>
+					</button>
+				</div>
+			</div>
+		</div>
+		<div class="md-hidden">
+			<div class="flex justify-end p-10">
+									<a href="https://home.tsuku2.jp/signup.php?redirect_url=https://home.tsuku2.jp" class="text-red-1 font-bold ml-10 mr-5">新規登録</a> /
+					<a href="https://home.tsuku2.jp/signin.php?redirect_url=https://home.tsuku2.jp/mypage/" class="text-red-1 font-bold ml-5">ログイン</a>
+							</div>
+		</div>
+	</div>
+	<!-- SP用メニュー -->
+				<div class="md-hidden">
+										<div class="tk2-admin-news js-admin-news" data-priority="first">
+					<div class="tk2-admin-news-inner">
+						<dl class="tk2-admin-news-lists js-admin-news-lists">
+														<div class="js-admin-news-unit">
+								<dt>
+									<div class="tk2-admin-news-headline">
+										<div class="tk2-admin-news-headline-inner js-admin-news-headline" data-newsid="34">不正利用懸念に伴うカード決済停止のお知らせ</div>
+									</div>
+									<button class="tk2-admin-news-prev js-admin-news-prev">
+										<i class="fas fa-angle-left"></i>
+									</button>
+									<button class="tk2-admin-news-next js-admin-news-next">
+										<i class="fas fa-angle-right"></i>
+									</button>
+								</dt>
+								<dd class="js-admin-news-content-area" style="display:none;">
+									<div class="tk2-admin-news-content-outer">
+										<div class="tk2-admin-news-content js-admin-news-content">平素より「ツクツク!!!」をご利用いただき誠にありがとうございます。<br>
+TSUKU TSUKU株式会社 ツクツク!!!運営事務局でございます。<br>
+<br>
+この度、弊社が運営するECモール「ツクツク!!!」におけるクレジットカード決済につきまして、決済代行会社を通じ、カード会社より「カード情報の不正利用の懸念がある」との連絡を受けました。<br>
+<br>
+現時点では、弊社システムへの不正アクセス・カードの不正利用が発生したと確定しているものではございませんが、セキュリティ保護を最優先に、鋭意調査を進めております。<br>
+誠にご不便をお掛けいたしますが、調査が完了するまでの間、クレジットカードによるお支払いは、一時的に停止させていただきます。<br>
+※その他決済方法（銀行振込、ポイント利用 等）は通常通りご利用いただけます。<br>
+<br>
+ご利用いただいております皆様におかれましては、念のためクレジットカードのご利用明細をご確認いただき、万一身に覚えのない利用があった場合には、速やかにカード発行会社までご連絡くださいますようお願い申し上げます。<br>
+その他、本件に関するお問い合わせは下記よりお問い合わせいただきますようお願いいたします。<br>
+<br>
+連絡窓口：運営事務局へのお問い合わせ<br>
+https://home.tsuku2.jp/doContact.php<br>
+担当：ツクツク!!!運営事務局　サポートデスク担当<br>
+<br>
+皆様には、多大なるご心配とご不便をお掛けいたしますことを深くお詫び申し上げます。<br>
+今後、調査の進捗および対応方針については、速やかにご案内いたします。<br>
+<br>
+<br>
+TSUKU TSUKU株式会社<br>
+ツクツク!!!運営事務局</div>
+									</div>
+								</dd>
+							</div>							
+													</dl>
+						<div class="tk2-admin-news-close-outer">
+							<button class="tk2-admin-news-close js-admin-news-close"></button>
+						</div>
+					</div>
+				</div>
+						<div class="categoryMenu">
+				<div class="categoryMenu-item js-toggleNextCategory">商品カテゴリ</div>
+				<div class="categoryMenu-item-next js-toggleCategory">
+					<div class="relative w-full">
+						<div class="flex">
+							<div class="categoryMenu-item-col">
+								<div class="categoryMenu-item-2 js-accordion-scope">
+									<p class="categoryMenu-item-2-ttl js-accordion-trigger">ショップ</p>
+									<div class="categoryMenu-item-2-next hidden js-accordion-body">
+																					<a class="categoryMenu-item-3" href="https://home.tsuku2.jp/searchShop.php?category1=1">ショッピング</a>
+																					<a class="categoryMenu-item-3" href="https://home.tsuku2.jp/searchShop.php?category1=2">医療・健康・介護</a>
+																					<a class="categoryMenu-item-3" href="https://home.tsuku2.jp/searchShop.php?category1=3">引越・運送</a>
+																					<a class="categoryMenu-item-3" href="https://home.tsuku2.jp/searchShop.php?category1=4">グルメ</a>
+																					<a class="categoryMenu-item-3" href="https://home.tsuku2.jp/searchShop.php?category1=5">出産・育児・教育</a>
+																					<a class="categoryMenu-item-3" href="https://home.tsuku2.jp/searchShop.php?category1=6">趣味・スポーツ</a>
+																					<a class="categoryMenu-item-3" href="https://home.tsuku2.jp/searchShop.php?category1=7">エンターテイメント</a>
+																					<a class="categoryMenu-item-3" href="https://home.tsuku2.jp/searchShop.php?category1=8">各種サービス</a>
+																					<a class="categoryMenu-item-3" href="https://home.tsuku2.jp/searchShop.php?category1=9">公共機関・団体</a>
+																					<a class="categoryMenu-item-3" href="https://home.tsuku2.jp/searchShop.php?category1=10">旅行・宿泊</a>
+																					<a class="categoryMenu-item-3" href="https://home.tsuku2.jp/searchShop.php?category1=11">住まい</a>
+																					<a class="categoryMenu-item-3" href="https://home.tsuku2.jp/searchShop.php?category1=12">美容・ファッション</a>
+																					<a class="categoryMenu-item-3" href="https://home.tsuku2.jp/searchShop.php?category1=13">自動車・バイク</a>
+																					<a class="categoryMenu-item-3" href="https://home.tsuku2.jp/searchShop.php?category1=14">冠婚葬祭</a>
+																					<a class="categoryMenu-item-3" href="https://home.tsuku2.jp/searchShop.php?category1=15">習い事・資格・求人</a>
+																					<a class="categoryMenu-item-3" href="https://home.tsuku2.jp/searchShop.php?category1=16">ペット</a>
+																					<a class="categoryMenu-item-3" href="https://home.tsuku2.jp/searchShop.php?category1=17">金融・保険</a>
+																					<a class="categoryMenu-item-3" href="https://home.tsuku2.jp/searchShop.php?category1=18">建設・不動産</a>
+																					<a class="categoryMenu-item-3" href="https://home.tsuku2.jp/searchShop.php?category1=19">イベント</a>
+																			</div>
+								</div>
+								<div class="categoryMenu-item-2 js-accordion-scope">
+									<p class="categoryMenu-item-2-ttl js-accordion-trigger">通販</p>
+									<div class="categoryMenu-item-2-next hidden js-accordion-body">
+																					<a class="categoryMenu-item-3" href="https://ec.tsuku2.jp/categories/2" target="_blank">食品・ドリンク</a>
+																					<a class="categoryMenu-item-3" href="https://ec.tsuku2.jp/categories/3" target="_blank">住まい・暮らし・インテリア</a>
+																					<a class="categoryMenu-item-3" href="https://ec.tsuku2.jp/categories/5" target="_blank">美容・健康・医療</a>
+																					<a class="categoryMenu-item-3" href="https://ec.tsuku2.jp/categories/6" target="_blank">スポーツ・アウトドア・車</a>
+																					<a class="categoryMenu-item-3" href="https://ec.tsuku2.jp/categories/7" target="_blank">趣味・おもちゃ・ゲーム</a>
+																					<a class="categoryMenu-item-3" href="https://ec.tsuku2.jp/categories/8" target="_blank">パソコン・電化製品</a>
+																					<a class="categoryMenu-item-3" href="https://ec.tsuku2.jp/categories/9" target="_blank">アート・工芸品</a>
+																					<a class="categoryMenu-item-3" href="https://ec.tsuku2.jp/categories/4" target="_blank">ベビー・キッズ・マタニティー</a>
+																					<a class="categoryMenu-item-3" href="https://ec.tsuku2.jp/categories/1" target="_blank">ファッション</a>
+																					<a class="categoryMenu-item-3" href="https://ec.tsuku2.jp/categories/10" target="_blank">サービス</a>
+																					<a class="categoryMenu-item-3" href="https://ec.tsuku2.jp/categories/23" target="_blank">生き物</a>
+																			</div>
+								</div>
+								<div class="categoryMenu-item-2 js-accordion-scope">
+									<p class="categoryMenu-item-2-ttl js-accordion-trigger">ウェブチケット</p>
+									<div class="categoryMenu-item-2-next hidden js-accordion-body">
+																					<a class="categoryMenu-item-3" href="https://ticket.tsuku2.jp/events-catalog?pc=3" target="_blank">グルメ</a>
+																					<a class="categoryMenu-item-3" href="https://ticket.tsuku2.jp/events-catalog?pc=2" target="_blank">レッスン</a>
+																					<a class="categoryMenu-item-3" href="https://ticket.tsuku2.jp/events-catalog?pc=4" target="_blank">サービス</a>
+																					<a class="categoryMenu-item-3" href="https://ticket.tsuku2.jp/events-catalog?pc=1" target="_blank">イベント</a>
+																					<a class="categoryMenu-item-3" href="https://ticket.tsuku2.jp/events-catalog?pc=5" target="_blank">旅行・レジャー</a>
+																			</div>
+								</div>
+					            								<div class="categoryMenu-item-2 js-accordion-scope">
+									<p class="categoryMenu-item-2-ttl js-accordion-trigger">イベチケ</p>
+									<div class="categoryMenu-item-2-next hidden js-accordion-body">
+																					<a class="categoryMenu-item-3" href="https://event.tsuku2.jp/ticket?event_category=1&event_category=2&event_category=3&event_category=4&event_category=5&event_category=6&event_category=7&event_category=8&event_category=9&event_category=10&event_category=11&event_category=12&event_category=13&event_category=14&event_category=15&event_category=16&event_category=17&event_category=18&event_category=19&event_category=20&event_category=21&event_category=22&event_category=23&event_category=24&event_category=25&event_category=26&event_category=27" target="_blank">ライブ・コンサート</a>
+																					<a class="categoryMenu-item-3" href="https://event.tsuku2.jp/ticket?event_category=42&event_category=43&event_category=44&event_category=45&event_category=46&event_category=47&event_category=48&event_category=49&event_category=50&event_category=51&event_category=52&event_category=53&event_category=54&event_category=55&event_category=56&event_category=57&event_category=58&event_category=59&event_category=60&event_category=61" target="_blank">イベント</a>
+																			</div>
+								</div>
+															</div>
+							<div class="categoryMenu-item-col">
+								<div class="categoryMenu-item-2 js-accordion-scope">
+									<p class="categoryMenu-item-2-ttl js-accordion-trigger">グルメ</p>
+									<div class="categoryMenu-item-2-next hidden js-accordion-body">
+																					<a class="categoryMenu-item-3" href="https://gourmet.tsuku2.jp/search-results?jb=1" target="_blank">和食</a>
+																					<a class="categoryMenu-item-3" href="https://gourmet.tsuku2.jp/search-results?jb=2" target="_blank">カフェ・スイーツ</a>
+																					<a class="categoryMenu-item-3" href="https://gourmet.tsuku2.jp/search-results?jb=3" target="_blank">イタリアン・フレンチ</a>
+																					<a class="categoryMenu-item-3" href="https://gourmet.tsuku2.jp/search-results?jb=4" target="_blank">洋食・西洋料理</a>
+																					<a class="categoryMenu-item-3" href="https://gourmet.tsuku2.jp/search-results?jb=5" target="_blank">中華</a>
+																					<a class="categoryMenu-item-3" href="https://gourmet.tsuku2.jp/search-results?jb=6" target="_blank">居酒屋</a>
+																					<a class="categoryMenu-item-3" href="https://gourmet.tsuku2.jp/search-results?jb=7" target="_blank">バー</a>
+																					<a class="categoryMenu-item-3" href="https://gourmet.tsuku2.jp/search-results?jb=8" target="_blank">アジアン</a>
+																					<a class="categoryMenu-item-3" href="https://gourmet.tsuku2.jp/search-results?jb=9" target="_blank">ラーメン・麺類</a>
+																					<a class="categoryMenu-item-3" href="https://gourmet.tsuku2.jp/search-results?jb=10" target="_blank">鍋</a>
+																					<a class="categoryMenu-item-3" href="https://gourmet.tsuku2.jp/search-results?jb=11" target="_blank">焼肉・ステーキ</a>
+																					<a class="categoryMenu-item-3" href="https://gourmet.tsuku2.jp/search-results?jb=12" target="_blank">日本料理・郷土料理</a>
+																					<a class="categoryMenu-item-3" href="https://gourmet.tsuku2.jp/search-results?jb=13" target="_blank">宴会・エンターテイメント</a>
+																					<a class="categoryMenu-item-3" href="https://gourmet.tsuku2.jp/search-results?jb=14" target="_blank">ファーストフード・ファミレス</a>
+																					<a class="categoryMenu-item-3" href="https://gourmet.tsuku2.jp/search-results?jb=15" target="_blank">その他</a>
+																					<a class="categoryMenu-item-3" href="https://gourmet.tsuku2.jp/search-results?jb=16" target="_blank">カレー</a>
+																			</div>
+								</div>
+								<div class="categoryMenu-item-2 js-accordion-scope">
+									<p class="categoryMenu-item-2-ttl js-accordion-trigger">ビューティー</p>
+									<div class="categoryMenu-item-2-next hidden js-accordion-body">
+																																	<a class="categoryMenu-item-3" href="https://beauty.tsuku2.jp/hair/search?category_id=1" target="_blank">ヘアサロン・メイク</a>
+																																												<a class="categoryMenu-item-3" href="https://beauty.tsuku2.jp/nail/search?category_id=2" target="_blank">ネイル・まつげ</a>
+																																												<a class="categoryMenu-item-3" href="https://beauty.tsuku2.jp/esthe/search?category_id=3" target="_blank">エステ</a>
+																																												<a class="categoryMenu-item-3" href="https://beauty.tsuku2.jp/relax/search?category_id=4" target="_blank">リラクゼーション・その他</a>
+																																												<a class="categoryMenu-item-3" href="https://beauty.tsuku2.jp/chiro/search?category_id=6" target="_blank">鍼灸・整体</a>
+																														</div>
+								</div>
+								<div class="categoryMenu-item-2 js-accordion-scope">
+									<p class="categoryMenu-item-2-ttl js-accordion-trigger">ファーム</p>
+									<div class="categoryMenu-item-2-next hidden js-accordion-body">
+																					<a class="categoryMenu-item-3" href="https://farm.tsuku2.jp/list_item.php?c1=1" target="_blank">野菜</a>
+																					<a class="categoryMenu-item-3" href="https://farm.tsuku2.jp/list_item.php?c1=2" target="_blank">肉類</a>
+																					<a class="categoryMenu-item-3" href="https://farm.tsuku2.jp/list_item.php?c1=3" target="_blank">果物</a>
+																					<a class="categoryMenu-item-3" href="https://farm.tsuku2.jp/list_item.php?c1=4" target="_blank">魚介類</a>
+																					<a class="categoryMenu-item-3" href="https://farm.tsuku2.jp/list_item.php?c1=5" target="_blank">卵・乳製品</a>
+																					<a class="categoryMenu-item-3" href="https://farm.tsuku2.jp/list_item.php?c1=6" target="_blank">お茶</a>
+																					<a class="categoryMenu-item-3" href="https://farm.tsuku2.jp/list_item.php?c1=7" target="_blank">酒類</a>
+																					<a class="categoryMenu-item-3" href="https://farm.tsuku2.jp/list_item.php?c1=8" target="_blank">調味料</a>
+																					<a class="categoryMenu-item-3" href="https://farm.tsuku2.jp/list_item.php?c1=9" target="_blank">米・穀類</a>
+																					<a class="categoryMenu-item-3" href="https://farm.tsuku2.jp/list_item.php?c1=10" target="_blank">加工品</a>
+																			</div>
+								</div>
+							</div>
+						</div>
+						<button class="btn-close flex-center js-close-categoryMenu">
+							<svg style="width: .93rem;" class="mr-6" xmlns="http://www.w3.org/2000/svg" width="9.313" height="9.313" viewBox="0 0 9.313 9.313">
+								<path d="M4.656-11.719.938-8,4.656-4.281l-.937.938L0-7.062-3.719-3.344l-.937-.937L-.937-8l-3.719-3.719.938-.937L0-8.937l3.719-3.719Z" transform="translate(4.656 12.656)" fill="#333" />
+							</svg>
+							閉じる
+						</button>
+					</div>
+				</div>
+				<div class="categoryMenu-item js-toggleNextCategory">特集・キャン<br clas="md-hidden" />ペーン一覧</div>
+				<div class="categoryMenu-item-next js-toggleCategory">
+					<div class="relative w-full">
+																					<a class="categoryMenu-item-feature" href="https://ec.tsuku2.jp/events/20251001000001" target="_blank">お風呂グッズ特集</a>
+																												<a class="categoryMenu-item-feature" href="https://ec.tsuku2.jp/events/20241118000001" target="_blank">沖縄のお取り寄せグルメ特集</a>
+																												<a class="categoryMenu-item-feature" href="https://ec.tsuku2.jp/events/20241118000002" target="_blank">新潟のお取り寄せグルメ特集</a>
+																												<a class="categoryMenu-item-feature" href="https://ec.tsuku2.jp/events/20231101000004" target="_blank">パパっと完成！疲れた時の時短ごはん特集</a>
+																												<a class="categoryMenu-item-feature" href="https://ec.tsuku2.jp/events/20231101000005" target="_blank">ごはんおかわり！ごはんのお供特集</a>
+																			<button class="btn-close flex-center js-close-categoryMenu">
+							<svg class="mr-6" xmlns="http://www.w3.org/2000/svg" width="9.313" height="9.313" viewBox="0 0 9.313 9.313">
+								<path d="M4.656-11.719.938-8,4.656-4.281l-.937.938L0-7.062-3.719-3.344l-.937-.937L-.937-8l-3.719-3.719.938-.937L0-8.937l3.719-3.719Z" transform="translate(4.656 12.656)" fill="#333" />
+							</svg>
+							閉じる
+						</button>
+					</div>
+				</div>
+				<a class="categoryMenu-item" href="https://home.tsuku2.jp/cpnList.php">クーポン</a>
+				<div class="categoryMenu-bgLayer hidden js-close-categoryMenu js-categoryMenu-bgLayer"></div>
+			</div>
+			</div>
+			<!-- PC用メニュー -->
+			<div class="hidden md-block">
+								<div class="tk2-admin-news js-admin-news" data-priority="first">
+					<div class="tk2-admin-news-inner">
+						<dl class="tk2-admin-news-lists js-admin-news-lists">
+														<div class="js-admin-news-unit">
+								<dt>
+									<div class="tk2-admin-news-headline">
+										<div class="tk2-admin-news-headline-inner js-admin-news-headline" data-newsid="34">不正利用懸念に伴うカード決済停止のお知らせ</div>
+									</div>
+									<button class="tk2-admin-news-prev js-admin-news-prev">
+										<i class="fas fa-angle-left"></i>
+									</button>
+									<button class="tk2-admin-news-next js-admin-news-next">
+										<i class="fas fa-angle-right"></i>
+									</button>
+								</dt>
+								<dd class="js-admin-news-content-area" style="display:none;">
+									<div class="tk2-admin-news-content-outer">
+										<div class="tk2-admin-news-content js-admin-news-content">平素より「ツクツク!!!」をご利用いただき誠にありがとうございます。<br>
+TSUKU TSUKU株式会社 ツクツク!!!運営事務局でございます。<br>
+<br>
+この度、弊社が運営するECモール「ツクツク!!!」におけるクレジットカード決済につきまして、決済代行会社を通じ、カード会社より「カード情報の不正利用の懸念がある」との連絡を受けました。<br>
+<br>
+現時点では、弊社システムへの不正アクセス・カードの不正利用が発生したと確定しているものではございませんが、セキュリティ保護を最優先に、鋭意調査を進めております。<br>
+誠にご不便をお掛けいたしますが、調査が完了するまでの間、クレジットカードによるお支払いは、一時的に停止させていただきます。<br>
+※その他決済方法（銀行振込、ポイント利用 等）は通常通りご利用いただけます。<br>
+<br>
+ご利用いただいております皆様におかれましては、念のためクレジットカードのご利用明細をご確認いただき、万一身に覚えのない利用があった場合には、速やかにカード発行会社までご連絡くださいますようお願い申し上げます。<br>
+その他、本件に関するお問い合わせは下記よりお問い合わせいただきますようお願いいたします。<br>
+<br>
+連絡窓口：運営事務局へのお問い合わせ<br>
+https://home.tsuku2.jp/doContact.php<br>
+担当：ツクツク!!!運営事務局　サポートデスク担当<br>
+<br>
+皆様には、多大なるご心配とご不便をお掛けいたしますことを深くお詫び申し上げます。<br>
+今後、調査の進捗および対応方針については、速やかにご案内いたします。<br>
+<br>
+<br>
+TSUKU TSUKU株式会社<br>
+ツクツク!!!運営事務局</div>
+									</div>
+								</dd>
+							</div>							
+													</dl>
+						<div class="tk2-admin-news-close-outer">
+							<button class="tk2-admin-news-close js-admin-news-close"></button>
+						</div>
+					</div>
+				</div>
+					
+
+				<div class="categoryMenu">
+					<div class="flex-center mx-auto" style="width: 980px">
+						<div class="categoryMenu-item js-toggleNextCategory">
+							<div class="categoryMenu-item-name">
+								商品カテゴリ
+								<svg class="ml-10" xmlns="http://www.w3.org/2000/svg" width="5" height="4" viewBox="0 0 5 4">
+									<path d="M2.5,0,5,4H0Z" transform="translate(5 4) rotate(180)" fill="#5e5e5e" />
+								</svg>
+							</div>
+							<div class="categoryMenu-item-2 hidden">
+
+
+								<div class="relative">
+									<a class="categoryMenu-item-2-name-arrow" href="https://home.tsuku2.jp/searchShop.php">ショップ</a>
+									<div class="categoryMenu-item-3 hidden">
+																					<a class="categoryMenu-item-3-name" href="https://home.tsuku2.jp/searchShop.php?category1=1">ショッピング</a>
+																					<a class="categoryMenu-item-3-name" href="https://home.tsuku2.jp/searchShop.php?category1=2">医療・健康・介護</a>
+																					<a class="categoryMenu-item-3-name" href="https://home.tsuku2.jp/searchShop.php?category1=3">引越・運送</a>
+																					<a class="categoryMenu-item-3-name" href="https://home.tsuku2.jp/searchShop.php?category1=4">グルメ</a>
+																					<a class="categoryMenu-item-3-name" href="https://home.tsuku2.jp/searchShop.php?category1=5">出産・育児・教育</a>
+																					<a class="categoryMenu-item-3-name" href="https://home.tsuku2.jp/searchShop.php?category1=6">趣味・スポーツ</a>
+																					<a class="categoryMenu-item-3-name" href="https://home.tsuku2.jp/searchShop.php?category1=7">エンターテイメント</a>
+																					<a class="categoryMenu-item-3-name" href="https://home.tsuku2.jp/searchShop.php?category1=8">各種サービス</a>
+																					<a class="categoryMenu-item-3-name" href="https://home.tsuku2.jp/searchShop.php?category1=9">公共機関・団体</a>
+																					<a class="categoryMenu-item-3-name" href="https://home.tsuku2.jp/searchShop.php?category1=10">旅行・宿泊</a>
+																					<a class="categoryMenu-item-3-name" href="https://home.tsuku2.jp/searchShop.php?category1=11">住まい</a>
+																					<a class="categoryMenu-item-3-name" href="https://home.tsuku2.jp/searchShop.php?category1=12">美容・ファッション</a>
+																					<a class="categoryMenu-item-3-name" href="https://home.tsuku2.jp/searchShop.php?category1=13">自動車・バイク</a>
+																					<a class="categoryMenu-item-3-name" href="https://home.tsuku2.jp/searchShop.php?category1=14">冠婚葬祭</a>
+																					<a class="categoryMenu-item-3-name" href="https://home.tsuku2.jp/searchShop.php?category1=15">習い事・資格・求人</a>
+																					<a class="categoryMenu-item-3-name" href="https://home.tsuku2.jp/searchShop.php?category1=16">ペット</a>
+																					<a class="categoryMenu-item-3-name" href="https://home.tsuku2.jp/searchShop.php?category1=17">金融・保険</a>
+																					<a class="categoryMenu-item-3-name" href="https://home.tsuku2.jp/searchShop.php?category1=18">建設・不動産</a>
+																					<a class="categoryMenu-item-3-name" href="https://home.tsuku2.jp/searchShop.php?category1=19">イベント</a>
+																			</div>
+								</div>
+
+								<div class="relative">
+									<a class="categoryMenu-item-2-name-arrow" href="https://ec.tsuku2.jp/categories/" target="_blank">通販</a>
+									<div class="categoryMenu-item-3 hidden">
+																					<a class="categoryMenu-item-3-name" href="https://ec.tsuku2.jp/categories/2" target="_blank">食品・ドリンク</a>
+																					<a class="categoryMenu-item-3-name" href="https://ec.tsuku2.jp/categories/3" target="_blank">住まい・暮らし・インテリア</a>
+																					<a class="categoryMenu-item-3-name" href="https://ec.tsuku2.jp/categories/5" target="_blank">美容・健康・医療</a>
+																					<a class="categoryMenu-item-3-name" href="https://ec.tsuku2.jp/categories/6" target="_blank">スポーツ・アウトドア・車</a>
+																					<a class="categoryMenu-item-3-name" href="https://ec.tsuku2.jp/categories/7" target="_blank">趣味・おもちゃ・ゲーム</a>
+																					<a class="categoryMenu-item-3-name" href="https://ec.tsuku2.jp/categories/8" target="_blank">パソコン・電化製品</a>
+																					<a class="categoryMenu-item-3-name" href="https://ec.tsuku2.jp/categories/9" target="_blank">アート・工芸品</a>
+																					<a class="categoryMenu-item-3-name" href="https://ec.tsuku2.jp/categories/4" target="_blank">ベビー・キッズ・マタニティー</a>
+																					<a class="categoryMenu-item-3-name" href="https://ec.tsuku2.jp/categories/1" target="_blank">ファッション</a>
+																					<a class="categoryMenu-item-3-name" href="https://ec.tsuku2.jp/categories/10" target="_blank">サービス</a>
+																					<a class="categoryMenu-item-3-name" href="https://ec.tsuku2.jp/categories/23" target="_blank">生き物</a>
+																			</div>
+								</div>
+
+								<div class="relative">
+									<a class="categoryMenu-item-2-name-arrow" href="https://ticket.tsuku2.jp/events-catalog" target="_blank">ウェブチケット</a>
+									<div class="categoryMenu-item-3 hidden">
+																					<a class="categoryMenu-item-3-name" href="https://ticket.tsuku2.jp/events-catalog?pc=3" target="_blank">グルメ</a>
+																					<a class="categoryMenu-item-3-name" href="https://ticket.tsuku2.jp/events-catalog?pc=2" target="_blank">レッスン</a>
+																					<a class="categoryMenu-item-3-name" href="https://ticket.tsuku2.jp/events-catalog?pc=4" target="_blank">サービス</a>
+																					<a class="categoryMenu-item-3-name" href="https://ticket.tsuku2.jp/events-catalog?pc=1" target="_blank">イベント</a>
+																					<a class="categoryMenu-item-3-name" href="https://ticket.tsuku2.jp/events-catalog?pc=5" target="_blank">旅行・レジャー</a>
+																			</div>
+								</div>
+
+					            																<div class="relative">
+									<a class="categoryMenu-item-2-name-arrow" href="https://event.tsuku2.jp/ticket" target="_blank">イベチケ</a>
+									<div class="categoryMenu-item-3 hidden">
+																					<a class="categoryMenu-item-3-name" href="https://event.tsuku2.jp/ticket?event_category=1&event_category=2&event_category=3&event_category=4&event_category=5&event_category=6&event_category=7&event_category=8&event_category=9&event_category=10&event_category=11&event_category=12&event_category=13&event_category=14&event_category=15&event_category=16&event_category=17&event_category=18&event_category=19&event_category=20&event_category=21&event_category=22&event_category=23&event_category=24&event_category=25&event_category=26&event_category=27" target="_blank">ライブ・コンサート</a>
+																					<a class="categoryMenu-item-3-name" href="https://event.tsuku2.jp/ticket?event_category=42&event_category=43&event_category=44&event_category=45&event_category=46&event_category=47&event_category=48&event_category=49&event_category=50&event_category=51&event_category=52&event_category=53&event_category=54&event_category=55&event_category=56&event_category=57&event_category=58&event_category=59&event_category=60&event_category=61" target="_blank">イベント</a>
+																			</div>
+								</div>
+								
+								<div class="relative">
+									<a class="categoryMenu-item-2-name-arrow" href="https://gourmet.tsuku2.jp/search-results" target="_blank">グルメ</a>
+									<div class="categoryMenu-item-3 hidden">
+																					<a class="categoryMenu-item-3-name" href="https://gourmet.tsuku2.jp/search-results?jb=1" target="_blank">和食</a>
+																					<a class="categoryMenu-item-3-name" href="https://gourmet.tsuku2.jp/search-results?jb=2" target="_blank">カフェ・スイーツ</a>
+																					<a class="categoryMenu-item-3-name" href="https://gourmet.tsuku2.jp/search-results?jb=3" target="_blank">イタリアン・フレンチ</a>
+																					<a class="categoryMenu-item-3-name" href="https://gourmet.tsuku2.jp/search-results?jb=4" target="_blank">洋食・西洋料理</a>
+																					<a class="categoryMenu-item-3-name" href="https://gourmet.tsuku2.jp/search-results?jb=5" target="_blank">中華</a>
+																					<a class="categoryMenu-item-3-name" href="https://gourmet.tsuku2.jp/search-results?jb=6" target="_blank">居酒屋</a>
+																					<a class="categoryMenu-item-3-name" href="https://gourmet.tsuku2.jp/search-results?jb=7" target="_blank">バー</a>
+																					<a class="categoryMenu-item-3-name" href="https://gourmet.tsuku2.jp/search-results?jb=8" target="_blank">アジアン</a>
+																					<a class="categoryMenu-item-3-name" href="https://gourmet.tsuku2.jp/search-results?jb=9" target="_blank">ラーメン・麺類</a>
+																					<a class="categoryMenu-item-3-name" href="https://gourmet.tsuku2.jp/search-results?jb=10" target="_blank">鍋</a>
+																					<a class="categoryMenu-item-3-name" href="https://gourmet.tsuku2.jp/search-results?jb=11" target="_blank">焼肉・ステーキ</a>
+																					<a class="categoryMenu-item-3-name" href="https://gourmet.tsuku2.jp/search-results?jb=12" target="_blank">日本料理・郷土料理</a>
+																					<a class="categoryMenu-item-3-name" href="https://gourmet.tsuku2.jp/search-results?jb=13" target="_blank">宴会・エンターテイメント</a>
+																					<a class="categoryMenu-item-3-name" href="https://gourmet.tsuku2.jp/search-results?jb=14" target="_blank">ファーストフード・ファミレス</a>
+																					<a class="categoryMenu-item-3-name" href="https://gourmet.tsuku2.jp/search-results?jb=15" target="_blank">その他</a>
+																					<a class="categoryMenu-item-3-name" href="https://gourmet.tsuku2.jp/search-results?jb=16" target="_blank">カレー</a>
+																			</div>
+								</div>
+
+								<div class="relative">
+									<a class="categoryMenu-item-2-name-arrow" href="https://beauty.tsuku2.jp/hair/search" target="_blank">ビューティ</a>
+									<div class="categoryMenu-item-3 hidden">
+																																	<a class="categoryMenu-item-3-name" href="https://beauty.tsuku2.jp/hair/search?category_id=1" target="_blank">ヘアサロン・メイク</a>
+																																												<a class="categoryMenu-item-3-name" href="https://beauty.tsuku2.jp/nail/search?category_id=2" target="_blank">ネイル・まつげ</a>
+																																												<a class="categoryMenu-item-3-name" href="https://beauty.tsuku2.jp/esthe/search?category_id=3" target="_blank">エステ</a>
+																																												<a class="categoryMenu-item-3-name" href="https://beauty.tsuku2.jp/relax/search?category_id=4" target="_blank">リラクゼーション・その他</a>
+																																												<a class="categoryMenu-item-3-name" href="https://beauty.tsuku2.jp/chiro/search?category_id=6" target="_blank">鍼灸・整体</a>
+																														</div>
+								</div>
+								<div class="relative">
+								<a class="categoryMenu-item-2-name-arrow" href="https://farm.tsuku2.jp/list_item.php" target="_blank">ファーム</a>
+								<div class="categoryMenu-item-3 hidden">
+																		<a class="categoryMenu-item-3-name" href="https://farm.tsuku2.jp/list_item.php?c1=1" target="_blank">野菜</a>
+																		<a class="categoryMenu-item-3-name" href="https://farm.tsuku2.jp/list_item.php?c1=2" target="_blank">肉類</a>
+																		<a class="categoryMenu-item-3-name" href="https://farm.tsuku2.jp/list_item.php?c1=3" target="_blank">果物</a>
+																		<a class="categoryMenu-item-3-name" href="https://farm.tsuku2.jp/list_item.php?c1=4" target="_blank">魚介類</a>
+																		<a class="categoryMenu-item-3-name" href="https://farm.tsuku2.jp/list_item.php?c1=5" target="_blank">卵・乳製品</a>
+																		<a class="categoryMenu-item-3-name" href="https://farm.tsuku2.jp/list_item.php?c1=6" target="_blank">お茶</a>
+																		<a class="categoryMenu-item-3-name" href="https://farm.tsuku2.jp/list_item.php?c1=7" target="_blank">酒類</a>
+																		<a class="categoryMenu-item-3-name" href="https://farm.tsuku2.jp/list_item.php?c1=8" target="_blank">調味料</a>
+																		<a class="categoryMenu-item-3-name" href="https://farm.tsuku2.jp/list_item.php?c1=9" target="_blank">米・穀類</a>
+																		<a class="categoryMenu-item-3-name" href="https://farm.tsuku2.jp/list_item.php?c1=10" target="_blank">加工品</a>
+																	</div>
+								</div>
+							</div>
+						</div>
+						<div class="categoryMenu-item js-toggleNextCategory">
+							<div class="categoryMenu-item-name">
+								特集・キャンペーン一覧
+								<svg class="ml-10" xmlns="http://www.w3.org/2000/svg" width="5" height="4" viewBox="0 0 5 4">
+									<path d="M2.5,0,5,4H0Z" transform="translate(5 4) rotate(180)" fill="#5e5e5e" />
+								</svg>
+							</div>
+							<div class="categoryMenu-item-2 hidden">
+																	<div class="relative">
+																					<a class="categoryMenu-item-2-name" href="https://ec.tsuku2.jp/events/20251001000001" target="_blank">お風呂グッズ特集</a>
+																			</div>
+																	<div class="relative">
+																					<a class="categoryMenu-item-2-name" href="https://ec.tsuku2.jp/events/20241118000001" target="_blank">沖縄のお取り寄せグルメ特集</a>
+																			</div>
+																	<div class="relative">
+																					<a class="categoryMenu-item-2-name" href="https://ec.tsuku2.jp/events/20241118000002" target="_blank">新潟のお取り寄せグルメ特集</a>
+																			</div>
+																	<div class="relative">
+																					<a class="categoryMenu-item-2-name" href="https://ec.tsuku2.jp/events/20231101000004" target="_blank">パパっと完成！疲れた時の時短ごはん特集</a>
+																			</div>
+																	<div class="relative">
+																					<a class="categoryMenu-item-2-name" href="https://ec.tsuku2.jp/events/20231101000005" target="_blank">ごはんおかわり！ごはんのお供特集</a>
+																			</div>
+															</div>
+						</div>
+						<a class="categoryMenu-item" href="https://home.tsuku2.jp/cpnList.php">
+							<div class="categoryMenu-item-name">クーポン</div>
+						</a>
+					</div>
+				</div>
+				<script>
+
+          function searchSubmitPC() {
+            let keyword = $("#search-word-pc").val();
+            let uri = "searchRst.php?type=0&category1=0&keyword=" + encodeURIComponent(keyword);
+            location.href = encodeURI(uri);
+          }
+          function searchSubmitSP() {
+            let keyword = $("#search-word-sp").val();
+            let uri = "searchRst.php?type=0&category1=0&keyword=" + encodeURIComponent(keyword);
+            location.href = encodeURI(uri);
+          }
+
+				</script>
+</header>
+	<main class="l-mainContainer">
+		<!-- SPスライダー、PCそのまま -->
+		<div class="flex-center my-10 md-hidden js-slider-firstview special-box">
+			<a href="https://ec.tsuku2.jp/sp/events/20251001000001" class="mx-7" style="max-width: 32.4rem; max-height: 21.8rem" target="ec">
+				<img src="https://web-resource.tsuku2.jp/pic/ibent/20251001000001_home_top_banner_sp.png?20250929103015" alt="お風呂グッズ特集"/>
+			</a>
+			<span class="mx-7" style="max-width: 32.4rem; max-height: 21.8rem">
+				<img style="max-width: 32.4rem; max-height: 21.8rem" src="assets/img/top/bnr-firstview-1.png" alt="毎日まるごとハッピーに！" />
+			</span>
+			<a href="https://tsuku2.shop/eventreport/" class="mx-7" style="max-width: 32.4rem; max-height: 21.8rem" target="tsuku2">
+				<img src="https://home.tsuku2.jp/assets/img/top/bnr-firstview-6-sp.png?20251016161816" alt="催事" />
+			</a>
+		</div>
+
+		<div class="hidden md-flex-center md-my-12 special-box">
+			<a href="https://ec.tsuku2.jp/events/20251001000001" class="m-12 hover-opacity" style="width: 422px" target="ec">
+				<img src="https://web-resource.tsuku2.jp/pic/ibent/20251001000001_home_top_banner_pc.png?20250929103015" alt="お風呂グッズ特集" />
+			</a>
+			<span class="m-12" style="width: 980px">
+				<img src="assets/img/top/bnr-firstview-md-2.png" alt="毎日まるごとハッピーに！" />
+			</span>
+			<a href="https://tsuku2.shop/eventreport/" class="m-12 hover-opacity" style="width: 422px" target="tsuku2">
+				<img src="https://home.tsuku2.jp/assets/img/top/bnr-firstview-6-pc.png?20251016161816" alt="催事" />
+			</a>
+		</div>
+
+		<!-- ショップファンクラブおすそわけバナー -->
+					<div class="top-banner-fanclub">
+				<a href="https://home.tsuku2.jp/fanclubInfo.php">
+					<img style="width: 100%;" src="assets/img/top/bnr-fanclub.png?20251016161816" />
+				</a>
+			</div>
+		
+				
+		<!-- おすすめ特集 -->
+		<div class="container-1320 bg-white pb-40 px-26 md-px-0">
+			<section class="top-feature mt-40 md-pt-24">
+				<h2 class="text-center text-20 font-bold pb-8 mb-24" style="border-bottom: 1px solid #c4c4c4">おすすめ特集</h2>
+				<div class="pb-36 md-pb-0 js-slider-feature">
+					<a href="https://ec.tsuku2.jp/events/20251001000001" class="top-season-item mr-6 md-mr-17 hover-opacity" target="_blank">
+					        <div class="top-season-imgWrap flex-center">
+					          <img class="w-full" src="https://web-resource.tsuku2.jp/pic/ibent/20251001000001_370_150.png?20250929103015" alt="お風呂グッズ特集" onerror="this.onerror=null;this.src='img/noimage_rectangle_gray.svg';"/>
+					        </div>
+					        <p class="leading-14 text-16 font-bold lineClamp-2 mt-10">お風呂グッズ特集</p>
+					      </a><a href="https://ticket.tsuku2.jp/feature-page/20231101000013" class="top-season-item mr-6 md-mr-17 hover-opacity" target="_blank">
+					        <div class="top-season-imgWrap flex-center">
+					          <img class="w-full" src="https://web-resource.tsuku2.jp/pic/ibent/20231101000013_370_150.jpg?20250929103015" alt="こども応援チケット特集" onerror="this.onerror=null;this.src='img/noimage_rectangle_gray.svg';"/>
+					        </div>
+					        <p class="leading-14 text-16 font-bold lineClamp-2 mt-10">こども応援チケット特集</p>
+					      </a><a href="https://ec.tsuku2.jp/events/20231101000004" class="top-season-item mr-6 md-mr-17 hover-opacity" target="_blank">
+					        <div class="top-season-imgWrap flex-center">
+					          <img class="w-full" src="https://web-resource.tsuku2.jp/pic/ibent/20231101000004_370_150.jpg?20250929103015" alt="パパっと完成！疲れた時の時短ごはん特集" onerror="this.onerror=null;this.src='img/noimage_rectangle_gray.svg';"/>
+					        </div>
+					        <p class="leading-14 text-16 font-bold lineClamp-2 mt-10">パパっと完成！疲れた時の時短ごはん特集</p>
+					      </a><a href="https://ec.tsuku2.jp/events/20231101000009" class="top-season-item mr-6 md-mr-17 hover-opacity" target="_blank">
+					        <div class="top-season-imgWrap flex-center">
+					          <img class="w-full" src="https://web-resource.tsuku2.jp/pic/ibent/20231101000009_370_150.jpg?20250929103015" alt="おうち晩酌特集" onerror="this.onerror=null;this.src='img/noimage_rectangle_gray.svg';"/>
+					        </div>
+					        <p class="leading-14 text-16 font-bold lineClamp-2 mt-10">おうち晩酌特集</p>
+					      </a><a href="https://ec.tsuku2.jp/events/20241111000002" class="top-season-item mr-6 md-mr-17 hover-opacity" target="_blank">
+					        <div class="top-season-imgWrap flex-center">
+					          <img class="w-full" src="https://web-resource.tsuku2.jp/pic/ibent/20241111000002_370_150.jpg?20250929103015" alt="お手軽おつまみスナック特集" onerror="this.onerror=null;this.src='img/noimage_rectangle_gray.svg';"/>
+					        </div>
+					        <p class="leading-14 text-16 font-bold lineClamp-2 mt-10">お手軽おつまみスナック特集</p>
+					      </a><a href="https://ec.tsuku2.jp/events/20241111000003" class="top-season-item mr-6 md-mr-17 hover-opacity" target="_blank">
+					        <div class="top-season-imgWrap flex-center">
+					          <img class="w-full" src="https://web-resource.tsuku2.jp/pic/ibent/20241111000003_370_150.jpg?20250929103015" alt="お酒アイテム特集" onerror="this.onerror=null;this.src='img/noimage_rectangle_gray.svg';"/>
+					        </div>
+					        <p class="leading-14 text-16 font-bold lineClamp-2 mt-10">お酒アイテム特集</p>
+					      </a><a href="https://ec.tsuku2.jp/events/20231101000005" class="top-season-item mr-6 md-mr-17 hover-opacity" target="_blank">
+					        <div class="top-season-imgWrap flex-center">
+					          <img class="w-full" src="https://web-resource.tsuku2.jp/pic/ibent/20231101000005_370_150.jpg?20250929103015" alt="ごはんおかわり！ごはんのお供特集" onerror="this.onerror=null;this.src='img/noimage_rectangle_gray.svg';"/>
+					        </div>
+					        <p class="leading-14 text-16 font-bold lineClamp-2 mt-10">ごはんおかわり！ごはんのお供特集</p>
+					      </a><a href="https://ec.tsuku2.jp/events/20231101000012" class="top-season-item mr-6 md-mr-17 hover-opacity" target="_blank">
+					        <div class="top-season-imgWrap flex-center">
+					          <img class="w-full" src="https://web-resource.tsuku2.jp/pic/ibent/20231101000012_370_150.jpg?20250929103015" alt="グルテンフリー スイーツ特集" onerror="this.onerror=null;this.src='img/noimage_rectangle_gray.svg';"/>
+					        </div>
+					        <p class="leading-14 text-16 font-bold lineClamp-2 mt-10">グルテンフリー スイーツ特集</p>
+					      </a><a href="https://ec.tsuku2.jp/events/20231101000010" class="top-season-item mr-6 md-mr-17 hover-opacity" target="_blank">
+					        <div class="top-season-imgWrap flex-center">
+					          <img class="w-full" src="https://web-resource.tsuku2.jp/pic/ibent/20231101000010_370_150.jpg?20250929103015" alt="フードロス削減商品特集" onerror="this.onerror=null;this.src='img/noimage_rectangle_gray.svg';"/>
+					        </div>
+					        <p class="leading-14 text-16 font-bold lineClamp-2 mt-10">フードロス削減商品特集</p>
+					      </a><a href="https://ec.tsuku2.jp/events/20231101000015" class="top-season-item mr-6 md-mr-17 hover-opacity" target="_blank">
+					        <div class="top-season-imgWrap flex-center">
+					          <img class="w-full" src="https://web-resource.tsuku2.jp/pic/ibent/20231101000015_370_150.jpg?20250929103015" alt="わん・にゃんグッズ特集" onerror="this.onerror=null;this.src='img/noimage_rectangle_gray.svg';"/>
+					        </div>
+					        <p class="leading-14 text-16 font-bold lineClamp-2 mt-10">わん・にゃんグッズ特集</p>
+					      </a>				</div>
+				<a href="featureList.php" class="btn-feature flex-center rounded-full text-16 mt-40 mx-auto md-mt-48 hover-opacity">
+					特集をもっと見る
+				</a>
+			</section>
+		</div>
+
+		<!-- ランキング〜残りわずかなお気に入り商品 -->
+		<!-- layout-pr-ranking-favoriteを付け外してください -->
+		<div class="md-pb-24" style="background-color: #f0f0f0">
+			<div class="container-1320 p-16 pb-40 md-px-0 md-py-40">
+				<div class="layout-pr-ranking-favorite-container">
+					<div class="top-ranking-favorite-bg flex flex-col mt-24 pb-20 md-pt-28">
+						<section class="top-ranking px-10 mt-40 mb-20 md-px-44 md-my-36 js-tabScope">
+							<h2 class="text-center text-20 font-bold pb-8" style="border-bottom: 1px solid #c4c4c4">週間ランキング</h2>
+							<div class="mt-16 flex flex-wrap gap-2 md-mt-32 md-flex-nowrap">
+								<button class="js-tabBtn tabBtn tabBtn-ec hover-opacity is-active">通販</button>
+								<button class="js-tabBtn tabBtn tabBtn-webticket hover-opacity">ウェブチケット</button>
+								<button class="js-tabBtn tabBtn tabBtn-beauty hover-opacity">ビューティー</button>
+								<button class="js-tabBtn tabBtn tabBtn-farm hover-opacity">ファーム</button>
+							</div>
+							<div class="mt-16 md-mt-8">
+
+								<div class="js-tabContents tabContents hidden  is-active">
+									<div class="pb-36 overflow-hidden flex md-pb-0 top-ranking-list js-slider-ranking-ec">
+																												<a href="https://ec.tsuku2.jp/items/05112230105012" class="product-item product-item-1 block relative pt-10 mr-8 md-m-0 md-pt-32 hover-opacity" target="_blank">
+												<img class="product-crown" src="assets/img/top/icon-crown-1.svg" alt="ランキング1位" />
+												<div class="product-imgWrap">
+													<img src="https://cms2.tsuku2.shop/pic/item/0000102542/item_20230615_110924_619_L.jpg" alt="『プラウド綱島SST ・プラウドシティー日吉レジデンスⅡ　マンションお住..." />
+												</div>
+												<div class="flex flex-col ml-5 md-ml-0 mt-8 gap-8">
+													<p class="product-item-name text-14 leading-13 lineClamp-2">
+														『プラウド綱島SST ・プラウドシティー日吉レジデンスⅡ　マンションお住...													</p>
+													<div class="product-item-price text-16 font-bold">￥108</div>
+													<div class="product-item-point text-12">7ポイント</div>
+												</div>
+											</a>
+																						<a href="https://ec.tsuku2.jp/items/12050752006311" class="product-item product-item-2 block relative pt-10 mr-8 md-m-0 md-pt-32 hover-opacity" target="_blank">
+												<img class="product-crown" src="assets/img/top/icon-crown-2.svg" alt="ランキング2位" />
+												<div class="product-imgWrap">
+													<img src="https://cms2.tsuku2.shop/pic/item/0000100953/item_20251006_151833_764_L.jpg" alt="送料無料！特許取得の新型マウスピース　369（ミロク）マウスピース　AT..." />
+												</div>
+												<div class="flex flex-col ml-5 md-ml-0 mt-8 gap-8">
+													<p class="product-item-name text-14 leading-13 lineClamp-2">
+														送料無料！特許取得の新型マウスピース　369（ミロク）マウスピース　AT...													</p>
+													<div class="product-item-price text-16 font-bold">￥25,300</div>
+													<div class="product-item-point text-12">379ポイント</div>
+												</div>
+											</a>
+																						<a href="https://ec.tsuku2.jp/items/02906021504836" class="product-item product-item-3 block relative pt-10 mr-8 md-m-0 md-pt-32 hover-opacity" target="_blank">
+												<img class="product-crown" src="assets/img/top/icon-crown-3.svg" alt="ランキング3位" />
+												<div class="product-imgWrap">
+													<img src="https://cms2.tsuku2.shop/pic/item/0000069722/0000069722_20190408_144230_460457_L.jpg" alt="ウイルス・カビ菌をしっかり除菌！抗菌・抗カビ酵素パウダー【俺が人生..." />
+												</div>
+												<div class="flex flex-col ml-5 md-ml-0 mt-8 gap-8">
+													<p class="product-item-name text-14 leading-13 lineClamp-2">
+														ウイルス・カビ菌をしっかり除菌！抗菌・抗カビ酵素パウダー【俺が人生...													</p>
+													<div class="product-item-price text-16 font-bold">￥9,700</div>
+													<div class="product-item-point text-12">145ポイント</div>
+												</div>
+											</a>
+																						<a href="https://ec.tsuku2.jp/items/24004360020798" class="product-item product-item-4 block relative pt-10 mr-8 md-m-0 md-pt-32 hover-opacity" target="_blank">
+												<img class="product-crown" src="assets/img/top/icon-crown-4.svg" alt="ランキング4位" />
+												<div class="product-imgWrap">
+													<img src="https://cms2.tsuku2.shop/pic/item/0000074464/item_20240603_080826_739_L.jpg" alt="【TENSAY】天然クリスタル塩 200g 天日塩" />
+												</div>
+												<div class="flex flex-col ml-5 md-ml-0 mt-8 gap-8">
+													<p class="product-item-name text-14 leading-13 lineClamp-2">
+														【TENSAY】天然クリスタル塩 200g 天日塩													</p>
+													<div class="product-item-price text-16 font-bold">￥1,320</div>
+													<div class="product-item-point text-12">19ポイント</div>
+												</div>
+											</a>
+																						<a href="https://ec.tsuku2.jp/items/12250823012086" class="product-item product-item-5 block relative pt-10 mr-8 md-m-0 md-pt-32 hover-opacity" target="_blank">
+												<img class="product-crown" src="assets/img/top/icon-crown-5.svg" alt="ランキング5位" />
+												<div class="product-imgWrap">
+													<img src="https://cms2.tsuku2.shop/pic/item/0000200925/item_20241229_131856_583_L.jpg" alt="令和6年度産　敷名営農（有）　焼き米（やきごめ）　300g　【広島県三次..." />
+												</div>
+												<div class="flex flex-col ml-5 md-ml-0 mt-8 gap-8">
+													<p class="product-item-name text-14 leading-13 lineClamp-2">
+														令和6年度産　敷名営農（有）　焼き米（やきごめ）　300g　【広島県三次...													</p>
+													<div class="product-item-price text-16 font-bold">￥756</div>
+													<div class="product-item-point text-12">50ポイント</div>
+												</div>
+											</a>
+																				</div>
+								</div>
+
+								<div class="js-tabContents tabContents hidden ">
+									<div class="pb-36 overflow-hidden flex md-pb-0 top-ranking-list js-slider-ranking-webticket">
+																												<a href="https://ticket.tsuku2.jp/events-detail/25107211512500" class="product-item product-item-1 block relative pt-10 mr-8 md-m-0 md-pt-32 hover-opacity" target="_blank">
+												<img class="product-crown" src="assets/img/top/icon-crown-1.svg" alt="ランキング1位" />
+												<div class="product-imgWrap">
+													<img src="https://cms2.tsuku2.shop/pic/item/0000100953/item_20251006_115727_554_L.jpg" alt="健口革命セミナー：人生100年時代、健口なくして健康なし" />
+												</div>
+												<div class="flex flex-col ml-5 md-ml-0 mt-8 gap-8">
+													<p class="product-item-name text-14 leading-13 lineClamp-2">
+														健口革命セミナー：人生100年時代、健口なくして健康なし													</p>
+													<div class="product-item-price text-16 font-bold">￥100</div>
+													<div class="product-item-point text-12">1ポイント</div>
+												</div>
+											</a>
+																						<a href="https://ticket.tsuku2.jp/events-detail/72000872200421" class="product-item product-item-2 block relative pt-10 mr-8 md-m-0 md-pt-32 hover-opacity" target="_blank">
+												<img class="product-crown" src="assets/img/top/icon-crown-2.svg" alt="ランキング2位" />
+												<div class="product-imgWrap">
+													<img src="https://cms2.tsuku2.shop/pic/item/0000145658/item_20220805_134431_711_L.jpg" alt="【定期利用】Ａ＋Ｂホールチケット（平日）音響あり/E's HALL" />
+												</div>
+												<div class="flex flex-col ml-5 md-ml-0 mt-8 gap-8">
+													<p class="product-item-name text-14 leading-13 lineClamp-2">
+														【定期利用】Ａ＋Ｂホールチケット（平日）音響あり/E's HALL													</p>
+													<div class="product-item-price text-16 font-bold">￥6,600</div>
+													<div class="product-item-point text-12">99ポイント</div>
+												</div>
+											</a>
+																						<a href="https://ticket.tsuku2.jp/events-detail/14129022120047" class="product-item product-item-3 block relative pt-10 mr-8 md-m-0 md-pt-32 hover-opacity" target="_blank">
+												<img class="product-crown" src="assets/img/top/icon-crown-3.svg" alt="ランキング3位" />
+												<div class="product-imgWrap">
+													<img src="https://cms2.tsuku2.shop/pic/item/0000130871/item_20250221_090411_149_L.jpg" alt="追加料金" />
+												</div>
+												<div class="flex flex-col ml-5 md-ml-0 mt-8 gap-8">
+													<p class="product-item-name text-14 leading-13 lineClamp-2">
+														追加料金													</p>
+													<div class="product-item-price text-16 font-bold">￥330</div>
+													<div class="product-item-point text-12">7ポイント</div>
+												</div>
+											</a>
+																						<a href="https://ticket.tsuku2.jp/events-detail/20140131242205" class="product-item product-item-4 block relative pt-10 mr-8 md-m-0 md-pt-32 hover-opacity" target="_blank">
+												<img class="product-crown" src="assets/img/top/icon-crown-4.svg" alt="ランキング4位" />
+												<div class="product-imgWrap">
+													<img src="https://cms2.tsuku2.shop/pic/item/0000089687/item_20240214_143757_243_L.jpg" alt="【現地決済のみ】10斤分のお値段で11斤分ついてくる！超お得♪もちもち食..." />
+												</div>
+												<div class="flex flex-col ml-5 md-ml-0 mt-8 gap-8">
+													<p class="product-item-name text-14 leading-13 lineClamp-2">
+														【現地決済のみ】10斤分のお値段で11斤分ついてくる！超お得♪もちもち食...													</p>
+													<div class="product-item-price text-16 font-bold">￥3,600</div>
+													<div class="product-item-point text-12">54ポイント</div>
+												</div>
+											</a>
+																						<a href="https://ticket.tsuku2.jp/events-detail/50031235025330" class="product-item product-item-5 block relative pt-10 mr-8 md-m-0 md-pt-32 hover-opacity" target="_blank">
+												<img class="product-crown" src="assets/img/top/icon-crown-5.svg" alt="ランキング5位" />
+												<div class="product-imgWrap">
+													<img src="https://cms2.tsuku2.shop/pic/item/0000130279/item_20230504_075519_420_L.jpg" alt="ミニ🤍デザート　200円　おやこCafe Umbilicus" />
+												</div>
+												<div class="flex flex-col ml-5 md-ml-0 mt-8 gap-8">
+													<p class="product-item-name text-14 leading-13 lineClamp-2">
+														ミニ🤍デザート　200円　おやこCafe Umbilicus													</p>
+													<div class="product-item-price text-16 font-bold">￥200</div>
+													<div class="product-item-point text-12">8ポイント</div>
+												</div>
+											</a>
+																				</div>
+								</div>
+
+								<div class="js-tabContents tabContents hidden ">
+									<div class="pb-36 overflow-hidden flex md-pb-0 top-ranking-list js-slider-ranking-beauty">
+																												<a href="https://beauty.tsuku2.jp/salon/relax/0000208682/plans" class="product-item product-item-1 block relative pt-10 mr-8 md-m-0 md-pt-32 hover-opacity" target="_blank">
+												<img class="product-crown" src="assets/img/top/icon-crown-1.svg" alt="ランキング1位" />
+												<div class="product-imgWrap">
+													<img src="https://cms2.tsuku2.shop/pic/eyecatch/0000208682_L.jpg" alt="【訪問型】千葉市産後ケアご利用で、カノン助産院からママの元へ訪問し..." />
+												</div>
+												<div class="flex flex-col ml-5 md-ml-0 mt-8 gap-8">
+													<p class="product-item-name text-14 leading-13 lineClamp-2">
+														【訪問型】千葉市産後ケアご利用で、カノン助産院からママの元へ訪問し...													</p>
+													<div class="product-item-price text-16 font-bold">￥1,100</div>
+													<div class="product-item-point text-12">16ポイント</div>
+												</div>
+											</a>
+																						<a href="https://beauty.tsuku2.jp/salon/relax/0000208682/plans" class="product-item product-item-2 block relative pt-10 mr-8 md-m-0 md-pt-32 hover-opacity" target="_blank">
+												<img class="product-crown" src="assets/img/top/icon-crown-2.svg" alt="ランキング2位" />
+												<div class="product-imgWrap">
+													<img src="https://cms2.tsuku2.shop/pic/eyecatch/0000208682_L.jpg" alt="【相談室】千葉市カノン助産院にて桶谷式乳房ケア・育児相談などを行う..." />
+												</div>
+												<div class="flex flex-col ml-5 md-ml-0 mt-8 gap-8">
+													<p class="product-item-name text-14 leading-13 lineClamp-2">
+														【相談室】千葉市カノン助産院にて桶谷式乳房ケア・育児相談などを行う...													</p>
+													<div class="product-item-price text-16 font-bold">￥4,000</div>
+													<div class="product-item-point text-12">60ポイント</div>
+												</div>
+											</a>
+																						<a href="https://beauty.tsuku2.jp/salon/relax/0000208682/plans" class="product-item product-item-3 block relative pt-10 mr-8 md-m-0 md-pt-32 hover-opacity" target="_blank">
+												<img class="product-crown" src="assets/img/top/icon-crown-3.svg" alt="ランキング3位" />
+												<div class="product-imgWrap">
+													<img src="https://cms2.tsuku2.shop/pic/eyecatch/0000208682_L.jpg" alt="【日帰り型の予約】カノン助産院に日帰り型で滞在し、桶谷式乳房ケアな..." />
+												</div>
+												<div class="flex flex-col ml-5 md-ml-0 mt-8 gap-8">
+													<p class="product-item-name text-14 leading-13 lineClamp-2">
+														【日帰り型の予約】カノン助産院に日帰り型で滞在し、桶谷式乳房ケアな...													</p>
+													<div class="product-item-price text-16 font-bold">￥2,000</div>
+													<div class="product-item-point text-12">30ポイント</div>
+												</div>
+											</a>
+																						<a href="https://beauty.tsuku2.jp/salon/relax/0000184786/plans" class="product-item product-item-4 block relative pt-10 mr-8 md-m-0 md-pt-32 hover-opacity" target="_blank">
+												<img class="product-crown" src="assets/img/top/icon-crown-4.svg" alt="ランキング4位" />
+												<div class="product-imgWrap">
+													<img src="https://cms2.tsuku2.shop/pic/eyecatch/0000184786_L.jpg" alt="【相談室　みやうち助産院】" />
+												</div>
+												<div class="flex flex-col ml-5 md-ml-0 mt-8 gap-8">
+													<p class="product-item-name text-14 leading-13 lineClamp-2">
+														【相談室　みやうち助産院】													</p>
+													<div class="product-item-price text-16 font-bold">￥4,400</div>
+													<div class="product-item-point text-12">66ポイント</div>
+												</div>
+											</a>
+																						<a href="https://beauty.tsuku2.jp/salon/chiro/0000106131/plans" class="product-item product-item-5 block relative pt-10 mr-8 md-m-0 md-pt-32 hover-opacity" target="_blank">
+												<img class="product-crown" src="assets/img/top/icon-crown-5.svg" alt="ランキング5位" />
+												<div class="product-imgWrap">
+													<img src="https://cms2.tsuku2.shop/pic/eyecatch/0000106131_L.jpg" alt="※100円は頂きません。通常施術50分6,000円【時間枠予約専用】【店頭払い..." />
+												</div>
+												<div class="flex flex-col ml-5 md-ml-0 mt-8 gap-8">
+													<p class="product-item-name text-14 leading-13 lineClamp-2">
+														※100円は頂きません。通常施術50分6,000円【時間枠予約専用】【店頭払い...													</p>
+													<div class="product-item-price text-16 font-bold">￥100</div>
+													<div class="product-item-point text-12">1ポイント</div>
+												</div>
+											</a>
+																				</div>
+								</div>
+
+								<div class="js-tabContents tabContents hidden ">
+									<div class="pb-36 overflow-hidden flex md-pb-0 top-ranking-list js-slider-ranking-farm">
+																												<a href="https://farm.tsuku2.jp/detail_item.php?item=27812425201018" class="product-item product-item-1 block relative pt-10 mr-8 md-m-0 md-pt-32 hover-opacity" target="_blank">
+												<img class="product-crown" src="assets/img/top/icon-crown-1.svg" alt="ランキング1位" />
+												<div class="product-imgWrap">
+													<img src="https://cms2.tsuku2.shop/pic/item/0000034124/0000034124_20191012_221808_584269_L.jpg" alt="【送料無料/高ポイント】ポリフェノールたっぷり/血液サラッサラ/古代米..." />
+												</div>
+												<div class="flex flex-col ml-5 md-ml-0 mt-8 gap-8">
+													<p class="product-item-name text-14 leading-13 lineClamp-2">
+														【送料無料/高ポイント】ポリフェノールたっぷり/血液サラッサラ/古代米...													</p>
+													<div class="product-item-price text-16 font-bold">￥1,000</div>
+													<div class="product-item-point text-12">50ポイント</div>
+												</div>
+											</a>
+																						<a href="https://farm.tsuku2.jp/detail_item.php?item=02105202352589" class="product-item product-item-2 block relative pt-10 mr-8 md-m-0 md-pt-32 hover-opacity" target="_blank">
+												<img class="product-crown" src="assets/img/top/icon-crown-2.svg" alt="ランキング2位" />
+												<div class="product-imgWrap">
+													<img src="https://cms2.tsuku2.shop/pic/item/0000278342/item_20251023_150303_036_L.jpg" alt="2025年新米無農薬（ヒノヒカリ）熊本県人吉産【玄米】　10kg" />
+												</div>
+												<div class="flex flex-col ml-5 md-ml-0 mt-8 gap-8">
+													<p class="product-item-name text-14 leading-13 lineClamp-2">
+														2025年新米無農薬（ヒノヒカリ）熊本県人吉産【玄米】　10kg													</p>
+													<div class="product-item-price text-16 font-bold">￥9,350</div>
+													<div class="product-item-point text-12">400ポイント</div>
+												</div>
+											</a>
+																						<a href="https://farm.tsuku2.jp/detail_item.php?item=02035260010201" class="product-item product-item-3 block relative pt-10 mr-8 md-m-0 md-pt-32 hover-opacity" target="_blank">
+												<img class="product-crown" src="assets/img/top/icon-crown-3.svg" alt="ランキング3位" />
+												<div class="product-imgWrap">
+													<img src="https://cms2.tsuku2.shop/pic/item/0000194540/item_20251021_185813_794_L.jpg" alt="【送料込み】【新米/特別栽培米】【令和7年信州松本産コシヒカリ５kg】 ..." />
+												</div>
+												<div class="flex flex-col ml-5 md-ml-0 mt-8 gap-8">
+													<p class="product-item-name text-14 leading-13 lineClamp-2">
+														【送料込み】【新米/特別栽培米】【令和7年信州松本産コシヒカリ５kg】 ...													</p>
+													<div class="product-item-price text-16 font-bold">￥6,700</div>
+													<div class="product-item-point text-12">170ポイント</div>
+												</div>
+											</a>
+																						<a href="https://farm.tsuku2.jp/detail_item.php?item=32022102270014" class="product-item product-item-4 block relative pt-10 mr-8 md-m-0 md-pt-32 hover-opacity" target="_blank">
+												<img class="product-crown" src="assets/img/top/icon-crown-4.svg" alt="ランキング4位" />
+												<div class="product-imgWrap">
+													<img src="https://cms2.tsuku2.shop/pic/item/0000238577/item_20230613_122734_892_L.jpg" alt="すいか糖 450g入り" />
+												</div>
+												<div class="flex flex-col ml-5 md-ml-0 mt-8 gap-8">
+													<p class="product-item-name text-14 leading-13 lineClamp-2">
+														すいか糖 450g入り													</p>
+													<div class="product-item-price text-16 font-bold">￥5,346</div>
+													<div class="product-item-point text-12">150ポイント</div>
+												</div>
+											</a>
+																						<a href="https://farm.tsuku2.jp/detail_item.php?item=22423021706400" class="product-item product-item-5 block relative pt-10 mr-8 md-m-0 md-pt-32 hover-opacity" target="_blank">
+												<img class="product-crown" src="assets/img/top/icon-crown-5.svg" alt="ランキング5位" />
+												<div class="product-imgWrap">
+													<img src="https://cms2.tsuku2.shop/pic/item/0000211301/item_20250903_185631_895_L.jpg" alt="「減農薬 澁谷農園のすずこ米（コシヒカリ）」澁谷農園 10代目すずこが..." />
+												</div>
+												<div class="flex flex-col ml-5 md-ml-0 mt-8 gap-8">
+													<p class="product-item-name text-14 leading-13 lineClamp-2">
+														「減農薬 澁谷農園のすずこ米（コシヒカリ）」澁谷農園 10代目すずこが...													</p>
+													<div class="product-item-price text-16 font-bold">￥8,800</div>
+													<div class="product-item-point text-12">132ポイント</div>
+												</div>
+											</a>
+																				</div>
+								</div>
+
+							</div>
+						</section>
+
+						<div class="prImgAnchor-sp hidden my-20 mx-10">
+							<img class="w-full" src="assets/img/top/bnr-pr-sp-2.png" alt="無添加スイーツ" />
+						</div>
+											</div>
+				</div>
+				<!-- PR -->
+				<div class="top-ranking-favorite-bg flex flex-col mt-24 pb-20 md-pt-28" id="adoitem">
+					<section class="top-favoriteItem px-10 my-20 md-px-44 md-my-36">
+						<h2 class="text-center text-20 font-bold pb-8" style="border-bottom: 1px solid #c4c4c4">
+							PR
+						</h2>
+						<div class="mt-16 pb-28 md-mt-32 js-slider-prItem" id="getAdoItemList">
+							<div id="readAdo">読み込み中</div>
+						</div>
+					</section>
+				</div>
+				<!-- ショップ特集 -->
+				<div class="top-feature-shop-bg flex flex-col mt-24 pb-20 md-pt-28" id="shopFeatureList">
+					<section class="top-favoriteItem px-10 my-20 md-px-44 md-my-36">
+						<h2 class="text-center text-20 font-bold pb-8" style="border-bottom: 1px solid #c4c4c4">
+							ショップ特集
+						</h2>
+						<div class="mt-16 pb-28 md-mt-32">
+							<div class="top-feature-shop-list" id="showShopFeature">
+								<div id="readShopFeature">読み込み中</div>
+							</div>							
+						</div>
+					</section>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-1320 bg-white px-26 md-px-0 md-flex md-flex-col">
+			<!-- ビューティコラム -->
+			<!--
+        <section class="top-beautyColumn my-40">
+  <h2 class="text-center text-20 font-bold pb-8" style="border-bottom: 1px solid #c4c4c4">ビューティーコラム</h2>
+  <div class="pb-24 md-flex flex-wrap md-mt-8">
+     
+    <a href="" class="top-beautyColumn-item flex w-full relative mt-18 md-mt-24 hover-opacity">
+      <div class="top-beautyColumn-imgWrap flex-none flex-center relative">
+        <img class="icon-new" src="assets/img/top/icon-newColumn.svg" alt="NEW" />
+        <img class="w-full" src="assets/img/top/img-beauty-1.png" alt="ファンクラブ" />
+      </div>
+      <div class="ml-8 pt-4 leading-14 pr-16 md-ml-24 md-pr-32">
+        <p class="text-16 font-bold lineClamp-2">ファンクラブ</p>
+        <p class="text-12 lineClamp-3 mt-2 md-text-14">とっておきの一つを選んでファンクラブでそのお店を応援！</p>
+      </div>
+      <svg
+        class="icon-arrow"
+        xmlns="http://www.w3.org/2000/svg"
+        width="7.164"
+        height="12.516"
+        viewBox="0 0 7.164 12.516"
+      >
+        <path
+          d="M4.906-2A.812.812,0,0,0,6.094-2l5.531-5.531a.626.626,0,0,0,0-.937L6.094-14a.812.812,0,0,0-1.187,0,.83.83,0,0,0,0,1.156L9.75-8,4.906-3.156A.83.83,0,0,0,4.906-2Z"
+          transform="translate(-4.672 14.258)"
+          fill="#666"
+        />
+      </svg>
+    </a>
+    
+    <a href="" class="top-beautyColumn-item flex w-full relative mt-18 md-mt-24 hover-opacity">
+      <div class="top-beautyColumn-imgWrap flex-none flex-center relative">
+        <img class="icon-new" src="assets/img/top/icon-newColumn.svg" alt="NEW" />
+        <img class="w-full" src="assets/img/top/img-beauty-2.png" alt="乾燥対策あれこれ" />
+      </div>
+      <div class="ml-8 pt-4 leading-14 pr-16 md-ml-24 md-pr-32">
+        <p class="text-16 font-bold lineClamp-2">乾燥対策あれこれ</p>
+        <p class="text-12 lineClamp-3 mt-2 md-text-14">とっておきの一つを選んでファンクラブでそのお店を応援！</p>
+      </div>
+      <svg
+        class="icon-arrow"
+        xmlns="http://www.w3.org/2000/svg"
+        width="7.164"
+        height="12.516"
+        viewBox="0 0 7.164 12.516"
+      >
+        <path
+          d="M4.906-2A.812.812,0,0,0,6.094-2l5.531-5.531a.626.626,0,0,0,0-.937L6.094-14a.812.812,0,0,0-1.187,0,.83.83,0,0,0,0,1.156L9.75-8,4.906-3.156A.83.83,0,0,0,4.906-2Z"
+          transform="translate(-4.672 14.258)"
+          fill="#666"
+        />
+      </svg>
+    </a>
+    
+    <a href="" class="top-beautyColumn-item flex w-full relative mt-18 md-mt-24 hover-opacity">
+      <div class="top-beautyColumn-imgWrap flex-none flex-center relative">
+        <img class="icon-new" src="assets/img/top/icon-newColumn.svg" alt="NEW" />
+        <img class="w-full" src="assets/img/top/img-beauty-3.png" alt="今月のおすすめアイテム" />
+      </div>
+      <div class="ml-8 pt-4 leading-14 pr-16 md-ml-24 md-pr-32">
+        <p class="text-16 font-bold lineClamp-2">今月のおすすめアイテム</p>
+        <p class="text-12 lineClamp-3 mt-2 md-text-14">とっておきの一つを選んでファンクラブでそのお店を応援！</p>
+      </div>
+      <svg
+        class="icon-arrow"
+        xmlns="http://www.w3.org/2000/svg"
+        width="7.164"
+        height="12.516"
+        viewBox="0 0 7.164 12.516"
+      >
+        <path
+          d="M4.906-2A.812.812,0,0,0,6.094-2l5.531-5.531a.626.626,0,0,0,0-.937L6.094-14a.812.812,0,0,0-1.187,0,.83.83,0,0,0,0,1.156L9.75-8,4.906-3.156A.83.83,0,0,0,4.906-2Z"
+          transform="translate(-4.672 14.258)"
+          fill="#666"
+        />
+      </svg>
+    </a>
+    
+    <a href="" class="top-beautyColumn-item flex w-full relative mt-18 md-mt-24 hover-opacity">
+      <div class="top-beautyColumn-imgWrap flex-none flex-center relative">
+        <img class="icon-new" src="assets/img/top/icon-newColumn.svg" alt="NEW" />
+        <img class="w-full" src="assets/img/top/img-beauty-4.png" alt="在宅ワークのお供に" />
+      </div>
+      <div class="ml-8 pt-4 leading-14 pr-16 md-ml-24 md-pr-32">
+        <p class="text-16 font-bold lineClamp-2">在宅ワークのお供に</p>
+        <p class="text-12 lineClamp-3 mt-2 md-text-14">とっておきの一つを選んでファンクラブでそのお店を応援！</p>
+      </div>
+      <svg
+        class="icon-arrow"
+        xmlns="http://www.w3.org/2000/svg"
+        width="7.164"
+        height="12.516"
+        viewBox="0 0 7.164 12.516"
+      >
+        <path
+          d="M4.906-2A.812.812,0,0,0,6.094-2l5.531-5.531a.626.626,0,0,0,0-.937L6.094-14a.812.812,0,0,0-1.187,0,.83.83,0,0,0,0,1.156L9.75-8,4.906-3.156A.83.83,0,0,0,4.906-2Z"
+          transform="translate(-4.672 14.258)"
+          fill="#666"
+        />
+      </svg>
+    </a>
+    
+  </div>
+  <a href="" class="flex justify-end relative text-12 font-bold pr-10 md-text-14 hover-opacity">
+    ビューティーコラム一覧へ
+    <i class="icon-arrow-r element-center-y" style="width: 0.6rem; height: 0.6rem; right: 0"></i>
+  </a>
+</section>
+-->
+			<!-- メルマガランキング -->
+			<section class="top-mailMagazineRanking my-40">
+				<h2 class="text-center text-20 font-bold pb-8" style="border-bottom: 1px solid #c4c4c4">メルマガランキング</h2>
+				<div class="md-flex md-mt-8" style="gap: 55px">
+											<a href="storeDetail.php?scd=0000113644" class="flex w-full relative mt-24 md-items-center hover-opacity">
+					<div class="top-mailMagazineRanking-imgWrap flex-none flex-center">
+						<img class="w-full" src="https://cms2.tsuku2.shop/pic/eyecatch/0000113644_L.jpg" alt="悠悠　ひるぜ..." />
+					</div>
+					<div class="ml-12 pt-8 leading-14 md-ml-24 md-pt-0">
+						<img src="assets/img/top/icon-crown-1.svg" width="40" height="36" alt="ランキング1位" />
+						<p class="text-16 font-bold lineClamp-2 mt-12">悠悠　ひるぜ...</p>
+						<p class="text-12 lineClamp-3 mt-2 md-text-14">ひるぜんの焼きそば&amp;グランプリのから揚げ  　　　|岡山|真庭市|蒜...</p>
+					</div>
+				</a>
+								<a href="storeDetail.php?scd=0000056594" class="flex w-full relative mt-24 md-items-center hover-opacity">
+					<div class="top-mailMagazineRanking-imgWrap flex-none flex-center">
+						<img class="w-full" src="https://cms2.tsuku2.shop/pic/eyecatch/0000056594_L.jpg" alt="Hawaiian Pan..." />
+					</div>
+					<div class="ml-12 pt-8 leading-14 md-ml-24 md-pt-0">
+						<img src="assets/img/top/icon-crown-2.svg" width="40" height="36" alt="ランキング2位" />
+						<p class="text-16 font-bold lineClamp-2 mt-12">Hawaiian Pan...</p>
+						<p class="text-12 lineClamp-3 mt-2 md-text-14">沖縄の綺麗な青い海が見えるカフェでこだわりパンケーキとハワイアンフ...</p>
+					</div>
+				</a>
+								<a href="storeDetail.php?scd=0000028091" class="flex w-full relative mt-24 md-items-center hover-opacity">
+					<div class="top-mailMagazineRanking-imgWrap flex-none flex-center">
+						<img class="w-full" src="https://cms2.tsuku2.shop/pic/eyecatch/0000028091_L.jpg" alt="HEJ（高エネ..." />
+					</div>
+					<div class="ml-12 pt-8 leading-14 md-ml-24 md-pt-0">
+						<img src="assets/img/top/icon-crown-3.svg" width="40" height="36" alt="ランキング3位" />
+						<p class="text-16 font-bold lineClamp-2 mt-12">HEJ（高エネ...</p>
+						<p class="text-12 lineClamp-3 mt-2 md-text-14">たまちゃんの重曹のお掃除｜重曹勉強会｜HEJ販売</p>
+					</div>
+				</a>
+								</div>
+			</section>
+			<!-- ツクツク!!!からのおすすめ -->
+			<section class="top-tsuku2Recommend my-40">
+				<h2 class="text-center text-20 font-bold pb-8" style="border-bottom: 1px solid #c4c4c4">ツクツク!!!からのおすすめ</h2>
+				<div class="mt-16 pb-28 md-mt-32 js-slider-tsuku2Recommend">
+												    <a href="https://ec.tsuku2.jp/items/03309200392495" class="product-item mr-8 md-mx-12 hover-opacity" target="_blank">
+					      <div class="product-imgWrap">
+					        <img class="w-full" src="https://cms2.tsuku2.shop/pic/item/0000142650/item_20230309_100300_220_L.jpg" alt="栗好き必食！至福のひと時をお届け致します。しっとり、濃厚焼きモンブ..." />
+					      </div>
+					      <div class="flex flex-col ml-5 md-ml-0 mt-8 gap-8">
+					        <p class="product-item-name text-14 leading-13 lineClamp-2">栗好き必食！至福のひと時をお届け致します。しっとり、濃厚焼きモンブ...</p>
+					        <div class="product-item-price text-16 font-bold">￥4,536</div>
+					        <div class="product-item-point text-12">130ポイント</div>
+					      </div>
+					    </a>
+										    <a href="https://ec.tsuku2.jp/items/50095452002240" class="product-item mr-8 md-mx-12 hover-opacity" target="_blank">
+					      <div class="product-imgWrap">
+					        <img class="w-full" src="https://cms2.tsuku2.shop/pic/item/0000111383/0000111383_20220123_171137_911413_L.jpg" alt="スノーボール（バニラ）maricopain自慢の焼き菓子　毎週金曜発送" />
+					      </div>
+					      <div class="flex flex-col ml-5 md-ml-0 mt-8 gap-8">
+					        <p class="product-item-name text-14 leading-13 lineClamp-2">スノーボール（バニラ）maricopain自慢の焼き菓子　毎週金曜発送</p>
+					        <div class="product-item-price text-16 font-bold">￥1,512</div>
+					        <div class="product-item-point text-12">23ポイント</div>
+					      </div>
+					    </a>
+										    <a href="https://ec.tsuku2.jp/items/51358222000520" class="product-item mr-8 md-mx-12 hover-opacity" target="_blank">
+					      <div class="product-imgWrap">
+					        <img class="w-full" src="https://cms2.tsuku2.shop/pic/item/0000266702/item_20250208_152535_809_L.jpg" alt="【1箱】牡蠣餃子(8個入り)" />
+					      </div>
+					      <div class="flex flex-col ml-5 md-ml-0 mt-8 gap-8">
+					        <p class="product-item-name text-14 leading-13 lineClamp-2">【1箱】牡蠣餃子(8個入り)</p>
+					        <div class="product-item-price text-16 font-bold">￥1,458</div>
+					        <div class="product-item-point text-12">43ポイント</div>
+					      </div>
+					    </a>
+										    <a href="https://ec.tsuku2.jp/items/07230040220412" class="product-item mr-8 md-mx-12 hover-opacity" target="_blank">
+					      <div class="product-imgWrap">
+					        <img class="w-full" src="https://cms2.tsuku2.shop/pic/item/0000213893/item_20220726_171426_763_L.jpg" alt="トマトジュース 2本セット ゼロ磁場栽培　無農薬　ストレートジュース【..." />
+					      </div>
+					      <div class="flex flex-col ml-5 md-ml-0 mt-8 gap-8">
+					        <p class="product-item-name text-14 leading-13 lineClamp-2">トマトジュース 2本セット ゼロ磁場栽培　無農薬　ストレートジュース【...</p>
+					        <div class="product-item-price text-16 font-bold">￥10,800</div>
+					        <div class="product-item-point text-12">200ポイント</div>
+					      </div>
+					    </a>
+										    <a href="https://ticket.tsuku2.jp/events-detail/26700052408953" class="product-item mr-8 md-mx-12 hover-opacity" target="_blank">
+					      <div class="product-imgWrap">
+					        <img class="w-full" src="https://cms2.tsuku2.shop/pic/item/0000285588/item_20250807_222841_95_L.jpg" alt="満腹応援！1500円チケット" />
+					      </div>
+					      <div class="flex flex-col ml-5 md-ml-0 mt-8 gap-8">
+					        <p class="product-item-name text-14 leading-13 lineClamp-2">満腹応援！1500円チケット</p>
+					        <div class="product-item-price text-16 font-bold">￥1,500</div>
+					        <div class="product-item-point text-12">22ポイント</div>
+					      </div>
+					    </a>
+										    <a href="https://ec.tsuku2.jp/items/13120200617530" class="product-item mr-8 md-mx-12 hover-opacity" target="_blank">
+					      <div class="product-imgWrap">
+					        <img class="w-full" src="https://cms2.tsuku2.shop/pic/item/0000132197/item_20230120_115243_026_L.jpg" alt="牛ホホ肉の赤ワイン煮込み" />
+					      </div>
+					      <div class="flex flex-col ml-5 md-ml-0 mt-8 gap-8">
+					        <p class="product-item-name text-14 leading-13 lineClamp-2">牛ホホ肉の赤ワイン煮込み</p>
+					        <div class="product-item-price text-16 font-bold">￥2,800</div>
+					        <div class="product-item-point text-12">42ポイント</div>
+					      </div>
+					    </a>
+										    <a href="https://ec.tsuku2.jp/items/24072282612021" class="product-item mr-8 md-mx-12 hover-opacity" target="_blank">
+					      <div class="product-imgWrap">
+					        <img class="w-full" src="https://cms2.tsuku2.shop/pic/item/0000162970/item_20240509_165448_603_L.jpg" alt="tomato-ume　とまと梅300g" />
+					      </div>
+					      <div class="flex flex-col ml-5 md-ml-0 mt-8 gap-8">
+					        <p class="product-item-name text-14 leading-13 lineClamp-2">tomato-ume　とまと梅300g</p>
+					        <div class="product-item-price text-16 font-bold">￥1,700</div>
+					        <div class="product-item-point text-12">25ポイント</div>
+					      </div>
+					    </a>
+										    <a href="https://ec.tsuku2.jp/items/22202130111701" class="product-item mr-8 md-mx-12 hover-opacity" target="_blank">
+					      <div class="product-imgWrap">
+					        <img class="w-full" src="https://cms2.tsuku2.shop/pic/item/0000166973/item_20220910_183244_972_L.jpg" alt="４人前｜下地食品の八重山そばセット【製麺所直送 沖縄そば】" />
+					      </div>
+					      <div class="flex flex-col ml-5 md-ml-0 mt-8 gap-8">
+					        <p class="product-item-name text-14 leading-13 lineClamp-2">４人前｜下地食品の八重山そばセット【製麺所直送 沖縄そば】</p>
+					        <div class="product-item-price text-16 font-bold">￥4,500</div>
+					        <div class="product-item-point text-12">67ポイント</div>
+					      </div>
+					    </a>
+										    <a href="https://ec.tsuku2.jp/items/00272502543100" class="product-item mr-8 md-mx-12 hover-opacity" target="_blank">
+					      <div class="product-imgWrap">
+					        <img class="w-full" src="https://cms2.tsuku2.shop/pic/item/0000195624/item_20241203_154211_948_L.jpg" alt="御園和牛手ごねハンバーグセット（５個入り）" />
+					      </div>
+					      <div class="flex flex-col ml-5 md-ml-0 mt-8 gap-8">
+					        <p class="product-item-name text-14 leading-13 lineClamp-2">御園和牛手ごねハンバーグセット（５個入り）</p>
+					        <div class="product-item-price text-16 font-bold">￥4,000</div>
+					        <div class="product-item-point text-12">100ポイント</div>
+					      </div>
+					    </a>
+										    <a href="https://ec.tsuku2.jp/items/95062620399402" class="product-item mr-8 md-mx-12 hover-opacity" target="_blank">
+					      <div class="product-imgWrap">
+					        <img class="w-full" src="https://cms2.tsuku2.shop/pic/item/0000258940/item_20250926_183609_457_L.jpg" alt="「徳之島産/冷凍カットパッションフルーツ/マンゴー/パイナップル」90ｇ..." />
+					      </div>
+					      <div class="flex flex-col ml-5 md-ml-0 mt-8 gap-8">
+					        <p class="product-item-name text-14 leading-13 lineClamp-2">「徳之島産/冷凍カットパッションフルーツ/マンゴー/パイナップル」90ｇ...</p>
+					        <div class="product-item-price text-16 font-bold">￥2,700</div>
+					        <div class="product-item-point text-12">40ポイント</div>
+					      </div>
+					    </a>
+										    <a href="https://ec.tsuku2.jp/items/32043223721192" class="product-item mr-8 md-mx-12 hover-opacity" target="_blank">
+					      <div class="product-imgWrap">
+					        <img class="w-full" src="https://cms2.tsuku2.shop/pic/item/0000094261/item_20240125_093411_736_L.jpg" alt="ゴーダ＆ハードチーズ食べ比べセット　オーガニックグラスフェッド生乳1..." />
+					      </div>
+					      <div class="flex flex-col ml-5 md-ml-0 mt-8 gap-8">
+					        <p class="product-item-name text-14 leading-13 lineClamp-2">ゴーダ＆ハードチーズ食べ比べセット　オーガニックグラスフェッド生乳1...</p>
+					        <div class="product-item-price text-16 font-bold">￥3,600</div>
+					        <div class="product-item-point text-12">180ポイント</div>
+					      </div>
+					    </a>
+										    <a href="https://ec.tsuku2.jp/items/06322214110212" class="product-item mr-8 md-mx-12 hover-opacity" target="_blank">
+					      <div class="product-imgWrap">
+					        <img class="w-full" src="https://cms2.tsuku2.shop/pic/item/0000208281/item_20250411_162417_899_L.jpg" alt="シモトブレンド 当店人気NO.1コーヒー豆" />
+					      </div>
+					      <div class="flex flex-col ml-5 md-ml-0 mt-8 gap-8">
+					        <p class="product-item-name text-14 leading-13 lineClamp-2">シモトブレンド 当店人気NO.1コーヒー豆</p>
+					        <div class="product-item-price text-16 font-bold">￥1,700</div>
+					        <div class="product-item-point text-12">25ポイント</div>
+					      </div>
+					    </a>
+										    <a href="https://ec.tsuku2.jp/items/92042290500441" class="product-item mr-8 md-mx-12 hover-opacity" target="_blank">
+					      <div class="product-imgWrap">
+					        <img class="w-full" src="https://cms2.tsuku2.shop/pic/item/0000091036/item_20241220_122516_314_L.jpg" alt="［1個から］北海道ななつぼし米粉100%のシフォンケーキ【冷凍発送】グル..." />
+					      </div>
+					      <div class="flex flex-col ml-5 md-ml-0 mt-8 gap-8">
+					        <p class="product-item-name text-14 leading-13 lineClamp-2">［1個から］北海道ななつぼし米粉100%のシフォンケーキ【冷凍発送】グル...</p>
+					        <div class="product-item-price text-16 font-bold">￥594</div>
+					        <div class="product-item-point text-12">10ポイント</div>
+					      </div>
+					    </a>
+										    <a href="https://ticket.tsuku2.jp/events-detail/90402051211229" class="product-item mr-8 md-mx-12 hover-opacity" target="_blank">
+					      <div class="product-imgWrap">
+					        <img class="w-full" src="https://cms2.tsuku2.shop/pic/item/0000086504/item_20250501_141504_649_L.jpg" alt="沖縄の子どもたちの居場所づくり・お食事提供支援チケット！" />
+					      </div>
+					      <div class="flex flex-col ml-5 md-ml-0 mt-8 gap-8">
+					        <p class="product-item-name text-14 leading-13 lineClamp-2">沖縄の子どもたちの居場所づくり・お食事提供支援チケット！</p>
+					        <div class="product-item-price text-16 font-bold">￥540</div>
+					        <div class="product-item-point text-12">16ポイント</div>
+					      </div>
+					    </a>
+										    <a href="https://ec.tsuku2.jp/items/03028120242200" class="product-item mr-8 md-mx-12 hover-opacity" target="_blank">
+					      <div class="product-imgWrap">
+					        <img class="w-full" src="https://cms2.tsuku2.shop/pic/item/0000084643/item_20230129_132725_377_L.jpg" alt="免疫強化サポート有機ハーブティー 「Immune」" />
+					      </div>
+					      <div class="flex flex-col ml-5 md-ml-0 mt-8 gap-8">
+					        <p class="product-item-name text-14 leading-13 lineClamp-2">免疫強化サポート有機ハーブティー 「Immune」</p>
+					        <div class="product-item-price text-16 font-bold">￥1,800</div>
+					        <div class="product-item-point text-12">27ポイント</div>
+					      </div>
+					    </a>
+									</div>
+			</section>
+
+		</div>
+	</main>
+	<!-- footer of the pagse -->
+	<script src="./assets/js/plugins/underscore.js"></script>
+<div class="l-footer-wrapper">
+	<a class="pagetop js-pageToTop hide" href="">
+		<img src="assets/img/shop/pagetop.svg" alt="ページトップ" />
+	</a>
+	<footer class="footer">
+		<div class="footer-top">
+			<dl class="footer-list">
+				<dt><a href="https://home.tsuku2.jp" target="_blank"><img src="assets/img/logo.svg" alt="ツクツク"></a></dt>
+				<dd><a href="https://ec.tsuku2.jp" target="_blank"><img src="assets/img/tsukutsuku_icon_onlineshopping.svg" alt="通販"></a></dd>
+				<dd><a href="https://ticket.tsuku2.jp" target="_blank"><img src="assets/img/tsukutsuku_icon_webticket.svg" alt="ウェブチケット"></a></dd>
+				<dd><a href="https://event.tsuku2.jp" target="_blank"><img src="assets/img/tsukutsuku_icon_event.svg" alt="イベチケ"></a></dd>
+				<dd><a href="https://gourmet.tsuku2.jp" target="_blank"><img src="assets/img/tsukutsuku_icon_gourmet.svg" alt="グルメ"></a></dd>
+				<dd><a href="https://beauty.tsuku2.jp" target="_blank"><img src="assets/img/tsukutsuku_icon_beauty.svg?20230417" alt="ビューティー"></a></dd>
+				<dd><a href="https://farm.tsuku2.jp" target="_blank"><img src="assets/img/tsukutsuku_icon_farm.svg" alt="ファーム"></a></dd>
+			</dl>
+			<p>
+				ツクツク!!!は、<span>モノ（物販）</span>・<span>コト（体験）</span>・<span>ゴチソウ（グルメ）</span>・<span>オメカシ（美容）</span>・<span>チョクバイ（産地直送）</span>のショッピングと予約サイト。<br class="is-pc">
+				みんなでシェアし合う<span>おすそ分けポイント機能</span>を搭載した総合マーケットプレイスです。
+			</p>
+			<ul class="sns-list">
+				<li><a href="https://twitter.com/tsuku2jp" target="_blank"><img src="./assets/img/sns-twitter.svg?20240206" alt="X（旧Twitter）"></a></li>
+				<li><a href="https://www.facebook.com/tsuku2/" target="_blank"><img src="./assets/img/sns-facebook.svg" alt="facebook"></a></li>
+				<li><a href="https://www.instagram.com/tsuku2_official/" target="_blank"><img src="./assets/img/sns-instagram.svg" alt="instagram"></a></li>
+			</ul><!-- /.sns-list -->
+		</div><!-- /.footer-top -->
+		<section class="footer-center">
+			<h1>サービス各種ご案内</h1>
+			<ul class="footer-center-menu">
+				<li><a href="https://home.tsuku2.jp/sitemap.php">サイトマップ</a></li>
+				<li><a href="https://home.tsuku2.jp/privacy.php">個人情報保護方針</a></li>
+				<li><a href="https://home.tsuku2.jp/handling_of_personal_information.php">個人情報の取り扱いについて</a></li>
+				<li><a href="https://home.tsuku2.jp/terms.php">サイトご利用規約</a></li>
+				<li><a href="https://home.tsuku2.jp/doContact.php">各種お問い合わせ（総合窓口）</a></li>
+				<li><a href="https://home.tsuku2.jp/app/faq/faq.php">ツクツク!!!アプリとは</a></li>
+				<li><a href="https://home.tsuku2.jp/doContact.php">ご意見・ご要望</a></li>
+				<li><a href="https://tsuku2.shop/" target="_blank">出店をご検討のショップ様</a></li>
+				<li><a href="https://tsuku2.co.jp/" target="_blank">運営会社のご案内</a></li>
+				<li><a href="https://newgrad.tsuku2.co.jp/" target="_blank">採用情報</a></li>
+				<li><a href="https://home.tsuku2.jp/faq.php">FAQ</a></li>
+				<li><a href="https://nomu.tsuku2.jp" target="_blank">ノムノム</a></li>
+			</ul>
+		</section><!-- /.footer-center -->
+		<div class="footer-nav-sp is-sp">
+			<a href="#top"><i class="fa-arrow-up-to-line"></i><span>-<br>↑</span>ページの先頭へ</a>
+		</div><!-- /.footer-nav-sp -->
+		<div class="footer-bottom">
+			<div class="norton">
+				<img src="./assets/img/norton.png" alt="Norton">
+				<p>
+					当サイトはDigiCert社発行のSSL電子証明書を使用しており、お客様によって入力される内容は個人情報保護方針に基づき送信時にSSLという暗号化技術によって保護されます。
+				</p>
+			</div><!-- /.norton -->
+			<p class="copy-box">
+				<small>&copy; 2025 TSUKU TSUKU Inc. All rights reserved.</small>
+			</p>
+		</div><!-- /.footer-bottom -->
+	</footer><!-- /.footer -->
+	<div class="modal-aboutFanclub hidden js-modal-aboutFanclub js-modal-closeTarget">
+		<div class="modal-aboutFanclub-head relative pt-45 px-12 pb-25 md-pb-45" style="background-color: #f0f0f0">
+			<div class="modal-aboutFanclub-close md-flex md-items-center hover-opacity js-close-modal">
+				<span class="text-14 hidden md-block md-mr-6">閉じる</span>
+				<button class="btn-close flex-center rounded-full">
+					<svg xmlns="http://www.w3.org/2000/svg" width="9.281" height="9.281" viewBox="0 0 9.281 9.281">
+						<path d="M4.641-1.672A.758.758,0,0,0,4.422-2.2l-2.3-2.3,2.3-2.3a.758.758,0,0,0,.219-.531.758.758,0,0,0-.219-.531L3.359-8.922a.758.758,0,0,0-.531-.219.758.758,0,0,0-.531.219L0-6.625l-2.3-2.3a.758.758,0,0,0-.531-.219.758.758,0,0,0-.531.219L-4.422-7.859a.758.758,0,0,0-.219.531.758.758,0,0,0,.219.531l2.3,2.3-2.3,2.3a.758.758,0,0,0-.219.531.758.758,0,0,0,.219.531L-3.359-.078a.758.758,0,0,0,.531.219A.758.758,0,0,0-2.3-.078L0-2.375l2.3,2.3a.758.758,0,0,0,.531.219.758.758,0,0,0,.531-.219L4.422-1.141A.758.758,0,0,0,4.641-1.672Z" transform="translate(4.641 9.141)" fill="#fff" />
+					</svg>
+				</button>
+			</div>
+			<p class="text-center leading-13 text-18 font-bold md-text-28">ショップ ファンクラブ</p>
+		</div>
+		<div class="modal-aboutFanclub-body p-16">
+			<p class="my-16 leading-18 text-16 md-text-center md-my-32">
+				お好きなショップを1店舗選んでショップ ファンクラブに参加すると、<span class="font-bold">毎月ポイントが貯まります！</span><br class="hidden md-block" />
+				さらにファン登録したショップ情報は常にあなたのマイページに表示され、<br class="hidden md-block" /><span class="font-bold">おすすめ商品やショップ ファンクラブ会員限定のお知らせ</span>などが届きます。<br />
+				どのショップでも<span class="font-bold">参加は無料！</span>あなたのナンバーワンショップを見つけて、<br class="hidden md-block" />トクしかないショップ ファンクラブにご参加ください♪
+			</p>
+			<div class="container-840 mt-50 mb-24 md-pb-40">
+				<div class="relative mb-48 md-pt-14">
+					<ol class="modal-aboutFanclub-list leading-15 text-14 md-text-16">
+						<li class="modal-aboutFanclub-item">あなたの“ナンバーワン”ショップ見つけて、ファン登録すると…</li>
+						<li class="modal-aboutFanclub-item">ショップ ファンクラブに参加できます！</li>
+						<li class="modal-aboutFanclub-item">
+							ショップ ファンクラブ会員向けにおすすめ商品や限定クーポンなどお得な情報がホームに届きます。
+						</li>
+						<li class="modal-aboutFanclub-item">選んだショップ ファンクラブのお店でお買い物や予約などを利用しましょう。</li>
+						<li class="modal-aboutFanclub-item">ショップ ファンクラブからポイントのおすそわけが届きます。</li>
+					</ol>
+					<div class="returnArea flex-center flex-col mx-auto">
+						<p class="pt-10 my-32 text-center text-16 font-bold leading-18">
+							さぁ、お得なショップ ファンクラブに<br />
+							参加しましょう！
+						</p>
+						<button class="btn-return flex-center hover-opacity js-close-modal">前のページに戻る</button>
+					</div>
+				</div>
+				<p class="leading-18 text-16 md-pt-16">
+					ショップ ファンクラブおすそわけ対象条件<br />
+					<br />
+					①ショップ ファンクラブおすそわけ対象ショップ確定タイミングまでに、ショップ ファンクラブに参加していること<br />
+					（おすそわけ対象ショップ確定タイミング：毎月末日の24時）<br />
+					（ポイントのおすそわけは、対象月の翌月10日にお届けします）<br />
+					※2022年5月1日以降、アカウントを新規発行されたユーザー様に関しましては、初回のお買い物やご予約をしたショップでのショップファンクラブに自動登録されます。ただし、ショップファンクラブの変更は何度でも可能です。<br />
+					②参加しているショップファンクラブおすそわけ対象ショップで、対象月にお買い物やご予約実績があること<br />
+					※お買い物後やご予約後にショップファンクラブにご参加いただいても、おすそわけ対象となります。<br />
+					※お買い物・ご予約はご入金を持ちまして実績となります。店頭払い、現地払いの場合は来店済みである必要がございます。
+				</p>
+			</div>
+		</div>
+	</div>
+	<!-- SPのみ -->
+	<nav class="tabbar">
+		<ul>
+			<li>
+				<a href="https://home.tsuku2.jp">
+					<svg xmlns="http://www.w3.org/2000/svg" width="28.03" height="31.256" viewBox="0 0 28.03 31.256">
+						<g transform="translate(-23.88 -774.125)">
+							<path d="M17.895-7.857,9.439-16.7a.436.436,0,0,0-.176-.132.588.588,0,0,0-.229-.044.556.556,0,0,0-.4.176L.141-7.857A.643.643,0,0,0,0-7.594a.544.544,0,0,0,.009.29.589.589,0,0,0,.149.255.8.8,0,0,0,.193.114A.446.446,0,0,0,.563-6.9a.7.7,0,0,0,.211-.053.537.537,0,0,0,.176-.114l.773-.791V.563a.556.556,0,0,0,.158.4.532.532,0,0,0,.4.167h3.92a.478.478,0,0,0,.132-.018.661.661,0,0,0,.114-.044.55.55,0,0,0,.105-.07A.621.621,0,0,0,6.645.905a.543.543,0,0,0,.062-.1A.6.6,0,0,0,6.75.686.516.516,0,0,0,6.768.563l.018-5.625h4.482V.563a.541.541,0,0,0,.167.4.541.541,0,0,0,.4.167h3.938a.541.541,0,0,0,.4-.167.541.541,0,0,0,.167-.4v-8.42l.756.791a.52.52,0,0,0,.4.176.526.526,0,0,0,.387-.158.624.624,0,0,0,.167-.4A.553.553,0,0,0,17.895-7.857Zm-2.689-1.02V0H12.393V-5.625a.541.541,0,0,0-.167-.4.541.541,0,0,0-.4-.167H6.223a.541.541,0,0,0-.4.167.541.541,0,0,0-.167.4L5.643,0H2.848V-8.877a.578.578,0,0,0-.018-.141l6.205-6.469,6.188,6.469A.578.578,0,0,0,15.205-8.877Z" transform="translate(29 791)" fill="#62676c" />
+							<path d="M-10.14-6.31h-2.44a7.2,7.2,0,0,1-1.16-.06v.76a9.032,9.032,0,0,1,1.15-.05h2.45V-.67A5.516,5.516,0,0,1-10.2.38h.82A6.722,6.722,0,0,1-9.43-.68V-5.66h2.54a9.032,9.032,0,0,1,1.15.05v-.76a7.269,7.269,0,0,1-1.17.06H-9.43v-.65A6.2,6.2,0,0,1-9.38-8h-.82a5.163,5.163,0,0,1,.06,1.02ZM-12.3-4.73a7.422,7.422,0,0,1-.87,2.52,4.832,4.832,0,0,1-.95,1.3,2.039,2.039,0,0,1,.66.43,8.989,8.989,0,0,0,1.75-3.46c.13-.47.13-.48.17-.59Zm4.27.2a6.1,6.1,0,0,1,.25.65,16.353,16.353,0,0,0,.7,1.72A9.658,9.658,0,0,0-6.04-.45a2.355,2.355,0,0,1,.63-.47A8.518,8.518,0,0,1-6.96-3.6a6.709,6.709,0,0,1-.37-1.12Zm4.15,1.1a10.924,10.924,0,0,1,1.24-.04h5.8a11.44,11.44,0,0,1,1.22.04v-.81a7.887,7.887,0,0,1-1.21.05H-2.64a7.074,7.074,0,0,1-1.24-.06ZM8.95-7.95a18.975,18.975,0,0,1-.79,2.88A38.138,38.138,0,0,1,6.65-1.11c-.23.02-.78.05-.85.05-.05,0-.05,0-.28-.01l.1.83a6.954,6.954,0,0,1,.85-.11,61.773,61.773,0,0,0,6.15-.83A13.574,13.574,0,0,1,13.21.17l.7-.38a25.9,25.9,0,0,0-2.49-4.52l-.62.34A19.453,19.453,0,0,1,12.34-1.8c-1.18.23-3.53.54-4.86.63A54.179,54.179,0,0,0,9.56-7.02a3.954,3.954,0,0,1,.27-.72Z" transform="translate(38 805)" fill="#62676c" />
+						</g>
+					</svg>
+				</a>
+			</li>
+			<!--
+			<li>
+				<a href="">
+					<svg xmlns="http://www.w3.org/2000/svg" width="18.97" height="31.645" viewBox="0 0 18.97 31.645">
+						<g transform="translate(-105.3 -774.125)">
+							<path
+								d="M17.859.158l-5.467-5.5a6.8,6.8,0,0,0,1.635-4.5,6.9,6.9,0,0,0-.94-3.533,6.935,6.935,0,0,0-2.566-2.558,6.935,6.935,0,0,0-3.533-.94,6.888,6.888,0,0,0-3.524.94A6.954,6.954,0,0,0,.905-13.377a6.9,6.9,0,0,0-.94,3.533,6.9,6.9,0,0,0,.94,3.533A6.954,6.954,0,0,0,3.463-3.753,6.9,6.9,0,0,0,7-2.812,6.817,6.817,0,0,0,11.6-4.535L17.051.949a.556.556,0,0,0,.4.176.541.541,0,0,0,.4-.167.551.551,0,0,0,.167-.4A.537.537,0,0,0,17.859.158ZM7-3.92a5.779,5.779,0,0,1-2.979-.8A5.907,5.907,0,0,1,1.863-6.882a5.8,5.8,0,0,1-.791-2.962,5.8,5.8,0,0,1,.791-2.962,5.907,5.907,0,0,1,2.153-2.162,5.763,5.763,0,0,1,2.971-.8,5.763,5.763,0,0,1,2.971.8,5.907,5.907,0,0,1,2.153,2.162A5.8,5.8,0,0,1,12.9-9.844a5.853,5.853,0,0,1-.158,1.354A5.736,5.736,0,0,1,12.3-7.242a6.54,6.54,0,0,1-.694,1.1,5.45,5.45,0,0,1-.914.923,6.241,6.241,0,0,1-1.09.694,5.736,5.736,0,0,1-1.248.448A5.853,5.853,0,0,1,7-3.92Z"
+								transform="translate(106 791)"
+								fill="#62676c"
+							/>
+							<path
+								d="M-2.11-2.05a8.47,8.47,0,0,1,.97.04,7.074,7.074,0,0,1-.03-.75v-.97c0-.24.01-.47.03-.72-.26.02-.49.03-.91.03H-3.43c.01-.23.01-.3.01-.5v-.37h.56a7.522,7.522,0,0,1,.89.04v-.6A9.369,9.369,0,0,0-.65-5a2.083,2.083,0,0,1,.38-.58A7.565,7.565,0,0,1-2.32-6.89,5.867,5.867,0,0,1-3.44-8.22h-.69A6.676,6.676,0,0,1-6.85-5.49a1.428,1.428,0,0,1,.41.5,10.451,10.451,0,0,0,1.08-.82v.56a7.631,7.631,0,0,1,.89-.04h.46v.87h-1.3a6.829,6.829,0,0,1-.88-.03,5.793,5.793,0,0,1,.03.65v1.17a6.133,6.133,0,0,1-.03.62,8,8,0,0,1,.91-.04h.98A3.435,3.435,0,0,1-6.99.14,1.674,1.674,0,0,1-6.61.7,6.4,6.4,0,0,0-4.93-.18,3.521,3.521,0,0,0-3.76-1.8,5.193,5.193,0,0,0-.75.7,2.428,2.428,0,0,1-.38.09,4.532,4.532,0,0,1-3.31-2.05ZM-4.47-5.83c-.37,0-.6-.01-.83-.03A7.171,7.171,0,0,0-3.77-7.72,7.2,7.2,0,0,0-1.99-5.86c-.24.02-.47.03-.87.03Zm.44,1.93a9.043,9.043,0,0,1-.14,1.34H-5.58V-3.9Zm2.28,0v1.34H-3.58A10.867,10.867,0,0,0-3.44-3.9ZM-7.14-5.79a5.991,5.991,0,0,1,.62.03v-.63a3.547,3.547,0,0,1-.63.04h-.39v-.99a6.529,6.529,0,0,1,.05-1.02h-.69a5.987,5.987,0,0,1,.05,1.03v.98h-.64a4.156,4.156,0,0,1-.7-.04v.64a4.31,4.31,0,0,1,.7-.04h.53A9.525,9.525,0,0,1-9.7-2.29a2.032,2.032,0,0,1,.4.57,8.127,8.127,0,0,0,.94-2.1c.19-.67.19-.67.28-.98-.03.6-.05,1.13-.05,1.58V-.39A8.5,8.5,0,0,1-8.19.77h.71A8.107,8.107,0,0,1-7.54-.39V-3.43c0-.47-.02-1.16-.04-1.61a7.94,7.94,0,0,0,.87,1.75,2.245,2.245,0,0,1,.36-.51A6.218,6.218,0,0,1-7.49-5.79ZM.95-1.93a4.636,4.636,0,0,1,.7-.04c.68-.01,1.63-.04,2.95-.1V-.18a4.351,4.351,0,0,1-.06.91h.78a4.408,4.408,0,0,1-.07-.91V-2.1c1.19-.05,1.19-.05,2.85-.18.29.33.39.44.7.82l.47-.42A14.99,14.99,0,0,0,7.25-3.83L6.8-3.5c.41.34.55.47.85.75-1.72.11-1.72.11-3.1.15A14.251,14.251,0,0,0,6.61-4.33c.14-.15.24-.24.34-.33L6.3-4.98A6.956,6.956,0,0,1,4.74-3.37c-.42-.34-.44-.35-.86-.66A11.269,11.269,0,0,0,5.15-5.4H8.47v1.34h.67a3.951,3.951,0,0,1-.04-.65v-.68a3.618,3.618,0,0,1,.04-.6,9.291,9.291,0,0,1-1,.04H5.21v-.96H8.16a10.032,10.032,0,0,1,1.1.05v-.67a7.35,7.35,0,0,1-1.1.06H5.21v-.17a3.325,3.325,0,0,1,.07-.7H4.52a3.26,3.26,0,0,1,.07.7v.17H1.9A7.5,7.5,0,0,1,.79-7.53v.67a7.923,7.923,0,0,1,1.1-.05h2.7v.96H1.89a9.655,9.655,0,0,1-1-.04,4.057,4.057,0,0,1,.04.64v.65a4.005,4.005,0,0,1-.04.63h.67V-5.4H4.39a5.5,5.5,0,0,1-.96,1.05c-.28-.19-.4-.26-.77-.49l-.41.43a16.294,16.294,0,0,1,2.03,1.4c-.18.14-.18.14-.38.28-.05.03-.11.08-.21.15-.72.02-.87.02-1.5.02A9.915,9.915,0,0,1,.83-2.62Zm2.22.24a4.145,4.145,0,0,1-1.04.92A5.308,5.308,0,0,1,.8-.13,1.913,1.913,0,0,1,1.29.4,6.887,6.887,0,0,0,3.71-1.36Zm2.99.29A9.033,9.033,0,0,0,8.76.37,2.365,2.365,0,0,1,9.2-.19,7.238,7.238,0,0,1,6.64-1.78Z"
+								transform="translate(115 805)"
+								fill="#62676c"
+							/>
+						</g>
+					</svg>
+				</a>
+			</li>
+-->
+			<li>
+				<a href="https://home.tsuku2.jp/mypage/wishList.php">
+					<svg xmlns="http://www.w3.org/2000/svg" width="46.81" height="31.631" viewBox="0 0 46.81 31.631">
+						<g transform="translate(-169.99 -774)">
+							<path d="M-19.13-6.59a10.106,10.106,0,0,1-2.04.43v-.96a5.719,5.719,0,0,1,.05-.93h-.74a6.643,6.643,0,0,1,.05.95v.99c-.3.02-.69.03-.96.03a5.664,5.664,0,0,1-1.02-.07v.66h.41c.11.01.38.01.53.01.29,0,.46,0,.64-.01.31-.02.31-.02.4-.03v1.89a5.349,5.349,0,0,0-1.41.82,1.81,1.81,0,0,0-.79,1.33,1.206,1.206,0,0,0,.46.94A2.641,2.641,0,0,0-21.9.1c.49,0,.73-.26.73-.8V-3.2a6.747,6.747,0,0,1,2.12-.39c1.31,0,2.14.61,2.14,1.59A1.327,1.327,0,0,1-18.25-.59c-.73,0-1.03-.43-1.03-1.47a2.97,2.97,0,0,1,.02-.39,2.167,2.167,0,0,1-.66.26,3.649,3.649,0,0,0,.12,1.13A1.475,1.475,0,0,0-18.26.07,2.024,2.024,0,0,0-16.22-2a2.012,2.012,0,0,0-1.03-1.77,3.386,3.386,0,0,0-1.77-.42,7.085,7.085,0,0,0-2.15.36V-5.56a17.551,17.551,0,0,0,1.77-.3c.14-.03.18-.04.3-.06Zm-2.68,5.52c0,.43-.03.49-.23.49a1.868,1.868,0,0,1-.89-.29c-.29-.19-.43-.39-.43-.6,0-.48.56-1.02,1.55-1.5ZM-15.8-5.3a8.4,8.4,0,0,0-2.02-1.9l-.52.39a8.19,8.19,0,0,1,2.02,1.96Zm8.54-1.58A7.192,7.192,0,0,1-6-6.81v-.72a8.241,8.241,0,0,1-1.26.07h-4.92c.15-.27.19-.36.28-.54a2.3,2.3,0,0,1,.17-.35l-.71-.16a2.005,2.005,0,0,1-.19.59,6.793,6.793,0,0,1-1.91,2.53,1.184,1.184,0,0,1,.47.44A7.851,7.851,0,0,0-12.5-6.88ZM-8.2-.23a23.387,23.387,0,0,0-1.98-1.65,10.541,10.541,0,0,0,.86-1.04c.2-.27.2-.27.25-.34.1-.12.1-.12.14-.17l-.64-.37a5.117,5.117,0,0,1-1.12,1.55A18.553,18.553,0,0,0-12.6-3.46l-.43.4a19.088,19.088,0,0,1,1.91,1.23A9.648,9.648,0,0,1-14.22.04a1.676,1.676,0,0,1,.48.55,10.668,10.668,0,0,0,3.13-2.04A16.81,16.81,0,0,1-8.66.29Zm.46-3.82A10.866,10.866,0,0,0-7.36-.77c.27.81.76,1.4,1.15,1.4.25,0,.47-.23.6-.65a5.835,5.835,0,0,0,.27-1.37,1.511,1.511,0,0,1-.55-.39c-.06.92-.22,1.67-.36,1.67-.11,0-.36-.39-.5-.79a9.271,9.271,0,0,1-.37-2.91,7.813,7.813,0,0,1,.04-.85,7.882,7.882,0,0,1-1.13.05H-13a6.032,6.032,0,0,1-.93-.06v.68a7.218,7.218,0,0,1,1.03-.06Zm-4.99-1.37a5.871,5.871,0,0,1,.93-.05h3.99a5.068,5.068,0,0,1,.98.06v-.68a5.469,5.469,0,0,1-.98.06h-4.05a4.658,4.658,0,0,1-.87-.05ZM-3.06-7.8A5.568,5.568,0,0,1-3.2-7a16.543,16.543,0,0,0-.45,3.96A14.333,14.333,0,0,0-3.39-.21c.03.19.04.24.06.4l.72-.06V-.02A8.717,8.717,0,0,1-1.8-2.77L-2.28-3a9.291,9.291,0,0,0-.65,1.95c-.04-.53-.06-1.12-.06-1.9a14.783,14.783,0,0,1,.3-3.13,14.21,14.21,0,0,1,.42-1.6ZM-1-5.91a13.32,13.32,0,0,0,1.6.1,16.882,16.882,0,0,0,2.15-.13q.66-.09.69-.09l-.05-.71a10.73,10.73,0,0,1-2.68.27,6.792,6.792,0,0,1-1.7-.15Zm.73,1.95A2.762,2.762,0,0,0-1.14-2.1a1.413,1.413,0,0,0,.3.92,2.779,2.779,0,0,0,2.29.76A10.317,10.317,0,0,0,3.5-.62c.2-.03.22-.04.35-.05l-.1-.77a6.581,6.581,0,0,1-2.3.35c-1.29,0-1.92-.36-1.92-1.1A2.323,2.323,0,0,1,.28-3.66ZM9.7-7.08A8.694,8.694,0,0,1,9.38-4.9,8.091,8.091,0,0,1,7.84-1.99,8.388,8.388,0,0,1,5.52-.02a1.794,1.794,0,0,1,.54.59A9.461,9.461,0,0,0,7.32-.41,9.5,9.5,0,0,0,8.67-1.93a8.614,8.614,0,0,0,1.4-3.24,7.879,7.879,0,0,0,.63,1.85,9.2,9.2,0,0,0,1.43,2.16A9.372,9.372,0,0,0,14.07.55a2.207,2.207,0,0,1,.56-.64,8.14,8.14,0,0,1-1.87-1.45,8.938,8.938,0,0,1-1.5-2.07,7.292,7.292,0,0,1-.85-3.49,5.179,5.179,0,0,1,.04-.66,4.76,4.76,0,0,1-.93.06H8.2a3.754,3.754,0,0,1-.76-.05v.72c.33-.03.57-.05.76-.05ZM17.66-8.1a2,2,0,0,1-.03.32,25.277,25.277,0,0,0-.34,3.69v.23l.02,1.04.01.18v.11l.72-.03c-.01-.15-.01-.2-.01-.24a5.219,5.219,0,0,1,.54-2.23c.57-1.17,1.21-1.74,1.97-1.74.96,0,1.52.93,1.52,2.54A3.444,3.444,0,0,1,20.34-.91a5.284,5.284,0,0,1-2.03.63,2.064,2.064,0,0,1,.4.68,7.569,7.569,0,0,0,1.78-.59A4.126,4.126,0,0,0,22.8-4.12a4.108,4.108,0,0,0-.6-2.43,1.882,1.882,0,0,0-1.6-.89,2.385,2.385,0,0,0-2,1.29,4.462,4.462,0,0,0-.61,1.49c-.05.21-.05.21-.07.29l-.04-.01c.03-.51.17-1.6.33-2.61a5.669,5.669,0,0,1,.23-1.03Z" transform="translate(194 805)" fill="#62676c" />
+							<path d="M8.238-25.05a.656.656,0,0,0-.518.241.776.776,0,0,0-.251.575v14.163l5.311-2.281a1.2,1.2,0,0,1,.947,0l5.311,2.281V-24.234a.776.776,0,0,0-.251-.575.656.656,0,0,0-.518-.241H8.238m0-1.2H18.27a1.856,1.856,0,0,1,1.383.609,1.969,1.969,0,0,1,.586,1.406V-8.25l-6.984-3-6.984,3V-24.234a1.969,1.969,0,0,1,.586-1.406A1.856,1.856,0,0,1,8.238-26.25Z" transform="translate(180.73 800.25)" fill="#62676c" />
+						</g>
+					</svg>
+				</a>
+			</li>
+			<li>
+				<a href="https://home.tsuku2.jp/mypage/odrList.php">
+					<svg xmlns="http://www.w3.org/2000/svg" width="38.87" height="31.662" viewBox="0 0 38.87 31.662">
+						<g transform="translate(-253.54 -774.107)">
+							<path d="M18-.3,16.523-9.158a2.238,2.238,0,0,0-.773-1.477A2.255,2.255,0,0,0,14.2-11.25H12.955v-1.494a4.5,4.5,0,0,0-.29-1.608,4.057,4.057,0,0,0-.809-1.327,3.755,3.755,0,0,0-1.248-.888,3.82,3.82,0,0,0-1.573-.325A3.768,3.768,0,0,0,7-16.33,3.946,3.946,0,0,0,5.59-14.818a4.315,4.315,0,0,0-.51,2.074v1.494H3.727a2.069,2.069,0,0,0-.562.079,2.608,2.608,0,0,0-.527.211,2.24,2.24,0,0,0-.457.325,2.508,2.508,0,0,0-.369.422,2.479,2.479,0,0,0-.264.492,2.2,2.2,0,0,0-.141.527L.053-.316A1.307,1.307,0,0,0,.316.773a1.214,1.214,0,0,0,.949.369H16.611a1.582,1.582,0,0,0,.668-.123,1.294,1.294,0,0,0,.422-.3A1.316,1.316,0,0,0,18-.3ZM6.205-12.744A3.071,3.071,0,0,1,7-14.889a2.625,2.625,0,0,1,2.03-.879,2.752,2.752,0,0,1,1.143.237,2.547,2.547,0,0,1,.888.65,3.04,3.04,0,0,1,.563.967,3.382,3.382,0,0,1,.2,1.169v1.494H6.205ZM16.664,0,1.336.018q-.211,0-.176-.193L2.514-9.035a1.38,1.38,0,0,1,.141-.413A1.232,1.232,0,0,1,2.927-9.8a1.329,1.329,0,0,1,.378-.237,1.089,1.089,0,0,1,.422-.088H5.08v1.283a2.414,2.414,0,0,0-.229.185.907.907,0,0,0-.176.22,1.268,1.268,0,0,0-.114.272,1.026,1.026,0,0,0-.044.29,1.087,1.087,0,0,0,.325.8,1.087,1.087,0,0,0,.8.325,1.087,1.087,0,0,0,.8-.325,1.087,1.087,0,0,0,.325-.8,1.062,1.062,0,0,0-.562-.967v-1.283H11.83v1.283a1.062,1.062,0,0,0-.562.967,1.087,1.087,0,0,0,.325.8,1.087,1.087,0,0,0,.8.325,1.087,1.087,0,0,0,.8-.325,1.087,1.087,0,0,0,.325-.8,1.062,1.062,0,0,0-.562-.967v-1.283H14.2a.867.867,0,0,1,.211.026,1.484,1.484,0,0,1,.211.07,1.325,1.325,0,0,1,.2.105A1.375,1.375,0,0,1,15-9.791a1.285,1.285,0,0,1,.149.158,1.085,1.085,0,0,1,.123.193,1.611,1.611,0,0,1,.088.211A1.306,1.306,0,0,1,15.416-9L16.875-.158a.1.1,0,0,1-.035.114A.276.276,0,0,1,16.664,0Z" transform="translate(264 791)" fill="#62676c" />
+							<path d="M-14.24-5.5v2.09h-1.24a7.122,7.122,0,0,1-1.03-.06v.68c.3-.03.67-.05,1.04-.05h1.23V-.31h-1.9a7.763,7.763,0,0,1-1.09-.06v.7c.31-.03.67-.05,1.1-.05h4.54c.41,0,.81.02,1.1.05v-.7a7.727,7.727,0,0,1-1.1.06h-2V-2.84h1.5c.37,0,.74.02,1.03.05v-.68a7.122,7.122,0,0,1-1.03.06h-1.5V-5.5h1.8a10.348,10.348,0,0,1,1.04.05v-.69a6.99,6.99,0,0,1-1.04.06h-3.97a7.43,7.43,0,0,1-1.05-.06v.69a8.6,8.6,0,0,1,1.05-.05Zm-4.72-2.2a7.042,7.042,0,0,1,1.68,1.44l.41-.53a9.562,9.562,0,0,0-1.68-1.35Zm-.5,2.41a7.336,7.336,0,0,1,1.74,1.41l.38-.56a9.278,9.278,0,0,0-1.74-1.32Zm1.7,2.37A10.019,10.019,0,0,1-19.42.14l.58.52.26-.44a17.774,17.774,0,0,0,1.35-2.76Zm2.44-4.89a8.554,8.554,0,0,1,2.08,1.38l.43-.53A12.169,12.169,0,0,0-14.9-8.28ZM-1.65-6.02a7.567,7.567,0,0,1,1.12.06v-.71a6.97,6.97,0,0,1-1.14.07H-4.79v-.79a4.224,4.224,0,0,1,.07-.85h-.8a4.4,4.4,0,0,1,.07.86v.78H-8.32a6.944,6.944,0,0,1-1.12-.07v.71a7.984,7.984,0,0,1,1.11-.06h.74a8.919,8.919,0,0,0,.93,2.15A8.79,8.79,0,0,0-5.45-2.23,9.841,9.841,0,0,1-9.6-.01a1.94,1.94,0,0,1,.42.62A10.752,10.752,0,0,0-4.99-1.78,10.4,10.4,0,0,0-.84.62,1.91,1.91,0,0,1-.4-.04,9.278,9.278,0,0,1-2.72-.95,8.834,8.834,0,0,1-4.53-2.24,8.341,8.341,0,0,0-3.06-4.38a9.137,9.137,0,0,0,.61-1.64Zm-1.53,0A7.785,7.785,0,0,1-4.99-2.68,8.464,8.464,0,0,1-6.08-4.11,7.517,7.517,0,0,1-6.9-6.02ZM5.95-1.97a4.52,4.52,0,0,0,.36-.48H8.08c.29,0,.48.01.76.03a4.626,4.626,0,0,1-.03-.76v-.81a5.276,5.276,0,0,1,.03-.78,7.009,7.009,0,0,1-.93.04H5.68c-.43,0-.62,0-.82-.01A5.475,5.475,0,0,0,5.2-5.2H8.35a8.388,8.388,0,0,1,1,.04v-.59a4.928,4.928,0,0,1-1.01.06H5.5c.07-.11.1-.17.2-.34l-.56-.22A3.822,3.822,0,0,1,3.91-4.53a1.554,1.554,0,0,1,.45.36c.21-.23.28-.31.41-.46.01.16.02.32.02.66v.77a5.129,5.129,0,0,1-.04.78,7.1,7.1,0,0,1,.72-.03H5.7a2.68,2.68,0,0,1-.55.64,4.585,4.585,0,0,1-1.5.86A1.542,1.542,0,0,1,4-.52a5.78,5.78,0,0,0,1.3-.81,4.825,4.825,0,0,0,.94.88,8.714,8.714,0,0,1-2.6.69,1.99,1.99,0,0,1,.3.53A9.628,9.628,0,0,0,6.73-.14,9.8,9.8,0,0,0,9.39.77,2.386,2.386,0,0,1,9.69.2,8.706,8.706,0,0,1,7.25-.44a6.711,6.711,0,0,0,1.27-1.1c.08-.09.1-.11.16-.17l-.35-.3a4.457,4.457,0,0,1-.75.04Zm1.86.44a4.519,4.519,0,0,1-1.07.82,3.887,3.887,0,0,1-1-.82ZM5.32-4.28H8.27v.48H5.32Zm0,.9H8.27v.49H5.32ZM8.09-6.32c.41,0,.68.01.99.03-.02-.3-.02-.3-.02-.58v-.68a4.036,4.036,0,0,1,.02-.54,7.856,7.856,0,0,1-1.04.05H2.56a9.794,9.794,0,0,1-1.21-.05,10.883,10.883,0,0,1,.05,1.1,32.562,32.562,0,0,1-.31,5.25A5.146,5.146,0,0,1,.42.15a1.774,1.774,0,0,1,.54.5A6.45,6.45,0,0,0,1.65-1.4a27.833,27.833,0,0,0,.36-4.92Zm-6.07-.5v-.71H8.47v.71Zm1.59.6A4.285,4.285,0,0,1,2.05-4.53a2.672,2.672,0,0,1,.42.4A7.35,7.35,0,0,0,4.15-5.91ZM2.82-.4A8.538,8.538,0,0,1,2.76.75h.7A10.273,10.273,0,0,1,3.41-.43V-3.18a8.342,8.342,0,0,0,.72-.88l-.46-.35A5.177,5.177,0,0,1,1.83-2.59a1.4,1.4,0,0,1,.35.49,4.161,4.161,0,0,0,.67-.6c-.02.35-.03.78-.03,1.13ZM15.3-.2H13.72V-1.78a3.345,3.345,0,0,1,.05-.7h-.7a3.647,3.647,0,0,1,.05.7V-.2H12.8a7.984,7.984,0,0,1-1.11-.06V.42A7.986,7.986,0,0,1,12.9.36h5.12A10.84,10.84,0,0,1,19.3.42V-.26a9.99,9.99,0,0,1-1.24.06H15.9V-1.54h1.68a7.636,7.636,0,0,1,1.06.05v-.64a7.043,7.043,0,0,1-1.06.05H15.9v-.38a3.4,3.4,0,0,1,.05-.7h-.7a4.529,4.529,0,0,1,.05.71Zm1.42-5.55a5.14,5.14,0,0,1-1.68,1.92,1.909,1.909,0,0,1,.41.39A5.213,5.213,0,0,0,16.9-5.31c-.02.53-.03.84-.03.92v.67a4.435,4.435,0,0,1-.06.74h.64a3.888,3.888,0,0,1-.05-.75v-.7c-.01-.22-.01-.22-.01-.54a3.607,3.607,0,0,0-.03-.39,5.945,5.945,0,0,0,1.6,1.93,2.477,2.477,0,0,1,.45-.47,5.668,5.668,0,0,1-1.86-1.85h.9a3.6,3.6,0,0,1,.64.04v-.58a3.46,3.46,0,0,1-.64.04H17.4v-.07a3.21,3.21,0,0,1,.04-.71h-.61a3.993,3.993,0,0,1,.04.71v.07h-.64a3.583,3.583,0,0,1-.65-.04v.58a3.1,3.1,0,0,1,.61-.04Zm-3.27,0a5.435,5.435,0,0,1-1.53,1.78,1.727,1.727,0,0,1,.39.42,5.156,5.156,0,0,0,1.31-1.77c-.02.39-.03.7-.03.88v.7a4.68,4.68,0,0,1-.06.76h.64a3.826,3.826,0,0,1-.05-.75v-.7c0-.18-.02-.61-.04-.91a4.006,4.006,0,0,0,.89,1.16,2.322,2.322,0,0,1,.4-.42,3.81,3.81,0,0,1-1.12-1.15h.44a4.536,4.536,0,0,1,.6.03v-.57a3.206,3.206,0,0,1-.63.04h-.54v-.07a3.993,3.993,0,0,1,.04-.71h-.61a3.993,3.993,0,0,1,.04.71v.07h-.84a3.154,3.154,0,0,1-.62-.04v.58a3.154,3.154,0,0,1,.62-.04ZM11.82-7.31h6.35a7.2,7.2,0,0,1,1.07.05v-.67a7.755,7.755,0,0,1-1.12.06H12.35a10.51,10.51,0,0,1-1.21-.05,13.1,13.1,0,0,1,.05,1.59c0,3.54-.24,5.09-.99,6.45a2.293,2.293,0,0,1,.51.52c.86-1.62,1.11-3.26,1.11-7.24Z" transform="translate(273 805)" fill="#62676c" />
+						</g>
+					</svg>
+				</a>
+			</li>
+			<li>
+				<a href="https://home.tsuku2.jp/mypage/">
+					<svg xmlns="http://www.w3.org/2000/svg" width="46.96" height="31.176" viewBox="0 0 46.96 31.176">
+						<g transform="translate(-324.04 -774.125)">
+							<path d="M9-15.75a4.033,4.033,0,0,1,1.415.272,4.977,4.977,0,0,1,1.274.686,4.128,4.128,0,0,1,.9.914,1.663,1.663,0,0,1,.352.94v2.813a6.952,6.952,0,0,1-.422,2.232,3.832,3.832,0,0,1-1.248,1.863,1.316,1.316,0,0,0-.246.29,1.157,1.157,0,0,0-.149.352,1.165,1.165,0,0,0-.026.378,1.1,1.1,0,0,0,.65.9l4.9,2.32.035.009a.344.344,0,0,1,.07.026.86.86,0,0,1,.088.053.632.632,0,0,1,.1.079.645.645,0,0,1,.088.114.478.478,0,0,1,.062.176,1.392,1.392,0,0,1,.018.229v1.09L1.125,0V-1.143a.689.689,0,0,1,.475-.65L6.539-4.131a1.07,1.07,0,0,0,.642-.888,1.041,1.041,0,0,0-.413-1.011,4.175,4.175,0,0,1-1.257-1.89,6.589,6.589,0,0,1-.448-2.206v-2.812a1.941,1.941,0,0,1,.58-1.239,4.791,4.791,0,0,1,1.512-1.116A4.165,4.165,0,0,1,9-15.75Zm0-1.125a5.348,5.348,0,0,0-2.4.589,5.614,5.614,0,0,0-1.925,1.512,2.946,2.946,0,0,0-.738,1.837v2.813A7.878,7.878,0,0,0,4.474-7.5,5.246,5.246,0,0,0,6.064-5.15L1.125-2.812A.965.965,0,0,0,1-2.76q-.07.035-.264.158A3.471,3.471,0,0,0,.4-2.355a1.4,1.4,0,0,0-.272.308A.629.629,0,0,0,0-1.705V0A1.066,1.066,0,0,0,.325.782a1.087,1.087,0,0,0,.8.325h15.75a1.066,1.066,0,0,0,.782-.325A1.066,1.066,0,0,0,17.982,0V-1.705a.684.684,0,0,0-.114-.36,1.213,1.213,0,0,0-.281-.316q-.167-.132-.325-.237a1.8,1.8,0,0,0-.281-.158l-.105-.035-4.9-2.338a4.9,4.9,0,0,0,1.573-2.285,8.082,8.082,0,0,0,.519-2.689v-2.812a2.616,2.616,0,0,0-.448-1.4,5.133,5.133,0,0,0-1.151-1.274,5.966,5.966,0,0,0-1.635-.914A5.156,5.156,0,0,0,9-16.875Z" transform="translate(338 791)" fill="#62676c" />
+							<path d="M-21.73-4.21a18.874,18.874,0,0,1,3.9,4.3l.61-.51c-.67-.89-1.08-1.41-1.46-1.82a15.292,15.292,0,0,0,3.3-3.75,2.855,2.855,0,0,1,.4-.53l-.42-.5a1.221,1.221,0,0,1-.56.07h-5.83a7.269,7.269,0,0,1-1.17-.06v.79c.34-.03.62-.04,1.16-.04,5.57-.01,5.57-.01,5.71-.02-.04.06-.05.07-.08.12a14.6,14.6,0,0,1-1.65,2.17,17.439,17.439,0,0,1-1.33,1.23,21.608,21.608,0,0,0-2.03-1.89ZM-6.92-7.94A8.394,8.394,0,0,1-8.83-6.05a14.081,14.081,0,0,1-5.19,2.59,2.315,2.315,0,0,1,.39.67A15.633,15.633,0,0,0-9.77-4.54v3.8A5.212,5.212,0,0,1-9.83.3h.87A6.643,6.643,0,0,1-9.01-.76V-5.02A17.612,17.612,0,0,0-6.67-7.03a2.264,2.264,0,0,1,.44-.42ZM-4.6-2.27c.12-.16.15-.19.3-.37.4-.45,1.41-1.69,1.79-2.2.44-.59.5-.64.69-.64s.24.04.9.74A38.362,38.362,0,0,0,2.47-1.43c.39.34.65.56.7.6a2.158,2.158,0,0,0,.19.17l.38-.82A26.008,26.008,0,0,1-.51-5.34c-.72-.8-.89-.92-1.29-.92-.45,0-.71.19-1.27.95A11.434,11.434,0,0,1-5.11-3.02ZM2.14-7.36A1.137,1.137,0,0,0,1-6.23,1.139,1.139,0,0,0,2.14-5.09,1.137,1.137,0,0,0,3.27-6.23,1.123,1.123,0,0,0,2.14-7.36Zm0,.42a.713.713,0,0,1,.71.71.715.715,0,0,1-.71.72.717.717,0,0,1-.72-.72A.715.715,0,0,1,2.14-6.94ZM4.92-3.43a10.924,10.924,0,0,1,1.24-.04h5.8a11.44,11.44,0,0,1,1.22.04v-.81a7.887,7.887,0,0,1-1.21.05H6.16a7.074,7.074,0,0,1-1.24-.06ZM16.21-7.05a10.8,10.8,0,0,1,2.46,1.33l.41-.67A15.577,15.577,0,0,0,16.6-7.65Zm-.79,2.4a11.04,11.04,0,0,1,2.55,1.37l.39-.68a16,16,0,0,0-2.54-1.3ZM15.76.13a3.062,3.062,0,0,1,.39-.1c3.6-.68,5.66-2.25,6.92-5.28a3.078,3.078,0,0,1-.62-.54,7.148,7.148,0,0,1-4.2,4.48,9.08,9.08,0,0,1-2.63.62h-.06Zm5.58-7.98a8.086,8.086,0,0,1,1.02,1.59l.5-.3a7.971,7.971,0,0,0-1.02-1.55Zm1.13-.53A7.7,7.7,0,0,1,23.5-6.81L24-7.1a7.643,7.643,0,0,0-1.04-1.55Z" transform="translate(347 805)" fill="#62676c" />
+						</g>
+					</svg>
+				</a>
+			</li>
+		</ul>
+	</nav>
+	<div class="modal-groupList hidden js-modal-groupList js-modal-closeTarget">
+		<div class="webticket-inner">
+			<span class="webticket-close js-close-modal"></span>
+			<ul class="list-logos">
+				<li>
+					<a href="https://ec.tsuku2.jp/" target="_blank">
+						<img src="assets/img/tsukutsuku_icon_onlineshopping.svg" alt="ツクツク!!!通販" />
+					</a>
+				</li>
+				<li>
+					<a href="https://ticket.tsuku2.jp/" target="_blank">
+						<img src="assets/img/tsukutsuku_icon_webticket.svg" alt="ツクツク!!!ウェブチケット" />
+					</a>
+				</li>
+				<li>
+					<a href="https://event.tsuku2.jp/" target="_blank">
+						<img src="assets/img/tsukutsuku_icon_event.svg" alt="ツクツク!!!イベチケ" />
+					</a>
+				</li>
+				<li>
+					<a href="https://gourmet.tsuku2.jp/" target="_blank">
+						<img src="assets/img/tsukutsuku_icon_gourmet.svg" alt="ツクツク!!!グルメ" />
+					</a>
+				</li>
+				<li>
+					<a href="https://beauty.tsuku2.jp/" target="_blank">
+						<img src="assets/img/tsukutsuku_icon_beauty.svg?20230417" alt="ツクツク!!!ビューティー β版" />
+					</a>
+				</li>
+				<li>
+					<a href="https://farm.tsuku2.jp/" target="_blank">
+						<img src="assets/img/tsukutsuku_icon_farm.svg" alt="ツクツク!!!ファーム" />
+					</a>
+				</li>
+				<li class="home-link">
+					<a href="https://home.tsuku2.jp/" target="_blank">
+					<img src="assets/img/logo.svg" alt="ツクツク!!!ホーム" />
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<!-- モーダル検索ボックス ここから -->
+	<div id="modal-search" class="modal-searchbox hidden js-modal-searchbox js-modal-closeTarget">
+		<div class="modal-content">
+      <div class="btn-close js-close-modal" id="button-close-search"><svg xmlns="http://www.w3.org/2000/svg" width="11.641" height="11.641" viewBox="0 0 11.641 11.641">
+							<path d="M15.82-14.648,11.172-10,15.82-5.352,14.648-4.18,10-8.828,5.352-4.18,4.18-5.352,8.828-10,4.18-14.648,5.352-15.82,10-11.172l4.648-4.648Z" transform="translate(-4.18 15.82)" fill="#333"></path>
+						</svg></div>
+			<form class="searchbox" name="searchsp" action="">
+				<div class="input-field">
+					<input type="text" name="keyword" id="txt-keyword" data-suggest="#suggest-modal" data-clear-button="#btn-clear-kw-modal">
+					<label for="txt-keyword">キーワードを入れてください</label>
+					<i class="icon-close" id="btn-clear-kw-modal"></i>
+        </div>
+      </form>
+			<div class="search-suggest" id="suggest-modal" style="height:0px;">
+				<div class="suggest-wrap">
+					<ul class="suggest-items">
+						<li class="suggest-keyword" style="padding: 10px 16px;">
+							<p class="keyword keywordSearch"></p>
+							<p class="type">キーワード検索</p>
+						</li>
+						<script type="text/html" id="global-tag-list">
+							<li class="suggest-item">
+								<p class="keyword"><%= tag_name %></p>
+								<p class="type" data-contents="<%= type %>"><%= contents %>タグ検索：<%= category_list %></p>
+							</li>
+						</script>
+					</ul>    
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- モーダル検索ボックス ここまで -->
+
+	<div class="drawerMenu bg-white trans-ease js-drawerMenu">
+		<!-- ログイン済み -->
+						<div class="flex flex-col items-center p-20" style="background-color: #f0f0f0">
+					<p class="text-12 font-bold">ようこそツクツク!!ホームへ</p>
+					<a href="https://home.tsuku2.jp/signin.php?redirect_url=https://home.tsuku2.jp/mypage/" class="btn-login flex-center my-10 text-14 text-white font-bold">ログイン</a>
+					<a href="https://home.tsuku2.jp/signin.php?redirect_url=https://home.tsuku2.jp" class="text-10" style="text-decoration: underline">新規会員登録はこちら</a>
+				</div>
+						<a href="https://home.tsuku2.jp/mypage/contact_progress.php" class="drawerMenu-item">
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+					<path d="M9-3.5H8.5V-8a.481.481,0,0,0-.148-.352A.481.481,0,0,0,8-8.5H7a.481.481,0,0,0-.352.148A.481.481,0,0,0,6.5-8a.481.481,0,0,0,.148.352A.481.481,0,0,0,7-7.5h.5v4H7a.481.481,0,0,0-.352.148A.481.481,0,0,0,6.5-3a.481.481,0,0,0,.148.352A.481.481,0,0,0,7-2.5H9a.481.481,0,0,0,.352-.148A.481.481,0,0,0,9.5-3a.481.481,0,0,0-.148-.352A.481.481,0,0,0,9-3.5ZM7.281-9.781A1.007,1.007,0,0,0,8-9.5a.966.966,0,0,0,.711-.289A.966.966,0,0,0,9-10.5a.966.966,0,0,0-.289-.711A.966.966,0,0,0,8-11.5a.966.966,0,0,0-.711.289A.966.966,0,0,0,7-10.5,1.007,1.007,0,0,0,7.281-9.781Zm3.234-4.812A7.9,7.9,0,0,0,8-15a7.975,7.975,0,0,0-2.523.406,7.735,7.735,0,0,0-2.211,1.141,8.4,8.4,0,0,0-1.719,1.719A7.735,7.735,0,0,0,.406-9.523,7.975,7.975,0,0,0,0-7,7.848,7.848,0,0,0,.633-3.891a8.011,8.011,0,0,0,1.7,2.555A8.011,8.011,0,0,0,4.891.367,7.848,7.848,0,0,0,8,1,7.848,7.848,0,0,0,11.109.367a8.011,8.011,0,0,0,2.555-1.7,8.011,8.011,0,0,0,1.7-2.555A7.848,7.848,0,0,0,16-7a7.975,7.975,0,0,0-.406-2.523,7.735,7.735,0,0,0-1.141-2.211,8.4,8.4,0,0,0-1.719-1.719A7.712,7.712,0,0,0,10.516-14.594ZM8,.016A7.04,7.04,0,0,1,5.789-.336a6.489,6.489,0,0,1-1.93-1.008A7.842,7.842,0,0,1,2.352-2.859a6.593,6.593,0,0,1-1-1.93A7.04,7.04,0,0,1,1-7a6.843,6.843,0,0,1,.555-2.719,7.032,7.032,0,0,1,1.492-2.234,7.032,7.032,0,0,1,2.234-1.492A6.843,6.843,0,0,1,8-14a6.843,6.843,0,0,1,2.719.555,7.032,7.032,0,0,1,2.234,1.492,7.032,7.032,0,0,1,1.492,2.234A6.843,6.843,0,0,1,15-7a6.843,6.843,0,0,1-.555,2.719,7.126,7.126,0,0,1-1.492,2.242,6.967,6.967,0,0,1-2.234,1.5A6.843,6.843,0,0,1,8,.016Z" transform="translate(0 15)" fill="#8a8a8a" />
+				</svg>
+				<span class="ml-10">運営事務局へお問い合わせ</span>
+				<svg class="ml-auto" xmlns="http://www.w3.org/2000/svg" width="6.496" height="11.138" viewBox="0 0 6.496 11.138">
+					<path d="M6.641-6.429a.385.385,0,0,0-.112-.257l-5.2-5.2A.385.385,0,0,0,1.071-12a.385.385,0,0,0-.257.112l-.558.558a.385.385,0,0,0-.112.257.385.385,0,0,0,.112.257L4.643-6.429.257-2.042a.385.385,0,0,0-.112.257.363.363,0,0,0,.112.257l.558.558a.385.385,0,0,0,.257.112.385.385,0,0,0,.257-.112l5.2-5.2A.385.385,0,0,0,6.641-6.429Z" transform="translate(-0.145 11.998)" fill="#8a8a8a" />
+				</svg>
+			</a>
+			</div>
+				</div>
+	<div class="drawerMenu-overlay hidden js-drawerMenu-overlay">
+		<div class="flex justify-center items-start h-full mt-20" style="width: 10%">
+			<button class="btn-close">
+				<svg xmlns="http://www.w3.org/2000/svg" width="11.641" height="11.641" viewBox="0 0 11.641 11.641">
+					<path d="M15.82-14.648,11.172-10,15.82-5.352,14.648-4.18,10-8.828,5.352-4.18,4.18-5.352,8.828-10,4.18-14.648,5.352-15.82,10-11.172l4.648-4.648Z" transform="translate(-4.18 15.82)" fill="#fff"></path>
+				</svg>
+			</button>
+		</div>
+	</div>
+	<!-- 共通 -->
+	<div class="modal-overlay js-modal-overlay js-close-modal"></div>
+</div>	<!--/footer of the page -->
+
+	<!-- 共通 -->
+	<script src="assets/js/plugins/jquery.3.5.1.min.js"></script>
+	<script src="assets/js/plugins/slick.1.8.1min.js"></script>
+	<script src="assets/js/global.js?20251016161816"></script>
+	<script src="assets/js/top.js?20251016161816"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$.ajax({
+					type: "GET",
+					url: "contents/libs/adoItemList.php",
+					data: {
+						type: '1'
+					},
+					dataType: "html"
+				})
+				// Ajaxリクエストが成功した場合
+				.done(function(data) {
+					if (data == '') {
+						$("#adoitem").css("display", "none");
+					} else {
+						$("#readAdo").css("display", "none");
+						$("#getAdoItemList").html(data);
+						GLOBAL_SLIDER.otherSlider('prItem');
+					}
+				})
+				// Ajaxリクエストが失敗した場合
+				.fail(function(XMLHttpRequest, textStatus, errorThrown) {
+					// alert(errorThrown);
+				});
+		});
+	</script>
+
+	
+	<script>
+	// ショップ特集一覧取得
+	$(document).ready(function() {
+	$.ajax({
+			type: "GET",
+			url: "contents/libs/shopFeatureList.php",
+			dataType: "json"
+		})
+		// Ajaxリクエストが成功した場合
+		.done(function(response) {
+			if(response.error_flg === 0 && response.data.shop_features.length > 0) {
+				// html生成
+				let html = '';
+				$.each(response.data.shop_features, function(index, shop_feature){
+					html += '<a href="https://home.tsuku2.jp/shopFeature.php?shop_feature_cd=' + shop_feature.shop_feature_cd + '&page=1">';
+					html += '<div class="top-feature-shop-unit">';
+					html += '<img src="https://cms2.tsuku2.shop/pic/shop_feature/shop_feature_' + shop_feature.shop_feature_cd + '.jpg?20251016161816' + '" alt="' + shop_feature.shop_feature_name + '" loading="lazy">';
+					// 暫定対応でタイトルは非表示
+					// html += '<div class="top-feature-shop-text">';
+					// html += '<p class="top-feature-shop-title">' + shop_feature.shop_feature_name + '</p></div>';
+					html += '</div></a>';
+				});
+				$('#showShopFeature').html(html);
+				// TODO: 特集が3つ以上になる際はcssとバナー画像を再調整
+				// TODO: 特集が4つ以上になる際はスライダーライブラリを使用想定
+			} else {
+				$('#shopFeatureList').hide();
+			}
+		})
+		// Ajaxリクエストが失敗した場合
+		.fail(function() {
+			$('#shopFeatureList').hide();
+		});
+	});
+	</script>
+
+<script type="text/javascript"  src="/RsDNME/O0V/KFf/MJM6Jhah/uENYDJkXfJGVrt3L1D/YnB5eA/ImB5WE8/tUAk"></script></body>
+
+</html>ー

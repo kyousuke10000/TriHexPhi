@@ -5,6 +5,15 @@
 
 ---
 
+## Phase Status
+
+- ✅ **Phase 1:** Event Detect v2 - Complete
+- ⏳ **Phase 2:** RSVP Collector, Reminders, Slack Sync - In Progress
+
+**Latest:** `99_SYSTEM/Proofs/KYOEN_EVENT_DETECT_v2_REPORT_2025-11-03.md`
+
+---
+
 ## Prerequisites
 
 - n8n instance (self-hosted or cloud)

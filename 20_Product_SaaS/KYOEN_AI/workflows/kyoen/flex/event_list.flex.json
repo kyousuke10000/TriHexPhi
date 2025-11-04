@@ -1,0 +1,149 @@
+{
+  "type": "carousel",
+  "contents": [
+    {
+      "type": "bubble",
+      "size": "micro",
+      "header": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "text",
+            "text": "{{EVENT_TITLE}}",
+            "weight": "bold",
+            "size": "md",
+            "wrap": true,
+            "color": "#ffffff"
+          }
+        ],
+        "backgroundColor": "#17c950",
+        "paddingAll": "13px"
+      },
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "box",
+            "layout": "horizontal",
+            "contents": [
+              {
+                "type": "text",
+                "text": "📅",
+                "size": "sm",
+                "flex": 0
+              },
+              {
+                "type": "text",
+                "text": "{{START_DATE}}",
+                "size": "sm",
+                "color": "#555555",
+                "wrap": true,
+                "flex": 5
+              }
+            ],
+            "spacing": "sm"
+          },
+          {
+            "type": "box",
+            "layout": "horizontal",
+            "contents": [
+              {
+                "type": "text",
+                "text": "📍",
+                "size": "sm",
+                "flex": 0
+              },
+              {
+                "type": "text",
+                "text": "{{LOCATION}}",
+                "size": "sm",
+                "color": "#555555",
+                "wrap": true,
+                "flex": 5
+              }
+            ],
+            "spacing": "sm"
+          },
+          {
+            "type": "separator",
+            "margin": "md"
+          },
+          {
+            "type": "box",
+            "layout": "horizontal",
+            "contents": [
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "✅ {{YES_COUNT}}",
+                    "size": "xs",
+                    "color": "#17c950",
+                    "weight": "bold"
+                  }
+                ],
+                "flex": 1
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "❌ {{NO_COUNT}}",
+                    "size": "xs",
+                    "color": "#ff334b",
+                    "weight": "bold"
+                  }
+                ],
+                "flex": 1
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "🤔 {{MAYBE_COUNT}}",
+                    "size": "xs",
+                    "color": "#ffa500",
+                    "weight": "bold"
+                  }
+                ],
+                "flex": 1
+              }
+            ],
+            "spacing": "sm",
+            "margin": "md"
+          }
+        ],
+        "spacing": "sm",
+        "paddingAll": "13px"
+      },
+      "footer": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "button",
+            "action": {
+              "type": "postback",
+              "label": "詳細を見る",
+              "data": "action=rsvp_detail&event_id={{EVENT_ID}}",
+              "displayText": "詳細を見る"
+            },
+            "style": "primary",
+            "height": "sm",
+            "color": "#17c950"
+          }
+        ],
+        "spacing": "sm",
+        "paddingAll": "13px"
+      }
+    }
+  ]
+}
