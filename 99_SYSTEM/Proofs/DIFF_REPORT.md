@@ -59,9 +59,9 @@ trihex/LICENSE
 **Paths:**
 ```
 Desktop/trihex/assets/cloudflare/README.txt
-Documents/GitHub/Truthsphere_Cloudflare_API_パック/README.txt
+Documents/GitHub/Truthsphere_Cloudflare_API_パック/README.txt
 【Shii】/【_アーカイブ】/【02_TECHNOLOGY】/TriHex-temp/assets/cloudflare/README.txt
-GitHub/Truthsphere_Cloudflare_API_パック/README.txt
+GitHub/Truthsphere_Cloudflare_API_パック/README.txt
 trihex/assets/cloudflare/README.txt
 ```
 
@@ -72,9 +72,9 @@ trihex/assets/cloudflare/README.txt
 **Paths:**
 ```
 Desktop/trihex/assets/cloudflare/openapi.yaml
-Documents/GitHub/Truthsphere_Cloudflare_API_パック/openapi.yaml
+Documents/GitHub/Truthsphere_Cloudflare_API_パック/openapi.yaml
 【Shii】/【_アーカイブ】/【02_TECHNOLOGY】/TriHex-temp/assets/cloudflare/openapi.yaml
-GitHub/Truthsphere_Cloudflare_API_パック/openapi.yaml
+GitHub/Truthsphere_Cloudflare_API_パック/openapi.yaml
 trihex/assets/cloudflare/openapi.yaml
 ```
 
@@ -85,9 +85,9 @@ trihex/assets/cloudflare/openapi.yaml
 **Paths:**
 ```
 Desktop/trihex/assets/cloudflare/postman_sample.json
-Documents/GitHub/Truthsphere_Cloudflare_API_パック/postman_sample.json
+Documents/GitHub/Truthsphere_Cloudflare_API_パック/postman_sample.json
 【Shii】/【_アーカイブ】/【02_TECHNOLOGY】/TriHex-temp/assets/cloudflare/postman_sample.json
-GitHub/Truthsphere_Cloudflare_API_パック/postman_sample.json
+GitHub/Truthsphere_Cloudflare_API_パック/postman_sample.json
 trihex/assets/cloudflare/postman_sample.json
 ```
 
@@ -161,10 +161,10 @@ Documents/GitHub/trihex_gpt_custom/fonts/NotoSansJP-Regular.ttf
 **Paths:**
 ```
 Desktop/trihex/docs/templates/Cloudflare_Worker.js
-Documents/GitHub/GPT_API連携テンプレート集/Cloudflare_Worker.js
+Documents/GitHub/GPT_API連携テンプレート集/Cloudflare_Worker.js
 【Shii】/【_アーカイブ】/【02_TECHNOLOGY】/TriHex-temp/docs/templates/Cloudflare_Worker.js
 【Shii】/【_アーカイブ】/【02_TECHNOLOGY】/TriHex_216_Souls/docs/templates/Cloudflare_Worker.js
-GitHub/GPT_API連携テンプレート集/Cloudflare_Worker.js
+GitHub/GPT_API連携テンプレート集/Cloudflare_Worker.js
 ```
 
 **Recommendation:** Keep canonical path, remove others
@@ -174,10 +174,10 @@ GitHub/GPT_API連携テンプレート集/Cloudflare_Worker.js
 **Paths:**
 ```
 Desktop/trihex/docs/templates/GAS_webhook.js
-Documents/GitHub/GPT_API連携テンプレート集/GAS_webhook.js
+Documents/GitHub/GPT_API連携テンプレート集/GAS_webhook.js
 【Shii】/【_アーカイブ】/【02_TECHNOLOGY】/TriHex-temp/docs/templates/GAS_webhook.js
 【Shii】/【_アーカイブ】/【02_TECHNOLOGY】/TriHex_216_Souls/docs/templates/GAS_webhook.js
-GitHub/GPT_API連携テンプレート集/GAS_webhook.js
+GitHub/GPT_API連携テンプレート集/GAS_webhook.js
 ```
 
 **Recommendation:** Keep canonical path, remove others
@@ -187,10 +187,10 @@ GitHub/GPT_API連携テンプレート集/GAS_webhook.js
 **Paths:**
 ```
 Desktop/trihex/docs/templates/openapi.yaml
-Documents/GitHub/GPT_API連携テンプレート集/openapi.yaml
+Documents/GitHub/GPT_API連携テンプレート集/openapi.yaml
 【Shii】/【_アーカイブ】/【02_TECHNOLOGY】/TriHex-temp/docs/templates/openapi.yaml
 【Shii】/【_アーカイブ】/【02_TECHNOLOGY】/TriHex_216_Souls/docs/templates/openapi.yaml
-GitHub/GPT_API連携テンプレート集/openapi.yaml
+GitHub/GPT_API連携テンプレート集/openapi.yaml
 ```
 
 **Recommendation:** Keep canonical path, remove others
@@ -248,9 +248,9 @@ trihex/src/soul-diagnosis-webhook/sample_request.json
 **Paths:**
 ```
 Desktop/trihex/src/soul-diagnosis-webhook/魂診断スプレッドシート自動記入Webhook API仕様.md
-Documents/GitHub/soul-diagnosis-webhook/魂診断スプレッドシート自動記入Webhook API仕様.md
-【Shii】/【_アーカイブ】/【02_TECHNOLOGY】/TriHex-temp/src/trihex/webhook/魂診断スプレッドシート自動記入Webhook API仕様.md
-GitHub/soul-diagnosis-webhook/魂診断スプレッドシート自動記入Webhook API仕様.md
+Documents/GitHub/soul-diagnosis-webhook/魂診断スプレッドシート自動記入Webhook API仕様.md
+【Shii】/【_アーカイブ】/【02_TECHNOLOGY】/TriHex-temp/src/trihex/webhook/魂診断スプレッドシート自動記入Webhook API仕様.md
+GitHub/soul-diagnosis-webhook/魂診断スプレッドシート自動記入Webhook API仕様.md
 trihex/src/soul-diagnosis-webhook/魂診断スプレッドシート自動記入Webhook API仕様.md
 ```
 
@@ -261,9 +261,9 @@ trihex/src/soul-diagnosis-webhook/魂診断スプレッドシート自動記入W
 **Paths:**
 ```
 Desktop/trihex/src/soul-diagnosis-webhook/魂診断スプレッドシート自動記入Webhook 利用ガイド.md
-Documents/GitHub/soul-diagnosis-webhook/魂診断スプレッドシート自動記入Webhook 利用ガイド.md
-【Shii】/【_アーカイブ】/【02_TECHNOLOGY】/TriHex-temp/src/trihex/webhook/魂診断スプレッドシート自動記入Webhook 利用ガイド.md
-GitHub/soul-diagnosis-webhook/魂診断スプレッドシート自動記入Webhook 利用ガイド.md
+Documents/GitHub/soul-diagnosis-webhook/魂診断スプレッドシート自動記入Webhook 利用ガイド.md
+【Shii】/【_アーカイブ】/【02_TECHNOLOGY】/TriHex-temp/src/trihex/webhook/魂診断スプレッドシート自動記入Webhook 利用ガイド.md
+GitHub/soul-diagnosis-webhook/魂診断スプレッドシート自動記入Webhook 利用ガイド.md
 trihex/src/soul-diagnosis-webhook/魂診断スプレッドシート自動記入Webhook 利用ガイド.md
 ```
 

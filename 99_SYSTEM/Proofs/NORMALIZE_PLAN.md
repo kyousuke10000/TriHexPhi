@@ -99,11 +99,11 @@ rm "trihex/LICENSE" # Keeping canonical: Desktop/trihex/LICENSE
 ### 8. Delete duplicate file
 
 **Operation:** `REMOVE`  
-**Path:** `Documents/GitHub/Truthsphere_Cloudflare_API_パック/README.txt`
+**Path:** `Documents/GitHub/Truthsphere_Cloudflare_API_パック/README.txt`
 
 **Command:**
 ```bash
-rm "Documents/GitHub/Truthsphere_Cloudflare_API_パック/README.txt" # Keeping canonical: Desktop/trihex/assets/cloudflare/README.txt
+rm "Documents/GitHub/Truthsphere_Cloudflare_API_パック/README.txt" # Keeping canonical: Desktop/trihex/assets/cloudflare/README.txt
 ```
 
 ### 9. Delete duplicate file
@@ -119,11 +119,11 @@ rm "【Shii】/【_アーカイブ】/【02_TECHNOLOGY】/TriHex-temp/assets/clo
 ### 10. Delete duplicate file
 
 **Operation:** `REMOVE`  
-**Path:** `GitHub/Truthsphere_Cloudflare_API_パック/README.txt`
+**Path:** `GitHub/Truthsphere_Cloudflare_API_パック/README.txt`
 
 **Command:**
 ```bash
-rm "GitHub/Truthsphere_Cloudflare_API_パック/README.txt" # Keeping canonical: Desktop/trihex/assets/cloudflare/README.txt
+rm "GitHub/Truthsphere_Cloudflare_API_パック/README.txt" # Keeping canonical: Desktop/trihex/assets/cloudflare/README.txt
 ```
 
 ### 11. Delete duplicate file
@@ -139,11 +139,11 @@ rm "trihex/assets/cloudflare/README.txt" # Keeping canonical: Desktop/trihex/ass
 ### 12. Delete duplicate file
 
 **Operation:** `REMOVE`  
-**Path:** `Documents/GitHub/Truthsphere_Cloudflare_API_パック/openapi.yaml`
+**Path:** `Documents/GitHub/Truthsphere_Cloudflare_API_パック/openapi.yaml`
 
 **Command:**
 ```bash
-rm "Documents/GitHub/Truthsphere_Cloudflare_API_パック/openapi.yaml" # Keeping canonical: Desktop/trihex/assets/cloudflare/openapi.yaml
+rm "Documents/GitHub/Truthsphere_Cloudflare_API_パック/openapi.yaml" # Keeping canonical: Desktop/trihex/assets/cloudflare/openapi.yaml
 ```
 
 ### 13. Delete duplicate file
@@ -159,11 +159,11 @@ rm "【Shii】/【_アーカイブ】/【02_TECHNOLOGY】/TriHex-temp/assets/clo
 ### 14. Delete duplicate file
 
 **Operation:** `REMOVE`  
-**Path:** `GitHub/Truthsphere_Cloudflare_API_パック/openapi.yaml`
+**Path:** `GitHub/Truthsphere_Cloudflare_API_パック/openapi.yaml`
 
 **Command:**
 ```bash
-rm "GitHub/Truthsphere_Cloudflare_API_パック/openapi.yaml" # Keeping canonical: Desktop/trihex/assets/cloudflare/openapi.yaml
+rm "GitHub/Truthsphere_Cloudflare_API_パック/openapi.yaml" # Keeping canonical: Desktop/trihex/assets/cloudflare/openapi.yaml
 ```
 
 ### 15. Delete duplicate file
@@ -179,11 +179,11 @@ rm "trihex/assets/cloudflare/openapi.yaml" # Keeping canonical: Desktop/trihex/a
 ### 16. Delete duplicate file
 
 **Operation:** `REMOVE`  
-**Path:** `Documents/GitHub/Truthsphere_Cloudflare_API_パック/postman_sample.json`
+**Path:** `Documents/GitHub/Truthsphere_Cloudflare_API_パック/postman_sample.json`
 
 **Command:**
 ```bash
-rm "Documents/GitHub/Truthsphere_Cloudflare_API_パック/postman_sample.json" # Keeping canonical: Desktop/trihex/assets/cloudflare/postman_sample.json
+rm "Documents/GitHub/Truthsphere_Cloudflare_API_パック/postman_sample.json" # Keeping canonical: Desktop/trihex/assets/cloudflare/postman_sample.json
 ```
 
 ### 17. Delete duplicate file
@@ -199,11 +199,11 @@ rm "【Shii】/【_アーカイブ】/【02_TECHNOLOGY】/TriHex-temp/assets/clo
 ### 18. Delete duplicate file
 
 **Operation:** `REMOVE`  
-**Path:** `GitHub/Truthsphere_Cloudflare_API_パック/postman_sample.json`
+**Path:** `GitHub/Truthsphere_Cloudflare_API_パック/postman_sample.json`
 
 **Command:**
 ```bash
-rm "GitHub/Truthsphere_Cloudflare_API_パック/postman_sample.json" # Keeping canonical: Desktop/trihex/assets/cloudflare/postman_sample.json
+rm "GitHub/Truthsphere_Cloudflare_API_パック/postman_sample.json" # Keeping canonical: Desktop/trihex/assets/cloudflare/postman_sample.json
 ```
 
 ### 19. Delete duplicate file

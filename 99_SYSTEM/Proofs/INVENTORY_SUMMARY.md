@@ -27,8 +27,8 @@
 | `Zoom/2024-05-01 13.59.10 １％コアコンサルティング/video1265819832.mp4` | 696.73 MB |
 | `【Shii】/【_アーカイブ】/【_LARGE_FILES】/powerpoint_backup/叡智AIx売れるキャラ設定チャレンジ 5.key` | 673.81 MB |
 | `【Shii】/【_アーカイブ】/【_LARGE_FILES】/powerpoint_backup/叡智AIx売れるキャラ設定チャレンジ 3.key` | 673.81 MB |
-| `【Shii】/【_アーカイブ】/【02_TECHNOLOGY】/AI_Rashinban/叡智の羅針盤セールスセミナー/叡智AIx売れるキャラ設定チャレンジ 3.pptx` | 612.75 MB |
-| `【Shii】/【_アーカイブ】/【00_CORE】/1%_Core_Philosophy/【Core】SENSEセミナー/スライドスクショ/叡智AIx売れるキャラ設定チャレンジ.key` | 611.74 MB |
+| `【Shii】/【_アーカイブ】/【02_TECHNOLOGY】/AI_Rashinban/叡智の羅針盤セールスセミナー/叡智AIx売れるキャラ設定チャレンジ 3.pptx` | 612.75 MB |
+| `【Shii】/【_アーカイブ】/【00_CORE】/1%_Core_Philosophy/【Core】SENSEセミナー/スライドスクショ/叡智AIx売れるキャラ設定チャレンジ.key` | 611.74 MB |
 | `【Shii】/【_アーカイブ】/【_LARGE_FILES】/powerpoint_backup/叡智AIx売れるキャラ設定チャレンジ (2).pptx` | 603.14 MB |
 | `【Shii】/【_アーカイブ】/【_LARGE_FILES】/powerpoint_backup/叡智AIx売れるキャラ設定チャレンジ.pptx` | 593.06 MB |
 
