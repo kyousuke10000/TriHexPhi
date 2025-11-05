@@ -14,16 +14,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
-      - name: Debug check files
+      - name: Debug check actual structure
         run: |
-          echo "=== Checking directory structure ==="
-          ls -la | head -20
+          echo "=== Checking 99_SYSTEM/Proofs ==="
+          ls -la 99_SYSTEM/Proofs/ 2>/dev/null | head -10 || echo "99_SYSTEM/Proofs not found"
           echo ""
-          echo "=== Checking 99_SYSTEM ==="
-          ls -la 99_SYSTEM/ 2>/dev/null | head -10 || echo "99_SYSTEM not found"
+          echo "=== Checking 00_RYUDO/Council ==="
+          ls -la 00_RYUDO/Council/ 2>/dev/null | head -10 || echo "00_RYUDO/Council not found"
           echo ""
-          echo "=== Checking 00_RYUDO ==="
-          ls -la 00_RYUDO/ 2>/dev/null | head -10 || echo "00_RYUDO not found"
+          echo "=== Checking 00_RYUDO/Council/Records ==="
+          ls -la 00_RYUDO/Council/Records/ 2>/dev/null | head -10 || echo "00_RYUDO/Council/Records not found"
           echo ""
           echo "=== Checking 70_AI_CHRONICLE ==="
           ls -la 70_AI_CHRONICLE/ 2>/dev/null | head -10 || echo "70_AI_CHRONICLE not found"
@@ -33,10 +33,13 @@ jobs:
           mkdir -p mirror
           rsync -av --prune-empty-dirs \
             --include="99_SYSTEM/" \
+            --include="99_SYSTEM/Proofs/" \
             --include="99_SYSTEM/Proofs/**" \
             --include="00_RYUDO/" \
             --include="00_RYUDO/Council/" \
+            --include="00_RYUDO/Council/Records/" \
             --include="00_RYUDO/Council/Records/**" \
+            --include="70_AI_CHRONICLE/" \
             --include="70_AI_CHRONICLE/**" \
             --include="README.md" \
             --include="docs/" \
@@ -44,7 +47,7 @@ jobs:
             --exclude="*" \
             ./ mirror/
           echo "=== Files copied to mirror ==="
-          find mirror -type f | head -30 || echo "No files found"
+          find mirror -type f | head -50 || echo "No files found"
       
       - name: Dry-run listing
         run: |
