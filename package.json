@@ -6,6 +6,9 @@
     "test:encoding": "node scripts/test-encoding.mjs",
     "spec:validate": "node scripts/spec-gate.mjs"
   },
+  "dependencies": {
+    "js-yaml": "^4.1.0"
+  },
   "description": "TriHexΦ - Breathing Intelligence OS",
   "author": "🜇 Shiryu",
   "license": "MIT"
