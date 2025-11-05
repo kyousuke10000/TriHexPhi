@@ -1,4 +1,4 @@
-name: Mirror Gate (Public Mirror)
+name: Mirror Gate (dispatch ping)
 
 on:
   workflow_dispatch:
