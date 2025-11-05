@@ -101,7 +101,7 @@ jobs:
       
       - name: Upload Sync Summary
         if: always()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: sync-summary-$(date '+%Y%m%d-%H%M%S')
           path: sync-summary.md

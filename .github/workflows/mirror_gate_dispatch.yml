@@ -1,4 +1,4 @@
-name: Mirror Gate (dispatch test)
+name: Mirror Gate (Public Mirror)
 on:
   workflow_dispatch:
     inputs:
@@ -6,6 +6,17 @@ on:
         description: 'Dry run (true/false)'
         required: false
         default: 'true'
+  push:
+    branches: [ main ]
+    paths:
+      - "99_SYSTEM/Proofs/**"
+      - "00_RYUDO/Council/Records/**"
+      - "00_RYUDO/Council/Decisions/**"
+      - "99_SYSTEM/Proofs/Meta/**"
+      - "99_SYSTEM/Proofs/Overdrive/**"
+      - "context/**"
+      - ".github/workflows/mirror_gate_dispatch.yml"
+
 jobs:
   mirror:
     runs-on: ubuntu-latest
@@ -17,6 +28,19 @@ jobs:
       DRY_RUN: ${{ github.event.inputs.dry_run || 'false' }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Generate public index.md
+        run: |
+          node scripts/generate-public-index.mjs index.md
+          echo "✅ Generated index.md"
+          cat index.md | head -20
       
       - name: Build mirror tree
         run: |
@@ -25,13 +49,20 @@ jobs:
             --include="99_SYSTEM/" \
             --include="99_SYSTEM/Proofs/" \
             --include="99_SYSTEM/Proofs/**" \
+            --include="99_SYSTEM/Proofs/Meta/" \
+            --include="99_SYSTEM/Proofs/Meta/**" \
+            --include="99_SYSTEM/Proofs/Overdrive/" \
+            --include="99_SYSTEM/Proofs/Overdrive/**" \
             --include="00_RYUDO/" \
             --include="00_RYUDO/Council/" \
             --include="00_RYUDO/Council/Decisions/" \
             --include="00_RYUDO/Council/Decisions/**" \
+            --include="00_RYUDO/Council/Records/" \
+            --include="00_RYUDO/Council/Records/**" \
             --include="README.md" \
             --include="docs/" \
             --include="docs/index.md" \
+            --include="index.md" \
             --exclude="*" \
             ./ mirror/
           echo "=== Files copied to mirror ==="
@@ -61,5 +92,7 @@ jobs:
             MSG="chore(mirror): sync from ${GITHUB_REPOSITORY}@${GITHUB_SHA::7}"
             git commit -m "$MSG"
             git push origin HEAD
-            echo "Pushed to ${MIRROR_REPO}"
+            echo "✅ Pushed to ${MIRROR_REPO}"
+            echo "📌 Public index: https://github.com/${MIRROR_REPO}/blob/main/index.md"
+            echo "📌 Raw index: https://raw.githubusercontent.com/${MIRROR_REPO}/main/index.md"
           fi
