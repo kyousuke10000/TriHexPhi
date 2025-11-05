@@ -13,9 +13,7 @@ jobs:
       contents: read
     steps:
       - uses: actions/checkout@v4
-      - run: echo "checked out @ $GITHUB_SHA, dry_run=${{ github.event.inputs.dry_run || 'false' }}"
-            
-            - name: Build mirror tree
+      - name: Build mirror tree
         run: |
           mkdir -p mirror
           rsync -a --prune-empty-dirs \
