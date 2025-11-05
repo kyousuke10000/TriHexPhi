@@ -1,0 +1,24 @@
+{
+  "generated_at": "2025-11-05T21:05:37.488Z",
+  "prompt": "テストプロンプト --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "gpt",
+      "score": 0.5172,
+      "answer_preview": "こちらはシステムプロンプトのテストです。何か特定の内容についてサポートが必要な場合や質問がある場合は教えてください。どうぞよろしくお願いします。..."
+    },
+    {
+      "model": "deepseek",
+      "score": 0.5001,
+      "answer_preview": "# Decision\n\n- 要約: リモート・トゥルース検証システムの段階的導入を承認\n\n- 根拠: \n  1. 分散型AIシステムの信頼性向上のため\n  2. トランザクション検証の透明性確保\n  ..."
+    }
+  ],
+  "chosen": {
+    "model": "gpt",
+    "score": 0.5172,
+    "answer": "こちらはシステムプロンプトのテストです。何か特定の内容についてサポートが必要な場合や質問がある場合は教えてください。どうぞよろしくお願いします。"
+  },
+  "intent_length": 356,
+  "candidates_count": 2
+}
