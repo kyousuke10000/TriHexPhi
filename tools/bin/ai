@@ -1,17 +1,37 @@
 #!/usr/bin/env bash
 set -euo pipefail
 CMD="${1:-}"; shift || true
+
+wt_path_by_branch() {
+  local BR="$1"
+  git worktree list --porcelain | awk -v b="$BR" '
+    $1=="worktree"{p=$2}
+    $1=="branch"{gsub(/refs\/heads\//,"",$2); if($2==b){print p}}
+  '
+}
+
 case "$CMD" in
   "where") git worktree list ;;
-  "switch") WT="${1:-impl}"; TARGET=$(git worktree list | awk -v b="$WT" '$0 ~ " "b"$" {print $1}'); [ -n "${TARGET:-}" ] || { echo "No such worktree: $WT"; exit 1; }; echo "$TARGET" ;;
-  "plan") cat <<'PLAN'
+  "switch")
+    WT="${1:-impl}"
+    TARGET=$(wt_path_by_branch "$WT")
+    [ -n "${TARGET:-}" ] || { echo "No such worktree: $WT"; exit 1; }
+    echo "$TARGET"
+    ;;
+  "plan")
+    cat <<'PLAN'
 # Sample plan
 MKDIR 00_RYUDO/Council/Records
 WRITE 00_RYUDO/Council/Records/REC_demo.md --- 議題: AI-OS起動\n決定: 可決
 RUN git add .
 RUN git commit -m "chore(council): add REC_demo"
 PLAN
-  ;;
-  "apply") WT="${1:-impl}"; PLAN_PATH="${2:-/dev/stdin}"; TARGET=$(git worktree list | awk -v b="$WT" '$0 ~ " "b"$" {print $1}'); [ -z "${TARGET:-}" ] && { echo "No such worktree: $WT"; exit 1; }; WORKTREE="$TARGET" node tools/trihex-bridge.mjs "$PLAN_PATH" ;;
+    ;;
+  "apply")
+    WT="${1:-impl}"; PLAN_PATH="${2:-/dev/stdin}"
+    TARGET=$(wt_path_by_branch "$WT")
+    [ -n "${TARGET:-}" ] || { echo "No such worktree: $WT"; exit 1; }
+    WORKTREE="$TARGET" node tools/trihex-bridge.mjs "$PLAN_PATH"
+    ;;
   *) echo "Usage: ai {where|switch <name>|plan|apply <name> [planfile]}"; exit 1;;
 esac
