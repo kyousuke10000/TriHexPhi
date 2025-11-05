@@ -42,7 +42,12 @@ jobs:
           node-version: '20'
       
       - name: Install Dependencies
-        run: npm ci || true
+        run: |
+          if [ -f package.json ]; then
+            npm ci
+          else
+            echo "No package.json found, skipping npm install"
+          fi
       
       - name: Preflight Check
         run: node scripts/preflight-check.mjs || echo "Preflight check skipped"
@@ -61,6 +66,10 @@ jobs:
       
       - name: Spec Gate
         run: |
+          # Ensure js-yaml is available (from package.json dependencies)
+          if [ -f package.json ]; then
+            npm ci || npm install
+          fi
           CHANGED_FILES=$(git diff --name-only origin/main...HEAD | grep -E '\.md$|\.yml$' || true)
           if [ -n "$CHANGED_FILES" ]; then
             echo "$CHANGED_FILES" | xargs node scripts/spec-gate.mjs
