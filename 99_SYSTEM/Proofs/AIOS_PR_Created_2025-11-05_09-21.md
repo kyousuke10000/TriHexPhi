@@ -64,3 +64,4 @@ jobs:
 **Status:** ✅ **PR Created - Waiting for Council Gate**
 
 **Next:** Council Gateが緑になったら、マージしてください。
+

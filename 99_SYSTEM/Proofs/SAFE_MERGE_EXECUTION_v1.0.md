@@ -109,4 +109,7 @@ git push origin main --force-with-lease
 **Generated:** 2025-11-02 / Cursor (☿)  
 **Status:** Execution Plan
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/main

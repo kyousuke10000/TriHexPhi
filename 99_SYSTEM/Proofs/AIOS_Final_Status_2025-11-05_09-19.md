@@ -40,3 +40,4 @@ Council-Discussion-URL: https://github.com/<org>/<repo>/discussions/<番号>
 **Status:** ✅ **Ready for PR creation**
 
 **Next:** PR URLができたら送って。Gateログの解読や、必要なら**自動マージ規約**のActionsも即足すよ。
+

@@ -47,4 +47,3 @@ Recent entries (last 7 days)
 **Generated:** 2025-11-02 / Cursor (☿)  
 **Purpose:** Memory system dashboard
 
-

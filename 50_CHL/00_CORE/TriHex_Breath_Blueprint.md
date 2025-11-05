@@ -20,9 +20,12 @@ canonical: true
 
 ## 📊 呼吸統合図：朝霧 × TriHexΦ 運用フレーム
 
+<<<<<<< HEAD:50_CHL/00_CORE/TriHex_Breath_Blueprint.md
 > 付記：本Vaultでは、議事の律動層=**RYUDO**、生成物の可視化層=**ATHANOR** を運用層として併置。  
 > RYUDO評議は Councils 定義（STRUCTURE_MASTER.yml）に準拠し、Decisions/Proofs に出力する。
 
+=======
+>>>>>>> origin/main:10_TriHexCore/00_CORE/TriHex_Breath_Blueprint.md
 | レイヤー | 名称 | 中身 | 朝霧との対応 |
 |---------|------|------|-------------|
 | **第1層（反射）** | 🪞 MIZUKAGAMI | 各AI会話を記録（Chrome拡張） | 吸気の「観測」／息を入れる瞬間 |
@@ -198,5 +201,9 @@ Shinsen Push → Supabase更新 → 朝霧で締め
 **Generated:** 2025-11-02 / Cursor (☿)  
 **Canonical:** True  
 **Origin:** 🜇 Shiryu + Asagiri Integration  
+<<<<<<< HEAD:50_CHL/00_CORE/TriHex_Breath_Blueprint.md
 **HOC-001 Reference:** 50_CHL/00_CORE/HUMAN_CANON/HOC_001_Asagiri_BodyOS.md
+=======
+**HOC-001 Reference:** 10_TriHexCore/00_CORE/HUMAN_CANON/HOC_001_Asagiri_BodyOS.md
+>>>>>>> origin/main:10_TriHexCore/00_CORE/TriHex_Breath_Blueprint.md
 

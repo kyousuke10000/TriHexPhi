@@ -37,4 +37,3 @@ jobs:
             *.log
           retention-days: 3
 
-

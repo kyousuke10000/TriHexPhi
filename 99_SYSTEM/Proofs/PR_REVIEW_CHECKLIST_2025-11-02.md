@@ -133,4 +133,7 @@ ORDER BY n DESC;
 **Generated:** 2025-11-02 / Cursor (☿)  
 **Status:** ✅ Ready for merge
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/main

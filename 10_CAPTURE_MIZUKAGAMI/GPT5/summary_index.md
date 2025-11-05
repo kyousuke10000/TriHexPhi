@@ -19,4 +19,7 @@ SORT file.day desc
 **Generated:** 2025-11-02  
 **Purpose:** GPT-5 session index
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/main
