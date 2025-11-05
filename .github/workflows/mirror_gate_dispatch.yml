@@ -14,3 +14,24 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: echo "checked out @ $GITHUB_SHA, dry_run=${{ github.event.inputs.dry_run || 'false' }}"
+            
+            - name: Build mirror tree
+        run: |
+          mkdir -p mirror
+          rsync -a --prune-empty-dirs \
+            --include="99_SYSTEM/" \
+            --include="99_SYSTEM/Proofs/**" \
+            --include="00_RYUDO/" \
+            --include="00_RYUDO/Council/" \
+            --include="00_RYUDO/Council/Records/**" \
+            --include="70_AI_CHRONICLE/**" \
+            --include="README.md" \
+            --include="docs/" \
+            --include="docs/index.md" \
+            --exclude="*" \
+            ./ mirror/
+      - name: Dry-run listing
+        run: |
+          echo "---- DRY RUN ----"
+          find mirror -type f | sort || true
+          echo "---- END ----"
