@@ -11,6 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
+    env:
+      MIRROR_REPO: ${{ secrets.MIRROR_REPO }}
+      MIRROR_TOKEN: ${{ secrets.MIRROR_TOKEN }}
+      DRY_RUN: ${{ github.event.inputs.dry_run || 'false' }}
     steps:
       - uses: actions/checkout@v4
       
@@ -34,7 +38,28 @@ jobs:
           find mirror -type f | head -50 || echo "No files found"
       
       - name: Dry-run listing
+        if: env.DRY_RUN == 'true'
         run: |
           echo "---- DRY RUN ----"
           find mirror -type f | sort || true
           echo "---- END ----"
+      
+      - name: Push to Public Mirror
+        if: env.DRY_RUN != 'true'
+        run: |
+          set -e
+          git config --global user.name "mirror-bot"
+          git config --global user.email "mirror-bot@users.noreply.github.com"
+          git clone "https://${MIRROR_TOKEN}@github.com/${MIRROR_REPO}.git" pub
+          cd pub
+          git rm -r . >/dev/null 2>&1 || true
+          cp -R ../mirror/. .
+          git add .
+          if git diff --cached --quiet; then
+            echo "No changes to mirror."
+          else
+            MSG="chore(mirror): sync from ${GITHUB_REPOSITORY}@${GITHUB_SHA::7}"
+            git commit -m "$MSG"
+            git push origin HEAD
+            echo "Pushed to ${MIRROR_REPO}"
+          fi
