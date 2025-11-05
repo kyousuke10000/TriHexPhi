@@ -14,7 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
-      - name: Debug: Check what files exist
+      - name: Debug check files
         run: |
           echo "=== Checking directory structure ==="
           ls -la | head -20
