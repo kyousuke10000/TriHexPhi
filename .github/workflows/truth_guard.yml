@@ -1,0 +1,55 @@
+name: Remote Truth Guard
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Ensure Proofs are only in remote truth paths
+        run: |
+          # Get list of changed files
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            CHANGED_FILES=$(git diff --name-only origin/main...HEAD || echo "")
+          else
+            CHANGED_FILES=$(git diff --name-only HEAD~1 HEAD 2>/dev/null || echo "")
+          fi
+          
+          if [ -z "$CHANGED_FILES" ]; then
+            echo "✅ No file changes detected"
+            exit 0
+          fi
+          
+          # Check for changes outside truth paths (warning only, not blocking)
+          NON_TRUTH_CHANGES=$(echo "$CHANGED_FILES" | grep -vE "^(99_SYSTEM/Proofs|00_RYUDO/Council/Records|70_AI_CHRONICLE|\.github/workflows/truth_guard\.yml)" || true)
+          
+          if [ -n "$NON_TRUTH_CHANGES" ]; then
+            echo "⚠️  Warning: Changes detected outside Remote Truth paths:"
+            echo "$NON_TRUTH_CHANGES"
+            echo ""
+            echo "Note: This is informational only. Remote Truth paths are:"
+            echo "  - 99_SYSTEM/Proofs"
+            echo "  - 00_RYUDO/Council/Records"
+            echo "  - 70_AI_CHRONICLE"
+          else
+            echo "✅ Remote Truth Guard: All changes are in authorized truth paths"
+          fi
+          
+      - name: Verify truth path structure
+        run: |
+          # Verify that truth paths exist and are properly structured
+          for path in "99_SYSTEM/Proofs" "00_RYUDO/Council/Records" "70_AI_CHRONICLE"; do
+            if [ ! -d "$path" ]; then
+              echo "⚠️  Warning: Truth path $path does not exist (may be new)"
+            else
+              echo "✅ Truth path $path exists"
+            fi
+          done

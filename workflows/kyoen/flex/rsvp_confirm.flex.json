@@ -1,0 +1,81 @@
+{
+  "type": "flex",
+  "altText": "RSVP確認",
+  "contents": {
+    "type": "bubble",
+    "header": {
+      "type": "box",
+      "layout": "vertical",
+      "contents": [
+        {
+          "type": "text",
+          "text": "参加状況を記録しました",
+          "weight": "bold",
+          "size": "lg",
+          "wrap": true
+        }
+      ],
+      "backgroundColor": "#00C300"
+    },
+    "body": {
+      "type": "box",
+      "layout": "vertical",
+      "contents": [
+        {
+          "type": "text",
+          "text": "{{ title }}",
+          "weight": "bold",
+          "size": "md",
+          "wrap": true,
+          "margin": "md"
+        },
+        {
+          "type": "separator",
+          "margin": "md"
+        },
+        {
+          "type": "text",
+          "text": "参加状況: {{ status_text }}",
+          "size": "sm",
+          "margin": "md",
+          "color": "#666666"
+        },
+        {
+          "type": "text",
+          "text": "{{ starts_at }}",
+          "size": "sm",
+          "margin": "sm",
+          "color": "#666666"
+        }
+      ]
+    },
+    "footer": {
+      "type": "box",
+      "layout": "horizontal",
+      "spacing": "sm",
+      "contents": [
+        {
+          "type": "button",
+          "style": "primary",
+          "height": "sm",
+          "action": {
+            "type": "uri",
+            "label": "カレンダーに追加",
+            "uri": "{{ ics_url }}"
+          }
+        }
+      ]
+    }
+  }
+}
+
+/*
+Variable Mapping Example:
+{
+  "title": "オンライン勉強会",
+  "status_text": "参加します" | "検討中" | "聞かせてください",
+  "starts_at": "2025-11-15 10:00",
+  "ics_url": "https://...",
+  "to": "user-id"
+}
+*/

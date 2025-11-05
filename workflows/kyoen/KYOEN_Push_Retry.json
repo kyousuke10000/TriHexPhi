@@ -1,0 +1,162 @@
+{
+  "name": "KYOEN Push Retry",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "minutes",
+              "minutesInterval": 5
+            }
+          ]
+        }
+      },
+      "id": "cron-trigger",
+      "name": "Cron Trigger",
+      "type": "n8n-nodes-base.cron",
+      "typeVersion": 1,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "={{ $env.N8N_SB_URL }}/rest/v1/kyoen_push_queue",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "supabaseApi",
+        "options": {
+          "queryParameters": {
+            "parameters": [
+              {
+                "name": "select",
+                "value": "id,to,payload,status,created_at,error"
+              },
+              {
+                "name": "status",
+                "value": "eq.pending"
+              },
+              {
+                "name": "created_at",
+                "value": "gte.{{ $now.minus({days: 2}).toISO() }}"
+              },
+              {
+                "name": "order",
+                "value": "created_at.asc"
+              }
+            ]
+          }
+        }
+      },
+      "id": "fetch-pending",
+      "name": "Fetch Pending",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [460, 300],
+      "credentials": {
+        "supabaseApi": {
+          "id": "1",
+          "name": "Supabase API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const items = $input.all();\nconst results = [];\n\nfor (const item of items) {\n  const queueItem = item.json;\n  \n  // Send LINE Push API request\n  const response = await fetch('https://api.line.me/v2/bot/message/push', {\n    method: 'POST',\n    headers: {\n      'Content-Type': 'application/json',\n      'Authorization': `Bearer ${$env.N8N_LINE_TOKEN}`\n    },\n    body: JSON.stringify({\n      to: queueItem.to,\n      messages: queueItem.payload\n    })\n  });\n  \n  if (response.ok) {\n    results.push({\n      id: queueItem.id,\n      status: 'sent',\n      sent_at: new Date().toISOString()\n    });\n  } else {\n    const errorText = await response.text();\n    results.push({\n      id: queueItem.id,\n      status: 'error',\n      error: errorText\n    });\n  }\n}\n\nreturn results.map(r => ({ json: r }));"
+      },
+      "id": "send-push",
+      "name": "Send Push",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [680, 300]
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "={{ $env.N8N_SB_URL }}/rest/v1/kyoen_push_queue",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "supabaseApi",
+        "options": {
+          "queryParameters": {
+            "parameters": [
+              {
+                "name": "id",
+                "value": "eq.{{ $json.id }}"
+              }
+            ]
+          }
+        },
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "status",
+              "value": "={{ $json.status }}"
+            },
+            {
+              "name": "sent_at",
+              "value": "={{ $json.sent_at }}"
+            },
+            {
+              "name": "error",
+              "value": "={{ $json.error }}"
+            }
+          ]
+        }
+      },
+      "id": "update-status",
+      "name": "Update Status",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [900, 300],
+      "credentials": {
+        "supabaseApi": {
+          "id": "1",
+          "name": "Supabase API"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Cron Trigger": {
+      "main": [
+        [
+          {
+            "node": "Fetch Pending",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch Pending": {
+      "main": [
+        [
+          {
+            "node": "Send Push",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Push": {
+      "main": [
+        [
+          {
+            "node": "Update Status",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-11-03T00:00:00.000Z",
+  "versionId": "1"
+}

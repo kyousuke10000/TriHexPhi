@@ -1,0 +1,326 @@
+{
+  "name": "KYOEN Cards",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "kyoen-cards",
+        "options": {
+          "rawBody": true
+        }
+      },
+      "id": "webhook-trigger",
+      "name": "Webhook Trigger",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [240, 300],
+      "webhookId": "kyoen-cards"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Use signature verification code from common/code_verify_signature.md\nreturn $input.all();"
+      },
+      "id": "verify-signature",
+      "name": "Verify Signature",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Use intent classification code from common/code_classify_intent.md\nconst t = ($json.events[0].message.text || '').trim();\nlet intent = 'other';\nif (/[日月火水木金土]|(\d{1,2}[:時]\d{0,2})|場所|会場|開始|開場|参加/.test(t)) intent = 'event';\nelse if (/[?？]|いつ|どこ|どうやって|方法|値段|費用|誰/.test(t)) intent = 'question';\n$json.intent = intent;\nreturn $input.all();"
+      },
+      "id": "classify-intent",
+      "name": "Classify Intent",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [680, 300]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "extract-title",
+              "name": "title",
+              "value": "={{ $json.events[0].message.text.split('\\n')[0] }}",
+              "type": "string"
+            },
+            {
+              "id": "extract-starts-at",
+              "name": "starts_at",
+              "value": "={{ $json.events[0].message.text.match(/\\d{4}-\\d{2}-\\d{2}\\s+\\d{2}:\\d{2}/)?.[0] }}",
+              "type": "string"
+            },
+            {
+              "id": "extract-location",
+              "name": "location",
+              "value": "={{ $json.events[0].message.text.match(/場所[:：]?\\s*(.+)/)?.[1] }}",
+              "type": "string"
+            },
+            {
+              "id": "extract-body",
+              "name": "body",
+              "value": "={{ $json.events[0].message.text }}",
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "id": "extract-data",
+      "name": "Extract Data",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [900, 300]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "load-flex",
+              "name": "flex_message",
+              "value": "={{ $json }}",
+              "type": "object"
+            }
+          ]
+        }
+      },
+      "id": "load-flex-template",
+      "name": "Load Flex Template",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [1120, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $env.N8N_SB_URL }}/rest/v1/kyoen_cards",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "supabaseApi",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "title",
+              "value": "={{ $json.title }}"
+            },
+            {
+              "name": "starts_at",
+              "value": "={{ $json.starts_at }}"
+            },
+            {
+              "name": "location",
+              "value": "={{ $json.location }}"
+            },
+            {
+              "name": "body",
+              "value": "={{ $json.body }}"
+            },
+            {
+              "name": "flex_payload",
+              "value": "={{ $('Load Flex Template').item.json.flex_message }}"
+            }
+          ]
+        }
+      },
+      "id": "save-card",
+      "name": "Save Card",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [1340, 300],
+      "credentials": {
+        "supabaseApi": {
+          "id": "1",
+          "name": "Supabase API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "check-immediate",
+              "leftValue": "={{ $json.immediate_push }}",
+              "rightValue": "true",
+              "operator": {
+                "type": "boolean",
+                "operation": "true"
+              }
+            }
+          ],
+          "combinator": "and"
+        }
+      },
+      "id": "check-immediate",
+      "name": "Check Immediate",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [1560, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.line.me/v2/bot/message/push",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "line",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "to",
+              "value": "={{ $json.group_id }}"
+            },
+            {
+              "name": "messages",
+              "value": "={{ [$('Load Flex Template').item.json.flex_message] }}"
+            }
+          ]
+        }
+      },
+      "id": "push-immediate",
+      "name": "Push Immediate",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [1780, 300],
+      "credentials": {
+        "line": {
+          "id": "1",
+          "name": "LINE API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $env.N8N_SB_URL }}/rest/v1/kyoen_push_queue",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "supabaseApi",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "to",
+              "value": "={{ $json.group_id }}"
+            },
+            {
+              "name": "payload",
+              "value": "={{ [$('Load Flex Template').item.json.flex_message] }}"
+            },
+            {
+              "name": "status",
+              "value": "pending"
+            }
+          ]
+        }
+      },
+      "id": "queue-scheduled",
+      "name": "Queue Scheduled",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [1780, 400],
+      "credentials": {
+        "supabaseApi": {
+          "id": "1",
+          "name": "Supabase API"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Webhook Trigger": {
+      "main": [
+        [
+          {
+            "node": "Verify Signature",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Verify Signature": {
+      "main": [
+        [
+          {
+            "node": "Classify Intent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Classify Intent": {
+      "main": [
+        [
+          {
+            "node": "Extract Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Data": {
+      "main": [
+        [
+          {
+            "node": "Load Flex Template",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Load Flex Template": {
+      "main": [
+        [
+          {
+            "node": "Save Card",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save Card": {
+      "main": [
+        [
+          {
+            "node": "Check Immediate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Immediate": {
+      "main": [
+        [
+          {
+            "node": "Push Immediate",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Queue Scheduled",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-11-03T00:00:00.000Z",
+  "versionId": "1"
+}

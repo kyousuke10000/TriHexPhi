@@ -17,6 +17,7 @@ on:
       - 'decisions/**'
       - 'stories/**'
       - '_inbox/**'
+  workflow_dispatch:
 
 permissions:
   contents: read

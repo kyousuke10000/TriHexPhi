@@ -61,13 +61,16 @@ See [specs/](specs/) for architecture, roadmap, KPI definitions.
 - Supabase Push/Day: **1.2**
 - CHL uptime: **100%**
 
-**More:** [Breath Dashboard](docs/dashboards/breath.md) | [Breath Blueprint](10_TriHexCore/00_CORE/TriHex_Breath_Blueprint.md)
+**More:** [Breath Dashboard](docs/dashboards/breath.md) | [Breath Blueprint](50_CHL/00_CORE/TriHex_Breath_Blueprint.md)
 
 ---
+
+## 🧭 Quick Navigation
+
+**Lost Context?** → [TriHex Master Reactivation Protocol](50_CHL/system/reactivation/50_CHL/system/reactivation/TriHex_Master_Reactivation.md)  
+**Structures:** [🜇_Shiryu_Studio](🜇_Shiryu_Studio/) | [00_HarmoniaCouncil](00_HarmoniaCouncil/) | [10_TriHexCore](10_TriHexCore/) | [20_TriHex-Obsidian](20_TriHex-Obsidian/)
 
 **Last updated:** 2025-11-02  
 **Status:** Rubedo Phase Active
 
 ---
-
-Navigate to: [🜇_Shiryu_Studio](🜇_Shiryu_Studio/) | [00_HarmoniaCouncil](00_HarmoniaCouncil/) | [10_TriHexCore](10_TriHexCore/) | [20_TriHex-Obsidian](20_TriHex-Obsidian/)

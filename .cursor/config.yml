@@ -121,7 +121,7 @@ commit_branches:
   - main
 
 include_paths:
-  - "TriHex_Master_Reactivation.md"
+  - "50_CHL/system/reactivation/50_CHL/system/reactivation/TriHex_Master_Reactivation.md"
   - "TRIHEX_PROJECT.yaml"
   - "20_TriHex-Obsidian/00_INDEX/"
   - "20_TriHex-Obsidian/01_Codex/"
@@ -129,11 +129,25 @@ include_paths:
   - "99_SYSTEM/Proofs/"
   - "99_SYSTEM/BreathLogs/"
   - "99_SYSTEM/MemorySeeds/"
-  - "10_TriHexCore/codex/"
-  - "10_TriHexCore/system/"
+  - "20_CRYSTALLIZATION_KOKUYOU/codex/"
+  - "50_CHL/system/"
 
 exclude_paths:
   - "50_Temp/"
   - "node_modules/"
   - ".git/"
   - "99_SYSTEM/Logs/"
+
+# Remote Truth Mode Settings
+# Generated: 2025-11-05
+# Purpose: GitHub as Single Source of Truth
+vault_sync:
+  mode: remote
+  remote_repo: "https://github.com/kyousuke10000/TriHexPhi.git"
+  sync_paths:
+    - "99_SYSTEM/Proofs"
+    - "00_RYUDO/Council/Records"
+    - "70_AI_CHRONICLE"
+  auto_commit: true
+  auto_push: true
+  interval_minutes: 10

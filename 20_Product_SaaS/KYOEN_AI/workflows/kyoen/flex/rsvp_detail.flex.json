@@ -1,0 +1,191 @@
+{
+  "type": "bubble",
+  "size": "kilo",
+  "header": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "text",
+        "text": "参加者詳細",
+        "weight": "bold",
+        "size": "lg",
+        "color": "#ffffff"
+      },
+      {
+        "type": "text",
+        "text": "{{EVENT_TITLE}}",
+        "size": "sm",
+        "color": "#ffffff",
+        "wrap": true,
+        "margin": "sm"
+      }
+    ],
+    "backgroundColor": "#17c950",
+    "paddingAll": "20px"
+  },
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "box",
+        "layout": "horizontal",
+        "contents": [
+          {
+            "type": "text",
+            "text": "📅 {{START_DATE}}",
+            "size": "xs",
+            "color": "#555555",
+            "wrap": true
+          }
+        ]
+      },
+      {
+        "type": "box",
+        "layout": "horizontal",
+        "contents": [
+          {
+            "type": "text",
+            "text": "📍 {{LOCATION}}",
+            "size": "xs",
+            "color": "#555555",
+            "wrap": true
+          }
+        ]
+      },
+      {
+        "type": "separator",
+        "margin": "lg"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "text",
+            "text": "✅ 参加（{{YES_COUNT}}名）",
+            "weight": "bold",
+            "size": "sm",
+            "color": "#17c950"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "text",
+                "text": "{{YES_USERS}}",
+                "size": "xs",
+                "color": "#555555",
+                "wrap": true
+              }
+            ],
+            "margin": "sm"
+          }
+        ],
+        "margin": "lg"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "text",
+            "text": "🤔 たぶん参加（{{MAYBE_COUNT}}名）",
+            "weight": "bold",
+            "size": "sm",
+            "color": "#ffa500"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "text",
+                "text": "{{MAYBE_USERS}}",
+                "size": "xs",
+                "color": "#555555",
+                "wrap": true
+              }
+            ],
+            "margin": "sm"
+          }
+        ],
+        "margin": "lg"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "text",
+            "text": "❌ 不参加（{{NO_COUNT}}名）",
+            "weight": "bold",
+            "size": "sm",
+            "color": "#ff334b"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "text",
+                "text": "{{NO_USERS}}",
+                "size": "xs",
+                "color": "#555555",
+                "wrap": true
+              }
+            ],
+            "margin": "sm"
+          }
+        ],
+        "margin": "lg"
+      },
+      {
+        "type": "separator",
+        "margin": "lg"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "text",
+            "text": "💬 メモ・コメント",
+            "weight": "bold",
+            "size": "sm",
+            "color": "#111111",
+            "margin": "md"
+          },
+          {
+            "type": "text",
+            "text": "{{NOTES}}",
+            "size": "xs",
+            "color": "#555555",
+            "wrap": true,
+            "margin": "sm"
+          }
+        ],
+        "margin": "lg"
+      }
+    ],
+    "spacing": "sm",
+    "paddingAll": "20px"
+  },
+  "footer": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "text",
+        "text": "参加状況を変更する場合は「参加」「不参加」「たぶん」と返信してください",
+        "size": "xxs",
+        "color": "#999999",
+        "wrap": true,
+        "align": "center"
+      }
+    ],
+    "paddingAll": "13px"
+  }
+}

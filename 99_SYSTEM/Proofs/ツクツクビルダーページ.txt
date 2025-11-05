@@ -1,0 +1,1570 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script src="https://use.typekit.net/urz4elo.js"></script>
+<script>try{Typekit.load({ async: true });}catch(e){}</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111537230-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111537230-1');
+</script>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="author" content="kumu2 Inc." />
+<meta name="robots" content="noindex, nofollow">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/kumu2-icon-144-precomposed.png" />
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/kumu2-icon-114-precomposed.png" />
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/kumu2-icon-72-precomposed.png" />
+<link rel="apple-touch-icon-precomposed" href="ico/kumu2-icon-57-precomposed.png" />
+<link rel="shortcut icon" href="ico/favicon.png" />
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link href="https://fonts.googleapis.com/earlyaccess/mplus1p.css" rel="stylesheet" />
+<title>
+BUILDER WEB | クムクム株式会社ビルダー様専用サイト</title>
+<meta name="description" content="本サイトはクムクム株式会社とご契約いただいている販売代理店さま専用サイトです。クムクム株式会社とご契約いただいていない事業主の方はご利用いただけません。ご契約時に発行された代理店ID番号とパスワードをご入力ください。">
+<meta name="keywords" content="クムクム,kumu2,代理店,加盟店,ツクツクショップ,出店,阿比留章雄,B2B,BtoB">
+<!-- Core CSS -->
+<link href="css/project.css?v=20251101224035" rel="stylesheet">
+<link href="css/icons.css" rel="stylesheet">
+<link href="css/custom.css" rel="stylesheet">
+<!-- <link href="css/bootstrap-lumen-modal_okamoto.css" rel="stylesheet"> -->
+<!-- Google Font -->
+<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+<!-- Swiper -->
+<link rel="stylesheet" href="css/plugins/swiper.css">
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+<!-- ポップアップメッセージ -->
+<link rel="stylesheet" href="./popup-message/css/popup_message.css">
+<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+
+<style>
+body {
+	font-family: "source-han-sans-japanese";
+}
+body, .section {
+	position: relative;
+	margin: 30px 0!important;
+	padding: 30px 0!important;
+}
+h1 {
+	font-weight: 700 !important;
+}
+.lead {
+	font-size: 14px !important;
+}
+a .main-menu {
+	color: #424242;
+	font-size: 21px;
+	font-weight: 700;
+	margin-top: 10px;
+}
+a .main-menu:hover {
+	color: #757575;
+	font-size: 21px;
+	font-weight: 700;
+	margin-top: 10px;
+}
+.swiper-container {
+	text-align: center;
+}
+.swiper-container .swiper-slide img {
+	max-width: 100%;
+	height: auto;
+}
+a:hover, a:focus {
+    color: #fa2839;
+    text-decoration: none;
+}
+.col-md-12.releaseNote {
+    margin-bottom: 60px;
+}
+	
+.col-md-12.releaseNote p, .page-header.text-center.releaseNote p {
+    margin-bottom: 0;
+}
+	
+.col-md-12.releaseNote i {
+    font-size: 20px;
+    margin-left: 10px;
+}
+	
+.col-md-12.releaseNote a {
+	font-size: 18px;
+    display: block;
+    color: #333;
+    border: 1px solid #333;
+    width: 400px;
+    padding: 8px 13px;
+    border-radius: 5px;
+    margin: 0 auto;
+}
+	
+.page-header.text-center.releaseNote a {
+    display: block;
+    font-size: 15px;
+    color: #333;
+    border: 1px solid #333;
+    width: 90%;
+    margin: 0 auto;
+	padding: 10px;
+    border-radius: 5px;
+}
+	
+.page-header.text-center.releaseNote i {
+    font-size: 17px;
+    margin-left: 5px;
+}
+	
+.page-header.text-center.releaseNote {
+    margin-bottom: 70px;
+}
+	
+a.info_requests:hover {
+    opacity: 0.7;
+}
+.list-group-item:hover {
+  background-color: #f5f5f5 !important;
+  display: block;
+}
+
+.notice-text {
+	width: 50%;
+    padding: 20px 20px 10px;
+    font-size: 18px;
+    border: 1px solid #ddd;
+    margin: 20px auto 0px;
+	background-color: white;
+	border-radius: 15px;
+    filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.122));
+}
+
+.mt-10 {
+	margin-top: 10px;
+}
+
+.submit-link {
+	background-color: red;
+	color: white;
+	border-radius: 10px;
+	width: 60%;
+	padding: 0px 20px;
+	margin: auto;
+	margin-top: 2vh;
+}
+
+.submit-link:hover,
+.submit-link:focus {
+	color: white;
+	text-decoration: none;
+	background: #e10000;
+}
+
+@media (max-width:1025px) {
+	.notice-text {
+		width: 100%
+	}
+}
+@media (max-width:576px) {
+	.notice-text {
+		font-size: 12px;
+		padding: 10px 5px;
+	}
+}
+@media screen and (min-width: 571px){
+	.visible-sp {
+		display: none;
+	}
+}
+@media screen and (max-width: 570px){
+	.hidden-sp {
+		display: none;
+	}
+}
+.send-special{
+	text-align:center;
+	margin-top:10px;
+}
+.send-special a{
+	border-bottom: 1px solid;
+	font-size: 0.5rem;
+}
+@media screen and (min-width: 769px) {
+	.no_scaling{
+		width: 967px;
+		height: auto;
+		transform: scale(1);
+	}
+}
+</style>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+<!-- navigation START -->
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+					<i class="fa fa-bars"></i>
+				</button>
+				<a class="navbar-brand" href="https://agent.kumu2.jp"><img src="https://agent.kumu2.jp/images/builder_logo400px.png?1762036835" style="height: 16px;">　<img class="img-responsive team-up-logo navbar-toggle collapsed" data-toggle="collapse" src="https://agent.kumu2.jp/images/logo/teamup/team_up.png" style="width: 35px; padding: 2% 0%; cursor: default;"></a>
+			</div>
+			<div id="navbar" class="collapse navbar-collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown">
+						<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">Crossofwhite株式会社 様&nbsp;<span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="https://agent.kumu2.jp/mypage/"><i class="fa fa-angle-double-right"></i> マイページ</a></li>
+							<li><a href="https://agent.kumu2.jp/mypage/title_score/"><i class="fa fa-angle-double-right"></i> マイスコア</a></li>
+							<li><a href="https://agent.kumu2.jp/logout.php"><i class="fa fa-angle-double-right"></i> サインアウト</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="https://agent.kumu2.jp/goods/">販促品のご注文 </a>
+					</li>
+					<li class="dropdown">
+						<a href="https://agent.kumu2.jp/serve/">ビルダー取次管理 </a>
+					</li>
+										<li class="dropdown">
+						<a href="https://builders.kumu2.jp/sd/contact_progress.php">サポートデスク </span></a>
+					</li>
+					<li class="dropdown">
+												<a href="https://agent.kumu2.jp/direct_information_list.php">DI
+												<span class="label_number unReadCount" id="unReadCount">92</span>
+												</a>
+					</li>
+
+					<!-- リンクを定義 -->
+					
+					<script>
+						function alertForDivision0() {
+							// アラート
+							alert_msg = 'TSUKU TSUKU株式会社との代理店追加契約が完了していません。\n「TSUKU TSUKU株式会社 代理店登録申請ページ」から申請を行なってください。';
+							alert(alert_msg);
+
+							// 遷移
+							window.location.href = $builder_url + 'agent_regist.php';
+							return false;
+						}
+					</script>
+
+					<!-- fontawesomeアイコン使用のため -->
+					<script type="text/javascript">
+						let fontawesome_link = document.createElement('link');
+						fontawesome_link.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css';
+						fontawesome_link.rel = 'stylesheet';
+						fontawesome_link.type = 'text/css';
+						let head = document.getElementsByTagName('head')[0];
+						head.appendChild(fontawesome_link);
+					</script>
+					<!-- リンク指定 -->
+										<li class="dropdown">
+						<a href="https://agent.tsukutsuku.jp/" target="_blank">AGENT WEB <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+					</li>
+
+				</ul>
+			</div>
+		</div>
+	</nav><!-- navigation END-->
+<!-- header START -->
+<!-- Swiper -->
+<div class="swiper-container">
+	<div class="swiper-wrapper">
+		<!--
+			画像サイズ：967×400
+		-->
+		<div class="swiper-slide"> <a href="economic_world2.php" target="_blank"><img data-src="./images/202512keizaikai_more.jpg?d=1234" class="swiper-lazy no_scaling" alt="経済界12月号 特集「不屈の組織」へインタビュー記事が掲載"></a>
+			<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+		</div>
+		<!-- <div class="swiper-slide"> <a href="../pdf/builder_document.php?pdf=unicorn_builder_30days.pdf" target="_blank"><img data-src="./images/unicorn_builder_top_banner2.jpg" class="swiper-lazy no_scaling" alt="「UNICORN BUILDERチャレンジキャンペーン」30日プレゼント "></a>
+			<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+		</div>
+		<div class="swiper-slide"> <a href="./document.php" target="_blank"><img data-src="./images/unicorn_builder_top_banner.jpg" class="swiper-lazy no_scaling" alt="「UNICORN BUILDERチャレンジキャンペーン」 "></a>
+			<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+		</div> -->
+		<div class="swiper-slide"> <a href="./fifth/index.php" target="_blank"><img data-src="./images/builder_recruitment_tool_top_banner.jpg" class="swiper-lazy no_scaling" alt="「BUILDER」 募集ツール"></a>
+			<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+		</div>
+		<div class="swiper-slide"> <a href="./economic_world.php" target="_blank"><img data-src="./images/economic_world_top_banner.jpg?v=20250404" class="swiper-lazy no_scaling" alt="「経済界」インタビュー掲載のお知らせ"></a>
+			<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+		</div>
+		<div class="swiper-slide"> <a href="./message/new_year_message_2025.php" target="_blank"><img data-src="./images/slider_new-year2025.jpg" class="swiper-lazy no_scaling" alt="新年のご挨拶"></a>
+			<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+		</div>
+	</div>
+	<!-- Add Pagination -->
+	<div class="swiper-pagination"></div>
+	<!-- Add Arrows -->
+	<div class="swiper-button-next"></div>
+	<div class="swiper-button-prev"></div>
+</div>
+<div class="send-special">
+	<a href="./special_page_list.php" target="_blank"><i class="im im-icon-Arrow-Right2" style="padding-right: 5px;"></i>過去の特設ページはこちら</a><!--リリース時リンク気を付ける-->
+</div>
+<!-- header END-->
+<!-- mai n contents START -->
+<!-- メンバーズメニュー START -->
+
+
+<!-- カード決済についてのお知らせ（全ビルダーに表示） -->
+<div class="container notice-text text-center" style="border: 4px solid #dd0000; padding: 15px 20px;">
+	<i class="im im-icon-Information text-primary" style="font-weight: 900;"></i>
+	クレジットカード決済利用停止に関する情報共有は下記よりご確認ください。<br>
+	<a href="https://docs.google.com/document/d/1YIlBSHoRWnPGZS814LlQoZ2w-YHR4AHY1gkOyJdGYXU/edit?usp=sharing" target="_blank"class="submit-link">確認する <i class="fa fa-caret-right"></i></a>
+</div>
+
+<!-- ポップアップメッセージ -->
+
+<!-- ビルダー取次検定&ビルダータイトル検定 -->
+
+<!-- シンポジウム販売開始メッセージ -->
+	<div class="container notice-text text-center">
+	<i class="im im-icon-Information text-primary" style="font-weight: 900;"></i>
+		【BUILDER JAPAN SYMPOSIUM チケット】の販売が開始いたしました。<br>
+		予約ページ : <a href="./seminar/reserv_reg_01.php" target="_blank">https://agent.kumu2.jp/seminar/reserv_reg_01.php</a>
+	</div>
+
+<!-- アンケート提出を促すメッセージ -->
+
+<!-- 代理店契約を促すメッセージ -->
+<section class="section hidden-xs">
+	<div class="container">
+		<div class="row">
+			<div style="text-align: center;margin-bottom: 40px;display: flex;">
+				<a href="./leaders/" target="_blank" style="width: 50%;">
+					<img src="./images/emgm_banner_550_130.png?v=1762036835" style="width: 100%;">
+				</a>
+				<a href="https://agent.kumu2.jp/anniversary/17th/" target="_blank" style="width: 50%;">
+					<img src="./images/17th-Anniversary-banner.png?v=1762036835" style="width: 100%;">
+				</a>
+			</div>
+						<!-- サポートデスク通知バナー -->
+						<!-- /サポートデスク通知バナー -->
+
+			<div class="col-md-12">
+				<div class="page-header text-center">
+					<h1>メインメニュー</h1>
+				</div>
+				<!-- ---------------１行目---------------- -->
+				<div class="row" style="margin-bottom:60px">
+
+					<div class="col-sm-3">
+						<div class="text-center">
+							<div style="width: 100%;"> <i class="im im-icon-Male text-primary" style="font-size: 400%;"></i></div>
+							<a href="./mypage/">
+							<button class="btn btn-sm btn-oval btn-inverse btn-xs">CLICK</button>
+							</a> <a href="./mypage/">
+							<h3 class="main-menu">マイページ</h3>
+							</a>
+							<p>メールアドレスなど契約情報のご確認・編集を行うことができます。</p>
+						</div>
+					</div>
+
+					<div class="col-sm-3">
+						<div class="text-center">
+							<div style="width: 100%;"><i class="im im-icon-Network text-primary" style="font-size: 400%;"></i></div>
+							<a href="./serve/">
+							<button class="btn btn-sm btn-oval btn-inverse btn-xs">CLICK</button>
+							</a> <a href="./serve/">
+							<h3 class="main-menu">ビルダー取次管理</h3>
+							</a>
+							<p>貴社がビルダーを取り次ぎされる際に発行する取次URLの発行および管理を行います。</p>
+						</div>
+					</div>
+
+					<div class="col-sm-3">
+						<div class="text-center">
+							<div style="width: 100%;"><i class="im im-icon-Calendar-4 text-primary" style="font-size: 400%;"></i></div>
+							<a href="calendar.php">
+							<button class="btn btn-sm btn-oval btn-inverse btn-xs">CLICK</button>
+							</a> <a href="calendar.php">
+							<h3 class="main-menu">カレンダー</h3>
+							</a>
+							<p>セミナーのスケジュールをご確認いただけます。</p>
+						</div>
+					</div>
+
+					<div class="col-sm-3">
+						<div class="text-center">
+							<div style="width: 100%;"><i class="im im-icon-Pencil text-primary" style="font-size: 400%;"></i></div>
+							<a href="./seminar/">
+								<button class="btn btn-sm btn-oval btn-inverse btn-xs">CLICK</button>
+							</a> 
+							<a href="./seminar/">
+								<h3 class="main-menu">セミナー管理</h3>
+							</a>
+							<p>セミナーの参加申し込みやチケットの確認が行えます。</p>
+						</div>
+					</div>
+					
+				</div>
+				<!-- ---------------２行目---------------- -->
+				<div class="row" style="margin-bottom:60px">
+
+					<div class="col-sm-3">
+						<div class="text-center">
+							<div style="width: 100%;"><i class="im im-icon-Portrait text-primary" style="font-size: 400%;"></i></div>
+							<a href="./webinar/">
+								<button class="btn btn-sm btn-oval btn-inverse btn-xs">CLICK</button>
+							</a> 
+							<a href="./webinar/">
+								<h3 class="main-menu">シンポジウムアーカイブ</h3>
+							</a>
+							<p>過去のシンポジウムアーカイブをご覧いただけます。</p>
+						</div>
+					</div>
+
+					<div class="col-sm-3">
+						<div class="text-center">
+							<div style="width: 100%;"><i class="im im-icon-Video-4 text-primary" style="font-size: 400%;"></i></div>
+							<a href="./contents/">
+								<button class="btn btn-sm btn-oval btn-inverse btn-xs">CLICK</button>
+							</a> 
+							<a href="./contents/">
+								<h3 class="main-menu">セミナー動画</h3>
+							</a>
+							<p>過去のオンライン事業説明会動画をご覧いただけます。</p>
+						</div>
+					</div>
+
+					<div class="col-sm-3">
+						<div class="text-center">
+							<div style="width: 100%;"><i class="im im-icon-Newspaper text-primary" style="font-size: 400%;"></i></div>
+							<a href="./fifth/index.php">
+							<button class="btn btn-sm btn-oval btn-inverse btn-xs">CLICK</button>
+							</a> <a href="./fifth/index.php">
+							<h3 class="main-menu">BUILDER募集ツール</h3>
+							</a>
+							<p>BUILDER募集についての各資料をご確認いただけます。</p>
+						</div>
+					</div>
+
+					<div class="col-sm-3">
+						<div class="text-center">
+							<div style="width: 100%;"><i class="im im-icon-Network-Window text-primary" style="font-size: 400%;"></i></div>
+							<a href="https://sslgw.jns-asp.jp/cmt/magic94scripts/mgrqispi94.dll?APPNAME=e-MACS_COMTY&PRGNAME=logon" target="_blank">
+							<button class="btn btn-sm btn-oval btn-inverse btn-xs">CLICK</button>
+							</a> <a href="https://sslgw.jns-asp.jp/cmt/magic94scripts/mgrqispi94.dll?APPNAME=e-MACS_COMTY&PRGNAME=logon" target="_blank">
+							<h3 class="main-menu">チーム実績管理</h3>
+							</a>
+							<p>貴社から始まるビルダー組織の組織図をご確認いただけます。別途パスワードが必要となります。</p>
+						</div>
+					</div>
+					
+				</div>
+				<!-- ---------------３行目---------------- -->	
+				<div class="row" style="margin-bottom:60px">
+
+					<div class="col-sm-3">
+						<div class="text-center">
+							<div style="width: 100%;"><i class="im im-icon-Monitor-5 text-primary" style="font-size: 400%;"></i></div>
+							<a href="./reorder/reorder_req.php">
+							<button class="btn btn-sm btn-oval btn-inverse btn-xs">CLICK</button>
+							</a> <a href="./reorder/reorder_req.php">
+							<h3 class="main-menu">ライセンス有効化</h3>
+							</a>
+							<p>ビルダーライセンスの有効化はこちらからお手続きいただけます。</p>
+						</div>
+					</div>
+
+					<div class="col-sm-3">
+						<div class="text-center">
+							<div style="width: 100%;"><i class="im im-icon-Speach-BubbleDialog text-primary" style="font-size: 400%;"></i></div>
+							<a href="./builders_lounge.php">
+							<button class="btn btn-sm btn-oval btn-inverse btn-xs">CLICK</button>
+							</a> <a href="./builders_lounge.php">
+							<h3 class="main-menu">BUILDER'S LOUNGE</h3>
+							</a>
+							<p>BUILDER'S LOUNGEの予約や注意事項の確認が行えます。</p>
+						</div>
+					</div>
+
+					<div class="col-sm-3">
+						<div class="text-center">
+							<div style="width: 100%;"><i class="im im-icon-File-HorizontalText text-primary" style="font-size: 400%;"></i></div>
+							<a href="incentives.php">
+							<button class="btn btn-sm btn-oval btn-inverse btn-xs">CLICK</button>
+							</a> <a href="incentives.php">
+							<h3 class="main-menu">インセンティブ明細</h3>
+							</a>
+							<p>ビルダーインセンティブの明細はこちらでご確認いただけます。毎月5日に更新されます。</p>
+						</div>
+					</div>
+					
+					<div class="col-sm-3">
+						<div class="text-center">
+							<div style="width: 100%;"><i class="im im-icon-Ribbon-2 text-primary" style="font-size: 400%;"></i></div>
+							<a href="awarding/builder_award.php">
+							<button class="btn btn-sm btn-oval btn-inverse btn-xs">CLICK</button>
+							</a> <a href="awarding/builder_award.php">
+							<h3 class="main-menu">表彰コーナー</h3>
+							</a>
+							<p>新たにタイトル昇格されたビルダー様、各種表彰を受賞されたビルダー様を称える表彰コーナーです。</p>
+						</div>
+					</div>
+
+				</div>
+				<!-- ---------------４行目---------------- -->
+				<div class="row" style="margin-bottom:60px">
+
+					<div class="col-sm-3">
+						<div class="text-center">
+							<div style="width: 100%;"><i class="im im-icon-Camera-2 text-primary" style="font-size: 400%;"></i></div>
+							<a href="./gallery/">
+							<button class="btn btn-sm btn-oval btn-inverse btn-xs">CLICK</button>
+							</a> <a href="./gallery/">
+							<h3 class="main-menu">ギャラリーコーナー</h3>
+							</a>
+							<p>過去のビルダー研修会、イベントなどのフォトギャラリーです。</p>
+						</div>
+					</div>
+
+					<div class="col-sm-3">
+						<div class="text-center">
+							<div style="width: 100%;"><i class="im im-icon-Movie text-primary" style="font-size: 400%;"></i></div>
+							<a href="https://builders.kumu2.jp/gallery/movieList.php">
+							<button class="btn btn-sm btn-oval btn-inverse btn-xs">CLICK</button>
+							</a> <a href="https://builders.kumu2.jp/gallery/movieList.php">
+							<h3 class="main-menu">ムービーコーナー</h3>
+							</a>
+							<p>過去のビルダー研修会、イベントやビジネス関連のムービーギャラリーです。</p>
+						</div>
+					</div>
+
+					<div class="col-sm-3">
+						<div class="text-center">
+							<div style="width: 100%;"><i class="im im-icon-Shopping-Basket text-primary" style="font-size: 400%;"></i></div>
+							<a href="./goods/">
+							<button class="btn btn-sm btn-oval btn-inverse btn-xs">CLICK</button>
+							</a> <a href="./goods/">
+							<h3 class="main-menu">販促品のご注文</h3>
+							</a>
+							<p>ビジネス活動に必要な販促品をはじめ、グッズ等もお求めいただけます。</p>
+						</div>
+					</div>
+
+					<div class="col-sm-3">
+						<div class="text-center">
+							<div style="width: 100%;"><i class="im im-icon-Information text-primary" style="font-size: 400%;"></i></div>
+							<a href="./articleList.php?cs=">
+							<button class="btn btn-sm btn-oval btn-inverse btn-xs">CLICK</button>
+							</a> <a href="./articleList.php?cs=">
+							<h3 class="main-menu">インフォメーション</h3>
+							</a>
+							<p>管理課からのお知らせや、各種サービスの最新情報をお知らせいたします。</p>
+						</div>
+					</div>
+
+				</div>
+				<!-- ---------------５行目---------------- -->
+				<div class="row" style="margin-bottom:60px">
+
+					<div class="col-sm-3">
+						<div class="text-center">
+							<div style="width: 100%;"><i class="im im-icon-Code-Window text-primary" style="font-size: 400%;"></i></div>
+							<a href="./development_log_list.php?cs=">
+							<button class="btn btn-sm btn-oval btn-inverse btn-xs">CLICK</button>
+							</a> <a href="./development_log_list.php?cs=">
+							<h3 class="main-menu">開発更新ログ</h3>
+							</a>
+							<p>開発に関する更新情報を発信します。</p>
+						</div>
+					</div>
+
+					<div class="col-sm-3">
+						<div class="text-center">
+							<div style="width: 100%;"><i class="im im-icon-Envelope text-primary" style="font-size: 400%;"></i></div>
+							<a href="https://builders.kumu2.jp/sd/contact_new.php">
+							<button class="btn btn-sm btn-oval btn-inverse btn-xs">CLICK</button>
+							</a> <a href="https://builders.kumu2.jp/sd/contact_new.php">
+							<h3 class="main-menu">サポートデスク</h3>
+							</a>
+							<p>管理課に対するお問い合わせはこちらからお送りください。</p>
+						</div>
+					</div>
+
+					<div class="col-sm-3">
+						<div class="text-center">
+							<div style="width: 100%;"><i class="im im-icon-Paper-Plane text-primary" style="font-size: 400%;"></i></div>
+							<a href="direct_information_list.php">
+							<button class="btn btn-sm btn-oval btn-inverse btn-xs">CLICK</button>
+							</a> <a href="direct_information_list.php">
+							<h3 class="main-menu">ダイレクト<br>インフォメーション</h3>
+							</a>
+							<p>弊社から貴社へのお知らせを確認できます。</p>
+						</div>
+					</div>
+
+					<div class="col-sm-3">
+						<div class="text-center">
+							<div style="width: 100%;"><i class="im im-icon-Speach-BubbleAsking text-primary" style="font-size: 400%;"></i></div>
+							<a href="faqList.php">
+							<button class="btn btn-sm btn-oval btn-inverse btn-xs">CLICK</button>
+							</a> <a href="faqList.php">
+							<h3 class="main-menu">FAQコーナー</h3>
+							</a>
+							<p>ビルダー様からのお問い合わせをまとめました。疑問点がございましたらご確認ください。</p>
+						</div>
+					</div>
+
+				</div>
+				<!-- ---------------６行目---------------- -->
+				<div class="row" style="margin-bottom:60px">
+
+					<div class="col-sm-3">
+						<div class="text-center">
+							<div style="width: 100%;"><i class="im im-icon-Credit-Card2 text-primary" style="font-size: 400%;"></i></div>
+							<a href="./payment/n01.php">
+							<button class="btn btn-sm btn-oval btn-inverse btn-xs">CLICK</button>
+							</a> <a href="./payment/n01.php">
+							<h3 class="main-menu">カード決済メニュー</h3>
+							</a>
+							<p>クレジットカードの契約・変更はこちらからお手続きいただけます。</p>
+						</div>
+					</div>
+
+					<div class="col-sm-3">
+						<div class="text-center">
+							<div style="width: 100%;">
+								<i class="im im-icon-Folder-Link text-primary" style="font-size: 400%;"></i>
+							</div>
+							<a href="./link.php">
+								<button class="btn btn-sm btn-oval btn-inverse btn-xs">CLICK</button>
+							</a>
+							<a href="./link.php">
+								<h3 class="main-menu">関連リンク集</h3>
+							</a>
+							<p>BUILDER関連のサイトリンク集です。</p>
+						</div>
+					</div>
+
+					<div class="col-sm-3">
+						<div class="text-center">
+							<div style="width: 100%;"><i class="im im-icon-Inifity text-primary" style="font-size: 400%;"></i></div>
+							<a href="https://builders.kumu2.jp/">
+							<button class="btn btn-sm btn-oval btn-inverse btn-xs">CLICK</button>
+							</a> <a href="https://builders.kumu2.jp/">
+							<h3 class="main-menu">ビルダーエリア</h3>
+							</a>
+							<p>エンドユーザー募集やショップ、サプライヤーの取次ツールをご活用いただけます。</p>
+						</div>
+					</div>
+
+					<div class="col-sm-3">
+						<div class="text-center">
+							<div style="width: 100%;"><i class="im im-icon-Download text-primary" style="font-size: 400%;"></i></div>
+							<a href="document.php">
+							<button class="btn btn-sm btn-oval btn-inverse btn-xs">CLICK</button>
+							</a> <a href="document.php">
+							<h3 class="main-menu">ドキュメント</h3>
+							</a>
+							<p>フライヤー・各種申請書など発行物をＰＤＦ書類でダウンロードしていただけます。</p>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+	</div>
+</section>
+<!-- mobile -->
+<section class="section section-m-custom visible-xs" style="margin-bottom: 0px; padding-bottom: 0px;">
+	<div class="container" style="padding-top: 0px;">
+		<div class="row ">
+			<div style="text-align: center;margin:0 16px 60px;">
+				<a href="./leaders/" target="_blank"><img src="./images/emgm_banner_550_130.png?v=1762036835" style="max-width: 100%;"></a>
+				<a href="https://agent.kumu2.jp/anniversary/17th/" target="_blank"><img src="./images/17th-Anniversary-banner.png?v=1762036835" style="max-width: 100%;"></a>
+			</div>
+			<div class="col-md-12">
+								<div class="page-header text-center">
+					<h1 style="font-size: x-large;">メインメニュー</h1>
+				</div>
+				<div class="row">
+					<div class="col-xs-3"> <a href="./mypage/" class="btn btn-link ">
+						<div class="text-center"><i class="im im-icon-Male text-primary" style="font-size: 300%;"></i></div>
+						</a> </div>
+					<div class="col-xs-9" style="padding-left: 10px;"> <a href="./mypage/" style="color: #666; margin-left:-12px;" class="btn btn-link ">
+						<h3 class="mobile-title-custom">マイページ</h3>
+						</a>
+						<p class="mobile-txt-s-custom">メールアドレスなど契約情報のご確認・編集を行うことができます。</p>
+					</div>
+				</div>
+				<hr class="line1">
+
+				<div class="row">
+					<div class="col-xs-3"> <a href="./serve/" class="btn btn-link">
+						<div class="text-center"><i class="im im-icon-Network text-primary" style="font-size: 300%;"></i></div>
+						</a> </div>
+					<div class="col-xs-9"> <a href="./serve/" style="color: #666; margin-left:-12px;" class="btn btn-link ">
+						<h3 class="mobile-title-custom">ビルダー取次管理</h3>
+						</a>
+						<p class="mobile-txt-s-custom">貴社がビルダーを取り次ぎされる際に発行する取次URLの発行および管理を行います。</p>
+					</div>
+				</div>
+				<hr class="line1">
+
+				<div class="row">
+					<div class="col-xs-3"> <a href="calendar.php" class="btn btn-link">
+						<div class="text-center"><i class="im im-icon-Calendar-4 text-primary" style="font-size: 300%;"></i></div>
+						</a> </div>
+					<div class="col-xs-9"> <a href="calendar.php" style="color: #666; margin-left:-12px;" class="btn btn-link ">
+						<h3 class="mobile-title-custom">カレンダー</h3>
+						</a>
+						<p class="mobile-txt-s-custom">セミナーのスケジュールをご確認いただけます。</p>
+					</div>
+				</div>
+				<hr class="line1">
+
+				<div class="row">
+					<div class="col-xs-3"> 
+						<a href="./seminar/" class="btn btn-link ">
+							<div class="text-center"><i class="im im-icon-Pencil text-primary" style="font-size: 300%;"></i></div>
+						</a> 
+					</div>
+					<div class="col-xs-9"> 
+						<a href="./seminar/" style="color: #666; margin-left:-12px;" class="btn btn-link">
+							<h3 class="mobile-title-custom">セミナー管理</h3>
+						</a>
+						<p class="mobile-txt-s-custom">セミナーの参加申し込みやチケットの確認が行えます。</p>
+					</div>
+				</div>
+				<hr class="line1">
+
+				<div class="row">
+					<div class="col-xs-3"> 
+						<a href="./webinar/" class="btn btn-link ">
+							<div class="text-center"><i class="im im-icon-Portrait text-primary" style="font-size: 300%;"></i></div>
+						</a> 
+					</div>
+					<div class="col-xs-9"> 
+						<a href="./webinar/" style="color: #666; margin-left:-12px;" class="btn btn-link">
+							<h3 class="mobile-title-custom">シンポジウムアーカイブ</h3>
+						</a>
+						<p class="mobile-txt-s-custom">過去のシンポジウムアーカイブをご覧いただけます。</p>
+					</div>
+				</div>
+				<hr class="line1">
+
+				<div class="row">
+					<div class="col-xs-3"> 
+						<a href="./contents/" class="btn btn-link ">
+							<div class="text-center"><i class="im im-icon-Video-4 text-primary" style="font-size: 300%;"></i></div>
+						</a> 
+					</div>
+					<div class="col-xs-9"> 
+						<a href="./contents/" style="color: #666; margin-left:-12px;" class="btn btn-link">
+							<h3 class="mobile-title-custom">セミナー動画</h3>
+						</a>
+						<p class="mobile-txt-s-custom">過去のオンライン事業説明会動画をご覧いただけます。</p>
+					</div>
+				</div>
+				<hr class="line1">
+
+				<div class="row">
+					<div class="col-xs-3"> <a href="./fifth/index.php?cs=" class="btn btn-link ">
+						<div class="text-center"><i class="im im-icon-Newspaper text-primary" style="font-size: 300%;"></i></div>
+						</a> </div>
+					<div class="col-xs-9"> <a href="./fifth/index.php?cs=" style="color: #666; margin-left:-12px;" class="btn btn-link ">
+						<h3 class="mobile-title-custom">BUILDER募集ツール</h3>
+						</a>
+						<p class="mobile-txt-s-custom">BUILDER募集についての各資料をご確認いただけます。</p>
+					</div>
+				</div>
+				<hr class="line1">
+
+				<div class="row">
+					<div class="col-xs-3"> <a href="https://sslgw.jns-asp.jp/cmt/magic94scripts/mgrqispi94.dll?APPNAME=e-MACS_COMTY&PRGNAME=logon" class="btn btn-link ">
+						<div class="text-center"><i class="im im-icon-Network-Window text-primary" style="font-size: 300%;"></i></div>
+						</a> </div>
+					<div class="col-xs-9"> <a href="https://sslgw.jns-asp.jp/cmt/magic94scripts/mgrqispi94.dll?APPNAME=e-MACS_COMTY&PRGNAME=logon" style="color: #666; margin-left:-12px;" class="btn btn-link " target="_blank">
+						<h3 class="mobile-title-custom">チーム実績管理</h3>
+						</a>
+						<p class="mobile-txt-s-custom">貴社から始まるビルダー組織の組織図をご確認いただけます。別途パスワードが必要となります。</p>
+					</div>
+				</div>
+				<hr class="line1">
+
+				<div class="row">
+					<div class="col-xs-3"> <a href="./reorder/reorder_req.php" class="btn btn-link ">
+						<div class="text-center"><i class="im im-icon-Monitor-5 text-primary" style="font-size: 300%;"></i></div>
+						</a> </div>
+					<div class="col-xs-9"> <a href="./reorder/reorder_req.php" style="color: #666; margin-left:-12px;" class="btn btn-link ">
+						<h3 class="mobile-title-custom">ライセンス有効化</h3>
+						</a>
+						<p class="mobile-txt-s-custom">ビルダーライセンスの有効化はこちらからお手続きいただけます。</p>
+					</div>
+				</div>
+				<hr class="line1">
+
+				<div class="row">
+					<div class="col-xs-3"> <a href="./builders_lounge.php" class="btn btn-link ">
+						<div class="text-center"><i class="im im-icon-Speach-BubbleDialog text-primary" style="font-size: 300%;"></i></div>
+						</a> </div>
+					<div class="col-xs-9"> <a href="./builders_lounge.php" style="color: #666; margin-left:-12px;" class="btn btn-link ">
+						<h3 class="mobile-title-custom">BUILDER'S LOUNGE</h3>
+						</a>
+						<p class="mobile-txt-s-custom">BUILDER'S LOUNGEの予約や注意事項の確認が行えます。</p>
+					</div>
+				</div>
+				<hr class="line1">
+
+				<div class="row">
+					<div class="col-xs-3"> <a href="incentives.php" class="btn btn-link ">
+						<div class="text-center"><i class="im im-icon-File-HorizontalText text-primary" style="font-size: 300%;"></i></div>
+						</a> </div>
+					<div class="col-xs-9"> <a href="incentives.php" style="color: #666; margin-left:-12px;" class="btn btn-link ">
+						<h3 class="mobile-title-custom">インセンティブ明細</h3>
+						</a>
+						<p class="mobile-txt-s-custom">ビルダーインセンティブ明細はこちらでご確認いただけます。毎月5日に更新されます。</p>
+					</div>
+				</div>
+				<hr class="line1">
+
+				<div class="row">
+					<div class="col-xs-3"> <a href="awarding/builder_award.php" class="btn btn-link ">
+						<div class="text-center"><i class="im im-icon-Ribbon-2 text-primary" style="font-size: 300%;"></i></div>
+						</a> </div>
+					<div class="col-xs-9"> <a href="awarding/builder_award.php" style="color: #666; margin-left:-12px;" class="btn btn-link ">
+						<h3 class="mobile-title-custom">表彰コーナー</h3>
+						</a>
+						<p class="mobile-txt-s-custom">新たにタイトル昇格されたビルダー様、各種表彰を受賞されたビルダー様を称える表彰コーナーです。</p>
+					</div>
+				</div>
+				<hr class="line1">
+
+				<div class="row">
+					<div class="col-xs-3"> <a href="./gallery/" class="btn btn-link ">
+						<div class="text-center"><i class="im im-icon-Camera-2 text-primary" style="font-size: 300%;"></i></div>
+						</a> </div>
+					<div class="col-xs-9"> <a href="./gallery/" style="color: #666; margin-left:-12px;" class="btn btn-link ">
+						<h3 class="mobile-title-custom">ギャラリーコーナー</h3>
+						</a>
+						<p class="mobile-txt-s-custom">過去のビルダー研修会、イベントなどのフォトギャラリーです。</p>
+					</div>
+				</div>
+				<hr class="line1">
+				<div class="row">
+					<div class="col-xs-3"> <a href="https://builders.kumu2.jp/gallery/movieList.php" class="btn btn-link ">
+						<div class="text-center"><i class="im im-icon-Movie text-primary" style="font-size: 300%;"></i></div>
+						</a> </div>
+					<div class="col-xs-9"> <a href="https://builders.kumu2.jp/gallery/movieList.php" style="color: #666; margin-left:-12px;" class="btn btn-link ">
+						<h3 class="mobile-title-custom">ムービーコーナー</h3>
+						</a>
+						<p class="mobile-txt-s-custom">過去のビルダー研修会、イベントやビジネス関連のムービーギャラリーです。</p>
+					</div>
+				</div>
+				<hr class="line1">
+				
+				<div class="row">
+					<div class="col-xs-3"> <a href="./goods/" class="btn btn-link ">
+						<div class="text-center"><i class="im im-icon-Shopping-Basket text-primary" style="font-size: 300%;"></i></div>
+						</a> </div>
+					<div class="col-xs-9"> <a href="./goods/" style="color: #666; margin-left:-12px;" class="btn btn-link ">
+						<h3 class="mobile-title-custom">販促品のご注文</h3>
+						</a>
+						<p class="mobile-txt-s-custom">ビジネス活動に必要な販促品をはじめ、グッズ等もお求めいただけます。</p>
+					</div>
+				</div>
+				<hr class="line1">
+
+				<div class="row">
+					<div class="col-xs-3"> <a href="./articleList.php?cs=" class="btn btn-link ">
+						<div class="text-center"><i class="im im-icon-Information text-primary" style="font-size: 300%;"></i></div>
+						</a> </div>
+					<div class="col-xs-9"> <a href="./articleList.php?cs=" style="color: #666; margin-left:-12px;" class="btn btn-link ">
+						<h3 class="mobile-title-custom">インフォメーション</h3>
+						</a>
+						<p class="mobile-txt-s-custom">管理課からのお知らせや、各種サービスの最新情報をお知らせいたします。</p>
+					</div>
+				</div>
+				<hr class="line1">
+
+				<div class="row">
+					<div class="col-xs-3"> <a href="./articleList.php?cs=" class="btn btn-link ">
+						<div class="text-center"><i class="im im-icon-Code-Window text-primary" style="font-size: 300%;"></i></div>
+						</a> </div>
+					<div class="col-xs-9"> <a href="./development_log_list.php?cs=" style="color: #666; margin-left:-12px;" class="btn btn-link ">
+						<h3 class="mobile-title-custom">開発更新ログ</h3>
+						</a>
+						<p class="mobile-txt-s-custom">開発に関する更新情報を発信します。</p>
+					</div>
+				</div>
+				<hr class="line1">
+
+				<div class="row">
+					<div class="col-xs-3"> <a href="https://builders.kumu2.jp/sd/contact_new.php" class="btn btn-link ">
+						<div class="text-center"><i class="im im-icon-Envelope text-primary" style="font-size: 300%;"></i></div>
+						</a> </div>
+					<div class="col-xs-9"> <a href="https://builders.kumu2.jp/sd/contact_new.php" style="color: #666; margin-left:-12px;" class="btn btn-link ">
+						<h3 class="mobile-title-custom">サポートデスク</h3>
+						</a>
+						<p class="mobile-txt-s-custom">管理課に対するお問い合わせはこちらからお送りください。</p>
+					</div>
+				</div>
+				<hr class="line1">
+
+				<div class="row">
+					<div class="col-xs-3"> <a href="direct_information_list.php" class="btn btn-link ">
+						<div class="text-center"><i class="im im-icon-Paper-Plane text-primary" style="font-size: 300%;"></i></div>
+						</a> </div>
+					<div class="col-xs-9"> <a href="direct_information_list.php" style="color: #666; margin-left:-12px;" class="btn btn-link ">
+						<h3 class="mobile-title-custom">ダイレクトインフォメーション</h3>
+						</a>
+						<p class="mobile-txt-s-custom">弊社から貴社へのお知らせを確認できます。</p>
+					</div>
+				</div>
+				<hr class="line1">
+
+				<div class="row">
+					<div class="col-xs-3"> <a href="faqList.php" class="btn btn-link ">
+						<div class="text-center"><i class="im im-icon-Speach-BubbleAsking text-primary" style="font-size: 300%;"></i></div>
+						</a> </div>
+					<div class="col-xs-9"> <a href="faqList.php" style="color: #666; margin-left:-12px;" class="btn btn-link ">
+						<h3 class="mobile-title-custom">FAQコーナー</h3>
+						</a>
+						<p class="mobile-txt-s-custom">ビルダー様からのお問い合わせをまとめました。疑問点がございましたらご確認ください。</p>
+					</div>
+				</div>
+				<hr class="line1">
+
+				<div class="row">
+					<div class="col-xs-3"> <a href="./payment/n01.php" class="btn btn-link ">
+						<div class="text-center"><i class="im im-icon-Credit-Card2 text-primary" style="font-size: 300%;"></i></div>
+						</a> </div>
+					<div class="col-xs-9"> <a href="./payment/n01.php" style="color: #666; margin-left:-12px;" class="btn btn-link ">
+						<h3 class="mobile-title-custom">カード決済メニュー</h3>
+						</a>
+						<p class="mobile-txt-s-custom">クレジットカードの契約・変更はこちらからお手続きいただけます。</p>
+					</div>
+				</div>
+				<hr class="line1">
+
+				<div class="row">
+					<div class="col-xs-3"> <a href="document.php" class="btn btn-link ">
+						<div class="text-center"><i class="im im-icon-Download text-primary" style="font-size: 300%;"></i></div>
+						</a> </div>
+					<div class="col-xs-9"> <a href="document.php" style="color: #666; margin-left:-12px;" class="btn btn-link ">
+						<h3 class="mobile-title-custom">ドキュメント</h3>
+						</a>
+						<p class="mobile-txt-s-custom">フライヤー・各種申請書など発行物をＰＤＦ書類でダウンロードしていただけます。</p>
+					</div>
+				</div>	
+				<hr class="line1">
+
+				<div class="row">
+					<div class="col-xs-3"> 
+						<a href="./link.php" class="btn btn-link ">
+							<div class="text-center"><i class="im im-icon-Folder-Link text-primary" style="font-size: 300%;"></i></div>
+						</a> 
+					</div>
+					<div class="col-xs-9"> 
+						<a href="./link.php" style="color: #666; margin-left:-12px;" class="btn btn-link ">
+							<h3 class="mobile-title-custom">関連リンク集</h3>
+						</a>
+						<p class="mobile-txt-s-custom">BUILDER関連のサイトリンク集です。</p>
+					</div>
+				</div>	
+				<hr class="line1">
+
+				<div class="row">
+					<div class="col-xs-3"> <a href="https://builders.kumu2.jp/" class="btn btn-link">
+						<div class="text-center"><i class="im im-icon-Inifity text-primary" style="font-size: 300%;"></i></div>
+						</a> </div>
+					<div class="col-xs-9"> <a href="https://builders.kumu2.jp/" style="color: #666; margin-left:-12px;" class="btn btn-link ">
+						<h3 class="mobile-title-custom">ビルダーエリア</h3>
+						</a>
+						<p class="mobile-txt-s-custom">エンドユーザー募集やショップ、サプライヤーの取次ツールをご活用いただけます。</p>
+					</div>
+				</div>
+				<hr class="line1">
+					
+			</div>
+		</div>
+	</div>
+</section>
+<!-- メンバーズメニュー END-->
+<!-- NEW START -->
+<section class="section hidden-xs">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 hidden-xs">
+				<div class="page-header text-center">
+					<h1>インフォメーション</h1>
+					<p class="lead">管理課からのお知らせや、各種サービスの最新情報をお知らせいたします。 </p>
+				</div>
+			</div>
+			<!-- 各種お知らせ-->
+			<div class="col-md-6" style="margin-bottom: 45px;">
+				<!-- START panel-->
+				<!-- Nav tabs -->
+				<ul class="nav nav-tabs nav-justified">
+					<li class="active"><a href="#importan" data-toggle="tab" style="padding-right: 5px; padding-left: 5px; font-size: large; background: #838383;">各種お知らせ</a></li>
+				</ul>
+				<!-- Tab panes -->
+				<div class="tab-content">
+					<div id="importan" class="tab-pane fade in active">
+						<div class="row">
+							<div class="col-xs-12">
+								<div class="list-group">
+																				<a class="list-group-item" href="article.php?c=4195">
+											<h5 class="list-group-item-heading" style="color: #311b92; font-weight: 700; line-height: 18px;"><i class="fa fa-caret-right"></i>
+												【重要】ツクツク!!!「リンク決済」リリースのご案内											</h5>
+											<p class="list-group-item-text text-right"><small>最終更新：
+											2025-10-16 17:58											</small></p>
+											</a>
+																						<a class="list-group-item" href="article.php?c=4194">
+											<h5 class="list-group-item-heading" style="color: #311b92; font-weight: 700; line-height: 18px;"><i class="fa fa-caret-right"></i>
+												【11月度】ビルダーライセンス月度切替時期のお知らせ											</h5>
+											<p class="list-group-item-text text-right"><small>最終更新：
+											2025-10-16 15:33											</small></p>
+											</a>
+																						<a class="list-group-item" href="article.php?c=4161">
+											<h5 class="list-group-item-heading" style="color: #311b92; font-weight: 700; line-height: 18px;"><i class="fa fa-caret-right"></i>
+												【重要】「クレジットカード決済利用停止に関するお詫びと情報共有」公開のご案内											</h5>
+											<p class="list-group-item-text text-right"><small>最終更新：
+											2025-10-09 14:52											</small></p>
+											</a>
+																						<a class="list-group-item" href="article.php?c=4128">
+											<h5 class="list-group-item-heading" style="color: #311b92; font-weight: 700; line-height: 18px;"><i class="fa fa-caret-right"></i>
+												【お知らせ】BUILDER’S LOUNGE営業停止日のご案内											</h5>
+											<p class="list-group-item-text text-right"><small>最終更新：
+											2025-10-08 11:44											</small></p>
+											</a>
+																						<a class="list-group-item" href="article.php?c=4095">
+											<h5 class="list-group-item-heading" style="color: #311b92; font-weight: 700; line-height: 18px;"><i class="fa fa-caret-right"></i>
+												【重要】カード決済一時停止に関する経緯と今後の見通しに関するご案内											</h5>
+											<p class="list-group-item-text text-right"><small>最終更新：
+											2025-10-06 19:29											</small></p>
+											</a>
+																						<a class="list-group-item" href="article.php?c=4062">
+											<h5 class="list-group-item-heading" style="color: #311b92; font-weight: 700; line-height: 18px;"><i class="fa fa-caret-right"></i>
+												【重要】2026年度ビルダー資格更新に関するご案内」のメールを対象者様にお送りしました											</h5>
+											<p class="list-group-item-text text-right"><small>最終更新：
+											2025-10-03 20:00											</small></p>
+											</a>
+																			</div>
+								<div class="text-center">
+									<a href="./articleList.php?cs="><i class="im im-icon-Arrow-Right2" style="padding-right: 5px;font-size: 13px;"></i>各種お知らせ一覧</a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+			<!-- 開発更新ログ-->
+			<div class="col-md-6" style="margin-bottom: 45px;">
+				<!-- START panel-->
+				<!-- Tab panes -->
+				<ul class="nav nav-tabs nav-justified">
+					<li class="active">
+						<a href="#importan" data-toggle="tab" style="padding-right: 5px; padding-left: 5px; font-size: large; background: #838383;">
+							開発更新ログ
+						</a>
+					</li>
+				</ul>
+				<div class="tab-content">
+					<div id="importan" class="tab-pane fade in active">
+						<div class="row">
+							<div class="col-xs-12">
+								<div class="list-group">
+																				<span class="list-group-item">
+												<a data-toggle="modal" data-backdrop="true" href="development_log_modal.php?no=2899" data-target="#2899" style="color:#555;">
+													<div style="margin-left: -14px; margin-bottom: 14px; display: flex;">
+														<div>
+															<span class="label label-danger" style="margin-left: 12px; background-color:#E60012;">重要</span>
+														</div>
+														<div><span class="label label-default" style="margin-left: 14px; background-color: #BABABA; margin-right: 11px;">小規模</span></div>
+														<div>
+															<span class="list-group-item-heading" style="color: #311b92; font-weight: 700; line-height: 18px;">
+																季節限定の特集の募集を開始いたしました															</span>
+														</div>
+													</div>
+													<div style="display: flex; justify-content: space-between;">
+														<span class="list-group-item-text text-left"><small>
+															ツクツク!!!CMS/
+															特集追加のお知らせ														</small></span>
+														<span>
+															<small>最終更新：2025-10-20 14:41</small>
+														</span>
+													</div>
+												</a>
+											</span>
+											<!-- モーダルセット -->
+											<div class="modal fade" id="2899" tabindex="-1">  
+												<div class="modal-dialog-scrollable">
+													<div class="modal-content"></div>
+												</div>
+											</div>
+																						<span class="list-group-item">
+												<a data-toggle="modal" data-backdrop="true" href="development_log_modal.php?no=2866" data-target="#2866" style="color:#555;">
+													<div style="margin-left: -14px; margin-bottom: 14px; display: flex;">
+														<div>
+															<span class="label label-danger" style="margin-left: 12px; background-color:#E60012;">重要</span>
+														</div>
+														<div><span class="label label-default" style="margin-left: 14px; background-color: #BABABA; margin-right: 11px;">小規模</span></div>
+														<div>
+															<span class="list-group-item-heading" style="color: #311b92; font-weight: 700; line-height: 18px;">
+																季節限定の特集の募集を開始いたしました															</span>
+														</div>
+													</div>
+													<div style="display: flex; justify-content: space-between;">
+														<span class="list-group-item-text text-left"><small>
+															ツクツク!!!CMS/
+															特集追加のお知らせ														</small></span>
+														<span>
+															<small>最終更新：2025-09-16 10:12</small>
+														</span>
+													</div>
+												</a>
+											</span>
+											<!-- モーダルセット -->
+											<div class="modal fade" id="2866" tabindex="-1">  
+												<div class="modal-dialog-scrollable">
+													<div class="modal-content"></div>
+												</div>
+											</div>
+																						<span class="list-group-item">
+												<a data-toggle="modal" data-backdrop="true" href="development_log_modal.php?no=2835" data-target="#2835" style="color:#555;">
+													<div style="margin-left: -14px; margin-bottom: 14px; display: flex;">
+														<div>
+															<span class="label label-danger" style="margin-left: 12px; background-color:#E60012;"></span>
+														</div>
+														<div><span class="label label-default" style="margin-left: 14px; background-color: #BABABA; margin-right: 11px;">小規模</span></div>
+														<div>
+															<span class="list-group-item-heading" style="color: #311b92; font-weight: 700; line-height: 18px;">
+																【ツクツク!!! ウェブチケット】不具合解消のお知らせ															</span>
+														</div>
+													</div>
+													<div style="display: flex; justify-content: space-between;">
+														<span class="list-group-item-text text-left"><small>
+															ツクツク!!!ウェブチケット/
+															ツクツク!!!ウェブチケット全般														</small></span>
+														<span>
+															<small>最終更新：2025-09-12 16:23</small>
+														</span>
+													</div>
+												</a>
+											</span>
+											<!-- モーダルセット -->
+											<div class="modal fade" id="2835" tabindex="-1">  
+												<div class="modal-dialog-scrollable">
+													<div class="modal-content"></div>
+												</div>
+											</div>
+																						<span class="list-group-item">
+												<a data-toggle="modal" data-backdrop="true" href="development_log_modal.php?no=2834" data-target="#2834" style="color:#555;">
+													<div style="margin-left: -14px; margin-bottom: 14px; display: flex;">
+														<div>
+															<span class="label label-danger" style="margin-left: 12px; background-color:#E60012;"></span>
+														</div>
+														<div><span class="label label-default" style="margin-left: 14px; background-color: #BABABA; margin-right: 11px;">小規模</span></div>
+														<div>
+															<span class="list-group-item-heading" style="color: #311b92; font-weight: 700; line-height: 18px;">
+																【ツクツク!!! ホーム】仕様変更に関してのお知らせ															</span>
+														</div>
+													</div>
+													<div style="display: flex; justify-content: space-between;">
+														<span class="list-group-item-text text-left"><small>
+															ツクツク!!!全体/
+															ツクツク!!!全般														</small></span>
+														<span>
+															<small>最終更新：2025-09-12 15:16</small>
+														</span>
+													</div>
+												</a>
+											</span>
+											<!-- モーダルセット -->
+											<div class="modal fade" id="2834" tabindex="-1">  
+												<div class="modal-dialog-scrollable">
+													<div class="modal-content"></div>
+												</div>
+											</div>
+																						<span class="list-group-item">
+												<a data-toggle="modal" data-backdrop="true" href="development_log_modal.php?no=2833" data-target="#2833" style="color:#555;">
+													<div style="margin-left: -14px; margin-bottom: 14px; display: flex;">
+														<div>
+															<span class="label label-danger" style="margin-left: 12px; background-color:#E60012;"></span>
+														</div>
+														<div><span class="label label-default" style="margin-left: 14px; background-color: #BABABA; margin-right: 11px;">小規模</span></div>
+														<div>
+															<span class="list-group-item-heading" style="color: #311b92; font-weight: 700; line-height: 18px;">
+																【ツクツク!!!ホーム】不具合解消のお知らせ															</span>
+														</div>
+													</div>
+													<div style="display: flex; justify-content: space-between;">
+														<span class="list-group-item-text text-left"><small>
+															ツクツク!!!全体/
+															ツクツク!!!全般														</small></span>
+														<span>
+															<small>最終更新：2025-09-12 15:12</small>
+														</span>
+													</div>
+												</a>
+											</span>
+											<!-- モーダルセット -->
+											<div class="modal fade" id="2833" tabindex="-1">  
+												<div class="modal-dialog-scrollable">
+													<div class="modal-content"></div>
+												</div>
+											</div>
+																			</div>
+								<div class="text-center">
+									<a href="./development_log_list.php"><i class="im im-icon-Arrow-Right2" style="padding-right: 5px;font-size: 13px;"></i>開発更新ログ一覧</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- 重要なお知らせEND panel-->
+					<!-- サイト更新情報START panel-->
+					<div id="service" class="tab-pane fade in">
+						<div class="row">
+							<div class="col-xs-12">
+								<div class="list-group">
+																		<span class="list-group-item">
+									<h5 class="list-group-item-heading" style="color: #311b92; font-weight: 700; line-height: 18px;"><i class="fa fa-caret-right"></i>
+										2023年12月度　全国ビルダー研修会アーカイブ動画配信のお知らせ									</h5>
+									<p class="list-group-item-text text-right"><small>掲載日時：
+										2023-12-22 17:01										</small></p>
+									</span>
+																		<span class="list-group-item">
+									<h5 class="list-group-item-heading" style="color: #311b92; font-weight: 700; line-height: 18px;"><i class="fa fa-caret-right"></i>
+										2023年12月度　全国ビルダー研修会参加申し込み開始のお知らせ									</h5>
+									<p class="list-group-item-text text-right"><small>掲載日時：
+										2023-12-12 10:07										</small></p>
+									</span>
+																		<span class="list-group-item">
+									<h5 class="list-group-item-heading" style="color: #311b92; font-weight: 700; line-height: 18px;"><i class="fa fa-caret-right"></i>
+										2023年11月度　全国ビルダー研修会アーカイブ動画配信のお知らせ									</h5>
+									<p class="list-group-item-text text-right"><small>掲載日時：
+										2023-11-22 19:12										</small></p>
+									</span>
+																		<span class="list-group-item">
+									<h5 class="list-group-item-heading" style="color: #311b92; font-weight: 700; line-height: 18px;"><i class="fa fa-caret-right"></i>
+										2023年11月度　全国ビルダー研修会参加申し込み開始のお知らせ									</h5>
+									<p class="list-group-item-text text-right"><small>掲載日時：
+										2023-11-14 10:34										</small></p>
+									</span>
+																		<span class="list-group-item">
+									<h5 class="list-group-item-heading" style="color: #311b92; font-weight: 700; line-height: 18px;"><i class="fa fa-caret-right"></i>
+										2023年10月度　全国ビルダー研修会アーカイブ動画配信のお知らせ									</h5>
+									<p class="list-group-item-text text-right"><small>掲載日時：
+										2023-10-26 18:02										</small></p>
+									</span>
+																	</div>
+							</div>
+						</div>
+					</div>
+					<!-- サイト更新情報END panel-->
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- mobile -->
+<section class="section section-m-custom visible-xs">
+	<div class="container" style="padding-top: 0px;">
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="page-header text-center">
+					<h1 style="font-size: x-large;">インフォメーション</h1>
+					<p class="lead" style="font-size: small;">管理課からのお知らせや、<br>
+						各種サービスの最新情報をお知らせいたします。</p>
+				</div>
+			</div>
+			<!-- START panel-->
+			<div class="col-xs-12">
+				<div class="list-group">
+					<div class="list-group-item" style="background:#c91e1d; border: 2px solid #c91e1d; color: #fff; font-weight: 700;">各種お知らせ</div>
+										<a class="list-group-item" href="article.php?c=4195">
+					<h4 class="list-group-item-heading" style="color: #311b92; font-weight: 700; line-height: 18px;"><i class="fa fa-caret-right"></i>
+						【重要】ツクツク!!!「リンク決済」リリースのご案内					</h4>
+					<p class="list-group-item-text text-right"><small>最終更新：
+					2025-10-16 17:58					</small></p>
+					</a>
+										<a class="list-group-item" href="article.php?c=4194">
+					<h4 class="list-group-item-heading" style="color: #311b92; font-weight: 700; line-height: 18px;"><i class="fa fa-caret-right"></i>
+						【11月度】ビルダーライセンス月度切替時期のお知らせ					</h4>
+					<p class="list-group-item-text text-right"><small>最終更新：
+					2025-10-16 15:33					</small></p>
+					</a>
+										<a class="list-group-item" href="article.php?c=4161">
+					<h4 class="list-group-item-heading" style="color: #311b92; font-weight: 700; line-height: 18px;"><i class="fa fa-caret-right"></i>
+						【重要】「クレジットカード決済利用停止に関するお詫びと情報共有」公開のご案内					</h4>
+					<p class="list-group-item-text text-right"><small>最終更新：
+					2025-10-09 14:52					</small></p>
+					</a>
+										<a class="list-group-item" href="article.php?c=4128">
+					<h4 class="list-group-item-heading" style="color: #311b92; font-weight: 700; line-height: 18px;"><i class="fa fa-caret-right"></i>
+						【お知らせ】BUILDER’S LOUNGE営業停止日のご案内					</h4>
+					<p class="list-group-item-text text-right"><small>最終更新：
+					2025-10-08 11:44					</small></p>
+					</a>
+										<a class="list-group-item" href="article.php?c=4095">
+					<h4 class="list-group-item-heading" style="color: #311b92; font-weight: 700; line-height: 18px;"><i class="fa fa-caret-right"></i>
+						【重要】カード決済一時停止に関する経緯と今後の見通しに関するご案内					</h4>
+					<p class="list-group-item-text text-right"><small>最終更新：
+					2025-10-06 19:29					</small></p>
+					</a>
+									</div>
+			</div>
+			<div class="text-center" style="margin-bottom: 50px;">
+				<a href="./articleList.php?cs="><i class="im im-icon-Arrow-Right2" style="padding-right: 5px;font-size: 13px; margin-bottom: 9px;"></i>各種お知らせ一覧</a>
+			</div>
+			<!-- END panel-->
+
+			<!-- START panel-->
+			<div class="col-xs-12">
+				<div class="list-group">
+					<div class="list-group-item" style="border: 2px solid #838383; color: #fff; font-weight: 700; background: #838383;">開発更新ログ</div>
+												<span class="list-group-item">
+								<a data-toggle="modal" data-backdrop="true" href="development_log_modal.php?no=2899" data-target="#sp_2899" style="color:#555;">
+									<div style="margin-left: -14px; margin-bottom: 14px; display: flex;">
+										<div>
+											<span class="label label-danger" style="margin-left: 12px; background-color:#E60012;">重要</span>
+										</div>
+										<div><span class="label label-default" style="margin-left: 14px; background-color: #BABABA; margin-right: 11px;">小</span></div>
+										<div>
+											<span class="list-group-item-heading" style="color: #311b92; font-weight: 700; line-height: 18px;">
+												季節限定の特集の募集を開始いたしました											</span>
+										</div>
+									</div>
+									<div style="display: flex; justify-content: space-between;">
+										<span class="list-group-item-text text-left">
+											ツクツク!!!CMS/
+											特集追加のお知らせ										</span>
+									</div>
+									<div class="text-right">
+										<span>
+											<small>最終更新：2025-10-20 14:41</small>
+										</span>
+									</div>
+								</a>
+								<!-- モーダルセット -->
+								<div class="modal fade" id="sp_2899" tabindex="-1">
+									<div class="modal-dialog-scrollable">
+										<div class="modal-content" style="width:90%;"></div>
+									</div>
+								</div>
+							</span>
+														<span class="list-group-item">
+								<a data-toggle="modal" data-backdrop="true" href="development_log_modal.php?no=2866" data-target="#sp_2866" style="color:#555;">
+									<div style="margin-left: -14px; margin-bottom: 14px; display: flex;">
+										<div>
+											<span class="label label-danger" style="margin-left: 12px; background-color:#E60012;">重要</span>
+										</div>
+										<div><span class="label label-default" style="margin-left: 14px; background-color: #BABABA; margin-right: 11px;">小</span></div>
+										<div>
+											<span class="list-group-item-heading" style="color: #311b92; font-weight: 700; line-height: 18px;">
+												季節限定の特集の募集を開始いたしました											</span>
+										</div>
+									</div>
+									<div style="display: flex; justify-content: space-between;">
+										<span class="list-group-item-text text-left">
+											ツクツク!!!CMS/
+											特集追加のお知らせ										</span>
+									</div>
+									<div class="text-right">
+										<span>
+											<small>最終更新：2025-09-16 10:12</small>
+										</span>
+									</div>
+								</a>
+								<!-- モーダルセット -->
+								<div class="modal fade" id="sp_2866" tabindex="-1">
+									<div class="modal-dialog-scrollable">
+										<div class="modal-content" style="width:90%;"></div>
+									</div>
+								</div>
+							</span>
+														<span class="list-group-item">
+								<a data-toggle="modal" data-backdrop="true" href="development_log_modal.php?no=2835" data-target="#sp_2835" style="color:#555;">
+									<div style="margin-left: -14px; margin-bottom: 14px; display: flex;">
+										<div>
+											<span class="label label-danger" style="margin-left: 12px; background-color:#E60012;"></span>
+										</div>
+										<div><span class="label label-default" style="margin-left: 14px; background-color: #BABABA; margin-right: 11px;">小</span></div>
+										<div>
+											<span class="list-group-item-heading" style="color: #311b92; font-weight: 700; line-height: 18px;">
+												【ツクツク!!! ウェブチケット】不具合解消のお知らせ											</span>
+										</div>
+									</div>
+									<div style="display: flex; justify-content: space-between;">
+										<span class="list-group-item-text text-left">
+											ツクツク!!!ウェブチケット/
+											ツクツク!!!ウェブチケット全般										</span>
+									</div>
+									<div class="text-right">
+										<span>
+											<small>最終更新：2025-09-12 16:23</small>
+										</span>
+									</div>
+								</a>
+								<!-- モーダルセット -->
+								<div class="modal fade" id="sp_2835" tabindex="-1">
+									<div class="modal-dialog-scrollable">
+										<div class="modal-content" style="width:90%;"></div>
+									</div>
+								</div>
+							</span>
+														<span class="list-group-item">
+								<a data-toggle="modal" data-backdrop="true" href="development_log_modal.php?no=2834" data-target="#sp_2834" style="color:#555;">
+									<div style="margin-left: -14px; margin-bottom: 14px; display: flex;">
+										<div>
+											<span class="label label-danger" style="margin-left: 12px; background-color:#E60012;"></span>
+										</div>
+										<div><span class="label label-default" style="margin-left: 14px; background-color: #BABABA; margin-right: 11px;">小</span></div>
+										<div>
+											<span class="list-group-item-heading" style="color: #311b92; font-weight: 700; line-height: 18px;">
+												【ツクツク!!! ホーム】仕様変更に関してのお知らせ											</span>
+										</div>
+									</div>
+									<div style="display: flex; justify-content: space-between;">
+										<span class="list-group-item-text text-left">
+											ツクツク!!!全体/
+											ツクツク!!!全般										</span>
+									</div>
+									<div class="text-right">
+										<span>
+											<small>最終更新：2025-09-12 15:16</small>
+										</span>
+									</div>
+								</a>
+								<!-- モーダルセット -->
+								<div class="modal fade" id="sp_2834" tabindex="-1">
+									<div class="modal-dialog-scrollable">
+										<div class="modal-content" style="width:90%;"></div>
+									</div>
+								</div>
+							</span>
+														<span class="list-group-item">
+								<a data-toggle="modal" data-backdrop="true" href="development_log_modal.php?no=2833" data-target="#sp_2833" style="color:#555;">
+									<div style="margin-left: -14px; margin-bottom: 14px; display: flex;">
+										<div>
+											<span class="label label-danger" style="margin-left: 12px; background-color:#E60012;"></span>
+										</div>
+										<div><span class="label label-default" style="margin-left: 14px; background-color: #BABABA; margin-right: 11px;">小</span></div>
+										<div>
+											<span class="list-group-item-heading" style="color: #311b92; font-weight: 700; line-height: 18px;">
+												【ツクツク!!!ホーム】不具合解消のお知らせ											</span>
+										</div>
+									</div>
+									<div style="display: flex; justify-content: space-between;">
+										<span class="list-group-item-text text-left">
+											ツクツク!!!全体/
+											ツクツク!!!全般										</span>
+									</div>
+									<div class="text-right">
+										<span>
+											<small>最終更新：2025-09-12 15:12</small>
+										</span>
+									</div>
+								</a>
+								<!-- モーダルセット -->
+								<div class="modal fade" id="sp_2833" tabindex="-1">
+									<div class="modal-dialog-scrollable">
+										<div class="modal-content" style="width:90%;"></div>
+									</div>
+								</div>
+							</span>
+											</div>
+			</div>
+			<!-- END panel-->
+		</div>
+		<div class="text-right" style="margin-bottom:10px;"><small><small><span class="label label-danger" style="margin-left: 14px; background-color: #3A3A3A;">大</span> …大規模<span class="label label-warning" style="margin-left: 14px; background-color: #7A7A7A;">中</span> …中規模<span class="label label-default" style="margin-left: 14px; background-color: #BABABA;">小</span> …小規模</small></small></div>
+		<div class="text-center">
+			<a href="./development_log_list.php?cs="><i class="im im-icon-Arrow-Right2" style="padding-right: 5px;font-size: 13px;"></i>開発更新ログ一覧</a>
+		</div>
+	</div>
+</section>
+<!-- main contents END -->
+<!-- footerSTART-->
+	<footer id="foot">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 text-center">
+					<ul class="nav navbar-nav" style="margin-top: -20px;">
+						<li>
+							<a href="https://agent.kumu2.jp/kiyaku.php" style="color: #666;">ビルダー規約 </a>
+						</li>
+						<li>
+							<a href="https://agent.kumu2.jp/privacy.php" style="color: #666;">プライバシーポリシー </a>
+						</li>
+						<li>
+							<a href="https://agent.kumu2.jp/law.php" style="color: #666;">特定商取引法に基づく表記 </a>
+						</li>
+						<li>
+							<a href="https://builders.kumu2.jp/sd/contact_new.php" style="color: #666;">サポートデスク </a>
+						</li>
+						<li>
+							<a href="https://agent.kumu2.jp/faqList.php" style="color: #666;">FAQコーナー </a>
+						</li>
+						<li>
+							<a href="https://kumu2.co.jp/" target="_blank" style="color: #666;">クムクム株式会社 ウェブサイト</a>
+						</li>
+					</ul>
+				</div>
+				<div class="col-xs-12 text-center">
+					© kumu2 Inc, 2025. All rights reserved.
+				</div>
+			</div>
+		</div>
+	</footer><!-- footerEND-->
+<!-- Main vendor Scripts-->
+
+<!-- START Page Custom Script-->
+<script src="js/jquery.rippler.min.js"></script>
+<script src="js/jquery.swipebox.min.js"></script>
+<script src="js/plugins/swiper.min.js"></script>
+
+<!-- ポップアップメッセージ -->
+<script>
+	var popupMessageData = [];
+</script>
+<script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
+<script src="./popup-message/js/popup_message.js"></script>
+
+<!-- END Page Custom Script-->
+<!-- App Main-->
+<script src="js/app.js"></script>
+<!-- Initialize Swiper -->
+<script>
+		var mySwiper = new Swiper ('.swiper-container', {
+			loop: true,
+			lazy: true,
+			slidesPerView: 2,
+			spaceBetween: 10,
+			centeredSlides : true,
+			pagination: {
+				el: '.swiper-pagination',
+				dynamicBullets: true,
+			},
+			navigation: {
+				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev',
+			},
+			breakpoints: {
+				1025: {
+					slidesPerView: 1,
+					spaceBetween: 0
+				}
+			}
+		})
+	</script>
+
+<!-- END Scripts-->
+</body>
+</html>
