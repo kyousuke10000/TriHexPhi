@@ -1,4 +1,4 @@
-name: Ping
+name: Mirror Gate (dispatch test)
 on:
   workflow_dispatch:
     inputs:
@@ -7,7 +7,10 @@ on:
         required: false
         default: 'true'
 jobs:
-  ping:
+  mirror:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
-      - run: echo "OK: dry_run=${{ github.event.inputs.dry_run || 'false' }}"
+      - uses: actions/checkout@v4
+      - run: echo "checked out @ $GITHUB_SHA, dry_run=${{ github.event.inputs.dry_run || 'false' }}"
