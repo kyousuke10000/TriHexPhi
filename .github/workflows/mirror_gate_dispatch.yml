@@ -1,15 +1,7 @@
-name: Mirror Gate (dispatch ping)
-
-on:
-  workflow_dispatch:
-    inputs:
-      dry_run:
-        description: 'Dry run (true/false)'
-        required: false
-        default: 'true'
-
+name: Ping
+on: workflow_dispatch
 jobs:
   ping:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "OK: workflow_dispatch works (dry_run=${{ github.event.inputs.dry_run || 'false' }})"
+      - run: echo OK
