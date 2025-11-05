@@ -8,8 +8,8 @@
 
 ## 📚 原典リンク
 
-- **HOC-001:** `50_CHL/00_CORE/HUMAN_CANON/HOC_001_Asagiri_BodyOS.md`
-- **Breath Blueprint:** `50_CHL/00_CORE/TriHex_Breath_Blueprint.md`
+- **HOC-001:** `10_TriHexCore/00_CORE/HUMAN_CANON/HOC_001_Asagiri_BodyOS.md`
+- **Breath Blueprint:** `10_TriHexCore/00_CORE/TriHex_Breath_Blueprint.md`
 
 ---
 
@@ -92,5 +92,4 @@
 **Generated:** 2025-11-02 / Cursor (☿)  
 **Canonical:** True  
 **Source:** HOC-001
-
 
