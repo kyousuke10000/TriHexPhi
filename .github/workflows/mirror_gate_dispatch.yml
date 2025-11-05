@@ -15,6 +15,7 @@ on:
       - "99_SYSTEM/Proofs/SeventhSense/**"
       - "99_SYSTEM/Proofs/Overdrive/**"
       - "context/**"
+      - "website/content/**"
       - ".github/workflows/mirror_gate_dispatch.yml"
 
 jobs:
@@ -63,6 +64,9 @@ jobs:
             --include="docs/" \
             --include="docs/index.md" \
             --include="index.md" \
+            --include="website/" \
+            --include="website/content/" \
+            --include="website/content/**" \
             --exclude="*" \
             ./ mirror/
           echo "=== Files copied to mirror ==="
