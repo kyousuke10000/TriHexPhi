@@ -174,7 +174,7 @@ jobs:
       
       - name: Upload Response
         if: steps.send-prompt.outputs.response_received == 'true'
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.ai.name }}_response_round${{ needs.parse-context.outputs.round_no }}
           path: |
@@ -242,7 +242,7 @@ jobs:
             });
       
       - name: Upload Aggregation
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: aggregated_responses_round${{ needs.parse-context.outputs.round_no }}
           path: aggregated_responses.md
@@ -325,7 +325,7 @@ jobs:
             });
       
       - name: Upload Score Report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: score_report_round${{ needs.parse-context.outputs.round_no }}
           path: score_report.md
