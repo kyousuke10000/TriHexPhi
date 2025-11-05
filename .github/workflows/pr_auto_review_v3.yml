@@ -24,7 +24,7 @@ jobs:
           node-version: '18'
       
       - name: Install dependencies
-        working-directory: ./scripts
+        working-directory: ./50_CHL/tools
         run: npm install
       
       - name: Generate context
@@ -58,7 +58,7 @@ jobs:
             core.setOutput('pr_url', pr.html_url);
       
       - name: Call Claude API
-        working-directory: ./scripts
+        working-directory: ./50_CHL/tools
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
@@ -99,7 +99,7 @@ jobs:
           node-version: '18'
       
       - name: Install dependencies
-        working-directory: ./scripts
+        working-directory: ./50_CHL/tools
         run: npm install
       
       - name: Generate context
@@ -133,7 +133,7 @@ jobs:
             core.setOutput('pr_url', pr.html_url);
       
       - name: Call Gemini API
-        working-directory: ./scripts
+        working-directory: ./50_CHL/tools
         env:
           GOOGLE_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
