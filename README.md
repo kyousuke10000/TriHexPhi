@@ -41,6 +41,13 @@ Seventh Sense（7） → Consciousness：創造・意識・叡智
 
 ---
 
+### 🔭 Public Mirror（固定入口）
+
+- **Main**: https://github.com/kyousuke10000/TriHexPhi-public  
+- **Raw Index（Web版AI向け）**: https://raw.githubusercontent.com/kyousuke10000/TriHexPhi-public/main/index.md
+
+---
+
 ## 🚀 Getting Started
 
 ```bash
