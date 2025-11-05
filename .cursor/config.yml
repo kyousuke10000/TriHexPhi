@@ -137,3 +137,17 @@ exclude_paths:
   - "node_modules/"
   - ".git/"
   - "99_SYSTEM/Logs/"
+
+# Remote Truth Mode Settings
+# Generated: 2025-11-05
+# Purpose: GitHub as Single Source of Truth
+vault_sync:
+  mode: remote
+  remote_repo: "https://github.com/kyousuke10000/TriHexPhi.git"
+  sync_paths:
+    - "99_SYSTEM/Proofs"
+    - "00_RYUDO/Council/Records"
+    - "70_AI_CHRONICLE"
+  auto_commit: true
+  auto_push: true
+  interval_minutes: 10
