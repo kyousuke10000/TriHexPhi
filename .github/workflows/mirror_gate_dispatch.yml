@@ -96,4 +96,3 @@ jobs:
             echo "📌 Public index: https://github.com/${MIRROR_REPO}/blob/main/index.md"
             echo "📌 Raw index: https://raw.githubusercontent.com/${MIRROR_REPO}/main/index.md"
           fi
-
