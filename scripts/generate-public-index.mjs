@@ -56,7 +56,7 @@ async function getLatestProofs(count = 10) {
 async function getLatestMetaProofs(count = 10) {
   try {
     const files = sh(
-      `git ls-tree -r --name-only HEAD | grep '^99_SYSTEM/Proofs/Meta/.*\\.md$'`
+      `git ls-tree -r --name-only HEAD | grep '^99_SYSTEM/Proofs/Harmonia/.*\\.md$'`
     ).split('\n').filter(Boolean);
 
     if (files.length === 0) return [];

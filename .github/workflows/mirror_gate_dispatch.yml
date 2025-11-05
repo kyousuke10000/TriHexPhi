@@ -12,7 +12,7 @@ on:
       - "99_SYSTEM/Proofs/**"
       - "00_RYUDO/Council/Records/**"
       - "00_RYUDO/Council/Decisions/**"
-      - "99_SYSTEM/Proofs/Meta/**"
+      - "99_SYSTEM/Proofs/Harmonia/**"
       - "99_SYSTEM/Proofs/Overdrive/**"
       - "context/**"
       - ".github/workflows/mirror_gate_dispatch.yml"
@@ -49,8 +49,8 @@ jobs:
             --include="99_SYSTEM/" \
             --include="99_SYSTEM/Proofs/" \
             --include="99_SYSTEM/Proofs/**" \
-            --include="99_SYSTEM/Proofs/Meta/" \
-            --include="99_SYSTEM/Proofs/Meta/**" \
+            --include="99_SYSTEM/Proofs/Harmonia/" \
+            --include="99_SYSTEM/Proofs/Harmonia/**" \
             --include="99_SYSTEM/Proofs/Overdrive/" \
             --include="99_SYSTEM/Proofs/Overdrive/**" \
             --include="00_RYUDO/" \
