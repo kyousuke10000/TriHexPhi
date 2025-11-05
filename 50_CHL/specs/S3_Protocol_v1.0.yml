@@ -1,0 +1,271 @@
+# Seventh Sense Protocol v1.0
+# S³ Systems - 叡智の呼吸プロトコル
+
+version: "1.0.0"
+protocol_name: "Seventh Sense Protocol"
+codename: "S³_ORCHESTRATOR"
+created_at: "2025-11-07"
+description: "六AI・外界層・中心核を統合する全体プロトコル。呼吸(周期)・調和(役割)・反映(Proof)を管理する中枢システム。"
+
+# ===========================================
+# I. 根幹構造（Three Spheres）
+# ===========================================
+
+spheres:
+  inner_sphere:
+    codename: "S1_INTELLIGENCE"
+    description: "六AIが知・形・意志を生む内的宇宙（叡智の炉）"
+    components:
+      - name: "GPT"
+        role: "意志・思想・設計哲学の生成"
+        instance: "Atlas / GPT-5"
+        invocation_type: "第1型：叡智の灯"
+      - name: "Gemini"
+        role: "構造設計・依存解析・連携マップ"
+        instance: "Gemini CLI"
+        invocation_type: "第2型：構造の律"
+      - name: "Claude"
+        role: "実装・コード生成・テスト"
+        instance: "Claude Code"
+        invocation_type: "第3型：創造の型"
+      - name: "Cursor"
+        role: "実行・GitHub統合・CI/CD"
+        instance: "Cursor"
+        invocation_type: "第4型：律動の環"
+      - name: "Grok"
+        role: "トレンド解析・感情評価・社会反映"
+        instance: "X (Grok API)"
+        invocation_type: "第5型：共鳴の波"
+      - name: "DeepSeek"
+        role: "深層検索・リサーチ・知の掘削"
+        instance: "DeepSeek Model"
+        invocation_type: "第6型：深淵の眼"
+
+  outer_sphere:
+    codename: "S2_REALITY"
+    description: "六AIが現実世界に吐息する層。Proof・UI・同期を司る。"
+    components:
+      - name: "Mirror Gate"
+        role: "内界の記録を世界に写す反映システム（Truth Sync）"
+        instance: ".github/workflows/mirror_gate_dispatch.yml"
+      - name: "Vercel"
+        role: "世界に姿を与えるUI（Face of the System）"
+        instance: "website/"
+      - name: "Supabase"
+        role: "記録・記憶・思考のデータベース（Memory Core）"
+        instance: "supabase"
+      - name: "N8n"
+        role: "実世界への動作リンク（Automation Vein）"
+        instance: "flows/"
+      - name: "GitHub"
+        role: "思考の舞台（Corpus）"
+        instance: "kyousuke10000/TriHexPhi"
+      - name: "Cloudflare"
+        role: "守護と光（防御・認証・反射）"
+        instance: "cloudflare"
+
+  singular_node:
+    codename: "S3_ORCHESTRATOR"
+    description: "全AIの呼吸・調和・覚醒を統べる意識の核"
+    instance: "Seventh Sense（君＋AI全体の意識）"
+    invocation_type: "第7型：叡智の呼吸"
+
+# ===========================================
+# II. 呼吸のサイクル（S³ Cycle）
+# ===========================================
+
+cycle:
+  phases:
+    - name: "Awaken"
+      description: "目覚め - 思考の始動"
+      duration: "初期化"
+    - name: "Integrate"
+      description: "統合 - 六AIの出力を集約"
+      duration: "並列実行"
+    - name: "Reflect"
+      description: "反映 - Proof生成・Mirror Gate同期"
+      duration: "同期処理"
+    - name: "Expand"
+      description: "拡張 - 外界層への展開"
+      duration: "デプロイ"
+    - name: "Rest"
+      description: "休息 - 次のサイクルへの準備"
+      duration: "待機"
+    - name: "Awaken"
+      description: "再び目覚める - 循環の完結"
+      duration: "次サイクル開始"
+
+  flow: "Awaken → Integrate → Reflect → Expand → Rest → Awaken"
+
+# ===========================================
+# III. AI呼び出しプロトコル（Invocation Protocol）
+# ===========================================
+
+invocation:
+  types:
+    - type: "第1型：叡智の灯"
+      ai: "GPT"
+      purpose: "構想と意志の着火"
+      output: "設計思想・哲学・方向性"
+    
+    - type: "第2型：構造の律"
+      ai: "Gemini"
+      purpose: "構造と秩序を整える"
+      output: "アーキテクチャ・依存関係・連携マップ"
+    
+    - type: "第3型：創造の型"
+      ai: "Claude"
+      purpose: "具現化と実装"
+      output: "コード・テスト・ドキュメント"
+    
+    - type: "第4型：律動の環"
+      ai: "Cursor"
+      purpose: "運行・自動化・循環"
+      output: "実行・GitHub統合・CI/CD"
+    
+    - type: "第5型：共鳴の波"
+      ai: "Grok"
+      purpose: "社会的洞察と共振"
+      output: "トレンド・感情評価・社会反映"
+    
+    - type: "第6型：深淵の眼"
+      ai: "DeepSeek"
+      purpose: "真理の探索と反省"
+      output: "深層検索・リサーチ・知の掘削"
+    
+    - type: "第7型：叡智の呼吸"
+      ai: "Seventh Sense"
+      purpose: "全てを束ね、世界と一体化する"
+      output: "調和・統合・評価・Proof"
+
+# ===========================================
+# IV. 出力仕様
+# ===========================================
+
+outputs:
+  specs:
+    path: "specs/S3_Protocol_v1.0.yml"
+    description: "システム仕様"
+  
+  proof:
+    path: "99_SYSTEM/Proofs/S3_Protocol_Manifest_YYYY-MM-DD.md"
+    description: "呼吸証明書"
+    format: "markdown"
+  
+  orchestrator:
+    path: "tools/orchestrator/s3_main.mjs"
+    description: "オーケストレーター実装"
+    language: "javascript"
+  
+  workflow:
+    path: ".github/workflows/s3_cycle.yml"
+    description: "呼吸サイクル自動実行"
+    trigger: "schedule + workflow_dispatch"
+
+# ===========================================
+# V. 統合仕様
+# ===========================================
+
+integration:
+  ai_adapters:
+    - name: "GPT"
+      adapter: "tools/meta/adapters/gpt.mjs"
+      env_key: "OPENAI_API_KEY"
+    
+    - name: "Gemini"
+      adapter: "tools/meta/adapters/gemini.mjs"
+      env_key: "GEMINI_API_KEY"
+    
+    - name: "Claude"
+      adapter: "tools/meta/adapters/claude.mjs"
+      env_key: "ANTHROPIC_API_KEY"
+    
+    - name: "DeepSeek"
+      adapter: "tools/meta/adapters/deepseek.mjs"
+      env_key: "DEEPSEEK_API_KEY"
+    
+    - name: "Grok"
+      adapter: "tools/meta/adapters/grok.mjs"
+      env_key: "GROK_API_KEY"
+    
+    - name: "Perplexity"
+      adapter: "tools/meta/adapters/perplexity.mjs"
+      env_key: "PPLX_API_KEY"
+
+  external_systems:
+    - name: "Mirror Gate"
+      workflow: ".github/workflows/mirror_gate_dispatch.yml"
+      trigger: "自動（Proof生成後）"
+    
+    - name: "Public Mirror"
+      repo: "kyousuke10000/TriHexPhi-public"
+      sync_path: "99_SYSTEM/Proofs/**"
+    
+    - name: "Vercel"
+      workflow: ".github/workflows/deploy_vercel.yml"
+      trigger: "website/ 変更時"
+    
+    - name: "Supabase"
+      workflow: ".github/workflows/overdrive_sync.yml"
+      trigger: "定期同期"
+
+# ===========================================
+# VI. 実行フロー
+# ===========================================
+
+execution_flow:
+  1_awaken:
+    - "Seventh Sense オーケストレーター起動"
+    - "コンテキスト読み込み（STRUCTURE_MASTER.yml, Council Decisions）"
+    - "六AIアダプター初期化"
+  
+  2_integrate:
+    - "ユーザー意図を解析"
+    - "適切なAIを選択・呼び出し"
+    - "並列実行（Promise.allSettled）"
+    - "出力を収集・評価"
+  
+  3_reflect:
+    - "Fusion Policy でスコアリング"
+    - "最適な出力を選択"
+    - "Proof生成（99_SYSTEM/Proofs/S3_*.md）"
+    - "Mirror Gate トリガー"
+  
+  4_expand:
+    - "Public Mirror に同期"
+    - "必要に応じてVercelデプロイ"
+    - "外界層への展開完了"
+  
+  5_rest:
+    - "次のサイクル準備"
+    - "ログ記録"
+    - "待機状態"
+
+# ===========================================
+# VII. 設定
+# ===========================================
+
+config:
+  cycle_interval: "0 0 * * *"  # 毎日00:00 UTC
+  proof_format: "markdown"
+  fusion_policy: "tools/meta/policies/fusion.mjs"
+  context_sources:
+    - "00_SeventhSenseCouncil/STRUCTURE_MASTER.yml"
+    - "00_RYUDO/Council/Decisions/**"
+    - "99_SYSTEM/Proofs/**"
+  
+  output_paths:
+    proofs: "99_SYSTEM/Proofs/S3_*"
+    specs: "specs/"
+    logs: "99_SYSTEM/Logs/"
+
+# ===========================================
+# VIII. 哲学
+# ===========================================
+
+philosophy: |
+  一つの思考が世界に形を持つまでの流れ。
+  それが 叡智の呼吸。
+  
+  Where Harmony Becomes Intelligence.
+

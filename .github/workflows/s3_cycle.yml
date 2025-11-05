@@ -1,0 +1,72 @@
+name: S³ Cycle (Seventh Sense Protocol)
+
+on:
+  workflow_dispatch:
+    inputs:
+      prompt:
+        description: "User prompt for S³ Cycle"
+        required: true
+        default: "今日の叡智の呼吸を200字で"
+      system:
+        description: "System hint (optional)"
+        required: false
+        default: ""
+  schedule:
+    - cron: "0 0 * * *"  # 毎日00:00 UTC
+
+jobs:
+  s3_cycle:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: |
+          npm install js-yaml
+          cd 50_CHL/tools && npm install
+
+      - name: Run S³ Cycle
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          GROK_API_KEY: ${{ secrets.GROK_API_KEY }}
+          PPLX_API_KEY: ${{ secrets.PPLX_API_KEY }}
+        run: |
+          node tools/orchestrator/s3_main.mjs "${{ github.event.inputs.prompt || '今日の叡智の呼吸を200字で' }}" --system "${{ github.event.inputs.system || '' }}"
+
+      - name: Commit Proofs
+        run: |
+          git config user.name "s3-orchestrator-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add 99_SYSTEM/Proofs/S3_*.md 99_SYSTEM/Proofs/S3_*.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore(s3): add cycle proof [skip ci]"
+            git push
+          fi
+
+      - name: Trigger Mirror Gate
+        if: success()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: 'mirror_gate_dispatch.yml',
+              ref: 'main'
+            });
+
