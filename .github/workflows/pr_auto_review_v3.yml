@@ -29,11 +29,11 @@ jobs:
       
       - name: Generate context
         run: |
-          cat TRIHEXPHI.md > context-bootstrap.txt
+          cat 50_CHL/00_CORE/TRIHEXPHI.md > context-bootstrap.txt
           echo "" >> context-bootstrap.txt
           echo "---" >> context-bootstrap.txt
           echo "" >> context-bootstrap.txt
-          cat 10_CAPTURE_MIZUKAGAMI/続きから始める.md >> context-bootstrap.txt
+          cat 10_CAPTURE_MIZUKAGAMI/mizukagami/10_CAPTURE_MIZUKAGAMI/続きから始める.md >> context-bootstrap.txt
       
       - name: Get PR info
         id: pr_info
@@ -104,11 +104,11 @@ jobs:
       
       - name: Generate context
         run: |
-          cat TRIHEXPHI.md > context-bootstrap.txt
+          cat 50_CHL/00_CORE/TRIHEXPHI.md > context-bootstrap.txt
           echo "" >> context-bootstrap.txt
           echo "---" >> context-bootstrap.txt
           echo "" >> context-bootstrap.txt
-          cat 10_CAPTURE_MIZUKAGAMI/続きから始める.md >> context-bootstrap.txt
+          cat 10_CAPTURE_MIZUKAGAMI/mizukagami/10_CAPTURE_MIZUKAGAMI/続きから始める.md >> context-bootstrap.txt
       
       - name: Get PR info
         id: pr_info
