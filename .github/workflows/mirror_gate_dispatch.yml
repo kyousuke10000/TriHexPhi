@@ -14,10 +14,24 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
+      - name: Debug: Check what files exist
+        run: |
+          echo "=== Checking directory structure ==="
+          ls -la | head -20
+          echo ""
+          echo "=== Checking 99_SYSTEM ==="
+          ls -la 99_SYSTEM/ 2>/dev/null | head -10 || echo "99_SYSTEM not found"
+          echo ""
+          echo "=== Checking 00_RYUDO ==="
+          ls -la 00_RYUDO/ 2>/dev/null | head -10 || echo "00_RYUDO not found"
+          echo ""
+          echo "=== Checking 70_AI_CHRONICLE ==="
+          ls -la 70_AI_CHRONICLE/ 2>/dev/null | head -10 || echo "70_AI_CHRONICLE not found"
+      
       - name: Build mirror tree
         run: |
           mkdir -p mirror
-          rsync -a --prune-empty-dirs \
+          rsync -av --prune-empty-dirs \
             --include="99_SYSTEM/" \
             --include="99_SYSTEM/Proofs/**" \
             --include="00_RYUDO/" \
@@ -29,6 +43,8 @@ jobs:
             --include="docs/index.md" \
             --exclude="*" \
             ./ mirror/
+          echo "=== Files copied to mirror ==="
+          find mirror -type f | head -30 || echo "No files found"
       
       - name: Dry-run listing
         run: |
