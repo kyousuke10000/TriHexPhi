@@ -7,6 +7,9 @@
     "spec:validate": "node scripts/spec-gate.mjs",
     "meta:ask": "node tools/meta/ai-meta.mjs"
   },
+  "dependencies": {
+    "js-yaml": "^4.1.0"
+  },
   "description": "TriHexΦ - Breathing Intelligence OS",
   "author": "🜇 Shiryu",
   "license": "MIT"
