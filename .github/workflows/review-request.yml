@@ -85,7 +85,7 @@ jobs:
               const changedFiles = files.map(f => `- \`${f.filename}\` (${f.status})`).join('\n');
               
               const body = `## 📋 レビュー依頼
-            
+
 **PR**: #${pr.number} - ${pr.title}
 **URL**: ${pr.html_url}
 **著者**: @${pr.user.login}
