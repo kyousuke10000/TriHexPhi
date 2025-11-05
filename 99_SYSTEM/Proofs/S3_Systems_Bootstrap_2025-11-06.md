@@ -26,7 +26,7 @@
    - `app/@sections/Proofs.tsx`: Public Mirror 表示コンポーネント
    - `app/api/ping/route.ts`: ヘルスチェックAPI
 
-3. **ドキュメント (docs/配下)**
+3. **ドキュメント (50_CHL/docs/配下)**
    - `vision.md`: S³の世界観、TriHex → 7 への連続性、製品地図
    - `brand.md`: ロゴ/配色/タイポの簡易ガイドライン
 
@@ -100,7 +100,7 @@ website/
     @sections/Proofs.tsx
   components/Navigator.tsx
   public/today.md (生成される)
-docs/
+50_CHL/docs/
   vision.md
   brand.md
 scripts/
