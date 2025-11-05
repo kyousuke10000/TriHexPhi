@@ -1,0 +1,46 @@
+name: Daily Index Refresh
+on:
+  schedule:
+    - cron: '0 0 * * *'  # 毎日00:00 UTC (JST 09:00)
+  workflow_dispatch:
+
+jobs:
+  refresh-index:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    env:
+      MIRROR_REPO: ${{ secrets.MIRROR_REPO }}
+      MIRROR_TOKEN: ${{ secrets.MIRROR_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Generate public index.md
+        run: |
+          node scripts/generate-public-index.mjs index.md
+          echo "✅ Generated index.md"
+      
+      - name: Push to Public Mirror
+        run: |
+          set -e
+          git config --global user.name "index-bot"
+          git config --global user.email "index-bot@users.noreply.github.com"
+          git clone "https://${MIRROR_TOKEN}@github.com/${MIRROR_REPO}.git" pub
+          cd pub
+          cp ../index.md index.md
+          git add index.md
+          if git diff --cached --quiet; then
+            echo "No changes to index.md"
+          else
+            git commit -m "chore(index): daily refresh $(date -u +%Y-%m-%d)"
+            git push origin main
+            echo "✅ Index updated: https://raw.githubusercontent.com/${MIRROR_REPO}/main/index.md"
+          fi
+
