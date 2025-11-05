@@ -19,7 +19,3 @@ SORT file.day desc
 **Generated:** 2025-11-02  
 **Purpose:** Grok session index
 
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/main

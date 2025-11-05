@@ -27,7 +27,3 @@ tags: [mizukagami, {{AI}}]
 **Generated:** {{DATE}}  
 **Sync:** false (handled by KOKUYOU)
 
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/main

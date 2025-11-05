@@ -184,7 +184,3 @@ git push origin main
 **Status:** ✅ Implementation complete, testing pending  
 **Purpose:** Go-Live completion report
 
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/main

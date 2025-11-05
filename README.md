@@ -153,9 +153,7 @@ See `packages/trihex-core/LICENSE` for full details.
 
 **Reference:**  
 - [Memory Stack](packages/trihex-core/)  
-- [TriHexΦ Constitution](packages/trihex-core/50_CHL/system/Constitution.md)
-
-
+- [TriHexΦ Constitution](packages/trihex-core/10_TriHexCore/system/Constitution.md)
 
 
 

@@ -12,6 +12,7 @@ on:
       - "99_SYSTEM/Proofs/**"
       - "00_RYUDO/Council/Records/**"
       - "00_RYUDO/Council/Decisions/**"
+      - "context/**"
       - ".github/workflows/mirror_gate_dispatch.yml"
 
 jobs:
@@ -39,6 +40,12 @@ jobs:
           echo "✅ Generated index.md"
           cat index.md | head -20
       
+      - name: Build context pack
+        run: |
+          node scripts/build-context-pack.mjs
+          echo "✅ Generated context pack"
+          echo "Context-Hash: $(cat context/VERSION | tr -d '\n')"
+      
       - name: Build mirror tree
         run: |
           mkdir -p mirror
@@ -56,6 +63,8 @@ jobs:
             --include="docs/" \
             --include="docs/index.md" \
             --include="index.md" \
+            --include="context/" \
+            --include="context/**" \
             --exclude="*" \
             ./ mirror/
           echo "=== Files copied to mirror ==="

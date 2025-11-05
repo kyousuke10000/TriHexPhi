@@ -40,7 +40,7 @@ cp tools/trihex/.env.example tools/trihex/.env
 ## Architecture
 
 **Lightweight RAG:**
-- Loads: `TRIHEX_PROJECT.yaml`, `MemorySeeds/index.json`, `50_CHL/system/reactivation/50_CHL/system/reactivation/TriHex_Master_Reactivation.md`
+- Loads: `TRIHEX_PROJECT.yaml`, `MemorySeeds/index.json`, `TriHex_Master_Reactivation.md`
 - Each context: ~2KB excerpt maximum
 - Truncates large texts to prevent memory bloat
 

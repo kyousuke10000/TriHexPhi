@@ -1,0 +1,40 @@
+name: Context Gate
+
+on:
+  pull_request:
+    types: [opened, synchronize, edited, reopened]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Build reference pack
+        run: |
+          node scripts/build-context-pack.mjs
+          echo "PACK_HASH=$(cat context/VERSION | tr -d '\n')" >> $GITHUB_ENV
+      
+      - name: Verify PR Context-Hash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          BODY="$(gh pr view ${{ github.event.pull_request.number }} --json body -q .body)"
+          if ! echo "$BODY" | grep -q "Context-Hash:"; then
+            echo "::error::PR body lacks 'Context-Hash:' line"
+            exit 1
+          fi
+          LINE=$(echo "$BODY" | grep "Context-Hash:" | tail -1 | sed 's/.*Context-Hash:[[:space:]]*//' | tr -d '\n')
+          echo "PR Context-Hash: $LINE"
+          echo "Main Context-Hash: $PACK_HASH"
+          if [ "$LINE" != "$PACK_HASH" ]; then
+            echo "::error::Context mismatch. Expected: $PACK_HASH, Got: $LINE"
+            exit 1
+          fi
+          echo "✅ Context-Hash matches!"
+

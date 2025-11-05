@@ -67,7 +67,3 @@
 **Status:** ✅ **MERGE_READY**  
 **Certified by:** Cursor (☿)
 
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/main

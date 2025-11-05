@@ -27,7 +27,3 @@ date: {{DATE}}
 **Generated:** {{DATE}}  
 **Sync:** shinsen
 
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/main
