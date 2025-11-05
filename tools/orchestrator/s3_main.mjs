@@ -30,7 +30,7 @@ import { scoreCandidates } from "../meta/policies/fusion.mjs";
  * プロトコル仕様を読み込む
  */
 function loadProtocol() {
-  const specPath = path.join(__dirname, "../../specs/S3_Protocol_v1.0.yml");
+  const specPath = path.join(__dirname, "../../50_CHL/specs/S3_Protocol_v1.0.yml");
   if (!fs.existsSync(specPath)) {
     throw new Error(`Protocol spec not found: ${specPath}`);
   }
