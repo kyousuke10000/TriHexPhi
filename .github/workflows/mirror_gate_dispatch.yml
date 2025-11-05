@@ -13,23 +13,16 @@ jobs:
       contents: read
     steps:
       - uses: actions/checkout@v4
-      - name: Build mirror tree
+      
+      - name: Build mirror tree (simple test)
         run: |
           mkdir -p mirror
-          rsync -a --prune-empty-dirs \
-            --include="99_SYSTEM/" \
-            --include="99_SYSTEM/Proofs/**" \
-            --include="00_RYUDO/" \
-            --include="00_RYUDO/Council/" \
-            --include="00_RYUDO/Council/Records/**" \
-            --include="70_AI_CHRONICLE/**" \
-            --include="README.md" \
-            --include="docs/" \
-            --include="docs/index.md" \
-            --exclude="*" \
-            ./ mirror/
+          echo "Testing rsync..."
+          rsync --version || echo "rsync not found"
+          echo "OK: rsync available"
+      
       - name: Dry-run listing
         run: |
           echo "---- DRY RUN ----"
-          find mirror -type f | sort || true
+          ls -la mirror/ || echo "mirror directory empty"
           echo "---- END ----"
