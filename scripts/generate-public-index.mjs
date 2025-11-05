@@ -25,7 +25,7 @@ async function getLatestProofs(count = 10) {
   try {
     // Get all Proof files, sorted by modification time (newest first)
     const files = sh(
-      `git ls-tree -r --name-only HEAD | grep '^99_SYSTEM/Proofs/.*\\.md$' | grep -vE '/(Meta|Overdrive)/'`
+      `git ls-tree -r --name-only HEAD | grep '^99_SYSTEM/Proofs/.*\\.md$' | grep -vE '/(SeventhSense|Overdrive)/'`
     ).split('\n').filter(Boolean);
 
     if (files.length === 0) return [];
@@ -53,10 +53,10 @@ async function getLatestProofs(count = 10) {
   }
 }
 
-async function getLatestMetaProofs(count = 10) {
+async function getLatestSeventhSenseProofs(count = 10) {
   try {
     const files = sh(
-      `git ls-tree -r --name-only HEAD | grep '^99_SYSTEM/Proofs/Harmonia/.*\\.md$'`
+      `git ls-tree -r --name-only HEAD | grep '^99_SYSTEM/Proofs/SeventhSense/.*\\.md$'`
     ).split('\n').filter(Boolean);
 
     if (files.length === 0) return [];
@@ -77,7 +77,7 @@ async function getLatestMetaProofs(count = 10) {
       .slice(0, count)
       .map(({ file }) => file);
   } catch (error) {
-    console.error('Error getting latest Meta proofs:', error.message);
+    console.error('Error getting latest SeventhSense proofs:', error.message);
     return [];
   }
 }
@@ -125,7 +125,7 @@ async function generateIndex() {
   });
 
   const latestProofs = await getLatestProofs(10);
-  const latestMetaProofs = await getLatestMetaProofs(10);
+  const latestSeventhSenseProofs = await getLatestSeventhSenseProofs(10);
   const latestOverdriveProofs = await getLatestOverdriveProofs(10);
 
   const indexContent = `# TriHexΦ Public Mirror — 今日の入口
@@ -143,16 +143,16 @@ ${latestProofs.length > 0
         .join('\n')
     : '- (Proofs not found)'}
 
-## Meta Proofs (Top 10)
+## SeventhSense Proofs (Top 10)
 
-${latestMetaProofs.length > 0
-    ? latestMetaProofs
+${latestSeventhSenseProofs.length > 0
+    ? latestSeventhSenseProofs
         .map(
           (f) =>
             `- [${path.basename(f)}](https://github.com/${PUB_REPO}/blob/${PUB_BRANCH}/${f})`
         )
         .join('\n')
-    : '- (Meta Proofs not found)'}
+    : '- (SeventhSense Proofs not found)'}
 
 ## Overdrive Proofs (Top 10)
 

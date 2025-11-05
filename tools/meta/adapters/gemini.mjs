@@ -1,4 +1,4 @@
-// tools/harmonia/adapters/gemini.mjs
+// tools/meta/adapters/gemini.mjs
 export async function askGemini({prompt, system, timeoutMs = 45000}) {
   const key = process.env.GEMINI_API_KEY;
   if (!key) throw new Error("GEMINI_API_KEY missing");

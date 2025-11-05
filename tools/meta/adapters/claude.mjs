@@ -1,4 +1,4 @@
-// tools/harmonia/adapters/claude.mjs
+// tools/meta/adapters/claude.mjs
 export async function askClaude({prompt, system, timeoutMs = 45000}) {
   const key = process.env.ANTHROPIC_API_KEY;
   if (!key) throw new Error("ANTHROPIC_API_KEY missing");

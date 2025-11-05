@@ -1,4 +1,4 @@
-// tools/harmonia/adapters/grok.mjs
+// tools/meta/adapters/grok.mjs
 export async function askGrok({prompt, system, timeoutMs = 45000}) {
   const key = process.env.GROK_API_KEY;
   if (!key) throw new Error("GROK_API_KEY missing");

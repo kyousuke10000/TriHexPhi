@@ -1,4 +1,4 @@
-// tools/harmonia/adapters/deepseek.mjs
+// tools/meta/adapters/deepseek.mjs
 export async function askDeepSeek({prompt, system, timeoutMs = 45000}) {
   const key = process.env.DEEPSEEK_API_KEY;
   if (!key) throw new Error("DEEPSEEK_API_KEY missing");

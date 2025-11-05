@@ -1,20 +1,20 @@
-// tools/harmonia/adapters/perplexity.mjs
-export async function askPerplexity({prompt, system, timeoutMs = 45000}) {
-  const key = process.env.PPLX_API_KEY;
-  if (!key) throw new Error("PPLX_API_KEY missing");
+// tools/meta/adapters/gpt.mjs
+export async function askGPT({prompt, system, timeoutMs = 45000}) {
+  const key = process.env.OPENAI_API_KEY;
+  if (!key) throw new Error("OPENAI_API_KEY missing");
 
   const ctrl = new AbortController();
   const timeoutId = setTimeout(() => ctrl.abort(), timeoutMs);
 
   try {
-    const response = await fetch('https://api.perplexity.ai/chat/completions', {
+    const response = await fetch('https://api.openai.com/v1/chat/completions', {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${key}`,
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        model: 'llama-3.1-sonar-large-128k-online',
+        model: 'gpt-4o',
         messages: [
           ...(system ? [{ role: 'system', content: system }] : []),
           { role: 'user', content: prompt }
@@ -27,26 +27,25 @@ export async function askPerplexity({prompt, system, timeoutMs = 45000}) {
     clearTimeout(timeoutId);
 
     if (!response.ok) {
-      throw new Error(`Perplexity API error: ${response.statusText}`);
+      throw new Error(`OpenAI API error: ${response.statusText}`);
     }
 
     const data = await response.json();
-    const answer = data.choices?.[0]?.message?.content || `[Perplexity] ${prompt.slice(0, 200)}`;
-    const citations = data.citations || [];
+    const answer = data.choices?.[0]?.message?.content || `[GPT] ${prompt.slice(0, 200)}`;
 
     return {
-      model: "perplexity",
+      model: "gpt",
       answer,
       meta: {
         latency_ms: Date.now() - (Date.now() - 1000),
-        sources: citations,
+        sources: [],
         timestamp: new Date().toISOString()
       }
     };
   } catch (error) {
     clearTimeout(timeoutId);
     if (error.name === 'AbortError') {
-      throw new Error("Perplexity API timeout");
+      throw new Error("GPT API timeout");
     }
     throw error;
   }

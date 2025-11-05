@@ -1,4 +1,4 @@
-name: Harmonia AI (Fusion)
+name: SeventhSense (Fusion)
 
 on:
   workflow_dispatch:
@@ -32,7 +32,7 @@ jobs:
         run: |
           npm install js-yaml
 
-      - name: Run Harmonia AI
+      - name: Run SeventhSense
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
@@ -41,17 +41,17 @@ jobs:
           GROK_API_KEY: ${{ secrets.GROK_API_KEY }}
           PPLX_API_KEY: ${{ secrets.PPLX_API_KEY }}
         run: |
-          node tools/harmonia/ai-harmonia.mjs "${{ github.event.inputs.prompt || '今日のAI Chronicleハイライトを200字で' }}" --system "${{ github.event.inputs.system || '' }}"
+          node tools/meta/ai-seventhsense.mjs "${{ github.event.inputs.prompt || '今日のAI Chronicleハイライトを200字で' }}" --system "${{ github.event.inputs.system || '' }}"
 
       - name: Commit Proofs
         run: |
-          git config user.name "meta-ai-bot"
+          git config user.name "seventhsense-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add 99_SYSTEM/Proofs/Harmonia
+          git add 99_SYSTEM/Proofs/SeventhSense
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "chore(meta): add fusion proof [skip ci]"
+            git commit -m "chore(seventhsense): add fusion proof [skip ci]"
             git push
           fi
 

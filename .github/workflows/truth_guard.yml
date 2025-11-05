@@ -29,8 +29,8 @@ jobs:
           fi
           
           # Check for changes outside truth paths (warning only, not blocking)
-          # Allow Remote Truth workflow files, Mirror Gate, Harmonia AI, and Overdrive workflows
-          NON_TRUTH_CHANGES=$(echo "$CHANGED_FILES" | grep -vE "^(99_SYSTEM/Proofs|99_SYSTEM/Proofs/Harmonia|99_SYSTEM/Proofs/Overdrive|00_RYUDO/Council/Records|70_AI_CHRONICLE|\.github/workflows/(truth_guard|mirror_gate_dispatch|harmonia|overdrive_sync)\.yml)" || true)
+          # Allow Remote Truth workflow files, Mirror Gate, SeventhSense, and Overdrive workflows
+          NON_TRUTH_CHANGES=$(echo "$CHANGED_FILES" | grep -vE "^(99_SYSTEM/Proofs|99_SYSTEM/Proofs/SeventhSense|99_SYSTEM/Proofs/Overdrive|00_RYUDO/Council/Records|70_AI_CHRONICLE|\.github/workflows/(truth_guard|mirror_gate_dispatch|seventhsense|overdrive_sync)\.yml)" || true)
           
           if [ -n "$NON_TRUTH_CHANGES" ]; then
             echo "⚠️  Warning: Changes detected outside Remote Truth paths:"

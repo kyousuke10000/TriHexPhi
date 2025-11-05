@@ -1,4 +1,4 @@
-// tools/harmonia/policies/fusion.mjs
+// tools/meta/policies/fusion.mjs
 import yaml from "js-yaml";
 import fs from "fs";
 
