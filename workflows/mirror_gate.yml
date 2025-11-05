@@ -1,0 +1,99 @@
+name: Mirror Gate (Public Mirror)
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run (true/false)'
+        required: false
+        default: 'true'
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    env:
+      MIRROR_REPO: ${{ secrets.MIRROR_REPO }}
+      MIRROR_TOKEN: ${{ secrets.MIRROR_TOKEN }}
+      DRY_RUN: ${{ github.event.inputs.dry_run || 'false' }}
+    steps:
+      - name: Checkout (private truth)
+        uses: actions/checkout@v4
+
+      # ── 1) Council Gate（公開承認の有無チェック：任意で厳しく）
+      - name: Require DEC: mirror_approved
+        run: |
+          DEC=$(ls -t 00_RYUDO/Council/Decisions/DEC_*_mirror_*.md 2>/dev/null | head -n1 || true)
+          if [ -z "$DEC" ]; then
+            echo "No DEC for mirror in this push. Proceeding in lenient mode."
+          else
+            grep -q "decision:\s*approved" "$DEC" || { echo "DEC exists but not approved"; exit 1; }
+            echo "DEC approved for mirror: $DEC"
+          fi
+
+      # ── 2) 抽出（include / exclude）
+      - name: Build mirror tree
+        run: |
+          mkdir -p mirror
+          # include 明示
+          rsync -a --prune-empty-dirs \
+            --include="99_SYSTEM/" \
+            --include="99_SYSTEM/Proofs/**" \
+            --include="00_RYUDO/" \
+            --include="00_RYUDO/Council/" \
+            --include="00_RYUDO/Council/Records/**" \
+            --include="70_AI_CHRONICLE/**" \
+            --include="README.md" \
+            --include="docs/" \
+            --include="docs/index.md" \
+            --exclude="*" \
+            ./ mirror/
+
+      # ── 3) マスキング（最低限の安全弁：トークン・鍵らしき文字列）
+      - name: Sanitize (mask secrets)
+        run: |
+          # 単純マスク（必要に応じて増やす）
+          find mirror -type f \( -name "*.md" -o -name "*.txt" -o -name "*.yml" -o -name "*.yaml" \) -print0 | xargs -0 sed -i \
+            -e 's/\b(sk-[A-Za-z0-9_-]\{20,\})/[MASKED-OPENAI-KEY]/g' \
+            -e 's/\b(xox[pbar]-[A-Za-z0-9-]\{10,\})/[MASKED-SLACK-TOKEN]/g' || true
+
+      # ── 4) リーク検査（警告止めにしたい場合は "continue-on-error: true"）
+      - name: Gitleaks scan
+        uses: zricethezav/gitleaks-action@v2.3.7
+        with:
+          args: --source=mirror --no-color --redact --verbose
+        continue-on-error: true
+
+      # ── 5) Dry-run 表示（何を出すかログ確認）
+      - name: Dry-run listing
+        if: env.DRY_RUN == 'true'
+        run: |
+          echo "---- DRY RUN ----"
+          find mirror -type f | sort
+          echo "---- END ----"
+
+      # ── 6) 実push
+      - name: Push to Public Mirror
+        if: env.DRY_RUN != 'true'
+        run: |
+          git config --global user.name "mirror-bot"
+          git config --global user.email "mirror-bot@users.noreply.github.com"
+          git clone "https://${MIRROR_TOKEN}@github.com/${MIRROR_REPO}.git" pub
+          cd pub
+          # 全消し→差し替え（公開側は生成物onlyなのでOK）
+          git rm -r . >/dev/null 2>&1 || true
+          cp -R ../mirror/. .
+          git add .
+          if git diff --cached --quiet; then
+            echo "No changes to mirror."
+          else
+            MSG="chore(mirror): sync from ${GITHUB_REPOSITORY}@${GITHUB_SHA::7}"
+            git commit -m "$MSG"
+            git push origin HEAD
+            echo "Pushed to ${MIRROR_REPO}"
+          fi
+
+

@@ -1,0 +1,21 @@
+Name,Path,State,Category
+TriHexΦ AI Review (Discussions),ai_review_discussions.yml,active,Review
+TriHexΦ AI Review v2,ai_review_discussions_v2.yml,active,Review
+TriHexΦ AI Review v2.0,ai_review_v2.yml,active,Review
+AI Sync,ai_sync.yml,active,Sync
+CHL Monitor,chl_monitor.yml,active,Monitor
+Cursor Notifier,cursor-notifier.yml,active,Notify
+TriHex Janitor,janitor.yml,active,Cleanup
+PR Auto Review v3,pr_auto_review_v3.yml,active,Review
+Review Request,review-request.yml,active,Review
+Task Generator,task-generator.yml,active,Generate
+Harmonia CI,harmonia-ci.yml,active,CI
+Ryudo Router,ryudo_router.yml,active,Ryudo
+Ryudo Self-Test,ryudo_selftest.yml,active,Test
+Ryudo Round,ryudo_round.yml,active,Ryudo
+Supabase Sync,supabase_sync.yml,active,Sync
+TriHex Sync,trihex_sync.yml,active,Sync
+TriHex Knowledge Sync,trihex-knowledge-sync.yml,active,Sync
+TriHex Discussion Bridge,trihex_discussion_bridge.yml,active,Bridge
+Gemini Render,gemini_render.yml.proposed,proposed,Render
+Patent Research,patent_research.yml,active,Research

@@ -166,3 +166,4 @@ GRANT ALL ON ALL FUNCTIONS IN SCHEMA trihex_core TO service_role;
 
 
 
+

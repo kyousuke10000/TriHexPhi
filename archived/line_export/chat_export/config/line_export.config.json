@@ -1,0 +1,26 @@
+{
+  "group_name": "ツクツク徳之島チーム",
+  "date_range": {
+    "from": "2019-01-01",
+    "to": null
+  },
+  "stop_conditions": {
+    "max_idle_scrolls": 25,
+    "max_duration_minutes": 480,
+    "min_oldest_year": 2019
+  },
+  "output_dir": "artifacts/line_export",
+  "anonymize_report": true,
+  "dashboard_visibility": "team-private",
+  "supabase": {
+    "enabled": true,
+    "table": "line_messages",
+    "mapping": {
+      "group_id": "tokunoshima",
+      "user": "user",
+      "message": "text",
+      "ts": "ts"
+    }
+  },
+  "os": "darwin"
+}

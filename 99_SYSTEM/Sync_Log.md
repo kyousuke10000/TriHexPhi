@@ -164,7 +164,7 @@ Generating SHA256 checksums for Genesis v3.1 mirrors:
 ## Rubedo Golden Thread 7 Execution (UTC: '$DATE_UTC')
 
 ### Triple Mirror Integrity
-- `10_TriHexCore/codex/Genesis_Protocol_v3.1.md`: body hash `390de2cfc0770674...`
+- `20_CRYSTALLIZATION_KOKUYOU/codex/Genesis_Protocol_v3.1.md`: body hash `390de2cfc0770674...`
 - `20_TriHex-Obsidian/01_Codex/Genesis_Protocol_v3.1.md`: body hash `390de2cfc0770674...`
 - `30_ObsidianSync/Canonical/Genesis_Protocol_R1_v3.1.md`: body hash `390de2cfc0770674...`
 

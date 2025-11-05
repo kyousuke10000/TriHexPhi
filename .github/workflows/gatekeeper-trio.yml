@@ -1,0 +1,118 @@
+name: 🛡️ Gatekeeper Trio
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  ethics-gate:
+    name: Ethics Gate (7 Guards)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Ethics Gate Check
+        id: ethics
+        run: |
+          node scripts/ethics_gate.mjs ${{ github.event.pull_request.number }}
+          echo "result=$?" >> $GITHUB_OUTPUT
+      
+      - name: Ethics Result
+        if: steps.ethics.outputs.result == 0
+        run: echo "✅ Ethics Gate: PASS"
+      
+      - name: Ethics Fail
+        if: steps.ethics.outputs.result != 0
+        run: |
+          echo "❌ Ethics Gate: FAIL"
+          exit 1
+  
+  protocol13-gate:
+    name: Protocol13 Gate (Silence Zero)
+    needs: ethics-gate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Protocol13 Check
+        id: p13
+        run: |
+          node scripts/protocol13_gate.mjs ${{ github.event.pull_request.number }}
+          echo "result=$?" >> $GITHUB_OUTPUT
+      
+      - name: Protocol13 Result
+        if: steps.p13.outputs.result == 0
+        run: echo "✅ Protocol13 Gate: PASS"
+      
+      - name: Protocol13 Fail
+        if: steps.p13.outputs.result != 0
+        run: |
+          echo "❌ Protocol13 Gate: FAIL"
+          exit 1
+  
+  chi-gate:
+    name: CHI Gate (≥0.92)
+    needs: protocol13-gate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: CHI Calculation
+        id: chi
+        run: |
+          CHI=$(node scripts/chi_measure.mjs)
+          echo "chi=$CHI" >> $GITHUB_OUTPUT
+          echo "CHI: $CHI"
+      
+      - name: CHI Check
+        run: |
+          CHI="${{ steps.chi.outputs.chi }}"
+          if (( $(echo "$CHI < 0.92" | bc -l) )); then
+            echo "❌ CHI Gate: FAIL (CHI=$CHI, need ≥0.92)"
+            exit 1
+          fi
+          echo "✅ CHI Gate: PASS (CHI=$CHI)"
+      
+      - name: Comment Result
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const chi = '${{ steps.chi.outputs.chi }}';
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `✅ **Gatekeeper Trio: ALL GATES PASSED**\n\n- Ethics Gate: 7/7 PASS\n- Protocol13 Gate: Silence Zero PASS\n- CHI Gate: ${chi} ≥ 0.92 PASS\n\nReady for shiryu approval.`
+            });
+  
+  summary:
+    name: Summary
+    needs: [ethics-gate, protocol13-gate, chi-gate]
+    runs-on: ubuntu-latest
+    if: always()
+    steps:
+      - name: All Gates Passed
+        if: needs.ethics-gate.result == 'success' && needs.protocol13-gate.result == 'success' && needs.chi-gate.result == 'success'
+        run: echo "🎉 All gates passed! PR ready for merge."
+
+

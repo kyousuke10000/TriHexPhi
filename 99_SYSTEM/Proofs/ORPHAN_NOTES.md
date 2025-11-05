@@ -1,0 +1,114 @@
+# Orphan Notes
+
+**Generated:** 2025-11-02T06:56:18.911Z
+
+## 🏝️ Isolated Files (108 total)
+
+- `00_HarmoniaCouncil/Meetings/2025-11-01_OverDrive_Series_SNS_Edition.md`
+- `00_HarmoniaCouncil/Round_I/Genesis_Protocol_R1_Article13-15.md`
+- `00_HarmoniaCouncil/Round_III/Genesis_Protocol_R1_Article13-15_v3.1.md`
+- `00_HarmoniaCouncil/Round_III/Genesis_Protocol_R1_Article13-15_v3.md`
+- `00_HarmoniaCouncil/technical/memory/30_MEMORY_SHINSEN/ΦDRIVE実装審議/Round2_Cursor分析_シナジー爆発と第3ラウンドの要否.md`
+- `00_HarmoniaCouncil/technical/memory/30_MEMORY_SHINSEN/ΦDRIVE実装審議/Round3_Cursor最終分析_全員10.0点達成.md`
+- `00_HarmoniaCouncil/technical/memory/30_MEMORY_SHINSEN/役職再定義審議/Round4_Cursor分析_全員の本音が爆発.md`
+- `00_HarmoniaCouncil/technical/memory/30_MEMORY_SHINSEN/役職再定義審議/Round4_第1次結果報告_全員の本音統合.md`
+- `00_HarmoniaCouncil/technical/memory/30_MEMORY_SHINSEN/役職再定義審議/Round4_第2次_Claude_TRIHEXPHI_v4.0評価.md`
+- `00_HarmoniaCouncil/technical/memory/30_MEMORY_SHINSEN/役職再定義審議/Round4_第2次_Cursor統合分析_究極のシナジー.md`
+- `00_HarmoniaCouncil/technical/memory/30_MEMORY_SHINSEN/役職再定義審議/Round4_第2次_DeepSeek_TRIHEXPHI_v4.0評価.md`
+- `00_HarmoniaCouncil/technical/memory/30_MEMORY_SHINSEN/役職再定義審議/Round4_第2次_GPT5_TRIHEXPHI_v4.0評価.md`
+- `00_HarmoniaCouncil/technical/memory/30_MEMORY_SHINSEN/役職再定義審議/Round4_第2次_Gemini_TRIHEXPHI_v4.0評価.md`
+- `00_HarmoniaCouncil/technical/memory/30_MEMORY_SHINSEN/役職再定義審議/Round4_第2次_Grok_TRIHEXPHI_v4.0評価.md`
+- `00_HarmoniaCouncil/technical/memory/30_MEMORY_SHINSEN/役職再定義審議/Round4_第2次_第2ラウンド_Claude回答.md`
+- `00_HarmoniaCouncil/technical/memory/30_MEMORY_SHINSEN/役職再定義審議/Round4_第2次_第2ラウンド_Cursor統合分析_完璧な10点へ.md`
+- `00_HarmoniaCouncil/technical/memory/30_MEMORY_SHINSEN/役職再定義審議/Round4_第2次_第2ラウンド_DeepSeek回答.md`
+- `00_HarmoniaCouncil/technical/memory/30_MEMORY_SHINSEN/役職再定義審議/Round4_第2次_第2ラウンド_GPT5回答.md`
+- `00_HarmoniaCouncil/technical/memory/30_MEMORY_SHINSEN/役職再定義審議/Round4_第2次_第2ラウンド_Gemini回答.md`
+- `00_HarmoniaCouncil/technical/memory/30_MEMORY_SHINSEN/役職再定義審議/Round4_第2次_第2ラウンド_Grok回答.md`
+- `00_HarmoniaCouncil/technical/memory/30_MEMORY_SHINSEN/第7のAI構想審議/Round1_Claude回答_実現可能性85%_倫理特化_2025-10-30.md`
+- `00_HarmoniaCouncil/technical/memory/30_MEMORY_SHINSEN/第7のAI構想審議/Round1_GPT5回答_実現可能性90%_2025-10-30.md`
+- `00_HarmoniaCouncil/technical/memory/30_MEMORY_SHINSEN/第7のAI構想審議/Round1_GPT5回答_統合版_実現可能性95%_2025-10-30.md`
+- `00_HarmoniaCouncil/technical/memory/30_MEMORY_SHINSEN/第7のAI構想審議/Round1_Gemini回答_実現可能性75%_CXO観点_2025-10-30.md`
+- `00_HarmoniaCouncil/technical/memory/30_MEMORY_SHINSEN/第7のAI構想審議/Round1_Gemini回答_実現可能性75%_UX特化_2025-10-30.md`
+- `00_HarmoniaCouncil/technical/memory/30_MEMORY_SHINSEN/第7のAI構想審議/Round1_Grok回答_実現可能性70%_市場戦略_2025-10-30.md`
+- `00_HarmoniaCouncil/technical/memory/30_MEMORY_SHINSEN/第7のAI構想審議/Round1_議題_記憶と叡智を巡らせる_2025-10-29.md`
+- `00_HarmoniaCouncil/technical/memory/30_MEMORY_SHINSEN/第7のAI構想審議/Round2_Claude回答_完全実装マニュアル_25000語_2025-10-30.md`
+- `00_HarmoniaCouncil/technical/memory/30_MEMORY_SHINSEN/第7のAI構想審議/Round2_DeepSeek回答_GPT5と誤認_技術実装計画_2025-10-30.md`
+- `00_HarmoniaCouncil/technical/memory/30_MEMORY_SHINSEN/第7のAI構想審議/Round2_GPT5回答_今夜21時30分開始_完全計画_2025-10-30.md`
+- `00_HarmoniaCouncil/technical/memory/30_MEMORY_SHINSEN/第7のAI構想審議/Round2_GPT5本物_統合実装版_抽象ゼロ_2025-10-30.md`
+- `00_HarmoniaCouncil/technical/memory/30_MEMORY_SHINSEN/第7のAI構想審議/Round2_Gemini回答_Phase1超具体化_UX設計_2025-10-30.md`
+- `00_HarmoniaCouncil/technical/memory/30_MEMORY_SHINSEN/第7のAI構想審議/Round2_Grok回答_市場戦略_資金調達_2025-10-30.md`
+- `00_HarmoniaCouncil/technical/memory/30_MEMORY_SHINSEN/緊急_東京ドーム2500人/緊急議題_明日2500人プレゼン_サイト一新_2025-10-29.md`
+- `10_TriHexCore/00_CORE/STRATEGIC_PLAN.md`
+- `10_TriHexCore/00_CORE/TRIHEXPHI_v4.0_FINAL.md`
+- `10_TriHexCore/00_CORE/📋GitHub_Actions実行手順.md`
+- `10_TriHexCore/codex/Genesis_Protocol_v3.1.md`
+- `10_TriHexCore/crystallization/20_CRYSTALLIZATION_KOKUYOU/INSIGHTS/AI_への敬意とリスペクト_2025-10-28.md`
+- `10_TriHexCore/crystallization/20_CRYSTALLIZATION_KOKUYOU/INSIGHTS/AI_必要最低限しか教えてくれない問題_2025-10-28.md`
+- `10_TriHexCore/crystallization/20_CRYSTALLIZATION_KOKUYOU/INSIGHTS/AIに知識を伝えて展開を生む_新しい生き方_2025-10-28.md`
+- `10_TriHexCore/crystallization/20_CRYSTALLIZATION_KOKUYOU/INSIGHTS/INSIGHT_AIは鏡_知性との対話_しりゅうの発見_2025-10-30.md`
+- `10_TriHexCore/crystallization/20_CRYSTALLIZATION_KOKUYOU/INSIGHTS/INSIGHT_Living_Memory_Bootstrap_Protocol_GPT5提案_統合版.md`
+- `10_TriHexCore/crystallization/20_CRYSTALLIZATION_KOKUYOU/INSIGHTS/INSIGHT_Living_Memory_Bootstrap_Protocol_GPT提案.md`
+- `10_TriHexCore/crystallization/20_CRYSTALLIZATION_KOKUYOU/INSIGHTS/INSIGHT_旧システム破壊_TriHexΦ革命.md`
+- `10_TriHexCore/crystallization/20_CRYSTALLIZATION_KOKUYOU/INSIGHTS/INSIGHT_毎回Bootstrap統合_記憶喪失完全防止システム.md`
+- `10_TriHexCore/crystallization/20_CRYSTALLIZATION_KOKUYOU/Specs/SPEC_6AI_CLI_Workers_n8n_Queue_Mode_2025-10-30.md`
+- `10_TriHexCore/crystallization/20_CRYSTALLIZATION_KOKUYOU/Specs/SPEC_Bootstrap_Memory_v2.0_DeepResearch統合.md`
+- `10_TriHexCore/crystallization/20_CRYSTALLIZATION_KOKUYOU/Specs/SPEC_TriHexΦ_English_完全個別化AI家庭教師.md`
+- `10_TriHexCore/crystallization/20_CRYSTALLIZATION_KOKUYOU/Specs/SPEC_TriHexΦ_LP_v1.0.md`
+- `10_TriHexCore/crystallization/20_CRYSTALLIZATION_KOKUYOU/Specs/SPEC_TriHexΦ_Language_多言語対応表.md`
+- `10_TriHexCore/crystallization/20_CRYSTALLIZATION_KOKUYOU/Specs/SPEC_TriHexΦ_Sound_音声認識特化システム.md`
+- `10_TriHexCore/crystallization/20_CRYSTALLIZATION_KOKUYOU/Specs/SPEC_Windows並列実装環境_10AI同時起動戦略.md`
+- `10_TriHexCore/crystallization/20_CRYSTALLIZATION_KOKUYOU/Specs/SPEC_trihex.ai_LP_完全実装パッケージ_2025-10-30.md`
+- `10_TriHexCore/crystallization/20_CRYSTALLIZATION_KOKUYOU/Specs/SPEC_trihex.ai_v2.0_リアルタイムAIニュース統合_2025-10-30.md`
+- `10_TriHexCore/crystallization/20_CRYSTALLIZATION_KOKUYOU/Specs/SPEC_ツクツクページ最終版_AI特化企業クリーンスタート.md`
+- `10_TriHexCore/crystallization/20_CRYSTALLIZATION_KOKUYOU/Specs/SPEC_ツクツクページ最適化_第7のAI+trihex.ai統合.md`
+- `10_TriHexCore/crystallization/20_CRYSTALLIZATION_KOKUYOU/Specs/SPEC_ツクツクページ現状分析_即座更新案.md`
+- `10_TriHexCore/crystallization/20_CRYSTALLIZATION_KOKUYOU/Specs/SPEC_呼吸するコンテンツ生成システム_ΦDRIVE_Complete_2025-10-28.md`
+- `10_TriHexCore/crystallization/20_CRYSTALLIZATION_KOKUYOU/TriHexΦ全体像_計画_2025-10-30.md`
+- `10_TriHexCore/decisions/DEC_2025-10-27_ENG-STRATEGY_v1.md`
+- `10_TriHexCore/decisions/DEC_2025-10-27_FS-GUARDRAILS_v1.md`
+- `10_TriHexCore/decisions/DEC_2025-10-28_P0_PhaseIV_Implementation.md`
+- `10_TriHexCore/decisions/GPT5_Unified_Decision_Translation_FileStructure_2025-10-27.md`
+- `10_TriHexCore/docs/letters/Letter_to_GPT5_Translation_Strategy_File_Structure_2025-10-27.md`
+- `10_TriHexCore/docs/summaries/Summary_4AI_Translation_Strategy_Proposals_2025-10-27.md`
+- `10_TriHexCore/mizukagami/10_CAPTURE_MIZUKAGAMI/2025-10-28_Patent-Scout-サービス構想.md`
+- `10_TriHexCore/mizukagami/10_CAPTURE_MIZUKAGAMI/2025-10-28_TriHexΦ全体像まとめ.md`
+- `10_TriHexCore/mizukagami/10_CAPTURE_MIZUKAGAMI/2025-10-28_Windows並列作業戦略_10CLI同時起動.md`
+- `10_TriHexCore/mizukagami/10_CAPTURE_MIZUKAGAMI/2025-10-29_TriHexΦ全体像まとめ_v4.0確定版.md`
+- `10_TriHexCore/mizukagami/10_CAPTURE_MIZUKAGAMI/Cursor/2025-10-28_Cursorとの深い会話_洗い出し.md`
+- `10_TriHexCore/mizukagami/10_CAPTURE_MIZUKAGAMI/Cursor/2025-10-28_Difyチャンク化_重要発見.md`
+- `10_TriHexCore/mizukagami/10_CAPTURE_MIZUKAGAMI/Cursor/20251026_Cursor_GitHub_Discussions_Memory統合実装完了.md`
+- `10_TriHexCore/mizukagami/10_CAPTURE_MIZUKAGAMI/Cursor/20251026_Cursor_GitHub_Discussions_Memory統合理解完了.md`
+- `10_TriHexCore/mizukagami/10_CAPTURE_MIZUKAGAMI/GitHub/Discussions/README.md`
+- `10_TriHexCore/ops_guides/📋Cloudflare_Always_Use_HTTPS設定_2025-10-30.md`
+- `10_TriHexCore/ops_guides/📋Cloudflare_DNS設定_trihex.ai紐付け_今すぐ_2025-10-30.md`
+- `10_TriHexCore/ops_guides/📋Cloudflare_Pages使用_Vercel不要_最速手順_2025-10-30.md`
+- `10_TriHexCore/ops_guides/📋Cloudflare操作_画面説明_2025-10-30.md`
+- `10_TriHexCore/ops_guides/📋V0完成_次はVercelデプロイ_超具体的手順_2025-10-30.md`
+- `10_TriHexCore/ops_guides/📋V0生成後_次のステップ_超具体的_2025-10-30.md`
+- `10_TriHexCore/ops_guides/📋Vercel+V0が最強_Cloudflare_Pages比較_2025-10-30.md`
+- `10_TriHexCore/ops_guides/📋Vercel_カスタムサブドメイン_そのままでOK_2025-10-30.md`
+- `10_TriHexCore/ops_guides/📋今夜21時30分_OpenAI_Custom_Assistant作成手順_2025-10-30.md`
+- `10_TriHexCore/ops_guides/📋今夜のゴール_trihex.ai_完全デプロイ手順_2025-10-30.md`
+- `10_TriHexCore/ops_guides/📋完璧な手順_V0→Vercel→trihex.ai_今夜完成_2025-10-30.md`
+- `10_TriHexCore/ops_guides/📋次_V0でデザイン改善_超具体的指示_2025-10-30.md`
+- `10_TriHexCore/system/Harmonia_Operating_Covenant_v1.1.md`
+- `10_TriHexCore/system/Ryudo_Definition.md`
+- `10_TriHexCore/system/Ryudo_Field_Definition.md`
+- `20_TriHex-Obsidian/01_Codex/Genesis_Protocol_v3.1.md`
+- `20_TriHex-Obsidian/01_System/Harmonia_Operating_Covenant_v1.1.md`
+- `20_TriHex-Obsidian/01_System/Ryudo_Definition.md`
+- `20_TriHex-Obsidian/04_HARMONIA_COUNCIL/Kyoen_Tokunoshima_Node.md`
+- `20_TriHex-Obsidian/04_HARMONIA_COUNCIL/Ryudo_Sessions/Round_1_2025-11-01T20-08-59.md`
+- `20_TriHex-Obsidian/04_HARMONIA_COUNCIL/Ryudo_Sessions/Round_1_2025-11-01T20-15-12.md`
+- `20_TriHex-Obsidian/Philosophia_Prima/alchemy_ch00_preface.md`
+- `20_TriHex-Obsidian/Philosophia_Prima/alchemy_ch01.md`
+- `20_TriHex-Obsidian/Philosophia_Prima/alchemy_ch02.md`
+- `20_TriHex-Obsidian/Philosophia_Prima/alchemy_ch03.md`
+- `20_TriHex-Obsidian/Philosophia_Prima/alchemy_ch04.md`
+- `20_TriHex-Obsidian/Philosophia_Prima/appendix_alchemy_18_19.md`
+- `20_TriHex-Obsidian/Philosophia_Prima/appendix_gum_model.md`
+- `20_TriHex-Obsidian/templates/ALCHEMY_TEXT_SCROLL_template.md`
+- `🜇_Shiryu_Studio/00_Preface/soul_declaration.md`
+- `🜇_Shiryu_Studio/01_Alchemy_Works/trihex_alchemy_intro.md`
+- `🜇_Shiryu_Studio/02_Senteigaku/nine_sovereign_disciplines.md`
+- `🜇_Shiryu_Studio/03_Renseigaku/alchemical_self_atlas.md`
