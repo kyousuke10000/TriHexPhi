@@ -4,7 +4,8 @@
   "type": "module",
   "scripts": {
     "test:encoding": "node scripts/test-encoding.mjs",
-    "spec:validate": "node scripts/spec-gate.mjs"
+    "spec:validate": "node scripts/spec-gate.mjs",
+    "meta:ask": "node tools/meta/ai-meta.mjs"
   },
   "description": "TriHexΦ - Breathing Intelligence OS",
   "author": "🜇 Shiryu",
