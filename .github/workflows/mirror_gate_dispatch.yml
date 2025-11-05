@@ -64,6 +64,9 @@ jobs:
             --include="docs/" \
             --include="docs/index.md" \
             --include="index.md" \
+            --include="website/" \
+            --include="website/content/" \
+            --include="website/content/**" \
             --exclude="*" \
             ./ mirror/
           echo "=== Files copied to mirror ==="
