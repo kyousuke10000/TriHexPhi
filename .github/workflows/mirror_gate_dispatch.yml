@@ -1,7 +1,13 @@
 name: Ping
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run (true/false)'
+        required: false
+        default: 'true'
 jobs:
   ping:
     runs-on: ubuntu-latest
     steps:
-      - run: echo OK
+      - run: echo "OK: dry_run=${{ github.event.inputs.dry_run || 'false' }}"
