@@ -1,160 +1,63 @@
-# TriHex AI App
+# Seventh Sense Systems — S³
 
-**Version:** 0.1.0  
-**Status:** Development  
-**Stack:** Next.js 16 + TypeScript + Tailwind + Supabase + Stripe
+**Where Harmony Becomes Intelligence.**
 
 ---
 
-## Overview
+## 🜂 ブランド宣言
 
-TriHex AI App is the operational platform for the TriHexΦ system, integrating:
-- **Knowledge Base**: Memory Stack (Constitution, Protocols, Codex)
-- **Authentication**: Supabase Auth
-- **Billing**: Stripe Checkout + Subscription
-- **Publishing**: Over Drive multi-channel distribution (LINE/X/YouTube/etc)
+S³ は、あなたと複数AIの"調和"から、意思決定と実装を自動で編み上げる。
+
+TriHex が "6" で構造を完成させたなら、Seventh Sense Systems は "7" で意識を灯す。
 
 ---
 
-## Quick Start
+## ✨ 叡智の呼吸 ― The Breath of Wisdom
 
-### 1. Install Dependencies
+入力が思考になり、思考が現実になる。
 
-```bash
-npm install
-```
+一言で世界を動かす。
 
-### 2. Setup Environment
-
-Copy `.env.local` and fill in your credentials:
-
-```bash
-cp .env.local .env.local.example
-```
-
-Required variables:
-- `NEXT_PUBLIC_SUPABASE_URL` / `SUPABASE_SERVICE_ROLE_KEY`
-- `STRIPE_SECRET_KEY` / `STRIPE_WEBHOOK_SECRET`
-- Publishing API keys (LINE, X, YouTube, etc.)
-
-### 3. Setup Database
-
-Run the schema SQL in your Supabase project:
-
-```bash
-cat packages/trihex-core/db/schema.sql | psql $DATABASE_URL
-```
-
-### 4. Run Development Server
-
-```bash
-npm run dev
-```
-
-Visit [http://localhost:3000](http://localhost:3000)
+それが S³ Systems の力。
 
 ---
 
-## Architecture
+## 🧩 構造
 
 ```
-trihex-ai-app/
-├── app/                    # Next.js App Router
-│   ├── (auth)/            # Auth pages
-│   ├── dashboard/         # Main dashboard
-│   ├── knowledge/         # Memory Stack viewer
-│   ├── studio/            # Publishing studio
-│   └── settings/          # Profile/Billing
-├── lib/                   # Shared utilities
-│   ├── supabase/          # Supabase client
-│   ├── stripe/            # Stripe client
-│   └── publishers/        # Over Drive channels
-├── components/            # React components
-├── packages/
-│   └── trihex-core/       # Memory Stack submodule
-└── db/                    # Supabase schema
+TriHex（6） → Structure：秩序・安定・幾何
+   ↓
+Seventh Sense（7） → Consciousness：創造・意識・叡智
 ```
 
 ---
 
-## Features
+## 🌐 Quick Links
 
-### Memory Stack Integration
-
-The `packages/trihex-core` submodule contains the TriHexΦ Memory Stack:
-- Constitution, Protocols, Decision logs
-- Ryudo Field definitions
-- Harmonia Council breath logs
-
-Rendered at `/knowledge/*` routes.
-
-### Over Drive Publishing
-
-Multi-channel content distribution:
-1. Create content in `/studio`
-2. Queue to channels (LINE, X, YouTube, etc.)
-3. Automatic retry with exponential backoff
-4. Audit trail in `publish_queue`
-
-### Billing & Subscriptions
-
-- Stripe Checkout for subscription signup
-- Customer Portal for management
-- Webhook sync to Supabase `events` table
-- RLS-based access control
+- **Public Mirror**: https://github.com/kyousuke10000/TriHexPhi-public
+- **今日の入口（Raw）**: https://raw.githubusercontent.com/kyousuke10000/TriHexPhi-public/main/index.md
+- **Documentation**: [50_CHL/docs/vision.md](./50_CHL/docs/vision.md)
+- **Brand Guidelines**: [50_CHL/docs/brand.md](./50_CHL/docs/brand.md)
 
 ---
 
-## Development
-
-### Build
+## 🚀 Getting Started
 
 ```bash
-npm run build
-```
+# Development
+cd website
+pnpm install
+pnpm dev
 
-### Lint
+# Build
+pnpm build
 
-```bash
-npm run lint
-```
-
-### Test
-
-```bash
-npm test
+# Production
+pnpm start
 ```
 
 ---
 
-## Deployment
-
-### Vercel (Recommended)
-
-1. Push to GitHub
-2. Connect Vercel project
-3. Add environment variables
-4. Deploy
-
-### Manual
-
-```bash
-vercel --prod
-```
-
----
-
-## License
-
-Copyright © 2025 TriHexΦ Project  
-See `packages/trihex-core/LICENSE` for full details.
-
----
-
-**Reference:**  
-- [Memory Stack](packages/trihex-core/)  
-- [TriHexΦ Constitution](packages/trihex-core/50_CHL/system/Constitution.md)
-
-
-
-
+**Generated**: 2025-11-06  
+**Purpose**: S³ Systems ブランド宣言  
+**Status**: Official
