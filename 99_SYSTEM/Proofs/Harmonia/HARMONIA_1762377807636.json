@@ -1,0 +1,24 @@
+{
+  "generated_at": "2025-11-05T21:23:27.636Z",
+  "prompt": "Phase 1動作確認テスト: AI OverdriveのLP見出しを3案(20字以内) --system STRUCTURE_MASTER尊重",
+  "system_hint": "STRUCTURE_MASTER尊重",
+  "candidates": [
+    {
+      "model": "gpt",
+      "score": 0.5039,
+      "answer_preview": "1. 革新のAI駆動未来が始動\n2. AI Overdriveが新時代を切り開く\n3. AI進化: 未来へのドライブスタート..."
+    },
+    {
+      "model": "deepseek",
+      "score": 0.4864,
+      "answer_preview": "1. AIが加速する未来へ\n2. 限界を超えるAIの力\n3. 次世代AIが切り拓く道\n\n(各19字/18字/18字)..."
+    }
+  ],
+  "chosen": {
+    "model": "gpt",
+    "score": 0.5039,
+    "answer": "1. 革新のAI駆動未来が始動\n2. AI Overdriveが新時代を切り開く\n3. AI進化: 未来へのドライブスタート"
+  },
+  "intent_length": 356,
+  "candidates_count": 2
+}

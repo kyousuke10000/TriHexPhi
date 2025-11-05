@@ -1,0 +1,57 @@
+name: Harmonia AI (Fusion)
+
+on:
+  workflow_dispatch:
+    inputs:
+      prompt:
+        description: "User prompt"
+        required: true
+        default: "今日のAI Chronicleハイライトを200字で"
+      system:
+        description: "System hint"
+        required: false
+        default: ""
+  schedule:
+    - cron: "0 0 * * *"  # 毎日00:00 UTC
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: |
+          npm install js-yaml
+
+      - name: Run Harmonia AI
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          GROK_API_KEY: ${{ secrets.GROK_API_KEY }}
+          PPLX_API_KEY: ${{ secrets.PPLX_API_KEY }}
+        run: |
+          node tools/harmonia/ai-harmonia.mjs "${{ github.event.inputs.prompt || '今日のAI Chronicleハイライトを200字で' }}" --system "${{ github.event.inputs.system || '' }}"
+
+      - name: Commit Proofs
+        run: |
+          git config user.name "meta-ai-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add 99_SYSTEM/Proofs/Harmonia
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore(meta): add fusion proof [skip ci]"
+            git push
+          fi
+
