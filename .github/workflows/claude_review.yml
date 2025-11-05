@@ -64,6 +64,10 @@ jobs:
             core.setOutput('pr_body', pr.body || '');
             core.setOutput('diff', diff);
 
+      - name: Install dependencies
+        working-directory: ./50_CHL/tools
+        run: npm install
+
       - name: Call Claude API
         id: claude_review
         working-directory: ./50_CHL/tools
