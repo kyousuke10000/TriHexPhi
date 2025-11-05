@@ -11,6 +11,7 @@ name: Review Request Generator
 on:
   pull_request:
     types: [opened, labeled, synchronize]
+  workflow_dispatch:
 
 permissions:
   contents: read
