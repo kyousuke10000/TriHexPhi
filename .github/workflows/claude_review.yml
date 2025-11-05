@@ -72,7 +72,7 @@ jobs:
         id: claude_review
         working-directory: ./50_CHL/tools
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.CLAUDE_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
           PR_NUMBER="${{ steps.pr_diff.outputs.pr_number }}"
           PR_TITLE="${{ steps.pr_diff.outputs.pr_title }}"
