@@ -30,7 +30,7 @@ const genAI = new GoogleGenerativeAI(GOOGLE_API_KEY);
 console.log('💎 Geminiに接続中...\n');
 
 try {
-  const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash-exp" });
+  const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
   const prompt = "Hello, Gemini! TriHexΦプロジェクトの接続テストです。簡単に挨拶してください。";
   
