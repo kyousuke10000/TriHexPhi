@@ -5,7 +5,7 @@
   "scripts": {
     "test:encoding": "node scripts/test-encoding.mjs",
     "spec:validate": "node scripts/spec-gate.mjs",
-    "meta:ask": "node tools/meta/ai-meta.mjs"
+    "seventh:ask": "node tools/meta/ai-seventhsense.mjs"
   },
   "dependencies": {
     "js-yaml": "^4.1.0"
