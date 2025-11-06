@@ -56,9 +56,26 @@ async function loadSpecs() {
     const roadmapContent = await fs.readFile('specs/roadmap.yml', 'utf8');
     const kpiContent = await fs.readFile('specs/kpi.yml', 'utf8');
     
-    const architecture = yaml.load(extractYAML(architectureContent), { schema: yaml.DEFAULT_SAFE_SCHEMA });
-    const roadmap = yaml.load(extractYAML(roadmapContent), { schema: yaml.DEFAULT_SAFE_SCHEMA });
-    const kpi = yaml.load(extractYAML(kpiContent), { schema: yaml.DEFAULT_SAFE_SCHEMA });
+    // Load only the first document if multiple documents exist
+    function loadFirstDoc(content) {
+      const yamlContent = extractYAML(content);
+      try {
+        // Try loading as single document first
+        return yaml.load(yamlContent, { schema: yaml.DEFAULT_SAFE_SCHEMA });
+      } catch (e) {
+        // If that fails, try loading all documents and take the first one
+        try {
+          const docs = yaml.loadAll(yamlContent, { schema: yaml.DEFAULT_SAFE_SCHEMA });
+          return docs[0] || null;
+        } catch (e2) {
+          throw e; // Throw original error
+        }
+      }
+    }
+    
+    const architecture = loadFirstDoc(architectureContent);
+    const roadmap = loadFirstDoc(roadmapContent);
+    const kpi = loadFirstDoc(kpiContent);
     return { architecture, roadmap, kpi };
   } catch (error) {
     console.error('❌ Failed to load specs:', error.message);
