@@ -17,15 +17,6 @@
 
 ---
 
-### 🔭 Public Mirror（固定入口）
-
-- **Main**: https://github.com/kyousuke10000/TriHexPhi-public
-- **Raw Index**: https://raw.githubusercontent.com/kyousuke10000/TriHexPhi-public/main/index.md
-
-> 新しいチャットが始まったら、上の Raw Index をGPTに貼るだけで文脈即時回復。
-
----
-
 ## Overview
 
 TriHex AI App is the operational platform for the TriHexΦ system, integrating:
