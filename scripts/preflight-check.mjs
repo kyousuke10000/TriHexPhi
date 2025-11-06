@@ -30,19 +30,42 @@ async function checkPermissions() {
 }
 
 async function checkSecrets() {
-  const required = ['OPENAI_API_KEY'];
-  const optional = ['CLAUDE_API_KEY', 'GEMINI_API_KEY', 'SUPABASE_URL', 'SUPABASE_ANON_KEY'];
+  // ワークフローで実際に使用されている必須Secrets
+  const required = ['OPENAI_API_KEY', 'ANTHROPIC_API_KEY', 'GOOGLE_API_KEY'];
+  // Mirror Gate用（本番環境で必要）
+  const mirrorRequired = ['MIRROR_REPO', 'MIRROR_TOKEN'];
+  // オプション
+  const optional = ['DEEPSEEK_API_KEY', 'GROK_API_KEY', 'PPLX_API_KEY', 'SUPABASE_URL', 'SUPABASE_ANON_KEY'];
   
   const missing = required.filter(k => !process.env[k]);
-  const present = [...required, ...optional].filter(k => process.env[k]);
+  const missingMirror = mirrorRequired.filter(k => !process.env[k]);
+  const present = [...required, ...mirrorRequired, ...optional].filter(k => process.env[k]);
   
   if (missing.length > 0) {
     console.error(`❌ Required secrets: ${missing.join(', ')}`);
+    console.error(`   💡 These are required for core AI workflows (SeventhSense, Claude Review, Gemini)`);
+  }
+  
+  if (missingMirror.length > 0) {
+    console.warn(`⚠️  Mirror secrets missing: ${missingMirror.join(', ')}`);
+    console.warn(`   💡 These are required for Mirror Gate workflow`);
+  }
+  
+  if (missing.length > 0) {
     return false;
   }
   
-  console.log(`✅ Secrets: ${required.length}/${required.length} required present`);
-  console.log(`   Optional: ${present.length}/${required.length + optional.length}`);
+  if (missingMirror.length === 0) {
+    console.log(`✅ Secrets: ${required.length + mirrorRequired.length}/${required.length + mirrorRequired.length} required present`);
+  } else {
+    console.log(`✅ Core secrets: ${required.length}/${required.length} present`);
+    console.log(`   ⚠️  Mirror secrets: ${mirrorRequired.length - missingMirror.length}/${mirrorRequired.length} present`);
+  }
+  
+  if (present.length > required.length + mirrorRequired.length) {
+    console.log(`   Optional: ${present.length - required.length - mirrorRequired.length} additional secrets present`);
+  }
+  
   return true;
 }
 
