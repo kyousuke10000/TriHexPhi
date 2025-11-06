@@ -7,10 +7,10 @@
     "spec:validate": "node scripts/spec-gate.mjs",
     "seventh:ask": "node tools/meta/ai-seventhsense.mjs"
   },
-  "dependencies": {
-    "js-yaml": "^4.1.0"
-  },
   "description": "TriHexΦ - Breathing Intelligence OS",
   "author": "🜇 Shiryu",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  }
 }

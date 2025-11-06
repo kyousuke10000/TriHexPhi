@@ -32,4 +32,3 @@ CREATE INDEX IF NOT EXISTS idx_breath_log_ts ON public.breath_log(ts DESC);
 **Generated:** 2025-11-02 / Cursor (☿)  
 **Purpose:** Breath practice tracking
 
-

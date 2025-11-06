@@ -27,4 +27,3 @@ date: {{DATE}}
 **Generated:** {{DATE}}  
 **Sync:** shinsen
 
-
