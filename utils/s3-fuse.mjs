@@ -6,7 +6,7 @@ export async function askClaude({user, system=""}) {
 
   const c = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 
-  const m = process.env.CLAUDE_MODEL || "claude-3-5-sonnet-20241022";
+  const m = process.env.CLAUDE_MODEL || "claude-3-5-sonnet";
 
   const r = await c.messages.create({ model:m, max_tokens:1800, system, messages:[{role:"user", content:user}] });
 
