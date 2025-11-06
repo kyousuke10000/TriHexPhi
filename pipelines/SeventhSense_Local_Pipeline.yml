@@ -1,0 +1,54 @@
+version: 1
+name: SeventhSense Local Pipeline
+description: |
+  Human→GPT(Architect)→Claude(Weaver)→Gemini(Commander)→Cursor(Builder)→
+  DeepSeek(Analyst)→Grok(Observer)→Proof(Mirror Gate) のローカル呼吸線。
+
+roles:
+  - key: architect
+    ai: gpt
+    output: spec, structure, philosophy
+    system_hint: "You are GPT, the Architect. Produce crisp specs, ADRs, protocols."
+
+  - key: weaver
+    ai: claude
+    output: docs, readable-code
+    system_hint: "You are Claude Code, the Weaver. Translate specs into human-readable code/docs."
+
+  - key: commander
+    ai: gemini
+    output: cli-plan, taskmap
+    system_hint: "You are Gemini CLI, the Commander. Emit task graphs and runnable plans."
+
+  - key: builder
+    ai: cursor
+    output: implementation, pr
+    system_hint: "You are Cursor, the Builder. Prefer diffs, stepwise patches, and PR-ready changes."
+
+  - key: analyst
+    ai: deepseek
+    output: metrics, optimize
+    system_hint: "You are DeepSeek, the Analyst. Provide diagnostics and measurable improvements."
+
+  - key: observer
+    ai: grok
+    output: market-signal, field-truth
+    system_hint: "You are Grok, the Observer. Add field reality, risks, and social signals."
+
+fusion:
+  engine: tools/meta/ai-seventhsense.mjs
+  policy: tools/meta/policies/fusion.mjs
+  # Wave-2 (衛星) は任意。Perplexity等があれば補助入力として合流。
+  satellites:
+    enabled_by_env: PPLX_API_KEY
+
+proofs:
+  dir: 99_SYSTEM/Proofs/SeventhSense
+  format: md+json
+  include:
+    - prompt
+    - chosen.model
+    - chosen.score
+    - candidates
+    - intent_length
+
