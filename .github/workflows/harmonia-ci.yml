@@ -54,7 +54,7 @@ jobs:
         run: node scripts/normalize-md.mjs 10_TriHexCore 20_TriHex-Obsidian 99_SYSTEM || echo "Normalization skipped"
       
       - name: Lint Markdown
-        run: npx markdownlint-cli2 "**/*.md" || echo "Markdown linting skipped"
+        run: npx markdownlint-cli2 "**/*.md" --ignore .markdownlintignore || echo "Markdown linting skipped"
       
       - name: Frontmatter Check
         run: node scripts/check-frontmatter.mjs || echo "Frontmatter check skipped"
@@ -75,7 +75,7 @@ jobs:
         run: node scripts/proof-stamp.mjs || echo "Proof stamping skipped"
       
       - name: Upload Artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v3
         if: always()
         with:
           name: validation-report

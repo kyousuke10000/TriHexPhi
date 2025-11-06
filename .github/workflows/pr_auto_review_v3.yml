@@ -17,6 +17,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -24,16 +26,42 @@ jobs:
           node-version: '18'
       
       - name: Install dependencies
-        working-directory: ./50_CHL/tools
+        working-directory: ./scripts
         run: npm install
       
       - name: Generate context
         run: |
-          cat 50_CHL/00_CORE/TRIHEXPHI.md > context-bootstrap.txt
-          echo "" >> context-bootstrap.txt
-          echo "---" >> context-bootstrap.txt
-          echo "" >> context-bootstrap.txt
-          cat 10_CAPTURE_MIZUKAGAMI/mizukagami/10_CAPTURE_MIZUKAGAMI/続きから始める.md >> context-bootstrap.txt
+          CONTEXT=context-bootstrap.txt
+          : > "$CONTEXT"
+          
+          # TRIHEXPHI.md (preferred: from current ref; fallback: origin/main)
+          if [ -f TRIHEXPHI.md ]; then
+            cat TRIHEXPHI.md >> "$CONTEXT"
+          elif [ -f 10_TriHexCore/00_CORE/TRIHEXPHI.md ]; then
+            cat 10_TriHexCore/00_CORE/TRIHEXPHI.md >> "$CONTEXT"
+          else
+            echo "WARNING: TRIHEXPHI.md not found in this ref. Attempting to fetch from origin/main..." >> "$CONTEXT"
+            git fetch origin main || true
+            if git show origin/main:TRIHEXPHI.md > /dev/null 2>&1; then
+              git show origin/main:TRIHEXPHI.md >> "$CONTEXT"
+            elif git show origin/main:10_TriHexCore/00_CORE/TRIHEXPHI.md > /dev/null 2>&1; then
+              git show origin/main:10_TriHexCore/00_CORE/TRIHEXPHI.md >> "$CONTEXT"
+            else
+              echo "WARNING: TRIHEXPHI.md not found in origin/main either. Context will be minimal." >> "$CONTEXT"
+            fi
+          fi
+          
+          echo "" >> "$CONTEXT"
+          echo "---" >> "$CONTEXT"
+          echo "" >> "$CONTEXT"
+          
+          # 10_CAPTURE_MIZUKAGAMI/続きから始める.md
+          CAPTURE_FILE="10_CAPTURE_MIZUKAGAMI/続きから始める.md"
+          if [ -f "$CAPTURE_FILE" ]; then
+            cat "$CAPTURE_FILE" >> "$CONTEXT"
+          else
+            echo "WARNING: ${CAPTURE_FILE} not found. Skipping." >> "$CONTEXT"
+          fi
       
       - name: Get PR info
         id: pr_info
@@ -58,7 +86,7 @@ jobs:
             core.setOutput('pr_url', pr.html_url);
       
       - name: Call Claude API
-        working-directory: ./50_CHL/tools
+        working-directory: ./scripts
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
@@ -67,9 +95,9 @@ jobs:
           PR_URL="${{ steps.pr_info.outputs.pr_url }}"
           
           node call-claude-api.js \
-            --context-file ../../context-bootstrap.txt \
+            --context-file ../context-bootstrap.txt \
             --prompt "以下のPull Requestをレビューしてください。PR #${PR_NUMBER}: ${PR_TITLE}。URL: ${PR_URL}。TRIHEXPHI.mdの原則に基づいて評価し、改善提案があれば具体的に指摘してください。" \
-            > ../../claude-review.md
+            > ../claude-review.md
       
       - name: Post Claude review
         uses: actions/github-script@v7
@@ -92,6 +120,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -99,16 +129,42 @@ jobs:
           node-version: '18'
       
       - name: Install dependencies
-        working-directory: ./50_CHL/tools
+        working-directory: ./10_TriHexCore/tools
         run: npm install
       
       - name: Generate context
         run: |
-          cat 50_CHL/00_CORE/TRIHEXPHI.md > context-bootstrap.txt
-          echo "" >> context-bootstrap.txt
-          echo "---" >> context-bootstrap.txt
-          echo "" >> context-bootstrap.txt
-          cat 10_CAPTURE_MIZUKAGAMI/mizukagami/10_CAPTURE_MIZUKAGAMI/続きから始める.md >> context-bootstrap.txt
+          CONTEXT=context-bootstrap.txt
+          : > "$CONTEXT"
+          
+          # TRIHEXPHI.md (preferred: from current ref; fallback: origin/main)
+          if [ -f TRIHEXPHI.md ]; then
+            cat TRIHEXPHI.md >> "$CONTEXT"
+          elif [ -f 10_TriHexCore/00_CORE/TRIHEXPHI.md ]; then
+            cat 10_TriHexCore/00_CORE/TRIHEXPHI.md >> "$CONTEXT"
+          else
+            echo "WARNING: TRIHEXPHI.md not found in this ref. Attempting to fetch from origin/main..." >> "$CONTEXT"
+            git fetch origin main || true
+            if git show origin/main:TRIHEXPHI.md > /dev/null 2>&1; then
+              git show origin/main:TRIHEXPHI.md >> "$CONTEXT"
+            elif git show origin/main:10_TriHexCore/00_CORE/TRIHEXPHI.md > /dev/null 2>&1; then
+              git show origin/main:10_TriHexCore/00_CORE/TRIHEXPHI.md >> "$CONTEXT"
+            else
+              echo "WARNING: TRIHEXPHI.md not found in origin/main either. Context will be minimal." >> "$CONTEXT"
+            fi
+          fi
+          
+          echo "" >> "$CONTEXT"
+          echo "---" >> "$CONTEXT"
+          echo "" >> "$CONTEXT"
+          
+          # 10_CAPTURE_MIZUKAGAMI/続きから始める.md
+          CAPTURE_FILE="10_CAPTURE_MIZUKAGAMI/続きから始める.md"
+          if [ -f "$CAPTURE_FILE" ]; then
+            cat "$CAPTURE_FILE" >> "$CONTEXT"
+          else
+            echo "WARNING: ${CAPTURE_FILE} not found. Skipping." >> "$CONTEXT"
+          fi
       
       - name: Get PR info
         id: pr_info
@@ -133,7 +189,7 @@ jobs:
             core.setOutput('pr_url', pr.html_url);
       
       - name: Call Gemini API
-        working-directory: ./50_CHL/tools
+        working-directory: ./10_TriHexCore/tools
         env:
           GOOGLE_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -144,6 +200,7 @@ jobs:
           
           node call-gemini-api.js \
             --context-file ../../context-bootstrap.txt \
+            --model gemini-1.5-flash \
             --prompt "以下のPull Requestをレビューしてください。PR #${PR_NUMBER}: ${PR_TITLE}。URL: ${PR_URL}。あなたは美的軍師(Gemini)です。技術的実現性、統合の美しさ、UI/UXの観点から評価してください。" \
             > ../../gemini-review.md
       
@@ -158,5 +215,5 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: context.payload.pull_request.number,
-              body: `## 💎 Gemini Review\n\n${review}\n\n---\n\n*Reviewed by Gemini 1.5 Pro via TriHexΦ Auto Review System v3*\n*Context: TRIHEXPHI.md + 続きから始める.md*`
+              body: `## 💎 Gemini Review\n\n${review}\n\n---\n\n*Reviewed by Gemini 1.5 Flash via TriHexΦ Auto Review System v3*\n*Context: TRIHEXPHI.md + 続きから始める.md*`
             });

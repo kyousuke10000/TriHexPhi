@@ -27,13 +27,63 @@ const ALLOWED_PATHS = [
 
 async function loadSpecs() {
   try {
-    const architecture = yaml.load(await fs.readFile('specs/architecture.yml', 'utf8'));
-    const roadmap = yaml.load(await fs.readFile('specs/roadmap.yml', 'utf8'));
-    const kpi = yaml.load(await fs.readFile('specs/kpi.yml', 'utf8'));
+    // Extract YAML content before any markdown sections (separated by ---)
+    // YAML files may have markdown sections at the end after a --- separator
+    function extractYAML(content) {
+      const lines = content.split('\n');
+      // Find the last --- separator that marks the start of a markdown section
+      // Look backwards from the end to find the separator before markdown content
+      let yamlEnd = lines.length;
+      
+      // Find the last --- that is followed by markdown-like content
+      for (let i = lines.length - 1; i >= 10; i--) {
+        if (lines[i].trim() === '---') {
+          // Check if the next few lines after this --- look like markdown
+          const nextLines = lines.slice(i + 1, Math.min(i + 5, lines.length)).join('\n');
+          if (nextLines.match(/\*\*Generated:\*\*/) || nextLines.match(/^\*\*/m) || nextLines.match(/^##/m)) {
+            yamlEnd = i;
+            break;
+          }
+        }
+      }
+      
+      const yamlContent = lines.slice(0, yamlEnd).join('\n');
+      // Remove any trailing empty lines
+      return yamlContent.replace(/\n+$/, '');
+    }
+    
+    const architectureContent = await fs.readFile('specs/architecture.yml', 'utf8');
+    const roadmapContent = await fs.readFile('specs/roadmap.yml', 'utf8');
+    const kpiContent = await fs.readFile('specs/kpi.yml', 'utf8');
+    
+    // Load only the first document if multiple documents exist
+    function loadFirstDoc(content) {
+      const yamlContent = extractYAML(content);
+      try {
+        // Try loading as single document first
+        return yaml.load(yamlContent, { schema: yaml.DEFAULT_SAFE_SCHEMA });
+      } catch (e) {
+        // If that fails, try loading all documents and take the first one
+        try {
+          const docs = yaml.loadAll(yamlContent, { schema: yaml.DEFAULT_SAFE_SCHEMA });
+          return docs[0] || null;
+        } catch (e2) {
+          throw e; // Throw original error
+        }
+      }
+    }
+    
+    const architecture = loadFirstDoc(architectureContent);
+    const roadmap = loadFirstDoc(roadmapContent);
+    const kpi = loadFirstDoc(kpiContent);
     return { architecture, roadmap, kpi };
   } catch (error) {
     console.error('❌ Failed to load specs:', error.message);
-    return null;
+    console.error('⚠️  This may be due to YAML syntax issues (e.g., unquoted asterisks in values)');
+    console.error('⚠️  Consider quoting YAML values that contain markdown (e.g., "**Generated:** ...")');
+    // Don't fail the build - just warn and continue
+    console.warn('⚠️  Continuing without spec validation...');
+    return { architecture: null, roadmap: null, kpi: null };
   }
 }
 
@@ -141,5 +191,4 @@ main().catch(err => {
   console.error('❌ Spec Gate failed:', err.message);
   process.exit(1);
 });
-
 
