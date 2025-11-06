@@ -4,7 +4,7 @@ import Anthropic from "@anthropic-ai/sdk";
 
 const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 
-const model = process.env.CLAUDE_MODEL || "claude-3-5-sonnet-20240620";
+const model = process.env.CLAUDE_MODEL || "claude-3-5-sonnet-20241022";
 
 const sys = process.env.CLAUDE_SYSTEM || "You are Claude Code: be precise and runnable.";
 
