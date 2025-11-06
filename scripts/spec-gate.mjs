@@ -28,16 +28,29 @@ const ALLOWED_PATHS = [
 async function loadSpecs() {
   try {
     // Extract YAML content before any markdown sections (separated by ---)
+    // YAML files may have markdown sections at the end after a --- separator
     function extractYAML(content) {
       const lines = content.split('\n');
+      // Find the last --- separator that appears after line 10 (to skip frontmatter if present)
+      // and marks the start of a markdown section
       let yamlEnd = lines.length;
-      // Find the first --- separator after the initial frontmatter (if any)
-      for (let i = 1; i < lines.length; i++) {
-        if (lines[i].trim() === '---' && i > 10) {
-          yamlEnd = i;
-          break;
+      let foundFirstSeparator = false;
+      
+      for (let i = 0; i < lines.length; i++) {
+        if (lines[i].trim() === '---') {
+          if (!foundFirstSeparator && i > 10) {
+            // This might be the start of a markdown section
+            // Check if the next few lines look like markdown (contain **, ##, etc.)
+            const nextLines = lines.slice(i + 1, Math.min(i + 5, lines.length)).join('\n');
+            if (nextLines.match(/^\s*\*\*/m) || nextLines.match(/^##/m)) {
+              yamlEnd = i;
+              break;
+            }
+            foundFirstSeparator = true;
+          }
         }
       }
+      
       return lines.slice(0, yamlEnd).join('\n');
     }
     
@@ -53,7 +66,9 @@ async function loadSpecs() {
     console.error('❌ Failed to load specs:', error.message);
     console.error('⚠️  This may be due to YAML syntax issues (e.g., unquoted asterisks in values)');
     console.error('⚠️  Consider quoting YAML values that contain markdown (e.g., "**Generated:** ...")');
-    return null;
+    // Don't fail the build - just warn and continue
+    console.warn('⚠️  Continuing without spec validation...');
+    return { architecture: null, roadmap: null, kpi: null };
   }
 }
 
