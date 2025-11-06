@@ -21,7 +21,7 @@ jobs:
             npm install
           else
             npm init -y
-            npm install anthropic
+            npm install @anthropic-ai/sdk
           fi
       
       - name: Diff
@@ -35,7 +35,7 @@ jobs:
           CLAUDE_MODEL: claude-3-5-sonnet-20240620
         run: |
           cat > review-claude.mjs <<'EOF'
-          import Anthropic from "anthropic";
+          import Anthropic from "@anthropic-ai/sdk";
           import { readFileSync } from "fs";
           
           const diff = readFileSync("diff.patch", "utf8");

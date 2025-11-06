@@ -18,8 +18,8 @@
   "author": "🜇 Shiryu",
   "license": "MIT",
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.68.0",
     "@google/generative-ai": "^0.24.1",
-    "anthropic": "^0.34.2",
     "js-yaml": "^4.1.0",
     "node-fetch": "^3.3.2"
   }

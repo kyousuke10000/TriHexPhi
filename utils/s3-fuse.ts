@@ -2,7 +2,7 @@
 
 export async function askClaude({user, system=""}:{user:string; system?:string}) {
 
-  const { default: Anthropic } = await import("anthropic");
+  const { default: Anthropic } = await import("@anthropic-ai/sdk");
 
   const c = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 
