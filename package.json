@@ -7,7 +7,8 @@
     "spec:validate": "node scripts/spec-gate.mjs",
     "seventh:ask": "node tools/meta/ai-seventhsense.mjs",
     "ssx:ask": "node tools/cli/ssx.mjs ask",
-    "ssx:flow": "node tools/cli/ssx.mjs flow"
+    "ssx:flow": "node tools/cli/ssx.mjs flow",
+    "check:github-business": "node scripts/check-github-business-setup.mjs"
   },
   "description": "TriHexΦ - Breathing Intelligence OS",
   "author": "🜇 Shiryu",
