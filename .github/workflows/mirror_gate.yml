@@ -13,8 +13,12 @@ on:
 jobs:
   mirror:
     runs-on: ubuntu-latest
+    environment: production
     permissions:
       contents: read
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+      cancel-in-progress: true
     env:
       MIRROR_REPO: ${{ secrets.MIRROR_REPO }}
       MIRROR_TOKEN: ${{ secrets.MIRROR_TOKEN }}
