@@ -87,21 +87,25 @@ jobs:
           curl -s "https://raw.githubusercontent.com/kyousuke10000/TriHexPhi-public/main/index.md" > /tmp/context.txt || echo "" > /tmp/context.txt
           
           # Claude APIを呼び出し（Node.jsスクリプトを直接実行）
-          node --input-type=module <<'EOF'
+          node --input-type=module <<EOF > /tmp/claude-review.md
           import Anthropic from '@anthropic-ai/sdk';
           import { readFileSync } from 'fs';
           
           const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
           const context = readFileSync('/tmp/context.txt', 'utf8');
           const diff = readFileSync('/tmp/pr_diff.txt', 'utf8');
-          const prompt = `以下のPull Requestをコードレビューしてください。PR #${process.env.PR_NUMBER}: ${process.env.PR_TITLE}
+          const prNumber = '${{ steps.pr_diff.outputs.pr_number }}';
+          const prTitle = '${{ steps.pr_diff.outputs.pr_title }}';
+          const prBody = '${{ steps.pr_diff.outputs.pr_body }}';
+          
+          const prompt = \`以下のPull Requestをコードレビューしてください。PR #\${prNumber}: \${prTitle}
 
-${process.env.PR_BODY || ''}
+\${prBody || ''}
 
 ## 変更内容 (Diff)
-\`\`\`diff
-${diff.substring(0, 8000)}
-\`\`\`
+\\\`\\\`\\\`diff
+\${diff.substring(0, 8000)}
+\\\`\\\`\\\`
 
 ## レビュー観点
 1. コードの品質とベストプラクティス
@@ -111,7 +115,7 @@ ${diff.substring(0, 8000)}
 5. テスト可能性
 6. ドキュメンテーション
 
-改善提案があれば具体的に指摘してください。特に重要な問題は「🔴 Critical」、警告は「🟡 Warning」、改善提案は「💡 Suggestion」として分類してください。`;
+改善提案があれば具体的に指摘してください。特に重要な問題は「🔴 Critical」、警告は「🟡 Warning」、改善提案は「💡 Suggestion」として分類してください。\`;
 
           const res = await client.messages.create({
             model: 'claude-3-5-sonnet',
@@ -122,27 +126,11 @@ ${diff.substring(0, 8000)}
           
           const review = res.content?.map(c => c.text).join('\n') || 'No review generated';
           console.log(review);
-          EOF \
-            --context-file /tmp/context.txt \
-            --prompt "以下のPull Requestをコードレビューしてください。PR #${PR_NUMBER}: ${PR_TITLE}
-
-${PR_BODY}
-
-## 変更内容 (Diff)
-\`\`\`diff
-$(cat /tmp/pr_diff.txt | head -8000)
-\`\`\`
-
-## レビュー観点
-1. コードの品質とベストプラクティス
-2. セキュリティ上の懸念
-3. パフォーマンスへの影響
-4. 既存システムとの整合性
-5. テスト可能性
-6. ドキュメンテーション
-
-改善提案があれば具体的に指摘してください。特に重要な問題は「🔴 Critical」、警告は「🟡 Warning」、改善提案は「💡 Suggestion」として分類してください。" \
-            > /tmp/claude-review.md || echo "Claude API呼び出しに失敗しました" > /tmp/claude-review.md
+          EOF
+          
+          if [ ! -s /tmp/claude-review.md ]; then
+            echo "Claude API呼び出しに失敗しました" > /tmp/claude-review.md
+          fi
 
       - name: Post Claude review comment
         uses: actions/github-script@v7
