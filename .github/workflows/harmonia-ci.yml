@@ -75,7 +75,7 @@ jobs:
         run: node scripts/proof-stamp.mjs || echo "Proof stamping skipped"
       
       - name: Upload Artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: always()
         with:
           name: validation-report
