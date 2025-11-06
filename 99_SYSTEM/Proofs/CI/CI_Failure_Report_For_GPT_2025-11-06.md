@@ -119,10 +119,12 @@ gh secret list -o Seventh-Sense-Systems-S3
 **結果**: 要確認（ユーザー側で実行が必要）
 
 ### 失敗ワークフローの詳細
-- **最新失敗run_id**: 要確認
+- **最新失敗run_id**: `19134280403`
+- **失敗ワークフロー**: `review-request.yml`
+- **失敗ブランチ**: `chore/wire-claude-gemini-ci`
 - **失敗カテゴリ**: 
   - permissions関連: 5件以上
-  - secrets関連: 要確認
+  - secrets関連: 要確認（Organization Secretsへのアクセス権限不足）
   - 依存関係関連: 要確認
 
 ---
