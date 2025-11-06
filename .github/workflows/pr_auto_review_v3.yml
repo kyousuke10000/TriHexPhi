@@ -63,27 +63,68 @@ jobs:
             echo "WARNING: ${CAPTURE_FILE} not found. Skipping." >> "$CONTEXT"
           fi
       
-      - name: Get PR info
+      - name: Fetch PR base ref
+        run: |
+          BASE_REF="${{ github.event.pull_request.base.ref }}"
+          git fetch origin ${BASE_REF}:${BASE_REF} || true
+          
+      - name: Get PR info and diff
         id: pr_info
         uses: actions/github-script@v7
         with:
           script: |
             const pr = context.payload.pull_request;
-            const diff = await github.rest.pulls.get({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              pull_number: pr.number,
-              mediaType: {
-                format: 'diff'
-              }
-            });
-            
             const fs = require('fs');
-            fs.writeFileSync('pr-diff.txt', diff.data);
+            const { execSync } = require('child_process');
+            
+            // Try to get diff via API first (for small PRs)
+            let diffContent = '';
+            let useGitDiff = false;
+            
+            try {
+              const diff = await github.rest.pulls.get({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                pull_number: pr.number,
+                mediaType: {
+                  format: 'diff'
+                }
+              });
+              diffContent = diff.data;
+            } catch (error) {
+              // If diff exceeds 300 files, fallback to git diff
+              if (error.status === 422 || error.message?.includes('diff exceeded') || error.message?.includes('maximum number of files')) {
+                console.log('⚠️ PR diff too large for API, using git diff fallback');
+                useGitDiff = true;
+              } else {
+                throw error;
+              }
+            }
+            
+            // Fallback to git diff if needed
+            if (useGitDiff) {
+              const baseRef = pr.base.ref;
+              try {
+                diffContent = execSync(`git diff origin/${baseRef}...HEAD --no-color`, { encoding: 'utf8', maxBuffer: 10 * 1024 * 1024 });
+              } catch (e) {
+                // If git diff fails, get file list and summary
+                const files = execSync(`git diff --name-status origin/${baseRef}...HEAD`, { encoding: 'utf8' });
+                diffContent = `# PR Summary (${pr.number})\n\nChanged files:\n${files}\n\n(Full diff too large - using file list only)`;
+              }
+            }
+            
+            // Write diff to file (truncate if too large for AI context)
+            const maxDiffSize = 80000; // ~80KB for AI context
+            if (diffContent.length > maxDiffSize) {
+              diffContent = diffContent.substring(0, maxDiffSize) + '\n\n... (diff truncated due to size)';
+            }
+            
+            fs.writeFileSync('pr-diff.txt', diffContent);
             
             core.setOutput('pr_number', pr.number);
             core.setOutput('pr_title', pr.title);
             core.setOutput('pr_url', pr.html_url);
+            core.setOutput('diff_method', useGitDiff ? 'git' : 'api');
       
       - name: Call Claude API
         working-directory: ./scripts
@@ -166,27 +207,68 @@ jobs:
             echo "WARNING: ${CAPTURE_FILE} not found. Skipping." >> "$CONTEXT"
           fi
       
-      - name: Get PR info
+      - name: Fetch PR base ref
+        run: |
+          BASE_REF="${{ github.event.pull_request.base.ref }}"
+          git fetch origin ${BASE_REF}:${BASE_REF} || true
+          
+      - name: Get PR info and diff
         id: pr_info
         uses: actions/github-script@v7
         with:
           script: |
             const pr = context.payload.pull_request;
-            const diff = await github.rest.pulls.get({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              pull_number: pr.number,
-              mediaType: {
-                format: 'diff'
-              }
-            });
-            
             const fs = require('fs');
-            fs.writeFileSync('pr-diff.txt', diff.data);
+            const { execSync } = require('child_process');
+            
+            // Try to get diff via API first (for small PRs)
+            let diffContent = '';
+            let useGitDiff = false;
+            
+            try {
+              const diff = await github.rest.pulls.get({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                pull_number: pr.number,
+                mediaType: {
+                  format: 'diff'
+                }
+              });
+              diffContent = diff.data;
+            } catch (error) {
+              // If diff exceeds 300 files, fallback to git diff
+              if (error.status === 422 || error.message?.includes('diff exceeded') || error.message?.includes('maximum number of files')) {
+                console.log('⚠️ PR diff too large for API, using git diff fallback');
+                useGitDiff = true;
+              } else {
+                throw error;
+              }
+            }
+            
+            // Fallback to git diff if needed
+            if (useGitDiff) {
+              const baseRef = pr.base.ref;
+              try {
+                diffContent = execSync(`git diff origin/${baseRef}...HEAD --no-color`, { encoding: 'utf8', maxBuffer: 10 * 1024 * 1024 });
+              } catch (e) {
+                // If git diff fails, get file list and summary
+                const files = execSync(`git diff --name-status origin/${baseRef}...HEAD`, { encoding: 'utf8' });
+                diffContent = `# PR Summary (${pr.number})\n\nChanged files:\n${files}\n\n(Full diff too large - using file list only)`;
+              }
+            }
+            
+            // Write diff to file (truncate if too large for AI context)
+            const maxDiffSize = 80000; // ~80KB for AI context
+            if (diffContent.length > maxDiffSize) {
+              diffContent = diffContent.substring(0, maxDiffSize) + '\n\n... (diff truncated due to size)';
+            }
+            
+            fs.writeFileSync('pr-diff.txt', diffContent);
             
             core.setOutput('pr_number', pr.number);
             core.setOutput('pr_title', pr.title);
             core.setOutput('pr_url', pr.html_url);
+            core.setOutput('diff_method', useGitDiff ? 'git' : 'api');
       
       - name: Call Gemini API
         working-directory: ./10_TriHexCore/tools
@@ -198,11 +280,27 @@ jobs:
           PR_TITLE="${{ steps.pr_info.outputs.pr_title }}"
           PR_URL="${{ steps.pr_info.outputs.pr_url }}"
           
-          node call-gemini-api.js \
-            --context-file ../../context-bootstrap.txt \
-            --model gemini-1.5-flash \
-            --prompt "以下のPull Requestをレビューしてください。PR #${PR_NUMBER}: ${PR_TITLE}。URL: ${PR_URL}。あなたは美的軍師(Gemini)です。技術的実現性、統合の美しさ、UI/UXの観点から評価してください。" \
-            > ../../gemini-review.md
+          # Include diff in prompt if available
+          if [ -f ../../pr-diff.txt ]; then
+            DIFF_PREVIEW=$(head -c 50000 ../../pr-diff.txt)
+            node call-gemini-api.js \
+              --context-file ../../context-bootstrap.txt \
+              --model gemini-1.5-flash \
+              --prompt "以下のPull Requestをレビューしてください。PR #${PR_NUMBER}: ${PR_TITLE}。URL: ${PR_URL}。あなたは美的軍師(Gemini)です。技術的実現性、統合の美しさ、UI/UXの観点から評価してください。
+
+## 変更内容 (Diff Preview)
+\`\`\`diff
+${DIFF_PREVIEW}
+\`\`\`
+$(if [ $(wc -c < ../../pr-diff.txt) -gt 50000 ]; then echo "\n(Note: Diff truncated due to size limit)"; fi)" \
+              > ../../gemini-review.md
+          else
+            node call-gemini-api.js \
+              --context-file ../../context-bootstrap.txt \
+              --model gemini-1.5-flash \
+              --prompt "以下のPull Requestをレビューしてください。PR #${PR_NUMBER}: ${PR_TITLE}。URL: ${PR_URL}。あなたは美的軍師(Gemini)です。技術的実現性、統合の美しさ、UI/UXの観点から評価してください。" \
+              > ../../gemini-review.md
+          fi
       
       - name: Post Gemini review
         uses: actions/github-script@v7
