@@ -165,7 +165,7 @@ jobs:
       
       - name: Upload Artifact
         if: steps.gemini_render.outputs.render_success == 'true'
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: gemini-render-${{ github.run_number }}
           path: rendered_image.*
@@ -281,7 +281,7 @@ jobs:
       
       - name: Upload Report
         if: always()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: render-report-${{ github.run_number }}
           path: render_report.md

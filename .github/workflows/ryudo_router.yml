@@ -124,7 +124,7 @@ jobs:
           fi
       
       - name: Upload Report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: conductor-report-${{ github.run_number }}
           path: conductor_report.md

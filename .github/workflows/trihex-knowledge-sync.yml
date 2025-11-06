@@ -28,7 +28,7 @@ jobs:
           fi
       
       - name: Archive context-bootstrap
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: context-bootstrap
           path: .trihex/context-bootstrap.txt
