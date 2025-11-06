@@ -19,11 +19,7 @@ permissions:
   actions: read
 
 jobs:
-  prepare:
-    uses: ./.github/workflows/_std_node.yml
-
   run:
-    needs: prepare
     runs-on: ubuntu-latest
     environment: production
     concurrency:

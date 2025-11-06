@@ -86,9 +86,19 @@ jobs:
       - name: CHI Check
         run: |
           CHI="${{ steps.chi.outputs.chi }}"
-          if (( $(echo "$CHI < 0.92" | bc -l) )); then
-            echo "❌ CHI Gate: FAIL (CHI=$CHI, need ≥0.92)"
-            exit 1
+          # bcがない場合は awk を使用
+          if command -v bc >/dev/null 2>&1; then
+            if (( $(echo "$CHI < 0.92" | bc -l) )); then
+              echo "❌ CHI Gate: FAIL (CHI=$CHI, need ≥0.92)"
+              exit 1
+            fi
+          else
+            # awk で比較（浮動小数点比較）
+            COMP=$(awk -v chi="$CHI" 'BEGIN { if (chi < 0.92) print "fail"; else print "pass" }')
+            if [ "$COMP" = "fail" ]; then
+              echo "❌ CHI Gate: FAIL (CHI=$CHI, need ≥0.92)"
+              exit 1
+            fi
           fi
           echo "✅ CHI Gate: PASS (CHI=$CHI)"
       

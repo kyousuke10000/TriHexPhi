@@ -1,6 +1,15 @@
 # Standard Node.js Job Template
 # すべてのワークフローで再利用可能な共通ジョブ定義
 
+name: Standard Node.js Setup
+
+on:
+  workflow_call:
+    outputs:
+      node_version:
+        description: "Node.js version used"
+        value: "20"
+
 jobs:
   prepare:
     name: 🔧 Prepare Environment
@@ -8,6 +17,8 @@ jobs:
     permissions:
       contents: read
       pull-requests: read
+    outputs:
+      node_version: "20"
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -35,4 +46,3 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
-

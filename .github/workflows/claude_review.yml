@@ -65,14 +65,16 @@ jobs:
             core.setOutput('diff', diff);
 
       - name: Install dependencies
-        working-directory: ./50_CHL/tools
-        run: npm install
+        run: |
+          if [ -f package.json ]; then
+            npm ci || npm install
+          fi
+          npm install --no-save @anthropic-ai/sdk
 
       - name: Call Claude API
         id: claude_review
-        working-directory: ./50_CHL/tools
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.CLAUDE_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
           PR_NUMBER="${{ steps.pr_diff.outputs.pr_number }}"
           PR_TITLE="${{ steps.pr_diff.outputs.pr_title }}"
@@ -84,8 +86,43 @@ jobs:
           # Context: Public Mirror index.md を取得
           curl -s "https://raw.githubusercontent.com/kyousuke10000/TriHexPhi-public/main/index.md" > /tmp/context.txt || echo "" > /tmp/context.txt
           
-          # Claude APIを呼び出し
-          node call-claude-api.js \
+          # Claude APIを呼び出し（Node.jsスクリプトを直接実行）
+          node --input-type=module <<'EOF'
+          import Anthropic from '@anthropic-ai/sdk';
+          import { readFileSync } from 'fs';
+          
+          const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+          const context = readFileSync('/tmp/context.txt', 'utf8');
+          const diff = readFileSync('/tmp/pr_diff.txt', 'utf8');
+          const prompt = `以下のPull Requestをコードレビューしてください。PR #${process.env.PR_NUMBER}: ${process.env.PR_TITLE}
+
+${process.env.PR_BODY || ''}
+
+## 変更内容 (Diff)
+\`\`\`diff
+${diff.substring(0, 8000)}
+\`\`\`
+
+## レビュー観点
+1. コードの品質とベストプラクティス
+2. セキュリティ上の懸念
+3. パフォーマンスへの影響
+4. 既存システムとの整合性
+5. テスト可能性
+6. ドキュメンテーション
+
+改善提案があれば具体的に指摘してください。特に重要な問題は「🔴 Critical」、警告は「🟡 Warning」、改善提案は「💡 Suggestion」として分類してください。`;
+
+          const res = await client.messages.create({
+            model: 'claude-3-5-sonnet',
+            max_tokens: 2000,
+            system: 'You are a code reviewer. Be precise, actionable, and return fenced code patches.',
+            messages: [{ role: 'user', content: prompt }]
+          });
+          
+          const review = res.content?.map(c => c.text).join('\n') || 'No review generated';
+          console.log(review);
+          EOF \
             --context-file /tmp/context.txt \
             --prompt "以下のPull Requestをコードレビューしてください。PR #${PR_NUMBER}: ${PR_TITLE}
 

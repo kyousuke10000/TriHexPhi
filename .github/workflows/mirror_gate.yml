@@ -15,11 +15,7 @@ permissions:
   actions: read
 
 jobs:
-  prepare:
-    uses: ./.github/workflows/_std_node.yml
-
   mirror:
-    needs: prepare
     runs-on: ubuntu-latest
     environment: production
     concurrency:
@@ -32,6 +28,19 @@ jobs:
     steps:
       - name: Checkout (private truth)
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Install dependencies
+        run: |
+          if [ -f package.json ]; then
+            npm ci || npm install
+          fi
 
       # ── 1) Council Gate（公開承認の有無チェック：任意で厳しく）
       - name: Require DEC: mirror_approved
