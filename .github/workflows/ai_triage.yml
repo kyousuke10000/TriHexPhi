@@ -69,36 +69,79 @@ jobs:
             git push
           fi
 
-      - name: Comment to PR
-        if: ${{ github.event.workflow_run.pull_requests && github.event.workflow_run.pull_requests.length > 0 }}
-        uses: thollander/actions-comment-pull-request@v2
+      - name: Get PR number and create comment/issue
+        uses: actions/github-script@v7
         with:
-          pr_number: ${{ github.event.workflow_run.pull_requests[0].number }}
-          message: |
-            ### 🤖 CI Triage (Auto)
+          script: |
+            const workflowName = context.payload.workflow_run?.name || 'Unknown workflow';
+            const runId = context.payload.workflow_run?.id || context.payload.inputs?.run_id || 'N/A';
+            const conclusion = context.payload.workflow_run?.conclusion || 'N/A';
+            const headBranch = context.payload.workflow_run?.head_branch;
+            const claudeFile = '${{ steps.claude.outputs.FILE }}';
+            const geminiFile = '${{ steps.gemini.outputs.FILE }}';
             
-            **失敗ワークフロー**: `${{ github.event.workflow_run.name }}`
-            **Run ID**: `${{ github.event.workflow_run.id }}`
+            const message = `### 🤖 CI Triage (Auto)
             
-            - **Claude Patch**: `${{ steps.claude.outputs.FILE }}`
-            - **Gemini Plan**: `${{ steps.gemini.outputs.FILE }}`
+            **失敗ワークフロー**: \`${workflowName}\`
+            **Run ID**: \`${runId}\`
             
-            失敗ログは `.logs/last.log` を参照。最小差分での修正を推奨します。
-
-      - name: Open Issue when no PR
-        if: ${{ !github.event.workflow_run.pull_requests || github.event.workflow_run.pull_requests.length == 0 }}
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          gh issue create \
-            --title "CI failure: ${{ github.event.workflow_run.name }}" \
-            --body "**失敗ワークフロー**: \`${{ github.event.workflow_run.name }}\`
-          **Run ID**: \`${{ github.event.workflow_run.id }}\`
-          **結論**: \`${{ github.event.workflow_run.conclusion }}\`
-          
-          - **Claude Patch**: \`${{ steps.claude.outputs.FILE }}\`
-          - **Gemini Plan**: \`${{ steps.gemini.outputs.FILE }}\`
-          
-          失敗ログは \`.logs/last.log\` を参照。最小差分での修正を推奨します。" \
-            --label "ci:fix" || echo "Issue creation failed (may already exist)"
+            - **Claude Patch**: \`${claudeFile}\`
+            - **Gemini Plan**: \`${geminiFile}\`
+            
+            失敗ログは \`.logs/last.log\` を参照。最小差分での修正を推奨します。`;
+            
+            // PRを検索
+            let prNumber = null;
+            if (headBranch) {
+              try {
+                const { data: prs } = await github.rest.pulls.list({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  state: 'open',
+                  head: `${context.repo.owner}:${headBranch}`
+                });
+                if (prs.length > 0) {
+                  prNumber = prs[0].number;
+                }
+              } catch (error) {
+                console.log('Error finding PR:', error.message);
+              }
+            }
+            
+            // PRがあればコメント、なければIssue作成
+            if (prNumber) {
+              try {
+                await github.rest.issues.createComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: prNumber,
+                  body: message
+                });
+                console.log(`✅ Commented on PR #${prNumber}`);
+              } catch (error) {
+                console.log('Error commenting on PR:', error.message);
+              }
+            } else {
+              try {
+                const issueBody = `**失敗ワークフロー**: \`${workflowName}\`
+                **Run ID**: \`${runId}\`
+                **結論**: \`${conclusion}\`
+                
+                - **Claude Patch**: \`${claudeFile}\`
+                - **Gemini Plan**: \`${geminiFile}\`
+                
+                失敗ログは \`.logs/last.log\` を参照。最小差分での修正を推奨します。`;
+                
+                await github.rest.issues.create({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  title: `CI failure: ${workflowName}`,
+                  body: issueBody,
+                  labels: ['ci:fix']
+                });
+                console.log('✅ Issue created successfully');
+              } catch (error) {
+                console.log('⚠️ Issue creation failed (may already exist):', error.message);
+              }
+            }
 
