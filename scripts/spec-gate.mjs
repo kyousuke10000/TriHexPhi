@@ -31,27 +31,25 @@ async function loadSpecs() {
     // YAML files may have markdown sections at the end after a --- separator
     function extractYAML(content) {
       const lines = content.split('\n');
-      // Find the last --- separator that appears after line 10 (to skip frontmatter if present)
-      // and marks the start of a markdown section
+      // Find the last --- separator that marks the start of a markdown section
+      // Look backwards from the end to find the separator before markdown content
       let yamlEnd = lines.length;
-      let foundFirstSeparator = false;
       
-      for (let i = 0; i < lines.length; i++) {
+      // Find the last --- that is followed by markdown-like content
+      for (let i = lines.length - 1; i >= 10; i--) {
         if (lines[i].trim() === '---') {
-          if (!foundFirstSeparator && i > 10) {
-            // This might be the start of a markdown section
-            // Check if the next few lines look like markdown (contain **, ##, etc.)
-            const nextLines = lines.slice(i + 1, Math.min(i + 5, lines.length)).join('\n');
-            if (nextLines.match(/^\s*\*\*/m) || nextLines.match(/^##/m)) {
-              yamlEnd = i;
-              break;
-            }
-            foundFirstSeparator = true;
+          // Check if the next few lines after this --- look like markdown
+          const nextLines = lines.slice(i + 1, Math.min(i + 5, lines.length)).join('\n');
+          if (nextLines.match(/\*\*Generated:\*\*/) || nextLines.match(/^\*\*/m) || nextLines.match(/^##/m)) {
+            yamlEnd = i;
+            break;
           }
         }
       }
       
-      return lines.slice(0, yamlEnd).join('\n');
+      const yamlContent = lines.slice(0, yamlEnd).join('\n');
+      // Remove any trailing empty lines
+      return yamlContent.replace(/\n+$/, '');
     }
     
     const architectureContent = await fs.readFile('specs/architecture.yml', 'utf8');
