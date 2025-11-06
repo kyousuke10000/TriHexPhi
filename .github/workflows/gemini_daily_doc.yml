@@ -1,0 +1,46 @@
+name: Gemini Daily Design Note
+
+on:
+  schedule: [{ cron: "0 1 * * *" }]
+  workflow_dispatch: {}
+
+jobs:
+  doc:
+    runs-on: ubuntu-latest
+    permissions: { contents: write }
+    steps:
+      - uses: actions/checkout@v4
+      
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
+      
+      - run: npm i @google/generative-ai
+      
+      - name: Generate Note
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          GEMINI_MODEL: gemini-1.5-pro
+        run: |
+          node --input-type=module <<'EOF'
+          import { GoogleGenerativeAI } from "@google/generative-ai";
+          import { mkdirSync, writeFileSync } from "fs";
+          
+          const g = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY);
+          const m = g.getGenerativeModel({ model: process.env.GEMINI_MODEL });
+          const prompt = `Summarize repo updates and propose next 3 actions for S3. Output markdown.`;
+          const r = await m.generateContent(prompt);
+          const md = r.response.text();
+          const dir = "99_SYSTEM/Proofs/Overdrive";
+          mkdirSync(dir, { recursive: true });
+          const f = `${dir}/DAILY_NOTE_${new Date().toISOString().slice(0, 10)}.md`;
+          writeFileSync(f, md, "utf8");
+          console.log("Wrote", f);
+          EOF
+      
+      - name: Commit
+        run: |
+          git config user.name "s3-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add 99_SYSTEM/Proofs/Overdrive
+          git diff --cached --quiet || (git commit -m "chore: daily design note (Gemini)" && git push)
+

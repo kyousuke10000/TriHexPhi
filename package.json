@@ -8,13 +8,19 @@
     "seventh:ask": "node tools/meta/ai-seventhsense.mjs",
     "ssx:ask": "node tools/cli/ssx.mjs ask",
     "ssx:flow": "node tools/cli/ssx.mjs flow",
-    "check:github-business": "node scripts/check-github-business-setup.mjs"
+    "check:github-business": "node scripts/check-github-business-setup.mjs",
+    "claude:ask": "node tools/claude/ask.mjs",
+    "gemini:ask": "node tools/gemini/ask.mjs",
+    "ai:review": "git diff | node tools/claude/ask.mjs 'Review this diff and propose exact patches.'",
+    "ai:design": "node tools/gemini/ask.mjs 'Design next architecture steps for S3.'"
   },
   "description": "TriHexΦ - Breathing Intelligence OS",
   "author": "🜇 Shiryu",
   "license": "MIT",
   "dependencies": {
-    "node-fetch": "^3.3.2",
-    "js-yaml": "^4.1.0"
+    "@google/generative-ai": "^0.24.1",
+    "anthropic": "^0.0.0",
+    "js-yaml": "^4.1.0",
+    "node-fetch": "^3.3.2"
   }
 }
