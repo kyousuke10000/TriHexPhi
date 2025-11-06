@@ -10,12 +10,18 @@ on:
         required: false
         default: 'true'
 
+permissions:
+  contents: write
+  actions: read
+
 jobs:
+  prepare:
+    uses: ./.github/workflows/_std_node.yml
+
   mirror:
+    needs: prepare
     runs-on: ubuntu-latest
     environment: production
-    permissions:
-      contents: read
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
       cancel-in-progress: true

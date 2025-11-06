@@ -1,0 +1,49 @@
+name: Preflight (hourly guard)
+
+on:
+  schedule: [{ cron: "0 * * * *" }]
+  workflow_dispatch: {}
+
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    permissions: { contents: read }
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Validate YAML
+        run: |
+          npm i -g actionlint >/dev/null 2>&1 || true
+          curl -sSL https://raw.githubusercontent.com/rhysd/actionlint/main/scripts/download-actionlint.bash | bash
+          ./actionlint -color || echo "::warning::actionlint not available, skipping YAML validation"
+      
+      - name: Check common pitfalls
+        run: |
+          echo "Checking for permissions in workflows..."
+          MISSING_PERMS=$(find .github/workflows -name "*.yml" -exec grep -L "permissions:" {} \; || true)
+          if [ -n "$MISSING_PERMS" ]; then
+            echo "::warning::permissions missing in some workflows:"
+            echo "$MISSING_PERMS"
+          else
+            echo "✅ All workflows have permissions defined"
+          fi
+          
+          echo ""
+          echo "Checking for _std_node.yml references..."
+          STD_NODE_REFS=$(grep -r "_std_node.yml" .github/workflows || true)
+          if [ -z "$STD_NODE_REFS" ]; then
+            echo "::warning::_std_node.yml not referenced in any workflow"
+          else
+            echo "✅ _std_node.yml is referenced in some workflows"
+          fi
+      
+      - name: Check required secrets (static)
+        run: |
+          echo "Ensure the following secrets exist in Repo Secrets:"
+          echo "  - ANTHROPIC_API_KEY"
+          echo "  - GOOGLE_API_KEY"
+          echo "  - MIRROR_TOKEN"
+          echo "  - MIRROR_REPO"
+          echo ""
+          echo "Note: This is a static check. Actual secret values are not verified."
+

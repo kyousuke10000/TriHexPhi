@@ -14,12 +14,18 @@ on:
   schedule:
     - cron: "0 0 * * *"  # 毎日00:00 UTC
 
+permissions:
+  contents: write
+  actions: read
+
 jobs:
+  prepare:
+    uses: ./.github/workflows/_std_node.yml
+
   run:
+    needs: prepare
     runs-on: ubuntu-latest
     environment: production
-    permissions:
-      contents: write
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
       cancel-in-progress: true
@@ -31,10 +37,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
+          cache: 'npm'
 
       - name: Install dependencies
         run: |
-          npm install js-yaml
+          npm ci || npm install js-yaml
 
       - name: Run SeventhSense
         env:

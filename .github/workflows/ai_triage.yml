@@ -13,9 +13,12 @@ on:
 
 jobs:
   triage:
-    if: |
-      (github.event_name == 'workflow_dispatch') ||
-      (github.event.workflow_run.conclusion != 'success' && github.event.workflow_run.name != 'AI Triage (on workflow failure)')
+    if: >
+      ${{
+        (github.event_name == 'workflow_dispatch') ||
+        (github.event.workflow_run.conclusion != 'success' &&
+         github.event.workflow_run.name != 'AI Triage (on workflow failure)')
+      }}
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -27,18 +30,22 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: '20'
 
       - name: Install deps
         run: npm i @anthropic-ai/sdk @google/generative-ai
 
+      - name: Set RUN_ID
+        run: |
+          RUN_ID="${{ github.event.inputs.run_id || github.event.workflow_run.id }}"
+          echo "RUN_ID=$RUN_ID" >> $GITHUB_ENV
+          echo "Using RUN_ID: $RUN_ID"
+
       - name: Fetch logs
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          RUN_ID: ${{ github.event.workflow_run.id || github.event.inputs.run_id || '' }}
         run: |
           if [ -z "$RUN_ID" ]; then
             echo "⚠️ RUN_ID not provided. Skipping log fetch."
@@ -153,4 +160,3 @@ jobs:
                 console.log('⚠️ Issue creation failed (may already exist):', error.message);
               }
             }
-
