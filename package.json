@@ -5,12 +5,15 @@
   "scripts": {
     "test:encoding": "node scripts/test-encoding.mjs",
     "spec:validate": "node scripts/spec-gate.mjs",
-    "seventh:ask": "node tools/meta/ai-seventhsense.mjs"
-  },
-  "dependencies": {
-    "js-yaml": "^4.1.0"
+    "seventh:ask": "node tools/meta/ai-seventhsense.mjs",
+    "ssx:ask": "node tools/cli/ssx.mjs ask",
+    "ssx:flow": "node tools/cli/ssx.mjs flow"
   },
   "description": "TriHexΦ - Breathing Intelligence OS",
   "author": "🜇 Shiryu",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "node-fetch": "^3.3.2",
+    "js-yaml": "^4.1.0"
+  }
 }

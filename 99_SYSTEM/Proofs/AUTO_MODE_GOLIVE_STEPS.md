@@ -75,4 +75,3 @@ Required:
 **Generated:** 2025-11-02T14:30:00Z / Cursor (☿)  
 **Status:** Waiting for PR merge + environment setup
 
-

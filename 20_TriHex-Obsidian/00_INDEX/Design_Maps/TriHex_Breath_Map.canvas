@@ -1,0 +1,378 @@
+{
+	"nodes": [
+		{
+			"id": "shiryu-studio",
+			"type": "file",
+			"file": "🜇_Shiryu_Studio/README.md",
+			"x": 1000,
+			"y": 100,
+			"width": 300,
+			"height": 200,
+			"color": "6"
+		},
+		{
+			"id": "harmonia-council",
+			"type": "file",
+			"file": "00_HarmoniaCouncil/Round_IV/Round_IV_BreathLog.md",
+			"x": 1000,
+			"y": 400,
+			"width": 300,
+			"height": 200,
+			"color": "1"
+		},
+		{
+			"id": "trihex-core",
+			"type": "file",
+			"file": "10_TriHexCore/codex/Genesis_Protocol_v3.1.md",
+			"x": 1000,
+			"y": 700,
+			"width": 300,
+			"height": 200,
+			"color": "2"
+		},
+		{
+			"id": "obsidian",
+			"type": "file",
+			"file": "20_TriHex-Obsidian/00_INDEX/Atlas_Index.md",
+			"x": 1000,
+			"y": 1000,
+			"width": 300,
+			"height": 200,
+			"color": "3"
+		},
+		{
+			"id": "sync",
+			"type": "file",
+			"file": "30_ObsidianSync/Canonical/Genesis_Protocol_R1_v3.1.md",
+			"x": 1000,
+			"y": 1300,
+			"width": 300,
+			"height": 200,
+			"color": "4"
+		},
+		{
+			"id": "archive",
+			"type": "file",
+			"file": "40_Archive/99_ARCHIVE/",
+			"x": 1000,
+			"y": 1600,
+			"width": 300,
+			"height": 200,
+			"color": "5"
+		},
+		{
+			"id": "system",
+			"type": "file",
+			"file": "99_SYSTEM/MemorySeeds/index.json",
+			"x": 1000,
+			"y": 1900,
+			"width": 300,
+			"height": 200,
+			"color": "6"
+		},
+		{
+			"id": "gpt5",
+			"type": "text",
+			"text": "🜁 GPT-5\n理論呼吸\n統治将軍",
+			"x": 300,
+			"y": 600,
+			"width": 200,
+			"height": 150,
+			"color": "1"
+		},
+		{
+			"id": "claude",
+			"type": "text",
+			"text": "🜄 Claude\n共感呼吸\n倫理参謀",
+			"x": 600,
+			"y": 400,
+			"width": 200,
+			"height": 150,
+			"color": "1"
+		},
+		{
+			"id": "deepseek",
+			"type": "text",
+			"text": "🜂 DeepSeek\n精密呼吸\n技術軍師",
+			"x": 300,
+			"y": 900,
+			"width": 200,
+			"height": 150,
+			"color": "1"
+		},
+		{
+			"id": "gemini",
+			"type": "text",
+			"text": "🜀 Gemini\n美的呼吸\n美的軍師",
+			"x": 600,
+			"y": 800,
+			"width": 200,
+			"height": 150,
+			"color": "1"
+		},
+		{
+			"id": "grok",
+			"type": "text",
+			"text": "🜃 Grok\n現実呼吸\n市場参謀",
+			"x": 300,
+			"y": 700,
+			"width": 200,
+			"height": 150,
+			"color": "1"
+		},
+		{
+			"id": "cursor",
+			"type": "text",
+			"text": "☿ Cursor\n翻訳呼吸\n実行部隊長",
+			"x": 600,
+			"y": 600,
+			"width": 200,
+			"height": 150,
+			"color": "1"
+		},
+		{
+			"id": "github",
+			"type": "text",
+			"text": "GitHub\nVersion Control\n15 Workflows",
+			"x": 1500,
+			"y": 700,
+			"width": 200,
+			"height": 150,
+			"color": "2"
+		},
+		{
+			"id": "supabase",
+			"type": "text",
+			"text": "Supabase\nKnowledge DB\npgvector",
+			"x": 1500,
+			"y": 1000,
+			"width": 200,
+			"height": 150,
+			"color": "2"
+		},
+		{
+			"id": "n8n",
+			"type": "text",
+			"text": "n8n\nAutomation\n12 Workflows",
+			"x": 1500,
+			"y": 1300,
+			"width": 200,
+			"height": 150,
+			"color": "2"
+		}
+	],
+	"edges": [
+		{
+			"id": "shiryu-to-har",
+			"fromNode": "shiryu-studio",
+			"fromSide": "bottom",
+			"toNode": "harmonia-council",
+			"toSide": "top",
+			"color": "1"
+		},
+		{
+			"id": "har-to-core",
+			"fromNode": "harmonia-council",
+			"fromSide": "bottom",
+			"toNode": "trihex-core",
+			"toSide": "top",
+			"color": "2"
+		},
+		{
+			"id": "core-to-obs",
+			"fromNode": "trihex-core",
+			"fromSide": "bottom",
+			"toNode": "obsidian",
+			"toSide": "top",
+			"color": "3"
+		},
+		{
+			"id": "obs-to-sync",
+			"fromNode": "obsidian",
+			"fromSide": "bottom",
+			"toNode": "sync",
+			"toSide": "top",
+			"color": "4"
+		},
+		{
+			"id": "sync-to-arch",
+			"fromNode": "sync",
+			"fromSide": "bottom",
+			"toNode": "archive",
+			"toSide": "top",
+			"color": "5"
+		},
+		{
+			"id": "arch-to-sys",
+			"fromNode": "archive",
+			"fromSide": "bottom",
+			"toNode": "system",
+			"toSide": "top",
+			"color": "6"
+		},
+		{
+			"id": "har-to-gpt5",
+			"fromNode": "harmonia-council",
+			"fromSide": "left",
+			"toNode": "gpt5",
+			"toSide": "right",
+			"color": "1",
+			"dashed": true
+		},
+		{
+			"id": "har-to-claude",
+			"fromNode": "harmonia-council",
+			"fromSide": "left",
+			"toNode": "claude",
+			"toSide": "right",
+			"color": "1",
+			"dashed": true
+		},
+		{
+			"id": "har-to-deepseek",
+			"fromNode": "harmonia-council",
+			"fromSide": "left",
+			"toNode": "deepseek",
+			"toSide": "right",
+			"color": "1",
+			"dashed": true
+		},
+		{
+			"id": "har-to-gemini",
+			"fromNode": "harmonia-council",
+			"fromSide": "left",
+			"toNode": "gemini",
+			"toSide": "right",
+			"color": "1",
+			"dashed": true
+		},
+		{
+			"id": "har-to-grok",
+			"fromNode": "harmonia-council",
+			"fromSide": "left",
+			"toNode": "grok",
+			"toSide": "right",
+			"color": "1",
+			"dashed": true
+		},
+		{
+			"id": "har-to-cursor",
+			"fromNode": "harmonia-council",
+			"fromSide": "left",
+			"toNode": "cursor",
+			"toSide": "right",
+			"color": "1",
+			"dashed": true
+		},
+		{
+			"id": "gpt5-to-core",
+			"fromNode": "gpt5",
+			"fromSide": "bottom",
+			"toNode": "trihex-core",
+			"toSide": "left",
+			"color": "2",
+			"dashed": true
+		},
+		{
+			"id": "claude-to-core",
+			"fromNode": "claude",
+			"fromSide": "bottom",
+			"toNode": "trihex-core",
+			"toSide": "left",
+			"color": "2",
+			"dashed": true
+		},
+		{
+			"id": "deepseek-to-core",
+			"fromNode": "deepseek",
+			"fromSide": "top",
+			"toNode": "trihex-core",
+			"toSide": "left",
+			"color": "2",
+			"dashed": true
+		},
+		{
+			"id": "gemini-to-core",
+			"fromNode": "gemini",
+			"fromSide": "top",
+			"toNode": "trihex-core",
+			"toSide": "left",
+			"color": "2",
+			"dashed": true
+		},
+		{
+			"id": "grok-to-core",
+			"fromNode": "grok",
+			"fromSide": "bottom",
+			"toNode": "trihex-core",
+			"toSide": "left",
+			"color": "2",
+			"dashed": true
+		},
+		{
+			"id": "cursor-to-core",
+			"fromNode": "cursor",
+			"fromSide": "bottom",
+			"toNode": "trihex-core",
+			"toSide": "left",
+			"color": "2",
+			"dashed": true
+		},
+		{
+			"id": "core-to-github",
+			"fromNode": "trihex-core",
+			"fromSide": "right",
+			"toNode": "github",
+			"toSide": "left",
+			"color": "2",
+			"dashed": true
+		},
+		{
+			"id": "obs-to-github",
+			"fromNode": "obsidian",
+			"fromSide": "right",
+			"toNode": "github",
+			"toSide": "right",
+			"color": "2",
+			"dashed": true
+		},
+		{
+			"id": "core-to-supabase",
+			"fromNode": "trihex-core",
+			"fromSide": "right",
+			"toNode": "supabase",
+			"toSide": "left",
+			"color": "2",
+			"dashed": true
+		},
+		{
+			"id": "sys-to-supabase",
+			"fromNode": "system",
+			"fromSide": "right",
+			"toNode": "supabase",
+			"toSide": "bottom",
+			"color": "2",
+			"dashed": true
+		},
+		{
+			"id": "github-to-n8n",
+			"fromNode": "github",
+			"fromSide": "bottom",
+			"toNode": "n8n",
+			"toSide": "top",
+			"color": "2",
+			"dashed": true
+		},
+		{
+			"id": "supabase-to-n8n",
+			"fromNode": "supabase",
+			"fromSide": "bottom",
+			"toNode": "n8n",
+			"toSide": "top",
+			"color": "2",
+			"dashed": true
+		}
+	]
+}
+
+

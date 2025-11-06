@@ -7,13 +7,18 @@ export function scoreCandidates({cands, intentDoc, evidenceHints = []}) {
   const W = { intent: 0.35, consistency: 0.25, evidence: 0.25, recency: 0.15 };
   const now = Date.now();
 
+  // Core Six重み: 1.0, Wave-2衛星重み: 0.85
+  const srcWeight = (model) => 
+    ["cursor", "gpt", "gemini", "claude", "deepseek", "grok"].includes(model) ? 1.0 : 0.85;
+
   return cands.map(c => {
     const sIntent = similarityToIntent(c.answer, intentDoc);     // 実装: 文字列類似 or embedding
     const sConsis = internalConsistency(c.answer);
     const sEv = evidenceScore(c.answer, evidenceHints);
     const sRec = recencyScore(c.meta?.timestamp ? new Date(c.meta.timestamp).getTime() : now);
 
-    const score = W.intent * sIntent + W.consistency * sConsis + W.evidence * sEv + W.recency * sRec;
+    const baseScore = W.intent * sIntent + W.consistency * sConsis + W.evidence * sEv + W.recency * sRec;
+    const score = srcWeight(c.model) * baseScore;
 
     return { ...c, fusion_score: Number(score.toFixed(4)) };
   }).sort((a, b) => b.fusion_score - a.fusion_score);
