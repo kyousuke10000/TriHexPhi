@@ -13,7 +13,9 @@ on:
 
 jobs:
   triage:
-    if: ${{ github.event.workflow_run.conclusion != 'success' && github.event.workflow_run.name != 'AI Triage (on workflow failure)' }}
+    if: |
+      (github.event_name == 'workflow_dispatch') ||
+      (github.event.workflow_run.conclusion != 'success' && github.event.workflow_run.name != 'AI Triage (on workflow failure)')
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -36,8 +38,15 @@ jobs:
       - name: Fetch logs
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          RUN_ID: ${{ github.event.workflow_run.id || github.event.inputs.run_id }}
-        run: node tools/ci/fetch-run-log.mjs
+          RUN_ID: ${{ github.event.workflow_run.id || github.event.inputs.run_id || '' }}
+        run: |
+          if [ -z "$RUN_ID" ]; then
+            echo "⚠️ RUN_ID not provided. Skipping log fetch."
+            mkdir -p .logs
+            echo "No log available (manual dispatch without run_id)" > .logs/last.log
+          else
+            node tools/ci/fetch-run-log.mjs
+          fi
 
       - name: Ask Claude (patch)
         id: claude
