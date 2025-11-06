@@ -1,0 +1,11 @@
+name: Fail Probe
+
+on:
+  workflow_dispatch: {}
+
+jobs:
+  boom:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Intentionally failing to trigger AI triage…" && exit 1
+
