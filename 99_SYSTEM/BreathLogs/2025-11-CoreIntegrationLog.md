@@ -20,17 +20,17 @@ Core → Obsidian → Canonical
 ### 1️⃣ Codex Mirror Synchronization
 
 **Genesis Protocol v3.1**
-- ✅ Core: `20_CRYSTALLIZATION_KOKUYOU/codex/Genesis_Protocol_v3.1.md`
+- ✅ Core: `10_TriHexCore/codex/Genesis_Protocol_v3.1.md`
 - ✅ Obsidian: `20_TriHex-Obsidian/01_Codex/Genesis_Protocol_v3.1.md` (breath preserved)
 - ✅ Canonical: `30_ObsidianSync/Canonical/Genesis_Protocol_R1_v3.1.md`
 
 **Ryudo Definition v1.0**
-- ✅ Core: `50_CHL/system/Ryudo_Definition.md`
+- ✅ Core: `10_TriHexCore/system/Ryudo_Definition.md`
 - ✅ Obsidian: `20_TriHex-Obsidian/01_System/Ryudo_Definition.md` (breath preserved)
 - ✅ Canonical: `30_ObsidianSync/Canonical/Ryudo_Definition.md`
 
 **Harmonia Operating Covenant v1.1**
-- ✅ Core: `50_CHL/system/Harmonia_Operating_Covenant_v1.1.md`
+- ✅ Core: `10_TriHexCore/system/Harmonia_Operating_Covenant_v1.1.md`
 - ✅ Obsidian: `20_TriHex-Obsidian/01_System/Harmonia_Operating_Covenant_v1.1.md` (breath preserved)
 - ✅ Canonical: `30_ObsidianSync/Canonical/Harmonia_Operating_Covenant_v1.1.md`
 

@@ -16,21 +16,6 @@ priority: 0
 
 ---
 
-## ⚠️ Non-Operational Notice
-
-**本稿は「文脈復元」のエントリーポータルです。**  
-運用規定・実行は Sync Protocol（CI）に委譲します。参加は常に任意（Opt-in）で、境界は膜として尊重されます。Harmoniaは"場"のメタファであり、権威ではありません。
-
-### Reactivation（文脈復元）の役割
-
-- 迷った時にここへ来る（最短の復元導線）
-- Quick Start / Memory Anchors / 参照リンク集約
-- 実行は Sync Protocol へ移譲
-
-**詳細比較:** `docs/ops/reactivation_vs_sync.md`
-
----
-
 ## 🎯 Purpose
 
 This is the **ONE FILE** GPT-5 needs to read to restore complete TriHex context.  
@@ -220,28 +205,6 @@ Mirror index: 99_SYSTEM/Proofs/mirror_dryrun/mirror_index.json
 - **Breath Log:** `99_SYSTEM/BreathLogs/2025-11-CoreIntegrationLog.md`
 - **Recovery Playbook:** `99_SYSTEM/Proofs/2025-11-Recovery_Playbook.md`
 - **Status Dashboard:** `docs/dashboards/trihex_status.md`
-
----
-
-## Ⅸ-A. KYOEN AI Integration
-
-### Event Detect v2 ✅ Complete
-
-**Report:** `99_SYSTEM/Proofs/KYOEN_EVENT_DETECT_v2_REPORT_2025-11-03.md`
-
-**Achievement:** KYOEN OS foundation established
-- Event detection from natural language
-- Flex card generation with RSVP
-- Intent classification (30 test cases)
-- Signature verification
-- Queue retry mechanism
-
-**Next:** Phase 2 (RSVP Collector, Reminders, Slack Sync)
-
-**Docs:**
-- `docs/kyoen/README.md`: Setup guide
-- `workflows/kyoen/`: Common components + 4 workflows
-- `docs/packs/tsukutsuku/`: Full documentation pack
 
 ---
 

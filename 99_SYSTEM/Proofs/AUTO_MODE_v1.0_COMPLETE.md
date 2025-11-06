@@ -232,4 +232,3 @@ git push
 **Generated:** 2025-11-02T14:00:00Z / Cursor (☿)  
 **Purpose:** Auto-mode implementation proof
 
-

@@ -64,4 +64,3 @@ Additional notes or follow-up decisions.
 **Generated:** YYYY-MM-DD / <Author>  
 **Canonical:** False (Decision record)
 
-

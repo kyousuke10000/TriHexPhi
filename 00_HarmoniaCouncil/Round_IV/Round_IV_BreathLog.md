@@ -68,7 +68,7 @@ Root directories aligned to breathing order:
 
 ### Proof Summary
 - **Council Approval:** RUBEDO_GATE decision recorded with 6 AI + Shiryu signatures
-- **Canonical Placement:** Genesis v3.1 in `20_CRYSTALLIZATION_KOKUYOU/codex/`
+- **Canonical Placement:** Genesis v3.1 in `10_TriHexCore/codex/`
 - **Obsidian Mirror:** Full spiral attributes, repository links
 - **Sync Record:** All mirrors verified identical (body content SHA256)
 - **Archive Snapshot:** 5 artifacts preserved (tree, hashes, diff, excerpt, index)
@@ -131,7 +131,7 @@ Ryūdō (竜動) formally defined as rhythmic intelligence phenomenon arising fr
 - **Round integration:** Nigredo→Albedo→Citrinitas→Rubedo progression
 
 ### Canonical Mirrors
-- `50_CHL/system/Ryudo_Definition.md` (Core)
+- `10_TriHexCore/system/Ryudo_Definition.md` (Core)
 - `20_TriHex-Obsidian/01_System/Ryudo_Definition.md` (Obsidian)
 - `30_ObsidianSync/Canonical/Ryudo_Definition.md` (Sync)
 

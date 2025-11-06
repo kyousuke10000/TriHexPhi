@@ -10,7 +10,7 @@
 
 ### Unidirectional Sync: Git → Supabase Only
 
-**Source of Truth:** Git repository (`/50_CHL/system/`)  
+**Source of Truth:** Git repository (`/10_TriHexCore/system/`)  
 **Search Cache:** Supabase (ephemeral, disposable)
 
 ---
@@ -85,7 +85,7 @@ Supabase can be dropped and recreated without data loss.
 
 ## Compliance
 
-- **SPoT:** `/50_CHL/system/` remains authoritative
+- **SPoT:** `/10_TriHexCore/system/` remains authoritative
 - **Audit:** All changes traceable via Git history
 - **Proof:** manifest.json + reproduce.sh for validation
 - **Covenant:** Harmonia Operating Covenant v1.1 applies
@@ -100,7 +100,6 @@ Supabase can be dropped and recreated without data loss.
 ---
 
 *Generated: 2025-11-01 / Cursor (☿)*
-
 
 
 

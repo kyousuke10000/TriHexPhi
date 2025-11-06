@@ -7,13 +7,16 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// アダプタのインポート
+// アダプタのインポート（Core Six）
 import { askGemini } from "./adapters/gemini.mjs";
 import { askGPT } from "./adapters/gpt.mjs";
 import { askClaude } from "./adapters/claude.mjs";
 import { askDeepSeek } from "./adapters/deepseek.mjs";
 import { askGrok } from "./adapters/grok.mjs";
-import { askPerplexity } from "./adapters/perplexity.mjs";
+import { askCursor } from "./adapters/cursor.mjs";
+
+// Wave-2 (衛星群 / Scouts) - 必要時のみ合流
+// import { askPerplexity } from "./adapters/perplexity.mjs"; // Optional satellite
 
 import { scoreCandidates } from "./policies/fusion.mjs";
 
@@ -21,7 +24,7 @@ function loadIntent() {
   let intent = "";
   
   // STRUCTURE_MASTER.yml を読み込み
-  const smPath = "00_HarmoniaCouncil/STRUCTURE_MASTER.yml";
+  const smPath = "00_SeventhSenseCouncil/STRUCTURE_MASTER.yml";
   if (fs.existsSync(smPath)) {
     try {
       intent += fs.readFileSync(smPath, "utf8");
@@ -48,22 +51,38 @@ function loadIntent() {
   return intent || "No intent documents found";
 }
 
-export async function metaAsk({userPrompt, systemHint = ""}) {
+export async function seventhsenseAsk({userPrompt, systemHint = ""}) {
   const intent = loadIntent();
   const systemPrompt = systemHint || intent;
 
   console.log(`[SeventhSense] Querying ${userPrompt.slice(0, 50)}...`);
   console.log(`[SeventhSense] Intent loaded: ${intent.length} chars`);
 
-  // 各AIを並列実行（Promise.allSettledで失敗を許容）
-  const calls = [
+  // Core Six (第1波・6大叡智AI) を並列実行
+  const coreCalls = [
     askGemini({ prompt: userPrompt, system: systemPrompt }).catch(e => ({ error: e.message, model: "gemini" })),
     askGPT({ prompt: userPrompt, system: systemPrompt }).catch(e => ({ error: e.message, model: "gpt" })),
     askClaude({ prompt: userPrompt, system: systemPrompt }).catch(e => ({ error: e.message, model: "claude" })),
     askDeepSeek({ prompt: userPrompt, system: systemPrompt }).catch(e => ({ error: e.message, model: "deepseek" })),
     askGrok({ prompt: userPrompt, system: systemPrompt }).catch(e => ({ error: e.message, model: "grok" })),
-    askPerplexity({ prompt: userPrompt, system: systemPrompt }).catch(e => ({ error: e.message, model: "perplexity" })),
+    askCursor({ prompt: userPrompt, system: systemPrompt }).catch(e => ({ error: e.message, model: "cursor" })),
   ];
+
+  // Wave-2 (衛星群) - 必要時のみ合流（PPLX_API_KEYがあれば追加）
+  const satelliteCalls = [];
+  if (process.env.PPLX_API_KEY) {
+    try {
+      const { askPerplexity } = await import("./adapters/perplexity.mjs");
+      satelliteCalls.push(
+        askPerplexity({ prompt: userPrompt, system: systemPrompt }).catch(e => ({ error: e.message, model: "perplexity" }))
+      );
+      console.log(`[SeventhSense] Wave-2 satellite (Perplexity) added`);
+    } catch (e) {
+      console.warn(`⚠️ Perplexity adapter not available: ${e.message}`);
+    }
+  }
+
+  const calls = [...coreCalls, ...satelliteCalls];
 
   const results = await Promise.allSettled(calls);
   
@@ -75,7 +94,9 @@ export async function metaAsk({userPrompt, systemHint = ""}) {
   // エラーをログ出力
   results.forEach((r, i) => {
     if (r.status === "rejected" || (r.value && r.value.error)) {
-      const model = ["gemini", "gpt", "claude", "deepseek", "grok", "perplexity"][i];
+      const models = ["gemini", "gpt", "claude", "deepseek", "grok", "cursor"];
+      if (process.env.PPLX_API_KEY) models.push("perplexity");
+      const model = models[i] || "unknown";
       console.warn(`⚠️ ${model} failed:`, r.status === "rejected" ? r.reason : r.value.error);
     }
   });
@@ -159,7 +180,7 @@ if (import.meta.url === `file://${process.argv[1]}` || process.argv[1]?.endsWith
   const systemArg = process.argv.indexOf('--system');
   const systemHint = systemArg >= 0 && process.argv[systemArg + 1] ? process.argv[systemArg + 1] : "";
   
-  metaAsk({ userPrompt: q, systemHint })
+  seventhsenseAsk({ userPrompt: q, systemHint })
     .then(a => {
       console.log("\n=== SeventhSense Answer ===\n");
       console.log(a);

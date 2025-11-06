@@ -105,4 +105,3 @@ chl (Layer 5)         →  呼吸核
 
 **SYNC_OK: breath_integration_ready**
 
-

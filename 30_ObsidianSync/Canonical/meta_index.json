@@ -1,0 +1,13 @@
+{
+  "old_structure": {
+    "00_AI_ONBOARDING": "TriHexCore/00_CORE/00_AI_ONBOARDING",
+    "10_CAPTURE_MIZUKAGAMI": "TriHexCore/mizukagami/10_CAPTURE_MIZUKAGAMI",
+    "20_CRYSTALLIZATION_KOKUYOU": "TriHexCore/crystallization/20_CRYSTALLIZATION_KOKUYOU",
+    "30_MEMORY_SHINSEN": "HarmoniaCouncil/technical/memory/30_MEMORY_SHINSEN",
+    "40_HARMONIA": "HarmoniaCouncil/archive/40_HARMONIA/40_HARMONIA",
+    "90_COMMUNICATION": "TriHexCore/communication/90_COMMUNICATION",
+    "99_ARCHIVE": "Archive/99_ARCHIVE"
+  },
+  "migration_date": "2025-11-01",
+  "protocol": "Round_II_Albedo"
+}

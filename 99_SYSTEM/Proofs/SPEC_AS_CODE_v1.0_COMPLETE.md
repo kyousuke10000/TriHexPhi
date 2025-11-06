@@ -124,4 +124,3 @@ node scripts/spec-gate.mjs /tmp/violation.md
 **Generated:** 2025-11-02T16:30:00Z / Cursor (☿)  
 **Status:** ✅ Implementation complete
 
-
