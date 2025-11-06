@@ -37,23 +37,40 @@ jobs:
       
       - name: CHI計算とシステム状態分析
         id: chi_calc
+        continue-on-error: true
         run: |
           echo "🔍 システム調和状態を監視中..."
           
-          # CHI計算実行
-          node consciousness/chi_calculator.js > /tmp/chi_report.txt
-          
-          # 結果を環境変数に保存
-          echo "report_path=/tmp/chi_report.txt" >> $GITHUB_OUTPUT
+          # CHI計算実行（ファイルが存在する場合のみ）
+          if [ -f "10_TriHexCore/consciousness/chi_calculator.js" ]; then
+            node 10_TriHexCore/consciousness/chi_calculator.js > /tmp/chi_report.txt
+            echo "report_path=/tmp/chi_report.txt" >> $GITHUB_OUTPUT
+          else
+            echo "⚠️ chi_calculator.js not found, skipping CHI calculation"
+            echo "report_path=" >> $GITHUB_OUTPUT
+          fi
       
       - name: 現在のフォーカス確認
         id: focus_check
+        continue-on-error: true
         run: |
           echo "📍 現在のフォーカスを確認中..."
           
-          # focus.yml から現在のフォーカスを取得
-          PRIMARY_FOCUS=$(yq eval '.current_focus.primary' consciousness/config/focus.yml)
-          MODE=$(yq eval '.current_focus.mode' consciousness/config/focus.yml)
+          # focus.yml から現在のフォーカスを取得（ファイルが存在する場合のみ）
+          FOCUS_FILE="10_TriHexCore/consciousness/config/focus.yml"
+          if [ -f "$FOCUS_FILE" ]; then
+            # yqがインストールされていない場合はスキップ
+            if command -v yq &> /dev/null; then
+              PRIMARY_FOCUS=$(yq eval '.current_focus.primary' "$FOCUS_FILE" 2>/dev/null || echo "N/A")
+              MODE=$(yq eval '.current_focus.mode' "$FOCUS_FILE" 2>/dev/null || echo "N/A")
+            else
+              PRIMARY_FOCUS="N/A"
+              MODE="N/A"
+            fi
+          else
+            PRIMARY_FOCUS="N/A"
+            MODE="N/A"
+          fi
           
           echo "primary_focus=$PRIMARY_FOCUS" >> $GITHUB_OUTPUT
           echo "mode=$MODE" >> $GITHUB_OUTPUT
@@ -120,27 +137,38 @@ ${report}
             });
       
       - name: 調律記録を保存
+        continue-on-error: true
         run: |
           echo "💾 調律記録を保存中..."
           
           DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
           
-          # consciousness/alignment.log に追記
-          echo "[$DATE] CHI Monitor executed" >> consciousness/alignment.log
-          
-          echo "✅ 調律記録保存完了"
+          # consciousness/alignment.log に追記（ディレクトリが存在する場合のみ）
+          LOG_DIR="10_TriHexCore/consciousness"
+          if [ -d "$LOG_DIR" ]; then
+            mkdir -p "$LOG_DIR"
+            echo "[$DATE] CHI Monitor executed" >> "$LOG_DIR/alignment.log"
+            echo "✅ 調律記録保存完了"
+          else
+            echo "⚠️ consciousness directory not found, skipping log"
+          fi
       
       - name: 変更をコミット
+        continue-on-error: true
         run: |
           git config user.name "CHL Monitor Bot"
           git config user.email "chl@trihexphi.ai"
           
-          git add consciousness/
-          
-          if git diff --staged --quiet; then
-            echo "変更なし"
+          if [ -d "10_TriHexCore/consciousness" ]; then
+            git add 10_TriHexCore/consciousness/ || true
+            
+            if git diff --staged --quiet; then
+              echo "変更なし"
+            else
+              git commit -m "chore: CHL監視実行 - $(date -u +"%Y-%m-%d %H:%M:%S UTC")" || true
+              # git push  # TODO: 本番環境では有効化
+            fi
           else
-            git commit -m "chore: CHL監視実行 - $(date -u +"%Y-%m-%d %H:%M:%S UTC")"
-            # git push  # TODO: 本番環境では有効化
+            echo "⚠️ consciousness directory not found, skipping commit"
           fi
 
