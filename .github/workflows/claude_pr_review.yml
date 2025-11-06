@@ -15,7 +15,14 @@ jobs:
       - uses: actions/setup-node@v4
         with: { node-version: '20' }
       
-      - run: npm i anthropic
+      - name: Install dependencies
+        run: |
+          if [ -f package.json ]; then
+            npm install
+          else
+            npm init -y
+            npm install anthropic
+          fi
       
       - name: Diff
         run: |
@@ -27,7 +34,7 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           CLAUDE_MODEL: claude-3-5-sonnet-20240620
         run: |
-          node --input-type=module <<'EOF' > review.md
+          cat > review-claude.mjs <<'EOF'
           import Anthropic from "anthropic";
           import { readFileSync } from "fs";
           
@@ -41,6 +48,7 @@ jobs:
           });
           console.log(r.content?.map(x => x.text).join("\n") || "");
           EOF
+          node review-claude.mjs > review.md
       
       - name: Comment
         uses: thollander/actions-comment-pull-request@v2
