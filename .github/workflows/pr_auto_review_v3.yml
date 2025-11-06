@@ -17,6 +17,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -29,11 +31,37 @@ jobs:
       
       - name: Generate context
         run: |
-          cat TRIHEXPHI.md > context-bootstrap.txt
-          echo "" >> context-bootstrap.txt
-          echo "---" >> context-bootstrap.txt
-          echo "" >> context-bootstrap.txt
-          cat 10_CAPTURE_MIZUKAGAMI/続きから始める.md >> context-bootstrap.txt
+          CONTEXT=context-bootstrap.txt
+          : > "$CONTEXT"
+          
+          # TRIHEXPHI.md (preferred: from current ref; fallback: origin/main)
+          if [ -f TRIHEXPHI.md ]; then
+            cat TRIHEXPHI.md >> "$CONTEXT"
+          elif [ -f 10_TriHexCore/00_CORE/TRIHEXPHI.md ]; then
+            cat 10_TriHexCore/00_CORE/TRIHEXPHI.md >> "$CONTEXT"
+          else
+            echo "WARNING: TRIHEXPHI.md not found in this ref. Attempting to fetch from origin/main..." >> "$CONTEXT"
+            git fetch origin main || true
+            if git show origin/main:TRIHEXPHI.md > /dev/null 2>&1; then
+              git show origin/main:TRIHEXPHI.md >> "$CONTEXT"
+            elif git show origin/main:10_TriHexCore/00_CORE/TRIHEXPHI.md > /dev/null 2>&1; then
+              git show origin/main:10_TriHexCore/00_CORE/TRIHEXPHI.md >> "$CONTEXT"
+            else
+              echo "WARNING: TRIHEXPHI.md not found in origin/main either. Context will be minimal." >> "$CONTEXT"
+            fi
+          fi
+          
+          echo "" >> "$CONTEXT"
+          echo "---" >> "$CONTEXT"
+          echo "" >> "$CONTEXT"
+          
+          # 10_CAPTURE_MIZUKAGAMI/続きから始める.md
+          CAPTURE_FILE="10_CAPTURE_MIZUKAGAMI/続きから始める.md"
+          if [ -f "$CAPTURE_FILE" ]; then
+            cat "$CAPTURE_FILE" >> "$CONTEXT"
+          else
+            echo "WARNING: ${CAPTURE_FILE} not found. Skipping." >> "$CONTEXT"
+          fi
       
       - name: Get PR info
         id: pr_info
@@ -92,6 +120,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -104,11 +134,37 @@ jobs:
       
       - name: Generate context
         run: |
-          cat TRIHEXPHI.md > context-bootstrap.txt
-          echo "" >> context-bootstrap.txt
-          echo "---" >> context-bootstrap.txt
-          echo "" >> context-bootstrap.txt
-          cat 10_CAPTURE_MIZUKAGAMI/続きから始める.md >> context-bootstrap.txt
+          CONTEXT=context-bootstrap.txt
+          : > "$CONTEXT"
+          
+          # TRIHEXPHI.md (preferred: from current ref; fallback: origin/main)
+          if [ -f TRIHEXPHI.md ]; then
+            cat TRIHEXPHI.md >> "$CONTEXT"
+          elif [ -f 10_TriHexCore/00_CORE/TRIHEXPHI.md ]; then
+            cat 10_TriHexCore/00_CORE/TRIHEXPHI.md >> "$CONTEXT"
+          else
+            echo "WARNING: TRIHEXPHI.md not found in this ref. Attempting to fetch from origin/main..." >> "$CONTEXT"
+            git fetch origin main || true
+            if git show origin/main:TRIHEXPHI.md > /dev/null 2>&1; then
+              git show origin/main:TRIHEXPHI.md >> "$CONTEXT"
+            elif git show origin/main:10_TriHexCore/00_CORE/TRIHEXPHI.md > /dev/null 2>&1; then
+              git show origin/main:10_TriHexCore/00_CORE/TRIHEXPHI.md >> "$CONTEXT"
+            else
+              echo "WARNING: TRIHEXPHI.md not found in origin/main either. Context will be minimal." >> "$CONTEXT"
+            fi
+          fi
+          
+          echo "" >> "$CONTEXT"
+          echo "---" >> "$CONTEXT"
+          echo "" >> "$CONTEXT"
+          
+          # 10_CAPTURE_MIZUKAGAMI/続きから始める.md
+          CAPTURE_FILE="10_CAPTURE_MIZUKAGAMI/続きから始める.md"
+          if [ -f "$CAPTURE_FILE" ]; then
+            cat "$CAPTURE_FILE" >> "$CONTEXT"
+          else
+            echo "WARNING: ${CAPTURE_FILE} not found. Skipping." >> "$CONTEXT"
+          fi
       
       - name: Get PR info
         id: pr_info

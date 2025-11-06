@@ -11,10 +11,19 @@ import path from 'node:path';
 const toUtf8NFC = s => String(s).replace(/^\uFEFF/, "").replace(/\r\n?/g, "\n").normalize("NFC");
 
 async function walk(dir, acc = []) {
-  for (const e of await fs.readdir(dir, { withFileTypes: true })) {
-    const p = path.join(dir, e.name);
-    if (e.isDirectory()) await walk(p, acc);
-    else if (e.isFile() && p.endsWith(".md")) acc.push(p);
+  try {
+    const entries = await fs.readdir(dir, { withFileTypes: true });
+    for (const e of entries) {
+      const p = path.join(dir, e.name);
+      if (e.isDirectory()) await walk(p, acc);
+      else if (e.isFile() && p.endsWith(".md")) acc.push(p);
+    }
+  } catch (err) {
+    if (err && err.code === "ENOENT") {
+      console.warn(`[normalize-md] skip missing directory: ${dir}`);
+      return acc;
+    }
+    throw err;
   }
   return acc;
 }
@@ -30,6 +39,20 @@ let totalFiles = 0;
 let totalChanges = 0;
 
 for (const r of roots) {
+  try {
+    const stat = await fs.stat(r);
+    if (!stat.isDirectory()) {
+      console.warn(`[normalize-md] ${r} is not a directory, skipping`);
+      continue;
+    }
+  } catch (err) {
+    if (err.code === 'ENOENT') {
+      console.warn(`[normalize-md] root missing, skipping: ${r}`);
+      continue;
+    }
+    throw err;
+  }
+  
   for (const file of await walk(r)) {
     totalFiles++;
     const before = await fs.readFile(file, "utf8");

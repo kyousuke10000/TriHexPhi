@@ -27,12 +27,32 @@ const ALLOWED_PATHS = [
 
 async function loadSpecs() {
   try {
-    const architecture = yaml.load(await fs.readFile('specs/architecture.yml', 'utf8'));
-    const roadmap = yaml.load(await fs.readFile('specs/roadmap.yml', 'utf8'));
-    const kpi = yaml.load(await fs.readFile('specs/kpi.yml', 'utf8'));
+    // Extract YAML content before any markdown sections (separated by ---)
+    function extractYAML(content) {
+      const lines = content.split('\n');
+      let yamlEnd = lines.length;
+      // Find the first --- separator after the initial frontmatter (if any)
+      for (let i = 1; i < lines.length; i++) {
+        if (lines[i].trim() === '---' && i > 10) {
+          yamlEnd = i;
+          break;
+        }
+      }
+      return lines.slice(0, yamlEnd).join('\n');
+    }
+    
+    const architectureContent = await fs.readFile('specs/architecture.yml', 'utf8');
+    const roadmapContent = await fs.readFile('specs/roadmap.yml', 'utf8');
+    const kpiContent = await fs.readFile('specs/kpi.yml', 'utf8');
+    
+    const architecture = yaml.load(extractYAML(architectureContent), { schema: yaml.DEFAULT_SAFE_SCHEMA });
+    const roadmap = yaml.load(extractYAML(roadmapContent), { schema: yaml.DEFAULT_SAFE_SCHEMA });
+    const kpi = yaml.load(extractYAML(kpiContent), { schema: yaml.DEFAULT_SAFE_SCHEMA });
     return { architecture, roadmap, kpi };
   } catch (error) {
     console.error('❌ Failed to load specs:', error.message);
+    console.error('⚠️  This may be due to YAML syntax issues (e.g., unquoted asterisks in values)');
+    console.error('⚠️  Consider quoting YAML values that contain markdown (e.g., "**Generated:** ...")');
     return null;
   }
 }
@@ -141,5 +161,4 @@ main().catch(err => {
   console.error('❌ Spec Gate failed:', err.message);
   process.exit(1);
 });
-
 
