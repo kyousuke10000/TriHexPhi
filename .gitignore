@@ -46,3 +46,4 @@ scripts/node_modules/
 # MCP private
 tools/mcp_spec/private/
 
+.logs/

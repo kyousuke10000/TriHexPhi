@@ -12,7 +12,8 @@
     "claude:ask": "node tools/claude/ask.mjs",
     "gemini:ask": "node tools/gemini/ask.mjs",
     "ai:review": "git diff | node tools/claude/ask.mjs 'Review this diff and propose exact patches.'",
-    "ai:design": "node tools/gemini/ask.mjs 'Design next architecture steps for S3.'"
+    "ai:design": "node tools/gemini/ask.mjs 'Design next architecture steps for S3.'",
+    "ci:triage": "node tools/ci/fetch-run-log.mjs && node tools/ci/ask-claude.mjs && node tools/ci/ask-gemini.mjs"
   },
   "description": "TriHexΦ - Breathing Intelligence OS",
   "author": "🜇 Shiryu",
