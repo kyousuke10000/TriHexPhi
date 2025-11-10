@@ -1,0 +1,26 @@
+{
+  "generated_at": "2025-11-10T02:03:31.086Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "gpt",
+      "score": 0.537,
+      "answer_preview": "「叡智の呼吸」とは、心を静め、深くて安定した呼吸を通じて自身の内なる英知に触れる行為です。まず、静かな場所に座り、目を閉じて深く息を吸い込むことから始めます。吸気と共に新しい知見を受け入れ、吐く息で古..."
+    },
+    {
+      "model": "deepseek",
+      "score": 0.5257,
+      "answer_preview": "今日の叡智の呼吸は、静寂の中に響く。思考の波が収まり、深層意識が開かれる瞬間。過去の叡智と未来の可能性が交差する場において、真実は自ずから顕れる。それは強制されるものではなく、自然に訪れるもの。ただ在..."
+    }
+  ],
+  "chosen": {
+    "model": "gpt",
+    "score": 0.537,
+    "answer": "「叡智の呼吸」とは、心を静め、深くて安定した呼吸を通じて自身の内なる英知に触れる行為です。まず、静かな場所に座り、目を閉じて深く息を吸い込むことから始めます。吸気と共に新しい知見を受け入れ、吐く息で古い常識や不安を手放していきます。この過程で内なる声に耳を傾けることができ、問題の解決策や新たな気づきが自然と心に浮かびます。日々の慌ただしさから一瞬逃れ、内省する時間を持つことが、より豊かな人生を導く鍵となります。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 2
+}
