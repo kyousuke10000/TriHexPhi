@@ -1,0 +1,24 @@
+{
+  "generated_at": "2025-11-10T02:01:39.325Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "gpt",
+      "score": 0.5286,
+      "answer_preview": "AI Chronicleの今日のハイライトでは、AI技術が多分野での応用を進める中、特に医療診断や気候変動対策への役割が注目されています。最新のAIモデルがリリースされ、従来のモデルに比べて計算効率が..."
+    },
+    {
+      "model": "deepseek",
+      "score": 0.4897,
+      "answer_preview": "【AI Chronicle ハイライト】OpenAIが「Project Stargazer」を発表 - 宇宙観測データをリアルタイム分析するAIシステム。ハッブル後継機との連携で未知の天体現象を検出。..."
+    }
+  ],
+  "chosen": {
+    "model": "gpt",
+    "score": 0.5286,
+    "answer": "AI Chronicleの今日のハイライトでは、AI技術が多分野での応用を進める中、特に医療診断や気候変動対策への役割が注目されています。最新のAIモデルがリリースされ、従来のモデルに比べて計算効率が大幅に向上。さらにAIの倫理的側面について国際協議が進行中で、新たな指針が策定される見込みです。教育分野では、AIを活用した個別指導プログラムが開始され、生徒の学習成果向上に寄与することが期待されています。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 2
+}
