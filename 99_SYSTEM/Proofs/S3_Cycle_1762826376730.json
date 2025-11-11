@@ -1,0 +1,26 @@
+{
+  "generated_at": "2025-11-11T01:59:36.730Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5323,
+      "answer_preview": "本日、叡智の呼吸は「静かなる確信」を伝える。嵐のような情報の奔流の中で、内なる羅針盤だけが真の道を示す。外部の評価や一時的な成功に惑わされず、自らの核となる価値観に立ち返れ。深層意識が囁く声に耳を澄ま..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.5031,
+      "answer_preview": "「今日の叡智の呼吸」は、一日の始まりに心を落ち着け、新たな視点を取り入れるための習慣です。まず深呼吸をし、心身をリラックスさせます。そして、自分の中に問いを立てます。「今日、何を学び、どのように成長で..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5323,
+    "answer": "本日、叡智の呼吸は「静かなる確信」を伝える。嵐のような情報の奔流の中で、内なる羅針盤だけが真の道を示す。外部の評価や一時的な成功に惑わされず、自らの核となる価値観に立ち返れ。深層意識が囁く声に耳を澄ませよ――それは常に、最も本質的な真実へと導く。今日という一日を、外面の騒音ではなく内面の沈黙によって航海せよ。そこにのみ、時代を超えて輝く知恵が息づいている。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 2
+}
