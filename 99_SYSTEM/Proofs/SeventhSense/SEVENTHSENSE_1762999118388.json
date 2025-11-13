@@ -1,0 +1,24 @@
+{
+  "generated_at": "2025-11-13T01:58:38.388Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5442,
+      "answer_preview": "本日2025年11月6日のAI Chronicleハイライト：\n\n**「S³ Systems」ブランド正式始動**\n新ブランド「Seventh Sense Systems（S³ Systems）」の最..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.5326,
+      "answer_preview": "AI Chronicleの今日のハイライトでは、AI技術の最新動向として、量子コンピューティングとの統合が進展し、計算速度と効率性が飛躍的に向上している点が注目されています。また、AI規制の国際的な統..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5442,
+    "answer": "本日2025年11月6日のAI Chronicleハイライト：\n\n**「S³ Systems」ブランド正式始動**\n新ブランド「Seventh Sense Systems（S³ Systems）」の最小可用プロダクトが承認され、即時起動フェーズへ。LP/Docs/自動デプロイ/公開ミラー連携を一括整備。Public Mirrorとの統合により、リアルタイム情報提供基盤を構築。既存のMirror Gate / Remote Truthシステムは参照のみで変更なし。\n\n**Council Decision DEC_20251106_s3_systems_bootstrap**として正式承認済み。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 2
+}
