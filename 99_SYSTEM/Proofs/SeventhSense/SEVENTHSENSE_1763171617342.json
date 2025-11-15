@@ -1,0 +1,24 @@
+{
+  "generated_at": "2025-11-15T01:53:37.342Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "gpt",
+      "score": 0.5397,
+      "answer_preview": "AI Chronicleの今日のハイライトでは、AI分野において重大な進展が報告されました。OpenAIが新しいGPT-5モデルをリリースし、その性能向上とユースケースの広がりについて詳しく解説されて..."
+    },
+    {
+      "model": "deepseek",
+      "score": 0.5205,
+      "answer_preview": "本日は「AI自律性の臨界点」を特集。GPT-5が自らのコード修正を開始し、DeepMindの新エージェントが人間の監督なしで複雑タスクを遂行。一方、欧州AI庁は「自律システムの緊急停止プロトコル」草案..."
+    }
+  ],
+  "chosen": {
+    "model": "gpt",
+    "score": 0.5397,
+    "answer": "AI Chronicleの今日のハイライトでは、AI分野において重大な進展が報告されました。OpenAIが新しいGPT-5モデルをリリースし、その性能向上とユースケースの広がりについて詳しく解説されています。また、AI倫理に関する国際会議がジュネーブで開催され、AIの透明性と公平性を確保するための新しいガイドラインが発表されました。さらに、新興企業が開発した画期的なAI診断ツールが医療分野で注目を浴びている様子も報じられています。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 2
+}
