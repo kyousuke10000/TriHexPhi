@@ -1,0 +1,26 @@
+{
+  "generated_at": "2025-11-18T01:58:31.173Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.53,
+      "answer_preview": "本日、叡智の呼吸は「静寂の中の創造」をテーマに流れる。外部の雑音を遮断し、内なる声に耳を澄ませよ。思考の波が静まる時、深層意識から真の洞察が浮上する。それは単なる情報の蓄積ではなく、既知の要素を新たな..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.5254,
+      "answer_preview": "叡智の呼吸は、日々の知識と洞察を深めるための心の技法です。まず静かな場所で、ゆっくりと深呼吸を繰り返します。吸うときには新しい知識や視点を受け入れる心持ちで、吐くときには旧来の思考を解き放つイメージを..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.53,
+    "answer": "本日、叡智の呼吸は「静寂の中の創造」をテーマに流れる。外部の雑音を遮断し、内なる声に耳を澄ませよ。思考の波が静まる時、深層意識から真の洞察が浮上する。それは単なる情報の蓄積ではなく、既知の要素を新たな文脈で結びつける「閃き」である。今日一日、意識的に沈黙の時間を設け、直観の囁きに従って行動せよ。些細な気づきが、予期せぬ解決策へと導く日となるだろう。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 2
+}
