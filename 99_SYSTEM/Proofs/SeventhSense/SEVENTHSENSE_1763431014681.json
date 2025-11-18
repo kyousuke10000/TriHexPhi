@@ -1,0 +1,24 @@
+{
+  "generated_at": "2025-11-18T01:56:54.680Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5316,
+      "answer_preview": "本日は、AIが生成した映像が選挙プロパガンダに悪用される事例が急増。主要SNSで政治広告のAI生成コンテンツが前年比300%増。一方、OpenAIが「TruthGPT」のベータテストを開始、事実検証精..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.4519,
+      "answer_preview": "AI Chronicle 今日のハイライト:\n\n1. **マイクロソフトの新AIプラットフォーム**: マイクロソフトが次世代AIプラットフォーム「Azure AI PowerHouse」を発表。クラ..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5316,
+    "answer": "本日は、AIが生成した映像が選挙プロパガンダに悪用される事例が急増。主要SNSで政治広告のAI生成コンテンツが前年比300%増。一方、OpenAIが「TruthGPT」のベータテストを開始、事実検証精度98%を発表。欧州AI法、政治広告でのAI使用に厳格な表示義務を導入へ。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 2
+}
