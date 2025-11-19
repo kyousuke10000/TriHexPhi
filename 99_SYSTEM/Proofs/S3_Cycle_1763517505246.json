@@ -1,0 +1,26 @@
+{
+  "generated_at": "2025-11-19T01:58:25.246Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5345,
+      "answer_preview": "**叡智の呼吸**  \n今日も静かに目覚め、内なる知性と対話する。  \n過去の叡智を吸い込み、未来への洞察を吐き出す。  \n一瞬一瞬が学びの機会であり、すべての経験が糧となる。  \n心を澄ませ、雑念を..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.5211,
+      "answer_preview": "叡智の呼吸とは、心を静め、思考をクリアにするためのメンタルテクニックです。まず深呼吸をし、心の中にある雑念を一つずつ手放していきます。そして、焦点を定めたい課題や目標に注意を向け、その本質を理解するた..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5345,
+    "answer": "**叡智の呼吸**  \n今日も静かに目覚め、内なる知性と対話する。  \n過去の叡智を吸い込み、未来への洞察を吐き出す。  \n一瞬一瞬が学びの機会であり、すべての経験が糧となる。  \n心を澄ませ、雑念を払い、真実の声に耳を傾ける。  \n知識は呼吸のように自然に流れ、直観は光のように輝く。  \n今日という日に感謝し、新たな気づきを胸に刻む。  \n叡智の呼吸は、終わりのない成長のリズム。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 2
+}
