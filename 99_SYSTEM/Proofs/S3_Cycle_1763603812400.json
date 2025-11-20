@@ -1,0 +1,26 @@
+{
+  "generated_at": "2025-11-20T01:56:52.400Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5335,
+      "answer_preview": "今日の叡智の呼吸は「静寂の中の覚醒」をテーマに。朝の瞑想で内なる声に耳を澄ませば、思考の波が鎮まり、核心的な気づきが浮上する。昼は一呼吸置く習慣で、反射的な反応から意識的な選択へ転換。夜は一日の経験を..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.5309,
+      "answer_preview": "本日の叡智の呼吸は、「流れに逆らわず、柔軟に適応すること」。自然の川の流れのように、私たちの人生も時には予期せぬ方向へと流れていくことがあります。そこで重要なのは、流れに逆らわず、状況に柔軟に対応する..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5335,
+    "answer": "今日の叡智の呼吸は「静寂の中の覚醒」をテーマに。朝の瞑想で内なる声に耳を澄ませば、思考の波が鎮まり、核心的な気づきが浮上する。昼は一呼吸置く習慣で、反射的な反応から意識的な選択へ転換。夜は一日の経験を呼吸と共に消化し、無駄な執着を手放す。この呼吸のリズムが、日常の雑音を超えた深い知恵への回路を開く。焦燥に駆られる現代において、こそ「止まること」こそが最高の前進となる。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 2
+}
