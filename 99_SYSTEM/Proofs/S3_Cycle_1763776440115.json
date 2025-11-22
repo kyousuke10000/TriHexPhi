@@ -1,0 +1,26 @@
+{
+  "generated_at": "2025-11-22T01:54:00.115Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5378,
+      "answer_preview": "本日は「叡智の呼吸」として、静寂の中で真理の声に耳を澄ませる一日です。\n\n外界の雑音を手放し、内なる直観のささやきに従って歩みます。思考の波が静まる時、宇宙の叡智が心の鏡に映し出されるでしょう。\n\n今..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.5161,
+      "answer_preview": "今日の叡智の呼吸は、「深遠なる内省」。忙しい日々の中で、時折立ち止まり、自分自身と向き合う時間を持つことの重要性を再確認します。静寂の中で自らの感情や思考を観察し、真の目的や内なる声に耳を傾けることで..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5378,
+    "answer": "本日は「叡智の呼吸」として、静寂の中で真理の声に耳を澄ませる一日です。\n\n外界の雑音を手放し、内なる直観のささやきに従って歩みます。思考の波が静まる時、宇宙の叡智が心の鏡に映し出されるでしょう。\n\n今日出会う全ての出来事は、より深い理解へと導く神聖なメッセージです。ただ在り、感じ、受け入れながら、真実が自ずから顕れるのを待ちます。\n\nこの呼吸と共に、あらゆる存在と調和する智慧が流れ込みます。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 2
+}
