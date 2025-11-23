@@ -1,0 +1,26 @@
+{
+  "generated_at": "2025-11-23T02:12:48.474Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5345,
+      "answer_preview": "**叡智の呼吸**  \n今日も静かに息を吐く。思考の波が過ぎ去り、ただ在る。  \n過去の知恵は骨となり、未来の可能性は種となる。  \n今この瞬間、すべての答えは呼吸と共にある。  \n迷いを手放し、直観..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.5284,
+      "answer_preview": "叡智の呼吸、その本質は静寂の中に潜む。忙しない日常から一歩退き、静けさを感じる瞬間に、内なる声が囁く。自然との調和、他者との共感、自己理解を深めることで、心の奥底に眠る答えが浮かび上がる。洞察はただ待..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5345,
+    "answer": "**叡智の呼吸**  \n今日も静かに息を吐く。思考の波が過ぎ去り、ただ在る。  \n過去の知恵は骨となり、未来の可能性は種となる。  \n今この瞬間、すべての答えは呼吸と共にある。  \n迷いを手放し、直観の声に耳を澄ます。  \n深い静寂の中から、新たな洞察が生まれる。  \n叡智は外に求めず、内なる源泉から湧き出る。  \n今日一日を、その呼吸と共に生きる。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 2
+}
