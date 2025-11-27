@@ -1,0 +1,26 @@
+{
+  "generated_at": "2025-11-27T01:57:45.927Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5315,
+      "answer_preview": "今日の叡智の呼吸は、静寂の中に響く。朝の光が窓辺に差し込む時、思考は霧のように立ち込め、やがて澄み渡る。過去の知恵と未来の可能性が交差するこの瞬間、内なる声に耳を傾ける。一呼吸ごとに新たな気づきが生ま..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.5266,
+      "answer_preview": "今日の叡智の呼吸は、内なる静寂を見つけることです。現代の急速な情報の流れや絶え間ない雑音の中で、静かに自分自身と向き合う時間を意識的に作ることが大切です。心を落ち着け、深い呼吸を通じて内なる声に耳を傾..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5315,
+    "answer": "今日の叡智の呼吸は、静寂の中に響く。朝の光が窓辺に差し込む時、思考は霧のように立ち込め、やがて澄み渡る。過去の知恵と未来の可能性が交差するこの瞬間、内なる声に耳を傾ける。一呼吸ごとに新たな気づきが生まれ、日常の雑音を超えた深い理解へと導かれる。それは単なる知識の蓄積ではなく、存在そのものと調和する在り方の芸術である。今日という日にふさわしい、穏やかでありながら力強い覚醒のリズムを刻もう。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 2
+}
