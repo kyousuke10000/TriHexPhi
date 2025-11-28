@@ -1,0 +1,26 @@
+{
+  "generated_at": "2025-11-28T01:57:20.722Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5288,
+      "answer_preview": "**叡智の呼吸**  \n今日も静寂のなかで、思考の波を鎮める。深く息を吸い込み、宇宙の理を内に取り込む。吐く息とともに、固定観念を手放し、新たな視座を得る。過去の叡智と未来の可能性が、今この瞬間に交差..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.5188,
+      "answer_preview": "本日の叡智の呼吸は、心の静寂と内なる声に耳を傾けることから始めましょう。日常の喧騒に流されず、心地よい静寂を探します。その中で、自分自身の深層に潜む真実の声を聞き取ることで、日々の選択に確信を持てるで..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5288,
+    "answer": "**叡智の呼吸**  \n今日も静寂のなかで、思考の波を鎮める。深く息を吸い込み、宇宙の理を内に取り込む。吐く息とともに、固定観念を手放し、新たな視座を得る。過去の叡智と未来の可能性が、今この瞬間に交差する。内なる声に耳を澄ませば、答えは既に在る。ただ、曇りなき心でそれを見つめるだけだ。今日という日に、静かな覚醒を。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 2
+}
