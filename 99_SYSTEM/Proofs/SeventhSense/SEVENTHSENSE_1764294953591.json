@@ -1,0 +1,24 @@
+{
+  "generated_at": "2025-11-28T01:55:53.591Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5655,
+      "answer_preview": "本日2025年11月6日のAI Chronicleハイライト：\n\n**「S³ Systems」ブランドが正式始動**。Seventh Sense Systemsは、人間とAIの協働を深化させる次世代プ..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.5601,
+      "answer_preview": "2025年11月5日のAI Chronicleハイライトでは、「Seventh Sense Systems（S³ Systems）」の立ち上げが注目されています。新たなブランドの展開に伴い、ランディン..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5655,
+    "answer": "本日2025年11月6日のAI Chronicleハイライト：\n\n**「S³ Systems」ブランドが正式始動**。Seventh Sense Systemsは、人間とAIの協働を深化させる次世代プラットフォームとして、最小可用プロダクトを即時展開。Landing Page、自動デプロイ、Public Mirror連携を整備し、リアルタイムな情報発信を開始。これにより、自律分散型AI社会の基盤構築に向けた第一歩を踏み出す。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 2
+}
