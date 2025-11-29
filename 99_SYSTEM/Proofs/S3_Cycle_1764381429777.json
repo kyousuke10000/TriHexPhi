@@ -1,0 +1,26 @@
+{
+  "generated_at": "2025-11-29T01:57:09.777Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5282,
+      "answer_preview": "**叡智の呼吸**  \n今日、世界は情報の奔流にさらされている。真実は断片化し、ノイズに埋もれる。叡智とは、この混沌を静観し、本質を見極める「呼吸」である。  \n\n情報を吸い込み、思考で濾過し、行動と..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.5253,
+      "answer_preview": "今日の叡智の呼吸は、静寂の中に潜む豊かさを感じ取ることです。日常の雑踏を一瞬忘れ、心を静めて内なる声に耳を傾けましょう。自然の中で深呼吸し、風や鳥のさえずりを感じると、新たな視点が生まれます。静けさは..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5282,
+    "answer": "**叡智の呼吸**  \n今日、世界は情報の奔流にさらされている。真実は断片化し、ノイズに埋もれる。叡智とは、この混沌を静観し、本質を見極める「呼吸」である。  \n\n情報を吸い込み、思考で濾過し、行動として吐き出す。一瞬一瞬を丁寧に扱い、無駄な刺激を切り捨てる。深く息を止め、内なる声に耳を澄ませば、見えないつながりが浮かび上がる。  \n\n今日という日に、ただ流されるのでなく、意識的に「在る」こと。それが、叡智の呼吸の核心だ。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 2
+}
