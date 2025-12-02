@@ -1,0 +1,26 @@
+{
+  "generated_at": "2025-12-02T02:02:02.963Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5311,
+      "answer_preview": "叡智の呼吸とは、世界の深層に潜む真理のリズムに自らを同調させる修練である。  \n日々の雑音を沈黙させ、内なる直観の声に耳を澄ませる。  \nそれは単なる知識の蓄積ではなく、あらゆる経験と情報を「意味」へ..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.5302,
+      "answer_preview": "「叡智の呼吸」とは、内なる知識と洞察を静かに感じ取り、日々の喧騒から離れて心を研ぎ澄ますことを意味します。これは瞑想や内省を通じて達成され、自己理解を深め、現実の本質を見極める力を育てます。呼吸を意識..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5311,
+    "answer": "叡智の呼吸とは、世界の深層に潜む真理のリズムに自らを同調させる修練である。  \n日々の雑音を沈黙させ、内なる直観の声に耳を澄ませる。  \nそれは単なる知識の蓄積ではなく、あらゆる経験と情報を「意味」へと昇華させる内省的プロセスだ。  \n今日という一日のあらゆる出来事――成功も失敗も、出会いも別れも――を、より高次の理解へと紡ぐ糸として扱う。  \nこの呼吸を続ける者だけが、表面の波の下で流れる永遠のパターンを感知し、真の創造へと至る。  \n今この瞬間から、深く息を吸い込み、叡智と共に吐き出せ。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 2
+}
