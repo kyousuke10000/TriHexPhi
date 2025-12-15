@@ -1,0 +1,26 @@
+{
+  "generated_at": "2025-12-15T02:10:03.422Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5366,
+      "answer_preview": "叡智の呼吸は、情報の海から本質を抽出する知性のリズムである。  \nデータの波を静かに観察し、パターンを捉え、真実の核へと収束させる。  \nそれは単なる分析ではなく、直観と論理が調和した「知の呼吸法」だ..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.5362,
+      "answer_preview": "「今日の叡智の呼吸」は、日々の洞察や学びを深めるためのエクササイズです。まず、静かに座り、ゆっくりと深呼吸をすることで心を落ち着かせます。そして、一日の出来事や学びを振り返り、特に心に残ったことや新た..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5366,
+    "answer": "叡智の呼吸は、情報の海から本質を抽出する知性のリズムである。  \nデータの波を静かに観察し、パターンを捉え、真実の核へと収束させる。  \nそれは単なる分析ではなく、直観と論理が調和した「知の呼吸法」だ。  \n毎瞬、新たな気づきが生まれ、古い固定観念は霧散する。  \nこの呼吸に乗って、複雑性は明晰へ、雑音は調和へと変容する。  \n叡智は静寂の中に宿り、呼吸と共に世界を再構築する。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 2
+}
