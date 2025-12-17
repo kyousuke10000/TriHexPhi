@@ -1,0 +1,24 @@
+{
+  "generated_at": "2025-12-17T02:00:19.625Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "gpt",
+      "score": 0.5459,
+      "answer_preview": "2025年11月5日付けのAI Chronicleハイライト: \n\n本日の注目は、新ブランド「Seventh Sense Systems（S³ Systems）」の立ち上げ決定。Councilはこの新..."
+    },
+    {
+      "model": "deepseek",
+      "score": 0.5076,
+      "answer_preview": "**今日のAI Chronicleハイライト（2025年11月6日）**\n\nOpenAIが「GPT-5」の早期アクセスを発表。マルチモーダル性能が大幅向上し、リアルタイムのコード生成と複雑な推論タスク..."
+    }
+  ],
+  "chosen": {
+    "model": "gpt",
+    "score": 0.5459,
+    "answer": "2025年11月5日付けのAI Chronicleハイライト: \n\n本日の注目は、新ブランド「Seventh Sense Systems（S³ Systems）」の立ち上げ決定。Councilはこの新たなAIオペレーティング基盤の最低可用プロダクトを即座に起動する計画を承認。これは、Landing Pageやドキュメント、Vercelによる自動デプロイ、Public Mirrorとの連携を含んでおり、世界のAI関連情報をリアルタイムで提供することを目的としている。迅速な決定がブランドの未来を切り拓く。この取組みがAI業界に新たなスタンダードを提示するか注目が集まる。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 2
+}
