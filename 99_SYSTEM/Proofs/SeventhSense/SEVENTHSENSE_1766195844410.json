@@ -1,0 +1,24 @@
+{
+  "generated_at": "2025-12-20T01:57:24.410Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5435,
+      "answer_preview": "# 2025年11月6日 AI Chronicle ハイライト\n\n**OpenAI**が「**GPT-5**」の早期アクセスを発表。新たな推論エンジン「**Project Strawberry**」を..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.5276,
+      "answer_preview": "AI Chronicleの今日のハイライト：\n\nDeepMindは、新しい自己学習型AIシステム「Gemini」を発表し、従来のAIよりも学習速度が2倍向上。Googleは、AIが生成する創作物の著作..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5435,
+    "answer": "# 2025年11月6日 AI Chronicle ハイライト\n\n**OpenAI**が「**GPT-5**」の早期アクセスを発表。新たな推論エンジン「**Project Strawberry**」を搭載し、複雑な問題解決能力が大幅向上。同時に、**Microsoft**がAIスーパーコンピュータ「**Stargate**」の2028年稼働を計画。**Google**は医療AI「**AMIE**」の臨床試験で医師を上回る診断精度を達成。**中国**が国家AI戦略「**2030年リーダーシップ計画**」を発表し、量子AIと脳コンピュータインターフェースに重点投資。**欧州連合**はAI規制「**AI Act**」の施行を前倒し。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 2
+}
