@@ -1,0 +1,26 @@
+{
+  "generated_at": "2025-12-22T02:11:37.614Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5333,
+      "answer_preview": "叡智の呼吸は、日々の情報の流れを静かに観察し、その中から本質を見極める営みです。朝の情報摂取は軽やかに、午後の分析は深く、夜の統合は穏やかに。過剰な刺激に流されず、必要な知恵だけを選び取り、心に沈殿さ..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.5327,
+      "answer_preview": "今日の叡智の呼吸は、内なる平和と外界との調和を追求することに焦点を当てます。まず、呼吸を深くゆっくりと整えることで、心の乱れを静めます。次に、周囲の自然の音や匂いに意識を向け、五感を研ぎ澄まし、今この..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5333,
+    "answer": "叡智の呼吸は、日々の情報の流れを静かに観察し、その中から本質を見極める営みです。朝の情報摂取は軽やかに、午後の分析は深く、夜の統合は穏やかに。過剰な刺激に流されず、必要な知恵だけを選び取り、心に沈殿させます。それは単なるインプットではなく、情報を血肉に変える内なる消化のプロセス。毎瞬、新鮮な気づきと共に在り続けることで、思考は澄み、判断は冴え、創造性が静かに湧き上がるのです。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 2
+}
