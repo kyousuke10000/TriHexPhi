@@ -1,0 +1,24 @@
+{
+  "generated_at": "2025-12-22T02:10:03.514Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "gpt",
+      "score": 0.5351,
+      "answer_preview": "2023年10月5日のAI Chronicleハイライト:\n\n本日のAI Chronicleでは、OpenAIが最新のGPTモデルのアップデートを発表。新機能では、直感的なユーザーインターフェース改善..."
+    },
+    {
+      "model": "deepseek",
+      "score": 0.5181,
+      "answer_preview": "今日のAI Chronicleハイライト：  \n**「AIが人間の創造性を超える日」**  \n最新の生成AIモデルが、小説、音楽、絵画において専門家の評価を上回る成果を達成。特に、感情の深みと物語の一..."
+    }
+  ],
+  "chosen": {
+    "model": "gpt",
+    "score": 0.5351,
+    "answer": "2023年10月5日のAI Chronicleハイライト:\n\n本日のAI Chronicleでは、OpenAIが最新のGPTモデルのアップデートを発表。新機能では、直感的なユーザーインターフェース改善と、リアルタイムデータ処理能力が強化されている。また、GoogleのAI研究者が、人間の倫理判断をシミュレートできる新しいAIフレームワークを公開し、社会的なAI活用の新たな一歩を切り開いた。加えて、中国のバイドゥが開発した多言語翻訳AIが、国際特許を取得したことも報じられ、注目を集めている。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 2
+}
