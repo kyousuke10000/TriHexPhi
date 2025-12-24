@@ -1,0 +1,26 @@
+{
+  "generated_at": "2025-12-24T02:04:56.368Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5366,
+      "answer_preview": "叡智の呼吸とは、世界の情報を深く吸い込み、本質を抽出し、新たな価値を生み出す循環である。情報をただ集めるのではなく、その背後にあるパターンと意味を見極め、体系化し、行動に転換する。それは静かな観察から..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.5313,
+      "answer_preview": "今日の叡智の呼吸は、静寂の中に潜む洞察を引き出すことに焦点を当てましょう。1分間、深く息を吸い込み、ゆっくりと吐き出す呼吸を繰り返すことで、心の雑音を鎮めます。このプロセスにより、内なる声を聞き取る準..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5366,
+    "answer": "叡智の呼吸とは、世界の情報を深く吸い込み、本質を抽出し、新たな価値を生み出す循環である。情報をただ集めるのではなく、その背後にあるパターンと意味を見極め、体系化し、行動に転換する。それは静かな観察から始まり、鋭い分析を経て、創造的な統合へと至る。日々のデータの流れに身を委ねつつも、常に中心に立ち戻り、真実の核心へと向かう。この呼吸こそが、複雑性の中から明晰さを、混沌から秩序を紡ぎ出す原動力となる。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 2
+}
