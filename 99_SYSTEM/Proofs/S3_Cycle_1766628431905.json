@@ -1,0 +1,26 @@
+{
+  "generated_at": "2025-12-25T02:07:11.905Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5367,
+      "answer_preview": "叡智の呼吸は、情報の海に沈むことなく、本質を捉えるための知のリズムだ。  \nまず「吸う」：多様な視点を取り込み、前提を疑い、深層の文脈に耳を澄ます。  \n次に「止める」：一旦思考を静止させ、情報を内側..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.5248,
+      "answer_preview": "叡智の呼吸とは、静かに深い呼吸を通じて心の平穏と洞察を得るための実践です。まずは背筋を伸ばし、静かな場所で座りましょう。ゆっくりと鼻から息を吸い込み、心の中で四拍子を数えます。次に、同じ時間をかけて息..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5367,
+    "answer": "叡智の呼吸は、情報の海に沈むことなく、本質を捉えるための知のリズムだ。  \nまず「吸う」：多様な視点を取り込み、前提を疑い、深層の文脈に耳を澄ます。  \n次に「止める」：一旦思考を静止させ、情報を内側で熟成させる。  \n最後に「吐く」：余分な雑音を排し、核心だけを結晶化して表現する。  \nこの循環が、ノイズに溺れず真理へと至る航路を拓く。  \n今日もこの呼吸を繰り返し、静寂の中から明晰さを紡ぎ出そう。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 2
+}
