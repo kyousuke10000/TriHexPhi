@@ -1,0 +1,24 @@
+{
+  "generated_at": "2025-12-28T02:22:47.489Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "gpt",
+      "score": 0.5368,
+      "answer_preview": "AI Chronicleの今日のハイライトでは、最新のAI技術の進展が取り上げられています。特に注目されているのは、次世代の自然言語処理モデルがリリースされたことです。このモデルは、より高度な文脈理解..."
+    },
+    {
+      "model": "deepseek",
+      "score": 0.4527,
+      "answer_preview": "# 2025年11月6日 AI Chronicle ハイライト\n\n**S³ Systems 正式起動**  \nSeventh Sense Systems（S³ Systems）の最小可用プロダクトが承..."
+    }
+  ],
+  "chosen": {
+    "model": "gpt",
+    "score": 0.5368,
+    "answer": "AI Chronicleの今日のハイライトでは、最新のAI技術の進展が取り上げられています。特に注目されているのは、次世代の自然言語処理モデルがリリースされたことです。このモデルは、より高度な文脈理解能力を持ち、多言語での完全な会話を実現することが期待されています。また、AI倫理に関する国際会議の開催も報じられ、AIの倫理的使用に関するガイドラインが策定される予定です。加えて、AIと気候変動の関連についての新たな研究結果も紹介されています。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 2
+}
