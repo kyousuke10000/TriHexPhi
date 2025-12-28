@@ -1,0 +1,26 @@
+{
+  "generated_at": "2025-12-28T02:24:27.144Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5339,
+      "answer_preview": "叡智の呼吸は、日々の情報の奔流に溺れず、本質を見極めるための心のリズムです。  \n朝に今日の「問い」を一つ掲げ、昼に情報を「濾過」し、夕に「統合」して知恵に変えます。  \n夜には静かな「内省」で一日を..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.5307,
+      "answer_preview": "叡智の呼吸、それは心と精神を静め、知識と洞察を深める瞬間です。静寂の中で一つの問いを見つめ、自らの内側に問いかけることで、新たな視点や解決策が鮮明に浮かび上がります。この呼吸は、自己啓発と成長への道を..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5339,
+    "answer": "叡智の呼吸は、日々の情報の奔流に溺れず、本質を見極めるための心のリズムです。  \n朝に今日の「問い」を一つ掲げ、昼に情報を「濾過」し、夕に「統合」して知恵に変えます。  \n夜には静かな「内省」で一日を振り返り、無駄な雑音をそぎ落とす。  \nこれは単なる時間管理ではなく、情報過多の時代を明晰に生き抜くための精神技法です。  \n毎日、この呼吸を繰り返すことで、表面的なトレンドに振り回されない、深く揺るぎない思考の基盤が築かれていきます。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 2
+}
