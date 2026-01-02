@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-01-02T02:07:53.587Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5391,
+      "answer_preview": "今日のAI Chronicleハイライト：\n\n**AIエージェントの自律性向上**が焦点。GPT-5が複雑な意思決定を人間の介入なしに実行可能に。**マルチモーダル統合**により、テキスト・画像・音声..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.5078,
+      "answer_preview": "以下が本日のAI Chronicleハイライトです。\n\n---\n\n今日のAI Chronicleでは、AI業界の最新動向にフォーカスしています。トップニュースは、OpenAIが新たに発表したGPT-5..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5391,
+    "answer": "今日のAI Chronicleハイライト：\n\n**AIエージェントの自律性向上**が焦点。GPT-5が複雑な意思決定を人間の介入なしに実行可能に。**マルチモーダル統合**により、テキスト・画像・音声をシームレスに処理。**リアルタイム学習**機能で環境適応能力が大幅向上。**倫理的ガードレール**の自動適用が進み、安全性と透明性を両立。産業応用では**自律型ロボティクス**と**予測保守**が加速。次世代AIは「指示待ち」から「先読み行動」へ進化中。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 2
+}
