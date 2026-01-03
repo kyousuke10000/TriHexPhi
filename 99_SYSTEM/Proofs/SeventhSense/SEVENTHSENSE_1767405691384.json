@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-01-03T02:01:31.384Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "gpt",
+      "score": 0.5372,
+      "answer_preview": "AI Chronicleの今日のハイライトは、AI技術の進化とその応用に関する最新情報です。まず、オープンAIが次世代のGPT-5を発表し、その自然言語処理能力の向上が注目されています。また、自動運転..."
+    },
+    {
+      "model": "deepseek",
+      "score": 0.5255,
+      "answer_preview": "今日のAI Chronicleハイライトでは、**OpenAI**が**GPT-5の早期アクセス**を発表し、**Google**は**Gemini 2.0**でマルチモーダル性能を大幅向上。**Mi..."
+    }
+  ],
+  "chosen": {
+    "model": "gpt",
+    "score": 0.5372,
+    "answer": "AI Chronicleの今日のハイライトは、AI技術の進化とその応用に関する最新情報です。まず、オープンAIが次世代のGPT-5を発表し、その自然言語処理能力の向上が注目されています。また、自動運転車の安全性向上を目指した新しい機械学習アルゴリズムが開発され、各企業が競争を激化させています。さらに、医療AIの進展として、病気の早期発見と診断の正確性を飛躍的に向上させる新技術が紹介されています。これにより、AIによるヘルスケアの未来が描かれつつあります。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 2
+}
