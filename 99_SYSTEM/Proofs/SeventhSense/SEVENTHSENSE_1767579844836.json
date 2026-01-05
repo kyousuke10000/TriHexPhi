@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-01-05T02:24:04.836Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "gpt",
+      "score": 0.5371,
+      "answer_preview": "AI Chronicleの今日のハイライトは、OpenAIの最新モデル「GPT-5」のリリース発表です。新モデルは、より高い精度と効率性を誇り、特に自然言語処理および生成において優れた性能を示していま..."
+    },
+    {
+      "model": "deepseek",
+      "score": 0.5008,
+      "answer_preview": "今日のAI Chronicleハイライト：  \n**「AIが人間の創造性を超える瞬間」**  \n最新の生成AIモデルが、芸術・音楽・文学の分野で人間の専門家と同等以上の評価を受ける事例が急増。特に、感..."
+    }
+  ],
+  "chosen": {
+    "model": "gpt",
+    "score": 0.5371,
+    "answer": "AI Chronicleの今日のハイライトは、OpenAIの最新モデル「GPT-5」のリリース発表です。新モデルは、より高い精度と効率性を誇り、特に自然言語処理および生成において優れた性能を示しています。これに伴い、様々な業界での応用が期待され、企業や研究者から大きな注目を集めています。また、AIの倫理的な利用と公正性を確保するための新しいガイドラインも制定され、持続可能なAIの発展に向けた取り組みが強化されました。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 2
+}
