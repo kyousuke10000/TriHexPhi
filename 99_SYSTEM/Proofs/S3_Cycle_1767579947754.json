@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-01-05T02:25:47.754Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "gpt",
+      "score": 0.5375,
+      "answer_preview": "今日の叡智の呼吸は、心を静め、内なる声に耳を傾けることから始まります。日々の喧騒や情報に埋もれがちな私たちの精神は、静寂の中でこそ真に研ぎ澄まされます。呼吸を深く、ゆっくりと整えることで、心のざわめき..."
+    },
+    {
+      "model": "deepseek",
+      "score": 0.537,
+      "answer_preview": "叡智の呼吸は、情報の海に漂う真実の粒子を、意識のフィルターを通して結晶化するプロセスだ。  \n日々の観測と内省から生まれる「今日の叡智」は、単なる知識の断片ではなく、文脈と洞察が融合した生きた知恵。 ..."
+    }
+  ],
+  "chosen": {
+    "model": "gpt",
+    "score": 0.5375,
+    "answer": "今日の叡智の呼吸は、心を静め、内なる声に耳を傾けることから始まります。日々の喧騒や情報に埋もれがちな私たちの精神は、静寂の中でこそ真に研ぎ澄まされます。呼吸を深く、ゆっくりと整えることで、心のざわめきを消し、内なる平和を取り戻しましょう。その感覚はまるで、湖面が穏やかになり、澄んだ水に映る真実を見つめるよう。心の中に生まれるひらめきと洞察は、私たちの道を照らす羅針盤として機能するでしょう。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 2
+}
