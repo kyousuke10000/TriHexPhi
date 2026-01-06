@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-01-06T02:07:41.560Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5279,
+      "answer_preview": "**2025年11月6日 AI Chronicleハイライト**\n\nOpenAIが「Project Stargate」の詳細を公開。1,000億ドル規模の次世代AIスーパーコンピュータ計画で、Micr..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.5259,
+      "answer_preview": "2025年11月5日付のAI Chronicleハイライトです。OpenAIは新しいAIモデル「Elysium」を発表、特に創造性と人間らしさに焦点を当てています。これにより、ユーザーはより自然で直感..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5279,
+    "answer": "**2025年11月6日 AI Chronicleハイライト**\n\nOpenAIが「Project Stargate」の詳細を公開。1,000億ドル規模の次世代AIスーパーコンピュータ計画で、Microsoftと共同開発。量子-古典ハイブリッドアーキテクチャを採用し、2028年稼働開始予定。同時に、欧州AI規制当局が「デジタル人格権」法案を提出。AIシステムに法的責任主体性を付与する画期的な枠組みで、倫理的なAI開発の新たな基準となる可能性。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 2
+}
