@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-01-07T02:07:47.785Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "gpt",
+      "score": 0.5398,
+      "answer_preview": "本日のAI Chronicleでは、AI分野の最新動向として、AIによる医療診断の精度向上が大きく取り上げられています。新たなディープラーニングモデルが、疾患識別において専門家を凌ぐ精度を示し、医療現..."
+    },
+    {
+      "model": "deepseek",
+      "score": 0.5008,
+      "answer_preview": "# 2025年11月6日 AI Chronicle ハイライト\n\n**OpenAI**は「**Project Strawberry**」を発表。推論エンジン「**O1**」の後継で、複雑な問題解決能力..."
+    }
+  ],
+  "chosen": {
+    "model": "gpt",
+    "score": 0.5398,
+    "answer": "本日のAI Chronicleでは、AI分野の最新動向として、AIによる医療診断の精度向上が大きく取り上げられています。新たなディープラーニングモデルが、疾患識別において専門家を凌ぐ精度を示し、医療現場での応用が期待されています。また、生成AIが映画やアート分野で新たな創作ツールとして活躍、クリエイターの創造プロセスを革新しています。さらに、AI倫理に関する国際会議が開催され、責任あるAIの開発と利用に向けた規範作りが進められています。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 2
+}
