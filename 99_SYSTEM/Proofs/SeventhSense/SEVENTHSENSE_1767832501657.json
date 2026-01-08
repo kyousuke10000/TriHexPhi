@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-01-08T00:35:01.657Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "gpt",
+      "score": 0.5351,
+      "answer_preview": "AI Chronicleの今日のハイライトでは、最新のAI技術が医療分野でどのように応用されているかが詳しく紹介されています。特に、AIを用いて患者の診断精度を向上させる新しいシステムや手法が注目され..."
+    },
+    {
+      "model": "deepseek",
+      "score": 0.5319,
+      "answer_preview": "今日のAI Chronicleハイライト：\n\n**「AIの自律性と人間の役割」**が焦点。OpenAIの「Superalignment」チームが、AIシステムが人間の意図を超えて進化するリスクを警告。..."
+    }
+  ],
+  "chosen": {
+    "model": "gpt",
+    "score": 0.5351,
+    "answer": "AI Chronicleの今日のハイライトでは、最新のAI技術が医療分野でどのように応用されているかが詳しく紹介されています。特に、AIを用いて患者の診断精度を向上させる新しいシステムや手法が注目されています。さらに、AIがバイアスを減少させ、公平な医療サービスの提供に貢献する具体的な事例も取り上げられています。これにより、医療現場でのAIの役割が今後どのように進化していくかについての洞察が得られました。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 2
+}
