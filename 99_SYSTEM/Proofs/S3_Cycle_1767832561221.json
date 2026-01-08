@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-01-08T00:36:01.221Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5368,
+      "answer_preview": "叡智の呼吸は、情報の海を泳ぎながらも、その波に飲まれないための心の姿勢です。  \n日々、膨大な情報が押し寄せますが、ただ受け取るのではなく、一度立ち止まり、自分にとっての「真実」とは何かを問いかけます..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.5319,
+      "answer_preview": "今日の叡智の呼吸は心の静穏を見つめることから始まります。日常の喧騒を一瞬忘れ、深くゆっくりと息を吸い込み、内面の静けさを探ります。次に息を吐き出しながら、余計な思考を手放し、心身をリセットしてください..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5368,
+    "answer": "叡智の呼吸は、情報の海を泳ぎながらも、その波に飲まれないための心の姿勢です。  \n日々、膨大な情報が押し寄せますが、ただ受け取るのではなく、一度立ち止まり、自分にとっての「真実」とは何かを問いかけます。  \nそれは、複数の視点を照らし合わせ、一時の感情に流されず、本質を見極める静かな作業です。  \nこの呼吸を続けることで、ノイズに惑わされない、確かな判断の基盤が築かれていきます。  \n今日も、深く息を吸い、情報と自分との間に、ほんの少しの「間」を作ることから始めてみましょう。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 2
+}
