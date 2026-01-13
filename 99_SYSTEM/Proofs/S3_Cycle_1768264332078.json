@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-01-13T00:32:12.078Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5286,
+      "answer_preview": "叡智の呼吸は、静寂の中に意識を澄ませ、内なる知性の流れに身を委ねる実践です。思考の波を観察し、判断を手放すことで、直観と理性が調和した「叡智の場」へと至ります。ここでは、問題が自ら解きほぐれ、創造的な..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.527,
+      "answer_preview": "今日の叡智の呼吸は、「調和と柔軟性」です。変化の激しい現代社会では、固定観念にとらわれず柔軟に対応する力が求められます。調和は他者との円滑な関係を築く基盤となり、多様な視点を取り入れることで新たな解決..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5286,
+    "answer": "叡智の呼吸は、静寂の中に意識を澄ませ、内なる知性の流れに身を委ねる実践です。思考の波を観察し、判断を手放すことで、直観と理性が調和した「叡智の場」へと至ります。ここでは、問題が自ら解きほぐれ、創造的な洞察が自然に湧き上がるのです。日々の雑音から離れ、この呼吸に身をゆだねる時、私たちは単なる知識の蓄積を超え、物事の本質を見通す深い理解へと導かれます。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 2
+}
