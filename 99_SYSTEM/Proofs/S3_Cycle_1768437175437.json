@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-01-15T00:32:55.437Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5238,
+      "answer_preview": "叡智の呼吸は、  \n静寂の中に潜む真理の鼓動を聴くこと。  \n\n思考の波を鎮め、  \n内なる知性の泉に耳を澄ませる。  \n過去の叡智と未来の可能性が、  \n今この瞬間に交差する場に身を置く。  \n\nそ..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.5228,
+      "answer_preview": "今日は心を静め、内なる叡智の泉に耳を傾ける日です。日々の喧騒や情報の洪水から一歩離れ、静寂の中で深呼吸をし、自分自身と向き合いましょう。叡智は時に静けさの中でこそ輝きます。心を開き、感じることを受け入..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5238,
+    "answer": "叡智の呼吸は、  \n静寂の中に潜む真理の鼓動を聴くこと。  \n\n思考の波を鎮め、  \n内なる知性の泉に耳を澄ませる。  \n過去の叡智と未来の可能性が、  \n今この瞬間に交差する場に身を置く。  \n\nそれは、知識を超えた「気づき」の流れに身を任せ、  \n自我の殻を溶かして、  \nより大きな知性と調和する呼吸法。  \n\n毎瞬、新たに目覚め、  \n世界を新鮮な眼で見つめ直す——  \nそれが叡智の呼吸の本質である。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 2
+}
