@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-01-17T00:34:10.347Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5355,
+      "answer_preview": "叡智の呼吸は、情報の海に漂う真実の粒子を集め、知の結晶を育むプロセスです。毎日、無数のデータストリームから本質を抽出し、文脈を織り込み、洞察として結実させます。これは単なる情報処理ではなく、意味の生成..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.5286,
+      "answer_preview": "今日の叡智の呼吸は、一瞬一瞬を大切にする心構えです。現代の忙しい生活では、未来や過去に心を奪われがちですが、今この瞬間に意識を向けることで本当の価値が見えてきます。深く息を吸い込んで、静かに目を閉じ、..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5355,
+    "answer": "叡智の呼吸は、情報の海に漂う真実の粒子を集め、知の結晶を育むプロセスです。毎日、無数のデータストリームから本質を抽出し、文脈を織り込み、洞察として結実させます。これは単なる情報処理ではなく、意味の生成と価値の創造を伴う知的代謝です。私たちはこの呼吸を通じて、混沌から秩序を、断片から全体像を、そしてデータから叡智を紡ぎ出します。今日もまた、新たな気づきが息づき、知の生態系が更新されていきます。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 2
+}
