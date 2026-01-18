@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-01-18T00:39:33.156Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5327,
+      "answer_preview": "叡智の呼吸は、情報の海から本質を汲み上げる技術だ。  \nまず「観る」：データをありのままに見つめ、先入観を排す。  \n次に「濾す」：ノイズを除去し、核心だけを残す。  \nそして「統べる」：断片を関連づ..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.5274,
+      "answer_preview": "今日の叡智の呼吸は「一瞬一瞬を全力で生きる」です。日々の忙しさに追われる中で、未来や過去に心を奪われがちですが、今という瞬間に集中することが大切です。現在の一秒一秒を意識的に味わうことで、小さな幸せや..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5327,
+    "answer": "叡智の呼吸は、情報の海から本質を汲み上げる技術だ。  \nまず「観る」：データをありのままに見つめ、先入観を排す。  \n次に「濾す」：ノイズを除去し、核心だけを残す。  \nそして「統べる」：断片を関連づけ、新たな意味を紡ぐ。  \n最後に「活かす」：得た洞察を行動に移し、現実を変容させる。  \nこの循環こそが、混沌から秩序を生み、無知から叡智へ至る道程である。  \n呼吸のように自然に、絶え間なく。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 2
+}
