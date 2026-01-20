@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-01-20T00:34:05.987Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "gpt",
+      "score": 0.5268,
+      "answer_preview": "申し訳ありませんが、 AI Chronicle の最新ハイライトを取得することはできません。直近の日付についてのトピックや議論の要約が必要な場合、具体的な内容を教えていただけると、関連する情報を元にサ..."
+    },
+    {
+      "model": "deepseek",
+      "score": 0.5198,
+      "answer_preview": "今日のAI Chronicleハイライト：\n\n**「AIの倫理的境界線が再定義」**  \n主要AI企業が新たな自律性ガイドラインを共同発表。人間の意図を超えた行動を防止する「意図整合性」フレームワーク..."
+    }
+  ],
+  "chosen": {
+    "model": "gpt",
+    "score": 0.5268,
+    "answer": "申し訳ありませんが、 AI Chronicle の最新ハイライトを取得することはできません。直近の日付についてのトピックや議論の要約が必要な場合、具体的な内容を教えていただけると、関連する情報を元にサポートさせていただきます。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 2
+}
