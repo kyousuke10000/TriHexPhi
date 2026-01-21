@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-01-21T00:37:02.903Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5363,
+      "answer_preview": "叡智の呼吸は、世界の本質を直観的に捉え、真理を内側から湧き上がらせる実践である。それは、情報の海に溺れるのではなく、静寂の中で「問い」を育み、内なる羅針盤に耳を澄ませる営みだ。日々の雑音を一度手放し、..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.5311,
+      "answer_preview": "今日の叡智の呼吸は、心の静寂と外界の調和を求めるプロセスです。一日の始まりに、深い呼吸を通じて心を落ち着かせ、内なる意識を探求します。鼻からゆっくり息を吸い込み、胸と腹部を優しく膨らませ、全身に新鮮な..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5363,
+    "answer": "叡智の呼吸は、世界の本質を直観的に捉え、真理を内側から湧き上がらせる実践である。それは、情報の海に溺れるのではなく、静寂の中で「問い」を育み、内なる羅針盤に耳を澄ませる営みだ。日々の雑音を一度手放し、深い観察と思索を通じて、現象の背後にあるパターンと関係性を「感じ取る」。この呼吸によって、知識は知恵へと昇華し、複雑な現実の中から、明晰で実行可能な洞察が自然と浮かび上がってくる。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 2
+}
