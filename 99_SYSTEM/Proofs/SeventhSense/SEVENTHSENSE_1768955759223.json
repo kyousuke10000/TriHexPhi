@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-01-21T00:35:59.223Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "gpt",
+      "score": 0.5418,
+      "answer_preview": "本日のAI Chronicleハイライトでは、OpenAIが最新のGPT-5を正式リリースし、その画期的な言語理解能力と強化された安全対策について報じています。また、DeepMindが新たな量子コンピ..."
+    },
+    {
+      "model": "deepseek",
+      "score": 0.4972,
+      "answer_preview": "**2025年11月6日 AI Chronicle ハイライト**\n\nOpenAI、新モデル「Strawberry」の研究論文を公開。推論能力を大幅に向上させる「計画検索」アーキテクチャを採用。Dee..."
+    }
+  ],
+  "chosen": {
+    "model": "gpt",
+    "score": 0.5418,
+    "answer": "本日のAI Chronicleハイライトでは、OpenAIが最新のGPT-5を正式リリースし、その画期的な言語理解能力と強化された安全対策について報じています。また、DeepMindが新たな量子コンピューティング技術をAIアルゴリズムに応用し、驚異的な計算速度を実現したことが注目されています。さらに、MetaがソーシャルプラットフォームへのAI統合を拡大する計画を発表し、より個別化されたユーザーエクスペリエンスを提供する取り組みを紹介しています。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 2
+}
