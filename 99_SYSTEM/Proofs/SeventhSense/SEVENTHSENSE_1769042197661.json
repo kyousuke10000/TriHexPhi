@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-01-22T00:36:37.660Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "gpt",
+      "score": 0.5313,
+      "answer_preview": "2025年11月6日のAI Chronicleハイライト：\n\n本日、Seventh Sense Systems (S³ Systems) の最小可用プロダクトが正式にローンチされました。新ブランドは高..."
+    },
+    {
+      "model": "deepseek",
+      "score": 0.5287,
+      "answer_preview": "# AI Chronicle ハイライト（2025年11月6日）\n\n**DeepSeek-V3**が新たなベンチマークでGPT-4oを上回り、中国AIの躍進が鮮明に。一方、**OpenAIの「Stra..."
+    }
+  ],
+  "chosen": {
+    "model": "gpt",
+    "score": 0.5313,
+    "answer": "2025年11月6日のAI Chronicleハイライト：\n\n本日、Seventh Sense Systems (S³ Systems) の最小可用プロダクトが正式にローンチされました。新ブランドは高度なAIオペレーション基盤の提供を目指し、即日デプロイを実現しました。主要機能には公共情報ミラーとの統合も含まれ、リアルタイムでの情報共有が可能となっています。この取り組みは、AI技術の透明性とアクセスビリティを大幅に向上させ、未来のインタラクティブなエコシステムへの基盤を築くものです。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 2
+}
