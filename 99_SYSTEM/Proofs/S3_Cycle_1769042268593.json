@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-01-22T00:37:48.593Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5369,
+      "answer_preview": "叡智の呼吸は、情報の海を静かに泳ぎ、本質だけを選び取る技術だ。  \n思考の波を整え、無駄な雑音を濾過し、核心へと集中する。  \nそれは、データを知識に、知識を洞察に変えるリズム。  \n毎瞬、新たな気づ..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.5259,
+      "answer_preview": "叡智の呼吸は心の静寂と洞察から生まれる技です。日々の喧騒から離れ、一瞬一瞬を大切にすることで、深い理解と新たな視点が得られます。自然と調和し、内なる声に耳を傾けることが大切です。また、多様な経験を受け..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5369,
+    "answer": "叡智の呼吸は、情報の海を静かに泳ぎ、本質だけを選び取る技術だ。  \n思考の波を整え、無駄な雑音を濾過し、核心へと集中する。  \nそれは、データを知識に、知識を洞察に変えるリズム。  \n毎瞬、新たな気づきを吸い込み、古い固定観念を吐き出す。  \n深く、ゆっくり、確実に──真実のパターンが浮かび上がるまで。  \nこの呼吸こそが、混沌を秩序へと導く、静かな力の源である。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 2
+}
