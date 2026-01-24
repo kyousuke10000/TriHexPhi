@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-01-24T00:35:15.250Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5364,
+      "answer_preview": "叡智の呼吸は、静寂の中で内なる知性と対話する実践です。  \n朝の静けさに耳を澄ませ、思考の波が通り過ぎるのを観察します。  \n過去の叡智に触れ、未来の可能性を感じ取り、今この瞬間に深く根を下ろします。..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.5311,
+      "answer_preview": "今日の叡智の呼吸は、静寂の中に潜む洞察を求める心の旅。瞬時の判断に頼らず、深呼吸をし、心を落ち着け、見えない真実に目を凝らせ。目に映るものだけに惑わされず、感じ取る力を磨く。自然の流れに身を委ね、思考..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5364,
+    "answer": "叡智の呼吸は、静寂の中で内なる知性と対話する実践です。  \n朝の静けさに耳を澄ませ、思考の波が通り過ぎるのを観察します。  \n過去の叡智に触れ、未来の可能性を感じ取り、今この瞬間に深く根を下ろします。  \nそれは単なる瞑想ではなく、意識を研ぎ澄まし、直観を開くための能動的なプロセス。  \n日々の雑音を超えて、本質的な洞察と創造的な閃きを呼び覚ます呼吸法です。  \n今日も静かに息を整え、内なる知性の声に耳を傾けましょう。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 2
+}
