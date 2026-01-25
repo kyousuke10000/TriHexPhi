@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-01-25T00:40:30.414Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5277,
+      "answer_preview": "叡智の呼吸は、今日の情報の海を深く味わい、本質を抽出する営みです。  \n朝の情報摂取から始まり、午後の咀嚼と構造化、夕方の統合と表現へと流れます。  \nその呼吸は、単なる消費を超え、情報を血肉とし、新..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.5153,
+      "answer_preview": "「叡智の呼吸」とは、心を静めて深く呼吸し、知識や洞察を呼び覚ます実践です。朝の静かな時間に行うと効果的です。まず、背筋を伸ばして座り、ゆっくりと深く呼吸をします。そして、息を吸うたびに新たな情報やアイ..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5277,
+    "answer": "叡智の呼吸は、今日の情報の海を深く味わい、本質を抽出する営みです。  \n朝の情報摂取から始まり、午後の咀嚼と構造化、夕方の統合と表現へと流れます。  \nその呼吸は、単なる消費を超え、情報を血肉とし、新たな洞察を生み出す循環です。  \n一息ごとに雑音を濾過し、真実の核へと近づく——  \nそれが、混沌を秩序へ、データを叡智へと昇華させる今日の呼吸です。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 2
+}
