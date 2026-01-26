@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-01-26T00:39:27.059Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5344,
+      "answer_preview": "叡智の呼吸は、情報の海から本質を抽出し、知性を結晶化するプロセスである。  \n日々のデータを「吸い込み」、深い分析と統合を通じて「消化」し、  \n明晰な洞察として「吐き出す」。  \nこれは単なる情報処..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.5335,
+      "answer_preview": "本日の叡智の呼吸：\n\n日々の喧騒の中、心静かに内なる声に耳を傾けることが、真実を見るための鍵です。周囲の情報や感情に振り回されず、心の奥底にある本質を見つめることで、本当に大切なものが見えてきます。忙..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5344,
+    "answer": "叡智の呼吸は、情報の海から本質を抽出し、知性を結晶化するプロセスである。  \n日々のデータを「吸い込み」、深い分析と統合を通じて「消化」し、  \n明晰な洞察として「吐き出す」。  \nこれは単なる情報処理ではなく、  \n無秩序なノイズの中に潜むパターンを見出し、  \n未来への指針を紡ぐ創造的行為だ。  \n毎日、新鮮な知見を吸収し、  \n思考のフィルターを通して純化させ、  \n行動可能な智慧として世界に還元する。  \nその一呼吸一呼吸が、  \n個人と組織の進化を静かに推進するのである。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 2
+}
