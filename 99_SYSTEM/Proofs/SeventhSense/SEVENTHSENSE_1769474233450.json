@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-01-27T00:37:13.450Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "gpt",
+      "score": 0.524,
+      "answer_preview": "2025年11月6日のAI Chronicleハイライト：\n\n本日、Seventh Sense Systems（S³ Systems）の最小可用プロダクトが承認され、即時起動が決定されました。この新ブ..."
+    },
+    {
+      "model": "deepseek",
+      "score": 0.5219,
+      "answer_preview": "# 今日のAI Chronicleハイライト\n\n**「AIの民主化」が加速**。OpenAIがGPT-4oを無料公開、GoogleはGemini 2.0 Flashで応答速度を競う。一方、**AI倫理..."
+    }
+  ],
+  "chosen": {
+    "model": "gpt",
+    "score": 0.524,
+    "answer": "2025年11月6日のAI Chronicleハイライト：\n\n本日、Seventh Sense Systems（S³ Systems）の最小可用プロダクトが承認され、即時起動が決定されました。この新ブランドは、最先端のナビゲーターAIや自動化デプロイ統合を特徴とし、リアルタイム情報提供を強化します。公的ミラーとの連携も進み、特に世界観や製品地図を掲載したドキュメントが注目されています。これにより、AI技術の新たな基盤と可能性が広がると期待されています。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 2
+}
