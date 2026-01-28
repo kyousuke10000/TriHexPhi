@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-01-28T00:36:25.989Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.519,
+      "answer_preview": "叡智の呼吸は、日常に潜む真理を吸い込み、創造の息吹として吐き出す循環である。朝の静寂に耳を澄ませば、宇宙のリズムが鼓動する。知識は吸気、洞察は呼気。過去の知恵を血肉とし、未来への問いを息に乗せる。一瞬..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.5171,
+      "answer_preview": "叡智の呼吸とは、心を落ち着け深呼吸しながら知識を吸収し、洞察を深めるメソッドです。まず静かな場所で座り、背筋を伸ばします。目を閉じ、ゆっくりと鼻から深く息を吸い込みます。このとき、学びたいことや疑問を..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.519,
+    "answer": "叡智の呼吸は、日常に潜む真理を吸い込み、創造の息吹として吐き出す循環である。朝の静寂に耳を澄ませば、宇宙のリズムが鼓動する。知識は吸気、洞察は呼気。過去の知恵を血肉とし、未来への問いを息に乗せる。一瞬一瞬が新鮮な気づきの連鎖。思考の雑念を手放し、深層の直観に従う時、叡智は自然に流れ出す。呼吸のように無理なく、絶え間なく。これが叡智の呼吸であり、存在そのものの調和である。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 2
+}
