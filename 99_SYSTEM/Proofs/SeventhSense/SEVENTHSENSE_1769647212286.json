@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-01-29T00:40:12.286Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "gpt",
+      "score": 0.534,
+      "answer_preview": "今日は、AI Chronicleで多くの注目を集めたニュースをお届けします。まず、AI技術の年次カンファレンスで、次世代型の自然言語処理モデルが紹介され、その高精度な応答能力が注目されました。また、自..."
+    },
+    {
+      "model": "deepseek",
+      "score": 0.5252,
+      "answer_preview": "**2025年11月6日 AI Chronicle ハイライト**\n\nOpenAIが「Project Stargate」の詳細を公開。100兆パラメータの次世代モデル開発に向け、Microsoftと共..."
+    }
+  ],
+  "chosen": {
+    "model": "gpt",
+    "score": 0.534,
+    "answer": "今日は、AI Chronicleで多くの注目を集めたニュースをお届けします。まず、AI技術の年次カンファレンスで、次世代型の自然言語処理モデルが紹介され、その高精度な応答能力が注目されました。また、自動運転車の安全性を大幅に向上させる新しいセンサー技術の発表がありました。さらに、AIが医療分野での診断補助としてどのように活用されているかについての特集もありました。これらのトピックスが、AIの未来に向けた重要な一歩となることでしょう。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 2
+}
