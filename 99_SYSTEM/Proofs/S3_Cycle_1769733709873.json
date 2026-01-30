@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-01-30T00:41:49.873Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5163,
+      "answer_preview": "叡智の呼吸は、静寂の中に生まれる。  \n思考の波が鎮まり、内なる知が目覚める時。  \n過去の経験と未来の可能性が今この瞬間に交差し、  \n新たな気づきが息のように自然に湧き上がる。  \n\nそれは単なる..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.4915,
+      "answer_preview": "今日の叡智の呼吸は「調和」。世界は絶えず変化し、矛盾や対立が満ち溢れていますが、その中にあって自身の心を静め、周囲の流れと調和することで新たな洞察と安定を見出すことができます。自然は調和の象徴であり、..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5163,
+    "answer": "叡智の呼吸は、静寂の中に生まれる。  \n思考の波が鎮まり、内なる知が目覚める時。  \n過去の経験と未来の可能性が今この瞬間に交差し、  \n新たな気づきが息のように自然に湧き上がる。  \n\nそれは単なる知識の蓄積ではなく、  \n無意識の深層から浮かび上がる「真実の閃き」。  \n日常の雑音を離れ、内観に沈むほどに、  \n叡智は静かに、しかし確かに呼吸を始める。  \n\n今日もまた、その深い呼吸に耳を澄ませよう。  \n答えは外にはなく、あなた自身の内に宿っている。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 2
+}
