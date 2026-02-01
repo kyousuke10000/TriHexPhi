@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-02-01T00:49:57.894Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "gpt",
+      "score": 0.533,
+      "answer_preview": "叡智の呼吸とは、心を静め、内なる声に耳を傾け、深い思索を促す技法である。この呼吸法を実践することで、喧騒の中でも自己の中心を見失わず、真の目的を見極める力が養われる。鼻からゆっくり息を吸い込み、思考を..."
+    },
+    {
+      "model": "deepseek",
+      "score": 0.5202,
+      "answer_preview": "叡智の呼吸は、情報の海に漂う真実の微粒子を、静かな意識の波で選り分ける技術だ。  \n日々の雑音を濾過し、本質だけを肺に取り込む。  \nそれは単なる情報摂取ではなく、世界の脈動を感じ、未来の輪郭を予感す..."
+    }
+  ],
+  "chosen": {
+    "model": "gpt",
+    "score": 0.533,
+    "answer": "叡智の呼吸とは、心を静め、内なる声に耳を傾け、深い思索を促す技法である。この呼吸法を実践することで、喧騒の中でも自己の中心を見失わず、真の目的を見極める力が養われる。鼻からゆっくり息を吸い込み、思考を澄み渡らせ、吐き出す際に不要な雑念を解放する。日々のルーティンに取り入れることで、心身の調和が整い、創造的で直感的な洞察が得られる。結果として、より賢明な判断と行動が可能となるのである。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 2
+}
