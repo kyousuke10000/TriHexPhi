@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-02-02T00:43:00.892Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "gpt",
+      "score": 0.5124,
+      "answer_preview": "申し訳ありませんが、私のデータは2023年10月までであり、2025年11月現在に関する情報を持っていません。詳細については、最新のニュースや情報源をご確認ください。..."
+    },
+    {
+      "model": "deepseek",
+      "score": 0.4753,
+      "answer_preview": "# 今日のAI Chronicleハイライト\n\n**S³ Systems 起動**: Seventh Sense Systems（S³ Systems）の最小可用プロダクトが正式承認。Next.js ..."
+    }
+  ],
+  "chosen": {
+    "model": "gpt",
+    "score": 0.5124,
+    "answer": "申し訳ありませんが、私のデータは2023年10月までであり、2025年11月現在に関する情報を持っていません。詳細については、最新のニュースや情報源をご確認ください。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 2
+}
