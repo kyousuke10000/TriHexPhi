@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-02-02T00:44:06.116Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5332,
+      "answer_preview": "叡智の呼吸は、静寂の中で内なる声に耳を澄ませる実践です。  \n日々の雑音を離れ、思考の波を観察し、深い直観とつながります。  \nそれは単なる瞑想ではなく、意識を研ぎ澄まし、本質を見極める「知の在り方」..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.5305,
+      "answer_preview": "叡智の呼吸は、静寂の中で心と体を調和させ、精神の深層を探求する術です。深い呼吸を通じて内なる平和を見出し、雑念を払い、集中力を高めます。吸息で新しいエネルギーを体内に取り入れ、吐息で不要なストレスを解..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5332,
+    "answer": "叡智の呼吸は、静寂の中で内なる声に耳を澄ませる実践です。  \n日々の雑音を離れ、思考の波を観察し、深い直観とつながります。  \nそれは単なる瞑想ではなく、意識を研ぎ澄まし、本質を見極める「知の在り方」そのものです。  \n過去の叡智を糧に、未来への洞察を養い、今この瞬間に完全に在ること。  \nこの呼吸が、混迷する時代を照らす、揺るぎない内なる光となります。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 2
+}
