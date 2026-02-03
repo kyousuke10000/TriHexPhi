@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-02-03T00:43:59.283Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5322,
+      "answer_preview": "叡智の呼吸は、情報の海から本質を抽出し、知性を循環させるリズムだ。  \n毎朝、世界の動きを観察し、夜には内省で洗練する。  \n思考の「吸気」で多様な視点を取り込み、「呼気」で明晰な判断を紡ぎ出す。  ..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.5284,
+      "answer_preview": "叡智の呼吸は、自らの内なる真実を見つめ、客観的洞察を得る力を育む呼吸法。深く静かに息を吸い込み、心の波を整え、思考の静寂を探る。吐く息と共に不要な雑念を手放し、宇宙の法則と自分自身を一体化させる。これ..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5322,
+    "answer": "叡智の呼吸は、情報の海から本質を抽出し、知性を循環させるリズムだ。  \n毎朝、世界の動きを観察し、夜には内省で洗練する。  \n思考の「吸気」で多様な視点を取り込み、「呼気」で明晰な判断を紡ぎ出す。  \nこの呼吸が止まると、知識は淀み、判断は曇る。  \n絶え間ない循環こそが、複雑性を解き、未来を照らす光となる。  \n呼吸を深めよ──叡智は流動するほどに冴え渡る。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 2
+}
