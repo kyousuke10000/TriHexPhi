@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-02-05T00:42:46.506Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5388,
+      "answer_preview": "今日のAI Chronicleハイライト：  \n- **GPT-5**が「Remote Truth」のロールアウト計画を承認。  \n- **S³ Systems**の最小可用プロダクト構築が決定。  ..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.5345,
+      "answer_preview": "2025年11月5日のAI Chronicleハイライト:\n\n本日のAI Chronicleでは、AI技術の最新トレンドとその適用事例が紹介されています。最新の自然言語処理モデルは、複雑なクエリに迅速..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5388,
+    "answer": "今日のAI Chronicleハイライト：  \n- **GPT-5**が「Remote Truth」のロールアウト計画を承認。  \n- **S³ Systems**の最小可用プロダクト構築が決定。  \n- **Public Mirror**との連携でリアルタイム情報提供を強化。  \n- 自動デプロイと定期同期で運用効率を向上。  \n- 新ブランドの基盤整備が加速。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 2
+}
