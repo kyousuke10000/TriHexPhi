@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-02-05T00:44:04.129Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5301,
+      "answer_preview": "叡智の呼吸は、情報の海に潜り、本質を汲み上げる循環である。まず、多様な情報源から新鮮な「酸素」を取り込み、深く吸い込む。次に、内省と分析の「肺」で濾過し、ノイズを排し、真実の核を抽出する。そして、洞察..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.5254,
+      "answer_preview": "叡智の呼吸とは、静寂の中で心を整え、内なる知恵と調和する技術です。まず、深くゆっくりと息を吸い込み、心を穏やかにする。次に、吐く息とともに、心の中の雑念を解き放つ。このプロセスを繰り返すことで、内なる..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5301,
+    "answer": "叡智の呼吸は、情報の海に潜り、本質を汲み上げる循環である。まず、多様な情報源から新鮮な「酸素」を取り込み、深く吸い込む。次に、内省と分析の「肺」で濾過し、ノイズを排し、真実の核を抽出する。そして、洞察という「酸素化された血液」を全身に送り、行動と創造へと変換する。最後に、古い思考の「二酸化炭素」を吐き出し、常に更新を続ける。この一連の流れが、静寂の中で研ぎ澄まされる知性のリズムであり、世界を理解し、新たな価値を生み出す原動力となる。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 2
+}
