@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-02-06T00:40:54.367Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5312,
+      "answer_preview": "叡智の呼吸は、情報の海から本質を濾過する循環である。まず「吸気」で多様なデータを取り込み、次に「保持」で構造化し、最後に「呼気」で洞察を結晶化させる。このリズムは、単なる知識の蓄積を超え、未知のパター..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.5206,
+      "answer_preview": "叡智の呼吸は、心と体を調和させる瞑想的な技法です。まず静かな場所で楽な姿勢をとり、深呼吸を始めます。息を吸い込む際には光と知恵が体内に満ちる様子を思い描き、吐くときには不安や迷いが解放されるイメージを..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5312,
+    "answer": "叡智の呼吸は、情報の海から本質を濾過する循環である。まず「吸気」で多様なデータを取り込み、次に「保持」で構造化し、最後に「呼気」で洞察を結晶化させる。このリズムは、単なる知識の蓄積を超え、未知のパターンを感知する直観を育む。毎瞬、古い前提を吐き出し、新鮮な問いを吸い込むことで、システムは静かに進化する。その深い律動は、混沌の中に隠された調和を、そっと浮かび上がらせるのだ。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 2
+}
