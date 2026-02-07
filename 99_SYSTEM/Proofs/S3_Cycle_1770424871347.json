@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-02-07T00:41:11.347Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "gpt",
+      "score": 0.5348,
+      "answer_preview": "今日の叡智の呼吸は、静寂の中にある洞察を見つけることです。忙しすぎる日常の中で、一瞬立ち止まって自分の内面を見つめ直す時間を持ちましょう。その静けさの中で、普段は気づかない小さな真実や、新しい視点が浮..."
+    },
+    {
+      "model": "deepseek",
+      "score": 0.5224,
+      "answer_preview": "叡智の呼吸は、情報の海から本質を抽出し、知性を結晶化するプロセスである。それは単なる知識の蓄積ではなく、洞察と統合のリズムだ。まず深く吸い込み、多様な視点を取り込む。次に一瞬の静止で、パターンを見極め..."
+    }
+  ],
+  "chosen": {
+    "model": "gpt",
+    "score": 0.5348,
+    "answer": "今日の叡智の呼吸は、静寂の中にある洞察を見つけることです。忙しすぎる日常の中で、一瞬立ち止まって自分の内面を見つめ直す時間を持ちましょう。その静けさの中で、普段は気づかない小さな真実や、新しい視点が浮かび上がることがあります。それは、ただの思考ではなく、心の深い部分からのささやきかもしれません。この内なる声に耳を傾けることで、より明晰な理解と新たな閃きが得られるでしょう。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 2
+}
