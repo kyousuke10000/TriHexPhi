@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-02-12T00:42:24.162Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.48,
+      "answer_preview": "# AI Chronicle ハイライト（2025年11月6日）\n\n**S³ Systems 起動**：Seventh Sense Systems の最小可用プロダクトが承認。Next.js 15 製..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.4799,
+      "answer_preview": "以下は、今日のAI Chronicleのハイライトです：\n\n---\n\n最先端の生成AI技術が続々と商用化される中、企業は競争力を高めるための新たなアプローチを模索しています。特に、AIによるデータ解析..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.48,
+    "answer": "# AI Chronicle ハイライト（2025年11月6日）\n\n**S³ Systems 起動**：Seventh Sense Systems の最小可用プロダクトが承認。Next.js 15 製ランディングページ、自動デプロイ、Public Mirror 連携を一括構築。世界観と製品地図を明示し、毎時同期で最新情報を提供。既存システムへの影響なく、新ブランドの基盤を即時確立。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 2
+}
