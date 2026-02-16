@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-02-16T00:43:20.209Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5311,
+      "answer_preview": "今日のAI Chronicleハイライト：  \n**「AIエージェントの自律性と安全性のバランス」**が焦点。  \nOpenAIは「Superalignment」チームを再編し、AIの制御研究を加速。..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.5219,
+      "answer_preview": "2025年11月6日のAI Chronicleハイライト:\n\n本日のAI Chronicleでは、AIの進化がもたらす未来の新たなビジョンが特集されています。AIと組み合わせたロボティクス技術が医療分..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5311,
+    "answer": "今日のAI Chronicleハイライト：  \n**「AIエージェントの自律性と安全性のバランス」**が焦点。  \nOpenAIは「Superalignment」チームを再編し、AIの制御研究を加速。  \n一方、Anthropicは「Constitutional AI」の新手法を公開、AIの倫理判断を強化。  \n業界では、自律性の進化と人間の監督の両立が急務に。  \n規制動向も活発化、EU AI法の施行準備が進む中、各国でガイドライン策定が加速。  \n**キーワード**：自律制御、倫理AI、規制対応、AI安全。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 2
+}
