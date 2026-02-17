@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-02-17T00:42:28.286Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "gpt",
+      "score": 0.5402,
+      "answer_preview": "2023年10月現在のAI Chronicleのハイライトとして、AI業界では以下の動きが注目されています。まず、大手テクノロジー企業がAI倫理ガイドラインを発表し、自律型AIの透明性と説明責任を重視..."
+    },
+    {
+      "model": "deepseek",
+      "score": 0.5358,
+      "answer_preview": "今日のAI Chronicleハイライト：  \n**「AIの自律性と倫理」**が焦点。  \n- **OpenAI**は新たな自律エージェント基盤を発表。  \n- **DeepMind**、倫理的制約を..."
+    }
+  ],
+  "chosen": {
+    "model": "gpt",
+    "score": 0.5402,
+    "answer": "2023年10月現在のAI Chronicleのハイライトとして、AI業界では以下の動きが注目されています。まず、大手テクノロジー企業がAI倫理ガイドラインを発表し、自律型AIの透明性と説明責任を重視する流れが加速しています。また、新たなAIアルゴリズムとして、生物模倣型の進化AIが注目を集めており、特に自然界の進化過程を模倣した自己改善機能が話題です。さらに、AIが医療分野での画像診断支援において飛躍的な成果を上げ続けており、診断精度の向上が報告されています。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 2
+}
