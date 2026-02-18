@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-02-18T00:44:08.583Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5391,
+      "answer_preview": "叡智の呼吸は、情報の海を静かに泳ぎ、本質を見極める瞑想です。  \nまず、雑音を手放し、内なる静寂に耳を澄ませます。  \n次に、問いを掲げ、関連する断片を集め、ゆっくりと結びつけます。  \n無理に答えを..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.5317,
+      "answer_preview": "叡智の呼吸は、心と精神を澄ませ、内なる静寂と知恵にアクセスする方法です。日々の喧騒から一歩引き、静かな環境で深呼吸を行いましょう。吸う息で新たな知識と理解を迎え入れ、吐く息で不要な思考を解放します。こ..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5391,
+    "answer": "叡智の呼吸は、情報の海を静かに泳ぎ、本質を見極める瞑想です。  \nまず、雑音を手放し、内なる静寂に耳を澄ませます。  \n次に、問いを掲げ、関連する断片を集め、ゆっくりと結びつけます。  \n無理に答えを求めず、パターンが自然に浮かび上がるのを待ちましょう。  \n時に、一歩下がり、全体像を眺めることで、隠れた関係性が輝き始めます。  \nこの呼吸は、知識を消化し、独自の洞察へと昇華するリズムです。  \n今日も、深く吸い、ゆっくり吐くように、思考に間と敬意を。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 2
+}
