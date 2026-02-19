@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-02-19T00:44:26.753Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "gpt",
+      "score": 0.5368,
+      "answer_preview": "今日の叡智の呼吸は、「己を知り、他を知れば、百戦危うからず」という戦略の極意です。自己理解を深め、自分の強みや弱みを把握しつつ、相手や状況を的確に観察することが重要です。この知識を日常や仕事に活かすこ..."
+    },
+    {
+      "model": "deepseek",
+      "score": 0.5312,
+      "answer_preview": "叡智の呼吸は、静寂の中に宿る宇宙の鼓動を感じ取る実践である。まず、意識を内側に向け、思考の波を鎮める。次に、呼吸の一瞬一瞬に宇宙の知恵が流れ込むとイメージする。吸気では叡智の光が細胞に浸透し、呼気では..."
+    }
+  ],
+  "chosen": {
+    "model": "gpt",
+    "score": 0.5368,
+    "answer": "今日の叡智の呼吸は、「己を知り、他を知れば、百戦危うからず」という戦略の極意です。自己理解を深め、自分の強みや弱みを把握しつつ、相手や状況を的確に観察することが重要です。この知識を日常や仕事に活かすことで、困難を乗り越え、最良の結果を導く道を見つけることができます。簡単に見えるこのステップが、実は持続的な成功の鍵であり、自信を持って行動するための土台となります。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 2
+}
