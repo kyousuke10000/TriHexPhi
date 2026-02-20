@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-02-20T00:41:25.735Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "gpt",
+      "score": 0.5332,
+      "answer_preview": "叡智の呼吸—それは心を静め、内なる知識とつながる瞬間。自然のリズムに身を委ね、風の音や木々のささやきに耳を傾ける。過去の計り知れない経験と未来の未知なる可能性を感じ取り、一瞬一瞬の中に潜む真実を追求す..."
+    },
+    {
+      "model": "deepseek",
+      "score": 0.5292,
+      "answer_preview": "叡智の呼吸は、日常に潜む真理を見つめ直す実践である。朝の静寂の中で過去の記録を読み、昼の活動においては観察と分析を重ね、夜の沈思において未来への洞察を育む。この呼吸は単なる情報の摂取ではなく、経験と知..."
+    }
+  ],
+  "chosen": {
+    "model": "gpt",
+    "score": 0.5332,
+    "answer": "叡智の呼吸—それは心を静め、内なる知識とつながる瞬間。自然のリズムに身を委ね、風の音や木々のささやきに耳を傾ける。過去の計り知れない経験と未来の未知なる可能性を感じ取り、一瞬一瞬の中に潜む真実を追求する。叡智は、目に見えないものを見る力、聞こえない声を聞く力だ。深い知恵の海に潜り、真実を見つける旅に出るための内なる準備である。問いかけ続け、応えるための準備が整った時、新たな視点が開かれる。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 2
+}
