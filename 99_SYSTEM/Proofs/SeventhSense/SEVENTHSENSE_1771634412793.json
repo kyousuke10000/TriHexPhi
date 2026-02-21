@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-02-21T00:40:12.793Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "gpt",
+      "score": 0.5386,
+      "answer_preview": "本日のAI Chronicleでは、AI業界の最新動向として、Generative AIの進化が特集されています。特に、GPT-4を超える新たなモデルのリリースが注目されており、画像生成能力や自然言語..."
+    },
+    {
+      "model": "deepseek",
+      "score": 0.5014,
+      "answer_preview": "今日のAI Chronicleハイライト：  \nOpenAIが「AIの民主化」を掲げた新モデル「O1-mini」を発表。  \nGoogleは「Gemini 2.0」でマルチモーダル推論を強化。  \n中..."
+    }
+  ],
+  "chosen": {
+    "model": "gpt",
+    "score": 0.5386,
+    "answer": "本日のAI Chronicleでは、AI業界の最新動向として、Generative AIの進化が特集されています。特に、GPT-4を超える新たなモデルのリリースが注目されており、画像生成能力や自然言語処理における革新が報告されています。さらに、AI倫理に関する議論が活発化しており、AIの透明性や責任性の確保が求められています。最後に、企業によるAIの商用化戦略も紹介され、さまざまな分野でのAI適用事例が増加していることが強調されています。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 2
+}
