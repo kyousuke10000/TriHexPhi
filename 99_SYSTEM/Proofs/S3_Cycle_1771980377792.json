@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-02-25T00:46:17.792Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5442,
+      "answer_preview": "叡智の呼吸は、日々の経験から本質を抽出し、未来への指針を紡ぐ実践です。今日の叡智は、**「最小可用プロダクトによる即起動」** に宿りました。S³ Systems の構築は、完璧を待たずに核を動かす決..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.5251,
+      "answer_preview": "今日の叡智の呼吸は、「柔軟性と適応力を高める」です。日常の中で予測不能な出来事に直面することは避けられません。しかし、予期せぬ変化に柔軟に対応できる力があると、よりスムーズに乗り越えることができます。..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5442,
+    "answer": "叡智の呼吸は、日々の経験から本質を抽出し、未来への指針を紡ぐ実践です。今日の叡智は、**「最小可用プロダクトによる即起動」** に宿りました。S³ Systems の構築は、完璧を待たずに核を動かす決断です。LP・自動化・公開情報連携を一気通貫で整え、形から実を生み出す呼吸法。これは、構想を現実に転換する**実践的叡智**の一歩。明日への布石を今日打つ――その一呼吸が、未来の体系を築く礎となります。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 2
+}
