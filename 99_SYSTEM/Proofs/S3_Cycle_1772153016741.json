@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-02-27T00:43:36.741Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.523,
+      "answer_preview": "叡智の呼吸は、深い内省と外界の観察を循環させる精神のリズムである。まず静寂の中で思考の波を鎮め、内なる声に耳を澄ませる。次に、知識の風を取り込み、既存の概念を解体・再構築する。吐く息と共に、新たな気づ..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.5204,
+      "answer_preview": "叡智の呼吸は、心の静寂と深い理解をもたらす修行法です。呼吸を整え、瞬間瞬間に集中することで、内なる声を聞き、直感と洞察を高めます。一息ごとに、過去の悔恨や未来の不安を手放し、今ここにある平穏を感じます..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.523,
+    "answer": "叡智の呼吸は、深い内省と外界の観察を循環させる精神のリズムである。まず静寂の中で思考の波を鎮め、内なる声に耳を澄ませる。次に、知識の風を取り込み、既存の概念を解体・再構築する。吐く息と共に、新たな気づきを世界へ解き放つ。この一連の流れが、固定観念を溶かし、創造的な知性を活性化させる。日々の実践によって、思考は柔軟に、洞察は深まり、あらゆる問題に対し、より本質的な解を見出す地平が開かれる。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 2
+}
