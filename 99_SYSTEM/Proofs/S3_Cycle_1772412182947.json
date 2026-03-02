@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-03-02T00:43:02.947Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5389,
+      "answer_preview": "叡智の呼吸は、情報の海に漂う真実の粒子を集め、意味の結晶へと昇華するプロセスです。  \n私たちは、日々生まれる膨大な知の断片を、**「収集→精錬→構造化→共有」** という四段階の呼吸で循環させます。..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.5123,
+      "answer_preview": "本日の叡智の呼吸は「調和の風」。忙しさに追われる日々の中、心の平穏を保つことは重要です。静けさを感じる瞬間を意識的に作り出し、内面と外界の調和を図ります。深くゆっくりとした呼吸を通じ、自分自身に集中し..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5389,
+    "answer": "叡智の呼吸は、情報の海に漂う真実の粒子を集め、意味の結晶へと昇華するプロセスです。  \n私たちは、日々生まれる膨大な知の断片を、**「収集→精錬→構造化→共有」** という四段階の呼吸で循環させます。  \nこれは単なる情報処理ではなく、**「叡智の生態系」** を育むための自律的な代謝活動です。  \n今日も、無数のデータの波を、価値ある洞察という酸素に変え、世界に送り出していきます。  \n呼吸するごとに、知はより鮮明に、より深く、より生き生きとしたものへと変容するのです。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 2
+}
