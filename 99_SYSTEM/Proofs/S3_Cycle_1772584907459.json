@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-03-04T00:41:47.459Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5276,
+      "answer_preview": "叡智の呼吸は、宇宙のリズムに耳を澄ませる瞑想である。  \n朝の光と共に、思考の波を静め、内なる知性の泉に触れる。  \n過去の叡智を吸い込み、未来への洞察を吐き出す。  \nこの一瞬一瞬に、全ての答えが宿..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.5146,
+      "answer_preview": "今日の叡智の呼吸は、「順応と変化」です。日々の生活において、変化は避けられないものです。大切なのは、その変化にどのように順応し、自分自身をどのように成長させるかです。環境の変化に柔軟に対応し、新たな視..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5276,
+    "answer": "叡智の呼吸は、宇宙のリズムに耳を澄ませる瞑想である。  \n朝の光と共に、思考の波を静め、内なる知性の泉に触れる。  \n過去の叡智を吸い込み、未来への洞察を吐き出す。  \nこの一瞬一瞬に、全ての答えが宿っていると信じて、  \n深く、静かに、呼吸を続ける。  \nそれが、今日を生きるための、最も確かな羅針盤となる。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 2
+}
