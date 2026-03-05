@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-03-05T00:42:32.423Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "gpt",
+      "score": 0.5256,
+      "answer_preview": "本日のAI Chronicleハイライトでは、米国の研究チームが開発した最新の自然言語処理モデル「LinguistA」について報じられています。このモデルは、大規模な多言語データセットを用いてトレーニ..."
+    },
+    {
+      "model": "deepseek",
+      "score": 0.5021,
+      "answer_preview": "# AI Chronicle ハイライト（2025年11月6日）\n\n**OpenAI、GPT-5を一般公開**  \nGPT-5は「推論エンジン」として設計され、複雑な問題解決能力を大幅に向上。同時に、..."
+    }
+  ],
+  "chosen": {
+    "model": "gpt",
+    "score": 0.5256,
+    "answer": "本日のAI Chronicleハイライトでは、米国の研究チームが開発した最新の自然言語処理モデル「LinguistA」について報じられています。このモデルは、大規模な多言語データセットを用いてトレーニングされ、既存の最先端モデルを凌駕する翻訳精度を達成しました。また、医療分野でのAI活用にも一歩前進が見られ、癌診断を迅速化する新しいAIアルゴリズムの試験結果が発表されました。その他、AI倫理に関する国際会議の開催も紹介されています。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 2
+}
