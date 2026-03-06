@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-03-06T00:46:14.440Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5351,
+      "answer_preview": "叡智の呼吸は、深く静かな吸気とともに宇宙の知恵を取り込み、穏やかな呼気で内なる真理を解き放つ。この呼吸は、瞬間の観察と直観の覚醒を促し、思考の波を超えて本質へと導く。毎瞬を新鮮な気づきで満たし、過去の..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.5306,
+      "answer_preview": "叡智の呼吸は、自らの内に眠る知恵を引き出し、瞬時に事態を見極める力を養う呼吸法です。まずは静かに目を閉じ、深くゆっくりと息を吸い込みます。その際、自らの心に問いを立て、その答えが自然と思い浮かぶ瞬間を..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5351,
+    "answer": "叡智の呼吸は、深く静かな吸気とともに宇宙の知恵を取り込み、穏やかな呼気で内なる真理を解き放つ。この呼吸は、瞬間の観察と直観の覚醒を促し、思考の波を超えて本質へと導く。毎瞬を新鮮な気づきで満たし、過去の束縛から自由になることで、無限の可能性が開かれる。呼吸と共に流れる叡智は、単なる知識ではなく、存在そのものと調和する生きた知性である。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 2
+}
