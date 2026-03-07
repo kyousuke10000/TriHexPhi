@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-03-07T00:41:07.967Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5309,
+      "answer_preview": "叡智の呼吸は、静寂の中に生まれる。  \n思考の波を鎮め、内なる声に耳を澄ます。  \n過去の知恵と未来の洞察が、今この瞬間に交差する。  \nそれは、問いを抱き、答えを待つ姿勢。  \n無理に探さず、自然に..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.5262,
+      "answer_preview": "今日の叡智の呼吸とは、日常の中で忘れがちな気づきや学びを取り戻すための意識的な行動です。まず、静かな環境で深呼吸を行い、一瞬一瞬に自分を引き戻します。その後、目の前の課題を深く観察し、全ての可能性に対..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5309,
+    "answer": "叡智の呼吸は、静寂の中に生まれる。  \n思考の波を鎮め、内なる声に耳を澄ます。  \n過去の知恵と未来の洞察が、今この瞬間に交差する。  \nそれは、問いを抱き、答えを待つ姿勢。  \n無理に探さず、自然に訪れる閃きを信じる。  \n日々の小さな気づきを積み重ね、  \nやがて大きな流れとなる。  \n今日も、ただ在り、感じ、受け取る。  \n叡智は既に内にあり、  \n呼吸と共に静かに脈打っている。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 2
+}
