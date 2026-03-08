@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-03-08T00:43:04.394Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.521,
+      "answer_preview": "今日のAI Chronicleハイライト：  \n**「AIの自律性と人間の制御」**が焦点。  \nOpenAIの新モデル「Strawberry」が高度な推論能力を示し、DeepMindの「Projec..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.4686,
+      "answer_preview": "2025年11月6日のAI Chronicleハイライト：\n\n1. **Seventh Sense Systemsローンチ**: 新ブランドS³ Systemsが発表され、Public Mirrorと..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.521,
+    "answer": "今日のAI Chronicleハイライト：  \n**「AIの自律性と人間の制御」**が焦点。  \nOpenAIの新モデル「Strawberry」が高度な推論能力を示し、DeepMindの「Project Astra」がマルチモーダルAIの新境地を開拓。  \n一方で、AIシステムの予測不能な行動への懸念が高まり、欧州AI法では厳格なリスク管理が議論される。  \n技術革新と倫理的枠組みのバランスが、今後のAI発展の鍵となる。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 2
+}
