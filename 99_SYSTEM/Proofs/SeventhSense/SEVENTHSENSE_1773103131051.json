@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-03-10T00:38:51.050Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5221,
+      "answer_preview": "# AI Chronicle ハイライト（2025年11月6日）\n\n**OpenAI**、GPT-5の一般公開を開始。  \n**Anthropic**、Claude 3.5 Sonnetの新機能「Co..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.5208,
+      "answer_preview": "2025年11月6日のAI Chronicleハイライト：\n\nAI技術の進化が続く中、新しいAI主導の医療システムが画期的なブレイクスルーを報告しました。このシステムは診断精度を大幅に向上させ、早期発..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5221,
+    "answer": "# AI Chronicle ハイライト（2025年11月6日）\n\n**OpenAI**、GPT-5の一般公開を開始。  \n**Anthropic**、Claude 3.5 Sonnetの新機能「Contextual Memory」を発表。  \n**Google**、Gemini 2.0のマルチモーダル性能を公開。  \n**Meta**、Llama 3.2のオープンソース版をリリース。  \n**Microsoft**、Copilot for Azureの新機能を発表。  \n**Apple**、Apple Intelligenceの進捗を共有。  \n**Tesla**、Optimusの新デモを公開。  \n**NVIDIA**、Blackwellアーキテクチャの詳細を発表。  \n**Hugging Face**、新しいデータセットを公開。  \n**Stability AI**、Stable Diffusion 3.5をリリース。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 2
+}
