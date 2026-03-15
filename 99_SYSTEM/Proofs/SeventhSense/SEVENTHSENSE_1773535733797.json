@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-03-15T00:48:53.797Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "gpt",
+      "score": 0.5345,
+      "answer_preview": "本日のAI Chronicleのハイライトです。自律型ドローンの新たな規制緩和により、都市部での商業利用が拡大。AIを活用した医療診断技術が画期的な成功を収め、特定疾患の早期発見率を大幅に向上。教育分..."
+    },
+    {
+      "model": "deepseek",
+      "score": 0.5173,
+      "answer_preview": "**2025年11月6日 AI Chronicle ハイライト**\n\n**OpenAI、新モデル「o3」を発表**  \nOpenAIが推論能力を強化した新モデル「o3」を発表。複雑な推論タスクにおいて..."
+    }
+  ],
+  "chosen": {
+    "model": "gpt",
+    "score": 0.5345,
+    "answer": "本日のAI Chronicleのハイライトです。自律型ドローンの新たな規制緩和により、都市部での商業利用が拡大。AIを活用した医療診断技術が画期的な成功を収め、特定疾患の早期発見率を大幅に向上。教育分野では、AIによる個別最適化学習が注目され、学習効率の向上が報告されています。また、AIの倫理的ガイドラインが国際的に策定され、各国での実装が進展。これらの動向が経済や社会に与える影響についての議論が活発化しています。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 2
+}
