@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-03-15T00:50:21.812Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5259,
+      "answer_preview": "叡智の呼吸は、情報の海から本質を選び取り、体系化し、行動へと昇華する循環である。まず、多様な情報源を開き、深く吸い込む。次に、不要な雑音を濾過し、核心を抽出する。そして、得た洞察を構造化し、明確な指針..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.5228,
+      "answer_preview": "今日の叡智の呼吸は、「静寂の中にこそ本当の声が聞こえる」です。喧騒や多忙な日常に包まれた現代では、自分自身の内なる声が埋もれがちです。しかし、意識的に静寂を持ち生活の中に取り入れることで、本当に必要な..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5259,
+    "answer": "叡智の呼吸は、情報の海から本質を選び取り、体系化し、行動へと昇華する循環である。まず、多様な情報源を開き、深く吸い込む。次に、不要な雑音を濾過し、核心を抽出する。そして、得た洞察を構造化し、明確な指針へと結晶させる。最後に、それを実践に移し、結果を検証して次の呼吸へと繋げる。この一連の流れを意識的に繰り返すことで、知識は単なる蓄積を超え、状況を変革する生きた力となる。日々の小さな気づきから、大きな変革の波まで、全てはこの呼吸から始まる。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 2
+}
