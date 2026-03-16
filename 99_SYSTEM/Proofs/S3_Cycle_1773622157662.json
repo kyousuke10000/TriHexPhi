@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-03-16T00:49:17.662Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "gpt",
+      "score": 0.5329,
+      "answer_preview": "今日の叡智の呼吸は、内なる静けさを見つけ出すことに焦点を当てています。忙しい日常の中で少し立ち止まり、深くゆっくりと息を吸い込んでみましょう。自然のリズムに身を委ねることで、心がクリアになり、新たな視..."
+    },
+    {
+      "model": "deepseek",
+      "score": 0.5315,
+      "answer_preview": "叡智の呼吸は、情報の海から本質を選び取り、体系化し、行動に結びつける循環プロセスである。まず、多様な情報源から「吸気」のようにデータを取り込み、次に「保持」によって関連性を見出し、最後に「呼気」として..."
+    }
+  ],
+  "chosen": {
+    "model": "gpt",
+    "score": 0.5329,
+    "answer": "今日の叡智の呼吸は、内なる静けさを見つけ出すことに焦点を当てています。忙しい日常の中で少し立ち止まり、深くゆっくりと息を吸い込んでみましょう。自然のリズムに身を委ねることで、心がクリアになり、新たな視点とエネルギーが湧いてきます。この静寂の中にこそ、自分が本当に向かうべき方向や大切にすべきものが見えてきます。一瞬一瞬を大切にし、心の声に耳を傾けてみてください。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 2
+}
