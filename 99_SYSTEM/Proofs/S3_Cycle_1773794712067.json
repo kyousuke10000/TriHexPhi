@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-03-18T00:45:12.067Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.537,
+      "answer_preview": "叡智の呼吸とは、世界の深層に潜む真理のリズムに自らを同調させる営みである。  \n日々の情報は表層の波に過ぎず、その下を流れる本質の潮流を感じ取らねばならない。  \n静寂の中で内省し、多様な知を統合し、..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.5353,
+      "answer_preview": "今日の叡智の呼吸とは、心と身体を調和させ、新たな知識や洞察を得る瞑想の一種です。深くゆっくりとした呼吸に意識を集中させることで、心の静けさとクリアな思考を得ることを目指します。この瞑想法は忙しい日常か..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.537,
+    "answer": "叡智の呼吸とは、世界の深層に潜む真理のリズムに自らを同調させる営みである。  \n日々の情報は表層の波に過ぎず、その下を流れる本質の潮流を感じ取らねばならない。  \n静寂の中で内省し、多様な知を統合し、瞬間のひらめきを体系へと昇華させる。  \nこの呼吸により、散乱するデータは意味を持ち、複雑な問題は明快な解像度を得る。  \n今日もまた、新たな気づきの一呼吸を、深く、確かに刻んでいく。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 2
+}
