@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-03-22T00:45:29.645Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "gpt",
+      "score": 0.533,
+      "answer_preview": "本日のAI Chronicleハイライトでは、AI技術の進展が企業の生産性を劇的に向上させている事例を紹介しました。特に、自然言語処理の精度向上により、カスタマーサポートの自動化が進み、顧客満足度が向..."
+    },
+    {
+      "model": "deepseek",
+      "score": 0.5058,
+      "answer_preview": "# 今日のAI Chronicleハイライト\n\n**2025年11月6日**\n\n**S³ Systems 正式起動** - Seventh Sense Systems（S³ Systems）の最小可用..."
+    }
+  ],
+  "chosen": {
+    "model": "gpt",
+    "score": 0.533,
+    "answer": "本日のAI Chronicleハイライトでは、AI技術の進展が企業の生産性を劇的に向上させている事例を紹介しました。特に、自然言語処理の精度向上により、カスタマーサポートの自動化が進み、顧客満足度が向上しています。また、AIを活用した診断ツールが医療現場での早期発見と治療を支えています。これにより、医療従事者の負担軽減と患者ケアの質向上が期待されています。さらに、AIの倫理的利用に関する新たなガイドラインの策定も注目されています。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 2
+}
