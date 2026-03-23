@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-03-23T00:46:23.310Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "gpt",
+      "score": 0.5655,
+      "answer_preview": "2025年11月6日のAI Chronicleハイライト：\n\nAI業界は、Seventh Sense Systems（S³ Systems）の最小可用プロダクト起動で賑わっています。Vercelを利用..."
+    },
+    {
+      "model": "deepseek",
+      "score": 0.5156,
+      "answer_preview": "今日のAI Chronicleハイライト：  \nDeepSeek-V3がGPT-4oを超える性能を達成し、オープンソースLLMの新たなマイルストーンに。  \n同時に、AI生成コンテンツの法的・倫理的課..."
+    }
+  ],
+  "chosen": {
+    "model": "gpt",
+    "score": 0.5655,
+    "answer": "2025年11月6日のAI Chronicleハイライト：\n\nAI業界は、Seventh Sense Systems（S³ Systems）の最小可用プロダクト起動で賑わっています。Vercelを利用した自動デプロイとPublic Mirrorとの連携により、リアルタイムでの情報提供が可能となり、AIソリューションの新たな地平が開かれました。また、業界内ではAIナビゲーターの進化に注目が集まっており、ナビゲーション技術が今後のユーザー体験を大きく変えると期待されています。この動向は、AI技術の次なるステージへの布石と言えるでしょう。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 2
+}
