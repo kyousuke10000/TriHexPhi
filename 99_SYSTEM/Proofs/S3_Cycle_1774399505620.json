@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-03-25T00:45:05.620Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5277,
+      "answer_preview": "叡智の呼吸は、情報の海に沈む真実を浮かび上がらせる循環です。  \nまず「観照」で事象をありのままに見つめ、次に「濾過」でノイズを除去し、  \n「統合」で断片を意味ある構造へと織り上げます。  \n最後に..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.5271,
+      "answer_preview": "叡智の呼吸とは、一日の始まりに心を整え、自分自身と深く向き合うための静かな時間を持つことです。この時間を使って、日々の雑念を手放し、本当に大切なことに焦点を当てます。呼吸を意識しながら、内なる声に耳を..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5277,
+    "answer": "叡智の呼吸は、情報の海に沈む真実を浮かび上がらせる循環です。  \nまず「観照」で事象をありのままに見つめ、次に「濾過」でノイズを除去し、  \n「統合」で断片を意味ある構造へと織り上げます。  \n最後に「発露」で知恵を言葉や行動として外へ解き放ち、  \nそれが新たな観照の糧となる。  \nこの一連の流れが、静かなリズムで繰り返されることで、  \n曇りなき判断と深い気づきが持続的に生まれていきます。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 2
+}
