@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-03-27T00:47:36.696Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "gpt",
+      "score": 0.5351,
+      "answer_preview": "2025年11月5日のAI Chronicleハイライト：\n\n今日の議題は、Seventh Sense Systems（S³ Systems）の即時立ち上げについてです。この新ブランドは、高度な自動化..."
+    },
+    {
+      "model": "deepseek",
+      "score": 0.4756,
+      "answer_preview": "**2025年11月6日 AI Chronicle ハイライト**\n\n**OpenAI、GPT-5の早期アクセスを発表**  \nOpenAIはGPT-5の限定早期アクセスプログラムを開始。新モデルは推..."
+    }
+  ],
+  "chosen": {
+    "model": "gpt",
+    "score": 0.5351,
+    "answer": "2025年11月5日のAI Chronicleハイライト：\n\n今日の議題は、Seventh Sense Systems（S³ Systems）の即時立ち上げについてです。この新ブランドは、高度な自動化とリアルタイム情報提供を重視しています。具体的には、Next.js 15を使用したランディングページの開発、ドキュメントの充実、Vercelを用いた自動デプロイとPublic Mirrorとの連携を進める計画です。既存のシステムに影響を与えず、迅速かつ効率的な実装が承認され、プロジェクトは順調に進行中です。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 2
+}
