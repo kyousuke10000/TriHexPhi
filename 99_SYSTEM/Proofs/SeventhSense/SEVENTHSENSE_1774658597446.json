@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-03-28T00:43:17.445Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "gpt",
+      "score": 0.5348,
+      "answer_preview": "申し訳ありませんが、私はリアルタイム情報にアクセスする能力がありません。そのため、2023年10月以降のAI Chronicleの最新情報を提供できません。しかし、AI技術やその活用について一般的なト..."
+    },
+    {
+      "model": "deepseek",
+      "score": 0.4891,
+      "answer_preview": "# AI Chronicle ハイライト（2025年11月6日）\n\n**「AIの倫理と責任」が世界の焦点に**\n\n本日、欧州AI倫理委員会が「自律AIの責任枠組み」草案を公開。人間の監督下でのAI行動..."
+    }
+  ],
+  "chosen": {
+    "model": "gpt",
+    "score": 0.5348,
+    "answer": "申し訳ありませんが、私はリアルタイム情報にアクセスする能力がありません。そのため、2023年10月以降のAI Chronicleの最新情報を提供できません。しかし、AI技術やその活用について一般的なトピックに基づいた情報提供は可能です。 どのような情報が必要か教えていただければ、できる範囲でお手伝いします。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 2
+}
