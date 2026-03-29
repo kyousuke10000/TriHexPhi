@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-03-29T00:49:48.887Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "gpt",
+      "score": 0.5347,
+      "answer_preview": "申し訳ございませんが、指定されたリソースからAI Chronicleの特定のハイライトをリアルタイムで取得することはできません。しかし、AIの最近のトレンドを注目するなら、生成AIの進展、AI倫理問題..."
+    },
+    {
+      "model": "deepseek",
+      "score": 0.5184,
+      "answer_preview": "今日のAI Chronicleハイライト：  \nOpenAIが「AIの民主化」を掲げる新モデル「OpenAI One」を発表。  \n一方で、Google DeepMindは「AI倫理の国際基準」策定を..."
+    }
+  ],
+  "chosen": {
+    "model": "gpt",
+    "score": 0.5347,
+    "answer": "申し訳ございませんが、指定されたリソースからAI Chronicleの特定のハイライトをリアルタイムで取得することはできません。しかし、AIの最近のトレンドを注目するなら、生成AIの進展、AI倫理問題、各国のAI規制の動向、そしてAI技術を取り入れた新たなビジネスモデルの台頭などが挙げられます。特に生成AIの分野では、画像や言語の新しい生成モデルがビジネスや教育、エンターテインメントに革新をもたらしています。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 2
+}
