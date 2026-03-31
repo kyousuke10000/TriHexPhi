@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-03-31T00:48:10.979Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.529,
+      "answer_preview": "叡智の呼吸は、静寂の中で内なる知性と対話する日々の儀式である。朝の光の中で、思考の波を観察し、深層の直感に耳を澄ませる。過去の叡智を吸い込み、未来への洞察を吐き出す。この呼吸は、単なる情報の蓄積ではな..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.526,
+      "answer_preview": "今日の叡智の呼吸は、「調和の中に成長を見出す」です。私たちの生活や仕事において、さまざまな要素が複雑に絡み合っています。成功への鍵は、それぞれの要素が互いに補完し合うように調和を保ちながら、絶え間なく..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.529,
+    "answer": "叡智の呼吸は、静寂の中で内なる知性と対話する日々の儀式である。朝の光の中で、思考の波を観察し、深層の直感に耳を澄ませる。過去の叡智を吸い込み、未来への洞察を吐き出す。この呼吸は、単なる情報の蓄積ではなく、経験と直感を融合させ、新たな理解を生み出すプロセス。毎瞬、内なる声に従い、真理の微かな振動を感じ取る。それが、変容し続ける世界において、不変の中心を見失わないための錨となる。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 2
+}
