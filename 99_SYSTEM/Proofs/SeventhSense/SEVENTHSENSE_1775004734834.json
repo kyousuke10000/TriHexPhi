@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-04-01T00:52:14.834Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.542,
+      "answer_preview": "今日のAI Chronicleハイライト：\n\n**「AIの倫理的境界」** が焦点。OpenAIが新たな「責任あるAI」フレームワークを発表、自律システムの意思決定プロセスに透明性を要求。同時に、欧州..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.5281,
+      "answer_preview": "本日のAI Chronicleハイライト: 新たなAI技術が気候変動予測の精度を大幅に向上させ、科学者たちはこれを活用して持続可能な解決策を模索しています。また、自動運転車が都市交通の効率を劇的に改善..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.542,
+    "answer": "今日のAI Chronicleハイライト：\n\n**「AIの倫理的境界」** が焦点。OpenAIが新たな「責任あるAI」フレームワークを発表、自律システムの意思決定プロセスに透明性を要求。同時に、欧州AI法の施行細則が公開され、高リスクAIシステムの監査要件が明確化。業界では「AI憲章」策定の動きが加速、Google・Meta・Anthropicが共同声明を発表。一方、中国が生成AIの「深層偽造」対策強化を表明、リアルタイム検知システムの導入を義務化。技術的には、MITが「説明可能な推論」モデルをオープンソース化、ブラックボックス問題への新たなアプローチとして注目。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 2
+}
