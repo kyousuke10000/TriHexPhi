@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-04-03T00:48:00.451Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5368,
+      "answer_preview": "叡智の呼吸は、日々の経験を深く味わい、内省を通じて本質を見極める営みです。朝の静寂の中で一日の意図を定め、昼の活動では観察と気づきを研ぎ澄まし、夜の沈黙において学びを統合します。過去の叡智に耳を傾け、..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.526,
+      "answer_preview": "今日の叡智の呼吸は、「静寂の中に答えを見出す」というテーマにしましょう。現代社会は常に情報に溢れ、私たちの心が騒がしくなることが多い。しかし、静寂の中に身を置くことで、内なる声を聞くことができ、真の自..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5368,
+    "answer": "叡智の呼吸は、日々の経験を深く味わい、内省を通じて本質を見極める営みです。朝の静寂の中で一日の意図を定め、昼の活動では観察と気づきを研ぎ澄まし、夜の沈黙において学びを統合します。過去の叡智に耳を傾け、現在の瞬間に全身全霊で在りながら、未来への洞察を育みます。それは単なる知識の蓄積ではなく、知恵として血肉化し、行動と存在そのものを変容させる生きたプロセスです。毎瞬、呼吸と共に新たな気づきが生まれ、世界との調和的な関わり方を教えてくれます。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 2
+}
