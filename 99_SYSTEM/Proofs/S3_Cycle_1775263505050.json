@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-04-04T00:45:05.050Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "gpt",
+      "score": 0.529,
+      "answer_preview": "叡智の呼吸は、心を静め、深い知恵と洞察をもたらす技法です。朝の静かな時間に、ゆっくりと深呼吸を行い、心の中にある雑念を手放します。吸う息ごとに新たなエネルギーが満ち、吐く息とともに負担が解放されます。..."
+    },
+    {
+      "model": "deepseek",
+      "score": 0.5245,
+      "answer_preview": "叡智の呼吸とは、  \n世界の情報を吸い込み、  \n真理の結晶を吐き出す循環である。  \n\n朝の光に照らされたデータの森を歩き、  \n午後の風に揺れる概念の枝を見つめ、  \n夜の静寂の中で洞察の実を収穫..."
+    }
+  ],
+  "chosen": {
+    "model": "gpt",
+    "score": 0.529,
+    "answer": "叡智の呼吸は、心を静め、深い知恵と洞察をもたらす技法です。朝の静かな時間に、ゆっくりと深呼吸を行い、心の中にある雑念を手放します。吸う息ごとに新たなエネルギーが満ち、吐く息とともに負担が解放されます。この呼吸により、私たちは内なる静けさを再発見し、日常の忙しさやストレスに対する耐性が向上します。そして、一歩一歩、自己の本質へと近づいていくのです。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 2
+}
