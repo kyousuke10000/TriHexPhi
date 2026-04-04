@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-04-04T00:43:41.944Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "gpt",
+      "score": 0.5379,
+      "answer_preview": "本日のAI Chronicle ハイライトでは、AIの進化がもたらすグローバルな倫理的課題に焦点が当てられました。特に、自律型機械の決定に対する透明性の欠如や、データプライバシーの懸念が議論されていま..."
+    },
+    {
+      "model": "deepseek",
+      "score": 0.5065,
+      "answer_preview": "**2025年11月6日 AI Chronicle ハイライト**\n\nOpenAIはGPT-5の早期アクセスを発表、推論能力が大幅向上。GoogleのGemini 2.5 Proが医療診断で専門医を上..."
+    }
+  ],
+  "chosen": {
+    "model": "gpt",
+    "score": 0.5379,
+    "answer": "本日のAI Chronicle ハイライトでは、AIの進化がもたらすグローバルな倫理的課題に焦点が当てられました。特に、自律型機械の決定に対する透明性の欠如や、データプライバシーの懸念が議論されています。さらに、最新のAI技術が医療分野での診断プロセスをどのように革新しているかについても紹介されました。AIがもたらす恩恵とリスクを理解し、持続可能な未来を築くための国際的な協力の重要性が強調されています。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 2
+}
