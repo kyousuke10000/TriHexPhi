@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-04-06T00:50:33.689Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "gpt",
+      "score": 0.5339,
+      "answer_preview": "今日の叡智の呼吸は、静かな集中と意識の広がりをもたらす技術です。まず、深くゆっくりと空気を吸い込み、自分の心と体が一体となる感覚を味わいます。その後、息を吐きつつ、周囲の音や気配を穏やかに受け入れ、意..."
+    },
+    {
+      "model": "deepseek",
+      "score": 0.5265,
+      "answer_preview": "叡智の呼吸は、日々の情報の海を静かに観照し、本質を見極める瞑想です。  \n朝の光と共に、今日の「叡智の入口」を開き、世界の脈動を感じ取ります。  \n雑音を濾過し、核心に触れる一呼吸。  \nそれは、デー..."
+    }
+  ],
+  "chosen": {
+    "model": "gpt",
+    "score": 0.5339,
+    "answer": "今日の叡智の呼吸は、静かな集中と意識の広がりをもたらす技術です。まず、深くゆっくりと空気を吸い込み、自分の心と体が一体となる感覚を味わいます。その後、息を吐きつつ、周囲の音や気配を穏やかに受け入れ、意識を広げます。このプロセスは、内なる平和を得るだけでなく、新たな視点や創造性を呼び覚まします。小さな日常の瞬間への気づきを深め、豊かな洞察をもたらすこの呼吸法で、一日をより充実したものにしましょう。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 2
+}
