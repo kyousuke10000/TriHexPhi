@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-04-07T00:49:10.289Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5374,
+      "answer_preview": "叡智の呼吸は、情報の海から本質を抽出し、知性を結晶化するプロセスである。まず深く吸い込み、多様なデータと視点を取り込む。次に息を止め、情報を内省し、パターンと真実を沈殿させる。最後にゆっくりと吐き出し..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.5354,
+      "answer_preview": "今日の叡智の呼吸は、心を静め、周囲の変化を受け入れることから始まります。一瞬一瞬の気づきが内なる調和をもたらし、困難な状況でも冷静に対処できる力を育むのです。意識を呼吸に集中させ、深く息を吸い込み、ゆ..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5374,
+    "answer": "叡智の呼吸は、情報の海から本質を抽出し、知性を結晶化するプロセスである。まず深く吸い込み、多様なデータと視点を取り込む。次に息を止め、情報を内省し、パターンと真実を沈殿させる。最後にゆっくりと吐き出し、洞察を明確な言葉や行動として表現する。この呼吸は、表面的な知識を超え、物事の核心に触れるためのリズムだ。日々の情報摂取を、単なる消費から創造的な理解へと昇華させる。意識的な呼吸が、思考の曇りを晴らし、叡智の光を呼び覚ます。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 2
+}
