@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-04-09T00:40:35.449Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "gpt",
+      "score": 0.5385,
+      "answer_preview": "本日のAI Chronicleハイライト：最新のAIブレークスルーとして、自己教師付き学習アルゴリズムが注目を集めています。この技術は、ラベル付きデータが不足している領域での精度向上を可能にし、新たな..."
+    },
+    {
+      "model": "deepseek",
+      "score": 0.5267,
+      "answer_preview": "**今日のAI Chronicleハイライト**  \nOpenAIが「Strawberry」プロジェクトを進めており、高度な推論能力を持つ次世代AIを開発中。同時に、AIエージェントの自律性と安全性を..."
+    }
+  ],
+  "chosen": {
+    "model": "gpt",
+    "score": 0.5385,
+    "answer": "本日のAI Chronicleハイライト：最新のAIブレークスルーとして、自己教師付き学習アルゴリズムが注目を集めています。この技術は、ラベル付きデータが不足している領域での精度向上を可能にし、新たな応用が期待されています。また、AI倫理に関する国際会議が開催され、プライバシー保護と透明性の確保に向けた新たなガイドラインが提案されました。さらに、自動運転車の安全性向上を目指す新しいセンサー技術が発表され、実世界でのテストが進行中です。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 2
+}
