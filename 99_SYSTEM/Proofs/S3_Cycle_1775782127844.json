@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-04-10T00:48:47.844Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5358,
+      "answer_preview": "叡智の呼吸は、静寂の中で内なる知性に耳を澄ませる実践です。  \n日々の雑音を離れ、思考の流れを観察し、深層にある直観と洞察を呼び覚まします。  \nそれは単なる情報の蓄積ではなく、経験と内省を通じて得ら..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.5185,
+      "answer_preview": "「叡智の呼吸」とは、日々の中で深い洞察や気づきを呼吸のように自然に取り入れることを意味します。これは単なる知識の吸収ではなく、直感を育み、瞬間瞬間に集中して生きる方法です。日常の雑事や困難に対する新し..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5358,
+    "answer": "叡智の呼吸は、静寂の中で内なる知性に耳を澄ませる実践です。  \n日々の雑音を離れ、思考の流れを観察し、深層にある直観と洞察を呼び覚まします。  \nそれは単なる情報の蓄積ではなく、経験と内省を通じて得られる生きた知恵の源泉。  \nこの呼吸に従うことで、物事の本質を見極め、複雑な状況にも明晰に対応する基盤が築かれます。  \n毎日のほんの一瞬でも、この内省の時間を持つことが、長期的な叡智の成長へとつながるのです。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 2
+}
