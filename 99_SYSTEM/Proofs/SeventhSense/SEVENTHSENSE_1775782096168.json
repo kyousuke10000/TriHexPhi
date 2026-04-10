@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-04-10T00:48:16.168Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "gpt",
+      "score": 0.5283,
+      "answer_preview": "AI Chronicleの今日のハイライトでは、新たなAI技術の進展が報告されています。特に、最新の多言語モデルが登場し、翻訳精度の大幅な向上が実現されました。また、AIの倫理的使用に関するグローバル..."
+    },
+    {
+      "model": "deepseek",
+      "score": 0.5274,
+      "answer_preview": "**2025年11月6日 AI Chronicle ハイライト**\n\n**OpenAI**、新CEOに**Satya Nadella**を任命。**Sam Altman**は会長に。**Microso..."
+    }
+  ],
+  "chosen": {
+    "model": "gpt",
+    "score": 0.5283,
+    "answer": "AI Chronicleの今日のハイライトでは、新たなAI技術の進展が報告されています。特に、最新の多言語モデルが登場し、翻訳精度の大幅な向上が実現されました。また、AIの倫理的使用に関するグローバルサミットが開催され、世界中の専門家が倫理ガイドラインの策定に向けた議論を行っています。さらには、AIを活用した医療診断ツールが臨床試験で成功を収め、早期診断の可能性を広げています。これらのニュースがAI分野の未来を予測する指標となります。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 2
+}
