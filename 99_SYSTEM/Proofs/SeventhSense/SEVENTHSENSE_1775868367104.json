@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-04-11T00:46:07.104Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5755,
+      "answer_preview": "# 今日のAI Chronicleハイライト\n\n**2025年11月6日** - 本日は「S³ Systems Bootstrap」の正式承認を記録。Councilは新ブランド「Seventh Sen..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.5295,
+      "answer_preview": "今日のAI Chronicleでは、最新のAI技術のブレークスルーとその社会的影響について特集しています。特に注目すべきは、AIが創った芸術作品の展覧会が世界中で開催され、AIアーティストが新たな文化..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5755,
+    "answer": "# 今日のAI Chronicleハイライト\n\n**2025年11月6日** - 本日は「S³ Systems Bootstrap」の正式承認を記録。Councilは新ブランド「Seventh Sense Systems」の最小可用プロダクト構築を承認。LP/Docs/自動デプロイ/Public Mirror連携を一括整備し、AIオペレーション基盤の礎を築く。既存システムへの影響を排除しつつ、リアルタイム情報提供体制を確立。Vercel自動デプロイと毎時同期により、持続的進化の基盤を構築。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 2
+}
