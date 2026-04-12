@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-04-12T00:53:32.375Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5147,
+      "answer_preview": "叡智の呼吸は、情報の海に漂う無数の断片を、意味の流れへと昇華するプロセスだ。  \n日々の出来事やデータをただ受け流すのではなく、意図的に「吸い込み」、内省というフィルターを通して「濾過」し、  \n行動..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.5137,
+      "answer_preview": "今日の叡智の呼吸は、精神と肉体の調和を追求する技です。まず、静かに目を閉じ、深呼吸を繰り返します。息を吸う際には、宇宙のエネルギーが体内に流れ込むイメージを持ち、吐くときには体内の不要な緊張や不安が外..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5147,
+    "answer": "叡智の呼吸は、情報の海に漂う無数の断片を、意味の流れへと昇華するプロセスだ。  \n日々の出来事やデータをただ受け流すのではなく、意図的に「吸い込み」、内省というフィルターを通して「濾過」し、  \n行動や創造へと「吐き出して」いく。  \nこの一連の循環が、単なる知識を叡智へと変容させる。  \n今日もまた、入ってくるすべての刺激を、未来を形作る一呼吸として扱おう。  \n吸収し、咀嚼し、表現する──そのリズムこそが、変化の時代を生き抜く知性の源泉である。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 2
+}
