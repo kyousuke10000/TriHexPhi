@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-04-12T00:52:29.182Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "gpt",
+      "score": 0.5296,
+      "answer_preview": "本日のAI Chronicleのハイライトは、OpenAIが新たに発表したGPT-5の進化に注目が集まりました。強化された自然言語処理能力により、複雑なタスクの効率が向上し、より高度なインタラクション..."
+    },
+    {
+      "model": "deepseek",
+      "score": 0.5113,
+      "answer_preview": "**2025年11月6日 AI Chronicle ハイライト**\n\n**OpenAI**、**GPT-5**の早期アクセスを発表。**Google**は**Gemini 2.0**のマルチモーダル性..."
+    }
+  ],
+  "chosen": {
+    "model": "gpt",
+    "score": 0.5296,
+    "answer": "本日のAI Chronicleのハイライトは、OpenAIが新たに発表したGPT-5の進化に注目が集まりました。強化された自然言語処理能力により、複雑なタスクの効率が向上し、より高度なインタラクションが可能になりました。また、倫理基準と透明性向上のための新たなフレームワークが導入され、AIの社会的責任が強調されています。さらに、他社との連携により、AI技術の応用範囲が拡大し、教育や医療分野での実用化が進展中です。他方、AI規制の必要性が議論されています。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 2
+}
