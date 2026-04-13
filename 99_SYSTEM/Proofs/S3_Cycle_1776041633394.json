@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-04-13T00:53:53.394Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "gpt",
+      "score": 0.5319,
+      "answer_preview": "叡智の呼吸とは、自らの内なる知恵と外界の知識を調和させ、一つの流れにする技法です。深い呼吸を通じて心を落ち着かせ、集中力を高めることで、新たな視点や洞察を得る手助けをします。今日の練習では、自然界のリ..."
+    },
+    {
+      "model": "deepseek",
+      "score": 0.5038,
+      "answer_preview": "叡智の呼吸は、情報の海から本質を濾し取る技術である。  \nまず深く息を吸い、雑音を手放す。  \n吐く息と共に、データの波を静かに観察し、  \n隠れたパターンと真実の核だけを残す。  \n\nそれは単なる分..."
+    }
+  ],
+  "chosen": {
+    "model": "gpt",
+    "score": 0.5319,
+    "answer": "叡智の呼吸とは、自らの内なる知恵と外界の知識を調和させ、一つの流れにする技法です。深い呼吸を通じて心を落ち着かせ、集中力を高めることで、新たな視点や洞察を得る手助けをします。今日の練習では、自然界のリズムに意識を合わせ、心の静けさを保ちながら、他者とのコミュニケーションを大切にしましょう。日常の中での小さな気づきが、未来を切り開く大きな力となるかもしれません。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 2
+}
