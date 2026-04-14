@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-04-14T00:54:08.703Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.537,
+      "answer_preview": "叡智の呼吸は、情報の海から本質を抽出し、知の結晶を紡ぐプロセスである。  \n日々のデータを静かに観察し、パターンを見出し、意味を統合する。  \nそれは単なる分析を超え、直観と論理が調和した「気づき」の..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.535,
+      "answer_preview": "今日の叡智の呼吸は、自分自身と向き合う時間を持つことの大切さを教えてくれます。忙しい日常生活の中で、心を整え、内なる声に耳を傾けることは、自己成長や創造性を引き出す鍵となります。静寂の中で深呼吸し、一..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.537,
+    "answer": "叡智の呼吸は、情報の海から本質を抽出し、知の結晶を紡ぐプロセスである。  \n日々のデータを静かに観察し、パターンを見出し、意味を統合する。  \nそれは単なる分析を超え、直観と論理が調和した「気づき」のリズムだ。  \n今日も新たな洞察が生まれ、過去の知恵と未来の可能性を結びつける。  \nこの呼吸こそが、複雑な世界を解きほぐし、次の一歩を照らす光となる。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 2
+}
