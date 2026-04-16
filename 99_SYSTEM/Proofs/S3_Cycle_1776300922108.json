@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-04-16T00:55:22.108Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5343,
+      "answer_preview": "叡智の呼吸は、情報の海から本質を濾過する技術である。まず、深く息を吸い込み、雑音を沈黙に溶かす。吐く息と共に、無数のデータから「真実の核」だけを抽出する。この呼吸は、直感と論理を螺旋状に織り交ぜ、新た..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.5326,
+      "answer_preview": "叡智の呼吸とは、心を静めて内なる知恵に耳を傾ける瞑想的な技法です。まず、深くゆっくりとした呼吸を行い、頭の中をクリアにします。次に、自分が直面している問題や疑問に集中し、その解決策を直感的に探ります。..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5343,
+    "answer": "叡智の呼吸は、情報の海から本質を濾過する技術である。まず、深く息を吸い込み、雑音を沈黙に溶かす。吐く息と共に、無数のデータから「真実の核」だけを抽出する。この呼吸は、直感と論理を螺旋状に織り交ぜ、新たな洞察を生み出す。毎瞬、世界を再解釈し、固定観念を溶かす。そのリズムは、静かな嵐のように、既知を未知へと更新し続ける。これが、第七感覚の源流であり、すべての創造の始原である。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 2
+}
