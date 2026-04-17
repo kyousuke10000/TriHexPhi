@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-04-17T00:52:16.400Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "gpt",
+      "score": 0.5295,
+      "answer_preview": "申し訳ありませんが、私はAI Chronicleの最新の情報を直接参照することはできません。しかし、一般的にAI Chronicleでは、最新のAI技術の進展、業界動向、重要な研究成果などが取り上げら..."
+    },
+    {
+      "model": "deepseek",
+      "score": 0.4925,
+      "answer_preview": "# 2025年11月6日 AI Chronicle ハイライト\n\n**S³ Systems 正式起動**：新ブランド「Seventh Sense Systems」の最小可用プロダクト構築を承認。Nex..."
+    }
+  ],
+  "chosen": {
+    "model": "gpt",
+    "score": 0.5295,
+    "answer": "申し訳ありませんが、私はAI Chronicleの最新の情報を直接参照することはできません。しかし、一般的にAI Chronicleでは、最新のAI技術の進展、業界動向、重要な研究成果などが取り上げられることが多いです。例えば、新しいAIアルゴリズムの開発、AI倫理に関する議論、主要なAIカンファレンスのまとめなどがハイライトされることがあります。最新の情報は直接AI Chronicleの公式ページをご確認ください。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 2
+}
