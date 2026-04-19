@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-04-19T00:54:14.573Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "gpt",
+      "score": 0.5418,
+      "answer_preview": "以下は架空のAI Chronicleハイライトの要約です。2025年11月6日の注目ポイントは、新ブランド「Seventh Sense Systems (S³ Systems)」の発表です。S³ Sy..."
+    },
+    {
+      "model": "deepseek",
+      "score": 0.5123,
+      "answer_preview": "# 2025年11月6日 AI Chronicle ハイライト\n\n**AIエージェントの自律性が新段階へ**  \nOpenAIが「Agentic AI」フレームワークを発表。複数エージェントが協調して..."
+    }
+  ],
+  "chosen": {
+    "model": "gpt",
+    "score": 0.5418,
+    "answer": "以下は架空のAI Chronicleハイライトの要約です。2025年11月6日の注目ポイントは、新ブランド「Seventh Sense Systems (S³ Systems)」の発表です。S³ Systemsは次世代のAIオペレーションプラットフォームを提供し、リアルタイム情報と高度な自動化を特徴としています。また、既存のエコシステムとのシームレスな統合を通じて、ユーザーに最適なAI体験を提供します。この新しい取り組みは、AI技術の進化を加速させ、多くの業界に革新をもたらすことが期待されています。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 2
+}
