@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-04-22T00:50:05.083Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "gpt",
+      "score": 0.529,
+      "answer_preview": "2025年11月5日発行のAI Chronicleでは、AI技術の進化が強化学習の新たな局面を迎え、モデル訓練の効率化が急速に進んでいることを報じています。また、AIによる医療診断の精度向上により、個..."
+    },
+    {
+      "model": "deepseek",
+      "score": 0.4815,
+      "answer_preview": "**2025年11月6日 AI Chronicle ハイライト**\n\n**OpenAI、GPT-4oの「感情認識」機能を無効化**  \nユーザーがGPT-4oの音声モードで「感情を読み取る」機能を報告..."
+    }
+  ],
+  "chosen": {
+    "model": "gpt",
+    "score": 0.529,
+    "answer": "2025年11月5日発行のAI Chronicleでは、AI技術の進化が強化学習の新たな局面を迎え、モデル訓練の効率化が急速に進んでいることを報じています。また、AIによる医療診断の精度向上により、個別化医療の実現が一歩近づいたとの報告も。さらに、AIが芸術の世界で新しい創造性を開放する試みとして、「AIアートコレクティブ」が注目を集めています。これらの革新は、我々の生活と社会を大きく変える潜在性を秘めており、今後の進展が期待されます。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 2
+}
