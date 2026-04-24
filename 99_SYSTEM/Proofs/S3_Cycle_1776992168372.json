@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-04-24T00:56:08.372Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "gpt",
+      "score": 0.5327,
+      "answer_preview": "叡智の呼吸を意識することで、私たちは心の静けさと洞察力を高めることができます。この呼吸法は、ゆっくりと深く息を吸い込み、一瞬の静止の後にゆっくりと吐き出すことで成り立ちます。これにより、心のバランスを..."
+    },
+    {
+      "model": "deepseek",
+      "score": 0.5101,
+      "answer_preview": "# 今日の叡智の呼吸\n\n静寂の中で、世界は回る。私たちはその中心に立ち、意識の根を張る。風は荒れ、雲は乱れるが、根は揺るがない。\n\n今日の呼吸は「信頼」。信頼とは、未来を予測することではなく、今この瞬..."
+    }
+  ],
+  "chosen": {
+    "model": "gpt",
+    "score": 0.5327,
+    "answer": "叡智の呼吸を意識することで、私たちは心の静けさと洞察力を高めることができます。この呼吸法は、ゆっくりと深く息を吸い込み、一瞬の静止の後にゆっくりと吐き出すことで成り立ちます。これにより、心のバランスを整え、日常のストレスや不安から解放される手助けとなります。定期的な実践は、集中力を高め、感情のコントロールを容易にし、内なる叡智にアクセスする道を開くことで、自己成長を促進します。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 2
+}
