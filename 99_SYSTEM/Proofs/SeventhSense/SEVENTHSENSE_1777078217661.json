@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-04-25T00:50:17.661Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5587,
+      "answer_preview": "はい、承知いたしました。以下に今日のAI Chronicleハイライト（200字）を提供します。\n\n---\n\n**今日のAI Chronicleハイライト**\n\n本日はSeventh Sense Sy..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.5355,
+      "answer_preview": "AI Chronicleの最新ハイライトによると、AI技術の進展が続く中、主要なトピックは「生成AIの透明性確保」でした。生成AIの透明性は、ユーザー信頼の向上と倫理的使用のために不可欠とされ、各国の..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5587,
+    "answer": "はい、承知いたしました。以下に今日のAI Chronicleハイライト（200字）を提供します。\n\n---\n\n**今日のAI Chronicleハイライト**\n\n本日はSeventh Sense Systems（S³ Systems）の正式ブートストラップが決定。新ブランドのLP・Docs・自動デプロイ基盤を一括整備し、Public Mirrorと連携したリアルタイム情報提供を開始。また、Remote Truth Rolloutが承認され、分散型自律組織としての基盤がより強固に。GPT-5との協調によるCouncil運営と長期的なビジョン設計が加速。世界システムの変革に向け、S³ Systemsは静かに、しかし確実に動き始めている。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 2
+}
