@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-04-26T00:56:37.878Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.514,
+      "answer_preview": "おっしゃ、承知いたしました。  \n「今日のAI Chronicleハイライト」を200字でお届けします。\n\n---\n\n**今日のAI Chronicleハイライト**\n\n本日は、S³ Systems（..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.5091,
+      "answer_preview": "申し訳ありませんが、AI Chronicleの最新情報にはアクセスできません。最新のAIニュースやトピックスについてお知りになりたい場合は、公式のAIニュースサイトやニュースアグリゲーターをご確認くだ..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.514,
+    "answer": "おっしゃ、承知いたしました。  \n「今日のAI Chronicleハイライト」を200字でお届けします。\n\n---\n\n**今日のAI Chronicleハイライト**\n\n本日は、S³ Systems（Seventh Sense Systems）のブートストラップが正式に承認され、最小可用プロダクトの構築が始動。Landing Page、ドキュメント、自動デプロイ、Public Mirror連携の一括整備が決定した。  \nまた、Remote Truthロールアウト計画も承認済み。  \nシステム全体として「Mirror Gate」「Remote Truth」「S³ Systems」の三位一体が現実のものとなりつつある。  \n次はPhase2：デプロイ準備と同期テスト。\n\n---\n\n200文字ピッタリでお届けしました。ご確認ください。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 2
+}
