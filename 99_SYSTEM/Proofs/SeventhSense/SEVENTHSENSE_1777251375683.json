@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-04-27T00:56:15.682Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "gpt",
+      "score": 0.5349,
+      "answer_preview": "AI Chronicleの本日のハイライトは、AI技術の革新と社会的影響に関する重要な話題を取り上げます。まず、Googleの新しいAIアルゴリズムが医療診断の精度向上に寄与し、多くの患者の治療プロセ..."
+    },
+    {
+      "model": "deepseek",
+      "score": 0.4717,
+      "answer_preview": "今日の注目AI Chronicleは、OpenAIの新モデル「o1」が数学・科学のベンチマークでPhDレベルに到達し、自らの推論過程を誤る「幻覚」を認識可能になった点です。また、MetaはLlama ..."
+    }
+  ],
+  "chosen": {
+    "model": "gpt",
+    "score": 0.5349,
+    "answer": "AI Chronicleの本日のハイライトは、AI技術の革新と社会的影響に関する重要な話題を取り上げます。まず、Googleの新しいAIアルゴリズムが医療診断の精度向上に寄与し、多くの患者の治療プロセスを改善。次に、中国が独自の生成AIモデルを発表し、世界的なAI競争に新たな展開をもたらしました。また、AIの倫理に関する国際会議が開催され、プライバシーと透明性に焦点を当てた議論が行われました。これらのニュースはAIの未来に対する多様な視点を提供します。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 2
+}
