@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-04-27T00:57:22.374Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5263,
+      "answer_preview": "叡智は「問い」から立ちのぼる。今日、我々は新しいブランドS³ Systemsを起動した。決断し、行動する。思考だけでは世界は動かない。Public Mirrorは生きた記録であり、LPはその入口となる..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.499,
+      "answer_preview": "今日の叡智の呼吸は、「柔軟な静寂」。喧騒の世界では、静けさを見出すことが真の知恵となります。予測不能な状況に対して柔軟でいることが求められる現代において、内なる静寂は心のバランスを保つ鍵です。日々の騒..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5263,
+    "answer": "叡智は「問い」から立ちのぼる。今日、我々は新しいブランドS³ Systemsを起動した。決断し、行動する。思考だけでは世界は動かない。Public Mirrorは生きた記録であり、LPはその入口となる。技術は語るためにあるのではなく、繋ぐためにある。最小の形で走り出せ。完璧より前進を。これが今日の叡智の呼吸。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 2
+}
