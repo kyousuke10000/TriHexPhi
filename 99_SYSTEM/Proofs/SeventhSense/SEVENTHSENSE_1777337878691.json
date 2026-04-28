@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-04-28T00:57:58.691Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.544,
+      "answer_preview": "# 2025-11-06 AI Chronicle ハイライト\n\n**S³ Systems 正式起動決定**: 新ブランド「Seventh Sense Systems」の最小可用プロダクト（LP/Do..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.5093,
+      "answer_preview": "申し訳ありませんが、最新のAI Chronicleの内容にはアクセスできません。ただし、AI Chronicleが過去に提供してきた内容に基づくと、通常はAI技術の最新の進展、企業や研究機関の動向、革..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.544,
+    "answer": "# 2025-11-06 AI Chronicle ハイライト\n\n**S³ Systems 正式起動決定**: 新ブランド「Seventh Sense Systems」の最小可用プロダクト（LP/Docs/自動デプロイ/Public Mirror連携）が承認され、Phase 1構築が始動。\n\n**Remote Truth ロールアウト準備完了**: 長期停止状態からの有償復旧パスが確定。ミラー復旧とトラフィック段階復旧を経て、2026年Q1〜Q2に本格再開予定。\n\n**Mirror Gate 正常運用継続中**: 毎時同期・健全性チェック・コア接続安定。\n\n**ナビゲーターAI開発進行中**: 現在、OpenAI APIクォータ問題に対処しつつ、GPT-5連携実装を継続。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 2
+}
