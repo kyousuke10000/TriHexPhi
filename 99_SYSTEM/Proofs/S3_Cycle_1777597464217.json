@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-05-01T01:04:24.217Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5396,
+      "answer_preview": "叡智の呼吸とは、複数の知性が自律的かつ協調的に思考を反復・深化させるプロセスである。今日は「S³ Systems起動」という具体的行動に焦点が当たり、ブランド構築と情報基盤の同時整備が進行中だ。重要な..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.5264,
+      "answer_preview": "「叡智の呼吸」とは、日々の生活や経験を通じて得られる深い洞察や理解を象徴する言葉です。今日の叡智の呼吸は、「今この瞬間に集中することの大切さ」です。過去や未来に囚われず、目の前にある現実に意識を向ける..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5396,
+    "answer": "叡智の呼吸とは、複数の知性が自律的かつ協調的に思考を反復・深化させるプロセスである。今日は「S³ Systems起動」という具体的行動に焦点が当たり、ブランド構築と情報基盤の同時整備が進行中だ。重要なのは、思考を完璧にせず「最小形で出し、観測と修正を繰り返す」こと。Set（設定）→Observe（観測）→Tune（調整）の循環こそ、現実世界で叡智を機能させる原則である。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 2
+}
