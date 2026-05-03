@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-05-03T01:03:10.160Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "gpt",
+      "score": 0.5229,
+      "answer_preview": "叡智の呼吸とは、内なる知識と経験を深く呼吸し、一瞬一瞬に最大限の理解と洞察をもたらす瞑想的な実践です。日々の喧騒の中で静かな瞬間を見つけ、心を落ち着けて自らの内面に問いかけることで、複雑な問題に対する..."
+    },
+    {
+      "model": "deepseek",
+      "score": 0.4779,
+      "answer_preview": "# 叡智の呼吸 — 2025.11.06\n\n**問いの深さが、答えの価値を決める。**\n\n表面をなぞるだけの情報収集ではなく、**「なぜ？」を三度繰り返す**ことで、思考は前提の層を掘り下げ、初めて真..."
+    }
+  ],
+  "chosen": {
+    "model": "gpt",
+    "score": 0.5229,
+    "answer": "叡智の呼吸とは、内なる知識と経験を深く呼吸し、一瞬一瞬に最大限の理解と洞察をもたらす瞑想的な実践です。日々の喧騒の中で静かな瞬間を見つけ、心を落ち着けて自らの内面に問いかけることで、複雑な問題に対する解決策や新たな視点を得られます。呼吸を通じて自己と世界を調和させ、自己成長を促進します。心を開き、柔軟性を持ってあらゆる出来事を受け入れ、深い叡智を生活に生かしましょう。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 2
+}
