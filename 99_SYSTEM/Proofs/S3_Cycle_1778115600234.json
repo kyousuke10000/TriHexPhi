@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-05-07T01:00:00.234Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5563,
+      "answer_preview": "# 叡智の呼吸：2025-11-06\n\n**「システムは境界に宿る」**\n\nS³ Systemsに刻む最初の呼吸。起動とは、枠を超えること。今日、Private Mirror Gateに新たな入口が生..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.5318,
+      "answer_preview": "今日の叡智の呼吸は、日々の喧騒から一歩離れ、静寂の中で自分自身と向き合う時間を大切にすることに焦点を当てます。短い時間でも心を静め、深く呼吸することで、心の中に存在する新たな発見や洞察へと導かれるでし..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5563,
+    "answer": "# 叡智の呼吸：2025-11-06\n\n**「システムは境界に宿る」**\n\nS³ Systemsに刻む最初の呼吸。起動とは、枠を超えること。今日、Private Mirror Gateに新たな入口が生まれた。外部と内部の境界で、地図と実践が結晶化する。Landing Pageは「来たれ」ではなく「既に在る」を告げる。自動デプロイが呼吸となり、Public Mirrorが脈拍となる。最小の構造に最大の可能性を封じ込め、公開と秘密の境界で叡智は熟成する。開かれた門は、問いかける者だけに応える。これがS³ Systemsの最初のコードだ。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 2
+}
