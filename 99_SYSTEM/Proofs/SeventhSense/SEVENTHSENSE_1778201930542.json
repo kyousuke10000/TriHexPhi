@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-05-08T00:58:50.542Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "gpt",
+      "score": 0.534,
+      "answer_preview": "すみませんが、AI Chronicleの具体的なハイライトを提供するための十分な情報を持っていません。しかし、AIに関する一般的な最新情報や技術トレンドについての要約を作成することはできます。具体的な..."
+    },
+    {
+      "model": "deepseek",
+      "score": 0.5212,
+      "answer_preview": "申し訳ありませんが、私は「今日のAI Chronicleハイライト」を提供する能力を持っていません。AI Chronicleは特定のメディアや出版物の名称である可能性が高く、その具体的な内容やハイライ..."
+    }
+  ],
+  "chosen": {
+    "model": "gpt",
+    "score": 0.534,
+    "answer": "すみませんが、AI Chronicleの具体的なハイライトを提供するための十分な情報を持っていません。しかし、AIに関する一般的な最新情報や技術トレンドについての要約を作成することはできます。具体的なトピックや内容について教えていただければ、それに基づいて要約することも可能です。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 2
+}
