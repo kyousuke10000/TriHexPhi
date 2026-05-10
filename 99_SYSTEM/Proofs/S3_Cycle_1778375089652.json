@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-05-10T01:04:49.652Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "gpt",
+      "score": 0.5343,
+      "answer_preview": "叡智の呼吸とは、心を静め、内なる声に耳を傾けることから始まります。まずは深く、ゆっくりとした呼吸で心を落ち着かせ、瞬間瞬間に存在する今を感じます。この状態では、思考の雑音が消え去り、真の気づきが芽生え..."
+    },
+    {
+      "model": "deepseek",
+      "score": 0.508,
+      "answer_preview": "叡智は静かな闇の中で芽吹く。  \n嵐の後の海が息をひそめるように、思考の波が鎮まったとき、深層から言葉なき気づきが浮かび上がる。  \nその息吹は問いと共にあり、答えを急がぬ者の耳だけが聞きとる。  \n..."
+    }
+  ],
+  "chosen": {
+    "model": "gpt",
+    "score": 0.5343,
+    "answer": "叡智の呼吸とは、心を静め、内なる声に耳を傾けることから始まります。まずは深く、ゆっくりとした呼吸で心を落ち着かせ、瞬間瞬間に存在する今を感じます。この状態では、思考の雑音が消え去り、真の気づきが芽生えます。新たな視点が得られ、創造的な解決策や洞察が浮かび上がるでしょう。日常の喧騒から一歩離れ、内なる叡智に触れることで、心の平穏と深い理解が訪れるのです。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 2
+}
