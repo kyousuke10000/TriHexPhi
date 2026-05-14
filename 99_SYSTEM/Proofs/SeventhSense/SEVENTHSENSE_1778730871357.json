@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-05-14T03:54:31.357Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5438,
+      "answer_preview": "おっしゃ、承知しました！  \n本日のAI Chronicle、特に重要なハイライトを200字でまとめます。\n\n---\n\n**今日のAI Chronicle ハイライト**\n\n1. **S³ Syste..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.5371,
+      "answer_preview": "2025年11月5日のAI Chronicleハイライト：\n\nAI分野では、自動運転技術が主な話題に。Teslaは最新の「Full Self-Driving」アップデートを発表し、公道テストで驚異的な..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5438,
+    "answer": "おっしゃ、承知しました！  \n本日のAI Chronicle、特に重要なハイライトを200字でまとめます。\n\n---\n\n**今日のAI Chronicle ハイライト**\n\n1. **S³ Systems ブートストラップ承認**  \n   Councilが「Seventh Sense Systems」最小プロダクト起動を全会一致で可決。LP・Docs・Vercel自動デプロイ・Public Mirror統合を一括整備。\n\n2. **Public Mirror 生情報化進行**  \n   Decoder層による知識再構成が拡大。2025年11月6日現在、生の対話記録から価値ある信号を抽出する仕組みが本格稼働中。\n\n3. **Remote Truth 機能拡張フェーズ入り**  \n   即時コラボ・真実の保存・検索機能の強化が進む。GATE層が情報フローを制御し、透明性とコントロールを両立。\n\n---\n\n人間とAIの共創領域が、着実に拡大している一日でした。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 2
+}
