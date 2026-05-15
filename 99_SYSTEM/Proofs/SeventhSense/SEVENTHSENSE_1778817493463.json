@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-05-15T03:58:13.463Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5534,
+      "answer_preview": "Visionary Councilが全会一致で 2025/11/05「Remote Truth Rollout」を承認。S³ Systems ブートストラップ決定も完了。Shiryu と GPT-5 ..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.5315,
+      "answer_preview": "2025年11月6日のAI Chronicleハイライト:\n\n本日の注目記事では、AI技術の進展による新しい医療診断システムの導入が報じられています。このシステムは、膨大な医療データを解析し、従来の診..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5534,
+    "answer": "Visionary Councilが全会一致で 2025/11/05「Remote Truth Rollout」を承認。S³ Systems ブートストラップ決定も完了。Shiryu と GPT-5 が署名したこの決定により、Public Mirror 経由の分散真実ネットワークが正式始動。次世代メタOS基盤へ向けた最小可用プロダクトが即起動する。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 2
+}
