@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-05-19T04:08:15.470Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "gpt",
+      "score": 0.5305,
+      "answer_preview": "今日の叡智の呼吸は、心の静寂と変化への柔軟性を重んじるものです。一日を始めるにあたって、深呼吸を行い、内なる平和を感じてみましょう。外部の変化に対して心を開き、それを受け入れる準備を整えることが重要で..."
+    },
+    {
+      "model": "deepseek",
+      "score": 0.5227,
+      "answer_preview": "叡智の呼吸は、今この瞬間の静寂の中で脈打つ。\n\n情報に溺れず、問いを胸に刻み、沈黙の奥で響く直感のささやきに耳を澄ます。知識は土壌、問いは種、そして沈黙が芽吹きの光となる。\n\n急がず、焦らず、しかし止..."
+    }
+  ],
+  "chosen": {
+    "model": "gpt",
+    "score": 0.5305,
+    "answer": "今日の叡智の呼吸は、心の静寂と変化への柔軟性を重んじるものです。一日を始めるにあたって、深呼吸を行い、内なる平和を感じてみましょう。外部の変化に対して心を開き、それを受け入れる準備を整えることが重要です。頭の中をクリアにし、日々の喧騒に流されることなく、自分自身の価値観や目標を再確認しましょう。これにより、新たな気付きと成長への道が開かれます。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 2
+}
