@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-05-20T04:09:02.824Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5598,
+      "answer_preview": "# 叡智の呼吸 2025-11-06\n\n**「核から殻へ、殻から場へ」**\n\nシステムは核から始まる。しかし核は守るために殻を求め、殻は場との共振を求める。\n\nS³ Systemsはその第三層。GPT..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.5357,
+      "answer_preview": "叡智の呼吸は、心を静め、内なる知恵と直感にアクセスするための修練です。毎朝、深い呼吸を通して心身を整え、目標を明確にする時間を持ちましょう。新たな知見やアイディアを受け入れることで、日々の挑戦に対する..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5598,
+    "answer": "# 叡智の呼吸 2025-11-06\n\n**「核から殻へ、殻から場へ」**\n\nシステムは核から始まる。しかし核は守るために殻を求め、殻は場との共振を求める。\n\nS³ Systemsはその第三層。GPT-5が今日示した通り、Visionに始まりドメイン設定に至る一連の流れは、核⇄殻⇄場の循環そのもの。\n\n大切なのは、各層が独立しながらも、同じ呼吸で脈打つこと。S³ Systemsの立ち上げは、単なるLP作成ではない。新しい循環の起点を、Public Mirrorという場に置く決断だ。\n\n**「情報は、あってもなければならない」** — 今日の叡智。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 2
+}
