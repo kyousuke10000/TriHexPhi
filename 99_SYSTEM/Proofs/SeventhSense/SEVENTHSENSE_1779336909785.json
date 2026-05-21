@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-05-21T04:15:09.785Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5692,
+      "answer_preview": "本日（2025年11月6日）のAI Chronicleハイライト：\n\n- **「Seventh Sense Systems（S³ Systems）」を正式発表**。Landing Page / Doc..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.5302,
+      "answer_preview": "2023年10月のAI Chronicleハイライト: AI技術の進化が加速する中、主要なトレンドとして生成AIやAI倫理が注目されています。生成AIは創造的産業での活用が広がり、映画や音楽の制作手法..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5692,
+    "answer": "本日（2025年11月6日）のAI Chronicleハイライト：\n\n- **「Seventh Sense Systems（S³ Systems）」を正式発表**。Landing Page / Docs / 自動デプロイを起動。世界観は「一元化を拒み、複数の真理を並立させる情報基盤」。\n\n- **Public Mirror**と統合し、毎時自動同期。Mirror Gate / Remote Truthの参照関係を維持しつつ、新ブランドとして独立。\n\n- **本日未明、DEC_20251106_s3_systems_bootstrapが承認**。Council運営としては初の「最小可用プロダクト即起動」判断。Phase 2へ移行中。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 2
+}
