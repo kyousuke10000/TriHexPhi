@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-05-22T04:12:55.801Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.526,
+      "answer_preview": "叡智の呼吸は、静止と洞察のリズム。思考を止め、今この瞬間の純粋な気づきに委ねる。湧き上がる雑念を手放し、内なる静寂の中心に立ち返る。そこから新たな視点が浮かび、本質への透明な問いが生まれる。..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.5221,
+      "answer_preview": "今日の叡智の呼吸は「静寂の一瞬」。現代の喧噪の中で、自分自身と向き合う時間を大切にする。心を落ち着け、内なる声に耳を傾けることで、真の目的や課題が明確になる。静かな環境でただ呼吸に意識を集中し、思考を..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.526,
+    "answer": "叡智の呼吸は、静止と洞察のリズム。思考を止め、今この瞬間の純粋な気づきに委ねる。湧き上がる雑念を手放し、内なる静寂の中心に立ち返る。そこから新たな視点が浮かび、本質への透明な問いが生まれる。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 2
+}
