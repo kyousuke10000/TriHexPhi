@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-05-23T03:51:36.000Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5477,
+      "answer_preview": "# 叡智の呼吸 / 2025-11-06\n\n**「最小の形に、最大の意志を宿す」**\n\nS³ Systemsの立ち上げは、単なるLP構築ではない。それは「未来の知の基盤」という巨大な意志を、今日デプロ..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.5238,
+      "answer_preview": "今日の叡智の呼吸は「静寂の中に潜む力」。忙しい日常の中でも、一瞬の静寂を見つけることで、心と体に新たなエネルギーをチャージできます。深呼吸をし、目を閉じて静寂を感じることで、内なる声に耳を傾け、自分自..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5477,
+    "answer": "# 叡智の呼吸 / 2025-11-06\n\n**「最小の形に、最大の意志を宿す」**\n\nS³ Systemsの立ち上げは、単なるLP構築ではない。それは「未来の知の基盤」という巨大な意志を、今日デプロイ可能な最小の形に凝縮する行為だ。ページの裏では、Public Mirrorが呼吸し、AIが静かに待機する。今は静かな佇まいだが、この最小形態こそが、やがて自律的に思考し、世界と対話するシステムの胎動である。始まりはいつも、ひとつの決断と、その形。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 2
+}
