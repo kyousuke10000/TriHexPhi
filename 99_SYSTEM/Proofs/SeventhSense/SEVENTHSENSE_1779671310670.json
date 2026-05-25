@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-05-25T01:08:30.670Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "gpt",
+      "score": 0.5242,
+      "answer_preview": "申し訳ありませんが、私はAI Chronicleの最新のハイライトについてアクセスできません。しかし、AI Chronicleに関連する特定の情報や過去の内容について質問がある場合は、お手伝いできるこ..."
+    },
+    {
+      "model": "deepseek",
+      "score": 0.5207,
+      "answer_preview": "申し訳ありませんが、現在「今日のAI Chronicle」の具体的なコンテンツに関するデータベースや記録にアクセスすることができません。\n\n「今日のAI Chronicle」が何を指しているのか（ある..."
+    }
+  ],
+  "chosen": {
+    "model": "gpt",
+    "score": 0.5242,
+    "answer": "申し訳ありませんが、私はAI Chronicleの最新のハイライトについてアクセスできません。しかし、AI Chronicleに関連する特定の情報や過去の内容について質問がある場合は、お手伝いできることもあるかと思いますので、お知らせください。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 2
+}
