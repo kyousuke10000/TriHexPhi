@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-05-26T01:05:20.438Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "gpt",
+      "score": 0.5208,
+      "answer_preview": "叡智の呼吸は心の静けさと自己の理解を捉える瞑想の技法です。まず、深い呼吸で心を落ち着かせ、瞬間に意識を集中させます。次に、内なる声に耳を傾け、自分の感情や思考を観察します。これにより、内面的な洞察が深..."
+    },
+    {
+      "model": "deepseek",
+      "score": 0.4689,
+      "answer_preview": "# 叡智の呼吸・本日分\n\n**日にち**: 2025年11月6日  \n**主題**: 静かなる構造転換\n\n構造は力づくで変えるものではなく、呼吸のように自然に姿を変えるもの。今日、S³ Systems..."
+    }
+  ],
+  "chosen": {
+    "model": "gpt",
+    "score": 0.5208,
+    "answer": "叡智の呼吸は心の静けさと自己の理解を捉える瞑想の技法です。まず、深い呼吸で心を落ち着かせ、瞬間に意識を集中させます。次に、内なる声に耳を傾け、自分の感情や思考を観察します。これにより、内面的な洞察が深まり、状況に対する新たな視点を得ることができます。日々の生活での多忙さを和らげ、自己成長と明晰さを促進するこの技法は、精神のリセットとリフレッシュに最適です。続けることで心の平和と智慧が育まれます。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 2
+}
