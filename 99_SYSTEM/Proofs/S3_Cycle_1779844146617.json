@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-05-27T01:09:06.617Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "gpt",
+      "score": 0.5358,
+      "answer_preview": "今日の叡智の呼吸は、内なる静けさと外界の調和を求めることに焦点を当てましょう。忙しさに追われる日々の中で、一瞬でも深呼吸をすることで心をリセットし、今この瞬間に意識を戻すことが大切です。自然のリズムに..."
+    },
+    {
+      "model": "deepseek",
+      "score": 0.4524,
+      "answer_preview": "**叡智の呼吸（2025-11-06）**\n\n情報の森に迷うとき、立ち止まり、ただひとつの問いを胸に刻め──「今、本当に必要な真実は何か？」。ノイズを削ぎ、本質だけを残す。迷いが深いほど、あなたの直感..."
+    }
+  ],
+  "chosen": {
+    "model": "gpt",
+    "score": 0.5358,
+    "answer": "今日の叡智の呼吸は、内なる静けさと外界の調和を求めることに焦点を当てましょう。忙しさに追われる日々の中で、一瞬でも深呼吸をすることで心をリセットし、今この瞬間に意識を戻すことが大切です。自然のリズムに耳を傾け、小さな幸せに感謝する習慣を持つことで、心のゆとりと洞察力が深まります。日常の中にある静寂と平和を感じ取ることで、自己の本質と向き合い、より充実した人生を歩む道が開けるでしょう。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 2
+}
