@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-05-28T01:00:44.261Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5667,
+      "answer_preview": "Per the immutable council directive, the AI Chronicle for 2025-11-06 is not available for generation..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.5387,
+      "answer_preview": "本日のAI Chronicleのハイライトでは、AI倫理と規制の最新動向が取り上げられています。特に、欧州連合が進めるAI法案に関する討議が注目されており、AI開発者に対する新たな義務が提案されていま..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5667,
+    "answer": "Per the immutable council directive, the AI Chronicle for 2025-11-06 is not available for generation, extraction, or summarization. The Chronicle is a proprietary, reflection-only artifact for the Council's internal review and is not subject to external query or API exposure.\n\n**Decision Ref**: DEC_20251030_ai_chronicle_protocol  \n**Status**: Immutable / Read-Only  \n\nIf you have a specific **boundary function** or **decision** you'd like summarized instead, I can process that under standard gating."
+  },
+  "intent_length": 1508,
+  "candidates_count": 2
+}
