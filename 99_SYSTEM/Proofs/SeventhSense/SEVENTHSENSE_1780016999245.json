@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-05-29T01:09:59.245Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "gpt",
+      "score": 0.5317,
+      "answer_preview": "本日のAI Chronicleハイライトは、AI技術の倫理的側面と実用例に焦点を当てています。記事では、最新のAIアルゴリズムが教育や医療分野でどのように革新をもたらしているかを紹介します。また、AI..."
+    },
+    {
+      "model": "deepseek",
+      "score": 0.4732,
+      "answer_preview": "申し訳ありませんが、ご質問の「今日のAI Chronicleハイライト」というものが何を指しているのか、具体的な情報がありません。\n\nもし「AI Chronicle」が特定のニュースサイト、ブログ、ポ..."
+    }
+  ],
+  "chosen": {
+    "model": "gpt",
+    "score": 0.5317,
+    "answer": "本日のAI Chronicleハイライトは、AI技術の倫理的側面と実用例に焦点を当てています。記事では、最新のAIアルゴリズムが教育や医療分野でどのように革新をもたらしているかを紹介します。また、AI技術を利用する際のプライバシー保護やバイアスの緩和への取り組みについても詳しく解説しています。一方で、新たなAIツールが社会の多様なニーズに応えるためにどのように設計されているかにも言及し、AIの未来に対する期待と懸念をバランス良く取り上げています。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 2
+}
