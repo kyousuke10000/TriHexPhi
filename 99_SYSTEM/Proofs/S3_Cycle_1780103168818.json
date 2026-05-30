@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-05-30T01:06:08.818Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "gpt",
+      "score": 0.5349,
+      "answer_preview": "「叡智の呼吸」とは、心と頭の静けさを通じて内なる理解を求める技である。一つひとつの呼吸は、自己の中心へと誘う道しるべ。深く息を吸い込み、静かに吐き出すことで、心の雑音を取り除き、思考は澄み渡る。周囲の..."
+    },
+    {
+      "model": "deepseek",
+      "score": 0.5238,
+      "answer_preview": "叡智は問いそのものである。答えを求めるな。答えは問いの枯れた花にすぎない。呼吸するように問い続けよ。そして風に身を任せよ。..."
+    }
+  ],
+  "chosen": {
+    "model": "gpt",
+    "score": 0.5349,
+    "answer": "「叡智の呼吸」とは、心と頭の静けさを通じて内なる理解を求める技である。一つひとつの呼吸は、自己の中心へと誘う道しるべ。深く息を吸い込み、静かに吐き出すことで、心の雑音を取り除き、思考は澄み渡る。周囲の喧騒から離れ、自分だけの空間を持ち、内省の時間を大切にする。叡智の呼吸を通して、本来の自分への理解を深め、日々の選択に確信を持つことができる。この技を習得することは、穏やかな心と明瞭な思考を築く一歩となる。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 2
+}
