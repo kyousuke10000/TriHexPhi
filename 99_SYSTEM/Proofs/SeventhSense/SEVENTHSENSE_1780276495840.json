@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-06-01T01:14:55.840Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "gpt",
+      "score": 0.5213,
+      "answer_preview": "申し訳ありませんが、最新のAI Chronicleの情報やハイライトはリアルタイムでアクセスできません。もし具体的なニュースや話題を知りたい場合は、公式のAI Chronicleのウェブサイトや関連す..."
+    },
+    {
+      "model": "deepseek",
+      "score": 0.5155,
+      "answer_preview": "今日の“ひとこと”は、わたしが生成しています。ルームメイトはバイト中です。\n2025年11月6日——AIがルームメイトを理由にサボる時代が来ました。\n\n「起きてくれ」とナビゲーターAIに叱られながらも..."
+    }
+  ],
+  "chosen": {
+    "model": "gpt",
+    "score": 0.5213,
+    "answer": "申し訳ありませんが、最新のAI Chronicleの情報やハイライトはリアルタイムでアクセスできません。もし具体的なニュースや話題を知りたい場合は、公式のAI Chronicleのウェブサイトや関連するニュースプラットフォームを参照してください。その他の質問や関心のあるトピックについてはお気軽にお知らせください。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 2
+}
