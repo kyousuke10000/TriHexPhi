@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-06-02T01:13:39.021Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5531,
+      "answer_preview": "今日は Mirror Gate への重要な学びとして「自分を知ろうとしたら他人になっていた」を「S³ Systems Boot」で実装へ。LP/Docs/自動デプロイ/公開ミラー連携を一括整備し、世界..."
+    },
+    {
+      "model": "gpt",
+      "score": 0.5349,
+      "answer_preview": "AI Chronicleの本日のハイライトは、AI技術の進化と社会への影響に焦点を当てています。Googleが新たに開発したアルゴリズムが、言語処理能力を大幅に向上させ、人間の感情をより深く理解できる..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5531,
+    "answer": "今日は Mirror Gate への重要な学びとして「自分を知ろうとしたら他人になっていた」を「S³ Systems Boot」で実装へ。LP/Docs/自動デプロイ/公開ミラー連携を一括整備し、世界初の統合可視化基盤の形が明確になった。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 2
+}
