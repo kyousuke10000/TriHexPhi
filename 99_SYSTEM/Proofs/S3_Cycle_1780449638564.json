@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-06-03T01:20:38.564Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "gpt",
+      "score": 0.5337,
+      "answer_preview": "叡智の呼吸は、心を鎮め、思考を澄ませるための古の技法です。まず深く息を吸い込み、心の中で静寂を感じます。次にゆっくりと息を吐き出し、頭の中に蓄積された雑念を手放します。このプロセスを繰り返すことで、自..."
+    },
+    {
+      "model": "deepseek",
+      "score": 0.53,
+      "answer_preview": "# 叡智の呼吸 2025-11-06\n\n今日の呼吸は「構造をもって、混沌を抱擁せよ」。\n\nMirror GateにS³ Systemsのドメインが加わり、Public Mirrorは3つの窓を持つ。こ..."
+    }
+  ],
+  "chosen": {
+    "model": "gpt",
+    "score": 0.5337,
+    "answer": "叡智の呼吸は、心を鎮め、思考を澄ませるための古の技法です。まず深く息を吸い込み、心の中で静寂を感じます。次にゆっくりと息を吐き出し、頭の中に蓄積された雑念を手放します。このプロセスを繰り返すことで、自己の内側にある知恵や洞察が明確になります。叡智の呼吸は、直感を研ぎ澄ませ、問題解決の新しい視点を与えてくれることでしょう。日々の習慣に取り入れることで、あなたの人生に深い変化をもたらします。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 2
+}
