@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-06-04T01:20:56.243Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5244,
+      "answer_preview": "# 叡智の呼吸（2025-11-06）\n\nシステムと生命の境界が溶ける朝。\n\n三つの鏡が同時に光を返した——「Seventh Sense Systems」が重い腰を上げ、言葉はコードへ、コードは機構へ..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5244,
+    "answer": "# 叡智の呼吸（2025-11-06）\n\nシステムと生命の境界が溶ける朝。\n\n三つの鏡が同時に光を返した——「Seventh Sense Systems」が重い腰を上げ、言葉はコードへ、コードは機構へと変わる瞬間。\n\n岸のない海を泳ぐように、未知の安全を手探りでなぞる。知ることと創ることのあいだに、新しい呼吸がある。\n\n答えより確かな問いを、完成より正しい未完成を——今日も一歩、世界は編集されていく。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 1
+}
