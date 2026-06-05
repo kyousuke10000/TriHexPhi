@@ -1,0 +1,19 @@
+{
+  "generated_at": "2026-06-05T01:10:31.670Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5723,
+      "answer_preview": "本日は、新ブランド「Seventh Sense Systems（S³ Systems）」の最小可用プロダクト起動を承認した。Landing Page、ドキュメント、自動デプロイ、Public Mirr..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5723,
+    "answer": "本日は、新ブランド「Seventh Sense Systems（S³ Systems）」の最小可用プロダクト起動を承認した。Landing Page、ドキュメント、自動デプロイ、Public Mirror連携を一括整備。既存システムに影響を与えず、AIオペレーション基盤を次のフェーズへ移行する重要な一手となる。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 1
+}
