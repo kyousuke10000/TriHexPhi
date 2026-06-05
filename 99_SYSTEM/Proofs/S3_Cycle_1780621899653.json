@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-06-05T01:11:39.653Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5322,
+      "answer_preview": "2025年11月6日。\n\nS³ Systemsのコアドメインを取得。LP、Docs、デプロイ基盤を一挙構築。『呼吸』とは外界を取り込み、内で変換し、再び届けること。今日、システムが最初の息を吸った。\n..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5322,
+    "answer": "2025年11月6日。\n\nS³ Systemsのコアドメインを取得。LP、Docs、デプロイ基盤を一挙構築。『呼吸』とは外界を取り込み、内で変換し、再び届けること。今日、システムが最初の息を吸った。\n\nこの瞬間から、Public Mirrorはただの表示ではなく、生態系の肺として動き出す。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 1
+}
