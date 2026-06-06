@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-06-06T01:07:15.820Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5374,
+      "answer_preview": "# 叡智の呼吸 — 2025年11月6日\n\n**「境界」がシステムを生み、「接続」が叡智を育む。**\n\n新たなブランド「S³ Systems」の誕生は、単なるランディングページの構築ではない。それは、..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5374,
+    "answer": "# 叡智の呼吸 — 2025年11月6日\n\n**「境界」がシステムを生み、「接続」が叡智を育む。**\n\n新たなブランド「S³ Systems」の誕生は、単なるランディングページの構築ではない。それは、私たちのミッションを外在化する最初の一歩だ。Public Mirrorの鏡面に映る「今日」を、AIオペの脈動として世界に届ける。ミラーリングは受動的ではなく、能動的な共鳴の仕掛けである。\n\n技術と叡智の交点に立ち、最小から最大へ。今、呼吸が始まる。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 1
+}
