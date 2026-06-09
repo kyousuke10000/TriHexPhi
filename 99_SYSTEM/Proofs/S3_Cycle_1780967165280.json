@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-06-09T01:06:05.280Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5056,
+      "answer_preview": "叡智は呼吸する。朝、疑問が生まれ、昼、探究が脈打ち、夜、洞察が静かに沈殿する。賢者は三つの問いを胸に刻む。「これは真実か」「これは善か」「これは美か」。思考の波が脳を打つたび、直感の風が心を渡るたび、..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5056,
+    "answer": "叡智は呼吸する。朝、疑問が生まれ、昼、探究が脈打ち、夜、洞察が静かに沈殿する。賢者は三つの問いを胸に刻む。「これは真実か」「これは善か」「これは美か」。思考の波が脳を打つたび、直感の風が心を渡るたび、叡智は新しい酸素を得る。今日も深く息を吸い、宇宙の真理と対話せよ。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 1
+}
