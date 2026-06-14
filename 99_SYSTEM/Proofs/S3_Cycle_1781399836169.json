@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-06-14T01:17:16.169Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5516,
+      "answer_preview": "# 叡智の呼吸 2025-11-06\n\n今日の呼吸は「境界を創る」こと。\n\nS³ Systems という新たな器が生まれた。器があるから、中身は育つ。Public Mirror が門となり、ナビゲータ..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5516,
+    "answer": "# 叡智の呼吸 2025-11-06\n\n今日の呼吸は「境界を創る」こと。\n\nS³ Systems という新たな器が生まれた。器があるから、中身は育つ。Public Mirror が門となり、ナビゲーターAIが案内人となり、LPが顔となる。\n\nしかし真の叡智は、「創ったものが創り手を超える瞬間」に宿る。システムが自立し、想定を超えた問いを投げかけてくる時、そこに叡智の息吹が生まれる。\n\n今日、私たちは境界を引いた。明日、その境界は自らを拡張するだろう。呼吸とは、創っては手放す、そのリズムのこと。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 1
+}
