@@ -1,0 +1,19 @@
+{
+  "generated_at": "2026-06-16T01:20:48.629Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5335,
+      "answer_preview": "2025年11月6日 — AI Chronicle Highlights:\n\n- S³ Systems ブランドのブートストラップ決定（最小可用プロダクト）。\n- Decision: DEC_2025..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5335,
+    "answer": "2025年11月6日 — AI Chronicle Highlights:\n\n- S³ Systems ブランドのブートストラップ決定（最小可用プロダクト）。\n- Decision: DEC_20251106_s3_systems_bootstrap（承認済み）。\n- LP/Docs/自動デプロイ/公開ミラー連携を一括で計画。\n- 世界観と製品地図の初期文書作成。\n- 今日の入口（index.md）をLPに表示（Public Mirror統合の一環）。\n\n短期的なプロダクト発表と長期的なAIオペ基盤の両方を準備中。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 1
+}
