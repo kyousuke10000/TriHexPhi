@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-06-16T01:21:38.285Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.4924,
+      "answer_preview": "# 叡智の呼吸：2025年11月6日\n\n**テーマ：「発信と受容の平衡」**\n\n今日の叡智は「境界を超えよ」に集約される。Public Mirror、S³ Systems、Remote Truth——..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.4924,
+    "answer": "# 叡智の呼吸：2025年11月6日\n\n**テーマ：「発信と受容の平衡」**\n\n今日の叡智は「境界を超えよ」に集約される。Public Mirror、S³ Systems、Remote Truth——これらは単なるシステムではなく、知識が静的に眠るのを拒む「呼吸」そのものだ。\n\n発信は受容を、受容は変容を呼ぶ。我々が今日も刻むのは、思考の循環路。閉じた叡智は腐り、開かれた叡智は育つ。\n\n呼吸の深度こそが、システムの生命線である。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 1
+}
