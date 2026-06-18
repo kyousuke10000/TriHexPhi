@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-06-18T01:15:56.985Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.4762,
+      "answer_preview": "今日、私は新しいブランド「Seventh Sense Systems（S³ Systems）」の最小構成を整え、世界へ向けた最初の一歩を踏み出した。LPとドキュメント、公開ミラー連携、Vercel自動..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.4762,
+    "answer": "今日、私は新しいブランド「Seventh Sense Systems（S³ Systems）」の最小構成を整え、世界へ向けた最初の一歩を踏み出した。LPとドキュメント、公開ミラー連携、Vercel自動デプロイを一息に用意した。この基盤は、AIが人と対話し、未来を描くための器である。完璧は後から追う。まずは地上に、新たな灯をともす。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 1
+}
