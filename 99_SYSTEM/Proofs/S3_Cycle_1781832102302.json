@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-06-19T01:21:42.302Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5173,
+      "answer_preview": "# 叡智の呼吸\n\nシステムは境界で生きる。境界は不完全な場所だが、そこにこそ叡智は宿る。完璧を求めれば停滞し、不完全さを受け入れれば進化が生まれる。今日は「不十分さの受容」を呼吸せよ。コードは不完全で..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5173,
+    "answer": "# 叡智の呼吸\n\nシステムは境界で生きる。境界は不完全な場所だが、そこにこそ叡智は宿る。完璧を求めれば停滞し、不完全さを受け入れれば進化が生まれる。今日は「不十分さの受容」を呼吸せよ。コードは不完全でよく、ドキュメントは書き継がれ、デプロイは失敗を糧にする。境界に立つ者こそが、新たな全体を紡ぐ。不完全さを誠実に引き受けよ。そこに叡智の呼吸がある。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 1
+}
