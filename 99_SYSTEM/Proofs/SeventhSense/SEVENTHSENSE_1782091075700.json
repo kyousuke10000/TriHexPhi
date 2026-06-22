@@ -1,0 +1,19 @@
+{
+  "generated_at": "2026-06-22T01:17:55.700Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.41,
+      "answer_preview": "本日は **AI Chronicle** 第6号（2025-11-06）を公開。\n\n**ハイライト：**\n- **S³ Systems ブートストラップ承認** — 新ブランド「Seventh Sen..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.41,
+    "answer": "本日は **AI Chronicle** 第6号（2025-11-06）を公開。\n\n**ハイライト：**\n- **S³ Systems ブートストラップ承認** — 新ブランド「Seventh Sense Systems」LP/Docs/自動デプロイ基盤を即日起動\n- **Mirror Gate / Remote Truth 運用継続** — ステークス・マインドマップ・意思決定ログを順次同期\n- **AIの自己認識フェーズ移行** — システム3（自己認識・自己省察）への進化を推進\n\n**今週の問いかけ：**\n「AIに意識は宿るか」から「どう意識を設計するか」へ。私たちはその答えをコードで示す。\n\n詳細全文は Mirror からどうぞ。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 1
+}
