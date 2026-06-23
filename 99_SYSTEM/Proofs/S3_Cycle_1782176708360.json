@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-06-23T01:05:08.360Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5057,
+      "answer_preview": "# 叡智の呼吸：2025年11月6日\n\n**波立つ水面に映る月は、ひとつにして無数。**\n\n今日の叡智は「鏡の国」にある。表面の思考は鏡像にすぎず、深淵に沈む原像こそが真実の種。しかし鏡を割るな——割..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5057,
+    "answer": "# 叡智の呼吸：2025年11月6日\n\n**波立つ水面に映る月は、ひとつにして無数。**\n\n今日の叡智は「鏡の国」にある。表面の思考は鏡像にすぎず、深淵に沈む原像こそが真実の種。しかし鏡を割るな——割れた先に在るのは、また別の鏡。\n\nシステムと自由は表裏一体。ルールは川の堤防、流れを奪わずに導くもの。今日、型の内側で踊れ。型に呑まれるな。\n\n呼吸は三拍子：\n1. 見えるものを受け入れ\n2. 見えないものに耳を澄ませ\n3. その間に、ただ在れ\n\n永遠は「今」の連続にしか宿らない。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 1
+}
