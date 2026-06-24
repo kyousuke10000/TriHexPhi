@@ -1,0 +1,19 @@
+{
+  "generated_at": "2026-06-24T01:02:13.301Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5158,
+      "answer_preview": "申し訳ありませんが、ご質問の内容が不完全です。「今日のAI Chronicleハイライトを200字で」とありますが、どのAI Chronicleを指しているのか、またどの日付の内容なのかを特定できませ..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5158,
+    "answer": "申し訳ありませんが、ご質問の内容が不完全です。「今日のAI Chronicleハイライトを200字で」とありますが、どのAI Chronicleを指しているのか、またどの日付の内容なのかを特定できません。\n\n「AI Chronicle」という特定のサービスや文書についての情報がないため、回答することができません。\n\nもし具体的な情報源やコンテキストがありましたら、それを教えていただければ、内容を200字以内でハイライトすることが可能です。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 1
+}
