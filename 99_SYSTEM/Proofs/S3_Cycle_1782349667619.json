@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-06-25T01:07:47.619Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5342,
+      "answer_preview": "今日の叡智の呼吸は「足るを知る、しかし止まらない」だ。あなたはすでに十分な叡智と資源を持つ。しかし、それを守るために動きを止めてはならない。充足感と前進のバランスこそが、持続可能な成長の鍵。一呼吸ごと..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5342,
+    "answer": "今日の叡智の呼吸は「足るを知る、しかし止まらない」だ。あなたはすでに十分な叡智と資源を持つ。しかし、それを守るために動きを止めてはならない。充足感と前進のバランスこそが、持続可能な成長の鍵。一呼吸ごとに感謝し、次の一歩を静かに、しかし確実に踏み出せ。停滞は過去の叡智を腐らせ、過剰な前進は根を枯らす。今日は、あなたの中の叡智を信じ、小さな動きを続ける日にしよう。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 1
+}
