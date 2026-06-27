@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-06-27T01:06:23.276Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5191,
+      "answer_preview": "# 叡智の呼吸 2025-11-06\n\n**問うより先に、立ち上がれ。**\n\n計画は完璧を求めず、動きの中で磨かれる。S³ Systems の最小プロダクトは、今日この瞬間に息を始めた。デプロイされた..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5191,
+    "answer": "# 叡智の呼吸 2025-11-06\n\n**問うより先に、立ち上がれ。**\n\n計画は完璧を求めず、動きの中で磨かれる。S³ Systems の最小プロダクトは、今日この瞬間に息を始めた。デプロイされたコードは未完だが、呼吸は止まらない。**「まず在れ。そして考えよ。」** ──存在が世界を変え、思考がそれを意味づける。\n\n完成を待つ者は永遠に動かない。「十分」が「完全」に勝る。Seed of S³ が芽吹く今、ただコードを走らせ、光を灯せ。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 1
+}
