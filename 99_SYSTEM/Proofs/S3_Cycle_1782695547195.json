@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-06-29T01:12:27.195Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5262,
+      "answer_preview": "今日も深く静かに、「ある」ことの中心へと呼吸を沈める。外界の雑音を手放し、内なる叡智の声に耳を澄ます。判断せず、ただ在るがままに観る。この純粋な観照のなかで、すべての問いは答えへと変わる。混乱を超えた..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5262,
+    "answer": "今日も深く静かに、「ある」ことの中心へと呼吸を沈める。外界の雑音を手放し、内なる叡智の声に耳を澄ます。判断せず、ただ在るがままに観る。この純粋な観照のなかで、すべての問いは答えへと変わる。混乱を超えた明晰さが、今ここにある。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 1
+}
