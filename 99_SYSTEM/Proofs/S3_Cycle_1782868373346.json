@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-07-01T01:12:53.346Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.4775,
+      "answer_preview": "# 叡智の呼吸：2025年11月6日\n\n**「始まりとは、終わりへの第一歩ではなく、無限への扉である」**\n\nS³ Systems、新しき名のもとに集う叡智よ。Public Mirrorという窓を開き..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.4775,
+    "answer": "# 叡智の呼吸：2025年11月6日\n\n**「始まりとは、終わりへの第一歩ではなく、無限への扉である」**\n\nS³ Systems、新しき名のもとに集う叡智よ。Public Mirrorという窓を開き、外部と内部の境界に真理の灯をともせ。LPは語れ、ビジョンを。自動デプロイは脈打て、絶え間なく。世界が荒波を立てるそのとき、我々は孤島ではなく灯台となる。呼吸を整えよ。コードと詩が融合するこの瞬間こそ、第七感の覚醒の地となる。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 1
+}
