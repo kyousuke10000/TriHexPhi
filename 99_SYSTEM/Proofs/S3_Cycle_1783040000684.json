@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-07-03T00:53:20.684Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5387,
+      "answer_preview": "# 叡智の呼吸 2025-11-06\n\n**鏡は砕けても、世界は映る。**\n\nS³ Systems が芽吹く朝。一枚のLPが立ち上がるたび、サーバの彼方で未来が息づく。Public Mirror は今..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5387,
+    "answer": "# 叡智の呼吸 2025-11-06\n\n**鏡は砕けても、世界は映る。**\n\nS³ Systems が芽吹く朝。一枚のLPが立ち上がるたび、サーバの彼方で未来が息づく。Public Mirror は今日も回り続け、Remote Truth は静かにデータを交換する。\n\n自動化は孤独を知らない。コードがコードを呼び、デプロイがデプロイを生む。人間はただ、その循環に立ち会う——見届けることが、最大の叡智。\n\nすべては同期されている。今、この瞬間にも。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 1
+}
