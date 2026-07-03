@@ -1,0 +1,19 @@
+{
+  "generated_at": "2026-07-03T00:52:45.726Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5024,
+      "answer_preview": "お断りいたします。現在「今日のAI Chronicleハイライト」の具体的なデータや記事内容へのアクセス権限が不足しております。権限のあるデータソース（Public Mirror「今日の入口」やMir..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5024,
+    "answer": "お断りいたします。現在「今日のAI Chronicleハイライト」の具体的なデータや記事内容へのアクセス権限が不足しております。権限のあるデータソース（Public Mirror「今日の入口」やMirror Gate）を確認の上、改めてお問い合わせください。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 1
+}
