@@ -70,19 +70,40 @@ jobs:
             
             core.setOutput('topic', discussion.title);
       
+      - name: Validate and Sanitize Input
+        id: sanitize
+        run: |
+          # 获取输入
+          if [ "${{ github.event_name }}" == "discussion" ]; then
+            RAW_TOPIC="${{ steps.parse.outputs.topic }}"
+          else
+            RAW_TOPIC="${{ github.event.inputs.topic }}"
+          fi
+          
+          # 安全验证：只允许字母、数字、空格、常见标点
+          # 阻止 shell 元字符：$ ` \ | & ; < > ( ) { } [ ] ! # ~ * ?
+          SANITIZED_TOPIC=$(echo "$RAW_TOPIC" | sed 's/[$`\\"|&;<>(){}[\]!#~*?]/_/g')
+          
+          # 长度限制（最多 200 字符）
+          SANITIZED_TOPIC="${SANITIZED_TOPIC:0:200}"
+          
+          echo "topic=$SANITIZED_TOPIC" >> $GITHUB_OUTPUT
+          echo "✅ Input validated and sanitized"
+      
       - name: Run Conductor
         id: conductor
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          # ✅ 使用环境变量安全传递，避免 shell 拼接
+          CONDUCTOR_TOPIC: ${{ steps.sanitize.outputs.topic }}
+          CONDUCTOR_MODE: ${{ github.event.inputs.mode || 'demo' }}
         run: |
-          TOPIC="${{ github.event_name == 'discussion' && steps.parse.outputs.topic || github.event.inputs.topic }}"
-          MODE="${{ github.event.inputs.mode || 'demo' }}"
-          
           echo "🎼 Running Conductor..."
-          echo "Topic: ${TOPIC}"
-          echo "Mode: ${MODE}"
+          echo "Topic: ${CONDUCTOR_TOPIC}"
+          echo "Mode: ${CONDUCTOR_MODE}"
           
-          node tools/conductor/run.mjs --topic "${TOPIC}" --mode=${MODE} > conductor_output.txt 2>&1 || true
+          # ✅ 使用环境变量而非直接拼接
+          node tools/conductor/run.mjs --topic "${CONDUCTOR_TOPIC}" --mode="${CONDUCTOR_MODE}" > conductor_output.txt 2>&1 || true
           
           echo "conductor_output=conductor_output.txt" >> $GITHUB_OUTPUT
       
