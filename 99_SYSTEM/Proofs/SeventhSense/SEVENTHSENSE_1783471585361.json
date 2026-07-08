@@ -1,0 +1,19 @@
+{
+  "generated_at": "2026-07-08T00:46:25.360Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5564,
+      "answer_preview": "申し訳ありませんが、あなたが「今日のAI Chronicle」について言及されている具体的な内容を、私の知識の中から参照することができません。一般的な最新AIニュースについてのハイライトであれば、私の..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5564,
+    "answer": "申し訳ありませんが、あなたが「今日のAI Chronicle」について言及されている具体的な内容を、私の知識の中から参照することができません。一般的な最新AIニュースについてのハイライトであれば、私の知識の範囲（2025年5月時点）ではお伝えできません。\n\nもし特定のプロジェクトや公開ドキュメント（Public Mirror, Remote Truthなど）についてのハイライトをお求めでしたら、該当する情報源を共有いただければ、それを要約することが可能です。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 1
+}
