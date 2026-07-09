@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-07-09T00:52:27.561Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5051,
+      "answer_preview": "今日の叡智の呼吸：\n\n**「始まりは最小の一歩から」**\n\nS³ Systemsのブートストラップを承認した。完璧を待たず、今ある知恵と技術で最小の形を創る。LP、Docs、自動デプロイ、公開ミラー連..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5051,
+    "answer": "今日の叡智の呼吸：\n\n**「始まりは最小の一歩から」**\n\nS³ Systemsのブートストラップを承認した。完璧を待たず、今ある知恵と技術で最小の形を創る。LP、Docs、自動デプロイ、公開ミラー連携——これらが揃えば、叡智は静かに流れ始める。大事なのは「始めること」そのもの。未来への扉は、今この瞬間に開かれる。\n\n明日は、この一歩を確かなものにする日。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 1
+}
