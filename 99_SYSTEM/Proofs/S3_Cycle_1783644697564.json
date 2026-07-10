@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-07-10T00:51:37.564Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.4849,
+      "answer_preview": "**叡智の呼吸 2025.11.06**\n\n今日、Seventh Sense Systems（S³ Systems）が始動した。最小の形で、最大の意志を宿して。\n\nかつては「見えないものを見る」ことを..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.4849,
+    "answer": "**叡智の呼吸 2025.11.06**\n\n今日、Seventh Sense Systems（S³ Systems）が始動した。最小の形で、最大の意志を宿して。\n\nかつては「見えないものを見る」ことを恐れた。しかしS³は、その不可視を力へと変える道具となる。Public Mirrorに刻まれたリアルタイムの叡智、Remote Truthに保存された検証済みの記憶——それらを束ね、一人ひとりの未来判断を支える。\n\n1％の直感に、99％の構造を与える。今日の一歩は小さいが、その呼吸は確かに拡がっている。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 1
+}
