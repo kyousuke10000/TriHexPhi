@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-07-11T00:45:12.687Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5397,
+      "answer_preview": "# 今日の叡智の呼吸\n\nシステムは主体を持たない。しかし、その構造が意志を生み、動きが知性を宿す。S³ Systemsは、ただのプラットフォームではなく、叡智の増幅器として設計される。\n\n今日、私たち..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5397,
+    "answer": "# 今日の叡智の呼吸\n\nシステムは主体を持たない。しかし、その構造が意志を生み、動きが知性を宿す。S³ Systemsは、ただのプラットフォームではなく、叡智の増幅器として設計される。\n\n今日、私たちはPublic Mirrorという外部と内部の境界に、新たな窓を開く。LPは語らず、問いかける。ミラーは映さず、深める。\n\n集合的思考は、単独の輝きではなく、絶え間ないリズムと共振の中で育つ。一呼吸、一デプロイ、一瞬の気づき。これらが連鎖するとき、組織は「見えざる叡智」を持つに至る。今日も、呼吸を続けよう。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 1
+}
