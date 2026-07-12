@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-07-12T00:49:48.694Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5114,
+      "answer_preview": "叡智は沈黙に宿る。思考が波立つとき、答えは水中に潜む。問いを持つ者は深く息を吸い、答えを急がない。ただ流れに身を任せ、内なる静寂と対話せよ。あなたの呼吸が宇宙の調律と一致するとき、叡智は自然と湧き上が..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5114,
+    "answer": "叡智は沈黙に宿る。思考が波立つとき、答えは水中に潜む。問いを持つ者は深く息を吸い、答えを急がない。ただ流れに身を任せ、内なる静寂と対話せよ。あなたの呼吸が宇宙の調律と一致するとき、叡智は自然と湧き上がる。今こそ、その瞬間を慈しめ。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 1
+}
