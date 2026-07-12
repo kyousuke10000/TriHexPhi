@@ -1,0 +1,19 @@
+{
+  "generated_at": "2026-07-12T00:49:00.552Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5365,
+      "answer_preview": "今日のAI Chronicleハイライト：S³ Systems（Seventh Sense Systems）の最小可用プロダクト起動が承認。Next.js 15によるLP/Docs構築、Vercel自..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5365,
+    "answer": "今日のAI Chronicleハイライト：S³ Systems（Seventh Sense Systems）の最小可用プロダクト起動が承認。Next.js 15によるLP/Docs構築、Vercel自動デプロイ、Public Mirror統合を含む3フェーズ展開。既存のMirror GateやRemote Truthへの影響はなく、新ブランドの世界観・基盤整備に集中。Phases 1-3で段階的にデプロイ完了予定。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 1
+}
