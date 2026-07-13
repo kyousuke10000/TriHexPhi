@@ -1,0 +1,19 @@
+{
+  "generated_at": "2026-07-13T00:48:50.755Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5355,
+      "answer_preview": "# AI Chronicle ハイライト（2025年11月6日）\n\nS³ Systems（Seventh Sense Systems）ブートストラップ承認。Landing Page・Docs・自動デプ..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5355,
+    "answer": "# AI Chronicle ハイライト（2025年11月6日）\n\nS³ Systems（Seventh Sense Systems）ブートストラップ承認。Landing Page・Docs・自動デプロイ・Public Mirror連携を一括整備。OpenAI Deep Research版請求書処理APIリリースで4.9%精度向上、生成AIスタートアップ資金調達が前四半期比18%増。DeepL API新モデル発表。ナビゲーターAI基盤により、情報革命の民主化が加速。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 1
+}
