@@ -1,0 +1,19 @@
+{
+  "generated_at": "2026-07-14T00:42:27.724Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.4371,
+      "answer_preview": "本日（2025年11月6日）、S³ Systems（Seventh Sense Systems）の正式ブートストラップが承認されました。\n\n主な内容：\n- **Landing Page（Next.js..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.4371,
+    "answer": "本日（2025年11月6日）、S³ Systems（Seventh Sense Systems）の正式ブートストラップが承認されました。\n\n主な内容：\n- **Landing Page（Next.js 15）**：ビジョン・機能・Proofsを一気通貫で提示する最小プロダクトを構築\n- **ドキュメント整備**：Vision / Brand Guidelinesを即時公開\n- **自動デプロイ基盤**：Vercel + CI/CDワークフローを一発起動\n- **Public Mirror連携**：最新の「今日の入口」をLPに動的表示\n\nPhase 1（基本構築）→ Phase 2（デプロイ確認）→ Phase 3（ドメイン接続）の3段階で進め、数日以内に公開可能な状態にします。新ブランドの第一歩が確実に動き始めました。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 1
+}
