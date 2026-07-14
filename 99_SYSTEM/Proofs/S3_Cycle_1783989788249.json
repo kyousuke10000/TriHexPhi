@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-07-14T00:43:08.249Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5311,
+      "answer_preview": "風の吹くまま、雲の流れるまま。今日は流れに身を任せ、自然のリズムと調和する一日。朝の静けさの中で呼吸を整え、無理をせず、余計な力を抜く。木々が風に揺れるように、心もまた自然と動くままに。あれこれ悩むよ..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5311,
+    "answer": "風の吹くまま、雲の流れるまま。今日は流れに身を任せ、自然のリズムと調和する一日。朝の静けさの中で呼吸を整え、無理をせず、余計な力を抜く。木々が風に揺れるように、心もまた自然と動くままに。あれこれ悩むより、今この瞬間の感覚に意識を向ける。空を見上げ、空気を感じ、ただそこにあることの豊かさに気づく。静けさの中にこそ、深い叡智は息づいている。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 1
+}
