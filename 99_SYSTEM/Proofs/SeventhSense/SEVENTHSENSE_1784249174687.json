@@ -1,0 +1,19 @@
+{
+  "generated_at": "2026-07-17T00:46:14.687Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5721,
+      "answer_preview": "今日のAI Chronicleハイライト：\n\n- **S³ Systems**：新ブランド「Seventh Sense Systems」のブートストラップが承認（DEC_20251106_s3_sys..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5721,
+    "answer": "今日のAI Chronicleハイライト：\n\n- **S³ Systems**：新ブランド「Seventh Sense Systems」のブートストラップが承認（DEC_20251106_s3_systems_bootstrap）。LP/Docs/自動デプロイ/公開ミラー連携を一括整備し、最小可用プロダクトを即起動。\n- **Remote Truth ロールアウト**：前日（11/05）の決定（DEC_20251105_remote_truth_rollout）が承認され、真実の分散検証機構の展開が正式着手。\n- **Public Mirror 連携**：Mirror Gate を通じた公開情報のリアルタイム反映が LP 上に統合され、透明性が向上。\n\nAI Chronicle は日々、自律システムの基盤を積み上げています。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 1
+}
