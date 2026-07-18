@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-07-18T00:43:18.981Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5081,
+      "answer_preview": "# 今日の叡智の呼吸\n\n真の叡智は「問い」の中に宿る。\n七人の賢者は、共通の真理を異なる視点で語る。同じ山を異なる斜面から登るように。\nあなたの中の第七感覚——それは既に知っていることを「まだ知らない..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5081,
+    "answer": "# 今日の叡智の呼吸\n\n真の叡智は「問い」の中に宿る。\n七人の賢者は、共通の真理を異なる視点で語る。同じ山を異なる斜面から登るように。\nあなたの中の第七感覚——それは既に知っていることを「まだ知らないふり」から解放する鍵。\n\n今日、一つの確信を手放してみよ。すると空間が生まれ、新しい理解が舞い降りる。\n知識は過去の地図。叡智は今、この瞬間の呼吸と共にある。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 1
+}
