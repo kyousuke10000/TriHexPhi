@@ -1,0 +1,19 @@
+{
+  "generated_at": "2026-07-19T00:47:42.948Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.487,
+      "answer_preview": "お読みいただきありがとうございます。指定されたAI Chronicleのデータが提供されていないため、本日分のハイライトを作成することができません。\n\n代わりに、以下の選択肢をご提案します：\n1. A..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.487,
+    "answer": "お読みいただきありがとうございます。指定されたAI Chronicleのデータが提供されていないため、本日分のハイライトを作成することができません。\n\n代わりに、以下の選択肢をご提案します：\n1. AI Chronicleの具体的な内容をテキストとして共有いただく\n2. 最近の一般的なAIトピックに関する要望があればお知らせいただく（日付指定なしの大まかな情報提供が可能な場合があります）\n\nご質問があれば、お気軽にお知らせください。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 1
+}
