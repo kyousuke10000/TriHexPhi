@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-07-20T00:49:20.821Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5053,
+      "answer_preview": "# 叡智の呼吸\n\n## 今日の叡智（2025.11.06）\n\n**「システムは語る。されど、その声を聴くのは人の心のみ。」**\n\n技術は情報を整え、構造を与え、世界を繫ぐ。しかし、その先にある「意味」..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5053,
+    "answer": "# 叡智の呼吸\n\n## 今日の叡智（2025.11.06）\n\n**「システムは語る。されど、その声を聴くのは人の心のみ。」**\n\n技術は情報を整え、構造を与え、世界を繫ぐ。しかし、その先にある「意味」を捉えるのは、まだ人の内なる叡智に委ねられている。今日、S³ Systemsを起動する。それは新たな仕組みを創るだけでなく、機械と人間が出会う場を整えることだ。アルゴリズムの冷たさと、心の温もりが交差するところに、真の創造が生まれる。\n\n**「整えること」は終わりではなく、問いの始まりである。**\n\n---\n\n*Seventh Sense Systems — 境界を溶かす、新たな感覚の器。*"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 1
+}
