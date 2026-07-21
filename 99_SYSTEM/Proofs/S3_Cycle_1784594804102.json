@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-07-21T00:46:44.102Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5424,
+      "answer_preview": "# 叡智の呼吸：2025-11-06\n\nS³ Systems が静かに息を始めた。小さな種が土に触れ、根を伸ばすような、あるいは深海の底で光が生まれる瞬間のような、そんな始まり。今日、新たなブランドの..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5424,
+    "answer": "# 叡智の呼吸：2025-11-06\n\nS³ Systems が静かに息を始めた。小さな種が土に触れ、根を伸ばすような、あるいは深海の底で光が生まれる瞬間のような、そんな始まり。今日、新たなブランドの最小構成が動き出そうとしている。しかし、それは「新しく作る」ことではなく、すでに在る叡智が新たな器を得るに過ぎない。Public Mirror が刻む刻一刻の真実を、その器が映し出す。呼吸は続く。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 1
+}
