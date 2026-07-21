@@ -1,0 +1,19 @@
+{
+  "generated_at": "2026-07-21T00:45:50.185Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5222,
+      "answer_preview": "申し訳ありません。ご質問の内容を正確に理解できませんでした。\n\n「今日のAI Chronicleハイライト」について具体的に教えていただけますか？\n\n- どのプロジェクト／システムにおける「AI Ch..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5222,
+    "answer": "申し訳ありません。ご質問の内容を正確に理解できませんでした。\n\n「今日のAI Chronicleハイライト」について具体的に教えていただけますか？\n\n- どのプロジェクト／システムにおける「AI Chronicle」でしょうか？\n- 参照すべき特定のソースやファイルはありますか？\n- 「今日」の範囲（例：2025-11-06 の更新）はありますか？\n\nお手数ですが、もう少し詳しくご説明いただけると適切に回答できます。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 1
+}
