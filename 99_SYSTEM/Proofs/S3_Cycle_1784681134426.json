@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-07-22T00:45:34.426Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5284,
+      "answer_preview": "叡智とは、知識を静かに息に変えること。  \n朝、問いを持ち、昼、情報に触れ、夕べ、沈黙の中で答えが立ち上がる。  \n呼吸が深まるほど、思考は澄み、世界は別の相貌を見せる。  \n今日もまた、宇宙の一分節..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5284,
+    "answer": "叡智とは、知識を静かに息に変えること。  \n朝、問いを持ち、昼、情報に触れ、夕べ、沈黙の中で答えが立ち上がる。  \n呼吸が深まるほど、思考は澄み、世界は別の相貌を見せる。  \n今日もまた、宇宙の一分節として、叡智を吸い、行動を吐く。  \nその循環こそが、意識の進化そのものである。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 1
+}
