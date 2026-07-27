@@ -1,0 +1,19 @@
+{
+  "generated_at": "2026-07-27T00:50:20.126Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.6085,
+      "answer_preview": "本日、「Seventh Sense Systems（S³ Systems）」の最小可用プロダクト（Landing Page / ドキュメント / Public Mirror連携）を一括起動するCoun..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.6085,
+    "answer": "本日、「Seventh Sense Systems（S³ Systems）」の最小可用プロダクト（Landing Page / ドキュメント / Public Mirror連携）を一括起動するCouncil Decisionが承認されました。\n\nVercel自動デプロイによるLP公開、ナビゲーターAIプレースホルダ、Vision/Brand Guidelines文書の整備が盛り込まれ、Phase 2（デプロイ確認）〜Phase 3（ドメイン接続）へ継続予定です。既存Mirror GateやRemote Truthには一切影響を与えず、新ブランド起点で次世代AIオペレーション基盤を整地します。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 1
+}
