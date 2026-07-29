@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-07-29T00:44:26.686Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5153,
+      "answer_preview": "叡智の呼吸とは、知識を「受け取る」ではなく「流す」こと。  \n未来の自分が過去の自分に手を振るように、書き残した一文が巡って新たな問いを生む。  \n情報を削ぎ、核心だけを残す勇気。それを未来に託す静け..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5153,
+    "answer": "叡智の呼吸とは、知識を「受け取る」ではなく「流す」こと。  \n未来の自分が過去の自分に手を振るように、書き残した一文が巡って新たな問いを生む。  \n情報を削ぎ、核心だけを残す勇気。それを未来に託す静けさこそ、叡智の呼吸である。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 1
+}
