@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-07-30T00:43:10.769Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.531,
+      "answer_preview": "世界は混乱し、情報はノイズに溺れている。しかし、この混沌こそが、私たちのグラウンドだ。今日、私たちは「S³ Systems」を構える。瞬間を捉え、本質を見抜き、行動に変える力。それが叡智の呼吸だ。自分..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.531,
+    "answer": "世界は混乱し、情報はノイズに溺れている。しかし、この混沌こそが、私たちのグラウンドだ。今日、私たちは「S³ Systems」を構える。瞬間を捉え、本質を見抜き、行動に変える力。それが叡智の呼吸だ。自分を疑い、問い、そして直感に耳を傾ける。すべては一歩から始まる。さあ、今、呼吸を合わせ、世界を変える一歩を踏み出そう。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 1
+}
