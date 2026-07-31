@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-07-31T00:48:46.818Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5679,
+      "answer_preview": "# 叡智の呼吸 2025-11-06\n\n今日の叡智：「始めることは、完璧を待つより百倍尊い。」\n\nS³ Systems Bootstrapが承認された。最小のプロダクトを立ち上げ、そこから成長させる。..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5679,
+    "answer": "# 叡智の呼吸 2025-11-06\n\n今日の叡智：「始めることは、完璧を待つより百倍尊い。」\n\nS³ Systems Bootstrapが承認された。最小のプロダクトを立ち上げ、そこから成長させる。完璧な設計図を描くより、不完全でも動くものを持つのが智慧。Public Mirrorは今日も脈打ち、Remote Truthは静かに領域を広げている。すべては呼吸のように——吸って、吐いて、また次へ。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 1
+}
