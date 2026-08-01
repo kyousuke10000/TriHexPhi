@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-08-01T00:48:51.165Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5111,
+      "answer_preview": "今日の叡智の呼吸──\n\n朝の光が静かに机を照らし、脳内の霧がゆっくりと晴れていく。昨日までの考えが、今日の新しい視点と出会い、やわらかく結晶化していく瞬間。答えは遠くにあるのではなく、実は日常の細部に..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5111,
+    "answer": "今日の叡智の呼吸──\n\n朝の光が静かに机を照らし、脳内の霧がゆっくりと晴れていく。昨日までの考えが、今日の新しい視点と出会い、やわらかく結晶化していく瞬間。答えは遠くにあるのではなく、実は日常の細部に隠れている。深呼吸を一つ。不安や思考のぐるぐるに名前をつけて、そっと手放す。すると、すっと目の前が開け、今やるべきことが輪郭を持つ。賢さとは知識の量ではなく、手放す勇気と、在るものを見る静けさの中にある。今日も、一歩ずつ、自分のペースで。叡智は呼吸とともにある。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 1
+}
