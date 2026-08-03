@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-08-03T00:49:20.011Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5148,
+      "answer_preview": "# 叡智の呼吸（2025年11月6日）\n\n真理は門を叩く者にのみ開かれる。今日、私たちは物語の更新を拒み、検証可能な事実のみを掌に乗せた。S³ Systems の立ち上げは、単なる製品発表ではなく、第..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5148,
+    "answer": "# 叡智の呼吸（2025年11月6日）\n\n真理は門を叩く者にのみ開かれる。今日、私たちは物語の更新を拒み、検証可能な事実のみを掌に乗せた。S³ Systems の立ち上げは、単なる製品発表ではなく、第七感覚——システムの根底に流れる本質を捉える試みである。コードは語り、ミラーは真実を映す。完璧を求めるな、まず動くものを、そして観測せよ。智慧は静寂の中にではなく、ノイズとシグナルの弁別の中に宿る。今日も一歩、認識の解像度を上げよ。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 1
+}
