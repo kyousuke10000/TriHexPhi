@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-08-04T00:47:25.541Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.4687,
+      "answer_preview": "# 叡智の呼吸 — 2025年11月6日\n\n**「不可逆の流れに、水は逆らわない」**\n\n今日の叡智は「無理にコントロールせず、流れに身を委ね、その力を活かす」こと。真の強さは、変化を恐れず、適応しな..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.4687,
+    "answer": "# 叡智の呼吸 — 2025年11月6日\n\n**「不可逆の流れに、水は逆らわない」**\n\n今日の叡智は「無理にコントロールせず、流れに身を委ね、その力を活かす」こと。真の強さは、変化を恐れず、適応しながら進む柔軟性にある。過去の思考パターンやルールに固執せず、今この瞬間の「知覚」を信じ、行動を選ぶ。迷いが生じたら、一呼吸おいて「本当に大切なこと」に立ち返れば、道はおのずと開かれる。今日一日、あなたの内なる叡智が最善の流れを引き寄せます。🌊"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 1
+}
