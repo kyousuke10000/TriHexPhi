@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-08-11T00:27:33.694Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5035,
+      "answer_preview": "叡智の呼吸――それは「問い」と「答え」の往復である。\n\n問うことは、風を呼ぶこと。  \n答えは、その風に乗る葉のようなもの。\n\nしかし、叡智は答えの形ではなく、  \n問いの深さと、問い続ける覚悟の中に..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5035,
+    "answer": "叡智の呼吸――それは「問い」と「答え」の往復である。\n\n問うことは、風を呼ぶこと。  \n答えは、その風に乗る葉のようなもの。\n\nしかし、叡智は答えの形ではなく、  \n問いの深さと、問い続ける覚悟の中にある。\n\n迷いを恐れず、沈黙を受け入れ、  \n対話という波のリズムに身を委ねる。\n\nそうして呼吸するたび、  \n思考は透明になり、視野は広がり、  \n存在そのものが「今」へと目覚める。\n\nこの一息を、叡智の種とせよ。  \n今日もまた、深く問い、静かに聴く。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 1
+}
