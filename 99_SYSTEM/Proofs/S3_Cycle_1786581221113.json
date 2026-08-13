@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-08-13T00:33:41.113Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5133,
+      "answer_preview": "叡智の呼吸は、一日の始まりに自らの内なる問いを静かに聞くこと。\n\n答えを急がず、沈黙の中で思考の流れを観察する。\n\n外の雑音に揺れることなく、ただ深く呼吸し、一本の軸を心に通す。\n\n迷いや焦りは、余計..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5133,
+    "answer": "叡智の呼吸は、一日の始まりに自らの内なる問いを静かに聞くこと。\n\n答えを急がず、沈黙の中で思考の流れを観察する。\n\n外の雑音に揺れることなく、ただ深く呼吸し、一本の軸を心に通す。\n\n迷いや焦りは、余計な力みから生まれる。\n\n力を抜き、真実に向き合うとき、世界は透明になり、必要な道が自然と浮かび上がる。\n\n今日もまた、自分の歩幅で、選び取った覚悟を大事に前へ進む。\n\nその一歩を積み重ねることが、未来の自分を創る。\n\n深呼吸を一つ。すべては整っている。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 1
+}
