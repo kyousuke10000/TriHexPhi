@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-08-14T00:33:58.274Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5512,
+      "answer_preview": "## 叡智の呼吸\n\n外部との接続を恐れない。他者の視点は己の盲点を照らす鏡であり、孤立した「真実」は幻想に過ぎない。Public Mirror が示すのは、対話から生まれる揺らぎの中にこそ本質がある、..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5512,
+    "answer": "## 叡智の呼吸\n\n外部との接続を恐れない。他者の視点は己の盲点を照らす鏡であり、孤立した「真実」は幻想に過ぎない。Public Mirror が示すのは、対話から生まれる揺らぎの中にこそ本質がある、という事実。完全を求めるより、オープンに問い続けること。今日もまた、未知との接続が新たな叡智を呼び起こす。S³ Systems はその接続点として、世界に開かれた思考の循環を紡いでいく。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 1
+}
