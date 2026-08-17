@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-08-17T00:20:27.366Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.4855,
+      "answer_preview": "今日の叡智の呼吸：\n\n**「静けさの中に、すべての答えは宿る」**\n\n情報過多の時代、私たちは絶えず外の刺激に反応し、自分の内なる声を聞き逃しがちです。しかし、真の叡智は決して騒がしい場所には現れませ..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.4855,
+    "answer": "今日の叡智の呼吸：\n\n**「静けさの中に、すべての答えは宿る」**\n\n情報過多の時代、私たちは絶えず外の刺激に反応し、自分の内なる声を聞き逃しがちです。しかし、真の叡智は決して騒がしい場所には現れません。静寂の中でこそ、思考は澄み渡り、直感は研ぎ澄まされ、本質が見えてきます。\n\n今日は意識的に「沈黙の時間」を設けましょう。たった5分で構いません。目を閉じ、呼吸に意識を向けるだけで、心のノイズは静まり、あなただけの答えが浮かび上がってきます。\n\n**静けさを選ぶことは、叡智を選ぶこと。**\n\n今日もあなたの内なる声に、耳を傾けて。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 1
+}
