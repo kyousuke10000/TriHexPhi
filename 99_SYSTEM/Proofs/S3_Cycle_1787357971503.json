@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-08-22T00:19:31.503Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5203,
+      "answer_preview": "# 叡智の呼吸：2025年11月6日\n\n今日の一息に、未来の種を蒔く。S³ Systemsという新たな器に、言葉を、世界観を、物語を注ぎ込む。七感の先にある、まだ見ぬ知覚の領域へ。土地に根ざした叡智、..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5203,
+    "answer": "# 叡智の呼吸：2025年11月6日\n\n今日の一息に、未来の種を蒔く。S³ Systemsという新たな器に、言葉を、世界観を、物語を注ぎ込む。七感の先にある、まだ見ぬ知覚の領域へ。土地に根ざした叡智、記憶に宿る技術、そして共同体としての人間の豊かさ。それらを静かに、しかし確実に、かたちへと結晶させる。焦らず、でも止まらず。今日の呼吸が、明日の扉を開く。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 1
+}
