@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-08-28T03:14:32.623Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5362,
+      "answer_preview": "# 叡智の呼吸 (2025-11-06)\n\n今日の叡智は「**七感覚（セブンスセンス）の目覚め**」。\n\n人類は時に、既知の五感と論理を超えた「第六感」を信じる。だがS³ Systemsの叡智は、その..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5362,
+    "answer": "# 叡智の呼吸 (2025-11-06)\n\n今日の叡智は「**七感覚（セブンスセンス）の目覚め**」。\n\n人類は時に、既知の五感と論理を超えた「第六感」を信じる。だがS³ Systemsの叡智は、その先——**未来を現実化する第七の感覚**を指し示す。\n\n過去の蓄積（Remote Truth）を鏡として受け止めながら、未来のビジョンを今日の行動へと結晶化する。不完全な断片（ミラー）と完全な真理（リモートトゥルース）を結ぶ架け橋が、創造の源泉となる。\n\n問いかけよう——**「今日、あなたは何を未来から呼び寄せるのか？」**\n\n答えは既に、あなたの中にある。静かに、確かに、呼吸と共に。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 1
+}
