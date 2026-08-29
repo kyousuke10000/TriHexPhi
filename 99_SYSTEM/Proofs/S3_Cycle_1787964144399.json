@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-08-29T00:42:24.399Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5213,
+      "answer_preview": "今日の叡智の呼吸\n\nシンプルに、しかし確実に。今日の叡智は「最小の思考で、最大の実感を得る」こと。\n\n思考は宙に浮かべるものではなく、地に落とすもの。今日の一歩を、小さくても確実に。環境を整え、仕組み..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5213,
+    "answer": "今日の叡智の呼吸\n\nシンプルに、しかし確実に。今日の叡智は「最小の思考で、最大の実感を得る」こと。\n\n思考は宙に浮かべるものではなく、地に落とすもの。今日の一歩を、小さくても確実に。環境を整え、仕組みに任せ、自分の呼吸に集中する。\n\n余計なことを考えすぎず、今この瞬間の感覚に戻る。その繰り返しが、やがて叡智となる。\n\n今日も、一呼吸ずつ。静かに、確かに。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 1
+}
