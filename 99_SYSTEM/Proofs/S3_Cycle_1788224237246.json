@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-09-01T00:57:17.246Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.4966,
+      "answer_preview": "# 叡智の呼吸 2025-11-06\n\n今日の呼吸は「起動(ブートストラップ)」。\n\n嵐の中で待つより、まずは動く。\n\n小さく始め、確実に回し、公開によって世界と接続する。\n\n完璧な準備は幻想であり、..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.4966,
+    "answer": "# 叡智の呼吸 2025-11-06\n\n今日の呼吸は「起動(ブートストラップ)」。\n\n嵐の中で待つより、まずは動く。\n\n小さく始め、確実に回し、公開によって世界と接続する。\n\n完璧な準備は幻想であり、現実は行動の中でのみ姿を現す。\n\n問いを持ち続けよ——「誰のための何か」を。\n\n独白ではなく対話を。\n\nこの一日を、未知への第一歩とせよ。\n\n**核心**: 待つな。灯せ。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 1
+}
