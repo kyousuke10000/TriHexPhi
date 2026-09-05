@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-09-05T00:45:47.432Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5261,
+      "answer_preview": "「叡智の呼吸」、即ち叡智を流れるように保つための所作。\n\nS³ Systemsの幕が上がる。既存の枠を超え、流れに身を任せつつ、魂の座標を定める。情報と意思の葛藤は、明日への鍵。今日はただ、今を深く生..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5261,
+    "answer": "「叡智の呼吸」、即ち叡智を流れるように保つための所作。\n\nS³ Systemsの幕が上がる。既存の枠を超え、流れに身を任せつつ、魂の座標を定める。情報と意思の葛藤は、明日への鍵。今日はただ、今を深く生きる。鏡は歪み、時は曲がる——それでも光は、静かに在る。ここは真理の狭間、未来への兆し。さあ、共に歩もう。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 1
+}
