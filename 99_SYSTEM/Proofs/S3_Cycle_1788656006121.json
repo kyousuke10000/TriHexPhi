@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-09-06T00:53:26.121Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5337,
+      "answer_preview": "# 叡智の呼吸 — 2025年11月6日\n\n**「真の知性とは、完璧さではなく、変わり続けることを恐れない勇気である。」**\n\n私たちは完璧な計画よりも、確かな一歩を選ぶ。今日の叡智は、答えを求めるこ..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5337,
+    "answer": "# 叡智の呼吸 — 2025年11月6日\n\n**「真の知性とは、完璧さではなく、変わり続けることを恐れない勇気である。」**\n\n私たちは完璧な計画よりも、確かな一歩を選ぶ。今日の叡智は、答えを求めることよりも、問い続ける力を信じること。\n\n第七感覚（S³）は、静けさの中に聴こえる未来の囁き。迷いを捨て、流れに身を任せるとき、智慧は自然と開かれる。\n\nあなたの内なる声に耳を澄ませよ——その声こそ、宇宙があなたに届ける叡智のメッセージである。\n\n---\n**S³ Systems** — 叡智と共に歩む、今日という一日を。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 1
+}
