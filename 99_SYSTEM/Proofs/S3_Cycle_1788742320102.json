@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-09-07T00:52:00.102Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5291,
+      "answer_preview": "はい、承知いたしました。「叡智の呼吸」を200字でお届けします。\n\n---\n\n**叡智の呼吸**\n\n問いを抱き、静かに息を吸う。答えを急がず、ただ観察する。深く吐くとき、手放すものに気づく。叡智は知る..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5291,
+    "answer": "はい、承知いたしました。「叡智の呼吸」を200字でお届けします。\n\n---\n\n**叡智の呼吸**\n\n問いを抱き、静かに息を吸う。答えを急がず、ただ観察する。深く吐くとき、手放すものに気づく。叡智は知ることでなく、知らないことに耐える力。言葉にならないものを抱え、余白に居続ける。そして、次の吸う息が新しい視点をもたらす。呼吸のように、思考も滞れば澱む。流れに委ね、硬直をほどく。内なる対話が深まるとき、世界はより鮮やかに現れる。叡智とは、瞬間瞬間を丁寧に生きる、その繰り返しの中に育つのだ。\n\n---\n\nどのような方向性でも、再度のご依頼をお待ちしております。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 1
+}
