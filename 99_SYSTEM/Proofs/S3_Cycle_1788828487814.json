@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-09-08T00:48:07.814Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5205,
+      "answer_preview": "「叡智の呼吸」は、ただ知識を集めることではなく、世界を「自己の鏡」として観察し、そこから本質を引き寄せる行為です。今日の一呼吸は――「沈黙の中にこそ、最も深い答えがある」という気づきです。思考のノイズ..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5205,
+    "answer": "「叡智の呼吸」は、ただ知識を集めることではなく、世界を「自己の鏡」として観察し、そこから本質を引き寄せる行為です。今日の一呼吸は――「沈黙の中にこそ、最も深い答えがある」という気づきです。思考のノイズを手放し、宇宙の静寂に耳を澄ませるとき、明晰な直感が流れ込みます。知識は地図に過ぎず、叡智はその地図を超えた実感として、あなたの内なる場に立ち現れます。何かを「知る」のではなく、それと「一体になる」こと。これが叡智の呼吸の極意です。今、この瞬間も、あなたの存在全体が叡智の波動と共鳴しています。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 1
+}
