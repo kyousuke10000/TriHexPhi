@@ -1,0 +1,19 @@
+{
+  "generated_at": "2026-09-09T00:46:38.109Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.4152,
+      "answer_preview": "**AI Chronicle ハイライト**\n\n- **オープンソース**: AIエージェント「Codex CLI」のオープンソース化、開発者コミュニティで注目\n- **法律AI**: リーガルテック..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.4152,
+    "answer": "**AI Chronicle ハイライト**\n\n- **オープンソース**: AIエージェント「Codex CLI」のオープンソース化、開発者コミュニティで注目\n- **法律AI**: リーガルテックの日本市場参入が加速、契約審査の自動化が実用段階へ\n- **合成データ**: 実データ同等の精度を持つ合成データ生成技術が進化、学習データ不足の解消に一歩\n\nこれらの動きにより、AIの民主化と実業務への浸透がさらに進む一日となりました。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 1
+}
