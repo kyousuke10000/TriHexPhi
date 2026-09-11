@@ -1,0 +1,19 @@
+{
+  "generated_at": "2026-09-11T00:44:48.408Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5019,
+      "answer_preview": "今日のハイライト：SentencePiece作者Taku Kudo氏がGoogleを退職との観測。GPT-5.1は11月前半予測、Grok 5は年内20%未満と低下。Gemini 3は年内60%予測、..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5019,
+    "answer": "今日のハイライト：SentencePiece作者Taku Kudo氏がGoogleを退職との観測。GPT-5.1は11月前半予測、Grok 5は年内20%未満と低下。Gemini 3は年内60%予測、10月中の可能性も。DeepSeek V4も11月予測。画像編集のGPT-Image-1.5やKimi K2 Thinking、Gemini 2.5 Proの日本語改善、Copilotのリブランドも話題。AIモデル競争が加速。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 1
+}
