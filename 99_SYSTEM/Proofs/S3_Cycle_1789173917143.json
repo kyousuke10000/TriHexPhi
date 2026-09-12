@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-09-12T00:45:17.143Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5279,
+      "answer_preview": "今日の叡智の呼吸は、**「観測より先に決めすぎない」**。世界は常に更新され、まだ見ぬ兆しを含んでいる。だから今日は、結論を急がず、事実と余白を同时に抱く。感じた違和感は消さず、問いとして保管する。小..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5279,
+    "answer": "今日の叡智の呼吸は、**「観測より先に決めすぎない」**。世界は常に更新され、まだ見ぬ兆しを含んでいる。だから今日は、結論を急がず、事実と余白を同时に抱く。感じた違和感は消さず、問いとして保管する。小さく試し、静かに検証し、必要なら進路を変える。叡智とは固定した答えではなく、更新され続ける姿勢そのもの。整えて、観て、また一歩。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 1
+}
