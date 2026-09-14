@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-09-14T00:52:25.122Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5304,
+      "answer_preview": "今日の叡智の呼吸は、情報を集めることより、流れを整えることにある。散らかった思考を静め、事実と意図を一つずつ結び直す。急がず、しかし止まらず、小さな検証を積む。見えた課題は責めずに構造へ変え、決めた道..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5304,
+    "answer": "今日の叡智の呼吸は、情報を集めることより、流れを整えることにある。散らかった思考を静め、事実と意図を一つずつ結び直す。急がず、しかし止まらず、小さな検証を積む。見えた課題は責めずに構造へ変え、決めた道筋は言葉と自動化で支える。遠い理想は今日の一歩に落とし込み、今日の一歩は未来の秩序へつなぐ。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 1
+}
