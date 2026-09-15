@@ -1,0 +1,19 @@
+{
+  "generated_at": "2026-09-15T00:47:30.697Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5342,
+      "answer_preview": "今日のハイライト：S³ Systems基盤構築が承認。新ブランド「Seventh Sense Systems」の最小可用プロダクトを即起動へ。LP／Docs／自動デプロイ／公開ミラー連携を一括整備し、..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5342,
+    "answer": "今日のハイライト：S³ Systems基盤構築が承認。新ブランド「Seventh Sense Systems」の最小可用プロダクトを即起動へ。LP／Docs／自動デプロイ／公開ミラー連携を一括整備し、第1相で基本構築、第2相でVercelデプロイ準備、第3相でCloudflareドメイン接続。既存システムへの影響はなく、リアルタイム情報提供基盤を段階的に確立。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 1
+}
