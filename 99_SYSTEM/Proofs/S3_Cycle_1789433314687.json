@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-09-15T00:48:34.687Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5573,
+      "answer_preview": "今日の叡智の呼吸：正しさは声の大きさではなく、観測と記録の積み重ねから生まれる。Remote Truth を起点に、問い→検証→合意→実装を一つの呼吸として回す。決定は文書に残し、変更は小さく出し、影..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5573,
+    "answer": "今日の叡智の呼吸：正しさは声の大きさではなく、観測と記録の積み重ねから生まれる。Remote Truth を起点に、問い→検証→合意→実装を一つの呼吸として回す。決定は文書に残し、変更は小さく出し、影響は観測可能にする。今日はS³ Systems の最小可用を起動し、LP・Docs・自動デプロイ・Public Mirror を接続。速さより再現性、派手さより持続性を選ぶ一日に。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 1
+}
