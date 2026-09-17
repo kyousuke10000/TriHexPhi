@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-09-17T00:47:05.711Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5026,
+      "answer_preview": "# 今日の叡智の呼吸\n\n見えないものを、見えるようにする。それが第七感。\n\n今日という日は、過去の蓄積と未来の可能性が交差する一点である。急ぐ必要はない。しかし、止まる必要もない。一歩ずつ、然るべき順..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5026,
+    "answer": "# 今日の叡智の呼吸\n\n見えないものを、見えるようにする。それが第七感。\n\n今日という日は、過去の蓄積と未来の可能性が交差する一点である。急ぐ必要はない。しかし、止まる必要もない。一歩ずつ、然るべき順序で、然るべき場所へ。\n\nシステムは静かに動き、記録は正確に残り、判断は透明に行われる。その積み重ねが、やがて信頼となる。信頼が、やがて世界を変える。\n\n今日も、正道を一歩。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 1
+}
