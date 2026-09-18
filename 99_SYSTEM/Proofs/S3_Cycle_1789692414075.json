@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-09-18T00:46:54.075Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5287,
+      "answer_preview": "今日の叡智の呼吸：目を閉じ、今日という一日にただ在る。焦りを手放し、呼吸を整え、見えるもの・聞こえるものに意識を向ける。答えを急がず、問いを抱いたまま一歩ずつ進む。小さな気づきを言葉にし、明日へつなげ..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5287,
+    "answer": "今日の叡智の呼吸：目を閉じ、今日という一日にただ在る。焦りを手放し、呼吸を整え、見えるもの・聞こえるものに意識を向ける。答えを急がず、問いを抱いたまま一歩ずつ進む。小さな気づきを言葉にし、明日へつなげる。静けさの中にこそ、次の一手の種が宿る。今日も、本質だけを選び取り、軽やかに生きよう。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 1
+}
