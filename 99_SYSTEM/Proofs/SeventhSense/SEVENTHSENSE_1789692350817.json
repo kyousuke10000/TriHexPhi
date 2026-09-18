@@ -1,0 +1,19 @@
+{
+  "generated_at": "2026-09-18T00:45:50.817Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5236,
+      "answer_preview": "本日のAI Chronicleでは、OpenAIがGPT-5.2を発表し、推論精度と長文脈処理が大幅向上。Google DeepMindは医療診断特化モデル「MedGemini」を公開し、FDA承認を..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5236,
+    "answer": "本日のAI Chronicleでは、OpenAIがGPT-5.2を発表し、推論精度と長文脈処理が大幅向上。Google DeepMindは医療診断特化モデル「MedGemini」を公開し、FDA承認を取得。AnthropicはClaude 4.5で100万トークン対応を実現。EU AI Actの施行第2段階が始動し、汎用AI規制が本格化。国内ではSakana AIが自治体向け行政支援モデルを提供開始。AIエージェントの実運用移行と規制対応が今日の二大潮流。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 1
+}
