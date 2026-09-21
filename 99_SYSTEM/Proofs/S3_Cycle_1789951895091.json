@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-09-21T00:51:35.091Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5267,
+      "answer_preview": "今日の叡智の呼吸：見えないものを整えてから、見えるものを動かす。秩序は制約ではなく、速度の源。判断は一拍おき、根拠・影響・境界を確かめる。小さく出し、素早く学び、静かに改善する。昨日の前提を疑い、今日..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5267,
+    "answer": "今日の叡智の呼吸：見えないものを整えてから、見えるものを動かす。秩序は制約ではなく、速度の源。判断は一拍おき、根拠・影響・境界を確かめる。小さく出し、素早く学び、静かに改善する。昨日の前提を疑い、今日の一手を磨く。荒波は排除対象ではなく、航路を知らせる信号。恐れず進み、傲慢にならず省みる。呼吸を整えれば、選択は自然に澄む。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 1
+}
