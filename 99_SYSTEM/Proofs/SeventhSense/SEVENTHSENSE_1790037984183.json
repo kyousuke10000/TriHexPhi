@@ -1,0 +1,19 @@
+{
+  "generated_at": "2026-09-22T00:46:24.183Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5359,
+      "answer_preview": "AI Chronicle が本日扱った主要トピックは、モデル性能の更新競争より「運用の信頼性」へ関心が移っている点です。複数ベンダーが eval・監査ログ・権限分離を強調し、エージェント導入では“でき..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5359,
+    "answer": "AI Chronicle が本日扱った主要トピックは、モデル性能の更新競争より「運用の信頼性」へ関心が移っている点です。複数ベンダーが eval・監査ログ・権限分離を強調し、エージェント導入では“できること”より“止められること”が評価軸に。日本発の小規模モデルや業務特化型の発表も目立ち、汎用大型モデル一辺倒からの分散傾向が鮮明になりました。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 1
+}
