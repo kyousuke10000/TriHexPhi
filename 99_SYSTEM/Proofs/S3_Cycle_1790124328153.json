@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-09-23T00:45:28.153Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5228,
+      "answer_preview": "今日の叡智の呼吸——見えないものを、いきなり完成させようとしない。まず最小のかたちで世に問い、動かしながら整える。LPも、ドキュメントも、自動化も、すべては呼吸のように循環する。昨日の決定を今日の土台..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5228,
+    "answer": "今日の叡智の呼吸——見えないものを、いきなり完成させようとしない。まず最小のかたちで世に問い、動かしながら整える。LPも、ドキュメントも、自動化も、すべては呼吸のように循環する。昨日の決定を今日の土台にし、今日の一歩を明日の系へつなぐ。急がず、止まらず、静かに深く。第七感は、その反復の中にだけ宿る。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 1
+}
