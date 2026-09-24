@@ -1,0 +1,19 @@
+{
+  "generated_at": "2026-09-24T00:45:46.033Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5334,
+      "answer_preview": "今日のAI Chronicle：OpenAIがGPT-5.1をAPI提供開始、長文推論とツール連携を強化。GoogleはGemini 3で動画理解を刷新。AnthropicはClaudeの安全性レポー..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5334,
+    "answer": "今日のAI Chronicle：OpenAIがGPT-5.1をAPI提供開始、長文推論とツール連携を強化。GoogleはGemini 3で動画理解を刷新。AnthropicはClaudeの安全性レポートを公開。EU AI Actの運用指針が暫定合意。国内では大手金融がAI審査導入を拡大。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 1
+}
