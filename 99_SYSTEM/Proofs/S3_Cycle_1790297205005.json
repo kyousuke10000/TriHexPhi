@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-09-25T00:46:45.005Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5636,
+      "answer_preview": "今日の叡智の呼吸は「小さく起動し、静かに整える」。大きな構想は一気に完成させようとせず、最小限のかたちで動かし始める。LP、Docs、自動化、Public Mirror連携を一つずつ結び、現実のフィー..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5636,
+    "answer": "今日の叡智の呼吸は「小さく起動し、静かに整える」。大きな構想は一気に完成させようとせず、最小限のかたちで動かし始める。LP、Docs、自動化、Public Mirror連携を一つずつ結び、現実のフィードバックから磨く。既存のMirror GateやRemote Truthには触れず、参照のみで尊重する。速さより呼吸を整え、公開と修正を重ねながら、S³ Systemsの最初の火を絶やさず育てていく一日とする。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 1
+}
