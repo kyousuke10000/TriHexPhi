@@ -1,0 +1,19 @@
+{
+  "generated_at": "2026-09-25T00:45:47.681Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5391,
+      "answer_preview": "AI Chronicle 2025-11-06のハイライト：本日、Councilは新ブランド「Seventh Sense Systems（S³ Systems）」のブートストラップを承認。Next.j..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5391,
+    "answer": "AI Chronicle 2025-11-06のハイライト：本日、Councilは新ブランド「Seventh Sense Systems（S³ Systems）」のブートストラップを承認。Next.js 15によるランディングページ、Vision/Brand Guidelinesドキュメント、Vercel自動デプロイ、Public Mirror毎時同期を一括整備する最小可用プロダクト構想。既存のMirror Gate/Remote Truthへの変更は含まず参照のみ。Phase 1〜3で構築・デプロイ準備・ドメイン接続へ段階的に進行。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 1
+}
