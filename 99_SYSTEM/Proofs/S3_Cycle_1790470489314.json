@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-09-27T00:54:49.314Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5291,
+      "answer_preview": "今日の叡智の呼吸：情報は溜めず、流す。集めるより手放すほど、必要なものが自然と巡る。判断は静けさの中で下し、動くときは軽く。小さく出して、早く直す。見えない前提を疑い、事実と物語を分ける。恐れではなく..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5291,
+    "answer": "今日の叡智の呼吸：情報は溜めず、流す。集めるより手放すほど、必要なものが自然と巡る。判断は静けさの中で下し、動くときは軽く。小さく出して、早く直す。見えない前提を疑い、事実と物語を分ける。恐れではなく好奇心で選ぶ。今日という一日を、未来への最小実験として扱う。呼吸のように、観察し、整え、また手放す。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 1
+}
