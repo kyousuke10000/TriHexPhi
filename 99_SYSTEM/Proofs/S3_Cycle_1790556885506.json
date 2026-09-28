@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-09-28T00:54:45.506Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.521,
+      "answer_preview": "今日の叡智の呼吸──。速さより、静かに整うこと。情報は集めるほど散らばる。だからまず呼吸を一つ、意図を一つに絞る。見るべきは派手な成果ではなく、再現できる小さな型。今日やる一手を決め、記録し、次の誰か..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.521,
+    "answer": "今日の叡智の呼吸──。速さより、静かに整うこと。情報は集めるほど散らばる。だからまず呼吸を一つ、意図を一つに絞る。見るべきは派手な成果ではなく、再現できる小さな型。今日やる一手を決め、記録し、次の誰かが使える形に残す。整った流れは、明日の判断を軽くする。急がず、止まらず、丁寧に前へ。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 1
+}
