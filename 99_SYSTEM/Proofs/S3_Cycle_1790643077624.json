@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-09-29T00:51:17.624Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.517,
+      "answer_preview": "今日の叡智の呼吸：目先の慌ただしさから一歩引き、情報のノイズを静かに通す。急いで結論を出さず、観測と意図を分け、流れに逆らわず芯だけを選ぶ。小さく試し、即座に検証し、成果は仕組みに変える。人とAIの役..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.517,
+    "answer": "今日の叡智の呼吸：目先の慌ただしさから一歩引き、情報のノイズを静かに通す。急いで結論を出さず、観測と意図を分け、流れに逆らわず芯だけを選ぶ。小さく試し、即座に検証し、成果は仕組みに変える。人とAIの役割を混ぜず、公開と記録を前提に判断する。恐れではなく設計で前へ。呼吸のように、整えて、届ける一日に。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 1
+}
