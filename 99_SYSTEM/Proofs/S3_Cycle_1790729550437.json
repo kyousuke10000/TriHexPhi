@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-09-30T00:52:30.437Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5146,
+      "answer_preview": "叡智の呼吸——今日は「速さは正しさに従う」を胸に刻む。承認は完成ではなく起点。最小の一歩を今日打ち、明日の検証に委ねる。既存を壊さず、参照で繋ぐ。記録は嘘をつかない。ゆえに決めたことは書き残し、揺れた..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5146,
+    "answer": "叡智の呼吸——今日は「速さは正しさに従う」を胸に刻む。承認は完成ではなく起点。最小の一歩を今日打ち、明日の検証に委ねる。既存を壊さず、参照で繋ぐ。記録は嘘をつかない。ゆえに決めたことは書き残し、揺れたら戻れる場所を持つ。焦らず、しかし止まらず。今日という呼吸を、未来の自分への信頼に変えていく。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 1
+}
