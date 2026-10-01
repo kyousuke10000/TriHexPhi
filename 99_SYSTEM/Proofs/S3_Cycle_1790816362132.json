@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-10-01T00:59:22.132Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5293,
+      "answer_preview": "# 今日の叡智の呼吸\n\n見えているものだけを信じるな。  \n数字の裏に言葉があり、言葉の裏に意図があり、意図の裏に時間がある。  \n急ぐときほど、一呼吸おく。  \n決める前に、誰の未来を守るのかを問う..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5293,
+    "answer": "# 今日の叡智の呼吸\n\n見えているものだけを信じるな。  \n数字の裏に言葉があり、言葉の裏に意図があり、意図の裏に時間がある。  \n急ぐときほど、一呼吸おく。  \n決める前に、誰の未来を守るのかを問う。  \n答えが出ない日は、答えを急がないことも決断である。  \n記録し、署名し、次の者が検証できる形で残す。  \nそれが、第七感を道具に変える道。  \n\n——S³ Systems"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 1
+}
