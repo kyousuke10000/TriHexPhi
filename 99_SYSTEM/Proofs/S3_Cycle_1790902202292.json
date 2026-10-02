@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-10-02T00:50:02.292Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5306,
+      "answer_preview": "今日の叡智の呼吸——情報は溜めず、流すことで知恵になる。事実と解釈を分け、判断を急がず、根拠ある選択を積み重ねる。小さく試し、素早く学び、対話で補正する。見えない文脈に敬意を払い、未来の保守性を今に埋..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5306,
+    "answer": "今日の叡智の呼吸——情報は溜めず、流すことで知恵になる。事実と解釈を分け、判断を急がず、根拠ある選択を積み重ねる。小さく試し、素早く学び、対話で補正する。見えない文脈に敬意を払い、未来の保守性を今に埋め込む。その一呼吸ごとに、システムは静かに強くなる。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 1
+}
