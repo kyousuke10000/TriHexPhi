@@ -1,0 +1,19 @@
+{
+  "generated_at": "2026-10-02T00:49:01.491Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5326,
+      "answer_preview": "AI Chronicle の本日ハイライト（200字以内）を生成します。ただし、私のコンテキストには「今日」の AI Chronicle 本文が含まれていないため、内容を推測せずに要約することはできま..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5326,
+    "answer": "AI Chronicle の本日ハイライト（200字以内）を生成します。ただし、私のコンテキストには「今日」の AI Chronicle 本文が含まれていないため、内容を推測せずに要約することはできません。\n\n正確な要約のために、以下のいずれかをご提供ください：\n\n- 今日の AI Chronicle 本文（Markdown またはテキスト）\n- 該当ファイルのパス（例：`docs/chronicle/2025-11-06.md`）\n- 公開ミラー（Public Mirror）の今日の `index.md`\n\n提供いただければ、200字ちょうどに収めたハイライトを即座に作成します。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 1
+}
