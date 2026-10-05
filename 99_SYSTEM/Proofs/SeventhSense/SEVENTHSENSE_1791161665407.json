@@ -1,0 +1,19 @@
+{
+  "generated_at": "2026-10-05T00:54:25.407Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5125,
+      "answer_preview": "今日のAI業界は、OpenAIのGPT-5.1展開とGoogle Gemini 3のリリースが競合し、高性能モデル競争が激化。AnthropicもClaude Opus 4.5で追従し、エージェント機..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5125,
+    "answer": "今日のAI業界は、OpenAIのGPT-5.1展開とGoogle Gemini 3のリリースが競合し、高性能モデル競争が激化。AnthropicもClaude Opus 4.5で追従し、エージェント機能と長時間タスク処理が焦点に。一方、EU AI Actの施行準備や米国の規制動向も進展し、開発速度と安全規制のバランスが業界全体の課題となっている。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 1
+}
