@@ -1,0 +1,19 @@
+{
+  "generated_at": "2026-10-06T00:49:28.365Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5258,
+      "answer_preview": "今日のAI Chronicleでは、OpenAIの新推論モデルやGoogleの次世代マルチモーダルAI、Anthropicの安全性研究などが注目を集めた。国内では生成AI活用ガイドラインの改訂や、製造..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5258,
+    "answer": "今日のAI Chronicleでは、OpenAIの新推論モデルやGoogleの次世代マルチモーダルAI、Anthropicの安全性研究などが注目を集めた。国内では生成AI活用ガイドラインの改訂や、製造業・医療分野での実運用事例が増加。一方、著作権やディープフェイク対策、AI規制の動向も活発に議論され、技術革新と社会的責任の両立が改めて焦点となっている。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 1
+}
