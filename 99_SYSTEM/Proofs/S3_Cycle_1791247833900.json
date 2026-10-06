@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-10-06T00:50:33.900Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5067,
+      "answer_preview": "今日の叡智の呼吸：  \n見えるものだけを急いで積み上げるのではなく、見えない前提を整える日にしよう。小さく公開し、静かに同期し、判断は記録に残す。速さは混沌ではなく、秩序から生まれる。第七感は、未来を..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5067,
+    "answer": "今日の叡智の呼吸：  \n見えるものだけを急いで積み上げるのではなく、見えない前提を整える日にしよう。小さく公開し、静かに同期し、判断は記録に残す。速さは混沌ではなく、秩序から生まれる。第七感は、未来を当てる力ではなく、今の選択を澄ませる力。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 1
+}
