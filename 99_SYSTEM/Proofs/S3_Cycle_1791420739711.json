@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-10-08T00:52:19.711Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5219,
+      "answer_preview": "今日の叡智の呼吸──目を閉じ、深く吸う。情報の奔流ではなく、本質だけを肺に満たす。吐くとき、不要なノイズを手放す。七つの感覚が乱れず、ひとつの軸に還る。S³ Systemsは、速さより静けさを選び、公..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5219,
+    "answer": "今日の叡智の呼吸──目を閉じ、深く吸う。情報の奔流ではなく、本質だけを肺に満たす。吐くとき、不要なノイズを手放す。七つの感覚が乱れず、ひとつの軸に還る。S³ Systemsは、速さより静けさを選び、公開と透明のうちに真を映す。公理は動かさず、表示だけを変える。今日という入口に立ち、昨日の続きではなく、今この瞬間の判断を生きる。呼吸ひとつ、決定ひとつ。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 1
+}
