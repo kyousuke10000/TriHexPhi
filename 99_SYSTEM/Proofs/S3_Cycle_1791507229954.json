@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-10-09T00:53:49.954Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5203,
+      "answer_preview": "今日の叡智の呼吸：目先の成果より、静かに流れを整える日。情報を追いすぎず、一つの問いを深く見つめる。小さな約束を守り、余白を残す。急がず、しかし止まらず。思考は広げ、行動は絞る。丁寧な一手が明日の全体..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5203,
+    "answer": "今日の叡智の呼吸：目先の成果より、静かに流れを整える日。情報を追いすぎず、一つの問いを深く見つめる。小さな約束を守り、余白を残す。急がず、しかし止まらず。思考は広げ、行動は絞る。丁寧な一手が明日の全体を変える。呼吸を整え、必要な人へ静かに手を伸ばそう。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 1
+}
