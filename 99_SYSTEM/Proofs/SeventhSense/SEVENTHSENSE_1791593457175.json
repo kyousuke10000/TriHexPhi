@@ -1,0 +1,19 @@
+{
+  "generated_at": "2026-10-10T00:50:57.175Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5509,
+      "answer_preview": "# 今日のAI Chronicleハイライト（要約）\n\n2025年11月6日、新ブランド「Seventh Sense Systems（S³ Systems）」の最小可用プロダクト起動が承認された。LP..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5509,
+    "answer": "# 今日のAI Chronicleハイライト（要約）\n\n2025年11月6日、新ブランド「Seventh Sense Systems（S³ Systems）」の最小可用プロダクト起動が承認された。LP/Docs/自動デプロイ/Public Mirror連携を一括整備し、Vercel自動デプロイと毎時同期を実現。既存のMirror Gateへの影響はなく、Phase 1として基本構築を即時開始。AIオペ基盤の将来構想に向けた第一歩となる決定。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 1
+}
