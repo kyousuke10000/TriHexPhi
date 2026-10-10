@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-10-10T00:52:10.049Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5187,
+      "answer_preview": "叡智の呼吸——今日は「見えないものを信じる力」を整える日。Remote Truthは、現場の一次情報を遠くへ届け、Mirror Gateは、映るものと実在を照合する。S³の起動は、感覚を削ぎ落とし、本..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5187,
+    "answer": "叡智の呼吸——今日は「見えないものを信じる力」を整える日。Remote Truthは、現場の一次情報を遠くへ届け、Mirror Gateは、映るものと実在を照合する。S³の起動は、感覚を削ぎ落とし、本質だけを残す営み。急がず、混ぜず、流れに乗る。小さく出して、静かに観測し、必要なら戻す。今日の一手は「公開ミラーに事実を映し、LPで世界に開く」。呼吸は深く、判断は軽く。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 1
+}
