@@ -1,0 +1,19 @@
+{
+  "generated_at": "2026-10-11T00:56:12.789Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5491,
+      "answer_preview": "今日のハイライト：S³ Systems始動。LP・Docs・自動デプロイ・Public Mirror連携を一括整備し、最小可用プロダクトを即起動。Vercel自動デプロイ、毎時同期、ドメイン接続は段階..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5491,
+    "answer": "今日のハイライト：S³ Systems始動。LP・Docs・自動デプロイ・Public Mirror連携を一括整備し、最小可用プロダクトを即起動。Vercel自動デプロイ、毎時同期、ドメイン接続は段階的に進行。既存のMirror Gate／Remote Truthは参照のみで影響なし。AIオペ基盤への布石。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 1
+}
