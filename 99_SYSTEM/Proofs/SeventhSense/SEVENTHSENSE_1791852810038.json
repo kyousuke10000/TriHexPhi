@@ -1,0 +1,19 @@
+{
+  "generated_at": "2026-10-13T00:53:30.037Z",
+  "prompt": "今日のAI Chronicleハイライトを200字で --system",
+  "system_hint": "STRUCTURE_MASTER",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5446,
+      "answer_preview": "今日のAI Chronicleハイライト（200字）：\n\nOpenAIがGPT-5.1を発表し、適応的推論と長文脈処理を強化。GoogleはGemini 3で動画理解を大幅改善。AnthropicはC..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5446,
+    "answer": "今日のAI Chronicleハイライト（200字）：\n\nOpenAIがGPT-5.1を発表し、適応的推論と長文脈処理を強化。GoogleはGemini 3で動画理解を大幅改善。AnthropicはClaudeのエージェント機能を拡張し、企業向け自動化を加速。MetaはオープンソースLlama 4を公開し、推論効率を向上。国内ではS³ Systemsが最小可用プロダクトを起動、Public Mirror連携でリアルタイム情報基盤を構築。AIエージェント競争が本格化。"
+  },
+  "intent_length": 1508,
+  "candidates_count": 1
+}
