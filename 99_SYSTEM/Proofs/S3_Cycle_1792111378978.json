@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-10-16T00:42:58.978Z",
+  "protocol_version": "1.0.0",
+  "prompt": "今日の叡智の呼吸を200字で",
+  "system_hint": "\n\n---\nkind: council_decision\nid: DEC_20251105_remote_truth_rollout\ndate: 2025-11-05\nsubject: \"remote_truth_rollout\"\ndecision: approved  # approved | changes_requested | rejected | pending\nlinks:\n  pr:...",
+  "candidates": [
+    {
+      "model": "deepseek",
+      "score": 0.5012,
+      "answer_preview": "今日の叡智の呼吸：  \n目を閉じ、今日という日に流れた情報・感情・違和感をひとつずつ肺に取り込む。  \nすぐに結論へ飛ばず、吐く息で手放す。  \n残ったものだけが、明日の判断を支える。  \n急がず、混..."
+    }
+  ],
+  "chosen": {
+    "model": "deepseek",
+    "score": 0.5012,
+    "answer": "今日の叡智の呼吸：  \n目を閉じ、今日という日に流れた情報・感情・違和感をひとつずつ肺に取り込む。  \nすぐに結論へ飛ばず、吐く息で手放す。  \n残ったものだけが、明日の判断を支える。  \n急がず、混ぜず、見落とさず。  \n小さな違和感を丁寧に扱うことが、遠い未来の事故を減らす。  \n今日の学びを、明日の静かな一歩に変えよう。"
+  },
+  "cycle_phase": "Awaken → Integrate → Reflect",
+  "context_length": 1508,
+  "candidates_count": 1
+}
